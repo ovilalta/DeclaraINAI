@@ -1,0 +1,39 @@
+using System;
+
+namespace Declara.MODELextended
+{
+    public class ALTA_COMODATO : MODELDeclara.ALTA_COMODATO
+    {
+        public enum Properties
+        {
+            VID_NOMBRE,
+            VID_FECHA,
+            VID_HOMOCLAVE,
+            NID_DECLARACION,
+            NID_COMODATO,
+            CID_TIPO_PERSONA,
+            E_TITULAR,
+            E_RFC,
+            NID_TIPO_RELACION,
+            E_OBSERVACIONES,
+            E_OBSERVACIONES_MARCADO,
+            V_OBSERVACIONES_TESTADO,
+            NID_ESTADO_TESTADO,
+            NID_TIPO,
+            C_CODIGO_POSTAL,
+            NID_PAIS,
+            CID_ENTIDAD_FEDERATIVA,
+            CID_MUNICIPIO,
+            V_COLONIA,
+            V_DOMICILIO,
+            NID_TIPO_VEHICULO,
+            NID_MARCA,
+            C_MODELO,
+            V_DESCRIPCION,
+            E_NUMERO_SERIE,
+            NID_PAIS_ALTA_COMODATO_VEHICULO,
+            CID_ENTIDAD_FEDERATIVA_ALTA_COMODATO_VEHICULO,
+        }
+
+    }
+}

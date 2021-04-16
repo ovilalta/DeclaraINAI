@@ -1,0 +1,1195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ine.mx/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ine.mx/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ine.mx/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="VerificaLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEquipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strContraseña" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificaLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerificaLoginResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="lEsSuperUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="lEsSuperUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lEsSuperUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cUsuarioGenero">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cUsuarioGeneroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cUsuarioGeneroResult" type="s1:char" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="nUsuarioAreaPrincipal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSistema" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nIdGrupo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="nUsuarioAreaPrincipalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nUsuarioAreaPrincipalResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listUsuarioAreasActivas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSistema" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nIdGrupo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listUsuarioAreasActivasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listUsuarioAreasActivasResult" type="tns:ArrayOfArea" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArea">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="area" nillable="true" type="tns:area" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="area">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NID_AREA" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_AREA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VID_AREA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_AREA_CORTO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NID_AREA_SUPERIOR" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listUsuarioAreasTodas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSistema" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nIdGrupo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listUsuarioAreasTodasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listUsuarioAreasTodasResult" type="tns:ArrayOfArea" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listUsuarioFormas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listUsuarioFormasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listUsuarioFormasResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listUsuarioPermiso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listUsuarioPermisoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listUsuarioPermisoResult" type="tns:ArrayOfPermiso" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPermiso">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="permiso" nillable="true" type="tns:permiso" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="permiso">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NID_PERMISO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_PERMISO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="L_ACCESO" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listUsuarioControles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strForma" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listUsuarioControlesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listUsuarioControlesResult" type="tns:ArrayOfControl" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfControl">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="control" nillable="true" type="tns:control" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="control">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NID_CONTROL" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_CONTROL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="L_ACCESO" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ModificaPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPasswordAnterior" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPasswordNueva" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPasswordConfirmacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificaPasswordResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="listUsuarioPerfil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listUsuarioPerfilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listUsuarioPerfilResult" type="tns:ArrayOfPerfil" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPerfil">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="perfil" nillable="true" type="tns:perfil" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="perfil">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Propiedad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Valor" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Menu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MenuResult" type="tns:ArrayOfSISTEMA_MENU_USUARIO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSISTEMA_MENU_USUARIO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SISTEMA_MENU_USUARIO" nillable="true" type="tns:SISTEMA_MENU_USUARIO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SISTEMA_MENU_USUARIO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NID_SISTEMA" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NID_MENU" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_NOMBRE_FORMA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_TEXTO_MENU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_URL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NID_MENU_SUPERIOR" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="N_ORDEN" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="L_ACTIVO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="lAsignado" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="strMenuJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="strMenuJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMenuJSONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listPuestos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cGenero" type="s1:char" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listPuestosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listPuestosResult" type="tns:ArrayOfPuesto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPuesto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="puesto" nillable="true" type="tns:puesto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="puesto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NID_PUESTO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_PUESTO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecuperaContraseña">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperaContraseñaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="NuevaContraseña">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GUNvUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GUNtoken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vNuevaContraseña" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vConfirmaContraseña" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NuevaContraseñaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NuevaContraseñaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CAT_AREAS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CAT_AREASResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CAT_AREASResult" type="tns:ArrayOfArea" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listSistemaAreasActivas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSistema" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nIdGrupo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listSistemaAreasActivasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listSistemaAreasActivasResult" type="tns:ArrayOfArea" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listSistemaAreasTodas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSistema" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nIdGrupo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listSistemaAreasTodasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listSistemaAreasTodasResult" type="tns:ArrayOfArea" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="strMensajeIncial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="strMensajeIncialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMensajeIncialResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="strNombreSistema">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="strNombreSistemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strNombreSistemaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="strMensajeEstatico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="strMensajeEstaticoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMensajeEstaticoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listSistemaParametro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listSistemaParametroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listSistemaParametroResult" type="tns:ArrayOfParametro" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfParametro">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="parametro" nillable="true" type="tns:parametro" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="parametro">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="VID_PARAMETRO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_VALOR_PARAMETRO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_DESCRIPCION" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listSistemaDocumento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nIdSistema" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="vKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listSistemaDocumentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listSistemaDocumentoResult" type="tns:ArrayOfBlld_CAT_SISTEMA_DOCUMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBlld_CAT_SISTEMA_DOCUMENTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="blld_CAT_SISTEMA_DOCUMENTO" nillable="true" type="tns:blld_CAT_SISTEMA_DOCUMENTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="blld_CAT_SISTEMA_DOCUMENTO">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:bll_CAT_SISTEMA_DOCUMENTO" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="bll_CAT_SISTEMA_DOCUMENTO">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:_bllSistema">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="V_DESCRIPCION" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="V_TIPO_MIME" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="V_EXTENSION" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="V_FISICA" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="_bllSistema" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="char">
+        <s:restriction base="s:unsignedShort" />
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="VerificaLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificaLogin" />
+  </wsdl:message>
+  <wsdl:message name="VerificaLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificaLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="lEsSuperUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:lEsSuperUsuario" />
+  </wsdl:message>
+  <wsdl:message name="lEsSuperUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:lEsSuperUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="cUsuarioGeneroSoapIn">
+    <wsdl:part name="parameters" element="tns:cUsuarioGenero" />
+  </wsdl:message>
+  <wsdl:message name="cUsuarioGeneroSoapOut">
+    <wsdl:part name="parameters" element="tns:cUsuarioGeneroResponse" />
+  </wsdl:message>
+  <wsdl:message name="nUsuarioAreaPrincipalSoapIn">
+    <wsdl:part name="parameters" element="tns:nUsuarioAreaPrincipal" />
+  </wsdl:message>
+  <wsdl:message name="nUsuarioAreaPrincipalSoapOut">
+    <wsdl:part name="parameters" element="tns:nUsuarioAreaPrincipalResponse" />
+  </wsdl:message>
+  <wsdl:message name="listUsuarioAreasActivasSoapIn">
+    <wsdl:part name="parameters" element="tns:listUsuarioAreasActivas" />
+  </wsdl:message>
+  <wsdl:message name="listUsuarioAreasActivasSoapOut">
+    <wsdl:part name="parameters" element="tns:listUsuarioAreasActivasResponse" />
+  </wsdl:message>
+  <wsdl:message name="listUsuarioAreasTodasSoapIn">
+    <wsdl:part name="parameters" element="tns:listUsuarioAreasTodas" />
+  </wsdl:message>
+  <wsdl:message name="listUsuarioAreasTodasSoapOut">
+    <wsdl:part name="parameters" element="tns:listUsuarioAreasTodasResponse" />
+  </wsdl:message>
+  <wsdl:message name="listUsuarioFormasSoapIn">
+    <wsdl:part name="parameters" element="tns:listUsuarioFormas" />
+  </wsdl:message>
+  <wsdl:message name="listUsuarioFormasSoapOut">
+    <wsdl:part name="parameters" element="tns:listUsuarioFormasResponse" />
+  </wsdl:message>
+  <wsdl:message name="listUsuarioPermisoSoapIn">
+    <wsdl:part name="parameters" element="tns:listUsuarioPermiso" />
+  </wsdl:message>
+  <wsdl:message name="listUsuarioPermisoSoapOut">
+    <wsdl:part name="parameters" element="tns:listUsuarioPermisoResponse" />
+  </wsdl:message>
+  <wsdl:message name="listUsuarioControlesSoapIn">
+    <wsdl:part name="parameters" element="tns:listUsuarioControles" />
+  </wsdl:message>
+  <wsdl:message name="listUsuarioControlesSoapOut">
+    <wsdl:part name="parameters" element="tns:listUsuarioControlesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModificaPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ModificaPassword" />
+  </wsdl:message>
+  <wsdl:message name="ModificaPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificaPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="listUsuarioPerfilSoapIn">
+    <wsdl:part name="parameters" element="tns:listUsuarioPerfil" />
+  </wsdl:message>
+  <wsdl:message name="listUsuarioPerfilSoapOut">
+    <wsdl:part name="parameters" element="tns:listUsuarioPerfilResponse" />
+  </wsdl:message>
+  <wsdl:message name="MenuSoapIn">
+    <wsdl:part name="parameters" element="tns:Menu" />
+  </wsdl:message>
+  <wsdl:message name="MenuSoapOut">
+    <wsdl:part name="parameters" element="tns:MenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="strMenuJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:strMenuJSON" />
+  </wsdl:message>
+  <wsdl:message name="strMenuJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:strMenuJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="listPuestosSoapIn">
+    <wsdl:part name="parameters" element="tns:listPuestos" />
+  </wsdl:message>
+  <wsdl:message name="listPuestosSoapOut">
+    <wsdl:part name="parameters" element="tns:listPuestosResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaContraseñaSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperaContraseña" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaContraseñaSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperaContraseñaResponse" />
+  </wsdl:message>
+  <wsdl:message name="NuevaContraseñaSoapIn">
+    <wsdl:part name="parameters" element="tns:NuevaContraseña" />
+  </wsdl:message>
+  <wsdl:message name="NuevaContraseñaSoapOut">
+    <wsdl:part name="parameters" element="tns:NuevaContraseñaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CAT_AREASSoapIn">
+    <wsdl:part name="parameters" element="tns:CAT_AREAS" />
+  </wsdl:message>
+  <wsdl:message name="CAT_AREASSoapOut">
+    <wsdl:part name="parameters" element="tns:CAT_AREASResponse" />
+  </wsdl:message>
+  <wsdl:message name="listSistemaAreasActivasSoapIn">
+    <wsdl:part name="parameters" element="tns:listSistemaAreasActivas" />
+  </wsdl:message>
+  <wsdl:message name="listSistemaAreasActivasSoapOut">
+    <wsdl:part name="parameters" element="tns:listSistemaAreasActivasResponse" />
+  </wsdl:message>
+  <wsdl:message name="listSistemaAreasTodasSoapIn">
+    <wsdl:part name="parameters" element="tns:listSistemaAreasTodas" />
+  </wsdl:message>
+  <wsdl:message name="listSistemaAreasTodasSoapOut">
+    <wsdl:part name="parameters" element="tns:listSistemaAreasTodasResponse" />
+  </wsdl:message>
+  <wsdl:message name="strMensajeIncialSoapIn">
+    <wsdl:part name="parameters" element="tns:strMensajeIncial" />
+  </wsdl:message>
+  <wsdl:message name="strMensajeIncialSoapOut">
+    <wsdl:part name="parameters" element="tns:strMensajeIncialResponse" />
+  </wsdl:message>
+  <wsdl:message name="strNombreSistemaSoapIn">
+    <wsdl:part name="parameters" element="tns:strNombreSistema" />
+  </wsdl:message>
+  <wsdl:message name="strNombreSistemaSoapOut">
+    <wsdl:part name="parameters" element="tns:strNombreSistemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="strMensajeEstaticoSoapIn">
+    <wsdl:part name="parameters" element="tns:strMensajeEstatico" />
+  </wsdl:message>
+  <wsdl:message name="strMensajeEstaticoSoapOut">
+    <wsdl:part name="parameters" element="tns:strMensajeEstaticoResponse" />
+  </wsdl:message>
+  <wsdl:message name="listSistemaParametroSoapIn">
+    <wsdl:part name="parameters" element="tns:listSistemaParametro" />
+  </wsdl:message>
+  <wsdl:message name="listSistemaParametroSoapOut">
+    <wsdl:part name="parameters" element="tns:listSistemaParametroResponse" />
+  </wsdl:message>
+  <wsdl:message name="listSistemaDocumentoSoapIn">
+    <wsdl:part name="parameters" element="tns:listSistemaDocumento" />
+  </wsdl:message>
+  <wsdl:message name="listSistemaDocumentoSoapOut">
+    <wsdl:part name="parameters" element="tns:listSistemaDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="svrSoap">
+    <wsdl:operation name="VerificaLogin">
+      <wsdl:input message="tns:VerificaLoginSoapIn" />
+      <wsdl:output message="tns:VerificaLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lEsSuperUsuario">
+      <wsdl:input message="tns:lEsSuperUsuarioSoapIn" />
+      <wsdl:output message="tns:lEsSuperUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cUsuarioGenero">
+      <wsdl:input message="tns:cUsuarioGeneroSoapIn" />
+      <wsdl:output message="tns:cUsuarioGeneroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="nUsuarioAreaPrincipal">
+      <wsdl:input message="tns:nUsuarioAreaPrincipalSoapIn" />
+      <wsdl:output message="tns:nUsuarioAreaPrincipalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioAreasActivas">
+      <wsdl:input message="tns:listUsuarioAreasActivasSoapIn" />
+      <wsdl:output message="tns:listUsuarioAreasActivasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioAreasTodas">
+      <wsdl:input message="tns:listUsuarioAreasTodasSoapIn" />
+      <wsdl:output message="tns:listUsuarioAreasTodasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioFormas">
+      <wsdl:input message="tns:listUsuarioFormasSoapIn" />
+      <wsdl:output message="tns:listUsuarioFormasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioPermiso">
+      <wsdl:input message="tns:listUsuarioPermisoSoapIn" />
+      <wsdl:output message="tns:listUsuarioPermisoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioControles">
+      <wsdl:input message="tns:listUsuarioControlesSoapIn" />
+      <wsdl:output message="tns:listUsuarioControlesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificaPassword">
+      <wsdl:input message="tns:ModificaPasswordSoapIn" />
+      <wsdl:output message="tns:ModificaPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioPerfil">
+      <wsdl:input message="tns:listUsuarioPerfilSoapIn" />
+      <wsdl:output message="tns:listUsuarioPerfilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Menu">
+      <wsdl:input message="tns:MenuSoapIn" />
+      <wsdl:output message="tns:MenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="strMenuJSON">
+      <wsdl:input message="tns:strMenuJSONSoapIn" />
+      <wsdl:output message="tns:strMenuJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listPuestos">
+      <wsdl:input message="tns:listPuestosSoapIn" />
+      <wsdl:output message="tns:listPuestosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaContraseña">
+      <wsdl:input message="tns:RecuperaContraseñaSoapIn" />
+      <wsdl:output message="tns:RecuperaContraseñaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NuevaContraseña">
+      <wsdl:input message="tns:NuevaContraseñaSoapIn" />
+      <wsdl:output message="tns:NuevaContraseñaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CAT_AREAS">
+      <wsdl:input message="tns:CAT_AREASSoapIn" />
+      <wsdl:output message="tns:CAT_AREASSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listSistemaAreasActivas">
+      <wsdl:input message="tns:listSistemaAreasActivasSoapIn" />
+      <wsdl:output message="tns:listSistemaAreasActivasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listSistemaAreasTodas">
+      <wsdl:input message="tns:listSistemaAreasTodasSoapIn" />
+      <wsdl:output message="tns:listSistemaAreasTodasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="strMensajeIncial">
+      <wsdl:input message="tns:strMensajeIncialSoapIn" />
+      <wsdl:output message="tns:strMensajeIncialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="strNombreSistema">
+      <wsdl:input message="tns:strNombreSistemaSoapIn" />
+      <wsdl:output message="tns:strNombreSistemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="strMensajeEstatico">
+      <wsdl:input message="tns:strMensajeEstaticoSoapIn" />
+      <wsdl:output message="tns:strMensajeEstaticoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listSistemaParametro">
+      <wsdl:input message="tns:listSistemaParametroSoapIn" />
+      <wsdl:output message="tns:listSistemaParametroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listSistemaDocumento">
+      <wsdl:input message="tns:listSistemaDocumentoSoapIn" />
+      <wsdl:output message="tns:listSistemaDocumentoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="svrSoap" type="tns:svrSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerificaLogin">
+      <soap:operation soapAction="http://ine.mx/VerificaLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lEsSuperUsuario">
+      <soap:operation soapAction="http://ine.mx/lEsSuperUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cUsuarioGenero">
+      <soap:operation soapAction="http://ine.mx/cUsuarioGenero" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nUsuarioAreaPrincipal">
+      <soap:operation soapAction="http://ine.mx/nUsuarioAreaPrincipal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioAreasActivas">
+      <soap:operation soapAction="http://ine.mx/listUsuarioAreasActivas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioAreasTodas">
+      <soap:operation soapAction="http://ine.mx/listUsuarioAreasTodas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioFormas">
+      <soap:operation soapAction="http://ine.mx/listUsuarioFormas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioPermiso">
+      <soap:operation soapAction="http://ine.mx/listUsuarioPermiso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioControles">
+      <soap:operation soapAction="http://ine.mx/listUsuarioControles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificaPassword">
+      <soap:operation soapAction="http://ine.mx/ModificaPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioPerfil">
+      <soap:operation soapAction="http://ine.mx/listUsuarioPerfil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Menu">
+      <soap:operation soapAction="http://ine.mx/Menu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="strMenuJSON">
+      <soap:operation soapAction="http://ine.mx/strMenuJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listPuestos">
+      <soap:operation soapAction="http://ine.mx/listPuestos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaContraseña">
+      <soap:operation soapAction="http://ine.mx/RecuperaContraseña" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NuevaContraseña">
+      <soap:operation soapAction="http://ine.mx/NuevaContraseña" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAT_AREAS">
+      <soap:operation soapAction="http://ine.mx/CAT_AREAS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listSistemaAreasActivas">
+      <soap:operation soapAction="http://ine.mx/listSistemaAreasActivas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listSistemaAreasTodas">
+      <soap:operation soapAction="http://ine.mx/listSistemaAreasTodas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="strMensajeIncial">
+      <soap:operation soapAction="http://ine.mx/strMensajeIncial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="strNombreSistema">
+      <soap:operation soapAction="http://ine.mx/strNombreSistema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="strMensajeEstatico">
+      <soap:operation soapAction="http://ine.mx/strMensajeEstatico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listSistemaParametro">
+      <soap:operation soapAction="http://ine.mx/listSistemaParametro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listSistemaDocumento">
+      <soap:operation soapAction="http://ine.mx/listSistemaDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="svrSoap12" type="tns:svrSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerificaLogin">
+      <soap12:operation soapAction="http://ine.mx/VerificaLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lEsSuperUsuario">
+      <soap12:operation soapAction="http://ine.mx/lEsSuperUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cUsuarioGenero">
+      <soap12:operation soapAction="http://ine.mx/cUsuarioGenero" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nUsuarioAreaPrincipal">
+      <soap12:operation soapAction="http://ine.mx/nUsuarioAreaPrincipal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioAreasActivas">
+      <soap12:operation soapAction="http://ine.mx/listUsuarioAreasActivas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioAreasTodas">
+      <soap12:operation soapAction="http://ine.mx/listUsuarioAreasTodas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioFormas">
+      <soap12:operation soapAction="http://ine.mx/listUsuarioFormas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioPermiso">
+      <soap12:operation soapAction="http://ine.mx/listUsuarioPermiso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioControles">
+      <soap12:operation soapAction="http://ine.mx/listUsuarioControles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificaPassword">
+      <soap12:operation soapAction="http://ine.mx/ModificaPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listUsuarioPerfil">
+      <soap12:operation soapAction="http://ine.mx/listUsuarioPerfil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Menu">
+      <soap12:operation soapAction="http://ine.mx/Menu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="strMenuJSON">
+      <soap12:operation soapAction="http://ine.mx/strMenuJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listPuestos">
+      <soap12:operation soapAction="http://ine.mx/listPuestos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaContraseña">
+      <soap12:operation soapAction="http://ine.mx/RecuperaContraseña" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NuevaContraseña">
+      <soap12:operation soapAction="http://ine.mx/NuevaContraseña" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CAT_AREAS">
+      <soap12:operation soapAction="http://ine.mx/CAT_AREAS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listSistemaAreasActivas">
+      <soap12:operation soapAction="http://ine.mx/listSistemaAreasActivas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listSistemaAreasTodas">
+      <soap12:operation soapAction="http://ine.mx/listSistemaAreasTodas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="strMensajeIncial">
+      <soap12:operation soapAction="http://ine.mx/strMensajeIncial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="strNombreSistema">
+      <soap12:operation soapAction="http://ine.mx/strNombreSistema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="strMensajeEstatico">
+      <soap12:operation soapAction="http://ine.mx/strMensajeEstatico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listSistemaParametro">
+      <soap12:operation soapAction="http://ine.mx/listSistemaParametro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listSistemaDocumento">
+      <soap12:operation soapAction="http://ine.mx/listSistemaDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="svr">
+    <wsdl:port name="svrSoap" binding="tns:svrSoap">
+      <soap:address location="http://10.0.40.214/oic/svr.asmx" />
+    </wsdl:port>
+    <wsdl:port name="svrSoap12" binding="tns:svrSoap12">
+      <soap12:address location="http://10.0.40.214/oic/svr.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

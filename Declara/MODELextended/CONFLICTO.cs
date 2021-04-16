@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+using System.Data.Entity;
+
+namespace Declara_V2.MODELextended
+{
+    public class CONFLICTO : MODELDeclara_V2.CONFLICTO
+    {
+
+     #region *** Atributos extendidos ***
+
+        public String V_ESTADO_CONFLICTO { get; set; }
+
+        public enum Properties
+        {
+            VID_NOMBRE,
+            VID_FECHA,
+            VID_HOMOCLAVE,
+            NID_CONFLICTO,
+            NID_DEC_ASOS,
+            NID_ESTADO_CONFLICTO,
+        }
+
+     #endregion
+
+    }
+}

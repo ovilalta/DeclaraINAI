@@ -1,0 +1,166 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="DeclaraINE.Formas.SiteMaster" %>
+
+
+<%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - DeclaraINAI</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+        <%: Scripts.Render("~/bundles/ine") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body onload="ComprobarVentana()">
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+            </Scripts>
+        </asp:ScriptManager>
+
+
+ 
+            <table class="Menu">
+                <tr>
+                    <td>    
+                        <div class="MS" >
+                            <p><img src="../Images/LogoDeclaraINE.png"> - Sistema de Declaraciones Patrimoniales  </p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="MI">
+                            <p>
+                                <asp:Literal ID="Usuario" runat="server"></asp:Literal>
+ 
+                                &nbsp;
+                            </p>
+                        </div>
+                    </td>
+                  </tr>
+                 <tr>
+                    <td colspan="2" class="M2">                                         
+                             <asp:Button ID="lkCierreSesion" CssClass=" btn-Men btn-sm bsalir" runat="server" Text="Cerrar Sesión"   OnClick="btnCerrar_Click" />                                       
+                    </td>
+                </tr>
+
+            </table>
+ 
+
+        <style>
+            .Menu {
+                width: 100%;
+                min-width: 968px;
+                background: #fff;
+                box-shadow: 0px 3px 5px rgba(78, 78, 78, 0.54);
+                vertical-align: top;
+                margin-right: 10px;
+            }
+            .MS {
+                background-color: #9c27b0;
+                height: 34px;
+                padding: 8px;
+            }
+                .MS p {
+                    height: 35px;
+                    text-align: left;
+                    color: white;
+                }
+                    .MS p img {
+                        height: 23px;
+                        width: 188px;
+                        padding: 0px 0px 0px 0px;
+                        margin-top: -3px;
+                    }
+
+
+            .MI {
+                background-color: #9c27b0;
+                height: 34px;
+                padding: 8px;
+            }
+                .MI p {
+                    height: 35px;
+                    text-align: right;
+                    color: white;
+                    font-size: 12px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: #ffffff;
+                }
+
+            .M2 {
+                background-color: #fff;
+                height: 34px;
+                padding: 8px;
+                text-align: right;
+            }
+           
+            .bsalir {
+                border: 1px solid #ea76fe;
+                border-radius: 5px;
+                color: black;
+                padding: 5px 8px 10px 30px;
+                background: url(../Imagenes/Candado.png) left center no-repeat;
+                background-color: #f8f8f8;
+                width: 130px;
+                background-position: 2px 2px;
+            }
+        </style>
+
+
+
+
+
+
+
+        <div class="mm">
+            <div>
+                <asp:Literal ID="HeaderText" runat="server"></asp:Literal>
+            </div>
+        
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+          
+            <hr />
+            <footer>
+                <p>
+                    &copy; <%: DateTime.Now.Year %> &nbsp;  Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos&nbsp;&nbsp;
+                    <asp:LinkButton ID="btnAvisoPrivacidad" runat="server">Ver aviso de privacidad</asp:LinkButton>
+                </p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
+
+
+<script type="text/javascript">
+    var prm = Sys.WebForms.PageRequestManager.getInstance();
+    prm.add_endRequest(
+        function () {
+            AlertSucccessFading();
+        });
+
+</script>

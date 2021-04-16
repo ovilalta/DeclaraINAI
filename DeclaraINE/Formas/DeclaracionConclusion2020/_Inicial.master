@@ -1,0 +1,390 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_Inicial.master.cs" Inherits="DeclaraINE.Formas.DeclaracionInicial._Inicial" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - <%: Declara_V2.BLLD.clsSistema.V_SISTEMA %></title>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body onload="ComprobarVentana()">
+    <form id="form1" runat="server" autocomplete="off">
+        <asp:ScriptManager runat="server" EnablePartialRendering="true" EnableScriptGlobalization="true">
+            <Scripts>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="MsWebFormsControlsResources" />
+                <asp:ScriptReference Name="MsWebFormsSiteResorces" />
+                <asp:ScriptReference Name="MsWebFormsPoper" />
+                <asp:ScriptReference Name="MsWebFormsValidations" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+            </Scripts>
+        </asp:ScriptManager>
+        <%: Scripts.Render("~/bundles/modernizr") %>
+        <asp:UpdatePanel ID="pnlMain" runat="server" UpdateMode="Always">
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="btnAnterior" />
+                <asp:AsyncPostBackTrigger ControlID="btnSiguiente" />
+                <asp:PostBackTrigger ControlID="lkImprimir1" />
+                <asp:PostBackTrigger ControlID="lkImprimir2" />
+                <asp:PostBackTrigger ControlID="lkImprimir3" />
+                <asp:PostBackTrigger ControlID="lkImprimir4" />
+                <asp:PostBackTrigger ControlID="lkImprimir5" />
+                <asp:PostBackTrigger ControlID="lkImprimir6" />
+            </Triggers>
+            <ContentTemplate>
+                <ul class="nav nav-tabs menu">
+                    <asp:Button ID="dummy" runat="server" BackColor="Transparent" Width="0px" Height="0px" CssClass="invisible" />
+                    <li runat="server" enableviewstate="false" id="liDatosGenerales"><a href="#menu1" data-toggle="tab">
+                        <img runat="server" id="imgDatosGenerales" enableviewstate="false" src="../../Content/nok.png" />Datos Generales
+                    </a></li>
+                    <li runat="server" enableviewstate="false" id="liBienes" visible="false"><a href="#menu2" data-toggle="tab">
+                        <img runat="server" id="imgBienes" enableviewstate="false" src="../../Content/nok.png" />Bienes
+                    </a></li>
+                    <li runat="server" enableviewstate="false" id="liInversiones" visible="false"><a href="#menu3" data-toggle="tab">
+                        <img runat="server" id="imgInversiones" enableviewstate="false" src="../../Content/nok.png" />Inversiones
+                    </a></li>
+                    <li runat="server" enableviewstate="false" id="liAdeudos" visible="false"><a href="#menu4" data-toggle="tab">
+                        <img runat="server" id="imgAdeudos" enableviewstate="false" src="../../Content/nok.png" />Adeudos
+                    </a></li>
+
+
+
+
+                    <li runat="server" enableviewstate="false" id="liIngresos" visible="false"><a href="#menu8" data-toggle="tab">
+                        <img runat="server" id="imgIngresos" enableviewstate="false" src="../../Content/nok.png" />Ingresos
+                    </a></li>
+
+                    <li runat="server" enableviewstate="false" id="liDesemp" visible="false"><a href="#menu10" data-toggle="tab">
+                        <img runat="server" id="imgDesemp" enableviewstate="false" src="../../Content/nok.png" />¿Servidor público año anterior? 
+                    </a></li>
+
+                    <li runat="server" enableviewstate="false" id="liComodato" visible="false"><a href="#menu9" data-toggle="tab">
+                        <img runat="server" id="imgComodato" enableviewstate="false" src="../../Content/nok.png" />Comodato
+                    </a></li>
+
+
+
+
+
+
+
+                    <li runat="server" enableviewstate="false" id="liObservaciones" visible="false"><a href="#menu5" data-toggle="tab">
+                        <img runat="server" id="imgObservaciones" enableviewstate="false" src="../../Content/nok.png" />Observaciones
+                    </a></li>
+                    <li runat="server" enableviewstate="false" id="liConflictoInteres" visible="false"><a href="#menu6" data-toggle="tab">
+                        <img runat="server" id="imgConflictoInteres" enableviewstate="false" src="../../Content/nok.png" />Declaración de Intereses
+                    </a></li>
+                    <li runat="server" enableviewstate="false" id="liEnvio" visible="false"><a href="#menu7" data-toggle="tab">
+                        <img runat="server" id="imgEnvio" enableviewstate="false" src="../../Content/nok.png" />Envío
+                    </a></li>
+                </ul>
+                <div class="tab-content">
+                    <div runat="server" enableviewstate="false" class="tab-pane fade level1" id="menu1">
+                        <ul class="nav nav-tabs">
+                            <li>
+                                <asp:LinkButton ID="lkDatosPersonales" runat="server" d-t="Datos Personales" OnClick="lkDatosPersonales_Click" EnableViewState="false">
+                                <img alt="Inicio" src="../../images/icons/ColorX32/Identity%20Theft.png">
+                                </asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkDomicilioParticular" runat="server" d-t="Domicilio Particular" OnClick="lkDomicilioParticular_Click" EnableViewState="false">
+                               <img alt="Inicio" src="../../images/icons/ColorX32/Home.png">
+                                </asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkCargo" runat="server" d-t="Cargo" OnClick="lkCargo_Click" EnableViewState="false">
+                               <img alt="Inicio" src="../../images/icons/ColorX32/Flow%20Chart.png">
+                                </asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkDomicilioLaboral" runat="server" d-t="Domicilio Laboral" OnClick="lkDomicilioLaboral_Click" EnableViewState="false">
+                               <img alt="Inicio" src="../../images/icons/ColorX32/Factory.png">
+                                </asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkDependientesEconomicos" runat="server" d-t="Cónyuge, concubina o concubinario y/o dependientes económicos" OnClick="lkDependientesEconomicos_Click" EnableViewState="false">
+                               <img alt="Inicio" src="../../images/icons/ColorX32/Family%20Man%20Woman.png">
+                                </asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lnkDatosCurriculares" runat="server" d-t="Datos Curriculares" EnableViewState="false" OnClick="lnkDatosCurriculares_Click">
+                               <img alt="Inicio" src="../../images/icons/ColorX32/Graduation%20Cap.png">
+                                </asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lnkExperienciaLaboral" runat="server" d-t="Experiencia Laboral" EnableViewState="false" OnClick="lnkExperienciaLaboral_Click"> 
+                               <img alt="Inicio" src="../../images/icons/ColorX32/Geography.png">
+                                </asp:LinkButton>
+                            </li>
+                            <li>
+                                <a></a>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkImprimir1" runat="server" d-t="Vista previa" OnClick="btnImprimir_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkVolver1" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+                    <div runat="server" enableviewstate="false" class="tab-pane fade level1" id="menu2" visible="false">
+                        <ul class="nav nav-tabs">
+                            <li>
+                                <asp:LinkButton ID="lkBienesInmuebles" runat="server" d-t="Bienes Inmuebles" OnClick="lkBienesInmuebles_Click" EnableViewState="false">
+                        <img alt="Inicio" src="../../images/icons/ColorX32/Exterior.png">
+                                </asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkBienesMuebles" runat="server" d-t="Otros Bienes" OnClick="lkBienesMuebles_Click" EnableViewState="false">
+                        <img alt="Inicio" src="../../images/icons/ColorX32/Table.png">
+                                </asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkVehiculos" runat="server" d-t="Vehículos" OnClick="lkVehiculos_Click" EnableViewState="false">
+                        <img alt="Inicio" src="../../images/icons/ColorX32/embotellamiento.png">
+                                </asp:LinkButton>
+                            </li>
+                            <li>
+                                <a></a>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkImprimir2" runat="server" d-t="Vista previa" OnClick="btnImprimir_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkVolver2" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+                    <div runat="server" enableviewstate="false" class="tab-pane fade level1" id="menu3" visible="false">
+                        <ul class="nav nav-tabs">
+
+                            <li>
+                                <asp:LinkButton ID="lkInversiones" runat="server" d-t="Inversiones" OnClick="lkInversiones_Click" EnableViewState="false">
+                        <img src="../../images/icons/ColorX32/Money%20Bag.png"></asp:LinkButton>
+
+                            </li>
+                            <li>
+                                <a></a>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkImprimir6" runat="server" d-t="Vista previa" OnClick="btnImprimir_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkVolver6" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+                    <div runat="server" enableviewstate="false" class="tab-pane fade level1" id="menu4" visible="false">
+                        <ul class="nav nav-tabs">
+
+                            <li>
+                                <asp:LinkButton ID="lkAdeudos" runat="server" d-t="Adeudos" OnClick="lkAdeudos_Click" EnableViewState="false">
+                        <img src="../../images/icons/ColorX32/Tax.png"></asp:LinkButton>
+                            </li>
+                            <li>
+                                <a></a>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkImprimir3" runat="server" d-t="Vista previa" OnClick="btnImprimir_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkVolver3" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+                    <div runat="server" enableviewstate="false" class="tab-pane fade level1" id="menu5" visible="false">
+                        <ul class="nav nav-tabs">
+                            <li>
+                                <asp:LinkButton ID="lkObservaciones" runat="server" d-t="Observaciones y Aclaraciones" OnClick="lkObservaciones_Click" EnableViewState="false">
+                        <img src="../../images/icons/ColorX32/Search.png"></asp:LinkButton>
+                            </li>
+                            <li>
+                                <a></a>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkImprimir8" runat="server" d-t="Vista previa" OnClick="btnImprimir_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="LinkButton2" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+                    <div runat="server" enableviewstate="false" class="tab-pane fade level1" id="menu6" visible="false">
+                        <ul class="nav nav-tabs">
+                            <li>
+                                <asp:LinkButton ID="lknConflicto" runat="server" d-t="Declaración de Intereses" OnClick="lknConflicto_Click" EnableViewState="false">
+                        <img src="../../images/icons/ColorX32/Transfer%20Between%20Users.png"></asp:LinkButton>
+                            </li>
+                            <li>
+                                <a></a>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkImprimir4" runat="server" d-t="Vista previa" OnClick="lkImprimir4_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkVolver4" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+                    <div runat="server" enableviewstate="false" class="tab-pane fade level1" id="menu7" visible="false">
+                        <ul class="nav nav-tabs">
+                            <li>
+                                <asp:LinkButton ID="lkEnvio" runat="server" d-t="Envío de Declaración" OnClick="lkEnvio_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/Reading%20Confirmation.png"></asp:LinkButton>
+                            </li>
+                            <li>
+                                <a></a>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkImprimir5" runat="server" d-t="Vista previa" OnClick="btnImprimir_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lkVolver5" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div runat="server" enableviewstate="false" class="tab-pane fade level1" id="menu8" visible="false">
+                        <ul class="nav nav-tabs">
+                            <li>
+                                <asp:LinkButton ID="lkIngresos" runat="server" d-t="Ingresos" OnClick="lkIngresos_Click" EnableViewState="false">
+                        <img src="../../images/icons/ColorX32/Money%20Bag.png"></asp:LinkButton>
+
+                            </li>
+                            <li>
+                                <a></a>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="LinkButton1" runat="server" d-t="Vista previa" OnClick="btnImprimir_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="LinkButton3" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div runat="server" enableviewstate="false" class="tab-pane fade level1" id="menu10" visible="false">
+                        <ul class="nav nav-tabs">
+                            <li>
+                                <asp:LinkButton ID="lkDesemp" runat="server" d-t="Te desempeñaste " OnClick="lkDesemp_Click" EnableViewState="false">
+                        <img src="../../images/icons/ColorX32/Identity%20Theft.png"></asp:LinkButton>
+
+                            </li>
+                            <li>
+                                <a></a>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="LinkButton7" runat="server" d-t="Vista previa" OnClick="btnImprimir_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="LinkButton8" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div runat="server" enableviewstate="false" class="tab-pane fade level1" id="menu9" visible="false">
+                        <ul class="nav nav-tabs">
+                            <li>
+                                <asp:LinkButton ID="lkComodato" runat="server" d-t="Comodato" OnClick="lkComodato_Click" EnableViewState="false">
+                        <img src="../../images/icons/ColorX32/Post%20Office.png"></asp:LinkButton>
+                            </li>
+                            <li>
+                                <a></a>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="LinkButton4" runat="server" d-t="Vista previa" OnClick="btnImprimir_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="LinkButton5" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
+                <div id="childContent">
+                    <asp:ContentPlaceHolder ID="ChildContent2" runat="server" />
+                </div>
+                <div id="foot">
+                    <div id="identificacion" class="col-xs-0 col-xs-5 left">
+                        <asp:Label ID="lblIdentificacion" runat="server" Text=" " Font-Size="Small"></asp:Label>
+                        <br>
+                        <asp:Label ID="lblEjercicio" runat="server" Font-Size="Small" Text=" "></asp:Label>
+                    </div>
+                    <div>
+                        <asp:Button ID="btnAnterior" runat="server" Text="Anterior" ToolTip="Regresar al apartado anterior" OnClick="btnAnterior_Click" CssClass="prev" />
+                        <asp:Button ID="btnSiguiente" runat="server" Text="Guardar" ToolTip="ir al siguiente apartado" OnClick="btnSiguiente_Click" CssClass="saveNext" ClientIDMode="Static" OnClientClick="return CheckReq();" />
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <asp:UpdateProgress AssociatedUpdatePanelID="pnlMain" runat="server"  EnableViewState="false">
+            <ProgressTemplate>
+                <div class="modal-backdrop fade in modal-front">
+                    <progress></progress>
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+    </form>
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+    Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+    function BeginRequestHandler(sender, args) { var oControl = args.get_postBackElement(); oControl.disabled = true; }
+
+</script>
+
+<script type="text/javascript">
+    var prm = Sys.WebForms.PageRequestManager.getInstance();
+    prm.add_endRequest(
+        function () {
+            req();
+            AlertSucccessFading();
+            clientPaging();
+            showMessageBox();
+            menuClick();
+            money();
+            number1();
+        });
+
+</script>

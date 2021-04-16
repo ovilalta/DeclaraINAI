@@ -1,0 +1,16 @@
+using System;
+
+namespace Declara.MODELextended
+{
+    public class ALTA : MODELDeclara.ALTA
+    {
+        public enum Properties
+        {
+            VID_NOMBRE,
+            VID_FECHA,
+            VID_HOMOCLAVE,
+            NID_DECLARACION,
+        }
+
+    }
+}

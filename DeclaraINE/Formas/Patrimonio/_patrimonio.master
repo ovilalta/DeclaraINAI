@@ -1,0 +1,99 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_patrimonio.master.cs" Inherits="DeclaraINE.Formas.Patrimonio._patrimonio" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <asp:PlaceHolder runat="server"></asp:PlaceHolder>
+    <%: Scripts.Render("~/bundles/modernizr") %>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <title></title>
+</head>
+<body onload="ComprobarVentana()">
+    <form id="form1" runat="server" autocomplete="off">
+        <asp:ScriptManager runat="server" EnablePartialRendering="true">
+            <Scripts>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="MsWebFormsControlsResources" />
+                <asp:ScriptReference Name="MsWebFormsSiteResorces" />
+                <asp:ScriptReference Name="MsWebFormsPoper" />
+                <asp:ScriptReference Name="MsWebFormsValidations" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+            </Scripts>
+        </asp:ScriptManager>
+        <ul class="nav nav-tabs menu">
+            <asp:Button ID="dummy" runat="server" BackColor="Transparent" Width="0px" Height="0px" CssClass="invisible" />
+            <li runat="server" enableviewstate="false" id="liDatosGenerales" class="active"><a href="#menu1" data-toggle="tab">Patrimonio
+            </a></li>
+
+        </ul>
+        <div class="tab-content">
+            <div runat="server" enableviewstate="false" class="tab-pane fade level1 active in" id="menu1">
+                <ul class="nav nav-tabs">
+                    <li>
+                        <asp:LinkButton ID="btnPatrimonio" runat="server" d-t="Consulta Patrimonio" OnClick="btnPatrimonio_Click" EnableViewState="false">
+                                <img alt="Inicio" src="../../images/icons/ColorX32/File_2.png">
+                        </asp:LinkButton>
+                    </li>
+                    <li>
+                        <a></a>
+                    </li>
+                    <li>
+                        <asp:LinkButton ID="lkImprimir" runat="server" d-t="Imprimir" OnClick="lkImprimir_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
+                    </li>
+                    <li>
+                        <asp:LinkButton ID="lkVolver" runat="server" d-t="Volver al menù principal" OnClick="lkVolver_Click" EnableViewState="false">                       
+                        <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+
+
+
+        <asp:UpdatePanel ID="pnlMain" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+
+                <div id="childContent">
+                    <asp:ContentPlaceHolder ID="ChildContent2" runat="server" />
+                </div>
+
+            </ContentTemplate>
+        </asp:UpdatePanel>
+
+    </form>
+</body>
+</html>
+
+
+<script type="text/javascript">
+    var prm = Sys.WebForms.PageRequestManager.getInstance();
+    prm.add_endRequest(
+        function () {
+            req();
+            AlertSucccessFading();
+            clientPaging();
+            showMessageBox();
+            menuClick();
+            money();
+        });
+
+</script>

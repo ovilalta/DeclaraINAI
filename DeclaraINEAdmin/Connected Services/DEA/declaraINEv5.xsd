@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://www.example.org" elementFormDefault="qualified" targetNamespace="http://www.example.org" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="MessageV">
+    <xsd:sequence>
+      <xsd:element name="messge" type="xsd:string" />
+      <xsd:element name="status" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DeclaraINEV">
+    <xsd:sequence>
+      <xsd:element name="ESTATUS_EMPLEADO" type="xsd:string" />
+      <xsd:element name="PRIMER_APELLIDO" type="xsd:string" />
+      <xsd:element name="SEGUNDO_APELLIDO" type="xsd:string" />
+      <xsd:element name="NOMBRE" type="xsd:string" />
+      <xsd:element name="NUMERO_EMPLEADO" type="xsd:string" />
+      <xsd:element name="CURP" type="xsd:string" />
+      <xsd:element name="RFC" type="xsd:string" />
+      <xsd:element name="CODIGO_PUESTO" type="xsd:string" />
+      <xsd:element name="DENOMINACION_PUESTO" type="xsd:string" />
+      <xsd:element name="INICIO_LABORAL_INSTITUTO" type="xsd:string" />
+      <xsd:element name="REGIMEN_CONTRATACION" type="xsd:string" />
+      <xsd:element name="PERIODO_CONTRATACION" type="xsd:string" />
+      <xsd:element name="VIGENCIA_CONTRATACION" type="xsd:string" />
+      <xsd:element name="CLAVE_ADSCRIPCION" type="xsd:string" />
+      <xsd:element name="AREA_ADSCRIPCION" type="xsd:string" />
+      <xsd:element name="CLAVE_PRIMER_NIVEL" type="xsd:string" />
+      <xsd:element name="PRIMER_NIVEL" type="xsd:string" />
+      <xsd:element name="CLAVE_SEGUNDO_NIVEL" type="xsd:string" />
+      <xsd:element name="SEGUNDO_NIVEL" type="xsd:string" />
+      <xsd:element name="NIVEL_TABULADOR" type="xsd:string" />
+      <xsd:element name="SUELDO_BASE" type="xsd:decimal" />
+      <xsd:element name="COMPENSACION_GARANTIZADA" type="xsd:decimal" />
+      <xsd:element name="BRUTO_MENSUAL" type="xsd:decimal" />
+      <xsd:element name="TERMINO_LABORAL_INSTITUTO" type="xsd:string" />
+      <xsd:element name="CAMBIO" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="input">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="REGIMEN_CONTRATACION" type="xsd:string" />
+        <xsd:element name="CLAVE_ADSCRIPCION" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ouput">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" name="Message" type="MessageV" />
+        <xsd:element maxOccurs="unbounded" name="DeclaraINE" type="DeclaraINEV" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

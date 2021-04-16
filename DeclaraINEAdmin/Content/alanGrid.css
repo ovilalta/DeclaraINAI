@@ -1,0 +1,109 @@
+﻿
+alanGrid-theme,
+table.alanGrid-theme,
+.alanGrid-theme td label {
+    font-family: Calibri;
+    font-size: 14px;
+    position: relative;
+    /*display: inline-block;*/
+    vertical-align: middle;
+    width: 100%;
+    background-color:white !important;
+}
+
+/* header styles */
+.alanGrid-theme th {
+    background: url('sprite.png') repeat-x 0px 0px;
+    border-color: #989898 #cbcbcb #989898 #989898;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px medium;
+    color: #000;
+    padding: 4px 5px 4px 10px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+
+.alanGrid-theme td {
+    padding: 4px 10px 4px 10px;
+    text-align: left;
+}
+
+    .alanGrid-theme td image:disabled,
+    .alanGrid-theme td input:disabled,
+    .alanGrid-theme td textarea:disabled,
+    .alanGrid-theme td select:disabled {
+        background: #ECECEC;
+        cursor: not-allowed;
+    }
+
+.alanGrid-theme td button:disabled,
+.alanGrid-theme td input[type="submit"]:disabled {
+    display: none;
+}
+
+
+/* alternating row style */
+.alanGrid-theme .alt-data-row {
+    background-color: #edf5ff;
+}
+
+.pagination-ys {
+    /*display: inline-block;*/
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+    .pagination-ys table > tbody > tr > td {
+        display: inline;
+    }
+
+        .pagination-ys table > tbody > tr > td > a,
+        .pagination-ys table > tbody > tr > td > span {
+            position: relative;
+            float: left;
+            padding: 8px 12px;
+            line-height: 1.42857143;
+            text-decoration: none;
+            color: #dd4814;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            margin-left: -1px;
+        }
+
+        .pagination-ys table > tbody > tr > td > span {
+            position: relative;
+            float: left;
+            padding: 8px 12px;
+            line-height: 1.42857143;
+            text-decoration: none;
+            margin-left: -1px;
+            z-index: 2;
+            color: #aea79f;
+            background-color: #f5f5f5;
+            border-color: #dddddd;
+            cursor: default;
+        }
+
+        .pagination-ys table > tbody > tr > td:first-child > a,
+        .pagination-ys table > tbody > tr > td:first-child > span {
+            margin-left: 0;
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+        }
+
+        .pagination-ys table > tbody > tr > td:last-child > a,
+        .pagination-ys table > tbody > tr > td:last-child > span {
+            border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        .pagination-ys table > tbody > tr > td > a:hover,
+        .pagination-ys table > tbody > tr > td > span:hover,
+        .pagination-ys table > tbody > tr > td > a:focus,
+        .pagination-ys table > tbody > tr > td > span:focus {
+            color: #97310e;
+            background-color: #eeeeee;
+            border-color: #dddddd;
+        }

@@ -1,0 +1,14 @@
+using System;
+
+namespace Declara.MODELextended
+{
+    public class CAT_DOCUMENTO_OBTENIDO : MODELDeclara.CAT_DOCUMENTO_OBTENIDO
+    {
+        public enum Properties
+        {
+            NID_DOCUMENTO_OBTENIDO,
+            V_DOCUMENTO_OBTENIDO,
+        }
+
+    }
+}

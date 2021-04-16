@@ -1,0 +1,19 @@
+﻿.modal {
+    display: block;
+}
+
+.fade {
+    opacity: inherit;
+}
+
+.modal-dialog {
+    top: 10%;
+}
+
+.modal-header {
+    background-color: #008366;
+}
+
+.modal-body {
+    text-align: justify;
+}

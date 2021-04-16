@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ine.mx/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ine.mx/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ine.mx/">
+      <s:element name="Transparencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NUM_EMPLEADO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ID_DECLARA" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="T_D" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ANIO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NOMARCH" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ENVIADO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FIMPRESION" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FEC_ENVIO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransparenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransparenciaResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Modificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NUM_EMPLEADO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ID_DECLARA" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="T_D" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ANIO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NOMARCH" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModificacionResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Inicial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NUM_EMPLEADO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ID_DECLARA" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="T_D" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ANIO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NOMARCH" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InicialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InicialResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Conclusion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NUM_EMPLEADO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ID_DECLARA" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="T_D" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ANIO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NOMARCH" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConclusionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConclusionResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Acuse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NUM_EMPLEADO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ID_DECLARA" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="T_D" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ANIO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NOMARCH" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcuseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AcuseResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Responsiva">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NUM_EMPLEADO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResponsivaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponsivaResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Estadistica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NUM_EMPLEADO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CONTROL" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EstadisticaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EstadisticaResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Conflicto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Dia" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NUM_EMPLEADO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CONTROL" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConflictoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConflictoResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Consulta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RFC" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaResult" type="tns:ArrayOfListaDeclara" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfListaDeclara">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ListaDeclara" nillable="true" type="tns:ListaDeclara" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ListaDeclara">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Num_Empleado" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Declara" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="T_D" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Anio" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Hora_Envio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fec_Envio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RFC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Desc_T_D" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TransparenciaSoapIn">
+    <wsdl:part name="parameters" element="tns:Transparencia" />
+  </wsdl:message>
+  <wsdl:message name="TransparenciaSoapOut">
+    <wsdl:part name="parameters" element="tns:TransparenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:Modificacion" />
+  </wsdl:message>
+  <wsdl:message name="ModificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="InicialSoapIn">
+    <wsdl:part name="parameters" element="tns:Inicial" />
+  </wsdl:message>
+  <wsdl:message name="InicialSoapOut">
+    <wsdl:part name="parameters" element="tns:InicialResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConclusionSoapIn">
+    <wsdl:part name="parameters" element="tns:Conclusion" />
+  </wsdl:message>
+  <wsdl:message name="ConclusionSoapOut">
+    <wsdl:part name="parameters" element="tns:ConclusionResponse" />
+  </wsdl:message>
+  <wsdl:message name="AcuseSoapIn">
+    <wsdl:part name="parameters" element="tns:Acuse" />
+  </wsdl:message>
+  <wsdl:message name="AcuseSoapOut">
+    <wsdl:part name="parameters" element="tns:AcuseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResponsivaSoapIn">
+    <wsdl:part name="parameters" element="tns:Responsiva" />
+  </wsdl:message>
+  <wsdl:message name="ResponsivaSoapOut">
+    <wsdl:part name="parameters" element="tns:ResponsivaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EstadisticaSoapIn">
+    <wsdl:part name="parameters" element="tns:Estadistica" />
+  </wsdl:message>
+  <wsdl:message name="EstadisticaSoapOut">
+    <wsdl:part name="parameters" element="tns:EstadisticaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConflictoSoapIn">
+    <wsdl:part name="parameters" element="tns:Conflicto" />
+  </wsdl:message>
+  <wsdl:message name="ConflictoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConflictoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSoapIn">
+    <wsdl:part name="parameters" element="tns:Consulta" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="fileSoap">
+    <wsdl:operation name="Transparencia">
+      <wsdl:input message="tns:TransparenciaSoapIn" />
+      <wsdl:output message="tns:TransparenciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Modificacion">
+      <wsdl:input message="tns:ModificacionSoapIn" />
+      <wsdl:output message="tns:ModificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Inicial">
+      <wsdl:input message="tns:InicialSoapIn" />
+      <wsdl:output message="tns:InicialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Conclusion">
+      <wsdl:input message="tns:ConclusionSoapIn" />
+      <wsdl:output message="tns:ConclusionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Acuse">
+      <wsdl:input message="tns:AcuseSoapIn" />
+      <wsdl:output message="tns:AcuseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Responsiva">
+      <wsdl:input message="tns:ResponsivaSoapIn" />
+      <wsdl:output message="tns:ResponsivaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Estadistica">
+      <wsdl:input message="tns:EstadisticaSoapIn" />
+      <wsdl:output message="tns:EstadisticaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Conflicto">
+      <wsdl:input message="tns:ConflictoSoapIn" />
+      <wsdl:output message="tns:ConflictoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Consulta">
+      <wsdl:input message="tns:ConsultaSoapIn" />
+      <wsdl:output message="tns:ConsultaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="fileSoap" type="tns:fileSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Transparencia">
+      <soap:operation soapAction="http://ine.mx/Transparencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Modificacion">
+      <soap:operation soapAction="http://ine.mx/Modificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Inicial">
+      <soap:operation soapAction="http://ine.mx/Inicial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Conclusion">
+      <soap:operation soapAction="http://ine.mx/Conclusion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Acuse">
+      <soap:operation soapAction="http://ine.mx/Acuse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Responsiva">
+      <soap:operation soapAction="http://ine.mx/Responsiva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estadistica">
+      <soap:operation soapAction="http://ine.mx/Estadistica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Conflicto">
+      <soap:operation soapAction="http://ine.mx/Conflicto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Consulta">
+      <soap:operation soapAction="http://ine.mx/Consulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="fileSoap12" type="tns:fileSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Transparencia">
+      <soap12:operation soapAction="http://ine.mx/Transparencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Modificacion">
+      <soap12:operation soapAction="http://ine.mx/Modificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Inicial">
+      <soap12:operation soapAction="http://ine.mx/Inicial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Conclusion">
+      <soap12:operation soapAction="http://ine.mx/Conclusion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Acuse">
+      <soap12:operation soapAction="http://ine.mx/Acuse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Responsiva">
+      <soap12:operation soapAction="http://ine.mx/Responsiva" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Estadistica">
+      <soap12:operation soapAction="http://ine.mx/Estadistica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Conflicto">
+      <soap12:operation soapAction="http://ine.mx/Conflicto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Consulta">
+      <soap12:operation soapAction="http://ine.mx/Consulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="file">
+    <wsdl:port name="fileSoap" binding="tns:fileSoap">
+      <soap:address location="http://10.0.40.210/Files/file.asmx" />
+    </wsdl:port>
+    <wsdl:port name="fileSoap12" binding="tns:fileSoap12">
+      <soap12:address location="http://10.0.40.210/Files/file.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

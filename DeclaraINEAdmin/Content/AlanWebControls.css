@@ -1,0 +1,816 @@
+﻿.AlanGridViewContainer {
+    background-color: #F3F3FF;
+    padding: 5px 6px 5px 6px;
+    width: 100%;
+    display: flexbox;
+}
+
+.AlanGridView {
+    border: 1px solid #989898;
+    border-collapse: collapse;
+    color: black;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    width: inherit;
+    background-color: white;
+}
+
+    .AlanGridView,
+    .AlanGridView td,
+    .AlanGridView td label {
+        font-family: Calibri;
+        font-size: 14px;
+        vertical-align: middle;
+    }
+
+        .AlanGridView td {
+            padding: 4px 10px 4px 10px;
+            border-right: solid 1px #CDCDCD;
+            font-size: 14px;
+            white-space: pre-wrap;
+        }
+
+            .AlanGridView td label,
+            .AlanGridView td input {
+                display: inline-block;
+                vertical-align: middle;
+                position: relative;
+            }
+
+                .AlanGridView td input[type="checkbox"],
+                .AlanGridView th input[type="checkbox"] {
+                    height: 18px;
+                    width: 18px;
+                }
+
+                .AlanGridView td image:disabled,
+                .AlanGridView td input:disabled,
+                .AlanGridView td textarea:disabled,
+                .AlanGridView td select:disabled {
+                    background: #ECECEC;
+                    cursor: not-allowed;
+                }
+
+                .AlanGridView td button:disabled,
+                .AlanGridView td input[type="submit"]:disabled {
+                    display: none;
+                }
+
+        .AlanGridView th {
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAC0CAYAAABR55ZyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC4SURBVEhL7ZRBDsIwDASd/f8nyy8SOwlb3BUIAao4QiyN2rXdVulhymTZUTiut3ofyhjj9TMlIu6T/c3iQ+h9mMCYwwQnnd0E/KgJ9GD3ADG6CU6C3QTBsYB7mEC4mzh57BVW2Ot/wjdy+IFQtu1y5tj7jgBdxruEFps0WIJJWQqab3AjeVLao+w6O4IWCxosQdCSgrJzii6h35xuS9C4K9Cam4C3ZgK1VROo1U2c/FUrrLDXDwezKzCEFrjvDwTIAAAAAElFTkSuQmCC') repeat-x 0 0;
+            border-color: #CFCFCF #989898 #CFCFCF;
+            border-style: solid solid solid none;
+            border-width: 1px 1px 1px;
+            padding: 4px 5px 4px 10px;
+            font-weight: bold;
+            text-align: center;
+            vertical-align: bottom;
+        }
+
+.AlternatingRowStyle {
+    background-color: #EBF3FF;
+}
+
+.AlanPagerContainer {
+    background-color: #E3E3EF;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding-top: 4px 10px 1px 10px;
+    font-size: 14px;
+    vertical-align: middle;
+    height: 42px;
+    text-align: right;
+}
+
+.AlanPager {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    border-radius: 4px;
+}
+
+    .AlanPager div,
+    .AlanPager li {
+        display: inline;
+        text-align: center;
+    }
+
+    .AlanPager div,
+    .AlanPager a,
+    .AlanPager span {
+        float: left;
+        display: block;
+        font-size: 14px;
+        text-decoration: none;
+        padding: 5px 12px;
+        margin-left: -1px;
+        border: 1px solid transparent;
+        line-height: 1.5;
+    }
+
+        .AlanPager li:first-child a,
+        .AlanPager div:first-child,
+        .AlanPager li:first-child span {
+            -moz-border-radius: 40px 0 0 40px;
+            -webkit-border-radius: 0;
+            border-radius: 40px 0 0 40px;
+        }
+
+        .AlanPager li:last-child a,
+        .AlanPager div:last-child,
+        .AlanPager li:last-child span {
+            -moz-border-radius: 0 40px 40px 0;
+            -webkit-border-radius: 0;
+            border-radius: 0 40px 40px 0;
+        }
+
+    .clickable,
+    .AlanPager a {
+        border-color: #ddd;
+        color: #4285F4;
+        background: #fff;
+    }
+
+    .active,
+    .AlanPager span {
+        border-color: #4285F4;
+        background: #4285F4;
+        color: #fff;
+    }
+
+    .AlanPager div:hover,
+    .AlanPager a:hover {
+        background: #eee;
+        text-decoration: none;
+    }
+
+.TreeView,
+.TreeView ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    .TreeView li {
+        margin-top: 4px;
+        /*padding: 0 2.2em;*/
+        padding: 0 1em;
+        color: #000;
+        font-weight: 700;
+        position: relative;
+        vertical-align: middle;
+        background-color: transparent;
+    }
+
+        .TreeView li label {
+            padding-left: 33px;
+            display: inline-block;
+            text-align: center center;
+            position: relative;
+            vertical-align: middle;
+        }
+
+        .TreeView li input[node="true"] {
+            display: none;
+        }
+
+            .TreeView li input[node="true"] + label {
+                background-position-y: center;
+                position: relative;
+                cursor: url('Expand.cur'),copy;
+                display: inline-block;
+                background: url("https://lfportal.loudoun.gov/LFPortalinternet/images/iFolderClosed.gif") no-repeat 13px 0, url("https://www.thecssninja.com/demo/css_tree/toggle-small-expand.png") no-repeat -3px 0;
+            }
+
+            .TreeView li input[node="true"]:checked + label {
+                cursor: url('Contract.cur'),alias;
+                background: url("https://lfportal.loudoun.gov/LFPortalinternet/images/iFolderOpen.gif") no-repeat 13px 0, url("https://www.thecssninja.com/demo/css_tree/toggle-small.png") no-repeat -3px 0;
+            }
+
+            .TreeView li input[node="true"] + label + ul {
+                display: none;
+            }
+
+            .TreeView li input[node="true"]:checked + label + ul {
+                display: inline;
+            }
+
+        .TreeView li a {
+            padding-left: 19px;
+            margin-left: 1px;
+            cursor: pointer;
+            display: inline;
+            text-align: center center;
+            position: relative;
+            vertical-align: middle;
+            text-decoration: none;
+            color: #000;
+            font-weight: 300;
+            background: url("https://www.thecssninja.com/demo/css_tree/document.png") no-repeat 0 0;
+        }
+
+
+.HorizontalOrg ul {
+    padding-top: 20px;
+    position: relative;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+.HorizontalOrg li {
+    float: left;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+    .HorizontalOrg li input[node="true"] {
+        display: none;
+    }
+
+    /*Conecta con los hermanos*/
+    .HorizontalOrg li::before,
+    .HorizontalOrg li::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 50%;
+        border-top: 1px solid #ccc;
+        width: 50%;
+        height: 20px;
+    }
+
+    .HorizontalOrg li::after {
+        right: auto;
+        left: 50%;
+        border-left: 1px solid #ccc;
+    }
+
+    /*Quitamos los conectoras a los sin hermanos*/
+    .HorizontalOrg li:only-child::after, .HorizontalOrg li:only-child::before {
+        display: none;
+    }
+
+    /*Quitamos el espacio de arriba a los hijos unicos*/
+    .HorizontalOrg li:only-child {
+        padding-top: 0;
+    }
+
+    /*Quitamos los conectores horizontales en las orillas*/
+    .HorizontalOrg li:first-child::before, .HorizontalOrg li:last-child::after {
+        border: 0 none;
+    }
+
+    /*Conectores verticales en los ultimos nodos*/
+    .HorizontalOrg li:last-child::before {
+        border-right: 1px solid #ccc;
+        -webkit-border-radius: 0 5px 0 0;
+        -moz-border-radius: 0 5px 0 0;
+        border-radius: 0 5px 0 0;
+    }
+
+    .HorizontalOrg li:first-child::after {
+        -webkit-border-radius: 5px 0 0 0;
+        -moz-border-radius: 5px 0 0 0;
+        border-radius: 5px 0 0 0;
+    }
+
+    /*Time to add downward connectors from parents*/
+    .HorizontalOrg ul ul::before,
+    .HorizontalOrg li ul::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        border-left: 1px solid #ccc;
+        width: 0;
+        height: 20px;
+    }
+
+    .HorizontalOrg li input[node="true"] + label {
+        cursor: url('Expand.cur'),copy;
+    }
+
+    .HorizontalOrg li input[node="true"]:checked + label {
+        cursor: url('Contract.cur'),alias;
+    }
+
+    .HorizontalOrg a,
+    .HorizontalOrg li div[node="true"] {
+        text-decoration: none;
+        color: #666;
+        font-family: arial, verdana, tahoma;
+        font-size: 11px;
+        display: inline-block;
+    }
+
+    .HorizontalOrg li div[node="true"] {
+        border: 1px solid #ccc;
+        padding: 5px 10px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+    }
+
+        /*Efecto on mouse over sobre el nodo y los hijos*/
+        .HorizontalOrg li div[node="true"]:hover,
+        .HorizontalOrg li div[node="true"]:hover + ul li div[node="true"] {
+            background: #c8e4f8;
+            color: #000;
+            border: 1px solid #94a0b4;
+        }
+            /*Efecto Tambien en los conectores*/
+            .HorizontalOrg li div[node="true"]:hover + ul li::after,
+            .HorizontalOrg li div[node="true"]:hover + ul li::before,
+            .HorizontalOrg li div[node="true"]:hover + ul::before,
+            .HorizontalOrg li div[node="true"]:hover + ul ul::before {
+                border-color: #8490A4;
+                border-width: 2px;
+            }
+
+
+.VerticalOrg li {
+    margin: 0 0;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+}
+
+    .VerticalOrg li input[node="true"] {
+        display: none;
+    }
+
+/*.HorizontalOrg ul ul::before,
+.HorizontalOrg li ul::before {
+}*/
+
+.VerticalOrg ul ul::before,
+.VerticalOrg ul li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    right: auto;
+    left: -20px;
+    border-left: 1px solid #ccc;
+    bottom: 50px;
+}
+
+.VerticalOrg ul li::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    width: 25px;
+    height: 20px;
+    right: auto;
+    left: -20px;
+    border-top: 1px solid #ccc;
+}
+
+.VerticalOrg li input[node="true"] + label {
+    cursor: url('Expand.cur'),copy;
+}
+
+.VerticalOrg li input[node="true"]:checked + label {
+    cursor: url('Contract.cur'),alias;
+}
+
+.VerticalOrg a,
+.VerticalOrg li div[node="true"] {
+    text-decoration: none;
+    color: #666;
+    font-family: arial, verdana, tahoma;
+    font-size: 11px;
+    display: inline-block;
+}
+
+.VerticalOrg li div[node="true"] {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+/*Remove connectors before root*/
+.VerticalOrg > ul > li::before, .VerticalOrg > ul > li::after {
+    border: 0;
+}
+/*Remove connectors after last child*/
+.VerticalOrg li:last-child::before {
+    height: 30px;
+}
+
+.VerticalOrg li div[node="true"]:hover,
+.VerticalOrg li div[node="true"]:hover + ul li div[node="true"] {
+    background: #c8e4f8;
+    color: #000;
+    border: 1px solid #94a0b4;
+}
+    /*Efecto Tambien en los conectores*/
+    .VerticalOrg li div[node="true"]:hover + ul li::after,
+    .VerticalOrg li div[node="true"]:hover + ul li::before,
+    .VerticalOrg li div[node="true"]:hover + ul ul::before {
+        border-color: #8490A4;
+        border-width: 2px;
+    }
+
+
+.modal {
+    text-align: center;
+    padding: 0;
+}
+
+.modal-front,
+div[id*="QstBox"] {
+    z-index: 100009;
+}
+
+
+.modal-backdrop progress {
+    z-index: 100001;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-color: Black;
+    filter: alpha(opacity=60);
+}
+
+
+
+.modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+}
+
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.modal-header-success,
+.modal-header-warning,
+.modal-header-danger,
+.modal-header-info,
+.modal-header-primary {
+    color: #fff;
+    padding: 9px 15px;
+    border-bottom: 1px solid #EEE;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100.1%;
+}
+
+.modal-footer-success,
+.modal-footer-warning,
+.modal-footer-danger,
+.modal-footer-info,
+.modal-footer-primary {
+    color: #fff;
+    padding: 9px 15px;
+    border-bottom: 1px solid #EEE;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 100.1%;
+}
+
+.modal-header-success,
+.modal-footer-success {
+    background-color: #5cb85c;
+}
+
+.modal-header-warning,
+.modal-footer-warning {
+    background-color: #f0ad4e;
+}
+
+.modal-header-danger,
+.modal-footer-danger {
+    background-color: #d9534f;
+}
+
+.modal-header-primary,
+.modal-footer-primary {
+    background-color: #428bca;
+}
+
+.success,
+.warning,
+.danger,
+.info,
+.primary {
+    color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.success {
+    background-color: #5cb85c;
+}
+
+.warning {
+    background-color: #f0ad4e;
+}
+
+.danger {
+    background-color: #d9534f;
+}
+
+.info {
+    background-color: #5bc0de;
+}
+
+.primary {
+    background-color: #428bca;
+}
+
+.secondary .default {
+    color: #000;
+    border-bottom: 1px solid #111;
+    background-color: #FFF;
+}
+
+.success-light,
+.warning-light,
+.danger-light,
+.info-light,
+.primary-light {
+    color: #000;
+    border-bottom: 1px solid #DDD;
+}
+
+.success-light {
+    background-color: #dff0d8;
+}
+
+.warning-light {
+    background-color: #fcf8e3;
+}
+
+.danger-light {
+    background-color: #a94442;
+}
+
+.info-light {
+    background-color: #d9edf7;
+}
+
+.primary-light {
+    background-color: #92dbFF;
+}
+
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.invisible {
+    display: none;
+}
+
+
+/*--------------           Menu      ----------------------------*/
+
+.menu {
+    background-color: #ffd5fe;
+    margin-right: 0px;
+    border-bottom: 1px solid #C124BD;
+    border-bottom: -1px solid #ddd;
+    text-align: center
+}
+
+    .menu > li.active > a,
+    .menu > li.active > a:focus,
+    .menu > li.active > a:hover {
+        border: 1px solid #C124BD;
+        border-bottom-color: #f8f8f8;
+        border-top-left-radius: 23px;
+        color: #970093;
+        background-color: #f8f8f8;
+        cursor: default;
+    }
+
+    .menu > li {
+        margin-bottom: 0;
+        color: #fff;
+        border-top-left-radius: 23px;
+        margin-right: 1px;
+        margin-top: 4px;
+        border-color: #f8f8f8 #f8f8f8 #c124bd
+    }
+
+        .menu > li > a {
+            line-height: 1.42857143;
+            border: 1px solid transparent;
+            border-radius: 4px 4px 0 0;
+            margin-right: 0;
+            margin-bottom: -1px;
+        }
+
+            .menu > li > a:hover {
+                border: 1px solid #C124BD;
+                border-bottom-color: transparent;
+                background-color: #e96ae6;
+                color: #fff;
+                border-top-left-radius: 23px;
+            }
+
+.atv {
+    background-color: #E6E6E6 !important;
+}
+
+.level1 {
+    background-color: #F8F8F8;
+    border-color: #C124BD;
+    border-width: 1px;
+    vertical-align: middle central;
+    text-align: center;
+    display: inline-table;
+}
+
+    .level1 ul {
+        padding: 0 0 9px 0;
+        border-color: #c124bd;
+    }
+
+    .level1 li {
+        display: inline-table;
+        vertical-align: middle central;
+    }
+
+        .level1 li a {
+            color: #333;
+            background-color: #fff;
+            margin: 9px 0 0 20px;
+            border-radius: 5px 5px 5px 5px;
+            border-color: #E6E6E6;
+            padding: 7px;
+        }
+
+            .level1 li a:hover {
+                border-color: #D6D6D6;
+            }
+
+    .level1 a[d-t]:hover:after {
+        content: attr(d-t);
+        margin: 2px 0 0 0;
+        padding: 5px;
+        color: white;
+        position: absolute;
+        font-size: small;
+        left: 25%;
+        top: 100%;
+        white-space: nowrap;
+        z-index: 200;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 2px;
+        -moz-box-shadow: 0px 0px 4px #222;
+        -webkit-box-shadow: 0px 0px 4px #222;
+        box-shadow: 0px 0px 4px #222;
+        background-color: black;
+    }
+
+.dropmain {
+    margin: 0 0 0 20px;
+}
+
+    .dropmain ul {
+        float: right !important;
+        left: 100%;
+        top: 3%;
+    }
+
+.dropm {
+    border-color: #D6D6D6 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap;
+}
+
+    .dropm ul {
+        position: absolute;
+    }
+
+    .dropm > ul > li {
+        position: absolute;
+    }
+
+    .dropm li {
+        padding: 0;
+        display: list-item;
+        min-width: 150px;
+    }
+
+        .dropm li a {
+            margin: 0;
+            border-radius: 0;
+            border-color: #E6E6E6;
+            padding: 7px;
+        }
+
+            .dropm li a:hover {
+                background: #FFDAFF !important;
+            }
+
+.yesno {
+    display: inline-block;
+}
+
+    .yesno input[type=radio] {
+        position: absolute;
+        visibility: hidden;
+        display: none;
+    }
+
+    .yesno div label {
+        color: black;
+        display: inline-block;
+        cursor: pointer;
+        height: 100%;
+        padding: 5px 19px 0 15px;
+        vertical-align: middle;
+    }
+
+    .yesno > div span.yes input[type=radio]:checked + label {
+        color: White;
+        background: green;
+    }
+
+    .yesno > div span.no input[type=radio]:checked + label {
+        color: White;
+        background: red;
+        margin-left: -4px;
+        padding: 5px 15px 0 15px !important;
+    }
+
+    .yesno > div span.no input[type=radio] + label {
+        border-left: solid 1px #CCC;
+        margin-left: -4px;
+        padding: 5px 15px 0 15px !important;
+    }
+
+    .yesno > div span input[type=radio] + label {
+        height: 100%;
+    }
+
+    .yesno > div {
+        border: solid 1px #CCC;
+        display: inline-block;
+        border-radius: 5px;
+        overflow: hidden;
+        height: 34px;
+        vertical-align: middle;
+    }
+
+    .yesno > input[type=radio] + label {
+        font-weight: normal;
+        color: red;
+    }
+
+    .yesno > input[type=radio] + label {
+        position: absolute;
+        visibility: hidden;
+        display: none;
+    }
+
+    .yesno > input[type=radio]:checked + label {
+        display: inline-block;
+        visibility: visible;
+        position: relative;
+    }

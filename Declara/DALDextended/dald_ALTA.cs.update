@@ -1,0 +1,43 @@
+using System;
+using System.Linq;
+using MODELDeclara;
+using Declara.Exceptions;
+using Declara.DAL;
+
+namespace Declara.DALD
+{
+    internal partial class dald_ALTA : dal_ALTA
+    {
+
+        #region *** Propiedades ***
+        #endregion
+
+
+        #region *** Constructores ***
+
+        #endregion
+
+
+        #region *** Metodos ***
+        internal static int nNuevo_NID_DECLARACION(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE)
+        {
+            MODELDeclara.cnxDECLARA dbInt = new MODELDeclara.cnxDECLARA();
+            try
+            {
+                var query = ((from   p in dbInt.ALTA
+                              where  p.VID_NOMBRE == VID_NOMBRE && 
+                                    p.VID_FECHA == VID_FECHA && 
+                                    p.VID_HOMOCLAVE == VID_HOMOCLAVE
+                              select p.NID_DECLARACION).Max());
+                return query + 1;
+            }
+            catch
+            {
+                return 1;
+            }
+        }
+
+        #endregion
+
+    }
+}

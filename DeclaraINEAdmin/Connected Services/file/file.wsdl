@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ine.mx/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ine.mx/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ine.mx/">
+      <s:element name="ListaDocumentos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NID_SISTEMA" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaDocumentosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaDocumentosResult" type="tns:ArrayOfDocumento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDocumento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Documento" nillable="true" type="tns:Documento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Documento">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NID_DOCUMENTO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_DESCRIPCION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_TIPO_MIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_EXTENSION" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SOAPHeaderCredentials" type="tns:SOAPHeaderCredentials" />
+      <s:complexType name="SOAPHeaderCredentials">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ObtenDocumento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NID_SISTEMA" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NID_DOCUMENTO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenDocumentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenDocumentoResult" type="tns:SerializedFile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SerializedFile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FileBytes" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MimeType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenReportePorId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NID_SISTEMA" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="VID_REPORTE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParametrosDeConsulta" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DeclaracionesInforme">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="V_FECHA_CONSULTA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_HORA_CONSULTA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_RFC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_CURP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_NOMBRE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_SELLO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DECLARACIONES" type="tns:ArrayOfDeclaracionesInformeDetalle" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDeclaracionesInformeDetalle">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DeclaracionesInformeDetalle" nillable="true" type="tns:DeclaracionesInformeDetalle" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DeclaracionesInformeDetalle">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NID_ORIGEN" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="C_EJERCICIO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NID_DECLARACION" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NID_TIPO_DECLARACION" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_TIPO_DECLARACION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F_PRESENTACION" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NID_ESTADO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_ESTADO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenReportePorIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenReportePorIdResult" type="tns:SerializedFile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenReportePorIdyFecha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NID_SISTEMA" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="VID_REPORTE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="F_FECHA" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParametrosDeConsulta" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenReportePorIdyFechaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenReportePorIdyFechaResult" type="tns:SerializedFile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenReporteGemeloPorId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NID_SISTEMA" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="VID_REPORTE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NID_GEMELO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParametrosDeConsulta" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenReporteGemeloPorIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenReporteGemeloPorIdResult" type="tns:SerializedFile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenReporteGemeloPorIdyFecha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NID_SISTEMA" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="VID_REPORTE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NID_GEMELO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="F_FECHA" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParametrosDeConsulta" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenReporteGemeloPorIdyFechaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenReporteGemeloPorIdyFechaResult" type="tns:SerializedFile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenReportePorId_DataSource">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NID_SISTEMA" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="VID_REPORTE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Parametros" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataSource" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenReportePorId_DataSourceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenReportePorId_DataSourceResult" type="tns:SerializedFile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenReportePorIdyFecha_DataSource">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NID_SISTEMA" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="VID_REPORTE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="F_FECHA" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Parametros" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataSource" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenReportePorIdyFecha_DataSourceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenReportePorIdyFecha_DataSourceResult" type="tns:SerializedFile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenReporteGemeloPorId_DataSource">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NID_SISTEMA" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="VID_REPORTE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NID_GEMELO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Parametros" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataSource" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenReporteGemeloPorId_DataSourceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenReporteGemeloPorId_DataSourceResult" type="tns:SerializedFile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenReporteGemeloPorIdyFecha_DataSource">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NID_SISTEMA" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="VID_REPORTE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NID_GEMELO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="F_FECHA" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Parametros" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataSource" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenReporteGemeloPorIdyFecha_DataSourceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenReporteGemeloPorIdyFecha_DataSourceResult" type="tns:SerializedFile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDefinicionPorId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NID_SISTEMA" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="VID_REPORTE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DefinicionDelReporte">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NID_SISTEMA" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VID_REPORTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_ARCHIVO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_NOMBRE_DESCARGA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_LOGO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NID_TECNOLOGIA" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NID_VERSION" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PARAMETROS" type="tns:ArrayOfParametroDelReporte" />
+          <s:element minOccurs="0" maxOccurs="1" name="MimeType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfParametroDelReporte">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ParametroDelReporte" nillable="true" type="tns:ParametroDelReporte" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ParametroDelReporte">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="VID_PARAMETRO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="V_PARAMETRO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerDefinicionPorIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerDefinicionPorIdResult" type="tns:DefinicionDelReporte" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDefinicionPorIdyFecha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NID_SISTEMA" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="VID_REPORTE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="F_FECHA" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDefinicionPorIdyFechaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerDefinicionPorIdyFechaResult" type="tns:DefinicionDelReporte" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDefinicionGemelaPorId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NID_SISTEMA" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NID_GEMELO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="VID_REPORTE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDefinicionGemelaPorIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerDefinicionGemelaPorIdResult" type="tns:DefinicionDelReporte" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDefinicionGemelaPorIdyFecha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NID_SISTEMA" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="VID_REPORTE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NID_GEMELO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="F_FECHA" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDefinicionGemelaPorIdyFechaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerDefinicionGemelaPorIdyFechaResult" type="tns:DefinicionDelReporte" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListaDocumentosSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaDocumentos" />
+  </wsdl:message>
+  <wsdl:message name="ListaDocumentosSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaDocumentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaDocumentosSOAPHeaderCredentials">
+    <wsdl:part name="SOAPHeaderCredentials" element="tns:SOAPHeaderCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ObtenDocumentoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenDocumento" />
+  </wsdl:message>
+  <wsdl:message name="ObtenDocumentoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenDocumentoSOAPHeaderCredentials">
+    <wsdl:part name="SOAPHeaderCredentials" element="tns:SOAPHeaderCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReportePorIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenReportePorId" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReportePorIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenReportePorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReportePorIdSOAPHeaderCredentials">
+    <wsdl:part name="SOAPHeaderCredentials" element="tns:SOAPHeaderCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReportePorIdyFechaSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenReportePorIdyFecha" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReportePorIdyFechaSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenReportePorIdyFechaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReportePorIdyFechaSOAPHeaderCredentials">
+    <wsdl:part name="SOAPHeaderCredentials" element="tns:SOAPHeaderCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReporteGemeloPorIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenReporteGemeloPorId" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReporteGemeloPorIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenReporteGemeloPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReporteGemeloPorIdSOAPHeaderCredentials">
+    <wsdl:part name="SOAPHeaderCredentials" element="tns:SOAPHeaderCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReporteGemeloPorIdyFechaSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenReporteGemeloPorIdyFecha" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReporteGemeloPorIdyFechaSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenReporteGemeloPorIdyFechaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReporteGemeloPorIdyFechaSOAPHeaderCredentials">
+    <wsdl:part name="SOAPHeaderCredentials" element="tns:SOAPHeaderCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReportePorId_DataSourceSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenReportePorId_DataSource" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReportePorId_DataSourceSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenReportePorId_DataSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReportePorId_DataSourceSOAPHeaderCredentials">
+    <wsdl:part name="SOAPHeaderCredentials" element="tns:SOAPHeaderCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReportePorIdyFecha_DataSourceSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenReportePorIdyFecha_DataSource" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReportePorIdyFecha_DataSourceSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenReportePorIdyFecha_DataSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReportePorIdyFecha_DataSourceSOAPHeaderCredentials">
+    <wsdl:part name="SOAPHeaderCredentials" element="tns:SOAPHeaderCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReporteGemeloPorId_DataSourceSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenReporteGemeloPorId_DataSource" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReporteGemeloPorId_DataSourceSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenReporteGemeloPorId_DataSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReporteGemeloPorId_DataSourceSOAPHeaderCredentials">
+    <wsdl:part name="SOAPHeaderCredentials" element="tns:SOAPHeaderCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReporteGemeloPorIdyFecha_DataSourceSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenReporteGemeloPorIdyFecha_DataSource" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReporteGemeloPorIdyFecha_DataSourceSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenReporteGemeloPorIdyFecha_DataSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenReporteGemeloPorIdyFecha_DataSourceSOAPHeaderCredentials">
+    <wsdl:part name="SOAPHeaderCredentials" element="tns:SOAPHeaderCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDefinicionPorIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDefinicionPorId" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDefinicionPorIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDefinicionPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDefinicionPorIdSOAPHeaderCredentials">
+    <wsdl:part name="SOAPHeaderCredentials" element="tns:SOAPHeaderCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDefinicionPorIdyFechaSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDefinicionPorIdyFecha" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDefinicionPorIdyFechaSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDefinicionPorIdyFechaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDefinicionPorIdyFechaSOAPHeaderCredentials">
+    <wsdl:part name="SOAPHeaderCredentials" element="tns:SOAPHeaderCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDefinicionGemelaPorIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDefinicionGemelaPorId" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDefinicionGemelaPorIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDefinicionGemelaPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDefinicionGemelaPorIdSOAPHeaderCredentials">
+    <wsdl:part name="SOAPHeaderCredentials" element="tns:SOAPHeaderCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDefinicionGemelaPorIdyFechaSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDefinicionGemelaPorIdyFecha" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDefinicionGemelaPorIdyFechaSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDefinicionGemelaPorIdyFechaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDefinicionGemelaPorIdyFechaSOAPHeaderCredentials">
+    <wsdl:part name="SOAPHeaderCredentials" element="tns:SOAPHeaderCredentials" />
+  </wsdl:message>
+  <wsdl:portType name="fileSoap">
+    <wsdl:operation name="ListaDocumentos">
+      <wsdl:input message="tns:ListaDocumentosSoapIn" />
+      <wsdl:output message="tns:ListaDocumentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenDocumento">
+      <wsdl:input message="tns:ObtenDocumentoSoapIn" />
+      <wsdl:output message="tns:ObtenDocumentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReportePorId">
+      <wsdl:input message="tns:ObtenReportePorIdSoapIn" />
+      <wsdl:output message="tns:ObtenReportePorIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReportePorIdyFecha">
+      <wsdl:input message="tns:ObtenReportePorIdyFechaSoapIn" />
+      <wsdl:output message="tns:ObtenReportePorIdyFechaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReporteGemeloPorId">
+      <wsdl:input message="tns:ObtenReporteGemeloPorIdSoapIn" />
+      <wsdl:output message="tns:ObtenReporteGemeloPorIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReporteGemeloPorIdyFecha">
+      <wsdl:input message="tns:ObtenReporteGemeloPorIdyFechaSoapIn" />
+      <wsdl:output message="tns:ObtenReporteGemeloPorIdyFechaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReportePorId_DataSource">
+      <wsdl:input message="tns:ObtenReportePorId_DataSourceSoapIn" />
+      <wsdl:output message="tns:ObtenReportePorId_DataSourceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReportePorIdyFecha_DataSource">
+      <wsdl:input message="tns:ObtenReportePorIdyFecha_DataSourceSoapIn" />
+      <wsdl:output message="tns:ObtenReportePorIdyFecha_DataSourceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReporteGemeloPorId_DataSource">
+      <wsdl:input message="tns:ObtenReporteGemeloPorId_DataSourceSoapIn" />
+      <wsdl:output message="tns:ObtenReporteGemeloPorId_DataSourceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReporteGemeloPorIdyFecha_DataSource">
+      <wsdl:input message="tns:ObtenReporteGemeloPorIdyFecha_DataSourceSoapIn" />
+      <wsdl:output message="tns:ObtenReporteGemeloPorIdyFecha_DataSourceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDefinicionPorId">
+      <wsdl:input message="tns:ObtenerDefinicionPorIdSoapIn" />
+      <wsdl:output message="tns:ObtenerDefinicionPorIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDefinicionPorIdyFecha">
+      <wsdl:input message="tns:ObtenerDefinicionPorIdyFechaSoapIn" />
+      <wsdl:output message="tns:ObtenerDefinicionPorIdyFechaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDefinicionGemelaPorId">
+      <wsdl:input message="tns:ObtenerDefinicionGemelaPorIdSoapIn" />
+      <wsdl:output message="tns:ObtenerDefinicionGemelaPorIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDefinicionGemelaPorIdyFecha">
+      <wsdl:input message="tns:ObtenerDefinicionGemelaPorIdyFechaSoapIn" />
+      <wsdl:output message="tns:ObtenerDefinicionGemelaPorIdyFechaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="fileSoap" type="tns:fileSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListaDocumentos">
+      <soap:operation soapAction="http://ine.mx/ListaDocumentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListaDocumentosSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenDocumento">
+      <soap:operation soapAction="http://ine.mx/ObtenDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ObtenDocumentoSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReportePorId">
+      <soap:operation soapAction="http://ine.mx/ObtenReportePorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ObtenReportePorIdSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReportePorIdyFecha">
+      <soap:operation soapAction="http://ine.mx/ObtenReportePorIdyFecha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ObtenReportePorIdyFechaSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReporteGemeloPorId">
+      <soap:operation soapAction="http://ine.mx/ObtenReporteGemeloPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ObtenReporteGemeloPorIdSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReporteGemeloPorIdyFecha">
+      <soap:operation soapAction="http://ine.mx/ObtenReporteGemeloPorIdyFecha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ObtenReporteGemeloPorIdyFechaSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReportePorId_DataSource">
+      <soap:operation soapAction="http://ine.mx/ObtenReportePorId_DataSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ObtenReportePorId_DataSourceSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReportePorIdyFecha_DataSource">
+      <soap:operation soapAction="http://ine.mx/ObtenReportePorIdyFecha_DataSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ObtenReportePorIdyFecha_DataSourceSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReporteGemeloPorId_DataSource">
+      <soap:operation soapAction="http://ine.mx/ObtenReporteGemeloPorId_DataSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ObtenReporteGemeloPorId_DataSourceSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReporteGemeloPorIdyFecha_DataSource">
+      <soap:operation soapAction="http://ine.mx/ObtenReporteGemeloPorIdyFecha_DataSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ObtenReporteGemeloPorIdyFecha_DataSourceSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDefinicionPorId">
+      <soap:operation soapAction="http://ine.mx/ObtenerDefinicionPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ObtenerDefinicionPorIdSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDefinicionPorIdyFecha">
+      <soap:operation soapAction="http://ine.mx/ObtenerDefinicionPorIdyFecha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ObtenerDefinicionPorIdyFechaSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDefinicionGemelaPorId">
+      <soap:operation soapAction="http://ine.mx/ObtenerDefinicionGemelaPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ObtenerDefinicionGemelaPorIdSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDefinicionGemelaPorIdyFecha">
+      <soap:operation soapAction="http://ine.mx/ObtenerDefinicionGemelaPorIdyFecha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ObtenerDefinicionGemelaPorIdyFechaSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="fileSoap12" type="tns:fileSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListaDocumentos">
+      <soap12:operation soapAction="http://ine.mx/ListaDocumentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListaDocumentosSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenDocumento">
+      <soap12:operation soapAction="http://ine.mx/ObtenDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ObtenDocumentoSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReportePorId">
+      <soap12:operation soapAction="http://ine.mx/ObtenReportePorId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ObtenReportePorIdSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReportePorIdyFecha">
+      <soap12:operation soapAction="http://ine.mx/ObtenReportePorIdyFecha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ObtenReportePorIdyFechaSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReporteGemeloPorId">
+      <soap12:operation soapAction="http://ine.mx/ObtenReporteGemeloPorId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ObtenReporteGemeloPorIdSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReporteGemeloPorIdyFecha">
+      <soap12:operation soapAction="http://ine.mx/ObtenReporteGemeloPorIdyFecha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ObtenReporteGemeloPorIdyFechaSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReportePorId_DataSource">
+      <soap12:operation soapAction="http://ine.mx/ObtenReportePorId_DataSource" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ObtenReportePorId_DataSourceSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReportePorIdyFecha_DataSource">
+      <soap12:operation soapAction="http://ine.mx/ObtenReportePorIdyFecha_DataSource" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ObtenReportePorIdyFecha_DataSourceSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReporteGemeloPorId_DataSource">
+      <soap12:operation soapAction="http://ine.mx/ObtenReporteGemeloPorId_DataSource" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ObtenReporteGemeloPorId_DataSourceSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenReporteGemeloPorIdyFecha_DataSource">
+      <soap12:operation soapAction="http://ine.mx/ObtenReporteGemeloPorIdyFecha_DataSource" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ObtenReporteGemeloPorIdyFecha_DataSourceSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDefinicionPorId">
+      <soap12:operation soapAction="http://ine.mx/ObtenerDefinicionPorId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ObtenerDefinicionPorIdSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDefinicionPorIdyFecha">
+      <soap12:operation soapAction="http://ine.mx/ObtenerDefinicionPorIdyFecha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ObtenerDefinicionPorIdyFechaSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDefinicionGemelaPorId">
+      <soap12:operation soapAction="http://ine.mx/ObtenerDefinicionGemelaPorId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ObtenerDefinicionGemelaPorIdSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDefinicionGemelaPorIdyFecha">
+      <soap12:operation soapAction="http://ine.mx/ObtenerDefinicionGemelaPorIdyFecha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ObtenerDefinicionGemelaPorIdyFechaSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="file">
+    <wsdl:port name="fileSoap" binding="tns:fileSoap">
+      <soap:address location="http://10.0.43.179/FilesSvr/file.asmx" />
+    </wsdl:port>
+    <wsdl:port name="fileSoap12" binding="tns:fileSoap12">
+      <soap12:address location="http://10.0.43.179/FilesSvr/file.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

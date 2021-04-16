@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="32e14beb872844d6a57d6467b0fdc310" Name="Diagram1">
+        <EntityTypeShape EntityType="DECLARAINE.CAT_ADEUDOS" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_AMBITO" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_ANIOS" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_AREA" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_DESTINORECURSOS" Width="1.5" PointX="5.75" PointY="43" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_DESTINORECURSOS_ARTIFICIO" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_EDOCIVIL" Width="1.5" PointX="3" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_ESTADOS" Width="1.5" PointX="0.75" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_ESTATUS_ESTUDIOS" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_FORMADQUI" Width="1.5" PointX="15.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_GRADO_ESTUDIOS" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_INMUEBLE" Width="1.5" PointX="15.5" PointY="42.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_INSTITUTO" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_INVERSION" Width="1.5" PointX="5.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_MARCAVEHICULO" Width="1.5" PointX="18.5" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_MUEBLE" Width="1.5" PointX="12.5" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_MUNICIPIO" Width="1.5" PointX="3" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_NIVEL_GOBIERNO" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_OTROS_ESTUDIOS" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_PAIS" Width="1.5" PointX="5.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_PARENTESCO" Width="1.5" PointX="13.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_PERS_JUR" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_PREVIAS2010" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_PTO" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_REP_TRANSP" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_STATUSADEUDO" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_STATUSINVERSION" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_SUBCATINVERSIONES" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_TIPO_ACTIVIDAD" Width="1.5" PointX="6.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_TIPO_DECLARA" Width="1.5" PointX="10.25" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_TIPO_PERIODO" Width="1.5" PointX="8.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_TITULAR" Width="1.5" PointX="5.75" PointY="38" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_UADMON" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_USO" Width="1.5" PointX="15.5" PointY="45.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CONFLICTO" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CONSULTA_REVISADOS" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_ACTIVIDAD_ACADEMICA" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_ACUSE" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_ADEUDOS" Width="1.5" PointX="14.75" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_ART8" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_CONTROL_SITPATRIMONIAL" Width="1.5" PointX="2.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_DATOS_HISTORICOS" Width="1.5" PointX="7.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_DATOSPERSONALES" Width="1.5" PointX="5.25" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_DECLARA" Width="1.5" PointX="12.5" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_DEPENDIENTES" Width="1.5" PointX="15.5" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_DETDOMICILIODEPENDIENTES" Width="1.5" PointX="13.25" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_DETDOMICILIOLABORAL" Width="1.5" PointX="7.5" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_DETDOMICILIOPERSONAL" Width="1.5" PointX="7.5" PointY="32.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_ESCOLARIDAD" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_EXP_PRIVADA" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_EXP_PUBLICO" Width="1.5" PointX="9.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_INGRESO_MENSUAL" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_INMUEBLES" Width="1.5" PointX="17.75" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_INVERSIONES" Width="1.5" PointX="8" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_MONTOENCARGO" Width="1.5" PointX="14.75" PointY="37.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_MUEBLES" Width="1.5" PointX="14.75" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_PRIVADO" Width="1.5" PointX="2.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_PUBLICO" Width="1.5" PointX="16.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_VEHICULO" Width="1.5" PointX="20.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_VENTAINMUEBLE" Width="1.5" PointX="19.75" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_VENTAINVERSIONES" Width="1.5" PointX="8" PointY="41.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_VENTAMUEBLE" Width="1.5" PointX="14.75" PointY="47.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.D_VENTAVEHICULO" Width="1.5" PointX="20.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.DETCREDITOADEUDOINMUEBLE" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.DETCREDITOADEUDOVEHICULO" Width="1.5" PointX="17.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.PADRON_2014_P" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.PADRON_MAY_2015" Width="1.5" PointX="18.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.PADRON_MAY_2016" Width="1.5" PointX="19.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.PADRON_MAY_2017" Width="1.5" PointX="19.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.PANTALLA_CAPTURADA" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.RFC_BORRAR" Width="1.5" PointX="14.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.TEMPORAL_EVOL_PAT" Width="1.5" PointX="20.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.TEMPORAR_INTERVALO" Width="1.5" PointX="4.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.TMP_ESTADISTICAS" Width="1.5" PointX="21.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_COLAB_APOR" Width="1.5" PointX="9.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_COMPARA_PTO" Width="1.5" PointX="21.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_FRECUENCIA" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_ING_GAS" Width="1.5" PointX="22.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_NAT_VINC" Width="1.5" PointX="0.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_PART_CONT" Width="1.5" PointX="22.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_PTO_2015" Width="1.5" PointX="22.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_PTO_2016" Width="1.5" PointX="22.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_PTO_RES270415" Width="1.5" PointX="23.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_PTO2" Width="1.5" PointX="23.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_TITUAR_AUX" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CAT_TSOCIEDAD" Width="1.5" PointX="24.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.CONTROL_DECLA" Width="1.5" PointX="24.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.DESCANSO" Width="1.5" PointX="24.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.DETCOMPRAVENTAS_INVERSION" Width="1.5" PointX="10.25" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.DETCOMPRAVENTAS_MUEBLE" Width="1.5" PointX="17" PointY="33.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.DETCOMPRAVENTAS_VEHICULO" Width="1.5" PointX="23" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.DETDECLARADEPENDIENTES" Width="1.5" PointX="17.75" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.PARON_INICIAL_2015" Width="1.5" PointX="24.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.RESCAT_PTO" Width="1.5" PointX="25.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VACTIVIDAD_ACADEMICA" Width="1.5" PointX="25.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VACUSE_HISTORICO" Width="1.5" PointX="26.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VADEUDOS" Width="1.5" PointX="26.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VARTIFICIO" Width="1.5" PointX="26.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VARTIFICIO_INV_VEHIC" Width="1.5" PointX="26.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VBIENESINMUEBLES" Width="1.5" PointX="26.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VBIENESINMUEBLES_TITULAR" Width="1.5" PointX="27.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VCAT_ESTADOS_DOMICILIO" Width="1.5" PointX="27.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VCAT_ESTADOS_LTRABAJO" Width="1.5" PointX="28.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VCAT_MUNICIPIO_DOMICILIO" Width="1.5" PointX="28.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VCAT_MUNICIPIO_LTRABAJO" Width="1.5" PointX="28.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VCOM_2014_2015" Width="1.5" PointX="28.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VCOM_DECLA_2015" Width="1.5" PointX="28.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VCOM_PADR_2015" Width="1.5" PointX="28.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VCOM_PADRON_MENOS2015" Width="1.5" PointX="28.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VCONTROL_AREA" Width="1.5" PointX="29.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VCONTROL_UADMON" Width="1.5" PointX="29.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VCONTROLA_DECLARA" Width="1.5" PointX="30.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VCONYUGE_DEPEND" Width="1.5" PointX="30.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VCUENTAS_BANCARIAS" Width="1.5" PointX="30.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VCUENTAS_SSI" Width="1.5" PointX="30.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VDATOS_2014" Width="1.5" PointX="30.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VDATOS_2015" Width="1.5" PointX="30.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VDATOS_DECLARANTE_SITUACION" Width="1.5" PointX="30.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VDECLA_INCONCLUSAS" Width="1.5" PointX="0.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VDIAS_ENVIO" Width="1.5" PointX="31.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VDOMDEPENDIENTES" Width="1.5" PointX="22.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VDOMICILIOS_DEPENDIENTES" Width="1.5" PointX="24.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VEDITA_PTO" Width="1.5" PointX="30.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VENV_TRANSPARENCIA" Width="1.5" PointX="32.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VEVO_AUTOS" Width="1.5" PointX="2.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VEXP_PRIVADA" Width="1.5" PointX="4.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VEXP_PUBLICA" Width="1.5" PointX="9.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VEXT_INIC_CONC" Width="1.5" PointX="32.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VGASTOS" Width="1.5" PointX="32.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VHIST_ADEUDO" Width="1.5" PointX="32.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VINCONCLUSAS" Width="1.5" PointX="32.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VINTEGRAINMUEBLES" Width="1.5" PointX="32.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VINTEGRAMUEBLES" Width="1.5" PointX="32.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VINTEGRAVEHICULOS" Width="1.5" PointX="32.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VINTEGRAVENTAINVERSION" Width="1.5" PointX="26.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VINTEGRAVENTAMUEBLES" Width="1.5" PointX="34.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VINVENT_INMUEBLE" Width="1.5" PointX="34.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VINVENT_VEHICULOS" Width="1.5" PointX="34.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VINVERSIONES" Width="1.5" PointX="34.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VMONITOR_CONFLICTO" Width="1.5" PointX="34.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VMUEBLES" Width="1.5" PointX="34.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VMUEBLES_TITULAR" Width="1.5" PointX="34.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VOTRO_INGRESO" Width="1.5" PointX="34.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VP_2015_B" Width="1.5" PointX="21.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VP_2015_B1" Width="1.5" PointX="23.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VPADRON_2014" Width="1.5" PointX="28.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VPADRON_2016" Width="1.5" PointX="34.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VPINTA_GRAFICA" Width="1.5" PointX="36.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VPREVIAS_2010" Width="1.5" PointX="36.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VREMUN_NETA" Width="1.5" PointX="36.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VREPSINDECLA" Width="1.5" PointX="11.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VSEGUIMIENTOPAT" Width="1.5" PointX="36.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VSIN_INICIAL_2015" Width="1.5" PointX="36.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VSIN_PADRON_2014" Width="1.5" PointX="36.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VUTILESCANEO_2010" Width="1.5" PointX="36.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VVEHICULO_CUEN_TITUL" Width="1.5" PointX="30.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VVEHICULOS" Width="1.5" PointX="36.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VVENTAINMUEBLES" Width="1.5" PointX="16.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VVENTAINMUEBLES_TITULAR" Width="1.5" PointX="7.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VVENTAINVERSION" Width="1.5" PointX="25.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VVENTAINVERSION_TITULAR" Width="1.5" PointX="38.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VVENTAMUEBLES" Width="1.5" PointX="0.75" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VVENTAMUEBLES_TITULAR" Width="1.5" PointX="2.75" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VVENTAVEHICULOS" Width="1.5" PointX="38.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DECLARAINE.VVENTAVEHICULOS_TITULAR" Width="1.5" PointX="38.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="DECLARAINE.CVE_UADMON_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_DESTINORECURSO" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_DESTINORECURSOS1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.EDO_CIVIL" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_ESTADO3" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_ID_ESTADO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.ESTADO_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.ESTADOS_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.ID_ESTADO" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_FORMA_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_FORMACOMPRA" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_FORMACOMPRA2" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_FORMAVENTA" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_FORMAVENTA1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_FORMAVENTA3" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_INMUEBLE1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_INVERSION3" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_MARCAVEHICULO_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_MUEBLE1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.ID_MUNICIPIO" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.MUNICIPIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.MUNICIPIOS_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_PAIS1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.ID_PAIS" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_PARENTESCO1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.TIPO_DECLARACION_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_TITULAR1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_TITULAR_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_TITULAR2" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_TITULAR3" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.CAT_USO1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.DECLARACION_ADEUDO" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.N_EMPLEADO_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.NUM_EMPLEADO_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.NUMERO_EMPLEADO_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.DECLARA_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.DECLARA_MONTO_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.DECLARA_VEHICULO_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.DECLARACION" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.DECLARACION1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.DECLARACION3" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.DOMI_LABORAL_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.DOMI_PERSONAL_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.DEPENDIENTES" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.DOMICILIO_DEPENDIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.COMPRA_INVERSIONES" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.COMPRAS_MUEBLES" ManuallyRouted="true" >
+          <ConnectorPoint PointX="16.25" PointY="34.817047526041677" />
+          <ConnectorPoint PointX="16.4975" PointY="34.817047526041677" />
+          <ConnectorPoint PointX="16.4975" PointY="35.504547526041677" />
+          <ConnectorPoint PointX="16.7525" PointY="35.504547526041677" />
+          <ConnectorPoint PointX="16.7525" PointY="34.817047526041677" />
+          <ConnectorPoint PointX="17" PointY="34.817047526041677" />
+        </AssociationConnector>
+        <AssociationConnector Association="DECLARAINE.COMPRAS_VEHICULO" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.VENTAS_INVERSIONES" ManuallyRouted="false" />
+        <AssociationConnector Association="DECLARAINE.VENTAS_MUEBLE" ManuallyRouted="true" >
+          <ConnectorPoint PointX="16.25" PointY="49.826650390624991" />
+          <ConnectorPoint PointX="17.640625" PointY="49.826650390624991" />
+          <ConnectorPoint PointX="17.640625" PointY="40.82013831380209" />
+          <ConnectorPoint PointX="18.40625" PointY="40.82013831380209" />
+          <ConnectorPoint PointX="18.40625" PointY="36.384095052083353" />
+        </AssociationConnector>
+        <AssociationConnector Association="DECLARAINE.VENTAS_VEHICULOS" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

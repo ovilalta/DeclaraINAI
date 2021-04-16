@@ -1,0 +1,29 @@
+using System;
+
+namespace Declara.MODELextended
+{
+    public class DECLARACION_DOM_PARTICULAR : MODELDeclara.DECLARACION_DOM_PARTICULAR
+    {
+        public enum Properties
+        {
+            VID_NOMBRE,
+            VID_FECHA,
+            VID_HOMOCLAVE,
+            NID_DECLARACION,
+            C_CODIGO_POSTAL,
+            NID_PAIS,
+            CID_ENTIDAD_FEDERATIVA,
+            CID_MUNICIPIO,
+            V_COLONIA,
+            V_DOMICILIO,
+            V_CORREO,
+            V_TEL_PARTICULAR,
+            V_TEL_CELULAR,
+            E_OBSERVACIONES,
+            E_OBSERVACIONES_MARCADO,
+            V_OBSERVACIONES_TESTADO,
+            NID_ESTADO_TESTADO,
+        }
+
+    }
+}

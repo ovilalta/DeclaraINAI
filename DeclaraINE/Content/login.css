@@ -1,0 +1,181 @@
+﻿body {
+    background-image: url("../Images/LoginBackground.png");
+    background-size: cover;
+}
+
+#l {
+    -moz-border-radius: 32px 32px 32px 32px;
+    -webkit-border-radius: 32px 32px 32px 32px;
+    border-radius: 32px 32px 32px 32px;
+    background-color: #fff;
+    width: 600px;
+    margin: 30px auto;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    padding: 15px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+#head {
+    font-weight: 500;
+    line-height: 3;
+    background-color: #B10E88;
+    color: white;
+    -moz-border-radius: 32px 32px 0 0;
+    -webkit-border-radius: 32px 32px 0 0;
+    border-radius: 32px 32px 0 0;
+    font-size: 22px;
+    font-family: sans-serif;
+    vertical-align: middle;
+    height: 66px;
+    margin: -15px;
+}
+
+    #head div {
+        position: absolute;
+    }
+
+    #head img {
+        Height: 66px;
+        display: inline-block;
+        /*float: left;*/
+    }
+
+#body {
+    position: relative;
+    padding: 55px 120px 30px 120px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    color: #336699;
+    font-size: 15px;
+    font-family: sans-serif;
+    vertical-align: middle;
+    font-weight: bold;
+    height: 500px;
+}
+
+    #body table {
+        width: 100%;
+    }
+
+        #body table tr td {
+            padding-top: 16px;
+            position: relative;
+            display: table;
+            border-collapse: separate;
+        }
+
+            #body table tr td div {
+                position: relative;
+                display: inline-flex;
+            }
+
+#bodyReg {
+    position: relative;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    color: #336699;
+    font-size: 15px;
+    font-family: sans-serif;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+
+    #bodyReg table {
+        width: 100%;
+    }
+
+        #bodyReg table tr td {
+            padding-top: 16px;
+            position: relative;
+            display: table;
+            border-collapse: separate;
+        }
+
+            #bodyReg table tr td span {
+                min-width: 180px;
+            }
+
+
+
+#foot {
+    text-align: right;
+    border-top: 1px solid #d4007f;
+    border-radius: 0 0 32px 32px;
+    background-color: #fff;
+    height: 65px;
+}
+
+    #foot img {
+        vertical-align: middle;
+        border: 1px solid transparent;
+        Height: 59px;
+        Width: 190px;
+        display: inline-block;
+        -moz-border-radius: 0 0 32px 0;
+        -webkit-border-radius: 0 0 32px 0;
+        border-radius: 0 0 32px 0;
+    }
+
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+
+.progress {
+    overflow: visible;
+    height: 3px;
+    -webkit-box-shadow: initial;
+    box-shadow: initial;
+    background-color: #ffffff;
+}
+
+    .progress div {
+        text-align: left;
+        color: #000000;
+        height: 100%;
+        font-size: 15px;
+        line-height: 17px;
+        font-weight: bold;
+    }
+
+.progresstext {
+    width: 75%;
+}
+
+    .progresstext #Nivelseguridad {
+        margin-top: -12px;
+        text-align: left;
+        height: 17px;
+    }
+
+#mgsSugerencia {
+    text-align: center;
+    color: red;
+    width: 100%;
+    max-width: 100%;
+}
+
+.progress .active, .AlanPager span {
+    border-color: #4285F4;
+    color: white;
+    height: 18px;
+}

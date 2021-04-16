@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0E6FB141-2CE2-425C-8D56-4B3689EBF0DF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MODEL</RootNamespace>
+    <AssemblyName>MODEL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.2.1100\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CAT_ADEUDOS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_AMBITO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_ANIOS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_AREA.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_COLAB_APOR.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_COMPARA_PTO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_DESTINORECURSOS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_DESTINORECURSOS_ARTIFICIO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_EDOCIVIL.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_ESTADOS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_ESTATUS_ESTUDIOS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_FORMADQUI.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_FRECUENCIA.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_GRADO_ESTUDIOS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_ING_GAS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_INMUEBLE.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_INSTITUTO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_INVERSION.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_MARCAVEHICULO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_MUEBLE.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_MUNICIPIO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_NAT_VINC.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_NIVEL_GOBIERNO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_OTROS_ESTUDIOS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_PAIS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_PARENTESCO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_PART_CONT.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_PERS_JUR.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_PREVIAS2010.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_PTO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_PTO2.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_PTO_2015.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_PTO_2016.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_PTO_RES270415.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_REP_TRANSP.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_STATUSADEUDO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_STATUSINVERSION.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_SUBCATINVERSIONES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_TIPO_ACTIVIDAD.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_TIPO_DECLARA.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_TIPO_PERIODO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_TITUAR_AUX.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_TITULAR.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_TSOCIEDAD.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_UADMON.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_USO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONFLICTO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONSULTA_REVISADOS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROL_DECLA.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DECLARA.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DECLARA.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DECLARA.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DECLARA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DECLARA.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DESCANSO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DETCOMPRAVENTAS_INVERSION.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DETCOMPRAVENTAS_MUEBLE.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DETCOMPRAVENTAS_VEHICULO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DETCREDITOADEUDOINMUEBLE.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DETCREDITOADEUDOVEHICULO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DETDECLARADEPENDIENTES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_ACTIVIDAD_ACADEMICA.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_ACUSE.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_ADEUDOS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_ART8.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_CONTROL_SITPATRIMONIAL.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_DATOSPERSONALES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_DATOS_HISTORICOS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_DECLARA.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_DEPENDIENTES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_DETDOMICILIODEPENDIENTES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_DETDOMICILIOLABORAL.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_DETDOMICILIOPERSONAL.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_ESCOLARIDAD.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_EXP_PRIVADA.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_EXP_PUBLICO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_INGRESO_MENSUAL.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_INMUEBLES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_INVERSIONES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_MONTOENCARGO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_MUEBLES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_PRIVADO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_PUBLICO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_VEHICULO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_VENTAINMUEBLE.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_VENTAINVERSIONES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_VENTAMUEBLE.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="D_VENTAVEHICULO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PADRON_2014_P.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PADRON_MAY_2015.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PADRON_MAY_2016.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PADRON_MAY_2017.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PANTALLA_CAPTURADA.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARON_INICIAL_2015.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RESCAT_PTO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RFC_BORRAR.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEMPORAL_EVOL_PAT.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEMPORAR_INTERVALO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TMP_ESTADISTICAS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VACTIVIDAD_ACADEMICA.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VACUSE_HISTORICO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VADEUDOS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VARTIFICIO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VARTIFICIO_INV_VEHIC.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VBIENESINMUEBLES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VBIENESINMUEBLES_TITULAR.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VCAT_ESTADOS_DOMICILIO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VCAT_ESTADOS_LTRABAJO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VCAT_MUNICIPIO_DOMICILIO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VCAT_MUNICIPIO_LTRABAJO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VCOM_2014_2015.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VCOM_DECLA_2015.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VCOM_PADRON_MENOS2015.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VCOM_PADR_2015.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VCONTROLA_DECLARA.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VCONTROL_AREA.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VCONTROL_UADMON.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VCONYUGE_DEPEND.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VCUENTAS_BANCARIAS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VCUENTAS_SSI.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VDATOS_2014.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VDATOS_2015.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VDATOS_DECLARANTE_SITUACION.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VDECLA_INCONCLUSAS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VDIAS_ENVIO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VDOMDEPENDIENTES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VDOMICILIOS_DEPENDIENTES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VEDITA_PTO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VENV_TRANSPARENCIA.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VEVO_AUTOS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VEXP_PRIVADA.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VEXP_PUBLICA.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VEXT_INIC_CONC.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VGASTOS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VHIST_ADEUDO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VINCONCLUSAS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VINTEGRAINMUEBLES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VINTEGRAMUEBLES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VINTEGRAVEHICULOS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VINTEGRAVENTAINVERSION.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VINTEGRAVENTAMUEBLES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VINVENT_INMUEBLE.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VINVENT_VEHICULOS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VINVERSIONES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VMONITOR_CONFLICTO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VMUEBLES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VMUEBLES_TITULAR.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VOTRO_INGRESO.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VPADRON_2014.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VPADRON_2016.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VPINTA_GRAFICA.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VPREVIAS_2010.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VP_2015_B.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VP_2015_B1.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VREMUN_NETA.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VREPSINDECLA.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VSEGUIMIENTOPAT.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VSIN_INICIAL_2015.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VSIN_PADRON_2014.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VUTILESCANEO_2010.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VVEHICULOS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VVEHICULO_CUEN_TITUL.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VVENTAINMUEBLES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VVENTAINMUEBLES_TITULAR.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VVENTAINVERSION.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VVENTAINVERSION_TITULAR.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VVENTAMUEBLES.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VVENTAMUEBLES_TITULAR.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VVENTAVEHICULOS.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VVENTAVEHICULOS_TITULAR.cs">
+      <DependentUpon>DECLARA.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="DECLARA.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DECLARA.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DECLARA.edmx.diagram">
+      <DependentUpon>DECLARA.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DECLARA.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DECLARA.edmx</DependentUpon>
+      <LastGenOutput>DECLARA.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DECLARA.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DECLARA.edmx</DependentUpon>
+      <LastGenOutput>DECLARA.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

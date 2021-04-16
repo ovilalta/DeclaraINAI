@@ -1,0 +1,36 @@
+ El volumen de la unidad C es Windows
+ El n£mero de serie del volumen es: 267D-E4C9
+
+ Directorio de C:\Users\UBALDO\source\repos\DeclaraINESQLServer\DeclaraINE\Scripts
+
+16/12/2019  05:34 p. m.    <DIR>          .
+16/12/2019  05:34 p. m.    <DIR>          ..
+07/03/2018  07:09 p. m.             1,803 AlanWebControls.js
+30/11/2017  11:39 a. m.            69,707 bootstrap.js
+30/11/2017  11:39 a. m.            37,045 bootstrap.min.js
+30/11/2017  11:45 a. m.           254,827 jquery-3.1.1-vsdoc.js
+30/11/2017  11:45 a. m.           267,194 jquery-3.1.1.js
+30/11/2017  11:45 a. m.            86,709 jquery-3.1.1.min.js
+30/11/2017  11:45 a. m.           131,638 jquery-3.1.1.min.map
+30/11/2017  11:45 a. m.           214,014 jquery-3.1.1.slim.js
+30/11/2017  11:45 a. m.            69,309 jquery-3.1.1.slim.min.js
+30/11/2017  11:45 a. m.           103,978 jquery-3.1.1.slim.min.map
+30/11/2017  11:43 a. m.           162,316 jquery-3.2.1.intellisense.js
+30/11/2017  11:43 a. m.           268,039 jquery-3.2.1.js
+30/11/2017  11:43 a. m.            86,659 jquery-3.2.1.min.js
+30/11/2017  11:43 a. m.           131,678 jquery-3.2.1.min.map
+30/11/2017  11:43 a. m.           215,256 jquery-3.2.1.slim.js
+30/11/2017  11:43 a. m.            69,597 jquery-3.2.1.slim.min.js
+30/11/2017  11:43 a. m.           104,595 jquery-3.2.1.slim.min.map
+16/12/2019  05:34 p. m.                 0 librerias.txt
+09/07/2019  02:00 p. m.             4,069 Login.js
+17/08/2018  10:40 a. m.               555 ModalTooltip.js
+30/11/2017  11:39 a. m.            51,351 modernizr-2.8.3.js
+30/11/2017  11:40 a. m.             8,536 respond.js
+30/11/2017  11:40 a. m.            10,143 respond.matchmedia.addListener.js
+30/11/2017  11:40 a. m.             5,019 respond.matchmedia.addListener.min.js
+30/11/2017  11:40 a. m.             4,377 respond.min.js
+10/07/2019  03:53 p. m.            18,200 Site.js
+04/12/2019  03:50 p. m.    <DIR>          WebForms
+              26 archivos      2,376,614 bytes
+               3 dirs  45,243,834,368 bytes libres
