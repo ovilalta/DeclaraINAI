@@ -184,6 +184,15 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             set => txtE_CUENTA.Text = value;
         }
 
+        public String NOM_MONEDA
+        {
+            get => ddlTipoMonedaInm.SelectedValue;
+            set
+            {
+                ddlTipoMonedaInm.SelectedValue = value;
+            }
+        }
+
         public String V_TIPO_MONEDA
         {
             get => txtTipo_Moneda.Text;

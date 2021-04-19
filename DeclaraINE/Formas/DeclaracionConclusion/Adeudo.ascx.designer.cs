@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.DeclaracionConclusion {
-    
-    
-    public partial class Adeudo {
-        
+namespace DeclaraINE.Formas.DeclaracionConclusion
+{
+
+
+    public partial class Adeudo
+    {
+
         /// <summary>
         /// Control cmbNID_TIPO_ADEUDO.
         /// </summary>
@@ -20,7 +22,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbNID_TIPO_ADEUDO;
-        
+
         /// <summary>
         /// Control cmbNID_PAIS.
         /// </summary>
@@ -29,7 +31,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbNID_PAIS;
-        
+
         /// <summary>
         /// Control cmbCID_ENTIDAD_FEDERATIVA.
         /// </summary>
@@ -38,7 +40,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbCID_ENTIDAD_FEDERATIVA;
-        
+
         /// <summary>
         /// Control txtV_LUGAR.
         /// </summary>
@@ -47,7 +49,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtV_LUGAR;
-        
+
         /// <summary>
         /// Control cmbNID_INSTITUCION.
         /// </summary>
@@ -56,7 +58,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbNID_INSTITUCION;
-        
+
         /// <summary>
         /// Control txtV_OTRO.
         /// </summary>
@@ -65,7 +67,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtV_OTRO;
-        
+
         /// <summary>
         /// Control txtRfc.
         /// </summary>
@@ -74,7 +76,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRfc;
-        
+
         /// <summary>
         /// Control txtF_ADEUDO.
         /// </summary>
@@ -83,7 +85,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtF_ADEUDO;
-        
+
         /// <summary>
         /// Control txtF_ADEUDO_C.
         /// </summary>
@@ -92,7 +94,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender txtF_ADEUDO_C;
-        
+
         /// <summary>
         /// Control moneytxtM_ORIGINAL.
         /// </summary>
@@ -101,7 +103,16 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox moneytxtM_ORIGINAL;
-        
+
+        /// <summary>
+        /// Control ddlTipoMonedaInm.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoMonedaInm;
+
         /// <summary>
         /// Control txtTipo_Moneda.
         /// </summary>
@@ -110,7 +121,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTipo_Moneda;
-        
+
         /// <summary>
         /// Control moneytxtM_SALDO.
         /// </summary>
@@ -119,7 +130,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox moneytxtM_SALDO;
-        
+
         /// <summary>
         /// Control cmbTercero.
         /// </summary>
@@ -128,7 +139,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbTercero;
-        
+
         /// <summary>
         /// Control txtNombre_terceros.
         /// </summary>
@@ -137,7 +148,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombre_terceros;
-        
+
         /// <summary>
         /// Control txtRfc_Terceros.
         /// </summary>
@@ -146,7 +157,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRfc_Terceros;
-        
+
         /// <summary>
         /// Control cmbOtorgante_credito.
         /// </summary>
@@ -155,7 +166,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbOtorgante_credito;
-        
+
         /// <summary>
         /// Control txtE_CUENTA.
         /// </summary>
@@ -164,7 +175,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtE_CUENTA;
-        
+
         /// <summary>
         /// Control cblTitulares.
         /// </summary>
@@ -173,7 +184,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBoxList cblTitulares;
-        
+
         /// <summary>
         /// Control txtObservaciones.
         /// </summary>

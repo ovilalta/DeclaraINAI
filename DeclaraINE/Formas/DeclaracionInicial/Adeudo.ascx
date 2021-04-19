@@ -81,12 +81,23 @@
             </td>
         </tr>
 
-        <tr>
+        <%--<tr>
             <th>
                 <l>Tipo de moneda</l>
             </th>
             <td>
                 <asp:TextBox ID="txtTipo_Moneda"  runat="server" ClientIDMode="Static" requerido="btnGuardarAdeudo" MaxLength="30"></asp:TextBox>
+                <div id="divmoneytxtTipo_Moneda"></div>
+            </td>
+        </tr>--%>
+
+        <tr>
+            <th>
+                <l>Tipo de moneda</l>
+            </th>
+            <td>
+                 <asp:DropDownList ID="ddlTipoMonedaInm" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlTipoMonedaInm_SelectedIndexChanged" />
+                <asp:TextBox ID="txtTipo_Moneda"  runat="server" ClientIDMode="Static"  Visible="false" MaxLength="30"></asp:TextBox>
                 <div id="divmoneytxtTipo_Moneda"></div>
             </td>
         </tr>
