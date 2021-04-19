@@ -299,10 +299,25 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 cmbNID_TIPO_ADEUDO.Items.Insert(0, new ListItem(String.Empty));
                 txtF_ADEUDO_C.StartDate = new DateTime(1900, 1, 1);
                 txtF_ADEUDO_C.EndDate = DateTime.Today.AddDays(-1);
-             
+
+                //tipo de moneda
+                var cnx = new MODELDeclara_V2.cnxDeclara();
+                var lista = cnx.CAT_MONEDA;
+                ddlTipoMonedaInm.DataTextField = "V_CODIGO_MONEDA";
+                ddlTipoMonedaInm.DataValueField = "NID_MONEDA";
+                ddlTipoMonedaInm.DataSource = lista.ToList();
+                ddlTipoMonedaInm.DataBind();
+                ddlTipoMonedaInm.SelectedValue = "101";
+                ddlTipoMonedaInm_SelectedIndexChanged(sender, e);
+
             }
         }
-
+        protected void ddlTipoMonedaInm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // txtTipo_Moneda
+            // txtTipo_Moneda.Text = ddlTipoMonedaInm.SelectedValue.ToString() + '|' + ddlTipoMonedaInm.SelectedItem.Text;
+            txtTipo_Moneda.Text = ddlTipoMonedaInm.SelectedValue.ToString();
+        }
         private void req()
         {
             if (!String.IsNullOrEmpty(Requerido))

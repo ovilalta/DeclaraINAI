@@ -75,6 +75,11 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
             }
 
         }
+
+        protected void ddlTipoMonedaInm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtTipoMoneda.Text = ddlTipoMonedaInm.SelectedValue.ToString() + '|' + ddlTipoMonedaInm.SelectedItem.Text;
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             ((HtmlControl)Master.FindControl("liInversiones")).Attributes.Add("class", "active");
@@ -175,7 +180,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
             txtObservaciones.Text = oDeclaracion.ALTA.ALTA_INVERSIONs[e.Id].E_OBSERVACIONES.ToString();
 
             cblTitulares.ClearSelection();
-
+            try { ddlTipoMonedaInm.SelectedValue = oDeclaracion.ALTA.ALTA_INVERSIONs[e.Id].V_TIPO_MONEDA.ToString().Split('|')[0]; } catch { }
             try
             {
                 blld_ALTA_INVERSION_COPROPIETARIO oCompro = new blld_ALTA_INVERSION_COPROPIETARIO(oDeclaracion.ALTA.ALTA_INVERSIONs[e.Id].VID_NOMBRE

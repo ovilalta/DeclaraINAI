@@ -21,7 +21,7 @@ namespace Declara_V2.BLLD
             }
         }
 
-        public static String V_SISTEMA => "Sistema de Declaraciones Patrimoniales DeclaraINE";
+        public static String V_SISTEMA => "Sistema de Declaraciones Patrimoniales DeclaraINAI";
 
         private static System.Nullable<Boolean> _ThrowUnhandledExceptions { get; set; }
         public static Boolean ThrowUnhandledExceptions

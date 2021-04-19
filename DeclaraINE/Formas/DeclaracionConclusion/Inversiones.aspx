@@ -114,10 +114,23 @@
                             <l>Tipo de moneda</l>
                         </th>
                         <td>
+                            <asp:DropDownList ID="ddlTipoMonedaInm" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlTipoMonedaInm_SelectedIndexChanged">
+                                <asp:ListItem Text="" Value="0"></asp:ListItem>
+                                <asp:ListItem Text="MXN" Value="101"></asp:ListItem>
+                                <asp:ListItem Text="USN"  Value="148"></asp:ListItem>
+                        </asp:DropDownList>
+                            <asp:TextBox ID="txtTipoMoneda" runat="server"  Visible="false" MaxLength="50"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <%--<tr>
+                        <th>
+                            <l>Tipo de moneda</l>
+                        </th>
+                        <td>
                             <asp:TextBox ID="txtTipoMoneda" runat="server" requerido="btnGuardar" MaxLength="100"></asp:TextBox>
                         </td>
                     </tr>
-                    <tr>
+                    <tr>--%>
                         <th>
                             <l><b>TERCERO</b></l>
                         </th>

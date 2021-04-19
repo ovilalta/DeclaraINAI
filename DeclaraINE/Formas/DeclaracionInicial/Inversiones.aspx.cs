@@ -210,7 +210,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             {
 
             }
-
+            try { ddlTipoMonedaInm.SelectedValue = oDeclaracion.ALTA.ALTA_INVERSIONs[e.Id].V_TIPO_MONEDA.ToString().Split('|')[0]; } catch { }
         }
 
         protected void OnEliminar(object sender, ItemEventArgs e)
@@ -247,7 +247,10 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 }
             }
         }
-
+        protected void ddlTipoMonedaInm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtTipoMoneda.Text = ddlTipoMonedaInm.SelectedValue.ToString() + '|' + ddlTipoMonedaInm.SelectedItem.Text;
+        }
         public void Anterior()
         {
             HttpContext.Current.Items.Add("subSeccion", Bienes.SubSecciones.Vehiculos);
