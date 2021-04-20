@@ -206,7 +206,7 @@
                                 &nbsp;|&nbsp;                       
                                 <a href="../Formatos/Normas_e_Instructivo_para_Llenado_de_Declaraciones.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i>Normas e Instructivo Oficiales</a>
                                 &nbsp;|&nbsp;
-                                <a href="../pdf1/CatálogoPuestosINAI.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i>Catálogo de Puestos INAI</a>
+                                <a href="../pdf1/CatalogoPuestosINAI.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i>Catálogo de Puestos INAI</a>
                                 &nbsp;|&nbsp;
                                 <a href="../Images/TutorialFiscal/GUIAFISCAL.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i>Tutorial Declaración Fiscal</a>
                             </p>

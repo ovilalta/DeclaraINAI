@@ -333,12 +333,12 @@
                             <p>
                                 Número de conmutador: 50042400
                                 <br />
-                                Extensiones: 3435, 2307 y 2461<br />
+                                Extensiones: 3435, 2363 y 2461<br />
                                 CDMX e Interior de la República
                                 <br />
                                 Correos electrónicos:<br />
                                 alejandro.rodriguez@inai.org.mx<br />
-                                gerardo.clara@inai.org.mx<br />
+                                oscar.vilalta@inai.org.mx<br />
                                 silvia.gomez@inai.org.mx<br />
                                 <br />
                             </p>
