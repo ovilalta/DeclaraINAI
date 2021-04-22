@@ -123,7 +123,7 @@
                     </div>
 
                     <div id="cuerpo">
-                        <table class="f ">
+                        <%--<table class="f ">
                             <tbody>
                                 <tr>
                                     <th>
@@ -134,7 +134,7 @@
                                     </td>
                                 </tr>
                             </tbody>
-                        </table>
+                        </table>--%>
 
                         <asp:Panel ID="pnlContraseña" runat="server" Visible="false">
                             <asp:AlanAlert runat="server" ID="AlertaSuperiorPass" />

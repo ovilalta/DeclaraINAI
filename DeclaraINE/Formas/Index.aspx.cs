@@ -38,78 +38,89 @@ namespace DeclaraINE.Formas
             {
                 //btnAdmin.Visible = false;
                 btnAdmin2.Visible = false;
+                btnAdmin3.Visible = false;
+                btnAdmin4.Visible = false;
+                btnAdmin5.Visible = false;
+                btnAdmin6.Visible = false;
             }
             else
             {
                 //btnAdmin.Visible = true;
                 btnAdmin2.Visible = true;
-            }
-
-            string lineC;
-            bool excepC = false;
-            var buildDirC = HttpRuntime.AppDomainAppPath;
-            var filePathC = buildDirC + @"\Formas\Administrador\AdministradoresCorreos.txt";
-            StreamReader fileC = new StreamReader(filePathC);
-            while ((lineC = fileC.ReadLine()) != null)
-            {
-                if (VID_RFC.Equals(lineC))
-                {
-                    excepC = true;
-                }
-            }
-            fileC.Close();
-            if (excepC == false)
-            {
-                btnAdmin3.Visible = false;
-            }
-            else
-            {
                 btnAdmin3.Visible = true;
-            }
-
-            string lineD;
-            bool excepD = false;
-            var buildDirD = HttpRuntime.AppDomainAppPath;
-            var filePathD = buildDirD + @"\Formas\Administrador\AdministradoresActivaciones.txt";
-            StreamReader fileD = new StreamReader(filePathD);
-            while ((lineD = fileD.ReadLine()) != null)
-            {
-                if (VID_RFC.Equals(lineD))
-                {
-                    excepD = true;
-                }
-            }
-            fileD.Close();
-            if (excepD == false)
-            {
-                btnAdmin4.Visible = false;
-            }
-            else
-            {
                 btnAdmin4.Visible = true;
+                btnAdmin5.Visible = true;
+                btnAdmin6.Visible = true;
+
             }
 
-            string lineE;
-            bool excepE = false;
-            var buildDirE = HttpRuntime.AppDomainAppPath;
-            var filePathE = buildDirE + @"\Formas\Administrador\AdministradoresReporte.txt";
-            StreamReader fileE = new StreamReader(filePathE);
-            while ((lineE = fileE.ReadLine()) != null)
-            {
-                if (VID_RFC.Equals(lineE))
-                {
-                    excepE = true;
-                }
-            }
-            fileE.Close();
-            if (excepE == false)
-            {
-                btnAdmin5.Visible = false;
-            }
-            else
-            {
-                btnAdmin5.Visible = true;
-            }
+            //string lineC;
+            //bool excepC = false;
+            //var buildDirC = HttpRuntime.AppDomainAppPath;
+            //var filePathC = buildDirC + @"\Formas\Administrador\AdministradoresCorreos.txt";
+            //StreamReader fileC = new StreamReader(filePathC);
+            //while ((lineC = fileC.ReadLine()) != null)
+            //{
+            //    if (VID_RFC.Equals(lineC))
+            //    {
+            //        excepC = true;
+            //    }
+            //}
+            //fileC.Close();
+            //if (excepC == false)
+            //{
+            //    btnAdmin3.Visible = false;
+            //}
+            //else
+            //{
+            //    btnAdmin3.Visible = true;
+            //}
+
+            //string lineD;
+            //bool excepD = false;
+            //var buildDirD = HttpRuntime.AppDomainAppPath;
+            //var filePathD = buildDirD + @"\Formas\Administrador\AdministradoresActivaciones.txt";
+            //StreamReader fileD = new StreamReader(filePathD);
+            //while ((lineD = fileD.ReadLine()) != null)
+            //{
+            //    if (VID_RFC.Equals(lineD))
+            //    {
+            //        excepD = true;
+            //    }
+            //}
+            //fileD.Close();
+            //if (excepD == false)
+            //{
+            //    btnAdmin4.Visible = false;
+            //}
+            //else
+            //{
+            //    btnAdmin4.Visible = true;
+            //}
+
+            //string lineE;
+            //bool excepE = false;
+            //var buildDirE = HttpRuntime.AppDomainAppPath;
+            //var filePathE = buildDirE + @"\Formas\Administrador\AdministradoresReporte.txt";
+            //StreamReader fileE = new StreamReader(filePathE);
+            //while ((lineE = fileE.ReadLine()) != null)
+            //{
+            //    if (VID_RFC.Equals(lineE))
+            //    {
+            //        excepE = true;
+            //    }
+            //}
+            //fileE.Close();
+            //if (excepE == false)
+            //{
+            //    btnAdmin5.Visible = false;
+            //    btnAdmin6.Visible = false;
+            //}
+            //else
+            //{
+            //    btnAdmin5.Visible = true;
+            //    btnAdmin6.Visible = true;
+            //}
 
             LabNombre.Text = oUsuario.V_NOMBRE_COMPLETO;
             labFecha.Text = DateTime.Today.ToString("dd/MMMM/yyyy", new CultureInfo("es-MX")).ToUpper();
@@ -298,6 +309,10 @@ namespace DeclaraINE.Formas
         protected void btnAdminVer5_Click(object sender, EventArgs e)
         {
             Response.Redirect("RegistrosAdmin.aspx");
+        }
+        protected void btnAdminVer6_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Administrador\\ReporteSIPOT.aspx");
         }
     }
 }

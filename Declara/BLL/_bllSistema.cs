@@ -122,6 +122,7 @@ namespace Declara_V2.BLL
         {
 
             SmtpClient smtpClient = new SmtpClient(BLLD.clsSistema.ServidorCorreo, BLLD.clsSistema.PuertoCorreo);
+            
             smtpClient.Credentials = new System.Net.NetworkCredential("luis.aldana@inai.mx", "f3rnando$");
             MailMessage mail = new MailMessage();
 

@@ -194,7 +194,7 @@ namespace Declara_V2.BLLD
              );
                 EnviarCorreo(
             o.V_CORREO
-             , "DeclaraINE - Recuperación de Contraseña"
+             , "DeclaraINAI - Recuperación de Contraseña"
                , String.Concat(File.ReadAllText(clsSistema.RUTA_RECUPERACION_PASS)
                                              .Replace("{vNombre}", oUsuario.V_NOMBRE)
                                             .Replace("{vUrl}", url)

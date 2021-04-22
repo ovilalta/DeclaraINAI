@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CambiaCorreo.aspx.cs" Inherits="DeclaraINE.Formas.CambiaCorreo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReporteSIPOT.aspx.cs" Inherits="DeclaraINE.Formas.Administrador.ReporteSIPOT" %>
+
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <!DOCTYPE html>
@@ -8,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - <%: Declara_V2.BLLD.clsSistema.V_SISTEMA %></title>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />    
-    <link rel="stylesheet" href="../css/font-awesome.min.css" />
-    <link rel="stylesheet" href="../css/Declaracion.css" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../css/Declaracion.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
     <script src="../Scripts/jquery-3.1.1.min.js"></script>
     <script src="../Scripts/Site.js"></script>
     <!--<script type="text/javascript">
@@ -67,14 +68,27 @@
                 min-width: 290px;
                 height: 130px;
             }
+
+            td {
+                color: black;
+                font-weight: normal;
+                font-size: small;
+                padding: 8px;
+            }
+
+            th {
+                text-align: center;
+                font-size: small;
+                padding: 8px;
+            }
         </style>
         <div class="card">
-            <asp:AlanAlert runat="server" ID="msgx"></asp:AlanAlert>
-            <div class="row register-info-box" style="background: url('../Images/ine-acerca-slide.jpg');">
+            <asp:AlanMessageBox runat="server" ID="msgBox" />
+            <div class="row register-info-box" style="background: url('../../Images/ine-acerca-slide.jpg');">
                 <div>
                     <div class="row align-items-left" style="display: flex;">
                         <div>
-                            <img src="../Images/Declaraine.png" style="height: 32px; margin: 10px 12px 0px;" />
+                            <img src="../../Images/Declaraine.png" style="height: 32px; margin: 10px 12px 0px;" />
                         </div>
                         <div style="width: 100%;">
                             <h3 style="margin: 7px; font-size: 22px; float: right;">
@@ -88,7 +102,7 @@
                     </div>
                     <ul class="nav nav-tabs menu2020">
                         <li runat="server" enableviewstate="false" id="liDatosGenerales" class="active">
-                            <a href="#menu1" data-toggle="tab">Cambio de cuenta de correo</a>
+                            <a href="#menu1" data-toggle="tab">Reporte SIPOT</a>
                         </li>
                     </ul>
                 </div>
@@ -103,37 +117,34 @@
                             <ul class="nav nav-tabs ">
                                 <li>
                                     <asp:LinkButton ID="lkVolver" runat="server" d-t="Volver al menú principal" OnClick="lkVolver_Click" EnableViewState="false" Text="Volver al menù principal">                       
-                        <img src="./../images/icons/ColorX32/Circled%20Left.png"/></asp:LinkButton>
+                        <img src="/../../images/icons/ColorX32/Circled%20Left.png"/></asp:LinkButton>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="subtitulo">
                         <asp:Literal ID="ltrSubTituloAdmin" runat="server"></asp:Literal>
-                        
-                        <!--<div class="input-container">-->
-                                <label for="txtRFC">RFC:</label>
-                                <br />
-                                <asp:TextBox ID="txtRFC" runat="server"></asp:TextBox>
-                                <br /><br />
-                                <!--<label for="txtCorreoInst">Correo institucional:</label>
-                                <br />
-                                <asp:TextBox ID="txtCorreoInst" runat="server"></asp:TextBox>
-                                <br /><br />-->
-                                <label for="txtCorreoPers">Correo personal:</label>
-                                <br />
-                                <asp:TextBox ID="txtCorreoPers" runat="server"></asp:TextBox>
-                                <br /><br />
-                                <asp:Button ID="brnActualizar" runat="server" Text="Actualizar correo" OnClick="btnDescargar_Actualizar" CssClass="contact"/>
-                                <div class="bar">
-                                </div>
-                                
-                         <!--</div>-->
+                        <label style="float: left;">Fecha de inicio:</label>
+                        <br />
+                        <asp:TextBox ID="txtFInicio" runat="server" AutoCompleteType="Disabled" MaxLength="10" Date="S"></asp:TextBox>
+                        <br />
+                        <asp:CalendarExtender runat="server" ID="txtInicio" TargetControlID="txtFInicio" Format="dd/MM/yyyy" />
+                        <br />
+                        <br />
+                        <label style="float: left;">Fecha de fin:</label>
+                        <br />
+                        <asp:TextBox ID="txtFFin" runat="server" AutoCompleteType="Disabled" MaxLength="10" Date="S"></asp:TextBox>
+                        <br />
+                        <asp:CalendarExtender runat="server" ID="txtFin" TargetControlID="txtFFin" Format="dd/MM/yyyy" />
+                        <br />
+                        <br />
+                        <asp:Button ID="brnActualizar" runat="server" Text="Generar reporte" OnClick="btnDescargar_Actualizar" CssClass="xls"/>
+                        <div class="bar">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        
     </form>
 </body>
 </html>

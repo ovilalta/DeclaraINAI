@@ -44,11 +44,11 @@
                 filter: grayscale(100%) !important;
             }
 
-        ul#navigation, ul#navigation2 {
+        ul#navigation, ul#navigation2,ul#navigation3 {
             text-align: right;
         }
 
-            ul#navigation li, ul#navigation2 li {
+            ul#navigation li, ul#navigation2 li ,ul#navigation3 li {
                 margin: 0 20px 0 50px !important;
             }
     </style>
@@ -129,6 +129,12 @@
                                                     </li>
                                                     <li>
                                                         <asp:LinkButton ID="btnAdmin5" Text="Generación de reporte" runat="server" OnClick="btnAdminVer5_Click" Visible="false" ForeColor="SlateBlue"></asp:LinkButton>
+                                                    </li>
+                                                    
+                                                </ul>
+                                                <ul id="navigation3">                                                   
+                                                    <li>
+                                                        <asp:LinkButton ID="btnAdmin6" Text="Reporte SIPOT" runat="server" OnClick="btnAdminVer6_Click" Visible="false" ForeColor="SlateBlue"></asp:LinkButton>
                                                     </li>
                                                 </ul>
                                             </nav>

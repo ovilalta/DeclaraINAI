@@ -804,6 +804,18 @@ input[id*="btnFalse"] {
     background-image: url(../Images/icons/ColorX24/PDF.png) !important;
 }
 
+.contact {
+    background-image: url(../Images/icons/ColorX24/Contacts.png) !important;
+}
+
+.checkmark {
+    background-image: url(../Images/icons/ColorX24/Checkmark.png) !important;
+}
+
+.xls {
+    background-image: url(../Images/icons/ColorX24/DataSheetFilled.png) !important;
+}
+
 .pdf {
     background-image: url(../Images/icons/ColorX100/PDF.png) !important;
 }

@@ -116,7 +116,7 @@
                         <div runat="server" enableviewstate="false" class="tab-pane fade level1 active in" id="menu1">
                             <ul class="nav nav-tabs ">
                                 <li>
-                                    <asp:LinkButton ID="lkVolver" runat="server" d-t="Volver al menù principal" OnClick="lkVolver_Click" EnableViewState="false" Text="Volver al menù principal">                       
+                                    <asp:LinkButton ID="lkVolver" runat="server" d-t="Volver al menú principal" OnClick="lkVolver_Click" EnableViewState="false" Text="Volver al menù principal">                       
                         <img src="./../images/icons/ColorX32/Circled%20Left.png"/></asp:LinkButton>
                                 </li>
                             </ul>
@@ -138,7 +138,7 @@
                         <asp:CalendarExtender runat="server" ID="txtFin" TargetControlID="txtFFin" Format="dd/MM/yyyy" />
                         <br />
                         <br />
-                        <asp:Button ID="brnActualizar" runat="server" Text="Generar reporte" OnClick="btnDescargar_Actualizar" />
+                        <asp:Button ID="brnActualizar" runat="server" Text="Generar reporte" OnClick="btnDescargar_Actualizar" CssClass="xls" />
                         <div class="bar">
                         </div>
                     </div>
