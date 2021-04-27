@@ -87,7 +87,7 @@ namespace Declara_V2.BLLD
                 {
                     if (Encripta(value) != datos_MODIFICACION_INMUEBLE.E_UBICACION)
                     {
-                        blld_ALTA_INMUEBLE.ValidaUbicacion(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, Encripta(value));
+                        blld_ALTA_INMUEBLE.ValidaUbicacion(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, Encripta(value), NID_DECLARACION);
                         datos_MODIFICACION_INMUEBLE.E_UBICACION = Encripta(value);
                     }
                 }

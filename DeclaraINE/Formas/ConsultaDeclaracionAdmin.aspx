@@ -135,6 +135,11 @@
                                         <asp:Literal ID="ltrDescripcionDP" runat="server" Text='<%# Eval("V_TIPO_DECLARACION") %>'></asp:Literal>
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Fecha Envío">
+                                    <ItemTemplate>
+                                        <asp:Literal ID="ltrFechaEDP" runat="server" Text='<%# Eval("F_PRESENTACION") %>'></asp:Literal>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Ejercicio">
                                     <ItemTemplate>
                                         <asp:Literal ID="ltrEjercicioDP" runat="server" Text='<%# Eval("C_EJERCICIO") %>'></asp:Literal>

@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="../../css/font-awesome.min.css" />
     <link rel="stylesheet" href="../../css/Declaracion.css" />
     <link rel="stylesheet" href="../../css/style.css" />
-    <script src="../Scripts/jquery-3.1.1.min.js"></script>
-    <script src="../Scripts/Site.js"></script>
+    <script src="../../Scripts/jquery-3.1.1.min.js"></script>
+    <script src="../../Scripts/Site.js"></script>
     <!--<script type="text/javascript">
         var _smartsupp = _smartsupp || {};
         _smartsupp.key = '36fe62cea33d3cbc39674295b89808a4ec11a4fc';
@@ -117,7 +117,7 @@
                             <ul class="nav nav-tabs ">
                                 <li>
                                     <asp:LinkButton ID="lkVolver" runat="server" d-t="Volver al menú principal" OnClick="lkVolver_Click" EnableViewState="false" Text="Volver al menù principal">                       
-                        <img src="/../../images/icons/ColorX32/Circled%20Left.png"/></asp:LinkButton>
+                        <img src="../../images/icons/ColorX32/Circled%20Left.png"/></asp:LinkButton>
                                 </li>
                             </ul>
                         </div>

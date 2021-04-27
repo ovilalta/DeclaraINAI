@@ -141,7 +141,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Constancia" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
-                                        <asp:Button ID="btnGridDeclaracionConstanciaEticaConducta" runat="server" Text="Constancia" CommandArgument='<%# Eval("NID_DECLARACION") %>' OnClick="btnGridDeclaracionConstanciaEticaConducta_Click" CssClass="mpdf" />
+                                        <asp:Button ID="btnGridDeclaracionConstanciaEticaConducta" runat="server" Text="Constancia" CommandArgument='<%# Eval("NID_DECLARACION") %>' OnClick="btnGridDeclaracionConstanciaEticaConducta_Click" CssClass="mpdf" />                                        
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>

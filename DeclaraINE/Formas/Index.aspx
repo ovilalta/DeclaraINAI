@@ -368,7 +368,7 @@
                             <div>
                                 <h4 style="color: #000"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;Llámanos o escríbenos</h4>
                                 <p>
-                                    50042400 ext: 3435, 2307, 2461
+                                    50042400 ext: 3435, 2363, 2461
                                     <br />
                                     CDMX e Interior de la República
                                     <br />
@@ -377,7 +377,7 @@
                                     <br />
                                     alejandro.rodriguez@inai.org.mx
                                     <br />
-                                    gerardo.clara@inai.org.mx
+                                    oscar.vilalta@inai.org.mx
                                     <br />
                                     silvia.gomez@inai.org.mx
                                     <br />

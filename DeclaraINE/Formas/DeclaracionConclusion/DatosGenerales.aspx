@@ -321,7 +321,7 @@
                     <tr>
                         <th>
                             <l>Código de Puesto</l>
-                            <a href="../../pdf1/CatálogoPuestosINAI.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i>Catálogo de Puestos INAI</a>
+                            <a href="../../pdf1/CatalogoPuestosINAI.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i>Catálogo de Puestos INAI</a>
                         </th>
                         <td>
                             <ajaxToolkit:ComboBox ID="cmbVID_CLAVEPUESTO" runat="server"

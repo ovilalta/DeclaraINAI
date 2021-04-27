@@ -102,7 +102,7 @@ namespace Declara_V2.BLLD
                 {
                     if (Encripta(value) != datos_ALTA_INMUEBLE.E_UBICACION)
                     {
-                        ValidaUbicacion(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, Encripta(value));
+                        ValidaUbicacion(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, Encripta(value), NID_DECLARACION);
                         datos_ALTA_INMUEBLE.E_UBICACION = Encripta(value);
                     }
                 }
@@ -813,7 +813,7 @@ namespace Declara_V2.BLLD
             E_OBSERVACIONES = Encripta(E_OBSERVACIONES);
 
 
-            ValidaUbicacion(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, E_UBICACION);
+            ValidaUbicacion(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, E_UBICACION, NID_DECLARACION);
 
             datos_ALTA_INMUEBLE = new dald_ALTA_INMUEBLE(
                                                               VID_NOMBRE
@@ -906,7 +906,7 @@ namespace Declara_V2.BLLD
                 throw new CustomException("La longitud de la ubicación debe ser por lo menos de 15 caractéres");
             E_UBICACION = Encripta(E_UBICACION);
 
-            ValidaUbicacion(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, E_UBICACION);
+            ValidaUbicacion(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, E_UBICACION, NID_DECLARACION);
 
             Int32 NID_FORMA_ADQUISICION;
             if (L_DONACION)
@@ -946,14 +946,16 @@ namespace Declara_V2.BLLD
 
         #region *** Metodos (Extended) ***
 
-        internal static void ValidaUbicacion(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, String E_UBICACION)
+        internal static void ValidaUbicacion(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, String E_UBICACION, int NID_DECLARACION)
         {
 
             blld__l_ALTA_INMUEBLE oComprueba = new blld__l_ALTA_INMUEBLE();
+            
             oComprueba.VID_NOMBRE = new StringFilter(VID_NOMBRE);
             oComprueba.VID_FECHA = new StringFilter(VID_FECHA);
             oComprueba.VID_HOMOCLAVE = new StringFilter(VID_HOMOCLAVE);
             oComprueba.E_UBICACION = new StringFilter(E_UBICACION);
+            oComprueba.NID_DECLARACION = new IntegerFilter(NID_DECLARACION);
             oComprueba.select();
             if (oComprueba.lista_ALTA_INMUEBLE.Any())
                 throw new CustomException("Ya se ha dado de alta un inmueble con esa ubicación");
@@ -963,6 +965,7 @@ namespace Declara_V2.BLLD
             oCompruebaMod.VID_FECHA = new StringFilter(VID_FECHA);
             oCompruebaMod.VID_HOMOCLAVE = new StringFilter(VID_HOMOCLAVE);
             oCompruebaMod.E_UBICACION = new StringFilter(E_UBICACION);
+            oComprueba.NID_DECLARACION = new IntegerFilter(NID_DECLARACION);
             oCompruebaMod.select();
             if (oCompruebaMod.lista_MODIFICACION_INMUEBLE.Any())
                 throw new CustomException("Ya se ha dado de alta un inmueble con esa ubicación");
