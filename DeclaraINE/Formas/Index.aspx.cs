@@ -42,6 +42,7 @@ namespace DeclaraINE.Formas
                 btnAdmin4.Visible = false;
                 btnAdmin5.Visible = false;
                 btnAdmin6.Visible = false;
+                btnAdmin7.Visible = false;
             }
             else
             {
@@ -51,6 +52,7 @@ namespace DeclaraINE.Formas
                 btnAdmin4.Visible = true;
                 btnAdmin5.Visible = true;
                 btnAdmin6.Visible = true;
+                btnAdmin7.Visible = true;
 
             }
 
@@ -313,6 +315,11 @@ namespace DeclaraINE.Formas
         protected void btnAdminVer6_Click(object sender, EventArgs e)
         {
             Response.Redirect("Administrador\\ReporteSIPOT.aspx");
+        }
+
+        protected void btnAdminVer7_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Administrador\\DescargaDeclaracionesPDFs.aspx");
         }
     }
 }

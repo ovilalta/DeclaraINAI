@@ -820,6 +820,11 @@ input[id*="btnFalse"] {
     background-image: url(../Images/icons/ColorX100/PDF.png) !important;
 }
 
+.download {
+    background-image: url(../Images/icons/ColorX24/Download.png) !important;
+}
+
+
 .enviar {
     background-image: url(../Images/icons/ColorX100/Reading%20Confirmation.png) !important;
 }

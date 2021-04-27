@@ -12,9 +12,9 @@ using System.Diagnostics;
 using System.Threading;
 using Spire.Xls;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINE.Formas.Administrador
 {
-    public partial class RegistrosAdmin : Pagina
+    public partial class DescargaDeclaracionesPDFs : Pagina
     {
         blld_USUARIO _oUsuario
         {
@@ -27,7 +27,7 @@ namespace DeclaraINE.Formas
             string VID_RFC = oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE;
             if (!IsPostBack)
             {
-                Page.Title = "Generación de reporte";
+                Page.Title = "DescargaDeclaracionesPDFs";
                 string line;
                 bool excep = false;
                 var buildDir = HttpRuntime.AppDomainAppPath;
@@ -50,7 +50,7 @@ namespace DeclaraINE.Formas
         }
         protected void lkVolver_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Index.aspx");
+            Response.Redirect("../Index.aspx");
         }
         protected void btnDescargar_Actualizar(object sender, EventArgs e)
         {
@@ -70,7 +70,7 @@ namespace DeclaraINE.Formas
             {
                 MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
                 string connString = db.Database.Connection.ConnectionString;
-                string sql = "paGeneraReporte";
+                string sql = "SP_ReporteSIPOT";
 
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
@@ -84,10 +84,11 @@ namespace DeclaraINE.Formas
                             da.SelectCommand.Parameters.Add(new SqlParameter("@fechaFin", SqlDbType.VarChar)).Value = txtFFin.Text;
                             DataTable dt = new DataTable();
                             da.Fill(dt);
-                            Workbook book = new Workbook();
-                            Worksheet sheet = book.Worksheets[0];
-                            sheet.InsertDataTable(dt, true, 1, 1);
-                            book.SaveToHttpResponse("insertTableToExcel.xls", Response);
+
+                            //Workbook book = new Workbook();
+                            //Worksheet sheet = book.Worksheets[0];
+                            //sheet.InsertDataTable(dt, true, 1, 1);
+                            //book.SaveToHttpResponse("ReporteSIPOT.xls", Response);
                         }
                     }
                     catch (Exception ex)

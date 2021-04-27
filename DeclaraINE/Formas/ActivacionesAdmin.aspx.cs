@@ -32,7 +32,7 @@ namespace DeclaraINE.Formas
                 string line;
                 bool excep = false;
                 var buildDir = HttpRuntime.AppDomainAppPath;
-                var filePath = buildDir + @"\Formas\Administrador\AdministradoresCorreos.txt";
+                var filePath = buildDir + @"\Formas\Administrador\Administradores.txt";
                 StreamReader file = new StreamReader(filePath);
                 while ((line = file.ReadLine()) != null)
                 {

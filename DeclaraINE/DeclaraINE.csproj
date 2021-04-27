@@ -350,6 +350,7 @@
     <Content Include="Formas\Administrador\AdministradoresCorreos.txt" />
     <Content Include="Formas\Administrador\AdministradoresReporte.txt" />
     <Content Include="Formas\Administrador\GeneraDeclaracion.aspx" />
+    <Content Include="Formas\Administrador\DescargaDeclaracionesPDFs.aspx" />
     <Content Include="Formas\Administrador\ReporteSIPOT.aspx" />
     <Content Include="Formas\AvisoPrivacidad.ascx" />
     <Content Include="Formas\AvisoPrivacidadConflicto.aspx" />
@@ -1554,6 +1555,7 @@
     <Content Include="Images\icons\ColorX24\Data Recovery.png" />
     <Content Include="Images\icons\ColorX24\Data Sheet Filled.png" />
     <Content Include="Images\icons\ColorX24\Database Export.png" />
+    <Content Include="Images\icons\ColorX24\DataSheetFilled.png" />
     <Content Include="Images\icons\ColorX24\Delete Column.png" />
     <Content Include="Images\icons\ColorX24\Delete Database.png" />
     <Content Include="Images\icons\ColorX24\Delete Folder.png" />
@@ -3036,6 +3038,13 @@
     </Compile>
     <Compile Include="Formas\Administrador\GeneraDeclaracion.aspx.designer.cs">
       <DependentUpon>GeneraDeclaracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Administrador\DescargaDeclaracionesPDFs.aspx.cs">
+      <DependentUpon>DescargaDeclaracionesPDFs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\DescargaDeclaracionesPDFs.aspx.designer.cs">
+      <DependentUpon>DescargaDeclaracionesPDFs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formas\Administrador\ReporteSIPOT.aspx.cs">
       <DependentUpon>ReporteSIPOT.aspx</DependentUpon>

@@ -136,6 +136,9 @@
                                                     <li>
                                                         <asp:LinkButton ID="btnAdmin6" Text="Reporte SIPOT" runat="server" OnClick="btnAdminVer6_Click" Visible="false" ForeColor="SlateBlue"></asp:LinkButton>
                                                     </li>
+                                                    <li>
+                                                        <asp:LinkButton ID="btnAdmin7" Text="Declaraciones Públicas PDF's" runat="server" OnClick="btnAdminVer7_Click" Visible="false" ForeColor="SlateBlue"></asp:LinkButton>
+                                                    </li>
                                                 </ul>
                                             </nav>
                                         </div>
