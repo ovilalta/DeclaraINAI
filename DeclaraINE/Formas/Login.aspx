@@ -172,6 +172,10 @@
                                             ¿Olvidó su contraseña?
                                     <%--<asp:LinkButton ID="btnOlvido" runat="server" OnClick="btnOlvido_Click">¿Olvidó su Contraseña?</asp:LinkButton>--%>
                                         </p>
+                                        
+                                        <br />
+                                            <a  href="../pdf1/GuiaRecuperarContrasena.pdf" target="_blank"><p>&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i>Guía para recuperar contraseña</p></a>
+                                        
                                     </div>
 
                                 </div>
@@ -190,7 +194,9 @@
                                         <div class="button-container">
                                             <%--<button><span>Enviar correo de recuperación</span></button>--%>
                                             <asp:Button ID="btnRecuperaClave" runat="server" ClientIDMode="Static" OnClick="btnRecuperaClave_Click" OnClientClick="return btnRecuperaClabe();" Text="Enviar correo de recuperación" />
+                                            
                                         </div>
+                                        
                                     </h1>
 
                                 </div>
@@ -314,7 +320,7 @@
                             <br />
                             <br />
                             <br />
-                            <p style="color:whitesmoke;">V.20210423.1</p>
+                            <p style="color:whitesmoke;">V.20210427.1</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-md-6 col-lg-4 ">

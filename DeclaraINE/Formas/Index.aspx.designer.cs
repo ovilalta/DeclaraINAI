@@ -87,58 +87,13 @@ namespace DeclaraINE.Formas
         protected global::System.Web.UI.WebControls.LinkButton btnaCerrar;
 
         /// <summary>
-        /// Control btnAdmin2.
+        /// Control btnAdmin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAdmin2;
-
-        /// <summary>
-        /// Control btnAdmin3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAdmin3;
-
-        /// <summary>
-        /// Control btnAdmin4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAdmin4;
-
-        /// <summary>
-        /// Control btnAdmin5.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAdmin5;
-
-        /// <summary>
-        /// Control btnAdmin6.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAdmin6;
-
-        /// <summary>
-        /// Control btnAdmin7.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAdmin7;
+        protected global::System.Web.UI.WebControls.Menu btnAdmin;
 
         /// <summary>
         /// Control ImageButton1.

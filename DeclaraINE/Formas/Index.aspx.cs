@@ -36,93 +36,29 @@ namespace DeclaraINE.Formas
             file.Close();
             if (excep == false)
             {
-                //btnAdmin.Visible = false;
-                btnAdmin2.Visible = false;
-                btnAdmin3.Visible = false;
-                btnAdmin4.Visible = false;
-                btnAdmin5.Visible = false;
-                btnAdmin6.Visible = false;
-                btnAdmin7.Visible = false;
+                btnAdmin.Visible = false;
+                
+                //btnAdmin2.Visible = false;
+                //btnAdmin3.Visible = false;
+                //btnAdmin4.Visible = false;
+                //btnAdmin5.Visible = false;
+                //btnAdmin6.Visible = false;
+                //btnAdmin7.Visible = false;
             }
             else
             {
-                //btnAdmin.Visible = true;
-                btnAdmin2.Visible = true;
-                btnAdmin3.Visible = true;
-                btnAdmin4.Visible = true;
-                btnAdmin5.Visible = true;
-                btnAdmin6.Visible = true;
-                btnAdmin7.Visible = true;
+                btnAdmin.Visible = true;
+
+                //btnAdmin2.Visible = true;
+                //btnAdmin3.Visible = true;
+                //btnAdmin4.Visible = true;
+                //btnAdmin5.Visible = true;
+                //btnAdmin6.Visible = true;
+                //btnAdmin7.Visible = true;
 
             }
 
-            //string lineC;
-            //bool excepC = false;
-            //var buildDirC = HttpRuntime.AppDomainAppPath;
-            //var filePathC = buildDirC + @"\Formas\Administrador\AdministradoresCorreos.txt";
-            //StreamReader fileC = new StreamReader(filePathC);
-            //while ((lineC = fileC.ReadLine()) != null)
-            //{
-            //    if (VID_RFC.Equals(lineC))
-            //    {
-            //        excepC = true;
-            //    }
-            //}
-            //fileC.Close();
-            //if (excepC == false)
-            //{
-            //    btnAdmin3.Visible = false;
-            //}
-            //else
-            //{
-            //    btnAdmin3.Visible = true;
-            //}
-
-            //string lineD;
-            //bool excepD = false;
-            //var buildDirD = HttpRuntime.AppDomainAppPath;
-            //var filePathD = buildDirD + @"\Formas\Administrador\AdministradoresActivaciones.txt";
-            //StreamReader fileD = new StreamReader(filePathD);
-            //while ((lineD = fileD.ReadLine()) != null)
-            //{
-            //    if (VID_RFC.Equals(lineD))
-            //    {
-            //        excepD = true;
-            //    }
-            //}
-            //fileD.Close();
-            //if (excepD == false)
-            //{
-            //    btnAdmin4.Visible = false;
-            //}
-            //else
-            //{
-            //    btnAdmin4.Visible = true;
-            //}
-
-            //string lineE;
-            //bool excepE = false;
-            //var buildDirE = HttpRuntime.AppDomainAppPath;
-            //var filePathE = buildDirE + @"\Formas\Administrador\AdministradoresReporte.txt";
-            //StreamReader fileE = new StreamReader(filePathE);
-            //while ((lineE = fileE.ReadLine()) != null)
-            //{
-            //    if (VID_RFC.Equals(lineE))
-            //    {
-            //        excepE = true;
-            //    }
-            //}
-            //fileE.Close();
-            //if (excepE == false)
-            //{
-            //    btnAdmin5.Visible = false;
-            //    btnAdmin6.Visible = false;
-            //}
-            //else
-            //{
-            //    btnAdmin5.Visible = true;
-            //    btnAdmin6.Visible = true;
-            //}
+            
 
             LabNombre.Text = oUsuario.V_NOMBRE_COMPLETO;
             labFecha.Text = DateTime.Today.ToString("dd/MMMM/yyyy", new CultureInfo("es-MX")).ToUpper();
@@ -144,17 +80,7 @@ namespace DeclaraINE.Formas
 
                 _oUsuario.ExtenderSesion();
                 this.Page.Title = "Menú Principal";
-                //switch (oUsuario.C_GENERO)
-                //{
-                //    case 'M':
-                //        imgModificacion.ImageUrl = "~/Images/inicio/modificacionM.png";
-                //        break;
-                //    case 'F':
-                //        imgModificacion.ImageUrl = "~/Images/inicio/modificacionF.png";
-                //        break;
-                //    default:
-                //        break;
-                //}
+                
                 if (clsSistema.lActivaAviso)
                     pnlAviso.Visible = true;
                 else
@@ -223,46 +149,12 @@ namespace DeclaraINE.Formas
         protected void lkModificacion_Click(object sender, EventArgs e)
         {
             Response.Redirect("AvisoPrivacidadDeclaracionModificacion.aspx");
-            //try
-            //{
-            //    blld_USUARIO oUsuario = _oUsuario;
-            //    blld_DECLARACION oDeclaracion = new blld_DECLARACION(oUsuario.VID_NOMBRE
-            //                                                        , oUsuario.VID_FECHA
-            //                                                        , oUsuario.VID_HOMOCLAVE
-            //                                                        , (DateTime.Now.Year -1).ToString()
-            //                                                        ,2);
-            //    SessionAdd("oDeclaracion", oDeclaracion);
-            //    Response.Redirect("AvisoPrivacidadDeclaracionModificacion.aspx");
-            //}
-            //catch (Exception ex)
-            //{
-            //    if (ex is CustomException || ex is ConvertionException)
-            //    {
-            //        MsgBox.ShowDanger(ex.Message);
-            //    }
-            //}
+            
         }
         protected void lkConclusion_Click(object sender, EventArgs e)
         {
             Response.Redirect("AvisoPrivacidadConclusion.aspx");
-            //try
-            //{
-            //    blld_USUARIO oUsuario = _oUsuario;
-            //    blld_DECLARACION oDeclaracion = new blld_DECLARACION(oUsuario.VID_NOMBRE
-            //                                                        , oUsuario.VID_FECHA
-            //                                                        , oUsuario.VID_HOMOCLAVE
-            //                                                        , (DateTime.Now.Year - 1).ToString()
-            //                                                        , 3);
-            //    SessionAdd("oDeclaracion", oDeclaracion);
-            //    Response.Redirect("AvisoPrivacidadConclusion.aspx");
-            //}
-            //catch (Exception ex)
-            //{
-            //    if (ex is CustomException || ex is ConvertionException)
-            //    {
-            //        MsgBox.ShowDanger(ex.Message);
-            //    }
-            //}
+            
         }
 
 
@@ -290,36 +182,10 @@ namespace DeclaraINE.Formas
             Response.Redirect("DeclaracionFiscal\\declaracionFiscal.aspx");
         }
 
-        //protected void btnAdmin_Click(object sender, EventArgs e)
-        //{
-        //    Response.Redirect("Administrador\\GeneraDeclaracion.aspx");
-        //}
+        
 
-        protected void btnAdminVer_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ConsultaDeclaracionAdmin.aspx");
-        }
+       
 
-        protected void btnAdminVer3_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("CambiaCorreo.aspx");
-        }
-        protected void btnAdminVer4_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ActivacionesAdmin.aspx");
-        }
-        protected void btnAdminVer5_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("RegistrosAdmin.aspx");
-        }
-        protected void btnAdminVer6_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Administrador\\ReporteSIPOT.aspx");
-        }
-
-        protected void btnAdminVer7_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Administrador\\DescargaDeclaracionesPDFs.aspx");
-        }
+        
     }
 }

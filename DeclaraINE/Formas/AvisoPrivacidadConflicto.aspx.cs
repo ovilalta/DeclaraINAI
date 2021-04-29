@@ -46,7 +46,7 @@ namespace DeclaraINE.Formas
             oBusqueda.select();
             if (oBusqueda.lista_DECLARACION.Any())
             {
-                QstBox.AskWarning("Para Poder presentar declaración de conflicto de Interes antes deberá tener por lo menos una declaración incial o de modificación enviada</b>.</b><br><br><br> <h3><p style='color:#FF0000';> ¿Realmente desea realizar la declaración de Conflicto? </p></h3>");
+                QstBox.AskWarning("Para Poder presentar declaración de conflicto de Intereses antes deberá tener por lo menos una declaración incial o de modificación enviada</b>.</b><br><br><br> <h3><p style='color:#FF0000';> ¿Realmente desea realizar la declaración de Conflicto? </p></h3>");
             }
             else
             {

@@ -1578,6 +1578,7 @@
     <Content Include="Images\icons\ColorX24\Doughnut Chart.png" />
     <Content Include="Images\icons\ColorX24\Download From Cloud.png" />
     <Content Include="Images\icons\ColorX24\Download from the Cloud.png" />
+    <Content Include="Images\icons\ColorX24\Download.png" />
     <Content Include="Images\icons\ColorX24\Downloading Updates.png" />
     <Content Include="Images\icons\ColorX24\Ebay.png" />
     <Content Include="Images\icons\ColorX24\Edit File.png" />
@@ -2936,6 +2937,7 @@
     <Content Include="fonts\themify.woff" />
     <Content Include="Images\TutorialFiscal\GUIAFISCAL.pdf" />
     <Content Include="pdf1\CatalogoPuestosINAI.pdf" />
+    <Content Include="pdf1\GuiaRecuperarContrasena.pdf" />
     <None Include="Properties\PublishProfiles\OscarVilaltaPub.pubxml" />
     <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />

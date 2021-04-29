@@ -97,6 +97,7 @@
                                                 <img src="../Images/LogoINE.png" width="150" height="60" />
                                                 <img src="../Images/logo-negro.png" width="120" height="60" />
                                             </a>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-xl-8 col-lg-8">
@@ -112,47 +113,37 @@
                                                     <li>
                                                         <asp:LinkButton ID="LinkButton44" runat="server" OnClick="lkConflicto_Click" CssClass="active" Text="Intereses"></asp:LinkButton></li>
                                                     <li>
-                                                        <asp:LinkButton ID="LinkButton200" runat="server" OnClick="lkConflicto_Click" CssClass="active" Text="Fiscal"></asp:LinkButton></li>
+                                                        <asp:LinkButton ID="LinkButton200" runat="server" OnClick=" lkFiscal_Click" CssClass="active" Text="Fiscal"></asp:LinkButton></li>
                                                     <li>
                                                         <asp:LinkButton ID="btnaCerrar" Text="Salir" runat="server" OnClick="btnCerrar_Click"></asp:LinkButton></li>
                                                 </ul>
-                                                <ul id="navigation2">
-                                                    <li>
-                                                        <asp:LinkButton ID="btnAdmin2" Text="Declaraciones" runat="server" OnClick="btnAdminVer_Click" Visible="false" ForeColor="SlateBlue"></asp:LinkButton>
 
-                                                    </li>
-                                                    <li>
-                                                        <asp:LinkButton ID="btnAdmin3" Text="Correo alterno" runat="server" OnClick="btnAdminVer3_Click" Visible="false" ForeColor="SlateBlue"></asp:LinkButton>
-                                                    </li>
-                                                    <li>
-                                                        <asp:LinkButton ID="btnAdmin4" Text="Activación de cuenta" runat="server" OnClick="btnAdminVer4_Click" Visible="false" ForeColor="SlateBlue"></asp:LinkButton>
-                                                    </li>
-                                                    <li>
-                                                        <asp:LinkButton ID="btnAdmin5" Text="Generación de reporte" runat="server" OnClick="btnAdminVer5_Click" Visible="false" ForeColor="SlateBlue"></asp:LinkButton>
-                                                    </li>
+                                                <ul id="navigation2">
+                                                     
+                                                    <asp:Menu ID="btnAdmin" runat="server" CssClass="navbar navbar-fixed-top" StaticMenuStyle-CssClass= "nav navbar-nav" StaticSelectedStyle-CssClass="active" DynamicMenuStyle-CssClass="dropdown-menu">
+                                                        <Items>
+                                                            <asp:MenuItem Text="Menú Administrador" Value="Menú Administrador" ToolTip="Opciones de administrador para el OIC" >
+                                                                <asp:MenuItem NavigateUrl="~/Formas/ConsultaDeclaracionAdmin.aspx" Text="Declaraciones" ToolTip="Buscar Declaraciones por RFC" Value="Declaraciones" ></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/Formas/CambiaCorreo.aspx" Text="Correo Alterno" ToolTip="Agregar correo personal" Value="Correo Alterno"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/Formas/ActivacionesAdmin.aspx" Text="Activar Cuenta" ToolTip="Activar cuenta de usuario" Value="Activar Cuenta"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/Formas/RegistrosAdmin.aspx" Text="Reporte Declaraciones" ToolTip="Emite reporte de declaraciones por rango de fecha" Value="Reporte Declaraciones"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteSIPOT.aspx" Text="Reporte SIPOT" ToolTip="Reporte SIPOT" Value="Reporte SIPOT"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/DescargaDeclaracionesPDFs.aspx" Text="Descarga PDF Declaraciones(Pendiente)" ToolTip="Decarga PDF's Declaraciones por rango de fecha" Value="Descarga PDF Declaraciones"></asp:MenuItem>
+                                                            </asp:MenuItem>
+                                                        </Items>
+                                                     </asp:Menu>
+                                                      
+                                                </ul>
+
+                                                
                                                     
-                                                </ul>
-                                                <ul id="navigation3">                                                   
-                                                    <li>
-                                                        <asp:LinkButton ID="btnAdmin6" Text="Reporte SIPOT" runat="server" OnClick="btnAdminVer6_Click" Visible="false" ForeColor="SlateBlue"></asp:LinkButton>
-                                                    </li>
-                                                    <li>
-                                                        <asp:LinkButton ID="btnAdmin7" Text="Declaraciones Públicas PDF's" runat="server" OnClick="btnAdminVer7_Click" Visible="false" ForeColor="SlateBlue"></asp:LinkButton>
-                                                    </li>
-                                                </ul>
                                             </nav>
                                         </div>
                                     </div>
 
                                     <div class="social_wrap d-flex align-items-center justify-content-end">
                                         <div class="social_links d-none d-xl-block">
-                                            <%--  <ul>
-                                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                            </ul>
-                                            <p><a href="#"><i class="fa fa-book fa-3" aria-hidden="true"></i>&nbsp;Instructivo de Llenado</a></p>--%>
+                                           
                                         </div>
                                     </div>
                                     <div class="seach_icon">
@@ -211,10 +202,10 @@
                                 Documentos de Ayuda:
                                  <a href="../Formatos/Presentacion.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i>Guía para la Declaración</a>
                                 &nbsp;|&nbsp;
-                                  <a href="../Formatos/Cuestionario_Declaracion_Modificacion.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i> Preguntas y Respuestas</a>
-                                &nbsp;|&nbsp;                       
-                                <a href="../Formatos/Normas_e_Instructivo_para_Llenado_de_Declaraciones.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i>Normas e Instructivo Oficiales</a>
-                                &nbsp;|&nbsp;
+                                  <%--<a  href="../Formatos/Cuestionario_Declaracion_Modificacion.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i> Preguntas y Respuestas</a>--%>
+                                <%--&nbsp;|&nbsp;--%>                       
+                                <%--<a href="../Formatos/Normas_e_Instructivo_para_Llenado_de_Declaraciones.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i>Normas e Instructivo Oficiales</a>--%>
+                                <%--&nbsp;|&nbsp;--%>
                                 <a href="../pdf1/CatalogoPuestosINAI.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i>Catálogo de Puestos INAI</a>
                                 &nbsp;|&nbsp;
                                 <a href="../Images/TutorialFiscal/GUIAFISCAL.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i>Tutorial Declaración Fiscal</a>
@@ -247,95 +238,70 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-6">
                             <div class="single_destination">
-                                <asp:LinkButton ID="btnInicio" runat="server" OnClick="btnInicio_Click">                      
-                                <div class="thumb"><img src="../Images/DeclaraInicio.jpg" />
+                                <asp:LinkButton ID="btnInicio" runat="server" OnClick="btnInicio_Click"> <div class="thumb"><img src="../Images/DeclaraInicio.jpg" />
                                      
                                 </div>
                                 <div class="content">
-                                    <p class="d-flex align-items-center">Declaración Inicial</p>
-                                </div>
-                                </asp:LinkButton>
+                                    <p class="d-flex align-items-center">Declaración Inicial</p></div></asp:LinkButton>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="single_destination">
-                                <asp:LinkButton ID="lkModificacion" runat="server" OnClick="lkModificacion_Click">   
-                                <div class="thumb"><img src="../Images/DeclaraModificacion.jpg" />
+                                <asp:LinkButton ID="lkModificacion" runat="server" OnClick="lkModificacion_Click"> <div class="thumb"><img src="../Images/DeclaraModificacion.jpg" />
                                   
                                 </div>
                                 <div class="content">
-                                    <p class="d-flex align-items-center">Declaración de Modificación</p>
-                                </div>
-                                </asp:LinkButton>
+                                    <p class="d-flex align-items-center">Declaración de Modificación</p></div></asp:LinkButton>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="single_destination">
-                                <asp:LinkButton ID="lkConclusion" runat="server" OnClick="lkConclusion_Click">
-                                    <div class="thumb"><img src="../Images/DeclaraPassword.jpg" />
+                                <asp:LinkButton ID="lkConclusion" runat="server" OnClick="lkConclusion_Click"> <div class="thumb"><img src="../Images/DeclaraPassword.jpg" />
                                  
                                 </div>
                                 <div class="content">
-                                    <p class="d-flex align-items-center">Declaración de Conclusión</p>
-                                </div>
-                                </asp:LinkButton>
+                                    <p class="d-flex align-items-center">Declaración de Conclusión</p></div></asp:LinkButton>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-md-6">
                             <div class="single_destination">
-                                <asp:LinkButton ID="lkConflicto" runat="server" OnClick="lkConflicto_Click">
-                                <div class="thumb">
+                                <asp:LinkButton ID="lkConflicto" runat="server" OnClick="lkConflicto_Click"> <div class="thumb">
                                     <img src="../Images/DeclaraConclusion.jpg" />
                                 </div>
                                 <div class="content">
                                     <p class="d-flex align-items-center">
-                                       Declaración de Intereses
-                                    </p>
-                                </div>
-                                </asp:LinkButton>
+                                       Declaración de Intereses </p></div></asp:LinkButton>
                             </div>
                         </div>
 
                         <!--OEVM Imagen de acceso para la pantalla de Declaración Fiscal-->
                         <div class="col-lg-4 col-md-6">
                             <div class="single_destination">
-                                <asp:LinkButton ID="LkFiscal" runat="server" OnClick="lkFiscal_Click">
-                                <div class="thumb">
+                                <asp:LinkButton ID="LkFiscal" runat="server" OnClick="lkFiscal_Click"> <div class="thumb">
                                     <img src="../Images/DeclaraFiscal.png" />
                                 </div>
                                 <div class="content">
                                     <p class="d-flex align-items-center">
-                                       Declaración Fiscal
-                                    </p>
-                                </div>
-                                </asp:LinkButton>
+                                       Declaración Fiscal </p></div></asp:LinkButton>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="single_destination">
-                                <asp:LinkButton ID="lkAdmin" runat="server" OnClick="lkAdmin_Click">
-                                <div class="thumb"><img src="../Images/administration.jpg" />
+                                <asp:LinkButton ID="lkAdmin" runat="server" OnClick="lkAdmin_Click"> <div class="thumb"><img src="../Images/administration.jpg" />
                                    
                                 </div>
                                 <div class="content">
                                     <p class="d-flex align-items-center">
-                                        Administración de<br />
-                                        la cuenta
-                                    </p>
-                                </div>
-                                </asp:LinkButton>
+                                        Administración de<br /> la cuenta </p></div></asp:LinkButton>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="single_destination">
-                                <asp:LinkButton ID="lkConsultaDeclaraciones" runat="server" OnClick="btnConsultaDeclaracion_Click">
-                                <div class="thumb"><img src="../Images/DeclaraConsulta.png" />                                   
+                                <asp:LinkButton ID="lkConsultaDeclaraciones" runat="server" OnClick="btnConsultaDeclaracion_Click"> <div class="thumb"><img src="../Images/DeclaraConsulta.png" />                                   
                                 </div>
                                 <div class="content">
-                                    <p>Consulta de Declaraciones</p>
-                                </div>
-                                </asp:LinkButton>
+                                    <p>Consulta de Declaraciones</p></div></asp:LinkButton>
                             </div>
                         </div>
                     </div>
@@ -419,17 +385,13 @@
 
             <span></span>
             <div runat="server" visible="false">
-                <asp:LinkButton ID="btnConsultaDeclaracion" runat="server" OnClick="btnConsultaDeclaracion_Click">
-                        <img src="../Images/inicio/consulta.png" />
-                </asp:LinkButton>
+                <asp:LinkButton ID="btnConsultaDeclaracion" runat="server" OnClick="btnConsultaDeclaracion_Click"> <img src="../Images/inicio/consulta.png" /></asp:LinkButton>
                 <p>Consulta de Declaraciones</p>
             </div>
 
 
             <div runat="server" visible="false">
-                <asp:LinkButton ID="btnPatrimonio" runat="server" OnClick="btnPatrimonio_Click">
-                        <img src="../Images/inicio/patrimonio.png" />
-                </asp:LinkButton>
+                <asp:LinkButton ID="btnPatrimonio" runat="server" OnClick="btnPatrimonio_Click"> <img src="../Images/inicio/patrimonio.png" /></asp:LinkButton>
                 <p>Patrimonio</p>
             </div>
 

@@ -8,6 +8,11 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Linq;
+using System.IO;
+using System.Web;
+
+
+
 
 namespace Declara_V2.BLLD
 {
@@ -15,6 +20,7 @@ namespace Declara_V2.BLLD
     public partial class blld_DECLARACION : bll_DECLARACION
     {
 
+        
         #region *** Atributos (Extended) ***
 
         //        public String VID_NOMBRE
@@ -306,6 +312,8 @@ namespace Declara_V2.BLLD
 
         #region *** Constructores (Extended) ***
 
+       
+
         public blld_DECLARACION(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, Int32 NID_TIPO_DECLARACION, Boolean lDif)
             : base()
         {
@@ -318,6 +326,7 @@ namespace Declara_V2.BLLD
             Boolean L_AUTORIZA_PUBLICAR = true;
             System.Nullable<DateTime> F_ENVIO = null;
             System.Nullable<Boolean> L_CONFLICTO = null;
+            String RFC = VID_NOMBRE + VID_FECHA + VID_HOMOCLAVE;
             //String Anio_Compara = C_EJERCICIO;
             blld__l_DECLARACION oBusquedaDeclaracion = new blld__l_DECLARACION();
             oBusquedaDeclaracion.VID_NOMBRE = new Declara_V2.StringFilter(VID_NOMBRE);
@@ -369,48 +378,72 @@ namespace Declara_V2.BLLD
                         datos_DECLARACION = new dald_DECLARACION(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, C_EJERCICIO, NID_TIPO_DECLARACION, NID_ESTADO, E_OBSERVACIONES, E_OBSERVACIONES_MARCADO, V_OBSERVACIONES_TESTADO, NID_ESTADO_TESTADO, L_AUTORIZA_PUBLICAR, F_ENVIO, L_CONFLICTO, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
                     break;
                 case 2:
-                    if (!oBusquedaDeclaracion.lista_DECLARACION.Any())
+                    //Aqui hay que meter la condicion de las excepciones para que se brinque esta validacion
+                    
+                   
+                    string line;
+                    bool excep = false;
+                    var buildDir = HttpRuntime.AppDomainAppPath;
+                    var filePath = buildDir + @"\Formas\Administrador\ObligadosModificacion.txt";
+                    StreamReader file = new StreamReader(filePath);
+                    while ((line = file.ReadLine()) != null)
                     {
-                        throw new CustomException("No se ha presentado una declaración de inicio");
-                    }
-                    else
-                    {
-                        blld_DECLARACION oDeclaracion = new blld_DECLARACION(oBusquedaDeclaracion.lista_DECLARACION.Last());
-                        C_EJERCICIO = (Convert.ToInt32(oDeclaracion.C_EJERCICIO)).ToString();
-                        switch (oDeclaracion.NID_TIPO_DECLARACION)
+                        if (RFC.Equals(line))
                         {
-                            case 1:
-                                ValidaMes(C_EJERCICIO);
-                                if (oDeclaracion.C_EJERCICIO == (DateTime.Now.Year).ToString())
-                                    throw new CustomException("Su Declaración Patrimonial Inicial  fue presentada este año, y por reglamento no le corresponde presentar declaración de modificación este año. En caso de alguna duda, puede llamar a las extensiones 3435, 2307 y 2461");
-                                if (oDeclaracion.NID_ESTADO == 1)
-                                    throw new CustomException("Existe una declaración de inicio pendiente de envio");
-                                datos_DECLARACION = new dald_DECLARACION(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, C_EJERCICIO, NID_TIPO_DECLARACION, NID_ESTADO, E_OBSERVACIONES, E_OBSERVACIONES_MARCADO, V_OBSERVACIONES_TESTADO, NID_ESTADO_TESTADO, L_AUTORIZA_PUBLICAR, F_ENVIO, L_CONFLICTO, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
-                                break;
-                            case 2:
-                                if (oDeclaracion.C_EJERCICIO == (DateTime.Now.Year).ToString() & oDeclaracion.NID_ESTADO != 1)
-                                    throw new CustomException("La declaración de modificación ya fue presentada este año");
-                                if (oDeclaracion.NID_ESTADO == 1)
-                                {
-                                    datos_DECLARACION = new dald_DECLARACION(oBusquedaDeclaracion.lista_DECLARACION.Last());
-                                    checkHASH();
-                                }
-                                else
-                                {
-                                    C_EJERCICIO = (Convert.ToInt32(oDeclaracion.C_EJERCICIO) + 1).ToString();
-                                    ValidaMes(C_EJERCICIO);
-                                    datos_DECLARACION = new dald_DECLARACION(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, C_EJERCICIO, NID_TIPO_DECLARACION, NID_ESTADO, E_OBSERVACIONES, E_OBSERVACIONES_MARCADO, V_OBSERVACIONES_TESTADO, NID_ESTADO_TESTADO, L_AUTORIZA_PUBLICAR, F_ENVIO, L_CONFLICTO, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
-                                }
-                                break;
-                            case 3:
-                                if (oDeclaracion.NID_ESTADO == 1)
-                                    throw new CustomException("Existe una declaración de conclusión pendiente de envío");
-                                else
-                                    throw new CustomException("No se ha presentado una declaración de inicio");
-                            default:
-                                throw new CustomException("Tipo no reconocido");
+                            excep = true;
                         }
                     }
+                    file.Close();
+
+                    //OEVM - Validacion para permitirle a los ingresos del year pasado y que hicieron este anio inicial puedan hacer modificacion
+                    
+
+                        if (!oBusquedaDeclaracion.lista_DECLARACION.Any())
+                        {
+                            throw new CustomException("No se ha presentado una declaración de inicio");
+                        }
+                        else
+                        {
+                            blld_DECLARACION oDeclaracion = new blld_DECLARACION(oBusquedaDeclaracion.lista_DECLARACION.Last());
+                            C_EJERCICIO = (Convert.ToInt32(oDeclaracion.C_EJERCICIO)).ToString();
+                            switch (oDeclaracion.NID_TIPO_DECLARACION)
+                            {
+                                case 1:
+                                if (excep == false) {
+                                    ValidaMes(C_EJERCICIO);
+                                    if (oDeclaracion.C_EJERCICIO == (DateTime.Now.Year).ToString())
+                                        throw new CustomException("Su Declaración Patrimonial Inicial  fue presentada este año, y por reglamento no le corresponde presentar declaración de modificación este año. En caso de alguna duda, puede llamar a las extensiones 3435, 2307 y 2461");
+                                }
+                                if (oDeclaracion.NID_ESTADO == 1)
+                                        throw new CustomException("Existe una declaración de inicio pendiente de envio");
+                                     int ejercicio = Convert.ToInt32( C_EJERCICIO) - 1;
+                                    datos_DECLARACION = new dald_DECLARACION(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, Convert.ToString(ejercicio), NID_TIPO_DECLARACION, NID_ESTADO, E_OBSERVACIONES, E_OBSERVACIONES_MARCADO, V_OBSERVACIONES_TESTADO, NID_ESTADO_TESTADO, L_AUTORIZA_PUBLICAR, F_ENVIO, L_CONFLICTO, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
+                                    break;
+                                case 2:
+                                    if (oDeclaracion.C_EJERCICIO == (DateTime.Now.Year).ToString() & oDeclaracion.NID_ESTADO != 1)
+                                        throw new CustomException("La declaración de modificación ya fue presentada este año");
+                                    if (oDeclaracion.NID_ESTADO == 1)
+                                    {
+                                        datos_DECLARACION = new dald_DECLARACION(oBusquedaDeclaracion.lista_DECLARACION.Last());
+                                        checkHASH();
+                                    }
+                                    else
+                                    {
+                                        C_EJERCICIO = (Convert.ToInt32(oDeclaracion.C_EJERCICIO) + 1).ToString();
+                                        ValidaMes(C_EJERCICIO);
+                                        datos_DECLARACION = new dald_DECLARACION(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, C_EJERCICIO, NID_TIPO_DECLARACION, NID_ESTADO, E_OBSERVACIONES, E_OBSERVACIONES_MARCADO, V_OBSERVACIONES_TESTADO, NID_ESTADO_TESTADO, L_AUTORIZA_PUBLICAR, F_ENVIO, L_CONFLICTO, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
+                                    }
+                                    break;
+                                case 3:
+                                    if (oDeclaracion.NID_ESTADO == 1)
+                                        throw new CustomException("Existe una declaración de conclusión pendiente de envío");
+                                    else
+                                        throw new CustomException("No se ha presentado una declaración de inicio");
+                                default:
+                                    throw new CustomException("Tipo no reconocido");
+                            }
+                        }
+                    
                     break;
                 case 3:
                     if (!oBusquedaDeclaracion.lista_DECLARACION.Any())
