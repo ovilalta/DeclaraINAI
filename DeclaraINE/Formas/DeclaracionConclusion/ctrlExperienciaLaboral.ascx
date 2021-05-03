@@ -91,9 +91,11 @@
         <tr runat="server" id="trPr_Funcion" visible="true">
             <th>
                 <l>Especifique la Función Principal</l>
+                
             </th>
             <td>
-                <asp:TextBox ID="txtFuncion" runat="server" requerido="btnGuardarExperienciaLaboral"></asp:TextBox>
+                <asp:TextBox ID="txtFuncion" runat="server" requerido="btnGuardarExperienciaLaboral" MaxLength="250" ToolTip="Máximo 250 caracteres"></asp:TextBox>
+                <%--<sub>Máximo 250 caracteres</sub>--%>
             </td>
         </tr>
 

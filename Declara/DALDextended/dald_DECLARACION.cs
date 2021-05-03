@@ -73,7 +73,16 @@ namespace Declara_V2.DALD
 
 
             if (NID_TIPO_DECLARACION > 0 & NID_TIPO_DECLARACION < 4)
-                db.paDECLARACION_NUEVA(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, NID_TIPO_DECLARACION, C_EJERCICIO, nNID_DECLARACION);
+                //if (NID_TIPO_DECLARACION == 2)
+                //{
+                //    //int n_Ejercicio = Convert.ToInt32(C_EJERCICIO) + 1;
+                //    //string c_Ejercicio = n_Ejercicio.ToString();
+                //    db.paDECLARACION_NUEVA(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, NID_TIPO_DECLARACION, C_EJERCICIO, nNID_DECLARACION);
+                //}
+                //else
+                {
+                    db.paDECLARACION_NUEVA(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, NID_TIPO_DECLARACION, C_EJERCICIO, nNID_DECLARACION);
+                }                
             else
                 throw new CustomException("Error en tipo de declaración");
 

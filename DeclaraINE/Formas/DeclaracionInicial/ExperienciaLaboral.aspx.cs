@@ -265,7 +265,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                     ctrlExperienciaLaboral.E_OBSERVACIONES
                     );
 
-                AlertaSuperior.ShowSuccess("Se agrego correctamente la Experiencia Laboral");
+                AlertaSuperior.ShowSuccess("Se agregó correctamente la Experiencia Laboral");
 
                 UserControl item = (UserControl)Page.LoadControl("item.ascx");
                 ((Item)item).Id = oDeclaracion.DECLARACION_EXPERIENCIA_LABORALs.Count + 1; // .ALTA.ALTA_ADEUDOs.Count + 1;

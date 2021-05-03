@@ -804,6 +804,10 @@ input[id*="btnFalse"] {
     background-image: url(../Images/icons/ColorX24/PDF.png) !important;
 }
 
+.comments {
+    background-image: url(../Images/icons/ColorX24/Comments.png) !important;
+}
+
 .contact {
     background-image: url(../Images/icons/ColorX24/Contacts.png) !important;
 }
@@ -814,6 +818,10 @@ input[id*="btnFalse"] {
 
 .xls {
     background-image: url(../Images/icons/ColorX24/DataSheetFilled.png) !important;
+}
+
+.save {
+    background-image: url(../Images/icons/ColorX24/Save.png) !important;
 }
 
 .pdf {
