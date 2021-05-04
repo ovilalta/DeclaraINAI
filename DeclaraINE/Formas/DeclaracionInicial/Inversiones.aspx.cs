@@ -107,6 +107,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 //cblTitulares.DataBind(oDeclaracion.DECLARACION_DEPENDIENTESs, DECLARACION_DEPENDIENTES.Properties.NID_DEPENDIENTE, DECLARACION_DEPENDIENTES.Properties.V_NOMBRE_COMPLETO);
                 //cblTitulares.Items.Insert(0, new ListItem("Declarante", "0"));
                 //cblTitulares.Items.Insert(cblTitulares.Items.Count, new ListItem("Copropietario", "-1"));
+                
                 cblTitulares.Items.Insert(0, new ListItem("Declarante", "0"));
                 cblTitulares.Items.Insert(1, new ListItem("Declarante y Cónyuge", "1"));
                 cblTitulares.Items.Insert(2, new ListItem("Declarante y Cónyuge en Copropiedad con Terceros", "2"));
@@ -397,6 +398,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 List<Int32> ListaTitulares = new List<int>();
                 try
                 {
+                    
                     foreach (Int32 x in cblTitulares.SelectedValuesInteger())
                     {
                         ListaTitulares.Add(x);

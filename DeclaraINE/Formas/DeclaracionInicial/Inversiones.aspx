@@ -122,6 +122,17 @@
                             <asp:TextBox ID="txtTipoMoneda" runat="server"  Visible="false" MaxLength="50"></asp:TextBox>
                         </td>
                     </tr>
+
+                    <tr>
+                        <th>
+                            <l>Titular de la Inversión, cuenta bancaria y otro tipo de valores</l>
+                            
+                        </th>
+                        <td>
+                            <asp:CheckBoxList ID="cblTitulares" runat="server" ></asp:CheckBoxList>                            
+                            
+                        </td>
+                    </tr>
                     <%--<tr>
                         <th>
                             <l>Tipo de moneda</l>
@@ -164,14 +175,15 @@
                             <asp:TextBox ID="txtTerceroRFC" runat="server" MaxLength="13" Enabled="false"></asp:TextBox>
                         </td>
                     </tr>
-                    <tr>
+                    <%--<tr>
                         <th>
                             <l>Titular de la Inversión, cuenta bancaria y otro tipo de valores</l>
                         </th>
                         <td>
-                            <asp:CheckBoxList ID="cblTitulares" runat="server"></asp:CheckBoxList>
+                            <asp:CheckBoxList ID="cblTitulares" runat="server" ></asp:CheckBoxList>                            
+                            
                         </td>
-                    </tr>
+                    </tr>--%>
                     <tr>
                         <th>
                             <l>Aclaraciones / Observaciones</l>

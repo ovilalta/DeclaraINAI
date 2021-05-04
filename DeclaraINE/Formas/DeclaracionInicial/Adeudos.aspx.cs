@@ -330,7 +330,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                                                       Adeudo.E_OBSERVACIONES,
                                                       Adeudo.CID_TIPO_PERSONA_OTORGANTE,
                                                       Adeudo.NID_TITULARs);
-                    AlertaSuperior.ShowSuccess("Se agrego correctamente el adeudo");
+                    AlertaSuperior.ShowSuccess("Se agregó correctamente el adeudo");
                     string PasaNombre = Adeudo.V_TIPO_ADEUDO;
                     UserControl item = (UserControl)Page.LoadControl("item.ascx");
                     ((Item)item).Id = oDeclaracion.ALTA.ALTA_ADEUDOs.Count + 1;

@@ -213,6 +213,15 @@ namespace DeclaraINE.Formas.DeclaracionInicial
         protected global::System.Web.UI.WebControls.TextBox txtTipoMoneda;
 
         /// <summary>
+        /// Control cblTitulares.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList cblTitulares;
+
+        /// <summary>
         /// Control cmbTerceroInversion.
         /// </summary>
         /// <remarks>
@@ -238,15 +247,6 @@ namespace DeclaraINE.Formas.DeclaracionInicial
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTerceroRFC;
-
-        /// <summary>
-        /// Control cblTitulares.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList cblTitulares;
 
         /// <summary>
         /// Control txtObservaciones.

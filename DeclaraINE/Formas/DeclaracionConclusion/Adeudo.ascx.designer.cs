@@ -132,6 +132,15 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
         protected global::System.Web.UI.WebControls.TextBox moneytxtM_SALDO;
 
         /// <summary>
+        /// Control cblTitulares.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList cblTitulares;
+
+        /// <summary>
         /// Control cmbTercero.
         /// </summary>
         /// <remarks>
@@ -175,15 +184,6 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtE_CUENTA;
-
-        /// <summary>
-        /// Control cblTitulares.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList cblTitulares;
 
         /// <summary>
         /// Control txtObservaciones.

@@ -111,7 +111,15 @@
                 <div id="divmoneytxtM_SALDO"></div>
             </td>
         </tr>
+        <tr>
+            <th>
+                <l>Titular del Adeudo/Pasivo</l>
+            </th>
+            <td>
+                <asp:CheckBoxList ID="cblTitulares" runat="server"></asp:CheckBoxList>
 
+            </td>
+        </tr>
         <tr>
             <th>
                 <l>Tercero</l>
@@ -165,7 +173,7 @@
             </td>
         </tr>
 
-        <tr>
+        <%--<tr>
             <th>
                 <l>Titular del Adeudo/Pasivo</l>
             </th>
@@ -173,7 +181,7 @@
                 <asp:CheckBoxList ID="cblTitulares" runat="server"></asp:CheckBoxList>
 
             </td>
-        </tr>
+        </tr>--%>
 
         <tr>
             <th>
