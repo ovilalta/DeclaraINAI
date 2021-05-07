@@ -67,7 +67,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 ((ItemBaja)item).Bajar += OnBaja;
                 if (o.F_APERTURA < String.Concat("01/01/", Convert.ToString(System.DateTime.Today.Year - 1)).Date())
                 {
-                    ((Button)((ItemBaja)item).FindControl("btnEliminar")).Visible = false;
+                    //((Button)((ItemBaja)item).FindControl("btnEliminar")).Visible = false;
                     ((Button)((ItemBaja)item).FindControl("btnBaja")).Visible = false;
                 }
 

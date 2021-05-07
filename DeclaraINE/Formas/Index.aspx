@@ -110,8 +110,8 @@
                                                         <asp:LinkButton ID="LinkButton22" runat="server" OnClick="lkModificacion_Click" CssClass="active" Text="Modificación"></asp:LinkButton></li>
                                                     <li>
                                                         <asp:LinkButton ID="LinkButton33" runat="server" OnClick="lkConclusion_Click" CssClass="active" Text="Conclusión"></asp:LinkButton></li>
-                                                    <li>
-                                                        <asp:LinkButton ID="LinkButton44" runat="server" OnClick="lkConflicto_Click" CssClass="active" Text="Intereses"></asp:LinkButton></li>
+                                                    <%--<li>
+                                                        <asp:LinkButton ID="LinkButton44" runat="server" OnClick="lkConflicto_Click" CssClass="active" Text="Intereses"></asp:LinkButton></li>--%>
                                                     <li>
                                                         <asp:LinkButton ID="LinkButton200" runat="server" OnClick=" lkFiscal_Click" CssClass="active" Text="Fiscal"></asp:LinkButton></li>
                                                     <li>
@@ -264,16 +264,16 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6">
+                        <%--<div class="col-lg-4 col-md-6">
                             <div class="single_destination">
-                                <asp:LinkButton ID="lkConflicto" runat="server" OnClick="lkConflicto_Click"> <div class="thumb">
+                                <asp:LinkButton enabled="false" ID="lkConflicto" runat="server" OnClick="lkConflicto_Click"> <div class="thumb">
                                     <img src="../Images/DeclaraConclusion.jpg" />
                                 </div>
                                 <div class="content">
                                     <p class="d-flex align-items-center">
                                        Declaración de Intereses </p></div></asp:LinkButton>
                             </div>
-                        </div>
+                        </div>--%>
 
                         <!--OEVM Imagen de acceso para la pantalla de Declaración Fiscal-->
                         <div class="col-lg-4 col-md-6">

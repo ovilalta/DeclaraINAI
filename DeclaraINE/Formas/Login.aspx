@@ -320,7 +320,7 @@
                             <br />
                             <br />
                             <br />
-                            <p style="color:whitesmoke;">V.20210427.1</p>
+                            <p style="color:whitesmoke;">V.20210506</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-md-6 col-lg-4 ">

@@ -171,11 +171,11 @@ namespace DeclaraINE.Formas
             Response.Redirect("Login.aspx");
         }
 
-        protected void lkConflicto_Click(object sender, EventArgs e)
-        {
-            //Response.Redirect("DeclaracionConflicto\\Conflicto.aspx"); //Activar de nuevo la llamada de la declaración de conflicto de intereses
-            Response.Redirect("AvisoPrivacidadConflicto.aspx");
-        }
+        //protected void lkConflicto_Click(object sender, EventArgs e)
+        //{
+        //    //Response.Redirect("DeclaracionConflicto\\Conflicto.aspx"); //Activar de nuevo la llamada de la declaración de conflicto de intereses
+        //    //Response.Redirect("AvisoPrivacidadConflicto.aspx");
+        //}
 
         protected void lkFiscal_Click(object sender, EventArgs e)
         {

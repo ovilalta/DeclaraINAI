@@ -406,20 +406,33 @@ namespace Declara_V2.BLLD
                         {
                             blld_DECLARACION oDeclaracion = new blld_DECLARACION(oBusquedaDeclaracion.lista_DECLARACION.Last());
                             C_EJERCICIO = (Convert.ToInt32(oDeclaracion.C_EJERCICIO)).ToString();
+                        int ejercicio = 0;
                             switch (oDeclaracion.NID_TIPO_DECLARACION)
                             {
                                 case 1:
                                 if (excep == false) {
                                     ValidaMes(C_EJERCICIO);
-                                    if (oDeclaracion.C_EJERCICIO == (DateTime.Now.Year).ToString())
+                                    if (oDeclaracion.C_EJERCICIO == (DateTime.Now.Year).ToString()) { 
                                         throw new CustomException("Su Declaración Patrimonial Inicial  fue presentada este año, y por reglamento no le corresponde presentar declaración de modificación este año. En caso de alguna duda, puede llamar a las extensiones 3435, 2307 y 2461");
+                                    } 
                                 }
+                                else
+                                {
+                                    //Este codigo es para las excepciones donde entraron en anio previo e hicieron inicial en anio posterior (nov, dic declaracion en enero)
+                                    ejercicio = Convert.ToInt32(C_EJERCICIO) - 1;
+                                    datos_DECLARACION = new dald_DECLARACION(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, ejercicio.ToString(), NID_TIPO_DECLARACION, NID_ESTADO, E_OBSERVACIONES, E_OBSERVACIONES_MARCADO, V_OBSERVACIONES_TESTADO, NID_ESTADO_TESTADO, L_AUTORIZA_PUBLICAR, F_ENVIO, L_CONFLICTO, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
+                                    break;
+                                }
+
                                 if (oDeclaracion.NID_ESTADO == 1) { 
                                         throw new CustomException("Existe una declaración de inicio pendiente de envio");
-                                     int ejercicio = Convert.ToInt32( C_EJERCICIO) - 1;
+                                     ejercicio = Convert.ToInt32( C_EJERCICIO) - 1;
                                     datos_DECLARACION = new dald_DECLARACION(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, ejercicio.ToString(), NID_TIPO_DECLARACION, NID_ESTADO, E_OBSERVACIONES, E_OBSERVACIONES_MARCADO, V_OBSERVACIONES_TESTADO, NID_ESTADO_TESTADO, L_AUTORIZA_PUBLICAR, F_ENVIO, L_CONFLICTO, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
+                                    break;
                                 }
-                                datos_DECLARACION = new dald_DECLARACION(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, C_EJERCICIO, NID_TIPO_DECLARACION, NID_ESTADO, E_OBSERVACIONES, E_OBSERVACIONES_MARCADO, V_OBSERVACIONES_TESTADO, NID_ESTADO_TESTADO, L_AUTORIZA_PUBLICAR, F_ENVIO, L_CONFLICTO, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
+                                
+                                
+                                datos_DECLARACION = new dald_DECLARACION(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE,C_EJERCICIO, NID_TIPO_DECLARACION, NID_ESTADO, E_OBSERVACIONES, E_OBSERVACIONES_MARCADO, V_OBSERVACIONES_TESTADO, NID_ESTADO_TESTADO, L_AUTORIZA_PUBLICAR, F_ENVIO, L_CONFLICTO, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
                                     break;
                                 
                             case 2:
@@ -437,12 +450,12 @@ namespace Declara_V2.BLLD
                                         datos_DECLARACION = new dald_DECLARACION(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, C_EJERCICIO, NID_TIPO_DECLARACION, NID_ESTADO, E_OBSERVACIONES, E_OBSERVACIONES_MARCADO, V_OBSERVACIONES_TESTADO, NID_ESTADO_TESTADO, L_AUTORIZA_PUBLICAR, F_ENVIO, L_CONFLICTO, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
                                     }
                                     break;
-                                case 3:
+                            case 3:
                                     if (oDeclaracion.NID_ESTADO == 1)
                                         throw new CustomException("Existe una declaración de conclusión pendiente de envío");
                                     else
                                         throw new CustomException("No se ha presentado una declaración de inicio");
-                                default:
+                            default:
                                     throw new CustomException("Tipo no reconocido");
                             }
                         }
