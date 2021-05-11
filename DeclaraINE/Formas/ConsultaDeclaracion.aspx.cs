@@ -235,6 +235,12 @@ namespace DeclaraINE.Formas
 
         }
 
+        protected void btnAclaraciones_Click(object sender, EventArgs e) 
+        {
+            Int32 NID_DECLARACION = Convert.ToInt32(((Button)sender).CommandArgument);
+            Response.Redirect("AgregarObservacion.aspx?idDec="+NID_DECLARACION);
+        }
+
         protected void btnGridDeclaracionConstanciaEticaConducta_Click(object sender, EventArgs e)
         {
             try

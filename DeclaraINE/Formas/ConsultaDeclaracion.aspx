@@ -144,6 +144,11 @@
                                         <asp:Button ID="btnGridDeclaracionConstanciaEticaConducta" runat="server" Text="Constancia" CommandArgument='<%# Eval("NID_DECLARACION") %>' OnClick="btnGridDeclaracionConstanciaEticaConducta_Click" CssClass="mpdf" />                                        
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <%--<asp:TemplateField HeaderText="Aclaraciones" ItemStyle-HorizontalAlign="Center">
+                                    <ItemTemplate>
+                                        <asp:Button ID="btnAclaraciones" runat="server" Text="Agregar Aclaración"  OnClick="btnAclaraciones_Click" CssClass="comments" CommandArgument='<%# Eval("NID_DECLARACION")  %>' />                                        
+                                    </ItemTemplate>
+                                </asp:TemplateField>--%>
                             </Columns>
                         </asp:GridView>
                     </div>

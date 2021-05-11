@@ -136,8 +136,8 @@
                                     <img runat="server" id="imgConflictoInteres" enableviewstate="false" src="../../Content/nok.png" />Declaración de Intereses
                                 </a></li>
 
-                                <li runat="server" enableviewstate="false" id="liObservaciones" visible="false" ><a href="#menu5" data-toggle="tab">16.
-                                    <img runat="server" id="imgObservaciones" enableviewstate="false" src="../../Content/nok.png" />Declaración Anual de cumplimiento de Código de Ética
+                                <li runat="server" enableviewstate="false" id="liObservaciones" visible="false" ><a href="#menu5" data-toggle="tab" style="font-size:92%">16.
+                                    <img runat="server" id="imgObservaciones" enableviewstate="false" src="../../Content/nok.png" />Declaración Anual de cumplimiento de Código de Ética y Conducta
                                 </a></li>
 
                                 <li runat="server" enableviewstate="false" id="liEnvio" visible="false"><a href="#menu7" data-toggle="tab">

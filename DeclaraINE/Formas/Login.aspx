@@ -127,7 +127,7 @@
             </Triggers>
             <ContentTemplate>
                 <asp:AlanMessageBox ID="MsgBox" runat="server" />
-                <div class="row" style="margin: 15px;">
+                <div class="row" style="margin: 10px;">
                     <div class="col">
                         <div class="login-reg-panel">
                             <div class="container">
@@ -137,7 +137,7 @@
 
                                     <div class="input-container">
                                         <asp:TextBox ID="txtUsuario" runat="server" AutoCompleteType="Disabled" xrequired="required" CssClass="validate[required]"></asp:TextBox>
-                                        <label for="txtUser">Usuario</label>
+                                        <label for="txtUser">Usuario <small style="font-size:65%; color:red">(RFC con Homoclave o Correo Institucional)</small></label>
                                         <div class="bar">
                                         </div>
                                     </div>

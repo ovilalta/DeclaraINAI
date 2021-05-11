@@ -73,10 +73,14 @@
         <div class="modal-content" style="margin: 3% 10% 2% 10%;">
             <div class="modal-body etica" style="margin: 0px 2% 0px; max-height: none;">
                 <h3 class="subtitulo" style="text-align: center; font-weight: bold; margin: 3px 0; padding: 0px 0px 17px; background-color: #ffffff;">COMUNIDAD INAI</h3>
-                <p style="text-align: justify">Derivado de la aprobación del Código de Ética, por parte del Órgano Interno de Control, el cual contiene los principios, valores y reglas de integridad de los funcionarios públicos del INAI, lo hacemo de tu conocimiento, a fin de que en el desarrollo de tus funciones conduzcas tu comportamiento apegado al código, como integrante del INAI.</p>
+                <p style="text-align: justify">Derivado de la aprobación del Código de Ética, por parte del Órgano Interno de Control, el cual contiene los principios, valores y reglas
+                    de integridad de los funcionarios públicos del INAI, lo hacemo de tu conocimiento, a fin de que en el desarrollo de tus funciones conduzcas tu comportamiento 
+                    apegado al código, como integrante del INAI.</p>
                 <br />
                 <br />
-                <p style="text-align: justify"><a style="font-weight: bold">El Código de Ética </a>contiene y abarca los principios constitucionales, los valores y reglas de integridad en el ejercicio de nuestro servicio público, explicados de manera sencilla para facilitar su comprensión por nosotros, quienes formamos parte del servicio público, así como de los particulares vinculados al mismo.</p>
+                <p style="text-align: justify"><a style="font-weight: bold">El Código de Ética </a>contiene y abarca los principios constitucionales, los valores y reglas de integridad
+                    en el ejercicio de nuestro servicio público, explicados de manera sencilla para facilitar su comprensión por nosotros, quienes formamos parte del servicio público, 
+                    así como de los particulares vinculados al mismo.</p>
                 <p style="text-align: right">
                 <p style="text-align: right">
                     <div class="  button-container" style="text-align: right;">
@@ -85,14 +89,15 @@
                 </p>
                 <br />
                 <br />
-               <!--
-                <p style="text-align: justify"><a style="font-weight: bold">El Código de Conducta </a>busca explicar cómo deben ponerse en práctica los principios y valores contenidos en el Código de Ética de la Función Pública Electoral, Así como los estándares de comportamiento que deben guiar la actuación de las funcionarias y funcionarios del INE.</p>
+               
+                <p style="text-align: justify"><a style="font-weight: bold">El Código de Conducta </a>busca explicar cómo deben ponerse en práctica los principios y valores contenidos en el 
+                    Código de Ética del INAI, así como los estándares de comportamiento que deben guiar la actuación de las funcionarias y funcionarios del INAI.</p>
                 <p style="text-align: right">
                     <div class="  button-container" style="text-align: right;">
                         <asp:Button ID="btnsBuscaridConducta" Style="background-color: #fff;" runat="server" Text="Ver" OnClick="idConducta_Click" ClientIDMode="Static" />
                     </div>
                 </p>
-               -->
+               
                 <p style="text-align: justify">Deberás oprimir el botón de "VER" para poder continuar con tu declaración.</p>
                 <br />
                 <br />
@@ -115,7 +120,12 @@
     <br />
     <asp:AlanModalPopUp runat="server" ID="mppAcepta" HeaderText="Confirmar">
         <ContentTemplate>
-            <p>He leído los códigos, manifiesto que los he comprendido y declaro que les daré cumplimiento </p>
+            <p>En cumplimiento de la normatividad aplicable, declaro BAJO PROTESTA DE DECIR VERDAD que:
+                <br/>
+                Con la emisión de la presente declaración reconozco que tengo pleno conocimiento del contenido del Código de Ética y Código de Conducta del Instituto Nacional de Transparencia,
+                Acceso a la Información y Protección de Datos Personales, por lo tanto, no tengo inconveniente alguno en realizar cuando se me solicite las evaluaciones de conocimiento, comprensión
+                y cumplimiento que apruebe el Comité de Ética; comprometiéndome a denunciar los hechos y actos que fueren de mi conocimiento, contrarios a los principios, valores, reglas de integridad
+                y reglas de conducta previstas en los códigos mencionados.</p>
             <div class="center">
                 <div class="center button-container">
                     <asp:Button ID="btnsGuardar" runat="server" Text="Acepto" OnClick="btnGuardar_Click" Style="background-color: #fff;" ClientIDMode="Static" />
@@ -141,11 +151,11 @@ Nacional de Transparencia, Acceso a la Información y Protección de Datos Perso
         function ValidarDescargaEtica() {
              //$('#btnDocumento').show(); 
              $('#btnDocumento').prop( "disabled", false );
-            window.open('../../pdf1/OIC-INE-04-2019_Proyecto_DJ.pdf', '_blank');
+            window.open('../../pdf1/etica.pdf', '_blank');
         }
         function ValidarDescargaCodigo() {
             $('#btnDocumento').prop( "disabled", false );
-             window.open('../../pdf1/INE-JGE193-2019_Proyecto_DJ.pdf', '_blank');
+            window.open('../../pdf1/conducta.pdf', '_blank');
             //$('#btnDocumento').show(); 
         }         
     </script>

@@ -333,6 +333,7 @@ namespace DeclaraINE.Formas
                 HttpContext.Current.Response.WriteFile(File);
                 HttpContext.Current.Response.Flush();
                 System.IO.File.Delete(File);
+                
                 HttpContext.Current.Response.End();
             }
             catch (Exception ex)

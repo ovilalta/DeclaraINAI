@@ -150,6 +150,7 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -351,6 +352,7 @@
     <Content Include="Formas\Administrador\AdministradoresReporte.txt" />
     <Content Include="Formas\Administrador\GeneraDeclaracion.aspx" />
     <Content Include="Formas\Administrador\DescargaDeclaracionesPDFs.aspx" />
+    <Content Include="Formas\Administrador\ObligadosModificacion.txt" />
     <Content Include="Formas\Administrador\ReporteSIPOT.aspx" />
     <Content Include="Formas\AvisoPrivacidad.ascx" />
     <Content Include="Formas\AvisoPrivacidadConflicto.aspx" />
@@ -388,6 +390,7 @@
     <Content Include="Formas\DeclaracionConflicto\DatosGenerales.aspx" />
     <Content Include="Formas\DeclaracionConflicto\Envio.aspx" />
     <Content Include="Formas\DeclaracionConflicto\Item.ascx" />
+    <Content Include="Formas\AgregarObservacion.aspx" />
     <Content Include="Formas\DeclaracionFiscal\declaracionFiscal.aspx" />
     <Content Include="Formas\DeclaracionFiscal\pdfFiscales\tmp.txt" />
     <Content Include="Formas\DeclaracionInicial\Adeudo.ascx" />
@@ -2900,10 +2903,8 @@
     <Content Include="Formatos\Acuerdos.doc" />
     <Content Include="css\theme-default.map" />
     <Content Include="Formas\DeclaracionConflicto\_Conflicto.master" />
-    <Content Include="pdf1\conducta.pdf" />
-    <Content Include="pdf1\etica.pdf" />
     <Content Include="pdf1\INE-JGE193-2019_Proyecto_DJ.pdf" />
-    <Content Include="pdf1\OIC-INE-04-2019_Proyecto_DJ.pdf" />
+    <Content Include="pdf1\etica.pdf" />
     <Content Include="Formatos\Normas_e_Instructivo_para_Llenado_de_Declaraciones.pdf" />
     <Content Include="Formatos\Presentacion.pdf" />
     <Content Include="Formatos\Cuestionario_Declaracion_Modificacion.pdf" />
@@ -2938,6 +2939,7 @@
     <Content Include="Images\TutorialFiscal\GUIAFISCAL.pdf" />
     <Content Include="pdf1\CatalogoPuestosINAI.pdf" />
     <Content Include="pdf1\GuiaRecuperarContrasena.pdf" />
+    <Content Include="pdf1\conducta.pdf" />
     <None Include="Properties\PublishProfiles\OscarVilaltaPub.pubxml" />
     <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -3318,6 +3320,13 @@
     </Compile>
     <Compile Include="Formas\DeclaracionConflicto\_Conflicto.master.designer.cs">
       <DependentUpon>_Conflicto.master</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\AgregarObservacion.aspx.cs">
+      <DependentUpon>AgregarObservacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\AgregarObservacion.aspx.designer.cs">
+      <DependentUpon>AgregarObservacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formas\DeclaracionFiscal\declaracionFiscal.aspx.cs">
       <DependentUpon>declaracionFiscal.aspx</DependentUpon>

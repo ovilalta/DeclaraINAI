@@ -260,44 +260,51 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             Int32 Indice = IndiceItemSeleccionado;
             if (oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE != Adeudo.E_RFC.ToUpper())
             {
-                try
+                if (Adeudo.F_ADEUDO > Convert.ToDateTime("1900-01-01"))
                 {
-
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].NID_PAIS = Adeudo.NID_PAIS;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].CID_ENTIDAD_FEDERATIVA = Adeudo.CID_ENTIDAD_FEDERATIVA;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].V_LUGAR = Adeudo.V_LUGAR;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].NID_INSTITUCION = Adeudo.NID_INSTITUCION;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].E_RFC = Adeudo.E_RFC;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].V_OTRA = Adeudo.V_OTRA;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].E_CUENTA = Adeudo.E_CUENTA;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].F_ADEUDO = Adeudo.F_ADEUDO;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].M_ORIGINAL = Adeudo.M_ORIGINAL.Value;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].V_TIPO_MONEDA = Adeudo.V_TIPO_MONEDA;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].CID_TIPO_PERSONA_OTORGANTE = Adeudo.CID_TIPO_PERSONA_OTORGANTE;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].M_SALDO = Adeudo.M_SALDO.Value;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].V_OTRA = Adeudo.V_OTRA;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].V_LUGAR = String.Empty;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].E_OBSERVACIONES = Adeudo.E_OBSERVACIONES;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].NID_TERCERO = Adeudo.NID_TERCERO;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].E_NOMBRE_TERCERO = Adeudo.E_NOMBRE_TERCERO;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].E_RFC_TERCERO = Adeudo.E_RFC_TERCERO;
-                    oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].update(Adeudo.NID_TITULARs);
-
-                    ((Item)grd.FindControl(String.Concat("grd", Indice))).ImageUrl = String.Concat("../../Images/CAT_TIPO_ADEUDO/", Adeudo.NID_TIPO_ADEUDO, ".png");
-                    ((Item)grd.FindControl(String.Concat("grd", Indice))).TextoPrincipal = Adeudo.V_TIPO_ADEUDO;
-                    ((Item)grd.FindControl(String.Concat("grd", Indice))).TextoSecundario = "<br> No. Cuenta: " + Adeudo.E_CUENTA + "<br>Monto original del Adeudo: " + Adeudo.M_ORIGINAL.Value.ToString("C") + "<br>  Saldo : " + Adeudo.M_SALDO.Value.ToString("C");
-
-                    AlertaSuperior.ShowSuccess("Se actualizaron correctamente los datos del adeudo");
-                    _oDeclaracion = oDeclaracion;
-                    mppAdeudo.Hide();
-                }
-                catch (Exception ex)
-                {
-                    if (ex is CustomException || ex is ConvertionException)
+                    try
                     {
-                        MsgBox.ShowDanger(ex.Message);
+
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].NID_PAIS = Adeudo.NID_PAIS;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].CID_ENTIDAD_FEDERATIVA = Adeudo.CID_ENTIDAD_FEDERATIVA;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].V_LUGAR = Adeudo.V_LUGAR;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].NID_INSTITUCION = Adeudo.NID_INSTITUCION;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].E_RFC = Adeudo.E_RFC;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].V_OTRA = Adeudo.V_OTRA;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].E_CUENTA = Adeudo.E_CUENTA;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].F_ADEUDO = Adeudo.F_ADEUDO;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].M_ORIGINAL = Adeudo.M_ORIGINAL.Value;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].V_TIPO_MONEDA = Adeudo.V_TIPO_MONEDA;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].CID_TIPO_PERSONA_OTORGANTE = Adeudo.CID_TIPO_PERSONA_OTORGANTE;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].M_SALDO = Adeudo.M_SALDO.Value;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].V_OTRA = Adeudo.V_OTRA;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].V_LUGAR = String.Empty;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].E_OBSERVACIONES = Adeudo.E_OBSERVACIONES;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].NID_TERCERO = Adeudo.NID_TERCERO;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].E_NOMBRE_TERCERO = Adeudo.E_NOMBRE_TERCERO;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].E_RFC_TERCERO = Adeudo.E_RFC_TERCERO;
+                        oDeclaracion.ALTA.ALTA_ADEUDOs[Indice].update(Adeudo.NID_TITULARs);
+
+                        ((Item)grd.FindControl(String.Concat("grd", Indice))).ImageUrl = String.Concat("../../Images/CAT_TIPO_ADEUDO/", Adeudo.NID_TIPO_ADEUDO, ".png");
+                        ((Item)grd.FindControl(String.Concat("grd", Indice))).TextoPrincipal = Adeudo.V_TIPO_ADEUDO;
+                        ((Item)grd.FindControl(String.Concat("grd", Indice))).TextoSecundario = "<br> No. Cuenta: " + Adeudo.E_CUENTA + "<br>Monto original del Adeudo: " + Adeudo.M_ORIGINAL.Value.ToString("C") + "<br>  Saldo : " + Adeudo.M_SALDO.Value.ToString("C");
+
+                        AlertaSuperior.ShowSuccess("Se actualizaron correctamente los datos del adeudo");
+                        _oDeclaracion = oDeclaracion;
+                        mppAdeudo.Hide();
                     }
-                    else throw ex;
+                    catch (Exception ex)
+                    {
+                        if (ex is CustomException || ex is ConvertionException)
+                        {
+                            MsgBox.ShowDanger(ex.Message);
+                        }
+                        else throw ex;
+                    }
+                }
+                else
+                {
+                    MsgBox.ShowDanger("Advertencia", "La fecha del adeudo NO puede ser menor al año 1901");
                 }
             }
             else
@@ -312,47 +319,54 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             blld_USUARIO oUsuario = _oUsuario;
             if (oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE != Adeudo.E_RFC.ToUpper())
             {
-                try
+                if (Adeudo.F_ADEUDO > Convert.ToDateTime("1900-01-01"))
                 {
-                    oDeclaracion.ALTA.Add_ALTA_ADEUDOs(
-                                                      Adeudo.NID_PAIS,
-                                                      Adeudo.CID_ENTIDAD_FEDERATIVA,
-                                                      Adeudo.V_LUGAR,
-                                                      Adeudo.NID_INSTITUCION,
-                                                      Adeudo.V_OTRA,
-                                                      Adeudo.NID_TIPO_ADEUDO,
-                                                      Adeudo.F_ADEUDO,
-                                                      Adeudo.M_ORIGINAL.Value,
-                                                      Adeudo.M_SALDO.Value,
-                                                      Adeudo.E_CUENTA,
-                                                      Adeudo.V_TIPO_MONEDA,
-                                                      Adeudo.E_RFC,
-                                                      Adeudo.E_OBSERVACIONES,
-                                                      Adeudo.CID_TIPO_PERSONA_OTORGANTE,
-                                                      Adeudo.NID_TITULARs);
-                    AlertaSuperior.ShowSuccess("Se agregó correctamente el adeudo");
-                    string PasaNombre = Adeudo.V_TIPO_ADEUDO;
-                    UserControl item = (UserControl)Page.LoadControl("item.ascx");
-                    ((Item)item).Id = oDeclaracion.ALTA.ALTA_ADEUDOs.Count + 1;
-                    ((Item)item).ID = String.Concat("grd", ((Item)item).Id);
-                    ((Item)item).TextoPrincipal = PasaNombre;
-                    ((Item)item).TextoSecundario = "No. Cuenta " + Adeudo.E_CUENTA + "<br>Monto del Adeudo: " + Adeudo.M_ORIGINAL.Value.ToString("C") + "<br>  Saldo : " + Adeudo.M_SALDO.Value.ToString("C");
-                    ((Item)item).ImageUrl = String.Concat("../../Images/CAT_TIPO_ADEUDO/", Adeudo.NID_TIPO_ADEUDO, ".png");
-                    ((Item)item).Editar += OnEditar;
-                    ((Item)item).Eliminar += OnEliminar;
-                    grd.Controls.AddAt(grd.Controls.Count - 3, item);
-                    mppAdeudo.Hide();
-                    marcaApartado(12);
-                    _oDeclaracion = oDeclaracion;
-
-                }
-                catch (Exception ex)
-                {
-                    if (ex is CustomException || ex is ConvertionException)
+                    try
                     {
-                        MsgBox.ShowDanger(ex.Message);
+                        oDeclaracion.ALTA.Add_ALTA_ADEUDOs(
+                                                          Adeudo.NID_PAIS,
+                                                          Adeudo.CID_ENTIDAD_FEDERATIVA,
+                                                          Adeudo.V_LUGAR,
+                                                          Adeudo.NID_INSTITUCION,
+                                                          Adeudo.V_OTRA,
+                                                          Adeudo.NID_TIPO_ADEUDO,
+                                                          Adeudo.F_ADEUDO,
+                                                          Adeudo.M_ORIGINAL.Value,
+                                                          Adeudo.M_SALDO.Value,
+                                                          Adeudo.E_CUENTA,
+                                                          Adeudo.V_TIPO_MONEDA,
+                                                          Adeudo.E_RFC,
+                                                          Adeudo.E_OBSERVACIONES,
+                                                          Adeudo.CID_TIPO_PERSONA_OTORGANTE,
+                                                          Adeudo.NID_TITULARs);
+                        AlertaSuperior.ShowSuccess("Se agregó correctamente el adeudo");
+                        string PasaNombre = Adeudo.V_TIPO_ADEUDO;
+                        UserControl item = (UserControl)Page.LoadControl("item.ascx");
+                        ((Item)item).Id = oDeclaracion.ALTA.ALTA_ADEUDOs.Count + 1;
+                        ((Item)item).ID = String.Concat("grd", ((Item)item).Id);
+                        ((Item)item).TextoPrincipal = PasaNombre;
+                        ((Item)item).TextoSecundario = "No. Cuenta " + Adeudo.E_CUENTA + "<br>Monto del Adeudo: " + Adeudo.M_ORIGINAL.Value.ToString("C") + "<br>  Saldo : " + Adeudo.M_SALDO.Value.ToString("C");
+                        ((Item)item).ImageUrl = String.Concat("../../Images/CAT_TIPO_ADEUDO/", Adeudo.NID_TIPO_ADEUDO, ".png");
+                        ((Item)item).Editar += OnEditar;
+                        ((Item)item).Eliminar += OnEliminar;
+                        grd.Controls.AddAt(grd.Controls.Count - 3, item);
+                        mppAdeudo.Hide();
+                        marcaApartado(12);
+                        _oDeclaracion = oDeclaracion;
+
                     }
-                    else throw ex;
+                    catch (Exception ex)
+                    {
+                        if (ex is CustomException || ex is ConvertionException)
+                        {
+                            MsgBox.ShowDanger(ex.Message);
+                        }
+                        else throw ex;
+                    }
+                }
+                else
+                {
+                    MsgBox.ShowDanger("Advertencia", "La fecha del adeudo NO puede ser menor al año 1901");
                 }
             }
             else
