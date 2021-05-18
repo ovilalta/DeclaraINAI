@@ -102,7 +102,9 @@ namespace DeclaraINE.Formas
                 if (ex is CustomException || ex is ConvertionException)
                 {
                     try { Session.Remove("oDeclaracion"); } catch { }
-                    SessionAdd("oMensaje", ex.Message);
+                    //Mensaje que manda en pantalla cuando ya hicieron la declaracion de modificacion y se vuelven a meter "No se encontro el registro"
+                    SessionAdd("oMensaje", "La declaración de modificación se presentó de manera exitosa, use la opción de 'Consulta Declaraciones', si desea consultar los detalles.");
+                    //SessionAdd("oMensaje", ex.Message);
                     Response.Redirect("Index.aspx");
                     //MsgBox.ShowDanger(ex.Message);
                 }

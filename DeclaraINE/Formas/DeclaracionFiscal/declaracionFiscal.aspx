@@ -23,11 +23,12 @@
     <link rel="stylesheet" href="../css/font-awesome.min.css" />
     <link rel="stylesheet" href="../css/Declaracion.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link href="../Content/bootstrap.css" rel="stylesheet" />
-    <link href="../Content/AlanWebControls.css" rel="stylesheet" />
-    <link href="../Content/Site.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../../Content/AlanWebControls.css" rel="stylesheet" />
+    <script src="../../Scripts/AlanWebControls.js?1"></script>
+    <link href="../../Content/Site.css" rel="stylesheet" />
     <link href="../Content/login.css" rel="stylesheet" />
-    <script src="../Scripts/Site.js"></script>
+    <script src="../../Scripts/Site.js"></script>
 
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/font-awesome.min.css" />
@@ -68,6 +69,7 @@
     
 
         <form id="form1" runat="server">
+            
             <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true" EnableScriptGlobalization="true">
                 <Scripts>
                     <asp:ScriptReference Name="MsAjaxBundle" />
@@ -88,9 +90,11 @@
                     <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                     <asp:ScriptReference Name="WebFormsBundle" />
                 </Scripts>
+                
             </asp:ScriptManager>
             
             <div class ="container">
+                <asp:AlanMessageBox ID="MsgBox" runat="server" style="font-size:200%" />
                 <div class="row">
                     <div class="col-md-4" >  </div>        
                 
@@ -156,6 +160,7 @@
                 <asp:AlanModalPopUp runat="server" ID="mdlTutorial" HeaderText="Tutorial de la Declaración Fiscal" ModalSize="medium">
 
                 <ContentTemplate>
+                    
                     <div id="myCarousel" class="carousel slide" data-ride="false">
                         <ol class="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
