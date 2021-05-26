@@ -277,7 +277,7 @@
                     </th>
                     <td>
                         <div class="flista">
-                            <asp:DropDownList ID="chbDependietesInm" runat="server"  OnSelectedIndexChanged="chbDependietesInm_SelectedIndexChanged"  AutoPostBack="true" Enabled="false">
+                            <asp:DropDownList ID="chbDependietesInm" runat="server"  OnSelectedIndexChanged="chbDependietesInm_SelectedIndexChanged"  AutoPostBack="true" Enabled="True">
                                     <asp:ListItem Text="Declarante" VALUE= "0"></asp:ListItem>
                                     <asp:ListItem Text="Declarante y Cónyuge"  Value= "1"></asp:ListItem>
                                     <asp:ListItem Text="Declarante en Copropiedad con Terceros"  Value= "3"></asp:ListItem>

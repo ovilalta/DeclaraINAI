@@ -52,8 +52,9 @@ namespace DeclaraINE.Formas
             idDec = Convert.ToInt32(Request.QueryString["idDec"]);
             blld_DECLARACION oDeclaracion = new blld_DECLARACION(oUsuario.VID_NOMBRE, oUsuario.VID_FECHA, oUsuario.VID_HOMOCLAVE, idDec);
 
-            //oDeclaracion.ACLARACIONES = txtObservaciones.Text;
-            textoTest = txtObservaciones.Text;
+            //oDeclaracion.E_OBSERVACIONES_MARCADO = txtObservaciones.Text;
+           // oDeclaracion.V_OBSERVACIONES_TESTADO = txtObservaciones.Text;
+            //textoTest = txtObservaciones.Text;
             //msgBox.ShowDanger(textoTest);
 
         }
