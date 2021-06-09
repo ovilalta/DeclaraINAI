@@ -27,6 +27,9 @@
     </script>-->
 </head>
 <body onload="ComprobarVentana()">
+<div class="loader" align="center" valign="center">
+        <img src="../../Images/pageLoader.gif" />
+    </div>
     <form id="form1" runat="server" autocomplete="off">
         <asp:ScriptManager runat="server" EnablePartialRendering="true">
             <Scripts>
@@ -45,8 +48,47 @@
                 <asp:ScriptReference Name="WebFormsBundle" />
             </Scripts>
         </asp:ScriptManager>
-
+        
         <style>
+            .loader {
+                    position: fixed;
+                    left: 0px;
+                    top: 0px;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 9999;
+                    opacity: .8;
+                    background-color: #ffffff;
+                }
+
+            .loader img {
+                margin: 15% 45%;
+                height: 117px;
+                display: flex;
+            }
+
+            .container {
+            border:1px solid;
+            padding:35px;
+            }
+            .progress {
+                border-radius: 10px;
+                width: 100%;
+                height: 31px;
+                text-align:center;
+            }
+
+            .progress-bar {
+                border-radius: 0px;
+                padding: 5px;
+            }
+
+            .wrapper > img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                text-align: center;
+            }
             div[id*="grd"] > div .a {
                 overflow: hidden;
                 height: 100px;
@@ -94,6 +136,7 @@
                             <h3 style="margin: 7px; font-size: 22px; float: right;">
                                 <asp:Label ID="lblIdentificacion" runat="server" Text=" " Font-Size="Small"></asp:Label>
                                 <asp:Label ID="lblEjercicio" runat="server" Font-Size="Small" Text=" "></asp:Label>
+
                             </h3>
                         </div>
                     </div>
@@ -138,13 +181,20 @@
                         <asp:CalendarExtender runat="server" ID="txtFin" TargetControlID="txtFFin" Format="dd/MM/yyyy" />
                         <br />
                         <br />
-                        <asp:Button ID="brnActualizar" runat="server" Text="Descarga PDF's" OnClick="btnDescargar_Actualizar" CssClass="download"/>
-                        <div class="bar">
-                        </div>
+                        
+                         <asp:Button ID="brnActualizar" runat="server" Text="Descarga PDF's" OnClick="btnDescargar_Actualizar" CssClass="download"/>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </form>
+        <script type="text/javascript"> 
+                        $(window).ready(function () {
+                            $(".loader").fadeOut("slow");
+                            showOlvidoPass();
+                        });
+        </script>
 </body>
 </html>
+

@@ -3855,6 +3855,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Formas\PdfDeclaracionesTemp\" />
+    <Folder Include="Formas\zip\" />
     <Folder Include="packages\" />
   </ItemGroup>
   <ItemGroup>

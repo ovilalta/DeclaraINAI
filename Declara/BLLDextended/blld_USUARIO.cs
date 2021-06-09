@@ -844,6 +844,7 @@ namespace Declara_V2.BLLD
                 throw new CustomException("El RFC: " + RFC + " ya se encontraba activado.");
 
             datos_USUARIO.L_ACTIVO = true;
+           
             update();
         }
 

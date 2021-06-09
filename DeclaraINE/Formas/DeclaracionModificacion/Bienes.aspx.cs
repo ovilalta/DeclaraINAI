@@ -2177,9 +2177,9 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 Int32 IndiceAdeudo = this.IndiceAdeudoSeleccionado;
                 try
                 {
-                    if (Adeudo.M_ORIGINAL.HasValue)
-                        if (Adeudo.M_ORIGINAL > moneytxtValorAdqusicion.Money())
-                            throw new CustomException("El monto original del adeudo no puede ser mayor que el valor del inmueble asociado");
+                    //if (Adeudo.M_ORIGINAL.HasValue)
+                    //    if (Adeudo.M_ORIGINAL > moneytxtValorAdqusicion.Money())
+                    //        throw new CustomException("El monto original del adeudo no puede ser mayor que el valor del inmueble asociado");
                     if (Adeudo.F_ADEUDO > txtFechaAfquisicion.Date())
                         throw new CustomException("La fecha del adeudo no puede ser mayor que la fecha de adquisición del inmueble asociado");
 

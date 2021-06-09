@@ -17,9 +17,9 @@ using System.Linq;
 using DeclaraINE.file;
 using System.Collections.Generic;
 using System.Security.Cryptography;
-using Ionic.Zip;
-using ZipFile = Ionic.Zip.ZipFile;
-using iText;
+using AlanWebControls;
+
+
 
 namespace DeclaraINE.Formas.Administrador
 {
@@ -74,13 +74,42 @@ namespace DeclaraINE.Formas.Administrador
             }
             return cadena.ToString();
         }
+
+
+        public static void CreateEmptyDirectory(string fullPath)
+        {
+            if (!System.IO.Directory.Exists(fullPath))
+            {
+                System.IO.Directory.CreateDirectory(fullPath);
+            }
+        }
+        public static void DeleteFolder(string fullPath)
+        {
+            if (System.IO.Directory.Exists(fullPath))
+            {
+                System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(fullPath)
+                {
+                    Attributes = System.IO.FileAttributes.Normal
+                };
+                foreach (var info in directory.GetFileSystemInfos("*", System.IO.SearchOption.AllDirectories))
+                {
+                    System.IO.FileInfo fInfo = info as System.IO.FileInfo;
+                    if (fInfo != null) info.Attributes = System.IO.FileAttributes.Normal;
+                }
+                System.Threading.Thread.Sleep(100);
+                directory.Delete(true);
+            }
+        }
         protected void btnDescargar_Actualizar(object sender, EventArgs e)
         {
+            
+            
+
             if (txtFInicio.Text == "" || txtFInicio.Text == null)
             {
                 msgBox.ShowDanger("Debe especificar una fecha de inicio.");
             }
-            else if (txtFFin.Text == "" || txtFFin.Text == null)
+            else if (txtFFin.Text == "" || txtFFin.Text == null) 
             {
                 msgBox.ShowDanger("Debe especificar una fecha de fin.");
             }
@@ -90,8 +119,10 @@ namespace DeclaraINE.Formas.Administrador
             }
             else
             {
+                
                 MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
                 string connString = db.Database.Connection.ConnectionString;
+
                 string sql = "SP_DescargaPDFs";
 
                 using (SqlConnection conn = new SqlConnection(connString))
@@ -109,35 +140,63 @@ namespace DeclaraINE.Formas.Administrador
                             DataTable dt = new DataTable();
                             dt.Clear();
                             da.Fill(dt);
-                            //using(ZipFile zip = new ZipFile() ) 
+                            int numeroFilas = dt.Rows.Count;
+                           
 
                             int tipoDeclaracion = 0;
+                            string tipoDeclaracionN = "";
                             string vid_nombre = "";
                             string vid_fecha = "";
                             string vid_homo = "";
+                            string nombreCompleto = "";
+
                             String File = "";
                             
 
-                            using (ZipFile zip = new ZipFile())
-                            {
+                          
+
+                                string rutaDirectorio = AppDomain.CurrentDomain.BaseDirectory + "Formas\\PdfDeclaracionesTemp"; //Asigna ruta donde se guardaran los archivos pdf
+                                DeleteFolder(rutaDirectorio);  //Limpia el folder para asegurar que no tenga archivos
+                                CreateEmptyDirectory(rutaDirectorio); //Crea el folder de nueva cuenta para ser utilizado
                                 //Mandar llamar la logica de armado de pdfs
                                 for (int i = 0; i < dt.Rows.Count; i++)
                                 {
+                               
 
-                                    MODELDeclara_V2.DECLARACION registro = new MODELDeclara_V2.DECLARACION();
+                                MODELDeclara_V2.DECLARACION registro = new MODELDeclara_V2.DECLARACION();
 
 
                                     byte[] b1 = null;
                                     tipoDeclaracion = Convert.ToInt32(dt.Rows[i]["NID_TIPO_DECLARACION"].ToString());
+                                switch (tipoDeclaracion)
+                                {
+                                    case 1:
+                                        tipoDeclaracionN = "Inicial";
+                                        break;
+                                    case 2:
+                                        tipoDeclaracionN = "Modificacion";
+                                        break;
+                                    case 3:
+                                        tipoDeclaracionN = "Conclusion";
+                                        break;
+                                    default:
+                                        break;
+                                }
                                     bool obligado = Convert.ToBoolean(dt.Rows[i]["L_OBLIGADO"].ToString());
                                     string VersionDeclaracion = "";
                                     vid_nombre = dt.Rows[i]["VID_NOMBRE"].ToString();
                                     vid_fecha = dt.Rows[i]["VID_FECHA"].ToString();
                                     vid_homo = dt.Rows[i]["VID_HOMOCLAVE"].ToString();
+                                    nombreCompleto = dt.Rows[i]["NOMBRE"].ToString();
+                                    //string nombreFile = vid_nombre + vid_fecha + vid_homo + ".pdf";
+                                    
                                     int idDeclaracion = Convert.ToInt32(dt.Rows[i]["NID_DECLARACION"].ToString());
+                                    string nombreFile = nombreCompleto + "_" + tipoDeclaracionN + "_" + idDeclaracion +  ".pdf";
+
+                                    ActualizaNombreArchivoDeclaracion(vid_nombre, vid_fecha, vid_homo, idDeclaracion, nombreFile);
 
 
-                                    switch (tipoDeclaracion)
+                                switch (tipoDeclaracion)
                                     {
                                         case 1:
                                             if (obligado.Equals(true))
@@ -166,15 +225,16 @@ namespace DeclaraINE.Formas.Administrador
                                                                                    ,vid_homo
                                                                                    ,idDeclaracion
                                                                                    ,"Preliminarx"}.ToArray());
-                                    registro.V_HASH = GetSHA1(sf.FileBytes.ToString());
-                                    registro.B_FILE_DECLARACION = sf.FileBytes;
-                                    db.SaveChanges();
-                                    registro = db.DECLARACION.Find(vid_nombre, vid_fecha, vid_homo, idDeclaracion);
-                                    b1 = registro.B_FILE_DECLARACION;
+                                    //registro.V_HASH = GetSHA1(sf.FileBytes.ToString());
+                                    //registro.B_FILE_DECLARACION = sf.FileBytes;
+                                    //db.SaveChanges();
+                                    //registro = db.DECLARACION.Find(vid_nombre, vid_fecha, vid_homo, idDeclaracion);
+                                    //b1 = registro.B_FILE_DECLARACION;
+                                    b1 = sf.FileBytes;
 
                                     FileStream fs1;
                                     
-                                    File = AppDomain.CurrentDomain.BaseDirectory + "Formas\\PdfDeclaracionesTemp\\";
+                                    File = AppDomain.CurrentDomain.BaseDirectory + "Formas\\PdfDeclaracionesTemp\\"+ nombreFile;
                                    
                                     //File = String.Concat(Path.GetTempPath().ToString(), Path.DirectorySeparatorChar.ToString(), Path.GetRandomFileName().ToString(), "");
                                     fs1 = new FileStream(File, FileMode.Create);
@@ -183,28 +243,41 @@ namespace DeclaraINE.Formas.Administrador
                                     fs1.Close();
                                     fs1 = null;
 
-                                    //zip.Save(rutaZip);
                                     
+                                    
+
+
+                                    //zip.Save(rutaZip);
+
                                     //zip.Save(File);
 
 
                                 }
 
 
-                                HttpContext.Current.Response.ClearContent();
-                                HttpContext.Current.Response.Clear();
-                                HttpContext.Current.Response.ContentType = "application/zip"; // sf.MimeType;
-                                HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=Declaraciones.zip");
-                                HttpContext.Current.Response.WriteFile(File);
-                                HttpContext.Current.Response.Flush();
-                                System.IO.File.Delete(File);
-                                HttpContext.Current.Response.End();
-                            }
+
+                            string startPath = rutaDirectorio; //folder to add
+                            string zipPath = AppDomain.CurrentDomain.BaseDirectory + "Formas\\zip" + "\\result.zip"; //URL for your Zip file
+                            //ZipFile.CreateFromDirectory(startPath, zipPath, CompressionLevel.Fastest, true);
+                            ZipFile.CreateFromDirectory(startPath, zipPath, CompressionLevel.Optimal, true);
+                            //string ubicacionArchivo = startPath + "\\" + zipPath;
+                            //string ubicacionArchivo = startPath ;
+
+                            HttpContext.Current.Response.ClearContent();
+                            HttpContext.Current.Response.Clear();
+                            HttpContext.Current.Response.ContentType = "application/zip"; // sf.MimeType;
+                            HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=result.zip");
+                            HttpContext.Current.Response.WriteFile(zipPath);
+                            HttpContext.Current.Response.Flush();
+                            System.IO.File.Delete(zipPath);
+                            HttpContext.Current.Response.End();
+
                         }
 
                     }
                     catch (Exception ex)
                     {
+                        msgBox.ShowDanger("Error: " + ex.Message);
                         Console.WriteLine("Error: " + ex.Message);
                     }
                 }  
@@ -212,6 +285,31 @@ namespace DeclaraINE.Formas.Administrador
         }
 
        
-     }
+        protected void ActualizaNombreArchivoDeclaracion(string VID_NOMBRE , string VID_FECHA, string VID_HOMO, int NID_DECLARACION, string NOMBRE_ARCHIVO)
+        {
+
+            MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+
+            string connString = db.Database.Connection.ConnectionString;
+            string sql = "SP_AgregaNombreArchivoDeclaracion";
+
+            SqlConnection conn = new SqlConnection(connString);
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.CommandTimeout = 20;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@VID_NOMBRE", VID_NOMBRE);
+            cmd.Parameters.AddWithValue("@VID_FECHA", VID_FECHA);
+            cmd.Parameters.AddWithValue("@VID_HOMO", VID_HOMO);
+            cmd.Parameters.AddWithValue("@NID_DECLARACION", NID_DECLARACION);
+            cmd.Parameters.AddWithValue("@nombreArchivo", NOMBRE_ARCHIVO);
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            cmd.Dispose();//Libera recursos utilizados
+        }
+
+    }
  }
 

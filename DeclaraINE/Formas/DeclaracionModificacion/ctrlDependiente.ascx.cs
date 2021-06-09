@@ -91,7 +91,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 if (cmbPU_Ambito.SelectedValue == "")
                     return NID_AMBITO_PUBLICO = 0;
                 else
-                    return cmbPU_nivel.SelectedIndex;
+                    return cmbPU_Ambito.SelectedIndex;
             }
 
             set
@@ -294,7 +294,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 int op = 0;
 
                 if (rbtPr.Checked)
-                    op = 1; //publico
+                    op = 1; //Privado
 
                 if (rbtnPu.Checked)
                     op = 2; //publico
