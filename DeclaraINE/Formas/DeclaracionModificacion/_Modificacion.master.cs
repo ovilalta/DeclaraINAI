@@ -104,6 +104,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                         liAdeudos.Visible = true;
                         liComodato.Visible = true;
                         liConflictoInteres.Visible = true;
+                        //liFiscal.Visible = true;
                     }
 
                     //Mostramos los botones de vista previa
@@ -119,6 +120,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 }
 
                 liObservaciones.Visible = true;
+                liFiscal.Visible = true;
                 liIngresos.Visible = true;
                 //liDesemp.Visible = true;
 
@@ -132,6 +134,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 menu8.Visible = true;
                 menu9.Visible = true;
                 menu10.Visible = true;
+                menu17.Visible = true;
 
                 imgDatosGenerales.Src = "../../Content/ok.png";
                 if (oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 4).First().L_ESTADO.Value)
@@ -413,6 +416,11 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
         protected void lkObservaciones_Click(object sender, EventArgs e)
         {
             Response.Redirect("Observaciones.aspx");
+        }
+
+        protected void lkFiscal_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../DeclaracionFiscal/declaracionFiscal.aspx");
         }
 
         protected void lknConflicto_Click(object sender, EventArgs e)

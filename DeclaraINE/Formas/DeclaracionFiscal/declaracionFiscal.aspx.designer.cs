@@ -42,13 +42,31 @@ namespace DeclaraINE.Formas.DeclaracionFiscal
         protected global::AlanWebControls.AlanMessageBox MsgBox;
 
         /// <summary>
-        /// Control button3.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button button3;
+        protected global::System.Web.UI.WebControls.Label Label2;
+
+        /// <summary>
+        /// Control si.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton si;
+
+        /// <summary>
+        /// Control no.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton no;
 
         /// <summary>
         /// Control FileUpload1.

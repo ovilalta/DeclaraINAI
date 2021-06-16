@@ -15,16 +15,7 @@
     <link rel="stylesheet" href="../../css/style.css" />
     <script src="../../Scripts/jquery-3.1.1.min.js"></script>
     <script src="../../Scripts/Site.js"></script>
-    <!--<script type="text/javascript">
-        var _smartsupp = _smartsupp || {};
-        _smartsupp.key = '36fe62cea33d3cbc39674295b89808a4ec11a4fc';
-        window.smartsupp || (function (d) {
-            var s, c, o = smartsupp = function () { o._.push(arguments) }; o._ = [];
-            s = d.getElementsByTagName('script')[0]; c = d.createElement('script');
-            c.type = 'text/javascript'; c.charset = 'utf-8'; c.async = true;
-            c.src = 'https://www.smartsuppchat.com/loader.js?'; s.parentNode.insertBefore(c, s);
-        })(document);
-    </script>-->
+    
 </head>
 <body onload="ComprobarVentana()">
     <form id="form1" runat="server" autocomplete="off">

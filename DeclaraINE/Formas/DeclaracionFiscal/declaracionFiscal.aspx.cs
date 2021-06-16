@@ -10,18 +10,25 @@ using Declara_V2.BLLD;
 
 namespace DeclaraINE.Formas.DeclaracionFiscal
 {
-    
-    public partial class WebForm1 : System.Web.UI.Page
+    //System.Web.UI.Page
+    public partial class WebForm1 : Pagina
     {
         blld_USUARIO _oUsuario
         {
             get => (blld_USUARIO)Session["oUsuario"];
-            //set => SessionAdd("oUsuario", value);
+            set => SessionAdd("oUsuario", value);
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (_oUsuario.OBL_DECLARACION == false)
+            {
+                si.Checked = true;
+            }
+            else
+            {
+                no.Checked = true;
+            }
         }
 
 
@@ -61,6 +68,15 @@ namespace DeclaraINE.Formas.DeclaracionFiscal
                         FileUpload1.SaveAs(Server.MapPath("~" + ruta + nombreArchivo + fileExtension));
                         //Label1.Text = "Archivo guardado";
                         //Label1.ForeColor = System.Drawing.Color.Green;
+                        if (si.Checked==true)
+                        {
+                            //Incluir actualizacion a BD tabla USUARIO en el campo OBL_DECLARACION
+                        }
+                        else
+                        {
+                            
+                        }
+
                         MsgBox.ShowSuccess("Archivo Guardado", "Carga de Acuse Fiscal Exitoso");
                     }
 

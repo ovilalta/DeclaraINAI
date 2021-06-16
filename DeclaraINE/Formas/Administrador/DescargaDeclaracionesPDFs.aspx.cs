@@ -32,6 +32,7 @@ namespace DeclaraINE.Formas.Administrador
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             blld_USUARIO oUsuario = _oUsuario;
             string VID_RFC = oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE;
             if (!IsPostBack)
@@ -225,31 +226,19 @@ namespace DeclaraINE.Formas.Administrador
                                                                                    ,vid_homo
                                                                                    ,idDeclaracion
                                                                                    ,"Preliminarx"}.ToArray());
-                                    //registro.V_HASH = GetSHA1(sf.FileBytes.ToString());
-                                    //registro.B_FILE_DECLARACION = sf.FileBytes;
-                                    //db.SaveChanges();
-                                    //registro = db.DECLARACION.Find(vid_nombre, vid_fecha, vid_homo, idDeclaracion);
-                                    //b1 = registro.B_FILE_DECLARACION;
+                                    
                                     b1 = sf.FileBytes;
 
                                     FileStream fs1;
                                     
                                     File = AppDomain.CurrentDomain.BaseDirectory + "Formas\\PdfDeclaracionesTemp\\"+ nombreFile;
                                    
-                                    //File = String.Concat(Path.GetTempPath().ToString(), Path.DirectorySeparatorChar.ToString(), Path.GetRandomFileName().ToString(), "");
+                                    
                                     fs1 = new FileStream(File, FileMode.Create);
                                     fs1.Write(b1, 0, b1.Length);
-                                    //zip.AddEntry("Declaracion" + tipoDeclaracion + vid_nombre + vid_fecha + vid_homo, fs1); //OEVM
+                                    
                                     fs1.Close();
                                     fs1 = null;
-
-                                    
-                                    
-
-
-                                    //zip.Save(rutaZip);
-
-                                    //zip.Save(File);
 
 
                                 }
@@ -258,10 +247,11 @@ namespace DeclaraINE.Formas.Administrador
 
                             string startPath = rutaDirectorio; //folder to add
                             string zipPath = AppDomain.CurrentDomain.BaseDirectory + "Formas\\zip" + "\\result.zip"; //URL for your Zip file
-                            //ZipFile.CreateFromDirectory(startPath, zipPath, CompressionLevel.Fastest, true);
+
                             ZipFile.CreateFromDirectory(startPath, zipPath, CompressionLevel.Optimal, true);
-                            //string ubicacionArchivo = startPath + "\\" + zipPath;
-                            //string ubicacionArchivo = startPath ;
+
+                            DeleteFolder(rutaDirectorio);  //Limpia el folder para asegurar que no tenga archivos
+                            CreateEmptyDirectory(rutaDirectorio); //Crea el folder de nueva cuenta para ser utilizado
 
                             HttpContext.Current.Response.ClearContent();
                             HttpContext.Current.Response.Clear();
@@ -271,6 +261,7 @@ namespace DeclaraINE.Formas.Administrador
                             HttpContext.Current.Response.Flush();
                             System.IO.File.Delete(zipPath);
                             HttpContext.Current.Response.End();
+                           
 
                         }
 

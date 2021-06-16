@@ -140,6 +140,12 @@
                                     <img runat="server" id="imgObservaciones" enableviewstate="false" src="../../Content/nok.png" />Declaración Anual de cumplimiento de Código de Ética y Conducta
                                 </a></li>
 
+                                <%-- Menu nuevo para pantalla de declaracion fiscal  --%>
+                                <li runat="server" enableviewstate="false" id="liFiscal" visible="false" ><a href="#menu17" data-toggle="tab">17.
+                                    <img runat="server" id="imgFiscal" enableviewstate="false" src="../../Content/nok.png" />Carga Acuse Fiscal
+                                </a></li>
+                                <%--  --%>
+
                                 <li runat="server" enableviewstate="false" id="liEnvio" visible="false"><a href="#menu7" data-toggle="tab">
                                     <img runat="server" id="imgEnvio" enableviewstate="false" src="../../Content/nok.png" />Envío
                                 </a></li>
@@ -204,7 +210,7 @@
                         <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
                                     </li>
                                     <li>
-                                        <asp:LinkButton ID="lkVolver1" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                                        <asp:LinkButton ID="lkVolver1" runat="server" d-t="Volver al menú principal" OnClick="btnVolver_Click" EnableViewState="false">                       
                         <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
                                     </li>
                                 </ul>
@@ -235,7 +241,7 @@
                         <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
                                     </li>
                                     <li>
-                                        <asp:LinkButton ID="lkVolver2" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                                        <asp:LinkButton ID="lkVolver2" runat="server" d-t="Volver al menú principal" OnClick="btnVolver_Click" EnableViewState="false">                       
                         <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
                                     </li>
                                 </ul>
@@ -256,7 +262,7 @@
                         <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
                                     </li>
                                     <li>
-                                        <asp:LinkButton ID="lkVolver6" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                                        <asp:LinkButton ID="lkVolver6" runat="server" d-t="Volver al menú principal" OnClick="btnVolver_Click" EnableViewState="false">                       
                         <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
                                     </li>
                                 </ul>
@@ -276,7 +282,7 @@
                         <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
                                     </li>
                                     <li>
-                                        <asp:LinkButton ID="lkVolver3" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">
+                                        <asp:LinkButton ID="lkVolver3" runat="server" d-t="Volver al menú principal" OnClick="btnVolver_Click" EnableViewState="false">
                                             <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
                                     </li>
 
@@ -287,21 +293,45 @@
                                         <li>
                                             <asp:LinkButton ID="lkObservaciones" runat="server" d-t="Observaciones y Aclaraciones" OnClick="lkObservaciones_Click" EnableViewState="false">
 
-                        <img src="../../images/icons/ColorX32/Search.png"></asp:LinkButton>
+                                            <img src="../../images/icons/ColorX32/Search.png"></asp:LinkButton>
                                     </li>
                                     <li>
                                         <a></a>
                                     </li>
                                     <li>
                                         <asp:LinkButton ID="lkImprimir8" Visible="false" runat="server" d-t="Vista previa" OnClick="btnImprimir_Click" EnableViewState="false">                       
-                        <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
+                                            <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
                                     </li>
                                     <li>
-                                        <asp:LinkButton ID="LinkButton2" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
-                        <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
+                                        <asp:LinkButton ID="LinkButton2" runat="server" d-t="Volver al menú principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                                            <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
                                     </li>
                                 </ul>
                             </div>
+
+                            <%-- Menu declaracion fiscal --%>
+                            <div runat="server" enableviewstate="false" class="tab-pane fade level1" id="menu17" visible="false">
+                                    <ul class="nav nav-tabs">
+                                        <li>
+                                            <asp:LinkButton ID="lkFiscal" runat="server" d-t="Carga Acuse Fiscal" OnClick="lkFiscal_Click" EnableViewState="false">
+
+                                            <img src="../../Images/icons/ColorX32/DeclaraFiscal.png"></asp:LinkButton>
+                                    </li>
+                                    <li>
+                                        <a></a>
+                                    </li>
+                                    <%--<li>
+                                        <asp:LinkButton ID="LinkButton9" Visible="false" runat="server" d-t="Vista previa" OnClick="btnImprimir_Click" EnableViewState="false">                       
+                                            <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
+                                    </li>--%>
+                                    <li>
+                                        <asp:LinkButton ID="LinkButton10" runat="server" d-t="Volver al menú principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                                            <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
+                                    </li>
+                                </ul>
+                            </div>
+                            <%--  --%>
+
                             <div runat="server" enableviewstate="false" class="tab-pane fade level1" id="menu6" visible="false">
                                 <ul class="nav nav-tabs">
                                     <li>
@@ -316,7 +346,7 @@
                         <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
                                     </li>
                                     <li>
-                                        <asp:LinkButton ID="lkVolver4" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                                        <asp:LinkButton ID="lkVolver4" runat="server" d-t="Volver al menú principal" OnClick="btnVolver_Click" EnableViewState="false">                       
                         <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
                                     </li>
                                 </ul>
@@ -335,7 +365,7 @@
                         <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
                                     </li>
                                     <li>
-                                        <asp:LinkButton ID="lkVolver5" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                                        <asp:LinkButton ID="lkVolver5" runat="server" d-t="Volver al menú principal" OnClick="btnVolver_Click" EnableViewState="false">                       
                         <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
                                     </li>
                                 </ul>
@@ -357,7 +387,7 @@
                         <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
                                     </li>
                                     <li>
-                                        <asp:LinkButton ID="LinkButton3" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                                        <asp:LinkButton ID="LinkButton3" runat="server" d-t="Volver al menú principal" OnClick="btnVolver_Click" EnableViewState="false">                       
                         <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
                                     </li>
                                 </ul>
@@ -378,7 +408,7 @@
                         <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
                                     </li>
                                     <li>
-                                        <asp:LinkButton ID="LinkButton8" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                                        <asp:LinkButton ID="LinkButton8" runat="server" d-t="Volver al menú principal" OnClick="btnVolver_Click" EnableViewState="false">                       
                         <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
                                     </li>
                                 </ul>
@@ -398,7 +428,7 @@
                         <img src="../../images/icons/ColorX32/print.png"></asp:LinkButton>
                                     </li>
                                     <li>
-                                        <asp:LinkButton ID="LinkButton5" runat="server" d-t="Volver al menù principal" OnClick="btnVolver_Click" EnableViewState="false">                       
+                                        <asp:LinkButton ID="LinkButton5" runat="server" d-t="Volver al menú principal" OnClick="btnVolver_Click" EnableViewState="false">                       
                         <img src="../../images/icons/ColorX32/Circled%20Left.png"></asp:LinkButton>
                                     </li>
                                 </ul>

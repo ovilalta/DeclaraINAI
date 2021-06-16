@@ -105,7 +105,7 @@
                 </div>    
                 <br />
                 <%-- Boton tutorial --%>
-                <div class="row">
+                <%--<div class="row">
                     <div class="col-md-4">                
                     </div>
                     <div class="col-md-4" align="center">
@@ -113,8 +113,34 @@
                     </div>
                     <div class="col-md-4">                
                     </div>
-                 </div>
+                 </div>--%>
                 <br />
+                <div class="row mb-5">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6  d-flex justify-content-center">
+                        <asp:Label ID="Label2" runat="server" Text="¿Eres obligado a presentar declaración fiscal ante el SAT?"></asp:Label>
+                        <br />
+                        
+                    </div>
+                    <div class="col-md-3"></div>
+                        
+                </div>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6  d-flex justify-content-center">
+                            <asp:RadioButton ID="si" runat="server" GroupName="FiscalObligado" Text="SI"/>
+                    </div>
+                    <div class="col-md-3"></div>
+                        
+                </div>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6  d-flex justify-content-center">
+                            <asp:RadioButton ID="no" runat="server" GroupName="FiscalObligado" Text="NO"/>
+                    </div>
+                    <div class="col-md-3"></div>
+                        
+                </div>
                 <br />
                 <br />
 

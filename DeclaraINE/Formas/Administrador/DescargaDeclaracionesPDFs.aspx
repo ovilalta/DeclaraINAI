@@ -15,21 +15,12 @@
     <link rel="stylesheet" href="../../css/style.css" />
     <script src="../../Scripts/jquery-3.1.1.min.js"></script>
     <script src="../../Scripts/Site.js"></script>
-    <!--<script type="text/javascript">
-        var _smartsupp = _smartsupp || {};
-        _smartsupp.key = '36fe62cea33d3cbc39674295b89808a4ec11a4fc';
-        window.smartsupp || (function (d) {
-            var s, c, o = smartsupp = function () { o._.push(arguments) }; o._ = [];
-            s = d.getElementsByTagName('script')[0]; c = d.createElement('script');
-            c.type = 'text/javascript'; c.charset = 'utf-8'; c.async = true;
-            c.src = 'https://www.smartsuppchat.com/loader.js?'; s.parentNode.insertBefore(c, s);
-        })(document);
-    </script>-->
+
 </head>
+
 <body onload="ComprobarVentana()">
-<div class="loader" align="center" valign="center">
-        <img src="../../Images/pageLoader.gif" />
-    </div>
+    
+    
     <form id="form1" runat="server" autocomplete="off">
         <asp:ScriptManager runat="server" EnablePartialRendering="true">
             <Scripts>
@@ -50,45 +41,6 @@
         </asp:ScriptManager>
         
         <style>
-            .loader {
-                    position: fixed;
-                    left: 0px;
-                    top: 0px;
-                    width: 100%;
-                    height: 100%;
-                    z-index: 9999;
-                    opacity: .8;
-                    background-color: #ffffff;
-                }
-
-            .loader img {
-                margin: 15% 45%;
-                height: 117px;
-                display: flex;
-            }
-
-            .container {
-            border:1px solid;
-            padding:35px;
-            }
-            .progress {
-                border-radius: 10px;
-                width: 100%;
-                height: 31px;
-                text-align:center;
-            }
-
-            .progress-bar {
-                border-radius: 0px;
-                padding: 5px;
-            }
-
-            .wrapper > img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                text-align: center;
-            }
             div[id*="grd"] > div .a {
                 overflow: hidden;
                 height: 100px;
@@ -182,7 +134,12 @@
                         <br />
                         <br />
                         
-                         <asp:Button ID="brnActualizar" runat="server" Text="Descarga PDF's" OnClick="btnDescargar_Actualizar" CssClass="download"/>
+                            <asp:Button ID="brnActualizar" runat="server" Text="Descarga PDF's" OnClientClick="ValidatebtnEntrar();" OnClick="btnDescargar_Actualizar" CssClass="download" class="mb-3"/>
+                            <br />
+                            <br />  
+                            <%-- Barra de progreso --%>
+                        
+                        
                         
                     </div>
                 </div>
@@ -192,8 +149,10 @@
         <script type="text/javascript"> 
                         $(window).ready(function () {
                             $(".loader").fadeOut("slow");
-                            showOlvidoPass();
+                            
                         });
+
+                        
         </script>
 </body>
 </html>

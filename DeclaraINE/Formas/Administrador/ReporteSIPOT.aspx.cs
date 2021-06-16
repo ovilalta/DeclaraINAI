@@ -84,6 +84,7 @@ namespace DeclaraINE.Formas.Administrador
                             da.SelectCommand.Parameters.Add(new SqlParameter("@fechaFin", SqlDbType.VarChar)).Value = txtFFin.Text;
                             DataTable dt = new DataTable();
                             da.Fill(dt);
+
                             Workbook book = new Workbook();
                             Worksheet sheet = book.Worksheets[0];
                             sheet.InsertDataTable(dt, true, 1, 1);
