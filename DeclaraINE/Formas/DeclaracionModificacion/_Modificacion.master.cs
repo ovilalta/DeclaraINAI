@@ -187,6 +187,12 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     lkComodato.CssClass = "complete";
                 }
 
+                if (oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 22).First().L_ESTADO.Value)
+                {
+                    imgFiscal.Src = "../../Content/ok.png";
+                    lkFiscal.CssClass = "complete";
+                }
+
                 links_Bienes(ref oDeclaracion);
             }
 

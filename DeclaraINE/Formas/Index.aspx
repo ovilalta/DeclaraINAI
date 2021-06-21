@@ -112,9 +112,9 @@
                                                         <asp:LinkButton ID="LinkButton33" runat="server" OnClick="lkConclusion_Click" CssClass="active" Text="Conclusión"></asp:LinkButton></li>
                                                     <%--<li>
                                                         <asp:LinkButton ID="LinkButton44" runat="server" OnClick="lkConflicto_Click" CssClass="active" Text="Intereses"></asp:LinkButton></li>--%>
-                                                    <li>
+                                                    <%--<li>
                                                         <asp:LinkButton ID="LinkButton200" runat="server" OnClick=" lkFiscal_Click" CssClass="active" Text="Fiscal"></asp:LinkButton></li>
-                                                    <li>
+                                                    <li>--%>
                                                         <asp:LinkButton ID="btnaCerrar" Text="Salir" runat="server" OnClick="btnCerrar_Click"></asp:LinkButton></li>
                                                 </ul>
 
@@ -276,7 +276,7 @@
                         </div>--%>
 
                         <!--OEVM Imagen de acceso para la pantalla de Declaración Fiscal-->
-                        <div class="col-lg-4 col-md-6">
+                        <%--<div class="col-lg-4 col-md-6">
                             <div class="single_destination">
                                 <asp:LinkButton ID="LkFiscal" runat="server" OnClick="lkFiscal_Click"> <div class="thumb">
                                     <img src="../Images/DeclaraFiscal.png" />
@@ -285,7 +285,7 @@
                                     <p class="d-flex align-items-center">
                                        Declaración Fiscal </p></div></asp:LinkButton>
                             </div>
-                        </div>
+                        </div>--%>
                         <div class="col-lg-4 col-md-6">
                             <div class="single_destination">
                                 <asp:LinkButton ID="lkAdmin" runat="server" OnClick="lkAdmin_Click"> <div class="thumb"><img src="../Images/administration.jpg" />

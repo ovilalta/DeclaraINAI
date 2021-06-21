@@ -124,7 +124,8 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             blld_DECLARACION oDeclaracion = _oDeclaracion;
             //oDeclaracion.E_OBSERVACIONES = txtObservaciones.Text;
             //oDeclaracion.update();
-            Response.Redirect("Envio.aspx");
+            //Response.Redirect("Envio.aspx");
+            Response.Redirect("../DeclaracionFiscal/declaracionFiscal.aspx");
         }
 
         private void marcaApartado(int NID_APARTADO)

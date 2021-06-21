@@ -49,7 +49,7 @@ namespace DeclaraINE.Formas
             oBusqueda.select();
             if (!oBusqueda.lista_DECLARACION.Any())
             {
-                //QstBox.AskWarning("Los servidores públicos desde el nivel de jefe de departamento u homólogo hasta el de Consejero Presidente, sean de plaza presupuestal o contratados por honorarios, así como aquellos que manejen o apliquen recursos económicos y/o intervengan en la adjudicación de pedidos o contratos, están obligados a presentar la declaración de situación y de <b>modificación patrimonial</b> ante el <b>Órgano Interno de Control de este Instituto Nacional Electoral.</b><br><br><br> <h3><p style='color:#FF0000';> ¿Realmente desea realizar la declaración de Modificación Patrimonial? </p></h3>");
+                
                 ValidaDeclaracion();
             }
             else {

@@ -175,7 +175,8 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
         }
         public void Anterior()
         {
-            Response.Redirect("Observaciones.aspx");
+            //Response.Redirect("Observaciones.aspx");
+            Response.Redirect("../DeclaracionFiscal/declaracionFiscal.aspx");
         }
 
         public void Guardar()

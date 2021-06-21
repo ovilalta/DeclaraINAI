@@ -128,7 +128,7 @@
                 <div class="row">
                     <div class="col-md-3"></div>
                     <div class="col-md-6  d-flex justify-content-center">
-                            <asp:RadioButton ID="si" runat="server" GroupName="FiscalObligado" Text="SI"/>
+                            <asp:RadioButton ID="si" runat="server" GroupName="FiscalObligado" Text="SI" value="si" OnChekedChanged="FiscalObligado_CheckedChanged" AutoPostBack="true"/>
                     </div>
                     <div class="col-md-3"></div>
                         
@@ -136,7 +136,7 @@
                 <div class="row">
                     <div class="col-md-3"></div>
                     <div class="col-md-6  d-flex justify-content-center">
-                            <asp:RadioButton ID="no" runat="server" GroupName="FiscalObligado" Text="NO"/>
+                            <asp:RadioButton ID="no" runat="server" GroupName="FiscalObligado" Text="NO" Value="no" OnChekedChanged="FiscalObligado_CheckedChanged" AutoPostBack="true"/>
                     </div>
                     <div class="col-md-3"></div>
                         
@@ -160,13 +160,24 @@
                     </div>
                </div>
                 <br />
+                <div class="row">                    
+                    <div class="col-md-3">                            
+                    </div>                    
+                    <div class="col-md-6" align="center">
+                        <asp:Button Text="Guardar" ID="Button1" runat="server" OnClick="Button1_Click" CssClass="Image-SaveArchive" width="210" />
+                        
+                    </div>                    
+                    <div class="col-md-3">                        
+                    </div>                    
+                 </div>
+                <br />
                     <%-- Botones de cargar y cancelar --%>
                  <div class="row">                    
                     <div class="col-md-3">                            
                     </div>                    
                     <div class="col-md-6" align="center">
-                        <asp:Button Text="Guardar" ID="Button1" runat="server" OnClick="Button1_Click" CssClass="Image-SaveArchive" width="210" />
-                        <asp:Button Text="Regresar a tu declaración" ID="btnAtras" runat="server" OnClick="btnAtras_Click" CssClass="Image-Restart" width="210" />
+                        <asp:Button Text="Anterior" ID="btnAtras" runat="server" OnClick="btnAtras_Click" CssClass="Image-Prev" width="210" />
+                        <asp:Button Text="Siguiente" ID="btnSiguiente" runat="server" OnClick="btnSiguiente_Click" CssClass="Image-Next" width="210" />
                     </div>                    
                     <div class="col-md-3">                        
                     </div>                    

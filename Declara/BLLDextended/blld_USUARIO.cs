@@ -13,6 +13,7 @@ using System.Security.Cryptography;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
+using System.Data.SqlClient;
 
 namespace Declara_V2.BLLD
 {
@@ -848,6 +849,40 @@ namespace Declara_V2.BLLD
             update();
         }
 
+        public void ObligadoFiscalCambio(string RFC, bool obligado)
+        {
+            //OEVM 18jun2021 - Cambio de valor al responder en declaracion fiscal si es obligado o no.
+
+
+            MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+            string connString = db.Database.Connection.ConnectionString;
+            
+
+            using (SqlConnection conn = new SqlConnection(connString))
+
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand("Sp_Actualiza_FiscalObligado", conn))
+                    {
+                        //da.SelectCommand = new SqlCommand(sql, conn);
+                        
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@rfc", RFC));
+                        cmd.Parameters.Add(new SqlParameter("@obligado", obligado));
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                        cmd.Dispose();//Libera recursos utilizados
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+        }
         public void Desactivar()
         {
             foreach (blld_USUARIO_CORREO correo in USUARIO_CORREOs)

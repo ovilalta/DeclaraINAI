@@ -1753,6 +1753,7 @@
     <Content Include="Images\icons\ColorX24\Negative Dynamic.png" />
     <Content Include="Images\icons\ColorX24\Neo.png" />
     <Content Include="Images\icons\ColorX24\New Post.png" />
+    <Content Include="Images\icons\ColorX24\next.png" />
     <Content Include="Images\icons\ColorX24\No Alcohol.png" />
     <Content Include="Images\icons\ColorX24\No Animals.png" />
     <Content Include="Images\icons\ColorX24\No Barcode.png" />
@@ -1796,6 +1797,7 @@
     <Content Include="Images\icons\ColorX24\Police Station.png" />
     <Content Include="Images\icons\ColorX24\Positive Dynamic.png" />
     <Content Include="Images\icons\ColorX24\Post Office.png" />
+    <Content Include="Images\icons\ColorX24\prev.png" />
     <Content Include="Images\icons\ColorX24\Price Tag USD.png" />
     <Content Include="Images\icons\ColorX24\Print.png" />
     <Content Include="Images\icons\ColorX24\Private.png" />
@@ -3862,6 +3864,9 @@
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
+    <Content Include="versionesPublicas\AARÓNMASTACHEARROYO_Modificacion_3.pdf" />
+    <Content Include="versionesPublicas\ALEJANDRORODRIGUEZVERGEL_Modificacion_3.pdf" />
+    <Content Include="versionesPublicas\ALMAROSARAMÍREZHERRERA_Modificacion_3.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
