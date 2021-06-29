@@ -95,6 +95,7 @@
             
             <div class ="container">
                 <asp:AlanMessageBox ID="MsgBox" runat="server" style="font-size:200%" />
+                <asp:AlanQuestionBox runat="server" ID="QstBox" NoText="No" YesText="Si" OnNo="QstBox_No" OnYes="QstBox_Yes" YesCssClass="" NoCssClass="" />
                 <div class="row">
                     <div class="col-md-4" >  </div>        
                 
@@ -105,7 +106,7 @@
                 </div>    
                 <br />
                 <%-- Boton tutorial --%>
-                <%--<div class="row">
+                <div class="row">
                     <div class="col-md-4">                
                     </div>
                     <div class="col-md-4" align="center">
@@ -113,9 +114,22 @@
                     </div>
                     <div class="col-md-4">                
                     </div>
-                 </div>--%>
+                 </div>
                 <br />
-                <div class="row mb-5">
+                <hr />
+                <div class="row">
+                    <div class="col-md-3">                
+                    </div>
+                    <div class="col-md-6" align="center">
+                        <label>Ejemplo Acuse Fiscal</label>
+                        <img src="../../images/HeaderFiscal.jpg" Width="550px" height="280px"/>
+                    </div>
+                    <div class="col-md-3">                
+                    </div>
+                 </div>
+                <br />
+                <hr />
+                <%--<div class="row mb-5">
                     <div class="col-md-3"></div>
                     <div class="col-md-6  d-flex justify-content-center">
                         <asp:Label ID="Label2" runat="server" Text="¿Eres obligado a presentar declaración fiscal ante el SAT?"></asp:Label>
@@ -140,9 +154,8 @@
                     </div>
                     <div class="col-md-3"></div>
                         
-                </div>
-                <br />
-                <br />
+                </div>--%>
+            
 
                 
                 
@@ -151,16 +164,18 @@
                     <div class="col-md-4">                
                     </div>
                     <div class="col-md-4" align="center">
-                       
-                            <asp:FileUpload  ID="FileUpload1" runat="server" Width="400px" Height="80px" />
-                            
-                        
+                        <label>
+                            <h3>Carga aquí tu acuse fiscal</h3>
+                        </label>
+                        <br />
+                        <br />
+                            <asp:FileUpload  ID="FileUpload1" runat="server" Width="400px" Height="50px" />
                     </div>
                     <div class="col-md-4">                
                     </div>
                </div>
-                <br />
-                <div class="row">                    
+                
+                <%--<div class="row">                    
                     <div class="col-md-3">                            
                     </div>                    
                     <div class="col-md-6" align="center">
@@ -169,7 +184,7 @@
                     </div>                    
                     <div class="col-md-3">                        
                     </div>                    
-                 </div>
+                 </div>--%>
                 <br />
                     <%-- Botones de cargar y cancelar --%>
                  <div class="row">                    

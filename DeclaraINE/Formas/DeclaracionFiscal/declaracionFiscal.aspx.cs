@@ -29,75 +29,75 @@ namespace DeclaraINE.Formas.DeclaracionFiscal
 
         protected void FiscalObligado_CheckedChanged(Object sender, EventArgs e)
         {
-            if (si.Checked)
-            {
-                FileUpload1.Visible = true;
-            }
+            //if (si.Checked)
+            //{
+            //    FileUpload1.Visible = true;
+            //}
 
-            if (no.Checked)
-            {
-                FileUpload1.Visible = false;
-            }
+            //if (no.Checked)
+            //{
+            //    FileUpload1.Visible = false;
+            //}
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            bool obligado=false;
-            if  (!IsPostBack)
-            {
-                MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
-                string connString = db.Database.Connection.ConnectionString;
-                
+            //bool obligado=false;
+            //if  (!IsPostBack)
+            //{
+            //    MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+            //    string connString = db.Database.Connection.ConnectionString;
 
-                using (SqlConnection conn = new SqlConnection(connString))
 
-                {
-                    try
-                    {
-                        using (SqlCommand cmd = new SqlCommand("Sp_Recupera_FiscalObligado", conn))
-                        {
-                            
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.Add(new SqlParameter("@rfc", _oUsuario.VID_NOMBRE+_oUsuario.VID_FECHA+_oUsuario.VID_HOMOCLAVE));
+            //    using (SqlConnection conn = new SqlConnection(connString))
 
-                            conn.Open();
-                            obligado = Convert.ToBoolean( cmd.ExecuteScalar()); //Con el executeScalar solo recuperas un solo valor
-                            conn.Close();
+            //    {
+            //        try
+            //        {
+            //            using (SqlCommand cmd = new SqlCommand("Sp_Recupera_FiscalObligado", conn))
+            //            {
 
-                            if (obligado == true)
-                            {
-                                si.Checked = true;
-                                //FileUpload1.Visible = true;
-                            }
-                            else
-                            {
-                                no.Checked = true;
-                                //FileUpload1.Visible = false;
-                            }
+            //                cmd.CommandType = CommandType.StoredProcedure;
+            //                cmd.Parameters.Add(new SqlParameter("@rfc", _oUsuario.VID_NOMBRE+_oUsuario.VID_FECHA+_oUsuario.VID_HOMOCLAVE));
 
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("Error: " + ex.Message);
-                    }
-                }
+            //                conn.Open();
+            //                obligado = Convert.ToBoolean( cmd.ExecuteScalar()); //Con el executeScalar solo recuperas un solo valor
+            //                conn.Close();
 
-                
-            }
+            //                if (obligado == true)
+            //                {
+            //                    si.Checked = true;
+            //                    //FileUpload1.Visible = true;
+            //                }
+            //                else
+            //                {
+            //                    no.Checked = true;
+            //                    //FileUpload1.Visible = false;
+            //                }
 
-            if (si.Checked)
-            {
-                FileUpload1.Visible = true;
-            }
+            //            }
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            Console.WriteLine("Error: " + ex.Message);
+            //        }
+            //    }
 
-            if (no.Checked)
-            {
-                FileUpload1.Visible = false;
-            }
+
+            //}
+
+            //if (si.Checked)
+            //{
+            //    FileUpload1.Visible = true;
+            //}
+
+            //if (no.Checked)
+            //{
+            //    FileUpload1.Visible = false;
+            //}
 
         }
 
-        protected void ActualizaObligadoFiscal(string usuarioObligado, bool obligado )
+        protected void ActualizaObligadoFiscal(string usuarioObligado, bool obligado)
         {
             string VID_NOMBRE = usuarioObligado.Substring(0, 4);
             string VID_FECHA = usuarioObligado.Substring(4, 6);
@@ -107,7 +107,7 @@ namespace DeclaraINE.Formas.DeclaracionFiscal
                    , VID_HOMOCLAVE);
             try
             {
-                oUsuario.ObligadoFiscalCambio(oUsuario.VID_NOMBRE+oUsuario.VID_FECHA+oUsuario.VID_HOMOCLAVE, obligado);
+                oUsuario.ObligadoFiscalCambio(oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE, obligado);
                 //MsgBox.ShowSuccess("Se ha guardado el dato de obligación fiscal con éxito.");
             }
             catch (Exception ex)
@@ -116,81 +116,81 @@ namespace DeclaraINE.Formas.DeclaracionFiscal
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
+        //protected void Button1_Click(object sender, EventArgs e)
+        //{
 
-            if (si.Checked==true)
-            {
-                 if (FileUpload1.HasFile )
-                            {
-                                string anio = DateTime.Today.Year.ToString();
-                                string rutaDirectorio = "\\Formas\\DeclaracionFiscal\\pdfFiscales\\" + anio;
+        //    //if (si.Checked==true)
+        //    //{
+        //         if (FileUpload1.HasFile )
+        //                    {
+        //                        string anio = DateTime.Today.Year.ToString();
+        //                        string rutaDirectorio = "\\Formas\\DeclaracionFiscal\\pdfFiscales\\" + anio;
 
-                                string fileExtension = Path.GetExtension(FileUpload1.FileName);
-                                string nombreArchivo = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
-                                //string ruta = "\\Formas\\DeclaracionFiscal\\pdfFiscales\\" + FileUpload1.FileName;
-                                string ruta = rutaDirectorio + "\\";  //+ nombreArchivo+fileExtension;
-                                string path = AppDomain.CurrentDomain.BaseDirectory + ruta;
+        //                        string fileExtension = Path.GetExtension(FileUpload1.FileName);
+        //                        string nombreArchivo = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
+        //                        //string ruta = "\\Formas\\DeclaracionFiscal\\pdfFiscales\\" + FileUpload1.FileName;
+        //                        string ruta = rutaDirectorio + "\\";  //+ nombreArchivo+fileExtension;
+        //                        string path = AppDomain.CurrentDomain.BaseDirectory + ruta;
 
-                                if (!Directory.Exists(path))
-                                {
-                                    Directory.CreateDirectory(path);
-                                }
-
-
-                                if (fileExtension.ToLower() == ".pdf")
-                                {
-                                    if (File.Exists(path + nombreArchivo + fileExtension))
-                                    {
-                        
-                                        MsgBox.ShowDanger("Cuidado", "El archivo ya existe");
-                                    }
-                                    else
-                                    {
-                        
-                                        FileUpload1.SaveAs(Server.MapPath("~" + ruta + nombreArchivo + fileExtension));
-                                        string usuarioObligado = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
-                                        //if (si.Checked==true)
-                                        //{
-                                            //Incluir actualizacion a BD tabla USUARIO en el campo OBL_DECLARACION
-                            
-                                            bool obligado = true;
-                                            ActualizaObligadoFiscal(usuarioObligado, obligado);
-                                        //}
-                                        //else
-                                        //{
-                                            //Incluir actualizacion a BD tabla USUARIO en el campo OBL_DECLARACION
-                                            
-                                        //}
-
-                                        MsgBox.ShowSuccess("Archivo Guardado", "Carga de Acuse Fiscal y guardado de dato obligado fiscal, Exitoso! ");
-                                    }
-
-                                }
-                                else
-                                {
-                                        
-                                        MsgBox.ShowDanger("Cuidado", "El acuse debe ser en formato pdf, revisar el archivo a cargar, por favor!");
-                    
-                                }
-
-                            }
-                 else
-                 {
-                    MsgBox.ShowDanger("Cuidado", "Por favor, seleccione su acuse de la Declaración Fiscal");               
-                 }
-            }
-            else
-            {
-                string usuarioObligado = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
-                bool obligado = false;
-                ActualizaObligadoFiscal(usuarioObligado, obligado);
-                MsgBox.ShowSuccess("Datos Guardados", "Guardado de dato obligado fiscal, Exitoso! ");
-            }
-           
+        //                        if (!Directory.Exists(path))
+        //                        {
+        //                            Directory.CreateDirectory(path);
+        //                        }
 
 
-        }
+        //                        if (fileExtension.ToLower() == ".pdf")
+        //                        {
+        //                            if (File.Exists(path + nombreArchivo + fileExtension))
+        //                            {
+
+        //                                MsgBox.ShowDanger("Cuidado", "El archivo ya existe");
+        //                            }
+        //                            else
+        //                            {
+
+        //                                FileUpload1.SaveAs(Server.MapPath("~" + ruta + nombreArchivo + fileExtension));
+        //                                string usuarioObligado = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
+        //                                //if (si.Checked==true)
+        //                                //{
+        //                                    //Incluir actualizacion a BD tabla USUARIO en el campo OBL_DECLARACION
+
+        //                                    bool obligado = true;
+        //                                    ActualizaObligadoFiscal(usuarioObligado, obligado);
+        //                                //}
+        //                                //else
+        //                                //{
+        //                                    //Incluir actualizacion a BD tabla USUARIO en el campo OBL_DECLARACION
+
+        //                                //}
+
+        //                                MsgBox.ShowSuccess("Archivo Guardado", "Carga de Acuse Fiscal y guardado de dato obligado fiscal, Exitoso! ");
+        //                            }
+
+        //                        }
+        //                        else
+        //                        {
+
+        //                                MsgBox.ShowDanger("Cuidado", "El acuse debe ser en formato pdf, revisar el archivo a cargar, por favor!");
+
+        //                        }
+
+        //                    }
+        //         else
+        //         {
+        //            MsgBox.ShowDanger("Cuidado", "Por favor, seleccione su acuse de la Declaración Fiscal");               
+        //         }
+        //    //}
+        //    //else
+        //    //{
+        //    //    string usuarioObligado = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
+        //    //    bool obligado = false;
+        //    //    ActualizaObligadoFiscal(usuarioObligado, obligado);
+        //    //    MsgBox.ShowSuccess("Datos Guardados", "Guardado de dato obligado fiscal, Exitoso! ");
+        //    //}
+
+
+
+        //}
 
         protected void btnVerTutorial_Click(object sender, EventArgs e)
         {
@@ -204,18 +204,70 @@ namespace DeclaraINE.Formas.DeclaracionFiscal
 
         protected void btnSiguiente_Click(object sender, EventArgs e)
         {
-           
-            marcaApartado(22);
-            blld_DECLARACION oDeclaracion = _oDeclaracion;
-            Response.Redirect("../DeclaracionModificacion/Envio.aspx");
-            
+            if (FileUpload1.HasFile)
+            {
+                string anio = DateTime.Today.Year.ToString();
+                string rutaDirectorio = "\\Formas\\DeclaracionFiscal\\pdfFiscales\\" + anio;
+
+                string fileExtension = Path.GetExtension(FileUpload1.FileName);
+                string nombreArchivo = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
+
+                string ruta = rutaDirectorio + "\\";
+                string path = AppDomain.CurrentDomain.BaseDirectory + ruta;
+
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+
+                if (fileExtension.ToLower() == ".pdf")
+                {
+                    if (File.Exists(path + nombreArchivo + fileExtension))
+                    {
+
+                        MsgBox.ShowDanger("Cuidado", "El archivo ya existe");
+                    }
+                    else
+                    {
+
+                        FileUpload1.SaveAs(Server.MapPath("~" + ruta + nombreArchivo + fileExtension));
+                        string usuarioObligado = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
+
+
+                        bool obligado = true;
+                        ActualizaObligadoFiscal(usuarioObligado, obligado);
+
+                        marcaApartado(22);
+                        //blld_DECLARACION oDeclaracion = _oDeclaracion;
+
+                        MsgBox.ShowSuccess("Archivo Guardado", "Carga de Acuse Fiscal  guardado con éxito! ");
+                        Response.Redirect("../DeclaracionModificacion/Envio.aspx");
+                    }
+
+                }
+                else
+                {
+
+                    MsgBox.ShowDanger("Cuidado", "El acuse debe ser en formato pdf, revisar el archivo a cargar, por favor!");
+
+                }
+
+            }
+            else
+            {
+                QstBox.AskWarning("Bajo protesta de decir verdad, ¿Eres obligado a presentar declaración fiscal ante el SAT?");
+            }
+
+
+
         }
 
         protected void btnAtras_Click(object sender, EventArgs e)
         {
-            
+
             Response.Redirect("../DeclaracionModificacion/Observaciones.aspx");
-            
+
         }
 
         private void marcaApartado(int NID_APARTADO)
@@ -234,6 +286,21 @@ namespace DeclaraINE.Formas.DeclaracionFiscal
                 oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == NID_APARTADO).First().L_ESTADO = true;
                 oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == NID_APARTADO).First().update();
             }
+        }
+
+        protected void QstBox_Yes(object Sender, EventArgs e)
+        {
+            //No hagas nada 
+        }
+
+        protected void QstBox_No(object Sender, EventArgs e)
+        {
+            string usuarioObligado = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
+            bool obligado = false;
+            ActualizaObligadoFiscal(usuarioObligado, obligado);
+            marcaApartado(22);
+            //blld_DECLARACION oDeclaracion = _oDeclaracion;
+            Response.Redirect("../DeclaracionModificacion/Envio.aspx");
         }
 
 

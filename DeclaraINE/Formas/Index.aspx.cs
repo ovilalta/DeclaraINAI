@@ -15,6 +15,7 @@ namespace DeclaraINE.Formas
             set => SessionAdd("oUsuario", value);
         }
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
             blld_USUARIO oUsuario = _oUsuario;
@@ -37,7 +38,7 @@ namespace DeclaraINE.Formas
             if (excep == false)
             {
                 btnAdmin.Visible = false;
-                
+
                 //btnAdmin2.Visible = false;
                 //btnAdmin3.Visible = false;
                 //btnAdmin4.Visible = false;
@@ -58,18 +59,19 @@ namespace DeclaraINE.Formas
 
             }
 
-            
+
 
             LabNombre.Text = oUsuario.V_NOMBRE_COMPLETO;
             labFecha.Text = DateTime.Today.ToString("dd/MMMM/yyyy", new CultureInfo("es-MX")).ToUpper();
 
             if (!IsPostBack)
             {
-                if (DateTime.Now < FechaIni || DateTime.Now > FechaFin) {
+                if (DateTime.Now < FechaIni || DateTime.Now > FechaFin)
+                {
                     LinkButton22.Enabled = false;
                     lkModificacion.Enabled = false;
                 }
-                
+
 
                 QstBox.AskWarning("<b>Compañero(a) Servidor(a) Público(a):</b><br/>De conformidad con los artículos 26, 27, 32," +
                     " 33, 46, 47 y 48 de la LGRA todos los servidores públicos tenemos la obligación de presentar las declaraciones" +
@@ -80,7 +82,7 @@ namespace DeclaraINE.Formas
 
                 _oUsuario.ExtenderSesion();
                 this.Page.Title = "Menú Principal";
-                
+
                 if (clsSistema.lActivaAviso)
                     pnlAviso.Visible = true;
                 else
@@ -149,12 +151,12 @@ namespace DeclaraINE.Formas
         protected void lkModificacion_Click(object sender, EventArgs e)
         {
             Response.Redirect("AvisoPrivacidadDeclaracionModificacion.aspx");
-            
+
         }
         protected void lkConclusion_Click(object sender, EventArgs e)
         {
             Response.Redirect("AvisoPrivacidadConclusion.aspx");
-            
+
         }
 
 
@@ -182,10 +184,10 @@ namespace DeclaraINE.Formas
             Response.Redirect("DeclaracionFiscal\\declaracionFiscal.aspx");
         }
 
-        
 
-       
 
-        
+
+
+
     }
 }

@@ -584,6 +584,7 @@
     <Content Include="Images\DeclaraPassword.jpg" />
     <Content Include="Images\edge.png" />
     <Content Include="Images\ff.png" />
+    <Content Include="Images\HeaderFiscal.jpg" />
     <Content Include="Images\head_bg.jpg" />
     <Content Include="Images\icons\ColorX100\Accept Database.png" />
     <Content Include="Images\icons\ColorX100\Add Column.png" />
