@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.DeclaracionFiscal
+namespace DeclaraINE.Formas.Administrador
 {
 
 
-    public partial class WebForm1
+    public partial class CargaAcusesFiscales
     {
 
         /// <summary>
@@ -24,93 +24,93 @@ namespace DeclaraINE.Formas.DeclaracionFiscal
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control ScriptManager1.
+        /// Control msgBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::AlanWebControls.AlanMessageBox msgBox;
 
         /// <summary>
-        /// Control MsgBox.
+        /// Control lblIdentificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AlanWebControls.AlanMessageBox MsgBox;
+        protected global::System.Web.UI.WebControls.Label lblIdentificacion;
 
         /// <summary>
-        /// Control QstBox.
+        /// Control lblEjercicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AlanWebControls.AlanQuestionBox QstBox;
+        protected global::System.Web.UI.WebControls.Label lblEjercicio;
 
         /// <summary>
-        /// Control button3.
+        /// Control liDatosGenerales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button button3;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liDatosGenerales;
 
         /// <summary>
-        /// Control FileUpload1.
+        /// Control menu1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl menu1;
 
         /// <summary>
-        /// Control btnAtras.
+        /// Control lkVolver.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAtras;
+        protected global::System.Web.UI.WebControls.LinkButton lkVolver;
 
         /// <summary>
-        /// Control btnSiguiente.
+        /// Control ltrSubTituloAdmin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSiguiente;
+        protected global::System.Web.UI.WebControls.Literal ltrSubTituloAdmin;
 
         /// <summary>
-        /// Control Label1.
+        /// Control UploadImages.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.FileUpload UploadImages;
 
         /// <summary>
-        /// Control mdlTutorial.
+        /// Control listofuploadedfiles.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AlanWebControls.AlanModalPopUp mdlTutorial;
+        protected global::System.Web.UI.WebControls.Label listofuploadedfiles;
 
         /// <summary>
-        /// Control btnCerrarModal.
+        /// Control uploadedFile.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCerrarModal;
+        protected global::System.Web.UI.WebControls.Button uploadedFile;
     }
 }

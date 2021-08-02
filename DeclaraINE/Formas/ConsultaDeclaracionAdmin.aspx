@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - <%: Declara_V2.BLLD.clsSistema.V_SISTEMA %></title>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />    
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="../css/font-awesome.min.css" />
     <link rel="stylesheet" href="../css/Declaracion.css" />
     <link rel="stylesheet" href="../css/style.css" />
@@ -114,22 +114,43 @@
                     </div>
                     <div class="subtitulo">
                         <asp:Literal ID="ltrSubTituloAdmin" runat="server"></asp:Literal>
-                        
+
                         <!--<div class="input-container">-->
-                                <br />
-                                <label for="txtRfc">Indicar el RFC</label>
-                                <br />
-                                <asp:TextBox ID="txtRfc" runat="server"></asp:TextBox>
-                                <asp:Button ID="btnDescargar" runat="server" Text="Buscar" OnClick="btnDescargar_Click" CssClass="mpdf" />
-                                <div class="bar">
-                                </div>
-                                
-                         <!--</div>-->
+                        
+                        <label for="txtRfc">Indicar el método de búsqueda:</label>
+                        <div class="form-check">
+                            <asp:RadioButton class="form-check-input" Text=" RFC " runat="server" ID="rbRFC" GroupName="RadioGroup1" />
+                        </div>
+                        <div class="form-check">
+                            <asp:RadioButton class="form-check-input" Text=" Nombre " runat="server" ID="rbNombre" GroupName="RadioGroup1" />
+                        </div>
+                        
+                        <asp:TextBox ID="txtRfc" runat="server"></asp:TextBox>
+                        <br />
+                        <br />
+                        <asp:Button ID="btnDescargar" runat="server" Text="Buscar" OnClick="btnDescargar_Click" CssClass="mpdf" />
+                        <%--<div class="bar">
+                        </div>--%>
+
+                        <!--</div>-->
                     </div>
                     <div id="cuerpo" style="padding: 10px 20px 20px 20px;">
                         <asp:AlanAlert runat="server" ID="AlertaSuperior" />
-                        <asp:GridView ID="grdDP" runat="server" AutoGenerateColumns="false" CssClass="table table-condensed table-striped bordeless table-hover" OnRowDataBound="grdDP_RowDataBound">
+
+                        <asp:GridView ID="grdDP" runat="server" AutoGenerateColumns="false" CssClass="table table-condensed table-striped bordeless table-hover" OnRowDataBound="grdDP_RowDataBound" OnSelectedIndexChanged="grdDP_SelectedIndexChanged">
                             <Columns>
+                                <asp:TemplateField HeaderText="RFC" Visible="false">
+                                    <ItemTemplate>
+                                        <asp:Literal ID="ltrRFC" runat="server" Text='<%# Eval("RFC") %>'></asp:Literal>
+
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Nombre Funcionario">
+                                    <ItemTemplate>
+
+                                        <asp:Literal ID="ltrNombreDP" runat="server" Text='<%# Eval("V_NOMBRE_COMPLETO") %>'></asp:Literal>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Tipo Declaración">
                                     <ItemTemplate>
                                         <asp:Literal ID="ltrDescripcionDP" runat="server" Text='<%# Eval("V_TIPO_DECLARACION") %>'></asp:Literal>
@@ -147,22 +168,22 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Declaración Testada" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
-                                        <asp:Button ID="btnGridDeclaracionAcuse" runat="server" Text="Declaración Testada" CommandArgument='<%# Eval("NID_DECLARACION")  %>' OnClick="btnGridDeclaracionAcuse_Click" CssClass="mpdf" />
+                                        <asp:Button ID="btnGridDeclaracionAcuse" runat="server" Text="Declaración Testada" CommandArgument='<%# Eval("NID_DECLARACION") + ";" + Eval("RFC")  %>' OnClick="btnGridDeclaracionAcuse_Click" CssClass="mpdf" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Declaración Completa" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
-                                        <asp:Button ID="Button1" runat="server" Text="Declaración Completa" CommandArgument='<%# Eval("NID_DECLARACION")  %>' OnClick="btnGridDeclaracion_Click" CssClass="mpdf" />
+                                        <asp:Button ID="Button1" runat="server" Text="Declaración Completa" CommandArgument='<%# Eval("NID_DECLARACION")  + ";" + Eval("RFC") %>' OnClick="btnGridDeclaracion_Click" CssClass="mpdf" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                
+
                             </Columns>
                         </asp:GridView>
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </form>
 </body>
 </html>

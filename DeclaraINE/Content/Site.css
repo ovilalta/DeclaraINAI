@@ -832,6 +832,10 @@ input[id*="btnFalse"] {
     background-image: url(../Images/icons/ColorX24/Download.png) !important;
 }
 
+.upload {
+    background-image: url(../Images/icons/ColorX24/Upload%20to%20the%20Cloud.png) !important;
+}
+
 
 .enviar {
     background-image: url(../Images/icons/ColorX100/Reading%20Confirmation.png) !important;

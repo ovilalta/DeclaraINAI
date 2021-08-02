@@ -44,11 +44,11 @@
                 filter: grayscale(100%) !important;
             }
 
-        ul#navigation, ul#navigation2,ul#navigation3 {
+        ul#navigation, ul#navigation2, ul#navigation3 {
             text-align: right;
         }
 
-            ul#navigation li, ul#navigation2 li ,ul#navigation3 li {
+            ul#navigation li, ul#navigation2 li, ul#navigation3 li {
                 margin: 0 20px 0 50px !important;
             }
     </style>
@@ -97,7 +97,7 @@
                                                 <img src="../Images/LogoINE.png" width="150" height="60" />
                                                 <img src="../Images/logo-negro.png" width="120" height="60" />
                                             </a>
-                                            
+
                                         </div>
                                     </div>
                                     <div class="col-xl-8 col-lg-8">
@@ -115,35 +115,44 @@
                                                     <%--<li>
                                                         <asp:LinkButton ID="LinkButton200" runat="server" OnClick=" lkFiscal_Click" CssClass="active" Text="Fiscal"></asp:LinkButton></li>
                                                     <li>--%>
-                                                        <asp:LinkButton ID="btnaCerrar" Text="Salir" runat="server" OnClick="btnCerrar_Click"></asp:LinkButton></li>
+                                                    <asp:LinkButton ID="btnaCerrar" Text="Salir" runat="server" OnClick="btnCerrar_Click"></asp:LinkButton></li>
                                                 </ul>
 
                                                 <ul id="navigation2">
-                                                     
-                                                    <asp:Menu ID="btnAdmin" runat="server" CssClass="navbar navbar-fixed-top" StaticMenuStyle-CssClass= "nav navbar-nav" StaticSelectedStyle-CssClass="active" DynamicMenuStyle-CssClass="dropdown-menu">
+
+                                                    <asp:Menu ID="btnAdmin" runat="server" CssClass="navbar navbar-fixed-top" StaticMenuStyle-CssClass="nav navbar-nav" StaticSelectedStyle-CssClass="active" DynamicMenuStyle-CssClass="dropdown-menu">
                                                         <Items>
-                                                            <asp:MenuItem Text="Menú Administrador" Value="Menú Administrador" ToolTip="Opciones de administrador para el OIC" >
-                                                                <asp:MenuItem NavigateUrl="~/Formas/ConsultaDeclaracionAdmin.aspx" Text="Declaraciones" ToolTip="Buscar Declaraciones por RFC" Value="Declaraciones" ></asp:MenuItem>
-                                                                <asp:MenuItem NavigateUrl="~/Formas/CambiaCorreo.aspx" Text="Correo Alterno" ToolTip="Agregar correo personal" Value="Correo Alterno"></asp:MenuItem>
+                                                            <asp:MenuItem Text="Menú Administrador" Value="Menú Administrador" ToolTip="Opciones de administrador para el OIC">
                                                                 <asp:MenuItem NavigateUrl="~/Formas/ActivacionesAdmin.aspx" Text="Activar Cuenta" ToolTip="Activar cuenta de usuario" Value="Activar Cuenta"></asp:MenuItem>
-                                                                <asp:MenuItem NavigateUrl="~/Formas/RegistrosAdmin.aspx" Text="Reporte Declaraciones" ToolTip="Emite reporte de declaraciones por rango de fecha" Value="Reporte Declaraciones"></asp:MenuItem>
-                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteSIPOT.aspx" Text="Reporte SIPOT" ToolTip="Reporte SIPOT" Value="Reporte SIPOT"></asp:MenuItem>
-                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/DescargaDeclaracionesPDFs.aspx" Text="Descarga PDF Declaraciones" ToolTip="Descarga PDF's Declaraciones por rango de fecha" Value="Descarga PDF Declaraciones"></asp:MenuItem>
+                                                                <asp:MenuItem Text="Cargas" Value="Cargas" ToolTip="Menú de Cargas">
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/CargaAcusesFiscales.aspx" Text="Carga Acuses Fiscales" ToolTip="Carga Acuses Fiscales" Value="Carga Acuses Fiscales"></asp:MenuItem>
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/CargaDeclaraciones.aspx" Text="Carga Declaraciones Patrimoniales" ToolTip="Carga Declaraciones Patrimoniales" Value="Carga Declaraciones Patrimoniales"></asp:MenuItem>
+                                                                </asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/Formas/CambiaCorreo.aspx" Text="Correo Alterno" ToolTip="Agregar correo personal" Value="Correo Alterno"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/Formas/ConsultaDeclaracionAdmin.aspx" Text="Declaraciones" ToolTip="Buscar Declaraciones por RFC" Value="Declaraciones"></asp:MenuItem>
+                                                                <asp:MenuItem Text="Descargas" Value="Descargas" ToolTip="Menú de descargas">
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/DescargaAcusesFiscales.aspx" Text="Descarga Acuses Fiscales" ToolTip="Descarga Acuses Fiscales por año" Value="Descarga Acuses Fiscales"></asp:MenuItem>
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/DescargaDeclaracionesPDFs.aspx" Text="Descarga PDF Declaraciones" ToolTip="Descarga PDF's Declaraciones por rango de fecha" Value="Descarga PDF Declaraciones"></asp:MenuItem>
+                                                                </asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/ExcepcionRFC.aspx" Text="Excepción RFC" ToolTip="Agregar Excepción de RFC" Value="Excepción RFC"></asp:MenuItem>
+                                                                <asp:MenuItem Text="Menú Reportes" Value="Menú Reportes" ToolTip="Menú de reportes">
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/RegistrosAdmin.aspx" Text="Reporte Declaraciones" ToolTip="Emite reporte de declaraciones por rango de fecha" Value="Reporte Declaraciones"></asp:MenuItem>
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteSIPOT.aspx" Text="Reporte SIPOT" ToolTip="Reporte SIPOT" Value="Reporte SIPOT"></asp:MenuItem>
+                                                                </asp:MenuItem>
                                                             </asp:MenuItem>
                                                         </Items>
-                                                     </asp:Menu>
-                                                      
+                                                    </asp:Menu>
+
                                                 </ul>
 
-                                                
-                                                    
+
+
                                             </nav>
                                         </div>
                                     </div>
 
                                     <div class="social_wrap d-flex align-items-center justify-content-end">
                                         <div class="social_links d-none d-xl-block">
-                                           
                                         </div>
                                     </div>
                                     <div class="seach_icon">
@@ -203,7 +212,7 @@
                                  <a href="../Formatos/Presentacion.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i>Guía para la Declaración</a>
                                 &nbsp;|&nbsp;
                                   <%--<a  href="../Formatos/Cuestionario_Declaracion_Modificacion.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i> Preguntas y Respuestas</a>--%>
-                                <%--&nbsp;|&nbsp;--%>                       
+                                <%--&nbsp;|&nbsp;--%>
                                 <%--<a href="../Formatos/Normas_e_Instructivo_para_Llenado_de_Declaraciones.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i>Normas e Instructivo Oficiales</a>--%>
                                 <%--&nbsp;|&nbsp;--%>
                                 <a href="../pdf1/CatalogoPuestosINAI.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i>Catálogo de Puestos INAI</a>

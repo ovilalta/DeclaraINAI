@@ -11,6 +11,9 @@ using System.Web.UI.WebControls;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web.UI;
+using System.Data.SqlClient;
+using System.Data;
+using System.Drawing;
 
 namespace DeclaraINE.Formas
 {
@@ -26,9 +29,11 @@ namespace DeclaraINE.Formas
         {
             blld_USUARIO oUsuario = _oUsuario;
 
+
             string VID_RFC = oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE;
             if (!IsPostBack)
             {
+                rbRFC.Checked = true;
                 Page.Title = "Generación de Declaraciones";
                 string line;
                 bool excep = false;
@@ -49,85 +54,149 @@ namespace DeclaraINE.Formas
                 }
             }
         }
+
+        List<Declara_V2.BLLD.DeclaracionesInformeDetalle> Declaraciones = new List<Declara_V2.BLLD.DeclaracionesInformeDetalle>();
+
+        private void BuscarDeclaraciones(string txtRfc)
+        {
+            try
+            {
+                //blld_USUARIO oUsuario = new blld_USUARIO(txtRfc);
+
+                //string VID_RFC = oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE;
+
+                string VID_RFC = txtRfc;
+
+                //oUsuario.Reload_DECLARACIONs();
+                blld__l_DECLARACION_DIARIA o = new blld__l_DECLARACION_DIARIA();
+                //o.VID_NOMBRE = new Declara_V2.StringFilter(oUsuario.VID_NOMBRE);
+                o.VID_NOMBRE = new Declara_V2.StringFilter(VID_RFC.Substring(0,4));
+                //o.VID_FECHA = new Declara_V2.StringFilter(oUsuario.VID_FECHA);
+                o.VID_FECHA = new Declara_V2.StringFilter(VID_RFC.Substring(4,6));
+                //o.VID_HOMOCLAVE = new Declara_V2.StringFilter(oUsuario.VID_HOMOCLAVE);
+                o.VID_HOMOCLAVE = new Declara_V2.StringFilter(txtRfc.Substring(10,3));
+                o.NID_ESTADOs.FilterCondition = ListFilter.FilterConditions.Negated;
+                o.NID_ESTADOs.Add(1);
+                o.NID_ESTADOs.Add(6);
+                o.NID_ESTADOs.Add(7);
+                o.select();
+
+                List<Declara_V2.BLLD.DeclaracionesInformeDetalle> DeclaracionesAntiguas = new List<Declara_V2.BLLD.DeclaracionesInformeDetalle>();
+
+                blld_DECLARACION oDeclaracion;
+
+
+
+                if (o.lista_DECLARACION_DIARIA.Any())
+                {
+                    oDeclaracion = new blld_DECLARACION
+                                                              (
+                                                                VID_RFC.Substring(0, 4)
+                                                              , VID_RFC.Substring(4, 6)
+                                                              , VID_RFC.Substring(10, 3)
+                                                              , o.lista_DECLARACION_DIARIA.Last().NID_DECLARACION
+                                                               );
+                }
+                else
+                {
+                    oDeclaracion = new blld_DECLARACION
+                                                          (
+                                                            VID_RFC.Substring(0, 4)
+                                                          , VID_RFC.Substring(4, 6)
+                                                          , VID_RFC.Substring(10, 3)
+                                                          , 1
+                                                           );
+                }
+                blld_USUARIO oUsuarioDeclaracion = new blld_USUARIO
+                                                         (
+                                                               VID_RFC.Substring(0, 4)
+                                                             , VID_RFC.Substring(4, 6)
+                                                             , VID_RFC.Substring(10, 3)
+                                                          );
+
+                foreach (DECLARACION_DIARIA dec in o.lista_DECLARACION_DIARIA)
+                {
+                    Declaraciones.Add(
+                                      new Declara_V2.BLLD.DeclaracionesInformeDetalle(
+                                            2
+                                          , dec.C_EJERCICIO
+                                          , dec.NID_DECLARACION
+                                          , dec.NID_TIPO_DECLARACION
+                                          , dec.F_ENVIO.ToString()
+                                          , dec.NID_ESTADO
+                                          , dec.V_NOMBRE_COMPLETO
+                                          ,dec.VID_NOMBRE
+                                          ,dec.VID_FECHA
+                                          ,dec.VID_HOMOCLAVE
+                                         )
+                                                                      );
+                }
+
+                //grdDP.DataSource = Declaraciones.OrderBy(p => p.NID_ORIGEN).ThenBy(p => p.C_EJERCICIO).ToArray();
+                //grdDP.DataBind();
+            }
+
+            catch
+            {
+                //msgBox.ShowDanger("No está registrado el usuario con RFC: " + txtRfc.Text + " en DeclaraINAI.");
+                msgBox.ShowDanger("No está registrado el usuario con RFC: " + txtRfc + " en DeclaraINAI o no cuenta con declaraciones patrimoniales.");
+                grdDP.DataSource = null;
+                grdDP.DataBind();
+            }
+        }
         protected void btnDescargar_Click(object sender, EventArgs e)
         {
+
             if (txtRfc.Text == "" || txtRfc.Text == null)
             {
                 msgBox.ShowDanger("Debe especificar un RFC.");
             }
             else
             {
-                try
+                if (rbRFC.Checked == true)
                 {
-                    blld_USUARIO oUsuario = new blld_USUARIO(txtRfc.Text);
-                    string VID_RFC = oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE;
-
-                    oUsuario.Reload_DECLARACIONs();
-                    blld__l_DECLARACION_DIARIA o = new blld__l_DECLARACION_DIARIA();
-                    o.VID_NOMBRE = new Declara_V2.StringFilter(oUsuario.VID_NOMBRE);
-                    o.VID_FECHA = new Declara_V2.StringFilter(oUsuario.VID_FECHA);
-                    o.VID_HOMOCLAVE = new Declara_V2.StringFilter(oUsuario.VID_HOMOCLAVE);
-                    o.NID_ESTADOs.FilterCondition = ListFilter.FilterConditions.Negated;
-                    o.NID_ESTADOs.Add(1);
-                    o.NID_ESTADOs.Add(6);
-                    o.NID_ESTADOs.Add(7);
-                    o.select();
-                    List<Declara_V2.BLLD.DeclaracionesInformeDetalle> Declaraciones = new List<Declara_V2.BLLD.DeclaracionesInformeDetalle>();
-                    List<Declara_V2.BLLD.DeclaracionesInformeDetalle> DeclaracionesAntiguas = new List<Declara_V2.BLLD.DeclaracionesInformeDetalle>();
-
-                    blld_DECLARACION oDeclaracion;
-
-                    if (o.lista_DECLARACION_DIARIA.Any())
-                    {
-                        oDeclaracion = new blld_DECLARACION
-                                                                  (
-                                                                    VID_RFC.Substring(0, 4)
-                                                                  , VID_RFC.Substring(4, 6)
-                                                                  , VID_RFC.Substring(10, 3)
-                                                                  , o.lista_DECLARACION_DIARIA.Last().NID_DECLARACION
-                                                                   );
-                    }
-                    else
-                    {
-                        oDeclaracion = new blld_DECLARACION
-                                                              (
-                                                                VID_RFC.Substring(0, 4)
-                                                              , VID_RFC.Substring(4, 6)
-                                                              , VID_RFC.Substring(10, 3)
-                                                              , 1
-                                                               );
-                    }
-                    blld_USUARIO oUsuarioDeclaracion = new blld_USUARIO
-                                                             (
-                                                                   VID_RFC.Substring(0, 4)
-                                                                 , VID_RFC.Substring(4, 6)
-                                                                 , VID_RFC.Substring(10, 3)
-                                                              );
-
-                    foreach (DECLARACION_DIARIA dec in o.lista_DECLARACION_DIARIA)
-                    {
-                        Declaraciones.Add(
-                                          new Declara_V2.BLLD.DeclaracionesInformeDetalle(
-                                                2
-                                              , dec.C_EJERCICIO
-                                              , dec.NID_DECLARACION
-                                              , dec.NID_TIPO_DECLARACION
-                                              , dec.F_ENVIO.ToString()
-                                              , dec.NID_ESTADO)
-                                                                          );
-                    }
-
-                    grdDP.DataSource = Declaraciones.OrderBy(p => p.NID_ORIGEN).ThenBy(p => p.C_EJERCICIO).ToArray();
-                    grdDP.DataBind();
+                    BuscarDeclaraciones(txtRfc.Text);
                 }
-
-                catch
+                if (rbNombre.Checked == true)
                 {
-                    msgBox.ShowDanger("No está registrado el usuario con RFC: " + txtRfc.Text + " en DeclaraINAI.");
-                    grdDP.DataSource = null;
-                    grdDP.DataBind();
+                    MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+                    string connString = db.Database.Connection.ConnectionString;
+
+                    string sql = "Sp_Busca_RFC_PorNombre";
+
+                    using (SqlConnection conn = new SqlConnection(connString))
+                    {
+                        try
+                        {
+                            using (SqlDataAdapter da = new SqlDataAdapter())
+                            {
+                                da.SelectCommand = new SqlCommand(sql, conn);
+                                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                                da.SelectCommand.Parameters.Add(new SqlParameter("@nombre", txtRfc.Text));
+
+
+                                DataTable dt = new DataTable();
+                                dt.Clear();
+                                da.Fill(dt);
+
+                                for (int i = 0; i < dt.Rows.Count; i++)
+                                {
+                                    BuscarDeclaraciones(dt.Rows[i]["RFC"].ToString());
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            //msgBox.ShowDanger("Error: " + ex.Message);
+                            Console.WriteLine("Error: " + ex.Message);
+                        }
+                    }
                 }
             }
+
+            grdDP.DataSource = Declaraciones.OrderBy(p => p.NID_ORIGEN).ThenBy(p => p.V_NOMBRE_COMPLETO).ToArray();
+            grdDP.DataBind();
         }
 
         protected void lkVolver_Click(object sender, EventArgs e)
@@ -137,10 +206,18 @@ namespace DeclaraINE.Formas
 
         protected void btnGridDeclaracion_Click(object sender, EventArgs e)
         {
-            //blld_USUARIO oUsuario = _oUsuario;
-            blld_USUARIO oUsuario = new blld_USUARIO(txtRfc.Text);
-            Int32 NID_DECLARACION = Convert.ToInt32(((Button)sender).CommandArgument);
+
+            int tamanioTotal = ((Button)sender).CommandArgument.Length;
+            int tamanioArg1 = tamanioTotal - 14;
+            int inicioArg2 = tamanioArg1 + 1;
+            Int32 NID_DECLARACION = Convert.ToInt32(((Button)sender).CommandArgument.Substring(0,tamanioArg1));
+            string rfc = Convert.ToString(((Button)sender).CommandArgument.Substring(inicioArg2, 13));
+            blld_USUARIO oUsuario = new blld_USUARIO(rfc);
+            
+            
             blld_DECLARACION oDeclaracion = new blld_DECLARACION(oUsuario.VID_NOMBRE, oUsuario.VID_FECHA, oUsuario.VID_HOMOCLAVE, NID_DECLARACION);
+
+
 
             try
             {
@@ -254,9 +331,15 @@ namespace DeclaraINE.Formas
         }
         protected void btnGridDeclaracionAcuse_Click(object sender, EventArgs e)
         {
-            //blld_USUARIO oUsuario = _oUsuario;
-            blld_USUARIO oUsuario = new blld_USUARIO(txtRfc.Text);
-            Int32 NID_DECLARACION = Convert.ToInt32(((Button)sender).CommandArgument);
+            
+            int tamanioTotal = ((Button)sender).CommandArgument.Length;
+            int tamanioArg1 = tamanioTotal - 14;
+            int inicioArg2 = tamanioArg1 + 1;
+            Int32 NID_DECLARACION = Convert.ToInt32(((Button)sender).CommandArgument.Substring(0, tamanioArg1));
+            string rfc = Convert.ToString(((Button)sender).CommandArgument.Substring(inicioArg2, 13));
+
+            blld_USUARIO oUsuario = new blld_USUARIO(rfc);
+            //Int32 NID_DECLARACION = Convert.ToInt32(((Button)sender).CommandArgument);
             blld_DECLARACION oDeclaracion = new blld_DECLARACION(oUsuario.VID_NOMBRE, oUsuario.VID_FECHA, oUsuario.VID_HOMOCLAVE, NID_DECLARACION);
 
             try
@@ -333,13 +416,18 @@ namespace DeclaraINE.Formas
                 HttpContext.Current.Response.WriteFile(File);
                 HttpContext.Current.Response.Flush();
                 System.IO.File.Delete(File);
-                
+
                 HttpContext.Current.Response.End();
             }
             catch (Exception ex)
             {
             }
 
+        }
+
+        protected void grdDP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string rfc = grdDP.Rows[0].Cells[0].Text;
         }
     }
 }

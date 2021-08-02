@@ -67,6 +67,11 @@ namespace Declara_V2.BLLD
         public String F_PRESENTACION  { get; set; }
         public Int32 NID_ESTADO { get; set; }
         public String V_ESTADO { get; set; }
+        public String V_NOMBRE_COMPLETO { get; set; }
+        public String VID_NOMBRE { get; set; }
+        public String VID_FECHA { get; set; }
+        public String VID_HOMOCLAVE { get; set; }
+        public String RFC { get; set; }
 
         public DeclaracionesInformeDetalle() { }
         public DeclaracionesInformeDetalle(Int32 NID_ORIGEN,String C_EJERCICIO,Int32 NID_DECLARACION, Int32 NID_TIPO_DECLARACION, String F_PRESENTACION, System.Nullable<Int32> NID_ESTADO)
@@ -76,6 +81,55 @@ namespace Declara_V2.BLLD
             this.NID_DECLARACION = NID_DECLARACION;
             this.NID_TIPO_DECLARACION = NID_TIPO_DECLARACION;
             this.F_PRESENTACION = F_PRESENTACION;
+            blld_CAT_TIPO_DECLARACION oCAT = new blld_CAT_TIPO_DECLARACION(NID_TIPO_DECLARACION);
+            this.V_TIPO_DECLARACION = oCAT.V_TIPO_DECLARACION;
+            if (NID_ESTADO.HasValue)
+            {
+                this.NID_ESTADO = NID_ESTADO.Value;
+                blld_CAT_ESTADO_DECLARACION oCAT_EDO = new blld_CAT_ESTADO_DECLARACION(NID_ESTADO.Value);
+                this.V_ESTADO = oCAT_EDO.V_ESTADO;
+            }
+            else
+            {
+                this.NID_ESTADO = 0;
+                this.V_ESTADO = "Sin Información";
+            }
+        }
+
+        public DeclaracionesInformeDetalle(Int32 NID_ORIGEN, String C_EJERCICIO, Int32 NID_DECLARACION, Int32 NID_TIPO_DECLARACION, String F_PRESENTACION, System.Nullable<Int32> NID_ESTADO, string V_NOMBRE_COMPLETO)
+        {
+            this.NID_ORIGEN = NID_ORIGEN;
+            this.C_EJERCICIO = C_EJERCICIO;
+            this.NID_DECLARACION = NID_DECLARACION;
+            this.NID_TIPO_DECLARACION = NID_TIPO_DECLARACION;
+            this.F_PRESENTACION = F_PRESENTACION;
+            this.V_NOMBRE_COMPLETO = V_NOMBRE_COMPLETO;
+            blld_CAT_TIPO_DECLARACION oCAT = new blld_CAT_TIPO_DECLARACION(NID_TIPO_DECLARACION);
+            this.V_TIPO_DECLARACION = oCAT.V_TIPO_DECLARACION;
+            if (NID_ESTADO.HasValue)
+            {
+                this.NID_ESTADO = NID_ESTADO.Value;
+                blld_CAT_ESTADO_DECLARACION oCAT_EDO = new blld_CAT_ESTADO_DECLARACION(NID_ESTADO.Value);
+                this.V_ESTADO = oCAT_EDO.V_ESTADO;
+            }
+            else
+            {
+                this.NID_ESTADO = 0;
+                this.V_ESTADO = "Sin Información";
+            }
+        }
+
+        public DeclaracionesInformeDetalle(Int32 NID_ORIGEN, String C_EJERCICIO, Int32 NID_DECLARACION, Int32 NID_TIPO_DECLARACION, String F_PRESENTACION, System.Nullable<Int32> NID_ESTADO, string V_NOMBRE_COMPLETO, string VID_NOMBRE, string VID_FECHA, string VID_HOMOCLAVE)
+        {
+            this.NID_ORIGEN = NID_ORIGEN;
+            this.C_EJERCICIO = C_EJERCICIO;
+            this.NID_DECLARACION = NID_DECLARACION;
+            this.NID_TIPO_DECLARACION = NID_TIPO_DECLARACION;
+            this.F_PRESENTACION = F_PRESENTACION;
+            this.V_NOMBRE_COMPLETO = V_NOMBRE_COMPLETO;
+            this.RFC = VID_NOMBRE + VID_FECHA + VID_HOMOCLAVE;
+            
+           
             blld_CAT_TIPO_DECLARACION oCAT = new blld_CAT_TIPO_DECLARACION(NID_TIPO_DECLARACION);
             this.V_TIPO_DECLARACION = oCAT.V_TIPO_DECLARACION;
             if (NID_ESTADO.HasValue)
