@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas
+namespace DeclaraINE.Formas.Administrador
 {
 
 
-    public partial class ConsultaDeclaracionAdmin
+    public partial class ReseteoPassword
     {
 
         /// <summary>
@@ -87,24 +87,6 @@ namespace DeclaraINE.Formas
         protected global::System.Web.UI.WebControls.Literal ltrSubTituloAdmin;
 
         /// <summary>
-        /// Control rbRFC.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbRFC;
-
-        /// <summary>
-        /// Control rbNombre.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbNombre;
-
-        /// <summary>
         /// Control txtRfc.
         /// </summary>
         /// <remarks>
@@ -114,30 +96,12 @@ namespace DeclaraINE.Formas
         protected global::System.Web.UI.WebControls.TextBox txtRfc;
 
         /// <summary>
-        /// Control btnDescargar.
+        /// Control brnActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDescargar;
-
-        /// <summary>
-        /// Control AlertaSuperior.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AlanWebControls.AlanAlert AlertaSuperior;
-
-        /// <summary>
-        /// Control grdDP.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdDP;
+        protected global::System.Web.UI.WebControls.Button brnActualizar;
     }
 }

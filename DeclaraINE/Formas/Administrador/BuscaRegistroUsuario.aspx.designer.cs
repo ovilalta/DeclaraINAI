@@ -11,7 +11,7 @@ namespace DeclaraINE.Formas
 {
 
 
-    public partial class ConsultaDeclaracionAdmin
+    public partial class BuscaRegistroUsuario
     {
 
         /// <summary>

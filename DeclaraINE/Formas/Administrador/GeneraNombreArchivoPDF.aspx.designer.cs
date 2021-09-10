@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas
+namespace DeclaraINE.Formas.Administrador
 {
 
 
-    public partial class ConsultaDeclaracionAdmin
+    public partial class GeneraNombreArchivoPDF
     {
 
         /// <summary>
@@ -87,57 +87,48 @@ namespace DeclaraINE.Formas
         protected global::System.Web.UI.WebControls.Literal ltrSubTituloAdmin;
 
         /// <summary>
-        /// Control rbRFC.
+        /// Control txtFInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbRFC;
+        protected global::System.Web.UI.WebControls.TextBox txtFInicio;
 
         /// <summary>
-        /// Control rbNombre.
+        /// Control txtInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbNombre;
+        protected global::AjaxControlToolkit.CalendarExtender txtInicio;
 
         /// <summary>
-        /// Control txtRfc.
+        /// Control txtFFin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRfc;
+        protected global::System.Web.UI.WebControls.TextBox txtFFin;
 
         /// <summary>
-        /// Control btnDescargar.
+        /// Control txtFin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDescargar;
+        protected global::AjaxControlToolkit.CalendarExtender txtFin;
 
         /// <summary>
-        /// Control AlertaSuperior.
+        /// Control brnActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AlanWebControls.AlanAlert AlertaSuperior;
-
-        /// <summary>
-        /// Control grdDP.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdDP;
+        protected global::System.Web.UI.WebControls.Button brnActualizar;
     }
 }

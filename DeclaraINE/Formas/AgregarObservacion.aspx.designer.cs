@@ -51,6 +51,24 @@ namespace DeclaraINE.Formas
         protected global::System.Web.UI.WebControls.TextBox txtObservaciones;
 
         /// <summary>
+        /// Control SubirArchivoAclara.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload SubirArchivoAclara;
+
+        /// <summary>
+        /// Control IconoPDF.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl IconoPDF;
+
+        /// <summary>
         /// Control btnGuardar.
         /// </summary>
         /// <remarks>

@@ -824,6 +824,10 @@ input[id*="btnFalse"] {
     background-image: url(../Images/icons/ColorX24/Save.png) !important;
 }
 
+.saveAs {
+    background-image: url('../Images/icons/ColorX24/Save%20as.png') !important;
+}
+
 .pdf {
     background-image: url(../Images/icons/ColorX100/PDF.png) !important;
 }

@@ -381,6 +381,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             if (lEditar)
             {
                 ActualizaInversion();
+                
             }
             else
             {
@@ -389,10 +390,29 @@ namespace DeclaraINE.Formas.DeclaracionInicial
 
 
         }
+
+        protected void chbDependietesInm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Paso = chbDependietesInm.SelectedItem.Text;
+            Int32 Contenido = Paso.IndexOf("Terceros");
+            if (Contenido > 0)
+            {
+                cmbTerceroInversion.Enabled = true;
+                txtTerceroNombre.Enabled = true;
+                txtTerceroRFC.Enabled = true;
+            }
+            else
+            {
+                cmbTerceroInversion.Enabled = false;
+                txtTerceroNombre.Enabled = false;
+                txtTerceroRFC.Enabled = false;
+            }
+        }
         private void NuevaInversion()
         {
             blld_DECLARACION oDeclaracion = _oDeclaracion;
             blld_USUARIO oUsuario = _oUsuario;
+            cblTitulares.SelectedValue = chbDependietesInm.SelectedValue;
             try
             {
                 List<Int32> ListaTitulares = new List<int>();
@@ -494,6 +514,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                     AlertaSuperior.ShowSuccess("Se actualizaron correctamente los datos de la inversión");
                     _oDeclaracion = oDeclaracion;
                     mppInversion.Hide();
+                    
                 }
                 catch (Exception ex)
                 {

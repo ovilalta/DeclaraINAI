@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ConsultaDeclaracionAdmin.aspx.cs" Inherits="DeclaraINE.Formas.ConsultaDeclaracionAdmin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BuscaRegistroUsuario.aspx.cs" Inherits="DeclaraINE.Formas.BuscaRegistroUsuario" %>
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 
@@ -13,11 +13,11 @@
     <title><%: Page.Title %> - <%: Declara_V2.BLLD.clsSistema.V_SISTEMA %></title>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link rel="stylesheet" href="../css/font-awesome.min.css" />
-    <link rel="stylesheet" href="../css/Declaracion.css" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <script src="../Scripts/jquery-3.1.1.min.js"></script>
-    <script src="../Scripts/Site.js"></script>
+    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../css/Declaracion.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../Scripts/jquery-3.1.1.min.js"></script>
+    <script src="../../Scripts/Site.js"></script>
     <!--<script type="text/javascript">
         var _smartsupp = _smartsupp || {};
         _smartsupp.key = '36fe62cea33d3cbc39674295b89808a4ec11a4fc';
@@ -74,11 +74,11 @@
         </style>
         <div class="card">
             <asp:AlanMessageBox runat="server" ID="msgBox" />
-            <div class="row register-info-box" style="background: url('../Images/ine-acerca-slide.jpg');">
+            <div class="row register-info-box" style="background: url('../../Images/ine-acerca-slide.jpg');">
                 <div>
                     <div class="row align-items-left" style="display: flex;">
                         <div>
-                            <img src="../Images/Declaraine.png" style="height: 32px; margin: 10px 12px 0px;" />
+                            <img src="../../Images/Declaraine.png" style="height: 32px; margin: 10px 12px 0px;" />
                         </div>
                         <div style="width: 100%;">
                             <h3 style="margin: 7px; font-size: 22px; float: right;">
@@ -92,7 +92,7 @@
                     </div>
                     <ul class="nav nav-tabs menu2020">
                         <li runat="server" enableviewstate="false" id="liDatosGenerales" class="active">
-                            <a href="#menu1" data-toggle="tab">Consulta Declaraciones</a>
+                            <a href="#menu1" data-toggle="tab">Busca Registro Usuario</a>
                         </li>
                     </ul>
                 </div>
@@ -107,7 +107,7 @@
                             <ul class="nav nav-tabs ">
                                 <li>
                                     <asp:LinkButton ID="lkVolver" runat="server" d-t="Volver al menú principal" OnClick="lkVolver_Click" EnableViewState="false" Text="Volver al menù principal">                       
-                        <img src="./../images/icons/ColorX32/Circled%20Left.png"/></asp:LinkButton>
+                        <img src="../../images/icons/ColorX32/Circled%20Left.png"/></asp:LinkButton>
                                 </li>
                             </ul>
                         </div>
@@ -128,7 +128,7 @@
                         <asp:TextBox ID="txtRfc" runat="server"></asp:TextBox>
                         <br />
                         <br />
-                        <asp:Button ID="btnDescargar" runat="server" Text="Buscar" OnClick="btnDescargar_Click" CssClass="mpdf" />
+                        <asp:Button ID="btnDescargar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" CssClass="mpdf" />
                         <%--<div class="bar">
                         </div>--%>
 
@@ -137,26 +137,26 @@
                     <div id="cuerpo" style="padding: 10px 20px 20px 20px;">
                         <asp:AlanAlert runat="server" ID="AlertaSuperior" />
 
-                        <asp:GridView ID="grdDP" runat="server" AutoGenerateColumns="false" CssClass="table table-condensed table-striped bordeless table-hover" OnRowDataBound="grdDP_RowDataBound" OnSelectedIndexChanged="grdDP_SelectedIndexChanged">
+                        <asp:GridView ID="grdDP" runat="server" AutoGenerateColumns="false" CssClass="table table-condensed table-striped bordeless table-hover" >
                             <Columns>
-                                <asp:TemplateField HeaderText="RFC" Visible="false">
+                                <asp:TemplateField HeaderText="RFC" >
                                     <ItemTemplate>
                                         <asp:Literal ID="ltrRFC" runat="server" Text='<%# Eval("RFC") %>'></asp:Literal>
 
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Nombre Funcionario">
+                                <asp:TemplateField HeaderText="Funcionario Registrado">
                                     <ItemTemplate>
 
                                         <asp:Literal ID="ltrNombreDP" runat="server" Text='<%# Eval("V_NOMBRE_COMPLETO") %>'></asp:Literal>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Tipo Declaración">
+                                <%--<asp:TemplateField HeaderText="Tipo Declaración">
                                     <ItemTemplate>
                                         <asp:Literal ID="ltrDescripcionDP" runat="server" Text='<%# Eval("V_TIPO_DECLARACION") %>'></asp:Literal>
                                     </ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Fecha Envío">
+                                </asp:TemplateField>--%>
+                                <%--<asp:TemplateField HeaderText="Fecha Envío">
                                     <ItemTemplate>
                                         <asp:Literal ID="ltrFechaEDP" runat="server" Text='<%# Eval("F_PRESENTACION") %>'></asp:Literal>
                                     </ItemTemplate>
@@ -180,7 +180,7 @@
                                     <ItemTemplate>
                                         <asp:Button ID="AclaraAdmin" runat="server" Text="Aclaraciones" CommandArgument='<%# Eval("NID_DECLARACION")  + ";" + Eval("RFC") %>' OnClick="btnGridDeclaracion_Click" CssClass="mpdf" />
                                     </ItemTemplate>
-                                </asp:TemplateField>
+                                </asp:TemplateField>--%>
 
                             </Columns>
                         </asp:GridView>

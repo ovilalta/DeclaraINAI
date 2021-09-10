@@ -211,15 +211,15 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             set => txtObservaciones.Text = value;
         }
 
-        
         public List<Int32> NID_TITULARs
         {
             get
             {
-                if (cblTitulares.SelectedValuesInteger() == null)
+                if (cblTitulares.SelectedValuesInteger() == null && chbDependietesInm.Items.Count.Equals(0))
                     return new List<Int32>();
                 else
-                    return cblTitulares.SelectedValuesInteger();
+                    //return cblTitulares.SelectedValuesInteger();
+                    return new List<Int32>() { Int32.Parse(chbDependietesInm.SelectedValue) };
             }
             set
             {
@@ -229,6 +229,23 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                         cblTitulares.Items.FindByValue(ID.ToString()).Selected = true;
             }
         }
+        //public List<Int32> NID_TITULARs
+        //{
+        //    get
+        //    {
+        //        if (cblTitulares.SelectedValuesInteger() == null)
+        //            return new List<Int32>();
+        //        else
+        //            return cblTitulares.SelectedValuesInteger();
+        //    }
+        //    set
+        //    {
+        //        cblTitulares.ClearSelection();
+        //        if (value != null)
+        //            foreach (Int32 ID in value)
+        //                cblTitulares.Items.FindByValue(ID.ToString()).Selected = true;
+        //    }
+        //}
 
         public Int32 IndiceItemSeleccionado
         {
@@ -279,7 +296,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 cblTitulares.Items.Insert(21, new ListItem("Concubina o Concubinario y Dependiente Económico", "21"));
                 cblTitulares.Items.Insert(22, new ListItem("Cónyuge y Dependiente Económico en Copropiedad con Terceros", "22"));
                 cblTitulares.Items.Insert(23, new ListItem("Concubina o Concubinario y Dependiente Económico en Copropiedad con Terceros", "23"));
-                cblTitulares.Items.Insert(24, new ListItem(" Declarante y dependiente económico en copropiedad con terceros", "24"));
+                cblTitulares.Items.Insert(24, new ListItem("Declarante y dependiente económico en copropiedad con terceros", "24"));
                 cblTitulares.Items.Insert(cblTitulares.Items.Count, new ListItem("Copropietario", "-1"));
 
 
@@ -373,6 +390,35 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             txtObservaciones.Text = String.Empty;
             try { cblTitulares.ClearSelection(); } catch { }
             txtV_LUGAR.Visible = false;
+        }
+
+        protected void chbDependietesInm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Paso = chbDependietesInm.SelectedItem.Text;
+            Int32 Contenido = Paso.IndexOf("Terceros");
+            if (Contenido > 0)
+            {
+                cmbTercero.Enabled = true;
+                txtNombre_terceros.Enabled = true;
+                txtRfc_Terceros.Enabled = true;
+                //ComboTercero.Visible = true;
+                //NombreTercero.Visible = true;
+                //RFCTercero.Visible = true;
+                //ComentaObservación.Visible = true;
+            }
+            else
+            {
+                cmbTercero.Enabled = false;
+                txtNombre_terceros.Enabled = false;
+                txtRfc_Terceros.Enabled = false;
+                //ComboTercero.Visible = true;
+                //NombreTercero.Visible = true;
+                //RFCTercero.Visible = true;
+                txtRfc_Terceros.Text = string.Empty;
+                txtNombre_terceros.Text = string.Empty;
+                cmbTercero.ClearSelection();
+                //ComentaObservación.Visible = true;
+            }
         }
     }
 }

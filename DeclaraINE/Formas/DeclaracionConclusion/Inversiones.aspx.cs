@@ -394,6 +394,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
         {
             blld_DECLARACION oDeclaracion = _oDeclaracion;
             blld_USUARIO oUsuario = _oUsuario;
+            cblTitulares.SelectedValue = chbDependietesInm.SelectedValue;
             try
             {
                 List<Int32> ListaTitulares = new List<int>();
@@ -507,7 +508,23 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                 MsgBox.ShowDanger("Advertencia", "El RFC del otorgante NO puede ser el mismo del declarante");
             }
         }
-
+        protected void chbDependietesInm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Paso = chbDependietesInm.SelectedItem.Text;
+            Int32 Contenido = Paso.IndexOf("Terceros");
+            if (Contenido > 0)
+            {
+                cmbTerceroInversion.Enabled = true;
+                txtTerceroNombre.Enabled = true;
+                txtTerceroRFC.Enabled = true;
+            }
+            else
+            {
+                cmbTerceroInversion.Enabled = false;
+                txtTerceroNombre.Enabled = false;
+                txtTerceroRFC.Enabled = false;
+            }
+        }
         protected void cmbNID_INSTITUCION_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbNID_INSTITUCION.SelectedValue == "999")

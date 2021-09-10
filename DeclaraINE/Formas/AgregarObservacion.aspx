@@ -51,103 +51,120 @@
 </head>
 
 <body>
-    
-    
 
-    
+
+
+
     <%-- Codigo encabezado donde aparece la imagen de DeclaraINAI --%>
     <div class="row register-info-box" style="background: url('../../Images/ine-acerca-slide.jpg');">
-                <%--<div>--%>
-                    <div class="row align-items-left" style="display: flex;">
-                        <div>
-                            <img src="../../Images/Declaraine.png" style="height: 80px; margin: 10px 4px 10px 40px;" />
-                        </div>
-                        <div style="width: 100%;">
-                        </div>
-                    </div>
-                <%--</div>--%>
-     </div>
+        <%--<div>--%>
+        <div class="row align-items-left" style="display: flex;">
+            <div>
+                <img src="../../Images/Declaraine.png" style="height: 80px; margin: 10px 4px 10px 40px;" />
+            </div>
+            <div style="width: 100%;">
+            </div>
+        </div>
+        <%--</div>--%>
+    </div>
 
 
-    
 
-        <form id="form1" runat="server">
-            <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true" EnableScriptGlobalization="true">
-                <Scripts>
-                    <asp:ScriptReference Name="MsAjaxBundle" />
-                    <asp:ScriptReference Name="jquery" />
-                    <asp:ScriptReference Name="bootstrap" />
-                    <asp:ScriptReference Name="respond" />
-                    <asp:ScriptReference Name="MsWebFormsControlsResources" />
-                    <asp:ScriptReference Name="MsWebFormsSiteResorces" />
-                    <asp:ScriptReference Name="MsWebFormsPoper" />
-                    <asp:ScriptReference Name="MsWebFormsValidations" />
-                    <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-                    <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-                    <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-                    <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-                    <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-                    <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-                    <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                    <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                    <asp:ScriptReference Name="WebFormsBundle" />
-                </Scripts>
-            </asp:ScriptManager>
-            <asp:AlanMessageBox runat="server" ID="msgBox" />
-            <div class ="container">
-                
-               
-                <br />
-                
 
-                
-                <table class="f">
-                    <tbody>
-                        <tr>
-                            <th>
-                                <l>Aclaraciones/Observaciones</l>
-                            </th>
-                            <td>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true" EnableScriptGlobalization="true">
+            <Scripts>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="MsWebFormsControlsResources" />
+                <asp:ScriptReference Name="MsWebFormsSiteResorces" />
+                <asp:ScriptReference Name="MsWebFormsPoper" />
+                <asp:ScriptReference Name="MsWebFormsValidations" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+            </Scripts>
+        </asp:ScriptManager>
+        <asp:AlanMessageBox runat="server" ID="msgBox" />
+        <div class="container">
 
-                                <asp:TextBox ID="txtObservaciones" runat="server" onkeyDown="nombrecampo('txtObservaciones',this,'1000')"
-                                    onkeyup="nombrecampo('txtObservaciones',this,'1000')" MaxLength="1000" TextMode="MultiLine" Width="100%"></asp:TextBox>
 
-                            </td>
-                        </tr>
-                     </tbody>
-                </table>
-            
-                <div class="row">                    
-                    <div class="col-md-3">                            
-                    </div>                    
-                    <div class="col-md-6" align="center">
-                        <asp:Button Text="Guardar" ID="btnGuardar" runat="server" OnClick="btnGuardar_Click" CssClass="save" width="150" />
-                        <asp:Button Text="Regresar" ID="btnAtras" runat="server" OnClick="btnAtras_Click" CssClass="Image-Restart" width="150" />
-                    </div>                    
-                    <div class="col-md-3">                        
-                    </div>                    
-                 </div>
-                <br />
-                <br />
-                <div class="row">
-                    <div class="col-md-4">                        
-                    </div>
-                    <div class="col-md-4" align="center">
-                        <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="#009933" Font-Size="X-Large" ></asp:Label>
-                    </div>
-                    <div class="col-md-4">                        
-                    </div>
-                 </div>
-                    
+            <br />
 
-          </div>
-            
-                
-    </form>               
-                 
-                 
 
-    
+
+            <table class="f">
+                <tbody>
+                    <tr>
+                        <th>
+                            <l>Aclaraciones/Observaciones</l>
+                        </th>
+                        <td>
+
+                            <asp:TextBox ID="txtObservaciones" runat="server" onkeyDown="nombrecampo('txtObservaciones',this,'4000')"
+                                onkeyup="nombrecampo('txtObservaciones',this,'4000')" MaxLength="4000" TextMode="MultiLine" Width="100%"></asp:TextBox>
+
+                        </td>
+                    </tr>
+
+                </tbody>
+
+
+            </table>
+
+                <tr>
+                    <td>
+                        <asp:FileUpload ID="SubirArchivoAclara" runat="server" Width="400px" Height="50px" accept=".pdf, .doc, .docx"
+                            onchange="previewPDF()" />
+                    </td>
+                    <td  >
+                        <i id="IconoPDF" runat="server" >
+                        <img  src="../Images/icons/ColorX24/PDF.png"  />Archivo Cargado</i>
+                    </td>
+
+                </tr>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6" align="center">
+                    <asp:Button Text="Guardar" ID="btnGuardar" runat="server" OnClick="btnGuardar_Click" CssClass="save" Width="150" />
+                    <asp:Button Text="Regresar" ID="btnAtras" runat="server" OnClick="btnAtras_Click" CssClass="Image-Restart" Width="150" />
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4" align="center">
+                    <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="#009933" Font-Size="X-Large"></asp:Label>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </form>
+
+
+
+
 
 </body>
 </html>

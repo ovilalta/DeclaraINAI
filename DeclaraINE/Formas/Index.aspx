@@ -124,6 +124,7 @@
                                                         <Items>
                                                             <asp:MenuItem Text="Menú Administrador" Value="Menú Administrador" ToolTip="Opciones de administrador para el OIC">
                                                                 <asp:MenuItem NavigateUrl="~/Formas/ActivacionesAdmin.aspx" Text="Activar Cuenta" ToolTip="Activar cuenta de usuario" Value="Activar Cuenta"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/BuscaRegistroUsuario.aspx" Text="Busca Registro Usuario" ToolTip="Busca si ya se registró el usuario" Value="Busca Registro Usuario"></asp:MenuItem>
                                                                 <asp:MenuItem Text="Cargas" Value="Cargas" ToolTip="Menú de Cargas">
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/CargaAcusesFiscales.aspx" Text="Carga Acuses Fiscales" ToolTip="Carga Acuses Fiscales" Value="Carga Acuses Fiscales"></asp:MenuItem>
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/CargaDeclaraciones.aspx" Text="Carga Declaraciones Patrimoniales" ToolTip="Carga Declaraciones Patrimoniales" Value="Carga Declaraciones Patrimoniales"></asp:MenuItem>
@@ -135,10 +136,15 @@
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/DescargaDeclaracionesPDFs.aspx" Text="Descarga PDF Declaraciones" ToolTip="Descarga PDF's Declaraciones por rango de fecha" Value="Descarga PDF Declaraciones"></asp:MenuItem>
                                                                 </asp:MenuItem>
                                                                 <asp:MenuItem NavigateUrl="~/Formas/Administrador/ExcepcionRFC.aspx" Text="Excepción RFC" ToolTip="Agregar Excepción de RFC" Value="Excepción RFC"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/GeneraNombreArchivoPDF.aspx" Text="Genera Nombre Archivo PDF" ToolTip="Genera Nombre del archivo PDF" Value="Genera PDF"></asp:MenuItem>
                                                                 <asp:MenuItem Text="Menú Reportes" Value="Menú Reportes" ToolTip="Menú de reportes">
-                                                                    <asp:MenuItem NavigateUrl="~/Formas/RegistrosAdmin.aspx" Text="Reporte Declaraciones" ToolTip="Emite reporte de declaraciones por rango de fecha" Value="Reporte Declaraciones"></asp:MenuItem>
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteDeclaracionesConflictoIntereses.aspx" Text="Reporte Declaraciones Conflicto Intereses" ToolTip="Emite reporte de declaraciones de conflicto de intereses por rango de fecha" Value="Reporte Declaraciones de Conflicto de Intereses"></asp:MenuItem>
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/RegistrosAdmin.aspx" Text="Reporte Declaraciones Listado Detalle" ToolTip="Emite reporte de declaraciones por rango de fecha" Value="Reporte Declaraciones"></asp:MenuItem>
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteDeclaracionesInformeTrim.aspx" Text="Reporte Declaraciones Informe Trimestral" ToolTip="Reporte Declaraciones Informe Trimestral" Value="Reporte Declaraciones Informe Trimestral"></asp:MenuItem>
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteSIPOT.aspx" Text="Reporte SIPOT" ToolTip="Reporte SIPOT" Value="Reporte SIPOT"></asp:MenuItem>
+                                                                    
                                                                 </asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReseteoPassword.aspx" Text="Reseteo de Contraseña" ToolTip="Resetear contraseña del usuario" Value="Reseteo de contraseña"></asp:MenuItem>
                                                             </asp:MenuItem>
                                                         </Items>
                                                     </asp:Menu>

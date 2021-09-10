@@ -129,8 +129,34 @@
                             
                         </th>
                         <td>
-                            <asp:CheckBoxList ID="cblTitulares" runat="server" ></asp:CheckBoxList>                            
-                            
+                            <asp:CheckBoxList ID="cblTitulares" runat="server" Visible="false"></asp:CheckBoxList>                            
+                            <asp:DropDownList ID="chbDependietesInm" runat="server"  OnSelectedIndexChanged="chbDependietesInm_SelectedIndexChanged"  AutoPostBack="true">
+                                    <asp:ListItem Text="Declarante" VALUE= "0"></asp:ListItem>
+                                    <asp:ListItem Text="Declarante y Cónyuge"  Value= "1"></asp:ListItem>
+                                    <asp:ListItem Text="Declarante en Copropiedad con Terceros"  Value= "3"></asp:ListItem>
+                                    <asp:ListItem Text="Declarante y Cónyuge en Copropiedad con Terceros"  Value= "2"></asp:ListItem>
+                                    <asp:ListItem Text="Declarante y Concubina o Concubinario"  Value= "4"></asp:ListItem>
+                                    <asp:ListItem Text="Declarante y Concubina o Concubinario en Copropiedad con Terceros"  Value= "5"></asp:ListItem>
+                                    <asp:ListItem Text="Cónyuge"  Value= "6"></asp:ListItem>
+                                    <asp:ListItem Text="Cónyuge en Copropiedad con Terceros"  Value= "7"></asp:ListItem>
+                                    <asp:ListItem Text="Concubina o Concubinario"  Value= "8"></asp:ListItem>
+                                    <asp:ListItem Text="Concubina o Concubinario en Copropiedad con Terceros"  Value= "9"></asp:ListItem>
+                                    <asp:ListItem Text="Conviviente"  Value= "10"></asp:ListItem>
+                                    <asp:ListItem Text="Declarante y Conviviente"  Value= "11"></asp:ListItem>
+                                    <asp:ListItem Text="Declarante y Conviviente en Copropiedad con Terceros"  Value= "12"></asp:ListItem>
+                                    <asp:ListItem Text="Conviviente y Dependiente Económico"  Value= "13"></asp:ListItem>
+                                    <asp:ListItem Text="Conviviente y Dependiente Económico en Copropiedad con Terceros"  Value= "14"></asp:ListItem>
+                                    <asp:ListItem Text="Dependiente Económico"  Value= "15"></asp:ListItem>
+                                    <asp:ListItem Text="Declarante y Dependiente Económico"  Value= "16"></asp:ListItem>
+                                    <asp:ListItem Text="Dependiente Económico en Copropiedad con Terceros"  Value= "17"></asp:ListItem>
+                                    <asp:ListItem Text="Declarante, Cónyuge y Dependiente Económico"  Value= "18"></asp:ListItem>
+                                    <asp:ListItem Text="Declarante, Concubina o Concubinario y Dependiente Económico"  Value= "19"></asp:ListItem>
+                                    <asp:ListItem Text="Cónyuge y Dependiente Económico"  Value= "20"></asp:ListItem>
+                                    <asp:ListItem Text="Concubina o Concubinario y Dependiente Económico"  Value= "21"></asp:ListItem>
+                                    <asp:ListItem Text="Cónyuge y Dependiente Económico en Copropiedad con Terceros"  Value= "22"></asp:ListItem>
+                                    <asp:ListItem Text="Concubina o Concubinario y Dependiente Económico en Copropiedad con Terceros"  Value= "23"></asp:ListItem>
+                                   <asp:ListItem Text="Otro"  Value= "24"></asp:ListItem>
+                            </asp:DropDownList>
                         </td>
                     </tr>
                     <%--<tr>

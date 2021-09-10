@@ -124,7 +124,6 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             set => txtFuncion.Text = value;
         }
 
-
         public System.Nullable<Decimal> M_SALARIO_MENSUAL
         {
             //get => moneytxtM_Salario.MoneyNullable();
@@ -242,8 +241,6 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 cbxL_DEPENDE_ECO.Checked = value;
             }
         }
-
-
 
 
         public Boolean L_PROVEEDOR
@@ -531,8 +528,6 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 //////////////req();
             }
         }
-
-
 
         public Int32 NID_NIVEL_GOBIERNO
         {
@@ -1129,13 +1124,6 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
 
 
-
-
-
-
-
-
-
         protected void rbtnPu_CheckedChanged(object sender, EventArgs e)
         {
             blld_DECLARACION_DEPENDIENTES oDependiente = _oDependiente;
@@ -1224,7 +1212,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             cmbPU_nivel.ClearSelection();
             cmbPU_Ambito.ClearSelection();
             cmbPR_Sector.ClearSelection();
-            
+
             txtNombre.Text = String.Empty;
             txtPuesto.Text = String.Empty;
             txtRFC.Text = String.Empty;
@@ -1232,12 +1220,8 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             txtArea.Text = String.Empty;
             txtFuncion.Text = String.Empty;
             moneytxtM_Salario.Text = String.Empty;
-            cbxProveedor.Checked = false; 
+            cbxProveedor.Checked = false;
         }
-
-
-
-
 
         protected void rbtP_CheckedChanged(object sender, EventArgs e)
         {
@@ -1250,9 +1234,6 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             SelectDependiente();
 
         }
-
-
-
 
         internal void SelectPareja()
         {
@@ -1310,10 +1291,6 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
             }
         }
-
-
-
-
 
     }
 }

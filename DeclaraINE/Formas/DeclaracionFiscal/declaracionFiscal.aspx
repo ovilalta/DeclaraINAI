@@ -54,82 +54,82 @@
 <body>
     <%-- Codigo encabezado donde aparece la imagen de DeclaraINAI --%>
     <div class="row register-info-box" style="background: url('../../Images/ine-acerca-slide.jpg');">
-                <%--<div>--%>
-                    <div class="row align-items-left" style="display: flex;">
-                        <div>
-                            <img src="../../Images/Declaraine.png" style="height: 80px; margin: 10px 4px 10px 40px;" />
-                        </div>
-                        <div style="width: 100%;">
-                        </div>
-                    </div>
-                <%--</div>--%>
-     </div>
+        <%--<div>--%>
+        <div class="row align-items-left" style="display: flex;">
+            <div>
+                <img src="../../Images/Declaraine.png" style="height: 80px; margin: 10px 4px 10px 40px;" />
+            </div>
+            <div style="width: 100%;">
+            </div>
+        </div>
+        <%--</div>--%>
+    </div>
 
 
-    
 
-        <form id="form1" runat="server">
-            
-            <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true" EnableScriptGlobalization="true">
-                <Scripts>
-                    <asp:ScriptReference Name="MsAjaxBundle" />
-                    <asp:ScriptReference Name="jquery" />
-                    <asp:ScriptReference Name="bootstrap" />
-                    <asp:ScriptReference Name="respond" />
-                    <asp:ScriptReference Name="MsWebFormsControlsResources" />
-                    <asp:ScriptReference Name="MsWebFormsSiteResorces" />
-                    <asp:ScriptReference Name="MsWebFormsPoper" />
-                    <asp:ScriptReference Name="MsWebFormsValidations" />
-                    <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-                    <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-                    <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-                    <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-                    <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-                    <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-                    <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                    <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                    <asp:ScriptReference Name="WebFormsBundle" />
-                </Scripts>
-                
-            </asp:ScriptManager>
-            
-            <div class ="container">
-                <asp:AlanMessageBox ID="MsgBox" runat="server" style="font-size:200%" />
-                <asp:AlanQuestionBox runat="server" ID="QstBox" NoText="No" YesText="Si" OnNo="QstBox_No" OnYes="QstBox_Yes" YesCssClass="" NoCssClass="" />
-                <div class="row">
-                    <div class="col-md-4" >  </div>        
-                
-                    <div class="col-md-4" align="center">
-                        <h3 >Acuse de la Declaración Fiscal</h3>
-                    </div>
-                    <div class="col-md-4">     </div>
-                </div>    
-                <br />
-                <%-- Boton tutorial --%>
-                <div class="row">
-                    <div class="col-md-4">                
-                    </div>
-                    <div class="col-md-4" align="center">
-                        <asp:Button runat="server" Text="Tutorial Declaración Fiscal" ID="button3" OnClick="btnVerTutorial_Click" CssClass="Image-FAQ" />
-                    </div>
-                    <div class="col-md-4">                
-                    </div>
-                 </div>
-                <br />
-                <hr />
-                <div class="row">
-                    <div class="col-md-3">                
-                    </div>
-                    <div class="col-md-6" align="center">
-                        <label>Ejemplo Acuse Fiscal</label>
-                        <img src="../../images/HeaderFiscal.jpg" Width="550px" height="280px"/>
-                    </div>
-                    <div class="col-md-3">                
-                    </div>
-                 </div>
-                <br />
-                <hr />
-                <%--<div class="row mb-5">
+
+    <form id="form1" runat="server">
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true" EnableScriptGlobalization="true">
+            <Scripts>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="MsWebFormsControlsResources" />
+                <asp:ScriptReference Name="MsWebFormsSiteResorces" />
+                <asp:ScriptReference Name="MsWebFormsPoper" />
+                <asp:ScriptReference Name="MsWebFormsValidations" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+            </Scripts>
+
+        </asp:ScriptManager>
+
+        <div class="container">
+            <asp:AlanMessageBox ID="MsgBox" runat="server" style="font-size: 200%" />
+            <asp:AlanQuestionBox runat="server" ID="QstBox" NoText="No" YesText="Si" OnNo="QstBox_No" OnYes="QstBox_Yes" YesCssClass="" NoCssClass="" />
+            <div class="row">
+                <div class="col-md-4"></div>
+
+                <div class="col-md-4" align="center">
+                    <h3>Acuse de la Declaración Fiscal</h3>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <br />
+            <%-- Boton tutorial --%>
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4" align="center">
+                    <asp:Button runat="server" Text="Tutorial Declaración Fiscal" ID="button3" OnClick="btnVerTutorial_Click" CssClass="Image-FAQ" />
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+            <br />
+            <hr />
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6" align="center">
+                    <label>Ejemplo Acuse Fiscal</label>
+                    <img src="../../images/HeaderFiscal.jpg" width="550px" height="280px" />
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+            <br />
+            <hr />
+            <%--<div class="row mb-5">
                     <div class="col-md-3"></div>
                     <div class="col-md-6  d-flex justify-content-center">
                         <asp:Label ID="Label2" runat="server" Text="¿Eres obligado a presentar declaración fiscal ante el SAT?"></asp:Label>
@@ -155,27 +155,28 @@
                     <div class="col-md-3"></div>
                         
                 </div>--%>
-            
 
-                
-                
-                <%-- Boton carga archivo pdf --%>
-                <div class="row">
-                    <div class="col-md-4">                
-                    </div>
-                    <div class="col-md-4" align="center">
-                        <label>
-                            <h3>Carga aquí tu acuse fiscal</h3>
-                        </label>
-                        <br />
-                        <br />
-                            <asp:FileUpload  ID="FileUpload1" runat="server" Width="400px" Height="50px" />
-                    </div>
-                    <div class="col-md-4">                
-                    </div>
-               </div>
-                
-                <%--<div class="row">                    
+
+
+
+            <%-- Boton carga archivo pdf --%>
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4" align="center">
+                    <label>
+                        <h3>Carga aquí tu acuse fiscal</h3>
+                    </label>
+                    <br />
+                    <br />
+                    <iframe style="display:block" id="pdfFiscal" width="400" height="200"></iframe>
+                    <asp:FileUpload ID="FileUpload1" runat="server" Width="400px" Height="50px" accept="application/pdf" onchange="previewPDF()"/>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+
+            <%--<div class="row">                    
                     <div class="col-md-3">                            
                     </div>                    
                     <div class="col-md-6" align="center">
@@ -185,34 +186,34 @@
                     <div class="col-md-3">                        
                     </div>                    
                  </div>--%>
-                <br />
-                    <%-- Botones de cargar y cancelar --%>
-                 <div class="row">                    
-                    <div class="col-md-3">                            
-                    </div>                    
-                    <div class="col-md-6" align="center">
-                        <asp:Button Text="Anterior" ID="btnAtras" runat="server" OnClick="btnAtras_Click" CssClass="Image-Prev" width="210" />
-                        <asp:Button Text="Siguiente" ID="btnSiguiente" runat="server" OnClick="btnSiguiente_Click" CssClass="Image-Next" width="210" />
-                    </div>                    
-                    <div class="col-md-3">                        
-                    </div>                    
-                 </div>
-                <br />
-                <br />
-                <div class="row">
-                    <div class="col-md-4">                        
-                    </div>
-                    <div class="col-md-4" align="center">
-                        <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="#009933" Font-Size="X-Large" ></asp:Label>
-                    </div>
-                    <div class="col-md-4">                        
-                    </div>
-                 </div>
+            <br />
+            <%-- Botones de cargar y cancelar --%>
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6" align="center">
+                    <asp:Button Text="Anterior" ID="btnAtras" runat="server" OnClick="btnAtras_Click" CssClass="Image-Prev" Width="210" />
+                    <asp:Button Text="Siguiente" ID="btnSiguiente" runat="server" OnClick="btnSiguiente_Click" CssClass="Image-Next" Width="210" />
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4" align="center">
+                    <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="#009933" Font-Size="X-Large"></asp:Label>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
 
-                <asp:AlanModalPopUp runat="server" ID="mdlTutorial" HeaderText="Tutorial de la Declaración Fiscal" ModalSize="medium">
+            <asp:AlanModalPopUp runat="server" ID="mdlTutorial" HeaderText="Tutorial de la Declaración Fiscal" ModalSize="medium">
 
                 <ContentTemplate>
-                    
+
                     <div id="myCarousel" class="carousel slide" data-ride="false">
                         <ol class="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -260,14 +261,26 @@
                 </ContentTemplate>
             </asp:AlanModalPopUp>
 
-          </div>
+        </div>
 
-                
-    </form>               
-                 
-                 
 
-    
+    </form>
+
+
+
+
 
 </body>
 </html>
+
+<script>
+const { read } = require("@popperjs/core");
+
+    function previewPDF() {
+        var reader = new FileReader();
+        reader.readAsDataURL(document.getElementById("FileUpload1").files[0]);
+        reader.onloadend = function () {
+            document.getElementById("pdfFiscal").src = reader.result;
+        }
+    }
+</script>

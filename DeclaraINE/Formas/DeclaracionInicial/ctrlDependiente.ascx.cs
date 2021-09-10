@@ -1134,15 +1134,6 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             trPR_Sector.Visible = false;
         }
 
-
-
-
-
-
-
-
-
-
         protected void rbtnPu_CheckedChanged(object sender, EventArgs e)
         {
             mostrarPublico();
@@ -1163,13 +1154,6 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             mostrarNinguno();
         }
 
-
-
-
-
-
-
-
         protected void rbtP_CheckedChanged(object sender, EventArgs e)
         {
             SelectPareja();
@@ -1181,9 +1165,6 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             SelectDependiente();
 
         }
-
-
-
 
         internal void SelectPareja()
         {
@@ -1241,10 +1222,6 @@ namespace DeclaraINE.Formas.DeclaracionInicial
 
             }
         }
-
-
-
-
 
     }
 }

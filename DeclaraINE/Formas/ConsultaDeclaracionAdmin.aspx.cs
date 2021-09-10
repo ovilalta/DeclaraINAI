@@ -70,11 +70,11 @@ namespace DeclaraINE.Formas
                 //oUsuario.Reload_DECLARACIONs();
                 blld__l_DECLARACION_DIARIA o = new blld__l_DECLARACION_DIARIA();
                 //o.VID_NOMBRE = new Declara_V2.StringFilter(oUsuario.VID_NOMBRE);
-                o.VID_NOMBRE = new Declara_V2.StringFilter(VID_RFC.Substring(0,4));
+                o.VID_NOMBRE = new Declara_V2.StringFilter(VID_RFC.Substring(0, 4));
                 //o.VID_FECHA = new Declara_V2.StringFilter(oUsuario.VID_FECHA);
-                o.VID_FECHA = new Declara_V2.StringFilter(VID_RFC.Substring(4,6));
+                o.VID_FECHA = new Declara_V2.StringFilter(VID_RFC.Substring(4, 6));
                 //o.VID_HOMOCLAVE = new Declara_V2.StringFilter(oUsuario.VID_HOMOCLAVE);
-                o.VID_HOMOCLAVE = new Declara_V2.StringFilter(txtRfc.Substring(10,3));
+                o.VID_HOMOCLAVE = new Declara_V2.StringFilter(txtRfc.Substring(10, 3));
                 o.NID_ESTADOs.FilterCondition = ListFilter.FilterConditions.Negated;
                 o.NID_ESTADOs.Add(1);
                 o.NID_ESTADOs.Add(6);
@@ -125,9 +125,9 @@ namespace DeclaraINE.Formas
                                           , dec.F_ENVIO.ToString()
                                           , dec.NID_ESTADO
                                           , dec.V_NOMBRE_COMPLETO
-                                          ,dec.VID_NOMBRE
-                                          ,dec.VID_FECHA
-                                          ,dec.VID_HOMOCLAVE
+                                          , dec.VID_NOMBRE
+                                          , dec.VID_FECHA
+                                          , dec.VID_HOMOCLAVE
                                          )
                                                                       );
                 }
@@ -153,10 +153,12 @@ namespace DeclaraINE.Formas
             }
             else
             {
+                //Busqueda de declaraciones por RFC
                 if (rbRFC.Checked == true)
                 {
                     BuscarDeclaraciones(txtRfc.Text);
                 }
+                //Busqueda de declaraciones por nombre
                 if (rbNombre.Checked == true)
                 {
                     MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
@@ -180,10 +182,18 @@ namespace DeclaraINE.Formas
                                 dt.Clear();
                                 da.Fill(dt);
 
-                                for (int i = 0; i < dt.Rows.Count; i++)
+                                if (dt.Rows.Count > 0)
                                 {
-                                    BuscarDeclaraciones(dt.Rows[i]["RFC"].ToString());
+                                    for (int i = 0; i < dt.Rows.Count; i++)
+                                    {
+                                        BuscarDeclaraciones(dt.Rows[i]["RFC"].ToString());
+                                    }
                                 }
+                                else
+                                {
+                                    msgBox.ShowDanger("No se encontró registrado el nombre: " + "'" + txtRfc.Text.ToUpper() + "'" + " en DeclaraINAI ");
+                                }
+
                             }
                         }
                         catch (Exception ex)
@@ -210,11 +220,11 @@ namespace DeclaraINE.Formas
             int tamanioTotal = ((Button)sender).CommandArgument.Length;
             int tamanioArg1 = tamanioTotal - 14;
             int inicioArg2 = tamanioArg1 + 1;
-            Int32 NID_DECLARACION = Convert.ToInt32(((Button)sender).CommandArgument.Substring(0,tamanioArg1));
+            Int32 NID_DECLARACION = Convert.ToInt32(((Button)sender).CommandArgument.Substring(0, tamanioArg1));
             string rfc = Convert.ToString(((Button)sender).CommandArgument.Substring(inicioArg2, 13));
             blld_USUARIO oUsuario = new blld_USUARIO(rfc);
-            
-            
+
+
             blld_DECLARACION oDeclaracion = new blld_DECLARACION(oUsuario.VID_NOMBRE, oUsuario.VID_FECHA, oUsuario.VID_HOMOCLAVE, NID_DECLARACION);
 
 
@@ -331,7 +341,7 @@ namespace DeclaraINE.Formas
         }
         protected void btnGridDeclaracionAcuse_Click(object sender, EventArgs e)
         {
-            
+
             int tamanioTotal = ((Button)sender).CommandArgument.Length;
             int tamanioArg1 = tamanioTotal - 14;
             int inicioArg2 = tamanioArg1 + 1;

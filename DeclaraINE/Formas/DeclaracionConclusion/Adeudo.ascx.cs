@@ -211,15 +211,15 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
             set => txtObservaciones.Text = value;
         }
 
-        
         public List<Int32> NID_TITULARs
         {
             get
             {
-                if (cblTitulares.SelectedValuesInteger() == null)
+                if (cblTitulares.SelectedValuesInteger() == null && chbDependietesInm.Items.Count.Equals(0))
                     return new List<Int32>();
                 else
-                    return cblTitulares.SelectedValuesInteger();
+                    //return cblTitulares.SelectedValuesInteger();
+                    return new List<Int32>() { Int32.Parse(chbDependietesInm.SelectedValue) };
             }
             set
             {
@@ -229,6 +229,23 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                         cblTitulares.Items.FindByValue(ID.ToString()).Selected = true;
             }
         }
+        //public List<Int32> NID_TITULARs
+        //{
+        //    get
+        //    {
+        //        if (cblTitulares.SelectedValuesInteger() == null)
+        //            return new List<Int32>();
+        //        else
+        //            return cblTitulares.SelectedValuesInteger();
+        //    }
+        //    set
+        //    {
+        //        cblTitulares.ClearSelection();
+        //        if (value != null)
+        //            foreach (Int32 ID in value)
+        //                cblTitulares.Items.FindByValue(ID.ToString()).Selected = true;
+        //    }
+        //}
 
         public Int32 IndiceItemSeleccionado
         {
@@ -373,6 +390,35 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
             txtObservaciones.Text = String.Empty;
             try { cblTitulares.ClearSelection(); } catch { }
             txtV_LUGAR.Visible = false;
+        }
+
+        protected void chbDependietesInm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Paso = chbDependietesInm.SelectedItem.Text;
+            Int32 Contenido = Paso.IndexOf("Terceros");
+            if (Contenido > 0)
+            {
+                cmbTercero.Enabled = true;
+                txtNombre_terceros.Enabled = true;
+                txtRfc_Terceros.Enabled = true;
+                //ComboTercero.Visible = true;
+                //NombreTercero.Visible = true;
+                //RFCTercero.Visible = true;
+                //ComentaObservación.Visible = true;
+            }
+            else
+            {
+                cmbTercero.Enabled = false;
+                txtNombre_terceros.Enabled = false;
+                txtRfc_Terceros.Enabled = false;
+                //ComboTercero.Visible = true;
+                //NombreTercero.Visible = true;
+                //RFCTercero.Visible = true;
+                txtRfc_Terceros.Text = string.Empty;
+                txtNombre_terceros.Text = string.Empty;
+                cmbTercero.ClearSelection();
+                //ComentaObservación.Visible = true;
+            }
         }
     }
 }

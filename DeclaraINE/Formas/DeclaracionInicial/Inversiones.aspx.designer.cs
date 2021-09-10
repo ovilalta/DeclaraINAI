@@ -222,6 +222,15 @@ namespace DeclaraINE.Formas.DeclaracionInicial
         protected global::System.Web.UI.WebControls.CheckBoxList cblTitulares;
 
         /// <summary>
+        /// Control chbDependietesInm.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList chbDependietesInm;
+
+        /// <summary>
         /// Control cmbTerceroInversion.
         /// </summary>
         /// <remarks>
