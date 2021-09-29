@@ -61,24 +61,26 @@ namespace DeclaraINE.Formas.Administrador
 
                         using (SqlConnection conn = new SqlConnection(connString))
                         {
-
-                            using (SqlDataAdapter da = new SqlDataAdapter())
+                            conn.Open();
+                            using (SqlCommand cmd = new SqlCommand(sql,conn))
                             {
-                                da.SelectCommand = new SqlCommand(sql, conn);
-                                da.SelectCommand.CommandType = CommandType.StoredProcedure;
 
-                                da.SelectCommand.Parameters.Add(new SqlParameter("@RFC", txtRfc.Text.ToUpper()));
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@RFC", txtRfc.Text.ToUpper());
 
-                                msgBox.ShowSuccess("Se reseteo la contraseña del RFC: " + "'" + txtRfc.Text.ToUpper() + "'" + " en DeclaraINAI, quedando: Mexico1234");
-                                
+                                cmd.ExecuteNonQuery();
                             }
-
+                            conn.Close();
+                            
+                            msgBox.ShowSuccess("Se reseteo la contraseña del RFC: " + "'" + txtRfc.Text.ToUpper() + "'" + " en DeclaraINAI, quedando: Mexico1234");
                         }
                     }
                     else
                     {
                         msgBox.ShowDanger("No está registrado el usuario con RFC: " + txtRfc.Text.ToUpper());
                     }
+
+                    
                 }
                 catch (Exception ex)
                 {

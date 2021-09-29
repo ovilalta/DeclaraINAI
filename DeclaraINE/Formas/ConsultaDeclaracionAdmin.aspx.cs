@@ -176,6 +176,8 @@ namespace DeclaraINE.Formas
                                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
 
                                 da.SelectCommand.Parameters.Add(new SqlParameter("@nombre", txtRfc.Text));
+                                da.SelectCommand.Parameters.Add(new SqlParameter("@rfc", ""));
+                                da.SelectCommand.Parameters.Add(new SqlParameter("@tipo", 1));
 
 
                                 DataTable dt = new DataTable();

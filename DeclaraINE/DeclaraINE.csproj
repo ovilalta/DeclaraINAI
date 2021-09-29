@@ -393,9 +393,18 @@
     <Content Include="Formas\Administrador\AdministradoresActivaciones.txt" />
     <Content Include="Formas\Administrador\AdministradoresCorreos.txt" />
     <Content Include="Formas\Administrador\AdministradoresReporte.txt" />
+    <Content Include="Formas\Administrador\BuscaRegistroUsuario.aspx" />
+    <Content Include="Formas\Administrador\ReseteoPassword.aspx" />
+    <Content Include="Formas\Administrador\GeneraNombreArchivoPDF.aspx" />
+    <Content Include="Formas\Administrador\ExcepcionRFC.aspx" />
+    <Content Include="Formas\Administrador\CargaDeclaraciones.aspx" />
+    <Content Include="Formas\Administrador\CargaAcusesFiscales.aspx" />
+    <Content Include="Formas\Administrador\DescargaAcusesFiscales.aspx" />
     <Content Include="Formas\Administrador\GeneraDeclaracion.aspx" />
     <Content Include="Formas\Administrador\DescargaDeclaracionesPDFs.aspx" />
     <Content Include="Formas\Administrador\ObligadosModificacion.txt" />
+    <Content Include="Formas\Administrador\ReporteDeclaracionesConflictoIntereses.aspx" />
+    <Content Include="Formas\Administrador\ReporteDeclaracionesInformeTrim.aspx" />
     <Content Include="Formas\Administrador\ReporteSIPOT.aspx" />
     <Content Include="Formas\AvisoPrivacidad.ascx" />
     <Content Include="Formas\AvisoPrivacidadConflicto.aspx" />
@@ -2937,6 +2946,7 @@
     <Content Include="js\waypoints.min.js" />
     <Content Include="js\wow.min.js" />
     <Content Include="NavegadorIncorrecto.aspx" />
+    <Content Include="pdfAclaraciones\Aclaraciones.txt" />
     <Content Include="Scripts\AlanWebControls.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -3030,6 +3040,8 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Formas\Site.Master" />
     <Content Include="VerifyCaptcha.asmx" />
+    <Content Include="versionesFiscales\TextFile1.txt" />
+    <Content Include="versionesPublicas\TextFile1.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -3082,6 +3094,55 @@
     <Compile Include="Formas\AdministracionCuenta.aspx.designer.cs">
       <DependentUpon>AdministracionCuenta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formas\Administrador\BuscaRegistroUsuario.aspx.cs">
+      <DependentUpon>BuscaRegistroUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\BuscaRegistroUsuario.aspx.designer.cs">
+      <DependentUpon>BuscaRegistroUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Administrador\ReseteoPassword.aspx.cs">
+      <DependentUpon>ReseteoPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\ReseteoPassword.aspx.designer.cs">
+      <DependentUpon>ReseteoPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Administrador\GeneraNombreArchivoPDF.aspx.cs">
+      <DependentUpon>GeneraNombreArchivoPDF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\GeneraNombreArchivoPDF.aspx.designer.cs">
+      <DependentUpon>GeneraNombreArchivoPDF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Administrador\ExcepcionRFC.aspx.cs">
+      <DependentUpon>ExcepcionRFC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\ExcepcionRFC.aspx.designer.cs">
+      <DependentUpon>ExcepcionRFC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Administrador\CargaDeclaraciones.aspx.cs">
+      <DependentUpon>CargaDeclaraciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\CargaDeclaraciones.aspx.designer.cs">
+      <DependentUpon>CargaDeclaraciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Administrador\CargaAcusesFiscales.aspx.cs">
+      <DependentUpon>CargaAcusesFiscales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\CargaAcusesFiscales.aspx.designer.cs">
+      <DependentUpon>CargaAcusesFiscales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Administrador\DescargaAcusesFiscales.aspx.cs">
+      <DependentUpon>DescargaAcusesFiscales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\DescargaAcusesFiscales.aspx.designer.cs">
+      <DependentUpon>DescargaAcusesFiscales.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formas\Administrador\GeneraDeclaracion.aspx.cs">
       <DependentUpon>GeneraDeclaracion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3095,6 +3156,20 @@
     </Compile>
     <Compile Include="Formas\Administrador\DescargaDeclaracionesPDFs.aspx.designer.cs">
       <DependentUpon>DescargaDeclaracionesPDFs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Administrador\ReporteDeclaracionesConflictoIntereses.aspx.cs">
+      <DependentUpon>ReporteDeclaracionesConflictoIntereses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\ReporteDeclaracionesConflictoIntereses.aspx.designer.cs">
+      <DependentUpon>ReporteDeclaracionesConflictoIntereses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Administrador\ReporteDeclaracionesInformeTrim.aspx.cs">
+      <DependentUpon>ReporteDeclaracionesInformeTrim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\ReporteDeclaracionesInformeTrim.aspx.designer.cs">
+      <DependentUpon>ReporteDeclaracionesInformeTrim.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formas\Administrador\ReporteSIPOT.aspx.cs">
       <DependentUpon>ReporteSIPOT.aspx</DependentUpon>
@@ -3865,9 +3940,6 @@
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
-    <Content Include="versionesPublicas\AARÓNMASTACHEARROYO_Modificacion_3.pdf" />
-    <Content Include="versionesPublicas\ALEJANDRORODRIGUEZVERGEL_Modificacion_3.pdf" />
-    <Content Include="versionesPublicas\ALMAROSARAMÍREZHERRERA_Modificacion_3.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

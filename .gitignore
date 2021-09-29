@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/DeclaraINE/Formas/DeclaracionFiscal/pdfFiscales/2020
+/DeclaraINE/versionesFiscales
+/DeclaraINE/versionesPublicas
