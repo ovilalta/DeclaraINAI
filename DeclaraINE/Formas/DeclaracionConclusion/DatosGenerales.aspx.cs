@@ -3,6 +3,8 @@ using Declara_V2.BLLD;
 using Declara_V2.Exceptions;
 using Declara_V2.MODELextended;
 using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
@@ -423,6 +425,44 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
 
 
                                 oDeclaracion.DECLARACION_DOM_PARTICULAR.V_CORREO = txtV_CORREO_PERSONAL.Text;
+
+                                //Meter logica para guardar datos de correo personal en Usuario_Correo - OEVM 4nov2021 - Peticion de Alex Rdz
+
+                                if (txtV_CORREO_PERSONAL.Text != null)
+                                {
+
+                                    string rfc = oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE;
+                                    string correoPersonal = txtV_CORREO_PERSONAL.Text;
+
+                                    MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+                                    string connString = db.Database.Connection.ConnectionString;
+
+                                    int existeCorreo = db.USUARIO_CORREO.Where(p => p.VID_NOMBRE.Equals(oUsuario.VID_NOMBRE) && p.VID_FECHA.Equals(oUsuario.VID_FECHA) && p.VID_HOMOCLAVE.Equals(oUsuario.VID_HOMOCLAVE) && p.V_CORREO.Equals(txtV_CORREO_PERSONAL.Text)).Count();
+
+                                    if (existeCorreo == 0)
+                                    {
+                                        string sql = "SP_InsertaCorreoPersonal";
+                                        using (SqlConnection conn = new SqlConnection(connString))
+                                        {
+                                            conn.Open();
+                                            using (SqlCommand cmd = new SqlCommand(sql, conn))
+                                            {
+
+                                                cmd.CommandType = CommandType.StoredProcedure;
+                                                cmd.Parameters.AddWithValue("@RFC", rfc);
+                                                cmd.Parameters.AddWithValue("@CorreoPersonal", correoPersonal);
+                                                cmd.ExecuteNonQuery();
+                                            }
+                                            conn.Close();
+                                        }
+
+
+                                    }
+
+                                }
+
+                                //Termina logica para insertar datos en Usuario_Correo
+
                                 oDeclaracion.DECLARACION_DOM_PARTICULAR.V_TEL_PARTICULAR = txtV_TEL_PARTICULAR.Text;
                                 oDeclaracion.DECLARACION_DOM_PARTICULAR.V_TEL_CELULAR = txtV_TEL_CELULAR.Text;
                                 oDeclaracion.DECLARACION_DOM_PARTICULAR.update();
@@ -735,8 +775,10 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                                     oDeclaracion.DECLARACION_DOM_LABORAL.NID_PAIS = cmbNID_PAIS_LABORAL.SelectedValue();
                                     oDeclaracion.DECLARACION_DOM_LABORAL.CID_ENTIDAD_FEDERATIVA = cmbCID_ENTIDAD_FEDERATIVA_LABORAL.SelectedValue;
                                     oDeclaracion.DECLARACION_DOM_LABORAL.CID_MUNICIPIO = cmbCID_MUNICIPIO_LABORAL.SelectedValue;
-                                    oDeclaracion.DECLARACION_DOM_LABORAL.V_COLONIA = txtV_COLONIA_LABORAL.Text;
-                                    oDeclaracion.DECLARACION_DOM_LABORAL.V_DOMICILIO = String.Concat(txtV_DOMICILIO_LABORAL.Text, '|', txtNumExteriorDOMICILIO_LABORAL.Text, '|', txtNumInteriorDOMICILIO_LABORAL.Text);
+                                    oDeclaracion.DECLARACION_DOM_LABORAL.V_COLONIA = TextBox4.Text;
+                                    //oDeclaracion.DECLARACION_DOM_LABORAL.V_COLONIA = txtV_COLONIA_LABORAL.Text;
+                                    oDeclaracion.DECLARACION_DOM_LABORAL.V_DOMICILIO = String.Concat(TextBox1.Text, '|', TextBox2.Text, '|', TextBox3.Text);
+                                    //oDeclaracion.DECLARACION_DOM_LABORAL.V_DOMICILIO = String.Concat(txtV_DOMICILIO_LABORAL.Text, '|', txtNumExteriorDOMICILIO_LABORAL.Text, '|', txtNumInteriorDOMICILIO_LABORAL.Text);
                                     oDeclaracion.DECLARACION_DOM_LABORAL.V_CORREO_LABORAL = _oUsuario.USUARIO_CORREOs.Where(p => p.L_CONFIRMADO == true).First().V_CORREO;
                                     oDeclaracion.DECLARACION_DOM_LABORAL.V_TEL_LABORAL = String.Concat(txtV_TELEFONO_LABORAL1.Text, '|', txtV_TELEFONO_LABORAL2.Text);
                                     oDeclaracion.DECLARACION_DOM_LABORAL.update();

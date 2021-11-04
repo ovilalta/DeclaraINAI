@@ -7,7 +7,8 @@ using System.Linq;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-
+using System.Data.SqlClient;
+using System.Data;
 
 namespace DeclaraINE.Formas.DeclaracionModificacion
 {
@@ -485,6 +486,43 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                                 }
 
                                 oDeclaracion.DECLARACION_DOM_PARTICULAR.V_CORREO = txtV_CORREO_PERSONAL.Text;
+
+                                //Meter logica para guardar datos de correo personal en Usuario_Correo - OEVM 4nov2021 - Peticion de Alex Rdz
+
+                                if (txtV_CORREO_PERSONAL.Text != null)
+                                {
+
+                                    string rfc = oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE;
+                                    string correoPersonal = txtV_CORREO_PERSONAL.Text;
+
+                                    MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+                                    string connString = db.Database.Connection.ConnectionString;
+
+                                    int existeCorreo = db.USUARIO_CORREO.Where(p => p.VID_NOMBRE.Equals(oUsuario.VID_NOMBRE) && p.VID_FECHA.Equals(oUsuario.VID_FECHA) && p.VID_HOMOCLAVE.Equals(oUsuario.VID_HOMOCLAVE) && p.V_CORREO.Equals(txtV_CORREO_PERSONAL.Text)).Count();
+
+                                    if (existeCorreo == 0)
+                                    {
+                                        string sql = "SP_InsertaCorreoPersonal";
+                                        using (SqlConnection conn = new SqlConnection(connString))
+                                        {
+                                            conn.Open();
+                                            using (SqlCommand cmd = new SqlCommand(sql, conn))
+                                            {
+
+                                                cmd.CommandType = CommandType.StoredProcedure;
+                                                cmd.Parameters.AddWithValue("@RFC", rfc);
+                                                cmd.Parameters.AddWithValue("@CorreoPersonal", correoPersonal);
+                                                cmd.ExecuteNonQuery();
+                                            }
+                                            conn.Close();
+                                        }
+
+
+                                    }
+
+                                }
+
+                                //Termina logica para insertar datos en Usuario_Correo
                                 oDeclaracion.DECLARACION_DOM_PARTICULAR.V_TEL_PARTICULAR = txtV_TEL_PARTICULAR.Text;
                                 oDeclaracion.DECLARACION_DOM_PARTICULAR.V_TEL_CELULAR = txtV_TEL_CELULAR.Text;
                                 oDeclaracion.DECLARACION_DOM_PARTICULAR.update();
