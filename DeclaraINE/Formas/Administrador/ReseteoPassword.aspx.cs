@@ -50,16 +50,20 @@ namespace DeclaraINE.Formas.Administrador
 
                 try
                 {
-                    blld_USUARIO oUsuario = new blld_USUARIO(txtRfc.Text.ToUpper());
+                    
+                    MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+                    string connString = db.Database.Connection.ConnectionString;
+                    int existeUsuario = db.USUARIO.Where(p => p.VID_NOMBRE.Equals(txtRfc.Text.Substring(0,4))
+                    && p.VID_FECHA.Equals(txtRfc.Text.Substring(4, 6)) && p.VID_HOMOCLAVE.Equals(txtRfc.Text.Substring(10, 3))).Count();
 
-                    if (oUsuario != null)
+                    if (existeUsuario != 0)
                     {
-                        MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
-                        string connString = db.Database.Connection.ConnectionString;
+                        MODELDeclara_V2.cnxDeclara bd = new MODELDeclara_V2.cnxDeclara();
+                        string context = bd.Database.Connection.ConnectionString;
 
                         string sql = "SP_ReseteoPassword";
 
-                        using (SqlConnection conn = new SqlConnection(connString))
+                        using (SqlConnection conn = new SqlConnection(context))
                         {
                             conn.Open();
                             using (SqlCommand cmd = new SqlCommand(sql,conn))
@@ -71,6 +75,7 @@ namespace DeclaraINE.Formas.Administrador
                                 cmd.ExecuteNonQuery();
                             }
                             conn.Close();
+
                             
                             msgBox.ShowSuccess("Se reseteo la contraseña del RFC: " + "'" + txtRfc.Text.ToUpper() + "'" + " en DeclaraINAI, quedando: Mexico1234");
                         }

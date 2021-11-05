@@ -224,92 +224,105 @@ namespace DeclaraINE.Formas
             int inicioArg2 = tamanioArg1 + 1;
             Int32 NID_DECLARACION = Convert.ToInt32(((Button)sender).CommandArgument.Substring(0, tamanioArg1));
             string rfc = Convert.ToString(((Button)sender).CommandArgument.Substring(inicioArg2, 13));
-            blld_USUARIO oUsuario = new blld_USUARIO(rfc);
 
 
-            blld_DECLARACION oDeclaracion = new blld_DECLARACION(oUsuario.VID_NOMBRE, oUsuario.VID_FECHA, oUsuario.VID_HOMOCLAVE, NID_DECLARACION);
+            //blld_USUARIO oUsuarioReporte = new blld_USUARIO(rfc);
+            MODELDeclara_V2.cnxDeclara bd = new MODELDeclara_V2.cnxDeclara();
+            string connString = bd.Database.Connection.ConnectionString;
+            int existeUsuario = bd.USUARIO.Where(p => p.VID_NOMBRE.Equals(rfc.Substring(0, 4))
+            && p.VID_FECHA.Equals(rfc.Substring(4, 6)) && p.VID_HOMOCLAVE.Equals(rfc.Substring(10, 3))).Count();
 
-
-
-            try
+            if (existeUsuario != 0)
             {
-                MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
-                MODELDeclara_V2.DECLARACION registro = new MODELDeclara_V2.DECLARACION();
-
-                //----- CONSULTAMOS SI ESTA BINARIZADO
-                String File = "";
-                byte[] b1 = null;
-
-                registro = db.DECLARACION.Find(oUsuario.VID_NOMBRE, oUsuario.VID_FECHA, oUsuario.VID_HOMOCLAVE, oDeclaracion.NID_DECLARACION);
 
 
-                string TipoDeclaracion = db.CAT_TIPO_DECLARACION.Where(q => q.NID_TIPO_DECLARACION == oDeclaracion.NID_TIPO_DECLARACION).First().V_TIPO_DECLARACION;
+
+                blld_DECLARACION oDeclaracion = new blld_DECLARACION(rfc.Substring(0, 4), rfc.Substring(4, 6), rfc.Substring(10, 3), NID_DECLARACION);
 
 
-                String VersionDeclaracion = string.Empty;
 
-                int nTipoDeclaracion = db.CAT_TIPO_DECLARACION.Where(q => q.NID_TIPO_DECLARACION == oDeclaracion.NID_TIPO_DECLARACION).First().NID_TIPO_DECLARACION;
-
-                blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
-                oPuesto.select();
-                var obligado = oPuesto.lista_CAT_PUESTO.ToList().Where(p => p.NID_PUESTO.Equals(oDeclaracion.DECLARACION_CARGO.NID_PUESTO)).Single().L_OBLIGADO;
-
-                switch (nTipoDeclaracion)
+                try
                 {
-                    case 1:
-                        if (obligado.Equals(true))
-                            VersionDeclaracion = "DECLARACION_INICIAL";
-                        else
-                            VersionDeclaracion = "DECLARACION_INICIAL_SIMPLI";
-                        break;
-                    case 2:
-                        if (obligado.Equals(true))
-                            VersionDeclaracion = "DECLARACION_MODIFICACION";
-                        else
-                            VersionDeclaracion = "DECLARACION_MODIFICACION_SIMPLI";
-                        break;
-                    case 3:
-                        if (obligado.Equals(true))
-                            VersionDeclaracion = "DECLARACION_CONCLUSION";
-                        else
-                            VersionDeclaracion = "DECLARACION_CONCLUSION_SIMPLI";
-                        break;
-                }
+                    MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+                    MODELDeclara_V2.DECLARACION registro = new MODELDeclara_V2.DECLARACION();
 
-                file.fileSoapClient o = new file.fileSoapClient();
-                SerializedFile sf = o.ObtenReportePorId(Pagina.FileServiceCredentials, 2020, VersionDeclaracion, new List<object> { oUsuario.VID_NOMBRE
-                                                                               ,oUsuario.VID_FECHA
-                                                                               ,oUsuario.VID_HOMOCLAVE
+                    //----- CONSULTAMOS SI ESTA BINARIZADO
+                    String File = "";
+                    byte[] b1 = null;
+
+                    registro = db.DECLARACION.Find(rfc.Substring(0, 4), rfc.Substring(4, 6), rfc.Substring(10, 3), oDeclaracion.NID_DECLARACION);
+
+
+                    string TipoDeclaracion = db.CAT_TIPO_DECLARACION.Where(q => q.NID_TIPO_DECLARACION == oDeclaracion.NID_TIPO_DECLARACION).First().V_TIPO_DECLARACION;
+
+
+                    String VersionDeclaracion = string.Empty;
+
+                    int nTipoDeclaracion = db.CAT_TIPO_DECLARACION.Where(q => q.NID_TIPO_DECLARACION == oDeclaracion.NID_TIPO_DECLARACION).First().NID_TIPO_DECLARACION;
+
+                    blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
+                    oPuesto.select();
+                    var obligado = oPuesto.lista_CAT_PUESTO.ToList().Where(p => p.NID_PUESTO.Equals(oDeclaracion.DECLARACION_CARGO.NID_PUESTO)).Single().L_OBLIGADO;
+
+                    switch (nTipoDeclaracion)
+                    {
+                        case 1:
+                            if (obligado.Equals(true))
+                                VersionDeclaracion = "DECLARACION_INICIAL";
+                            else
+                                VersionDeclaracion = "DECLARACION_INICIAL_SIMPLI";
+                            break;
+                        case 2:
+                            if (obligado.Equals(true))
+                                VersionDeclaracion = "DECLARACION_MODIFICACION";
+                            else
+                                VersionDeclaracion = "DECLARACION_MODIFICACION_SIMPLI";
+                            break;
+                        case 3:
+                            if (obligado.Equals(true))
+                                VersionDeclaracion = "DECLARACION_CONCLUSION";
+                            else
+                                VersionDeclaracion = "DECLARACION_CONCLUSION_SIMPLI";
+                            break;
+                    }
+
+                    file.fileSoapClient o = new file.fileSoapClient();
+                    SerializedFile sf = o.ObtenReportePorId(Pagina.FileServiceCredentials, 2020, VersionDeclaracion, new List<object> { rfc.Substring(0, 4)
+                                                                               ,rfc.Substring(4, 6)
+                                                                               ,rfc.Substring(10, 3)
                                                                                ,oDeclaracion.NID_DECLARACION
                                                                                ,"Preliminarx"}.ToArray());
-                registro.V_HASH = GetSHA1(sf.FileBytes.ToString());
-                registro.B_FILE_DECLARACION = sf.FileBytes;
-                db.SaveChanges();
+                    registro.V_HASH = GetSHA1(sf.FileBytes.ToString());
+                    registro.B_FILE_DECLARACION = sf.FileBytes;
+                    db.SaveChanges();
 
 
-                registro = db.DECLARACION.Find(oUsuario.VID_NOMBRE, oUsuario.VID_FECHA, oUsuario.VID_HOMOCLAVE, oDeclaracion.NID_DECLARACION);
-                b1 = registro.B_FILE_DECLARACION;
+                    registro = db.DECLARACION.Find(rfc.Substring(0, 4), rfc.Substring(4, 6), rfc.Substring(10, 3), oDeclaracion.NID_DECLARACION);
+                    b1 = registro.B_FILE_DECLARACION;
 
 
-                FileStream fs1;
-                File = String.Concat(Path.GetTempPath().ToString(), Path.DirectorySeparatorChar.ToString(), Path.GetRandomFileName().ToString(), "");
-                fs1 = new FileStream(File, FileMode.Create);
-                fs1.Write(b1, 0, b1.Length);
-                fs1.Close();
-                fs1 = null;
-                HttpContext.Current.Response.ClearContent();
-                HttpContext.Current.Response.Clear();
-                HttpContext.Current.Response.ContentType = "application/pdf"; // sf.MimeType;
-                HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=Declaracion_" + TipoDeclaracion + "_" + oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE + ".pdf");
-                HttpContext.Current.Response.WriteFile(File);
-                HttpContext.Current.Response.Flush();
-                System.IO.File.Delete(File);
-                HttpContext.Current.Response.End();
+                    FileStream fs1;
+                    File = String.Concat(Path.GetTempPath().ToString(), Path.DirectorySeparatorChar.ToString(), Path.GetRandomFileName().ToString(), "");
+                    fs1 = new FileStream(File, FileMode.Create);
+                    fs1.Write(b1, 0, b1.Length);
+                    fs1.Close();
+                    fs1 = null;
+                    HttpContext.Current.Response.ClearContent();
+                    HttpContext.Current.Response.Clear();
+                    HttpContext.Current.Response.ContentType = "application/pdf"; // sf.MimeType;
+                    HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=Declaracion_" + TipoDeclaracion + "_" + rfc + ".pdf");
+                    HttpContext.Current.Response.WriteFile(File);
+                    HttpContext.Current.Response.Flush();
+                    System.IO.File.Delete(File);
+
+                    HttpContext.Current.Response.End();
+
+
+                }
+                catch (Exception ex)
+                {
+                }
             }
-            catch (Exception ex)
-            {
-            }
-
 
         }
 
@@ -350,91 +363,107 @@ namespace DeclaraINE.Formas
             Int32 NID_DECLARACION = Convert.ToInt32(((Button)sender).CommandArgument.Substring(0, tamanioArg1));
             string rfc = Convert.ToString(((Button)sender).CommandArgument.Substring(inicioArg2, 13));
 
-            blld_USUARIO oUsuario = new blld_USUARIO(rfc);
-            //Int32 NID_DECLARACION = Convert.ToInt32(((Button)sender).CommandArgument);
-            blld_DECLARACION oDeclaracion = new blld_DECLARACION(oUsuario.VID_NOMBRE, oUsuario.VID_FECHA, oUsuario.VID_HOMOCLAVE, NID_DECLARACION);
+            //blld_USUARIO oUsuarioReporte = new blld_USUARIO(rfc);
+            MODELDeclara_V2.cnxDeclara bd = new MODELDeclara_V2.cnxDeclara();
+            string connString = bd.Database.Connection.ConnectionString;
+            int existeUsuario = bd.USUARIO.Where(p => p.VID_NOMBRE.Equals(rfc.Substring(0, 4))
+            && p.VID_FECHA.Equals(rfc.Substring(4, 6)) && p.VID_HOMOCLAVE.Equals(rfc.Substring(10, 3))).Count();
 
-            try
+            if (existeUsuario != 0)
             {
-                MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
-                MODELDeclara_V2.DECLARACION registro = new MODELDeclara_V2.DECLARACION();
 
-                //----- CONSULTAMOS SI ESTA BINARIZADO
-                String File = "";
-                byte[] b1 = null;
+                //Int32 NID_DECLARACION = Convert.ToInt32(((Button)sender).CommandArgument);
+                blld_DECLARACION oDeclaracion = new blld_DECLARACION(rfc.Substring(0, 4), rfc.Substring(4, 6), rfc.Substring(10, 3), NID_DECLARACION);
 
-                registro = db.DECLARACION.Find(oUsuario.VID_NOMBRE, oUsuario.VID_FECHA, oUsuario.VID_HOMOCLAVE, oDeclaracion.NID_DECLARACION);
-                //b1 = registro.B_FILE_DECLARACION;
-
-                string TipoDeclaracion = db.CAT_TIPO_DECLARACION.Where(q => q.NID_TIPO_DECLARACION == oDeclaracion.NID_TIPO_DECLARACION).First().V_TIPO_DECLARACION;
-
-                //if (b1 == null)
-                //{
-                String VersionDeclaracion = string.Empty;
-
-                int nTipoDeclaracion = db.CAT_TIPO_DECLARACION.Where(q => q.NID_TIPO_DECLARACION == oDeclaracion.NID_TIPO_DECLARACION).First().NID_TIPO_DECLARACION;
-
-                blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
-                oPuesto.select();
-                var obligado = oPuesto.lista_CAT_PUESTO.ToList().Where(p => p.NID_PUESTO.Equals(oDeclaracion.DECLARACION_CARGO.NID_PUESTO)).Single().L_OBLIGADO;
-
-                switch (nTipoDeclaracion)
+                try
                 {
-                    case 1:
-                        if (obligado.Equals(true))
-                            VersionDeclaracion = "DECLARACION_INICIAL_PUB";
-                        else
-                            VersionDeclaracion = "DECLARACION_INICIAL_SIMPLI_PUB";
-                        break;
-                    case 2:
-                        if (obligado.Equals(true))
-                            VersionDeclaracion = "DECLARACION_MODIFICACION_PUB";
-                        else
-                            VersionDeclaracion = "DECLARACION_MODIFICACION_SIMPLI_PUB";
-                        break;
-                    case 3:
-                        if (obligado.Equals(true))
-                            VersionDeclaracion = "DECLARACION_CONCLUSION_PUB";
-                        else
-                            VersionDeclaracion = "DECLARACION_CONCLUSION_SIMPLI_PUB";
-                        break;
-                }
+                    MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+                    MODELDeclara_V2.DECLARACION registro = new MODELDeclara_V2.DECLARACION();
 
-                file.fileSoapClient o = new file.fileSoapClient();
-                SerializedFile sf = o.ObtenReportePorId(Pagina.FileServiceCredentials, 2020, VersionDeclaracion, new List<object> { oUsuario.VID_NOMBRE
-                                                                               ,oUsuario.VID_FECHA
-                                                                               ,oUsuario.VID_HOMOCLAVE
+                    //----- CONSULTAMOS SI ESTA BINARIZADO
+                    String File = "";
+                    byte[] b1 = null;
+
+                    registro = db.DECLARACION.Find(rfc.Substring(0, 4), rfc.Substring(4, 6), rfc.Substring(10, 3), oDeclaracion.NID_DECLARACION);
+                    //b1 = registro.B_FILE_DECLARACION;
+
+                    string TipoDeclaracion = db.CAT_TIPO_DECLARACION.Where(q => q.NID_TIPO_DECLARACION == oDeclaracion.NID_TIPO_DECLARACION).First().V_TIPO_DECLARACION;
+
+                    //if (b1 == null)
+                    //{
+                    String VersionDeclaracion = string.Empty;
+
+                    int nTipoDeclaracion = db.CAT_TIPO_DECLARACION.Where(q => q.NID_TIPO_DECLARACION == oDeclaracion.NID_TIPO_DECLARACION).First().NID_TIPO_DECLARACION;
+
+                    blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
+                    oPuesto.select();
+                    var obligado = oPuesto.lista_CAT_PUESTO.ToList().Where(p => p.NID_PUESTO.Equals(oDeclaracion.DECLARACION_CARGO.NID_PUESTO)).Single().L_OBLIGADO;
+
+                    switch (nTipoDeclaracion)
+                    {
+                        case 1:
+                            if (obligado.Equals(true))
+                                VersionDeclaracion = "DECLARACION_INICIAL_PUB";
+                            else
+                                VersionDeclaracion = "DECLARACION_INICIAL_SIMPLI_PUB";
+                            break;
+                        case 2:
+                            if (obligado.Equals(true))
+                                VersionDeclaracion = "DECLARACION_MODIFICACION_PUB";
+                            else
+                                VersionDeclaracion = "DECLARACION_MODIFICACION_SIMPLI_PUB";
+                            break;
+                        case 3:
+                            if (obligado.Equals(true))
+                                VersionDeclaracion = "DECLARACION_CONCLUSION_PUB";
+                            else
+                                VersionDeclaracion = "DECLARACION_CONCLUSION_SIMPLI_PUB";
+                            break;
+                    }
+
+
+
+                    file.fileSoapClient o = new file.fileSoapClient();
+                    SerializedFile sf = o.ObtenReportePorId(Pagina.FileServiceCredentials, 2020, VersionDeclaracion, new List<object> { rfc.Substring(0, 4)
+                                                                               ,rfc.Substring(4, 6)
+                                                                               ,rfc.Substring(10, 3)
                                                                                ,oDeclaracion.NID_DECLARACION
                                                                                ,"Preliminarx"}.ToArray());
-                registro.V_HASH = GetSHA1(sf.FileBytes.ToString());
-                registro.B_FILE_DECLARACION = sf.FileBytes;
-                db.SaveChanges();
+                    registro.V_HASH = GetSHA1(sf.FileBytes.ToString());
+                    registro.B_FILE_DECLARACION = sf.FileBytes;
+                    db.SaveChanges();
 
 
-                registro = db.DECLARACION.Find(oUsuario.VID_NOMBRE, oUsuario.VID_FECHA, oUsuario.VID_HOMOCLAVE, oDeclaracion.NID_DECLARACION);
-                b1 = registro.B_FILE_DECLARACION;
-                //}
+                    registro = db.DECLARACION.Find(rfc.Substring(0, 4), rfc.Substring(4, 6), rfc.Substring(10, 3), oDeclaracion.NID_DECLARACION);
 
-                FileStream fs1;
-                File = String.Concat(Path.GetTempPath().ToString(), Path.DirectorySeparatorChar.ToString(), Path.GetRandomFileName().ToString(), "");
-                fs1 = new FileStream(File, FileMode.Create);
-                fs1.Write(b1, 0, b1.Length);
-                fs1.Close();
-                fs1 = null;
-                HttpContext.Current.Response.ClearContent();
-                HttpContext.Current.Response.Clear();
-                HttpContext.Current.Response.ContentType = "application/pdf"; // sf.MimeType;
-                HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=Declaracion_" + TipoDeclaracion + "_" + oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE + ".pdf");
-                HttpContext.Current.Response.WriteFile(File);
-                HttpContext.Current.Response.Flush();
-                System.IO.File.Delete(File);
 
-                HttpContext.Current.Response.End();
+                    b1 = registro.B_FILE_DECLARACION;
+                    //}
+
+                    FileStream fs1;
+                    File = String.Concat(Path.GetTempPath().ToString(), Path.DirectorySeparatorChar.ToString(), Path.GetRandomFileName().ToString(), "");
+                    fs1 = new FileStream(File, FileMode.Create);
+                    fs1.Write(b1, 0, b1.Length);
+                    fs1.Close();
+                    fs1 = null;
+                    HttpContext.Current.Response.ClearContent();
+                    HttpContext.Current.Response.Clear();
+                    HttpContext.Current.Response.ContentType = "application/pdf"; // sf.MimeType;
+                    HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=Declaracion_" + TipoDeclaracion + "_" + rfc + ".pdf");
+                    HttpContext.Current.Response.WriteFile(File);
+                    HttpContext.Current.Response.Flush();
+                    System.IO.File.Delete(File);
+
+                    //Codigo para no dejar bloqueado al usuario por la sesion abierta
+
+                    HttpContext.Current.Response.End();
+
+
+                }
+                catch (Exception ex)
+                {
+                }
             }
-            catch (Exception ex)
-            {
-            }
-
         }
 
         protected void grdDP_SelectedIndexChanged(object sender, EventArgs e)
