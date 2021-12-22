@@ -40,6 +40,8 @@ namespace Declara_V2.DAL
 
         internal StringFilter E_ESPECIFICACION { get; set; }
         internal ListFilter<String> E_ESPECIFICACIONs { get; set; }
+        internal StringFilter D_ESPECIFICACION { get; set; }
+        internal ListFilter<String> D_ESPECIFICACIONs { get; set; }
 
         internal DecimalFilter M_VALOR { get; set; }
         internal ListFilter<Decimal> M_VALORs { get; set; }
@@ -88,6 +90,7 @@ namespace Declara_V2.DAL
             NID_PATRIMONIOs = new ListFilter<Int32>();
             L_CREDITOs = new ListFilter<Boolean>();
             F_ADQUISICIONs = new ListFilter<DateTime>();
+            D_ESPECIFICACIONs = new ListFilter<String>();
             query = null;
             single_query = null;
         }
@@ -124,6 +127,7 @@ namespace Declara_V2.DAL
                         L_CREDITO = qALTA_MUEBLE.L_CREDITO,
                         F_ADQUISICION = qALTA_MUEBLE.F_ADQUISICION,
                         V_TIPO = qCAT_TIPO_MUEBLE.V_TIPO,
+                        D_ESPECIFICACION = qALTA_MUEBLE.D_ESPECIFICACION,
                     };
         }
 
@@ -149,6 +153,9 @@ namespace Declara_V2.DAL
 
             if (E_ESPECIFICACIONs.Count > 0) single_query =  (E_ESPECIFICACIONs.FilterCondition == ListFilter.FilterConditions.Normal) ? single_query.Where(p => E_ESPECIFICACIONs.Contains(p.E_ESPECIFICACION)) : single_query.Where(p => !E_ESPECIFICACIONs.Contains(p.E_ESPECIFICACION));
             single_query = StringFilterBuilder<MODELDeclara_V2.ALTA_MUEBLE>(E_ESPECIFICACION, Declara_V2.MODELextended.ALTA_MUEBLE.Properties.E_ESPECIFICACION.ToString(), single_query);
+
+            if (D_ESPECIFICACIONs.Count > 0) single_query = (D_ESPECIFICACIONs.FilterCondition == ListFilter.FilterConditions.Normal) ? single_query.Where(p => D_ESPECIFICACIONs.Contains(p.D_ESPECIFICACION)) : single_query.Where(p => !D_ESPECIFICACIONs.Contains(p.D_ESPECIFICACION));
+            single_query = StringFilterBuilder<MODELDeclara_V2.ALTA_MUEBLE>(D_ESPECIFICACION, Declara_V2.MODELextended.ALTA_MUEBLE.Properties.D_ESPECIFICACION.ToString(), single_query);
 
             single_query = DecimalFilterBuilder<MODELDeclara_V2.ALTA_MUEBLE>(M_VALOR, Declara_V2.MODELextended.ALTA_MUEBLE.Properties.M_VALOR.ToString(), single_query);
 
@@ -183,6 +190,9 @@ namespace Declara_V2.DAL
 
             if (E_ESPECIFICACIONs.Count > 0) query =  (E_ESPECIFICACIONs.FilterCondition == ListFilter.FilterConditions.Normal) ? query.Where(p => E_ESPECIFICACIONs.Contains(p.E_ESPECIFICACION)) : query.Where(p => !E_ESPECIFICACIONs.Contains(p.E_ESPECIFICACION));
             query = StringFilterBuilder<Declara_V2.MODELextended.ALTA_MUEBLE>(E_ESPECIFICACION, Declara_V2.MODELextended.ALTA_MUEBLE.Properties.E_ESPECIFICACION.ToString(), query);
+
+            if (D_ESPECIFICACIONs.Count > 0) query = (D_ESPECIFICACIONs.FilterCondition == ListFilter.FilterConditions.Normal) ? query.Where(p => D_ESPECIFICACIONs.Contains(p.D_ESPECIFICACION)) : query.Where(p => !D_ESPECIFICACIONs.Contains(p.D_ESPECIFICACION));
+            query = StringFilterBuilder<Declara_V2.MODELextended.ALTA_MUEBLE>(D_ESPECIFICACION, Declara_V2.MODELextended.ALTA_MUEBLE.Properties.D_ESPECIFICACION.ToString(), query);
 
             query = DecimalFilterBuilder<Declara_V2.MODELextended.ALTA_MUEBLE>(M_VALOR, Declara_V2.MODELextended.ALTA_MUEBLE.Properties.M_VALOR.ToString(), query);
 

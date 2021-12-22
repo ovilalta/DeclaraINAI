@@ -90,6 +90,7 @@ namespace Declara_V2.BLLD
                                 , Int32 V_FORMA_ADQUISICION
                                 , Int32 V_FORMA_PAGO
                                 , String E_OBSERVACIONES
+                                , String D_ESPECIFICACION
                                 )
         : base(VID_NOMBRE
                 , VID_FECHA
@@ -110,6 +111,7 @@ namespace Declara_V2.BLLD
                 , V_FORMA_ADQUISICION
                 , V_FORMA_PAGO
                 , E_OBSERVACIONES
+                , D_ESPECIFICACION
                 , ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException
                 )
         {

@@ -43,7 +43,8 @@ namespace MODELDeclara_V2
         public string E_OBSERVACIONES_MARCADO { get; set; }
         public string V_OBSERVACIONES_TESTADO { get; set; }
         public int NID_ESTADO_TESTADO { get; set; }
-    
+        public string D_ESPECIFICACION { get; set; }
+
         public virtual ALTA ALTA { get; set; }
         public virtual CAT_ESTADO_TESTADO CAT_ESTADO_TESTADO { get; set; }
         public virtual CAT_FORMA_ADQUISICION CAT_FORMA_ADQUISICION { get; set; }

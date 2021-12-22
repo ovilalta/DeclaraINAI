@@ -386,6 +386,7 @@
           <Property Name="E_OBSERVACIONES_MARCADO" Type="varchar" MaxLength="2000" />
           <Property Name="V_OBSERVACIONES_TESTADO" Type="varchar" MaxLength="2000" />
           <Property Name="NID_ESTADO_TESTADO" Type="int" Nullable="false" />
+			<Property Name="D_ESPECIFICACION" Type="varchar" MaxLength="4000"  />
         </EntityType>
         <EntityType Name="ALTA_MUEBLE_COPROPIETARIO">
           <Key>
@@ -8848,6 +8849,7 @@ advertencia 6002: La tabla o vista 'DECLARA_DESARROLLO.dbo.CAT_CONFORME_A' no ti
           <Property Name="E_OBSERVACIONES_MARCADO" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
           <Property Name="V_OBSERVACIONES_TESTADO" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
           <Property Name="NID_ESTADO_TESTADO" Type="Int32" Nullable="false" />
+			<Property Name="D_ESPECIFICACION" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ALTA" Relationship="ModelDeclara.FK_ALTA_MUEBLE" FromRole="ALTA_MUEBLE" ToRole="ALTA" />
           <NavigationProperty Name="CAT_ESTADO_TESTADO" Relationship="ModelDeclara.FK_ALTA_MUEBLE_CAT_ESTADO_TESTADO" FromRole="ALTA_MUEBLE" ToRole="CAT_ESTADO_TESTADO" />
           <NavigationProperty Name="CAT_FORMA_ADQUISICION" Relationship="ModelDeclara.FK_ALTA_MUEBLE_CAT_FORMA_ADQUISICION" FromRole="ALTA_MUEBLE" ToRole="CAT_FORMA_ADQUISICION" />
@@ -14904,6 +14906,7 @@ advertencia 6002: La tabla o vista 'DECLARA_DESARROLLO.dbo.CAT_CONFORME_A' no ti
           <EntitySetMapping Name="ALTA_MUEBLE">
             <EntityTypeMapping TypeName="ModelDeclara.ALTA_MUEBLE">
               <MappingFragment StoreEntitySet="ALTA_MUEBLE">
+				  <ScalarProperty Name="D_ESPECIFICACION" ColumnName="D_ESPECIFICACION" />
                 <ScalarProperty Name="NID_ESTADO_TESTADO" ColumnName="NID_ESTADO_TESTADO" />
                 <ScalarProperty Name="V_OBSERVACIONES_TESTADO" ColumnName="V_OBSERVACIONES_TESTADO" />
                 <ScalarProperty Name="E_OBSERVACIONES_MARCADO" ColumnName="E_OBSERVACIONES_MARCADO" />

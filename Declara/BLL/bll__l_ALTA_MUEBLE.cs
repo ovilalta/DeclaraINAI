@@ -91,10 +91,22 @@ namespace Declara_V2.BLL
           get => datos_ALTA_MUEBLE.E_ESPECIFICACION;
           set => datos_ALTA_MUEBLE.E_ESPECIFICACION = value;
         }
+
+        public StringFilter D_ESPECIFICACION
+        {
+            get => datos_ALTA_MUEBLE.D_ESPECIFICACION;
+            set => datos_ALTA_MUEBLE.D_ESPECIFICACION = value;
+        }
         public ListFilter<String> E_ESPECIFICACIONs
         {
           get => datos_ALTA_MUEBLE.E_ESPECIFICACIONs;
           set => datos_ALTA_MUEBLE.E_ESPECIFICACIONs = value;
+        }
+
+        public ListFilter<String> D_ESPECIFICACIONs
+        {
+            get => datos_ALTA_MUEBLE.D_ESPECIFICACIONs;
+            set => datos_ALTA_MUEBLE.D_ESPECIFICACIONs = value;
         }
 
         public DecimalFilter M_VALOR

@@ -394,6 +394,7 @@
     <Content Include="Formas\Administrador\AdministradoresCorreos.txt" />
     <Content Include="Formas\Administrador\AdministradoresReporte.txt" />
     <Content Include="Formas\Administrador\BuscaRegistroUsuario.aspx" />
+    <Content Include="Formas\Administrador\DesencriptaDescMueble.aspx" />
     <Content Include="Formas\Administrador\ReseteoPassword.aspx" />
     <Content Include="Formas\Administrador\GeneraNombreArchivoPDF.aspx" />
     <Content Include="Formas\Administrador\ExcepcionRFC.aspx" />
@@ -3100,6 +3101,13 @@
     </Compile>
     <Compile Include="Formas\Administrador\BuscaRegistroUsuario.aspx.designer.cs">
       <DependentUpon>BuscaRegistroUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Administrador\DesencriptaDescMueble.aspx.cs">
+      <DependentUpon>DesencriptaDescMueble.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\DesencriptaDescMueble.aspx.designer.cs">
+      <DependentUpon>DesencriptaDescMueble.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formas\Administrador\ReseteoPassword.aspx.cs">
       <DependentUpon>ReseteoPassword.aspx</DependentUpon>

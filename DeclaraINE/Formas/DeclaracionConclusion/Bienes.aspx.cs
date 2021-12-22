@@ -1311,7 +1311,8 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_INMUEBLE_COPROPIETARIO.V_NOMBRE = txtNombreTercero.Text;
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_INMUEBLE_COPROPIETARIO.V_RFC = txtRFCTercero.Text;
                 //oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_INMUEBLE_COPROPIETARIO.update();
-                oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].update(chbDependietes.SelectedValuesInteger(), cmbTercero.SelectedValue, txtNombreTercero.Text, txtRFCTercero.Text);
+                //Revisar para que se manda la lista de dependientes, si solo deber[ia actualizarse el dependiente seleccionado en el combo
+                //oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].update(chbDependietes.SelectedValuesInteger(), cmbTercero.SelectedValue, txtNombreTercero.Text, txtRFCTercero.Text);
                 EliminaF_baja(oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].NID_PATRIMONIO.ToString());
                 if (txtF_BAJA_INM.Text.Length > 8)
                     oDeclaracion.MODIFICACION.Add_MODIFICACION_BAJAs(oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].NID_PATRIMONIO, 1, txtF_BAJA_INM.Date(Pagina.esMX));
@@ -1486,6 +1487,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                                                 , cmbTerceroMueble.SelectedValue
                                                 , txtNombreTerceroMueble.Text
                                                 , txtRFCTerceroMueble.Text
+                                                , txtEspecifica.Text
                                                 , chbDependietesMuebles.SelectedValuesInteger());
                 o = oDeclaracion.ALTA.ALTA_MUEBLEs.Last();
 

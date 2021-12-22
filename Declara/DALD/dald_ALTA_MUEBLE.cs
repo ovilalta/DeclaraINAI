@@ -14,7 +14,7 @@ namespace Declara_V2.DALD
     internal partial class dald_ALTA_MUEBLE : dal_ALTA_MUEBLE
     {
 
-     #region *** Atributos ***
+        #region *** Atributos ***
 
         #region * CAT_TIPO_MUEBLE *
 
@@ -23,7 +23,7 @@ namespace Declara_V2.DALD
         {
             get
             {
-                if(_oCAT_TIPO_MUEBLE == null) _oCAT_TIPO_MUEBLE= new dald_CAT_TIPO_MUEBLE(NID_TIPO);
+                if (_oCAT_TIPO_MUEBLE == null) _oCAT_TIPO_MUEBLE = new dald_CAT_TIPO_MUEBLE(NID_TIPO);
                 return _oCAT_TIPO_MUEBLE;
             }
         }
@@ -42,23 +42,23 @@ namespace Declara_V2.DALD
         {
             get
             {
-               MODELDeclara_V2.cnxDeclara dbInt = new MODELDeclara_V2.cnxDeclara();
+                MODELDeclara_V2.cnxDeclara dbInt = new MODELDeclara_V2.cnxDeclara();
                 return (from p in dbInt.ALTA_MUEBLE_TITULAR
-                              where
-                                   p.VID_NOMBRE == VID_NOMBRE &&
-                                   p.VID_FECHA == VID_FECHA &&
-                                   p.VID_HOMOCLAVE == VID_HOMOCLAVE &&
-                                   p.NID_DECLARACION == NID_DECLARACION &&
-                                   p.NID_MUEBLE == NID_MUEBLE
-                              select p).ToList();
+                        where
+                             p.VID_NOMBRE == VID_NOMBRE &&
+                             p.VID_FECHA == VID_FECHA &&
+                             p.VID_HOMOCLAVE == VID_HOMOCLAVE &&
+                             p.NID_DECLARACION == NID_DECLARACION &&
+                             p.NID_MUEBLE == NID_MUEBLE
+                        select p).ToList();
             }
         }
 
 
-     #endregion
+        #endregion
 
 
-     #region *** Constructores ***
+        #region *** Constructores ***
 
         internal dald_ALTA_MUEBLE()
         : base() { }
@@ -88,6 +88,7 @@ namespace Declara_V2.DALD
                                 , Int32 NID_FORMA_ADQUISICION
                                 , Int32 NID_FORMA_PAGO
                                 , String E_OBSERVACIONES
+                                , String D_ESPECIFICACION
                                 , ExistingPrimaryKeyException.ExistingPrimaryKeyConditions lOpcionesRegistroExistente
                                 )
         : base(VID_NOMBRE
@@ -109,18 +110,20 @@ namespace Declara_V2.DALD
                 , NID_FORMA_ADQUISICION
                 , NID_FORMA_PAGO
                 , E_OBSERVACIONES
+                ,D_ESPECIFICACION
                 , lOpcionesRegistroExistente
-              )  { }
+              )
+        { }
 
 
 
-     #endregion
+        #endregion
 
 
-     #region *** Metodos ***
+        #region *** Metodos ***
 
 
-     #endregion
+        #endregion
 
     }
 }

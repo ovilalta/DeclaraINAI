@@ -99,7 +99,7 @@ namespace Declara_V2.DALD
         #region *** Constructores (Extended) ***
 
 
-        internal dald_ALTA_MUEBLE(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, Int32 NID_DECLARACION, Int32 NID_MUEBLE, Int32 NID_TIPO, String E_ESPECIFICACION, Decimal M_VALOR, Int32 NID_PATRIMONIO, Boolean L_CREDITO, DateTime F_ADQUISICION, Int32 NID_FORMA_ADQUISICION, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions lOpcionesRegistroExistente)
+        internal dald_ALTA_MUEBLE(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, Int32 NID_DECLARACION, Int32 NID_MUEBLE, Int32 NID_TIPO, String E_ESPECIFICACION, Decimal M_VALOR, Int32 NID_PATRIMONIO, Boolean L_CREDITO, DateTime F_ADQUISICION, Int32 NID_FORMA_ADQUISICION, String D_ESPECIFICACION,ExistingPrimaryKeyException.ExistingPrimaryKeyConditions lOpcionesRegistroExistente)
         {
             registro = new ALTA_MUEBLE()
             {
@@ -114,6 +114,7 @@ namespace Declara_V2.DALD
                 NID_PATRIMONIO = NID_PATRIMONIO,
                 L_CREDITO = L_CREDITO,
                 F_ADQUISICION = F_ADQUISICION,
+                D_ESPECIFICACION = D_ESPECIFICACION,
             };
             try
             {

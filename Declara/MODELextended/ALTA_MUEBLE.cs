@@ -30,6 +30,7 @@ namespace Declara_V2.MODELextended
             L_CREDITO,
             V_TIPO,
             F_ADQUISICION,
+            D_ESPECIFICACION
         }
 
      #endregion

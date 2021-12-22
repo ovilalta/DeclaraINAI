@@ -95,6 +95,23 @@ namespace Declara_V2.BLLD
             }
         }
 
+        new public String D_ESPECIFICACION
+        {
+            get
+            {
+                if (String.IsNullOrEmpty(datos_ALTA_MUEBLE.D_ESPECIFICACION))
+                    return String.Empty;
+                return datos_ALTA_MUEBLE.D_ESPECIFICACION;
+            }
+            set
+            {
+                if (String.IsNullOrEmpty(value))
+                    datos_ALTA_MUEBLE.D_ESPECIFICACION = String.Empty;
+                else
+                    datos_ALTA_MUEBLE.D_ESPECIFICACION = value;
+            }
+        }
+
         new public DateTime F_ADQUISICION
         {
             get => datos_ALTA_MUEBLE.F_ADQUISICION;
@@ -285,6 +302,7 @@ namespace Declara_V2.BLLD
                                 , String CID_TIPO_PERSONA
                                 , String V_NOMBRE
                                 , String V_RFC
+                                , String D_ESPECIFICACION
                                 , List<Int32> ListDependientes
                                 )
         : base()
@@ -363,6 +381,11 @@ namespace Declara_V2.BLLD
             else
             E_ESPECIFICACION = Encripta(E_ESPECIFICACION);
 
+            if (String.IsNullOrEmpty(D_ESPECIFICACION))
+                D_ESPECIFICACION = String.Empty;
+            else
+                D_ESPECIFICACION = D_ESPECIFICACION;
+
 
 
             if (CID_TIPO_PERSONA_TRANSMISOR == "F")
@@ -396,6 +419,7 @@ namespace Declara_V2.BLLD
                                                     , NID_FORMA_ADQUISICION
                                                     , NID_FORMA_PAGO
                                                     , E_OBSERVACIONES
+                                                    , D_ESPECIFICACION
                                                     , ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException
                                                     );
 
@@ -420,7 +444,7 @@ namespace Declara_V2.BLLD
             }
         }
 
-        public blld_ALTA_MUEBLE(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, Int32 NID_DECLARACION, Int32 NID_TIPO, String E_ESPECIFICACION, Decimal M_VALOR, Boolean L_CREDITO, DateTime F_ADQUISICION, Boolean L_DONACION, List<Int32> ListDependientes)
+        public blld_ALTA_MUEBLE(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, Int32 NID_DECLARACION, Int32 NID_TIPO, String E_ESPECIFICACION, Decimal M_VALOR, Boolean L_CREDITO, DateTime F_ADQUISICION, Boolean L_DONACION, String D_ESPECIFICACION, List<Int32> ListDependientes)
      : base()
         {
             //if (ListDependientes == null) throw new CustomException("Debe haber al menos un titular");
@@ -435,6 +459,11 @@ namespace Declara_V2.BLLD
             else
                 E_ESPECIFICACION = Encripta(E_ESPECIFICACION);
 
+            if (String.IsNullOrEmpty(D_ESPECIFICACION))
+                D_ESPECIFICACION = String.Empty;
+            else
+                D_ESPECIFICACION = D_ESPECIFICACION;
+
             Int32 NID_FORMA_ADQUISICION;
             if (L_DONACION)
                 NID_FORMA_ADQUISICION = 1;
@@ -443,7 +472,7 @@ namespace Declara_V2.BLLD
 
 
 
-            datos_ALTA_MUEBLE = new dald_ALTA_MUEBLE(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, NID_DECLARACION, NID_MUEBLE, NID_TIPO, E_ESPECIFICACION, M_VALOR, NID_PATRIMONIO, L_CREDITO, F_ADQUISICION,NID_FORMA_ADQUISICION, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
+            datos_ALTA_MUEBLE = new dald_ALTA_MUEBLE(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, NID_DECLARACION, NID_MUEBLE, NID_TIPO, E_ESPECIFICACION, M_VALOR, NID_PATRIMONIO, L_CREDITO, F_ADQUISICION,NID_FORMA_ADQUISICION, D_ESPECIFICACION, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
 
             if (ListDependientes != null) {
                 foreach (Int32 nid_Dependiente in ListDependientes)

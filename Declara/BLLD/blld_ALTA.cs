@@ -211,6 +211,7 @@ namespace Declara_V2.BLLD
                                         , String CID_TIPO_PERSONA
                                         , String V_NOMBRE
                                         , String V_RFC
+                                        , String D_ESPECIFICACION
                                         , List<Int32> ListDependientes
                                         )
         {
@@ -235,6 +236,7 @@ namespace Declara_V2.BLLD
                                                                 , CID_TIPO_PERSONA
                                                                 , V_NOMBRE
                                                                 , V_RFC
+                                                                , D_ESPECIFICACION
                                                                 , ListDependientes
                                                                 );
             ALTA_MUEBLEs.Add(oALTA_MUEBLE);

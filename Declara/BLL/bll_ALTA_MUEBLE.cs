@@ -66,6 +66,16 @@ namespace Declara_V2.BLL
           set => datos_ALTA_MUEBLE.E_ESPECIFICACION = value;
         }
 
+        [StringLength(4000)]
+        [DataType(DataType.MultilineText)]
+        
+        [DisplayName("E S P E C I F I C A C I O N")]
+        public String D_ESPECIFICACION
+        {
+            get => datos_ALTA_MUEBLE.D_ESPECIFICACION;
+            set => datos_ALTA_MUEBLE.D_ESPECIFICACION = value;
+        }
+
         [DataType(DataType.Currency)]
         [Required(ErrorMessage = "El campo V A L O R es requerido ")]
         [DisplayName("V A L O R")]
@@ -189,6 +199,7 @@ namespace Declara_V2.BLL
             , Int32 V_FORMA_ADQUISICION
             , Int32 V_FORMA_PAGO
             , String E_OBSERVACIONES
+             , String D_ESPECIFICACION
             , ExistingPrimaryKeyException.ExistingPrimaryKeyConditions lOpcionesRegistroExistente
             ) => datos_ALTA_MUEBLE = new dald_ALTA_MUEBLE(VID_NOMBRE
                                         , VID_FECHA
@@ -208,8 +219,9 @@ namespace Declara_V2.BLL
                                         , V_TIPO_MONEDA
                                         , V_FORMA_ADQUISICION
                                         , V_FORMA_PAGO
-                                        , E_OBSERVACIONES, 
-                                        lOpcionesRegistroExistente
+                                        , E_OBSERVACIONES
+                                        , D_ESPECIFICACION
+                                        , lOpcionesRegistroExistente
                                         );
 
      #endregion

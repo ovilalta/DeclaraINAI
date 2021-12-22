@@ -181,6 +181,7 @@ namespace Declara_V2.BLLD
                                     , String CID_TIPO_PERSONA
                                     , String V_NOMBRE
                                     , String V_RFC
+                                    , String D_ESPECIFICACION
                                     , List<Int32> ListaDependietesMuebles
                                     )
         {
@@ -202,6 +203,7 @@ namespace Declara_V2.BLLD
                                 , CID_TIPO_PERSONA
                                 , V_NOMBRE
                                 , V_RFC
+                                , D_ESPECIFICACION
                                 , ListaDependietesMuebles
                                 );
             }
@@ -219,11 +221,11 @@ namespace Declara_V2.BLLD
             }
         }
 
-        public void Add_ALTA_MUEBLEs(Int32 NID_TIPO, String E_ESPECIFICACION, Decimal M_VALOR, Boolean L_CREDITO, DateTime F_ADQUISICION, Boolean L_DONACION, List<Int32> ListaDependietesMuebles)
+        public void Add_ALTA_MUEBLEs(Int32 NID_TIPO, String E_ESPECIFICACION, Decimal M_VALOR, Boolean L_CREDITO, DateTime F_ADQUISICION, Boolean L_DONACION, String D_ESPECIFICACION,List<Int32> ListaDependietesMuebles)
         {
             try
             {
-                _Add_ALTA_MUEBLEs(NID_TIPO, E_ESPECIFICACION, M_VALOR, L_CREDITO, F_ADQUISICION, L_DONACION, ListaDependietesMuebles);
+                _Add_ALTA_MUEBLEs(NID_TIPO, E_ESPECIFICACION, M_VALOR, L_CREDITO, F_ADQUISICION, L_DONACION, D_ESPECIFICACION,ListaDependietesMuebles);
             }
             catch (Exception e)
             {
@@ -239,10 +241,10 @@ namespace Declara_V2.BLLD
             }
         }
 
-        private void _Add_ALTA_MUEBLEs(Int32 NID_TIPO, String E_ESPECIFICACION, Decimal M_VALOR, Boolean L_CREDITO, DateTime F_ADQUISICION, Boolean L_DONACION, List<Int32> ListDependientes)
+        private void _Add_ALTA_MUEBLEs(Int32 NID_TIPO, String E_ESPECIFICACION, Decimal M_VALOR, Boolean L_CREDITO, DateTime F_ADQUISICION, Boolean L_DONACION, String D_ESPECIFICACION, List<Int32> ListDependientes)
         {
 
-            blld_ALTA_MUEBLE oALTA_MUEBLE = new blld_ALTA_MUEBLE(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, NID_DECLARACION, NID_TIPO, E_ESPECIFICACION, M_VALOR, L_CREDITO, F_ADQUISICION, L_DONACION, ListDependientes);
+            blld_ALTA_MUEBLE oALTA_MUEBLE = new blld_ALTA_MUEBLE(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, NID_DECLARACION, NID_TIPO, E_ESPECIFICACION, M_VALOR, L_CREDITO, F_ADQUISICION, L_DONACION, D_ESPECIFICACION, ListDependientes);
             ALTA_MUEBLEs.Add(oALTA_MUEBLE);
 
             //if (oALTA_MUEBLE.lEsNuevoRegistro.Value) ALTA_MUEBLEs.Add(oALTA_MUEBLE);

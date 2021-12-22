@@ -101,7 +101,9 @@
                                         </div>
                                     </div>
                                     <div class="col-xl-8 col-lg-8">
-                                        <div class="main-menu  d-none d-lg-block">
+                                        <%-- Cambie el tamanio del menu block para que se vea desde el movil --%>
+                                        <div class="main-menu  d-none d-sm-block">  
+                                            <%--<div class="main-menu  d-none d-lg-block">--%>
                                             <nav>
                                                 <ul id="navigation">
                                                     <li>
@@ -113,8 +115,8 @@
                                                     <%--<li>
                                                         <asp:LinkButton ID="LinkButton44" runat="server" OnClick="lkConflicto_Click" CssClass="active" Text="Intereses"></asp:LinkButton></li>--%>
                                                     <%--<li>
-                                                        <asp:LinkButton ID="LinkButton200" runat="server" OnClick=" lkFiscal_Click" CssClass="active" Text="Fiscal"></asp:LinkButton></li>
-                                                    <li>--%>
+                                                        <asp:LinkButton ID="LinkButton200" runat="server" OnClick=" lkFiscal_Click" CssClass="active" Text="Fiscal"></asp:LinkButton></li>--%>
+                                                    <li>
                                                     <asp:LinkButton ID="btnaCerrar" Text="Salir" runat="server" OnClick="btnCerrar_Click"></asp:LinkButton></li>
                                                 </ul>
 
@@ -131,6 +133,7 @@
                                                                 </asp:MenuItem>
                                                                 <asp:MenuItem NavigateUrl="~/Formas/CambiaCorreo.aspx" Text="Correo Alterno" ToolTip="Agregar correo personal" Value="Correo Alterno"></asp:MenuItem>
                                                                 <asp:MenuItem NavigateUrl="~/Formas/ConsultaDeclaracionAdmin.aspx" Text="Declaraciones" ToolTip="Buscar Declaraciones por RFC" Value="Declaraciones"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/DesencriptaDescMueble.aspx" Text="Desencripta Bien Mueble" ToolTip="Desencripta Descripción Bienes Muebles" Value="Desencripta"></asp:MenuItem>
                                                                 <asp:MenuItem Text="Descargas" Value="Descargas" ToolTip="Menú de descargas">
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/DescargaAcusesFiscales.aspx" Text="Descarga Acuses Fiscales" ToolTip="Descarga Acuses Fiscales por año" Value="Descarga Acuses Fiscales"></asp:MenuItem>
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/DescargaDeclaracionesPDFs.aspx" Text="Descarga PDF Declaraciones" ToolTip="Descarga PDF's Declaraciones por rango de fecha" Value="Descarga PDF Declaraciones"></asp:MenuItem>

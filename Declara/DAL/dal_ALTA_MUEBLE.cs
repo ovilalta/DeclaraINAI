@@ -42,6 +42,12 @@ namespace Declara_V2.DAL
           set => registro.E_ESPECIFICACION = value; 
         }
 
+        internal String D_ESPECIFICACION
+        {
+            get => registro.D_ESPECIFICACION;
+            set => registro.D_ESPECIFICACION = value;
+        }
+
         internal Decimal M_VALOR
         {
           get => registro.M_VALOR; 
@@ -142,6 +148,7 @@ namespace Declara_V2.DAL
                                 , Int32 NID_FORMA_ADQUISICION
                                 , Int32 NID_FORMA_PAGO
                                 , String E_OBSERVACIONES
+                                , String D_ESPECIFICACION
                                 , ExistingPrimaryKeyException.ExistingPrimaryKeyConditions lOpcionesRegistroExistente
                                 )
         {
@@ -165,7 +172,8 @@ namespace Declara_V2.DAL
                  V_TIPO_MONEDA = V_TIPO_MONEDA,
                  NID_FORMA_ADQUISICION = NID_FORMA_ADQUISICION,
                  NID_FORMA_PAGO = NID_FORMA_PAGO,
-                 E_OBSERVACIONES = E_OBSERVACIONES
+                 E_OBSERVACIONES = E_OBSERVACIONES,
+                 D_ESPECIFICACION = D_ESPECIFICACION,
                };
             try
             {

@@ -106,7 +106,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
 
             if (!IsPostBack)
             {
-                txtFechaAfquisicion_C.StartDate = new DateTime(1900,1,1);
+                txtFechaAfquisicion_C.StartDate = new DateTime(1900, 1, 1);
                 txtFechaAfquisicion_C.EndDate = DateTime.Today.AddDays(-1);
                 txtFechaAdquisicionVehiculo_C.StartDate = new DateTime(1900, 1, 1);
                 txtFechaAdquisicionVehiculo_C.EndDate = DateTime.Today.AddDays(-1);
@@ -220,13 +220,13 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 oRelacionTransmisor.select();
                 cmbRelacionTransmisor.DataBind(oRelacionTransmisor.lista_CAT_RELACION_TRANSMISOR, CAT_RELACION_TRANSMISOR.Properties.NID_RELACION_TRANSMISOR, CAT_RELACION_TRANSMISOR.Properties.V_RELACION_TRANSMISOR);
                 cmbRelacionTransmisor.Items.Insert(0, new ListItem(String.Empty));
-               
+
                 //forma de adquisicion
                 blld__l_CAT_FORMA_ADQUISICION oFormaAdquisicion = new blld__l_CAT_FORMA_ADQUISICION();
                 oFormaAdquisicion.select();
                 cmbFormaAdquisicionInmueble.DataBind(oFormaAdquisicion.lista_CAT_FORMA_ADQUISICION, CAT_FORMA_ADQUISICION.Properties.NID_FORMA_ADQUISICION, CAT_FORMA_ADQUISICION.Properties.V_FORMA_ADQUISICION);
                 cmbFormaAdquisicionInmueble.Items.Insert(0, new ListItem(String.Empty));
-               
+
                 //forma de pago
                 blld__l_CAT_FORMA_PAGO oFormaPago = new blld__l_CAT_FORMA_PAGO();
                 oFormaPago.select();
@@ -236,7 +236,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 //
                 blld__l_CAT_PAIS oCAT_PAIS = new blld__l_CAT_PAIS();
                 oCAT_PAIS.select();
-                
+
                 cmbPaisInmueble.DataBind(oCAT_PAIS.lista_CAT_PAIS, CAT_PAIS.Properties.NID_PAIS, CAT_PAIS.Properties.V_PAIS, false);
                 cmbPaisInmueble.Items.Insert(0, new ListItem(String.Empty));
                 cmbPaisInmueble.SelectedIndex = 0;
@@ -515,7 +515,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                         ((Button)Master.FindControl("btnAnterior")).Visible = true;
                         ViewState["SubSeccionActiva"] = SubSecciones.BienesInmuebles;
                         //ltrSubTitulo.Text = "Bienes - Inmuebles";
-                        ltrSubTitulo.Text = "10. Bienes Inmuebles (situación actual) </br><h6> Todos los datos de bienes declarados a nombre de la pareja, dependientes económicos y/o terceros o que sean en copropiedad con el declarante no serán públicos  </br> Bienes del declarante, pareja y/o dependientes económicos"; 
+                        ltrSubTitulo.Text = "10. Bienes Inmuebles (situación actual) </br><h6> Todos los datos de bienes declarados a nombre de la pareja, dependientes económicos y/o terceros o que sean en copropiedad con el declarante no serán públicos  </br> Bienes del declarante, pareja y/o dependientes económicos";
                         pnlBienesInmuebles.Visible = true;
                         pnlOtrosBienes.Visible = false;
                         pnlVehiculos.Visible = false;
@@ -526,8 +526,8 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                     case SubSecciones.OtrosBienes:
                         ((Button)Master.FindControl("btnAnterior")).Visible = true;
                         ViewState["SubSeccionActiva"] = SubSecciones.OtrosBienes;
-                       // ltrSubTitulo.Text = "Bienes - Otros Bienes Muebles";
-                        ltrSubTitulo.Text = "12. Bienes muebles (situación actual)</br><h6> Todos los datos de bienes declarados a nombre de la pareja, dependientes económicos y/o terceros o que sean en copropiedad con el declarante no serán públicos </br> Bienes del declarante, pareja y/o dependientes económicos"; 
+                        // ltrSubTitulo.Text = "Bienes - Otros Bienes Muebles";
+                        ltrSubTitulo.Text = "12. Bienes muebles (situación actual)</br><h6> Todos los datos de bienes declarados a nombre de la pareja, dependientes económicos y/o terceros o que sean en copropiedad con el declarante no serán públicos </br> Bienes del declarante, pareja y/o dependientes económicos";
                         pnlBienesInmuebles.Visible = false;
                         pnlOtrosBienes.Visible = true;
                         pnlVehiculos.Visible = false;
@@ -538,7 +538,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                         ((Button)Master.FindControl("btnAnterior")).Visible = true;
                         ViewState["SubSeccionActiva"] = SubSecciones.Vehiculos;
                         //ltrSubTitulo.Text = "Bienes - Vehículos";
-                        ltrSubTitulo.Text = "11. Vehículos (situación actual)</br><h6> Todos los datos de vehículos declarados a nombre de la pareja, dependientes económicos y/o terceros o que sean en copropiedad con el declarante no serán públicos </br> Vehículos del declarante, pareja y/o dependientes económicos"; 
+                        ltrSubTitulo.Text = "11. Vehículos (situación actual)</br><h6> Todos los datos de vehículos declarados a nombre de la pareja, dependientes económicos y/o terceros o que sean en copropiedad con el declarante no serán públicos </br> Vehículos del declarante, pareja y/o dependientes económicos";
                         pnlBienesInmuebles.Visible = false;
                         pnlOtrosBienes.Visible = false;
                         pnlVehiculos.Visible = true;
@@ -611,7 +611,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                     blld_DECLARACION oDeclaracion = _oDeclaracion;
                     if (oDeclaracion.ALTA.ALTA_INMUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 8).First().L_ESTADO.Value)
                         QstBoxInm.Ask("¿Tiene Bienes Inmuebles que registrar?");
-                    ltrSubTitulo.Text = "10. Bienes inmuebles (situación actual)</br><h6> Todos los datos de bienes declarados a nombre de la pareja, dependientes económicos y/o terceros o que sean en copropiedad con el declarante no serán públicos  </br> Bienes del declarante, pareja y/o dependientes económicos"; 
+                    ltrSubTitulo.Text = "10. Bienes inmuebles (situación actual)</br><h6> Todos los datos de bienes declarados a nombre de la pareja, dependientes económicos y/o terceros o que sean en copropiedad con el declarante no serán públicos  </br> Bienes del declarante, pareja y/o dependientes económicos";
                     ((Button)Master.FindControl("btnAnterior")).Visible = true;
                     //pnlBienesInmuebles.Visible = false;
                     //pnlOtrosBienes.Visible = true;
@@ -657,15 +657,15 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                     {
                         marcaApartado(ref oDeclaracion, 8);
                     }
-                    ltrSubTitulo.Text = "11. Vehículos(situación actual)</br><h6> Todos los datos de vehículos declarados a nombre de la pareja, dependientes económicos y/o terceros o que sean en copropiedad con el declarante no serán públicos </br> Vehículos del declarante, pareja y/o dependientes económicos"; 
+                    ltrSubTitulo.Text = "11. Vehículos(situación actual)</br><h6> Todos los datos de vehículos declarados a nombre de la pareja, dependientes económicos y/o terceros o que sean en copropiedad con el declarante no serán públicos </br> Vehículos del declarante, pareja y/o dependientes económicos";
                     ((Button)Master.FindControl("btnAnterior")).Visible = true;
                     pnlBienesInmuebles.Visible = false;
-                   // pnlOtrosBienes.Visible = true;
+                    // pnlOtrosBienes.Visible = true;
 
                     pnlOtrosBienes.Visible = false;
                     //pnlVehiculos.Visible = false;
                     pnlVehiculos.Visible = true;
-                   // SubSeccionActiva = SubSecciones.OtrosBienes;
+                    // SubSeccionActiva = SubSecciones.OtrosBienes;
                     SubSeccionActiva = SubSecciones.Vehiculos;
 
                     //if (oDeclaracion.ALTA.ALTA_MUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 9).First().L_ESTADO.Value)
@@ -709,7 +709,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                         marcaApartado(ref oDeclaracion, 10);
                     }
                     // Response.Redirect("Inversiones.aspx");
-                    ltrSubTitulo.Text = "12. Bienes muebles (situación actual)</br><h6> Todos los datos de bienes declarados a nombre de la pareja, dependientes económicos y/o terceros o que sean en copropiedad con el declarante no serán públicos </br> Bienes del declarante, pareja y/o dependientes económicos"; 
+                    ltrSubTitulo.Text = "12. Bienes muebles (situación actual)</br><h6> Todos los datos de bienes declarados a nombre de la pareja, dependientes económicos y/o terceros o que sean en copropiedad con el declarante no serán públicos </br> Bienes del declarante, pareja y/o dependientes económicos";
                     ((Button)Master.FindControl("btnAnterior")).Visible = true;
                     pnlBienesInmuebles.Visible = false;
                     pnlOtrosBienes.Visible = true;
@@ -784,7 +784,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                     txtNumeroExteriorInmueble.Text = i.V_NUMERO_EXTERNO;
                     txtNumeroInteriorInmueble.Text = i.V_NUMERO_INTERNO;
 
-                    if (String.IsNullOrEmpty( i.ALTA_INMUEBLE_COPROPIETARIO.CID_TIPO_PERSONA))
+                    if (String.IsNullOrEmpty(i.ALTA_INMUEBLE_COPROPIETARIO.CID_TIPO_PERSONA))
                     {
                         cmbTercero.ClearSelection();
                         txtNombreTercero.Text = String.Empty;
@@ -796,7 +796,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                         txtNombreTercero.Text = i.ALTA_INMUEBLE_COPROPIETARIO.V_NOMBRE;
                         txtRFCTercero.Text = i.ALTA_INMUEBLE_COPROPIETARIO.V_RFC;
                     }
- 
+
                     checaAdeudoImueble();
                     chbDependietes.ClearSelection();
                     chbDependietesInm.SelectedValue = i.ALTA_INMUEBLE_TITULARs.First().NID_DEPENDIENTE.ToString();
@@ -885,7 +885,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                     cmbPaisVehiculo_SelectedIndexChanged(sender, null);
                     //cmbPaisVehiculo_SelectedIndexChanged(cmbPaisVehiculo, null);
                     cmbEntidadFederativaVehiculo.SelectedValue = v.CID_ENTIDAD_FEDERATIVA;
-                    
+
                     txtTipoMonedaVehiculo.Text = v.V_TIPO_MONEDA.ToString();
                     try { ddlTipoMonedaVeh.SelectedValue = v.V_TIPO_MONEDA.ToString().Split('|')[0]; } catch { }
                     txtNumeroSerie.Text = v.E_NUMERO_SERIE.ToString();
@@ -1051,7 +1051,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
 
             txtColoniaInmueble.Text = String.Empty;
             txtCalleInmueble.Text = String.Empty;
-            txtNumeroExteriorInmueble.Text = String.Empty; 
+            txtNumeroExteriorInmueble.Text = String.Empty;
             txtNumeroInteriorInmueble.Text = String.Empty;
             numbertxtSuperficieTerreno.Text = String.Empty;
             numbertxtSuperficieConstruccion.Text = String.Empty;
@@ -1073,7 +1073,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             txtRFCTercero.Text = String.Empty;
             checaAdeudoImueble();
             chbDependietes.ClearSelection();
-           // cmbTipoUso.ClearSelection();
+            // cmbTipoUso.ClearSelection();
             cmbTipoBien.ClearSelection();
             cmbTipoBienSelect_Change(sender, e);
         }
@@ -1144,7 +1144,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 Decimal SupCostruccion;
                 Decimal PorcentajeDeclarante;
                 String lvUbicacion;
-                lvUbicacion = String.Concat(txtcCodigoPostalInmueble.Text,"|",
+                lvUbicacion = String.Concat(txtcCodigoPostalInmueble.Text, "|",
                                             cmbPaisInmueble.SelectedValue, "|",
                                             cmbEntidadFederativaInmueble.SelectedValue, "|",
                                             cmbMunicipioInmueble.SelectedValue, "|",
@@ -1193,8 +1193,8 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                                                    , moneytxtValorAdqusicion.Money()
                                                    , numbertxtPorcentajeDeclarante.Decimal()
                                                    //, cmbTransmisor.SelectedValue
-                                                   ,Paso1
-                                                   , txtNombreTransmisor.Text+"|"+ cmbInmuMotivoBajaInmu.SelectedValue.ToString()+"|"+cmbInmuMotivoBajaInmu.SelectedItem.Text
+                                                   , Paso1
+                                                   , txtNombreTransmisor.Text + "|" + cmbInmuMotivoBajaInmu.SelectedValue.ToString() + "|" + cmbInmuMotivoBajaInmu.SelectedItem.Text
                                                    //, txtNombreTransmisor.Text 
                                                    , txtRFCTransmisor.Text
                                                    //, Convert.ToInt32(cmbRelacionTransmisor.SelectedValue)
@@ -1241,7 +1241,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 ((Item)item).Editar += OnEditar;
                 ((Item)item).Eliminar += OnEliminar;
                 grdInmueble.Controls.AddAt(x, item);
-          
+
                 mppInmuebles.Hide();
             }
             catch (Exception ex)
@@ -1299,7 +1299,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].E_REGISTRO_PUBLICO_PROPIEDAD = txtRegistroPublicoPropiedad.Text;
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].N_PORCENTAJE_DECLARANTE = numbertxtPorcentajeDeclarante.Decimal();
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].CID_TIPO_PERSONA_TRANSMISOR = cmbTransmisor.SelectedValue;
-                oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].E_NOMBRE_TRANSMISOR = txtNombreTransmisor.Text+"|"+ cmbInmuMotivoBajaInmu.SelectedValue.ToString()+"|"+ cmbInmuMotivoBajaInmu.SelectedItem.Text;
+                oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].E_NOMBRE_TRANSMISOR = txtNombreTransmisor.Text + "|" + cmbInmuMotivoBajaInmu.SelectedValue.ToString() + "|" + cmbInmuMotivoBajaInmu.SelectedItem.Text;
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].E_RFC_TRANSMISOR = txtRFCTransmisor.Text;
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].NID_RELACION_TRANSMISOR = cmbRelacionTransmisor.SelectedValue();
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].NID_FORMA_ADQUISICION = cmbFormaAdquisicionInmueble.SelectedValue();
@@ -1353,13 +1353,13 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             if (cmbPaisInmueble.SelectedValue == "1")
             {
                 this.idLocal_colon.Text = "Colonia/Localidad";
-               // idEnt_Munic.Text = "Entidad/Municipio o Alcaldía";
+                // idEnt_Munic.Text = "Entidad/Municipio o Alcaldía";
 
             }
             else
             {
                 this.idLocal_colon.Text = "Ciudad/Localidad";
-               // idEnt_Munic.Text = "Estado/Provincia";
+                // idEnt_Munic.Text = "Estado/Provincia";
             }
             blld__l_CAT_ENTIDAD_FEDERATIVA oEntidadFederativa = new blld__l_CAT_ENTIDAD_FEDERATIVA();
             oEntidadFederativa.NID_PAIS = new Declara_V2.IntegerFilter(cmbPaisInmueble.SelectedValue());
@@ -1392,7 +1392,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             omun.NID_PAIS = new Declara_V2.IntegerFilter(cmbPaisInmueble.SelectedValue());
             omun.CID_ENTIDAD_FEDERATIVA = new Declara_V2.StringFilter(cmbEntidadFederativaVehiculo.SelectedValue);
             omun.select();
-        
+
         }
         protected void btnCerrarMueble_Click(object sender, EventArgs e)
         {
@@ -1485,7 +1485,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                                                 , txtF_ADQUISICION.Date(esMX)
                                                 //, cmbTransmisorMueble.SelectedValue
                                                 , Paso1
-                                                , txtNombreTransmisorMueble.Text+"|"+cmbMotivoBaja.SelectedValue.ToString()+"|"+cmbMotivoBaja.SelectedItem.Text
+                                                , txtNombreTransmisorMueble.Text + "|" + cmbMotivoBaja.SelectedValue.ToString() + "|" + cmbMotivoBaja.SelectedItem.Text
                                                 //, txtNombreTransmisorMueble.Text
                                                 , txtRFCTransmisorMueble.Text
                                                 , Convert.ToInt32(Paso)
@@ -1496,6 +1496,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                                                 , cmbTerceroMueble.SelectedValue
                                                 , txtNombreTerceroMueble.Text
                                                 , txtRFCTerceroMueble.Text
+                                                , txtEspecifica.Text
                                                 , chbDependietesMuebles.SelectedValuesInteger());
                 o = oDeclaracion.ALTA.ALTA_MUEBLEs.Last();
 
@@ -1537,12 +1538,15 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             {
                 oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].NID_TIPO = dpTipoBienMueble.SelectedValue();
                 oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].E_ESPECIFICACION = txtEspecifica.Text;
+                //Agregar Insert para el campo de E_Especificacion sin encriptar
+                oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].D_ESPECIFICACION = txtEspecifica.Text;
+                ////
                 oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].M_VALOR = moneytxtValorAdqusicionMueble.Money();
                 oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].F_ADQUISICION = txtF_ADQUISICION.Date(esMX);
 
                 oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].V_TIPO_MONEDA = txtTipoMonedaMueble.Text;
                 oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].CID_TIPO_PERSONA_TRANSMISOR = cmbTransmisorMueble.SelectedValue;
-                oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].E_NOMBRE_TRANSMISOR = txtNombreTransmisorMueble.Text+"|"+cmbMotivoBaja.SelectedValue.ToString()+"|" +cmbMotivoBaja.SelectedItem.Text;
+                oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].E_NOMBRE_TRANSMISOR = txtNombreTransmisorMueble.Text + "|" + cmbMotivoBaja.SelectedValue.ToString() + "|" + cmbMotivoBaja.SelectedItem.Text;
                 //oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].E_NOMBRE_TRANSMISOR = txtNombreTransmisorMueble.Text;
                 oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].E_RFC_TRANSMISOR = txtRFCTransmisorMueble.Text;
                 oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].NID_RELACION_TRANSMISOR = cmbRelacionTransmisorMueble.SelectedValue();
@@ -1620,7 +1624,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
 
 
             checaAdeudoVehiculo();
-           // dpTipoUso.ClearSelection();
+            // dpTipoUso.ClearSelection();
 
             chbDependietesVehiculo.ClearSelection();
         }
@@ -1686,11 +1690,11 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                                                    , moneytxtValorAdquisicion.Money()
                                                    , Convert.ToInt32(cmbPaisVehiculo.SelectedValue)
                                                    , cmbEntidadFederativaVehiculo.SelectedValue
-                                                   //, cmbTransmisorVehiculo.SelectedValue
+                                                    //, cmbTransmisorVehiculo.SelectedValue
                                                     , Paso1
                                                    , txtNombreTransmisorVehiculo.Text + "|" + cmbVehiMotivoBaja.SelectedValue.ToString() + "|" + cmbVehiMotivoBaja.SelectedItem.Text
-                                                  // , txtNombreTransmisorVehiculo.Text 
-                                                   , txtRFCTransmisorVehiculo.Text 
+                                                   // , txtNombreTransmisorVehiculo.Text 
+                                                   , txtRFCTransmisorVehiculo.Text
                                                    //, Convert.ToInt32(cmbRelacionTransmisorVehiculo.SelectedValue)
                                                    , Convert.ToInt32(Paso)
                                                    , txtTipoMonedaVehiculo.Text
@@ -1702,7 +1706,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                                                    , txtNombreTerceroVehiculo.Text
                                                    , txtRFCTerceroVehiculo.Text
                                                    , chbDependietesVehiculo.SelectedValuesInteger());
-                
+
                 if (InfoAdeudo != null)
                 {
                     oDeclaracion.ALTA.ALTA_VEHICULOs.Last().Add_ALTA_VEHICULO_ADEUDO
@@ -1998,10 +2002,12 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                         oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].CID_TIPO_PERSONA_OTORGANTE = Adeudo.CID_TIPO_PERSONA_OTORGANTE;
                         oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_RFC = Adeudo.E_RFC;
                         oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_OBSERVACIONES = Adeudo.E_OBSERVACIONES;
-                        oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].NID_TERCERO = Adeudo.NID_TERCERO;
-                        oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_NOMBRE_TERCERO = Adeudo.E_NOMBRE_TERCERO;
-                        oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_RFC_TERCERO = Adeudo.E_RFC_TERCERO;
-                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].update(Adeudo.NID_TITULARs);
+                        //Validaciones OEVM para los casos donde llega vacia la informacion de los campos de terceros
+                        oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].NID_TERCERO = Adeudo.NID_TERCERO == "" ? "" : Adeudo.NID_TERCERO;
+                        oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_NOMBRE_TERCERO = Adeudo.E_NOMBRE_TERCERO == "" ? "" : Adeudo.E_NOMBRE_TERCERO;
+                        oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_RFC_TERCERO = Adeudo.E_RFC_TERCERO ==""?"": Adeudo.E_RFC_TERCERO;
+                        //
+                        oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].update(Adeudo.NID_TITULARs);
                     }
                     else
                     {
@@ -2011,7 +2017,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                                 (
                                   Adeudo.NID_PAIS
                                  , Adeudo.CID_ENTIDAD_FEDERATIVA
-                                 , Adeudo.V_LUGAR + "|" + Adeudo.V_TIPO_MONEDA + "|" + Adeudo.CID_TIPO_PERSONA_OTORGANTE + "|" + Adeudo.E_RFC +"|"+ Adeudo.E_OBSERVACIONES + "|" + Adeudo.NID_TERCERO + "|" + Adeudo.E_NOMBRE_TERCERO + "|" + Adeudo.E_RFC_TERCERO
+                                 , Adeudo.V_LUGAR + "|" + Adeudo.V_TIPO_MONEDA + "|" + Adeudo.CID_TIPO_PERSONA_OTORGANTE + "|" + Adeudo.E_RFC + "|" + Adeudo.E_OBSERVACIONES + "|" + Adeudo.NID_TERCERO + "|" + Adeudo.E_NOMBRE_TERCERO + "|" + Adeudo.E_RFC_TERCERO
                                  , Adeudo.NID_INSTITUCION
                                  , Adeudo.V_OTRA
                                  , Adeudo.NID_TIPO_ADEUDO
@@ -2021,7 +2027,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                                  , Adeudo.E_CUENTA
                                  , Adeudo.NID_TITULARs
                                 );
-                          
+
                         }
                         else
                         {
@@ -2030,7 +2036,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                                 NID_TIPO_ADEUDO = Adeudo.NID_TIPO_ADEUDO,
                                 NID_PAIS = Adeudo.NID_PAIS,
                                 CID_ENTIDAD_FEDERATIVA = Adeudo.CID_ENTIDAD_FEDERATIVA,
-                                V_LUGAR = Adeudo.V_LUGAR+"|"+ Adeudo.V_TIPO_MONEDA + "|" + Adeudo.CID_TIPO_PERSONA_OTORGANTE + "|" + Adeudo.E_RFC + "|" +Adeudo.E_OBSERVACIONES + "|" + Adeudo.NID_TERCERO + "|" + Adeudo.E_NOMBRE_TERCERO+"|"+ Adeudo.E_RFC_TERCERO,
+                                V_LUGAR = Adeudo.V_LUGAR + "|" + Adeudo.V_TIPO_MONEDA + "|" + Adeudo.CID_TIPO_PERSONA_OTORGANTE + "|" + Adeudo.E_RFC + "|" + Adeudo.E_OBSERVACIONES + "|" + Adeudo.NID_TERCERO + "|" + Adeudo.E_NOMBRE_TERCERO + "|" + Adeudo.E_RFC_TERCERO,
                                 NID_INSTITUCION = Adeudo.NID_INSTITUCION,
                                 V_OTRA = Adeudo.V_OTRA,
                                 F_ADEUDO = Adeudo.F_ADEUDO,
@@ -2367,7 +2373,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                                , Adeudo.CID_ENTIDAD_FEDERATIVA
                                , Adeudo.V_LUGAR + "|" + Adeudo.V_TIPO_MONEDA + "|" + Adeudo.CID_TIPO_PERSONA_OTORGANTE + "|" + Adeudo.E_RFC + "|" + Adeudo.E_OBSERVACIONES + "|" + Adeudo.NID_TERCERO + "|" + Adeudo.E_NOMBRE_TERCERO + "|" + Adeudo.E_RFC_TERCERO
                                , Adeudo.NID_INSTITUCION
-                               , Adeudo.V_OTRA 
+                               , Adeudo.V_OTRA
                                , 2
                                , Adeudo.F_ADEUDO
                                , Adeudo.M_ORIGINAL.Value
@@ -2489,9 +2495,9 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                               where p.VID_NOMBRE == VID_NOMBRE &&
                                     p.VID_FECHA == VID_FECHA &&
                                     p.VID_HOMOCLAVE == VID_HOMOCLAVE &&
-                                    p.NID_DECLARACION == NID_DECLARACION 
-                                    
-                              select  p.NID_ADEUDO).Max());
+                                    p.NID_DECLARACION == NID_DECLARACION
+
+                              select p.NID_ADEUDO).Max());
                 return query;
             }
             catch

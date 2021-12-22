@@ -1661,6 +1661,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                                                 , cmbTerceroMueble.SelectedValue
                                                 , txtNombreTerceroMueble.Text
                                                 , txtRFCTerceroMueble.Text
+                                                 , txtEspecifica.Text
                                                 , chbDependietesMuebles.SelectedValuesInteger());
                 o = oDeclaracion.ALTA.ALTA_MUEBLEs.Last();
                 if (txtF_BAJA_MUEB.Text.Length > 8)
