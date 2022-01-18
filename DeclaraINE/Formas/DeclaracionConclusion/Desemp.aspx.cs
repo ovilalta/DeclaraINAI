@@ -16,6 +16,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
 {
     public partial class Desemp : Pagina, IDeclaracionInicial
     {
+        string flag = "false";
         blld_USUARIO _oUsuario
         {
             get => (blld_USUARIO)Session["oUsuario"];
@@ -42,7 +43,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
         {
             Response.Redirect("Ingresos.aspx");
         }
-       
+
         public void Siguiente()
         {
             blld_DECLARACION oDeclaracion = _oDeclaracion;
@@ -51,9 +52,9 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
             {
                 // AQUI VA EL CODIGO DEL APARTADO
                 //---------------------------------------------------
-               
+
                 marcaApartado(20);
-               
+
                 //---------------------------------------------------
             }
 
@@ -109,18 +110,18 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                 txtF_FINAL_C.StartDate = new DateTime(1900, 1, 1);
                 txtF_INGRESO_C.EndDate = DateTime.Today.AddDays(-1);
                 txtF_FINAL_C.EndDate = DateTime.Today.AddDays(-1);
-                if (oDeclaracion.DECLARACION_PERSONALES.F_SERVIDOR_ANTERIOR_FIN.ToString().Length>0)
-                txtF_FINAL.Text = oDeclaracion.DECLARACION_PERSONALES.F_SERVIDOR_ANTERIOR_FIN.ToString().Substring(0,10);
+                if (oDeclaracion.DECLARACION_PERSONALES.F_SERVIDOR_ANTERIOR_FIN.ToString().Length > 0)
+                    txtF_FINAL.Text = oDeclaracion.DECLARACION_PERSONALES.F_SERVIDOR_ANTERIOR_FIN.ToString().Substring(0, 10);
                 if (oDeclaracion.DECLARACION_PERSONALES.F_SERVIDOR_ANTERIOR_INICIO.ToString().Length > 0)
                     txtF_INGRESO.Text = oDeclaracion.DECLARACION_PERSONALES.F_SERVIDOR_ANTERIOR_INICIO.ToString().Substring(0, 10);
                 string Manejo = oDeclaracion.DECLARACION_PERSONALES.L_SERVIDOR_ANTERIOR.ToString();
-                if(Manejo=="True")
-                { 
+                if (Manejo == "True")
+                {
                     cbxFuisteServidor.Checked = true;
                     cuerpo.Visible = true;
                 }
                 else if (Manejo == "False")
-                { 
+                {
                     cbxFuisteServidor.Checked = false;
                     cuerpo.Visible = false;
                 }
@@ -138,7 +139,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                 ((LinkButton)Master.FindControl("lkDesemp")).CssClass = "active";
 
             ltrSubTitulo.Text = "9. ¿Te desempeñaste como servidor público en el año inmediato anterior?";
-           
+
         }
 
 
@@ -171,17 +172,17 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
             int NoCells = e.Row.Cells.Count;
             string Contenido;
             string Desgloce;
-           
+
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 Contenido = TomaDesicion(Convert.ToInt32(((Label)e.Row.FindControl("NID_INGRESO")).Text)).ToString();
                 Desgloce = ((TextBox)e.Row.FindControl("txtRespuesta")).Text;
-               
+
                 if (ultima == 7)
                 {
                     this.lblAuxiliar.Text = ((TextBox)e.Row.FindControl("txtRespuesta")).Text;
                 }
-                if(ultima==11)
+                if (ultima == 11)
                 {
                     this.lblAuxiliarBE.Text = ((TextBox)e.Row.FindControl("txtRespuesta")).Text;
                 }
@@ -204,9 +205,9 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                     ((DropDownList)e.Row.FindControl("cmbRespuestaBE")).CssClass = "invisible";
                     ((TextBox)e.Row.FindControl("txtMonto")).CssClass = "invisible";
                     this.txtObservaciones.Text = ((TextBox)e.Row.FindControl("txtRespuesta")).Text;
-                   
+
                 }
-               else if (ultima == 0)
+                else if (ultima == 0)
                 {
                     ((TextBox)e.Row.FindControl("txtRespuesta")).CssClass = "invisible";
                     ((DropDownList)e.Row.FindControl("cmbRespuestaBE")).CssClass = "invisible";
@@ -230,7 +231,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                     if (Contenido.Split('|')[0] == "C")
                     {
                         ((TextBox)e.Row.FindControl("txtRespuesta")).CssClass = "invisible";
-                        
+
                         ((TextBox)e.Row.FindControl("txtMonto")).CssClass = "invisible";// 
                         if (ultima == 11)
                         {
@@ -241,7 +242,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                         else
                         {
                             ((DropDownList)e.Row.FindControl("cmbRespuesta")).CssClass = String.Empty;
-                            ((DropDownList)e.Row.FindControl("cmbRespuestaBE")).CssClass = "invisible"; 
+                            ((DropDownList)e.Row.FindControl("cmbRespuestaBE")).CssClass = "invisible";
                             blld__l_CAT_INSTRUMENTO_RENDIMIENTO oCAT_INSTRUMENTO_RENDIMIENTO = new blld__l_CAT_INSTRUMENTO_RENDIMIENTO();
                             oCAT_INSTRUMENTO_RENDIMIENTO.select();
                             ((DropDownList)e.Row.FindControl("cmbRespuesta")).DataBind(oCAT_INSTRUMENTO_RENDIMIENTO.lista_CAT_INSTRUMENTO_RENDIMIENTO, CAT_INSTRUMENTO_RENDIMIENTO.Properties.NID_INSTRUMENTO_RENDIMIENTO, CAT_INSTRUMENTO_RENDIMIENTO.Properties.V_INSTRUMENTO_RENDIMIENTO, false);
@@ -285,8 +286,19 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
         }
         protected void btnGuardarPreguntas_Click(object sender, EventArgs e)
         {
+
             SalvaDatos();
-            AlertaSuperior.ShowSuccess("Se agregó correctamente la información");
+            if (flag=="false")
+            {
+                AlertaSuperior.ShowSuccess("Se agregó correctamente la información");
+            }
+            else
+            {
+                AlertaSuperior.ShowDanger("Error", "El campo 'I. Remuneración neta del declarante recibida durante el tiempo " +
+                    "en el que se desempeñó como servidor público en el año inmediato anterior (por concepto de sueldos, honorarios, " +
+                    "compensaciones, bonos, aguinaldos y otras prestaciones) (cantidades netas después de impuestos)' no puede guardarse con valor CERO");
+            }
+            
         }
         private void SalvaDatos()
         {
@@ -299,47 +311,62 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
             {
                 blld_MODIFICACION_INGRESOS oModificacion_Ingresos = _oModificacion_Ingresos;
                 oDeclaracion.DECLARACION_PERSONALES.L_SERVIDOR_ANTERIOR = cbxFuisteServidor.Checked;
-                oDeclaracion.DECLARACION_PERSONALES.F_SERVIDOR_ANTERIOR_INICIO =Convert.ToDateTime( txtF_INGRESO.Text);
+                oDeclaracion.DECLARACION_PERSONALES.F_SERVIDOR_ANTERIOR_INICIO = Convert.ToDateTime(txtF_INGRESO.Text);
                 oDeclaracion.DECLARACION_PERSONALES.F_SERVIDOR_ANTERIOR_FIN = Convert.ToDateTime(txtF_FINAL.Text);
                 oDeclaracion.DECLARACION_PERSONALES.update();
                 Int32 x = 1;
                 Int32 ID_INGRESO = 199;
+                
                 foreach (GridViewRow row in grdPreguntas.Rows)
                 {
                     V_COMPLEMENTO = ((TextBox)row.FindControl("txtRespuesta")).Text;
                     V_MONTO = ((TextBox)row.FindControl("txtMonto")).Text;
                     ID_INGRESO++;
-                    if (x != 8 && x != 18 && x != 12)
+                    if (Convert.ToInt32(ID_INGRESO) == 200 && Convert.ToInt32(V_MONTO.Money()) == 0)
                     {
-                        oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().M_INGRESO = ((TextBox)row.FindControl("txtMonto")).Text.Money();
-                        oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().E_ESPECIFICAR_COMPLEMENTO = ((TextBox)row.FindControl("txtRespuesta")).Text;
-                        oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().update();
-                    }
-                    else if (x == 18)
-                    {
-                        oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().E_ESPECIFICAR_COMPLEMENTO = txtObservaciones.Text;
-                        oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().update();
-
-                    }
-                    else if (x == 8)
-                    {
-                        oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().E_ESPECIFICAR_COMPLEMENTO = lblAuxiliar.Text;
-                        oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().update();
+                        
+                        flag = "true";
+                        
                     }
                     else
                     {
-                        oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().E_ESPECIFICAR_COMPLEMENTO = lblAuxiliarBE.Text;
-                        oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().update();
+                        if (x != 8 && x != 18 && x != 12)
+                        {
+                            oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().M_INGRESO = ((TextBox)row.FindControl("txtMonto")).Text.Money();
+                            oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().E_ESPECIFICAR_COMPLEMENTO = ((TextBox)row.FindControl("txtRespuesta")).Text;
+                            oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().update();
+                        }
+                        else if (x == 18)
+                        {
+                            oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().E_ESPECIFICAR_COMPLEMENTO = txtObservaciones.Text;
+                            oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().update();
+
+                        }
+                        else if (x == 8)
+                        {
+                            oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().E_ESPECIFICAR_COMPLEMENTO = lblAuxiliar.Text;
+                            oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().update();
+                        }
+                        else
+                        {
+                            oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().E_ESPECIFICAR_COMPLEMENTO = lblAuxiliarBE.Text;
+                            oDeclaracion.MODIFICACION.MODIFICACION_INGRESOSs.Where(p => p.NID_INGRESO == ID_INGRESO).First().update();
+                        }
                     }
+
                     x++;
                 }
-                marcaApartado(20);
+                if (flag != "true")
+                {
+                    marcaApartado(20);
+                }
+
             }
             catch (Exception ex)
             {
 
             }
-           
+
             _oDeclaracion = oDeclaracion;
         }
         private void SumaDatos()
@@ -351,7 +378,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
             double Suma2 = 0;
             double Suma12 = 0;
             double Suma14 = 0;
-           
+
             //string checadato = "0";
             foreach (GridViewRow row in grdPreguntas.Rows)
             {
@@ -419,17 +446,17 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
         {
             int valorNumerico = 0;
             Int32 k = 0;
-            string checadato= ((TextBox)sender).Text;
+            string checadato = ((TextBox)sender).Text;
             if (int.TryParse(checadato.Replace("$", "").Replace(",", ""), out valorNumerico))
-                {
+            {
                 //k = 0;
                 ((TextBox)sender).ToolTip = DescribeCifras(((TextBox)sender).Text);
-                }
-                else
-                {
-                    k = 1;
-                    AlertaSuperior.ShowSuccess("No puede utilizar caracteres en valores númerico favor de corregir");
-                }
+            }
+            else
+            {
+                k = 1;
+                AlertaSuperior.ShowSuccess("No puede utilizar caracteres en valores númerico favor de corregir");
+            }
 
             if (k == 0)
                 SumaDatos();
@@ -442,8 +469,9 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
 
         protected void cbxFuisteServidor_CheckedChanged(object sender, EventArgs e)
         {
-            if(cbxFuisteServidor.Checked==true)
-            { this.cuerpo.Visible = true; } else { this.cuerpo.Visible = false; Limpia(); }
+            if (cbxFuisteServidor.Checked == true)
+            { this.cuerpo.Visible = true; }
+            else { this.cuerpo.Visible = false; Limpia(); }
         }
         private void Limpia()
         {
@@ -460,17 +488,17 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
         }
         private void GeneraTooltip()
         {
-             int valorNumerico = 0;
+            int valorNumerico = 0;
             string checadato = "0";
             foreach (GridViewRow row in grdPreguntas.Rows)
             {
-               
-                 checadato = ((TextBox)row.FindControl("txtMonto")).Text;
+
+                checadato = ((TextBox)row.FindControl("txtMonto")).Text;
                 if (int.TryParse(checadato.Replace("$", "").Replace(",", ""), out valorNumerico))
                 {
                     ((TextBox)row.FindControl("txtMonto")).ToolTip = DescribeCifras(((TextBox)row.FindControl("txtMonto")).Text);
                 }
             }
-       }
+        }
     }
 }
