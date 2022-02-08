@@ -536,7 +536,15 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                             SubSeccionActiva = SubSecciones.DomicilioParticular;
                             try
                             {
-                                txtcCodigoPostal.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.C_CODIGO_POSTAL;
+                                if (oDeclaracion.DECLARACION_DOM_PARTICULAR.C_CODIGO_POSTAL == "     ")
+                                {
+                                    txtcCodigoPostal.Text = "" ;
+                                }
+                                else
+                                {
+                                    txtcCodigoPostal.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.C_CODIGO_POSTAL  ;
+                                }
+                                
                                 cmbPaisDomimicioParticular.SelectedValue = oDeclaracion.DECLARACION_DOM_PARTICULAR.NID_PAIS.ToString();
                                 cmbPaisDomimicioParticular_SelectedIndexChanged(cmbPaisDomimicioParticular, null);
 
