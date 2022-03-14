@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.DeclaracionInicial {
-    
-    
-    public partial class Bienes {
-        
+namespace DeclaraINE.Formas.DeclaracionInicial
+{
+
+
+    public partial class Bienes
+    {
+
         /// <summary>
         /// Control QstBoxInm.
         /// </summary>
@@ -20,7 +22,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AlanWebControls.AlanQuestionBox QstBoxInm;
-        
+
         /// <summary>
         /// Control ltrSubTitulo.
         /// </summary>
@@ -29,7 +31,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal ltrSubTitulo;
-        
+
         /// <summary>
         /// Control QstBoxMue.
         /// </summary>
@@ -38,7 +40,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AlanWebControls.AlanQuestionBox QstBoxMue;
-        
+
         /// <summary>
         /// Control MsgBox.
         /// </summary>
@@ -47,7 +49,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AlanWebControls.AlanMessageBox MsgBox;
-        
+
         /// <summary>
         /// Control QstBoxVehic.
         /// </summary>
@@ -56,7 +58,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AlanWebControls.AlanQuestionBox QstBoxVehic;
-        
+
         /// <summary>
         /// Control AlertaSuperior.
         /// </summary>
@@ -65,7 +67,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AlanWebControls.AlanAlert AlertaSuperior;
-        
+
         /// <summary>
         /// Control pnlBienesInmuebles.
         /// </summary>
@@ -74,7 +76,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlBienesInmuebles;
-        
+
         /// <summary>
         /// Control grdInmueble.
         /// </summary>
@@ -83,7 +85,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl grdInmueble;
-        
+
         /// <summary>
         /// Control btnAgregarInmuebles.
         /// </summary>
@@ -92,7 +94,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgregarInmuebles;
-        
+
         /// <summary>
         /// Control pnlOtrosBienes.
         /// </summary>
@@ -101,7 +103,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlOtrosBienes;
-        
+
         /// <summary>
         /// Control grdMueble.
         /// </summary>
@@ -110,7 +112,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl grdMueble;
-        
+
         /// <summary>
         /// Control btnAgregarMueble.
         /// </summary>
@@ -119,7 +121,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgregarMueble;
-        
+
         /// <summary>
         /// Control pnlVehiculos.
         /// </summary>
@@ -128,7 +130,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlVehiculos;
-        
+
         /// <summary>
         /// Control grdVehiculos.
         /// </summary>
@@ -137,7 +139,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl grdVehiculos;
-        
+
         /// <summary>
         /// Control btnAgregarVehiculos.
         /// </summary>
@@ -146,7 +148,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgregarVehiculos;
-        
+
         /// <summary>
         /// Control mppInmuebles.
         /// </summary>
@@ -155,7 +157,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AlanWebControls.AlanModalPopUp mppInmuebles;
-        
+
         /// <summary>
         /// Control cmbTipoBien.
         /// </summary>
@@ -164,7 +166,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbTipoBien;
-        
+
         /// <summary>
         /// Control txtcCodigoPostalInmueble.
         /// </summary>
@@ -173,7 +175,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtcCodigoPostalInmueble;
-        
+
         /// <summary>
         /// Control cmbPaisInmueble.
         /// </summary>
@@ -182,7 +184,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbPaisInmueble;
-        
+
         /// <summary>
         /// Control cmbEntidadFederativaInmueble.
         /// </summary>
@@ -191,7 +193,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbEntidadFederativaInmueble;
-        
+
         /// <summary>
         /// Control cmbMunicipioInmueble.
         /// </summary>
@@ -200,7 +202,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbMunicipioInmueble;
-        
+
         /// <summary>
         /// Control idLocal_colon.
         /// </summary>
@@ -209,7 +211,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label idLocal_colon;
-        
+
         /// <summary>
         /// Control txtColoniaInmueble.
         /// </summary>
@@ -218,7 +220,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtColoniaInmueble;
-        
+
         /// <summary>
         /// Control txtCalleInmueble.
         /// </summary>
@@ -227,7 +229,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCalleInmueble;
-        
+
         /// <summary>
         /// Control txtNumeroExteriorInmueble.
         /// </summary>
@@ -236,7 +238,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNumeroExteriorInmueble;
-        
+
         /// <summary>
         /// Control txtNumeroInteriorInmueble.
         /// </summary>
@@ -245,7 +247,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNumeroInteriorInmueble;
-        
+
         /// <summary>
         /// Control numbertxtSuperficieTerreno.
         /// </summary>
@@ -254,7 +256,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox numbertxtSuperficieTerreno;
-        
+
         /// <summary>
         /// Control numbertxtSuperficieConstruccion.
         /// </summary>
@@ -263,7 +265,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox numbertxtSuperficieConstruccion;
-        
+
         /// <summary>
         /// Control txtFechaAfquisicion.
         /// </summary>
@@ -272,7 +274,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFechaAfquisicion;
-        
+
         /// <summary>
         /// Control txtFechaAfquisicion_C.
         /// </summary>
@@ -281,7 +283,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender txtFechaAfquisicion_C;
-        
+
         /// <summary>
         /// Control moneytxtValorAdqusicion.
         /// </summary>
@@ -290,7 +292,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox moneytxtValorAdqusicion;
-        
+
         /// <summary>
         /// Control ddlTipoMonedaInm.
         /// </summary>
@@ -299,7 +301,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoMonedaInm;
-        
+
         /// <summary>
         /// Control txtTipoMoneda.
         /// </summary>
@@ -308,7 +310,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTipoMoneda;
-        
+
         /// <summary>
         /// Control txtRegistroPublicoPropiedad.
         /// </summary>
@@ -317,7 +319,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRegistroPublicoPropiedad;
-        
+
         /// <summary>
         /// Control cmbValorAdquisicion.
         /// </summary>
@@ -326,7 +328,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbValorAdquisicion;
-        
+
         /// <summary>
         /// Control cmbTipoUso.
         /// </summary>
@@ -335,7 +337,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbTipoUso;
-        
+
         /// <summary>
         /// Control cmbFormaAdquisicionInmueble.
         /// </summary>
@@ -344,7 +346,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbFormaAdquisicionInmueble;
-        
+
         /// <summary>
         /// Control cmbFormaPagoInmueble.
         /// </summary>
@@ -353,7 +355,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbFormaPagoInmueble;
-        
+
         /// <summary>
         /// Control chbDependietesInm.
         /// </summary>
@@ -362,7 +364,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList chbDependietesInm;
-        
+
         /// <summary>
         /// Control chbDependietes.
         /// </summary>
@@ -371,7 +373,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBoxList chbDependietes;
-        
+
         /// <summary>
         /// Control numbertxtPorcentajeDeclarante.
         /// </summary>
@@ -380,7 +382,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox numbertxtPorcentajeDeclarante;
-        
+
         /// <summary>
         /// Control cmbTercero.
         /// </summary>
@@ -389,7 +391,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbTercero;
-        
+
         /// <summary>
         /// Control txtNombreTercero.
         /// </summary>
@@ -398,7 +400,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombreTercero;
-        
+
         /// <summary>
         /// Control txtRFCTercero.
         /// </summary>
@@ -407,7 +409,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRFCTercero;
-        
+
         /// <summary>
         /// Control cmbTransmisor.
         /// </summary>
@@ -416,7 +418,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbTransmisor;
-        
+
         /// <summary>
         /// Control txtNombreTransmisor.
         /// </summary>
@@ -425,7 +427,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombreTransmisor;
-        
+
         /// <summary>
         /// Control txtRFCTransmisor.
         /// </summary>
@@ -434,7 +436,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRFCTransmisor;
-        
+
         /// <summary>
         /// Control cmbRelacionTransmisor.
         /// </summary>
@@ -443,7 +445,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbRelacionTransmisor;
-        
+
         /// <summary>
         /// Control cmbInmuMotivoBajaInmu.
         /// </summary>
@@ -452,7 +454,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbInmuMotivoBajaInmu;
-        
+
         /// <summary>
         /// Control txtF_BAJA_INM.
         /// </summary>
@@ -461,7 +463,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtF_BAJA_INM;
-        
+
         /// <summary>
         /// Control txtF_BAJA_C.
         /// </summary>
@@ -470,7 +472,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender txtF_BAJA_C;
-        
+
         /// <summary>
         /// Control cbxTieneAdeudo.
         /// </summary>
@@ -479,7 +481,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cbxTieneAdeudo;
-        
+
         /// <summary>
         /// Control tablaAdeudo.
         /// </summary>
@@ -488,7 +490,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTable tablaAdeudo;
-        
+
         /// <summary>
         /// Control btnEditarAdeudo1.
         /// </summary>
@@ -497,7 +499,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEditarAdeudo1;
-        
+
         /// <summary>
         /// Control btnBorrarAdeudo1.
         /// </summary>
@@ -506,7 +508,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBorrarAdeudo1;
-        
+
         /// <summary>
         /// Control ltrAdeudo1.
         /// </summary>
@@ -515,7 +517,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal ltrAdeudo1;
-        
+
         /// <summary>
         /// Control trAgregarAdeudo.
         /// </summary>
@@ -524,7 +526,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTableRow trAgregarAdeudo;
-        
+
         /// <summary>
         /// Control btnAgregarAdeudo.
         /// </summary>
@@ -533,7 +535,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgregarAdeudo;
-        
+
         /// <summary>
         /// Control trAdeudo2.
         /// </summary>
@@ -542,7 +544,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTableRow trAdeudo2;
-        
+
         /// <summary>
         /// Control btnEditarAdeudo2.
         /// </summary>
@@ -551,7 +553,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEditarAdeudo2;
-        
+
         /// <summary>
         /// Control btnEliminarAdeudo2.
         /// </summary>
@@ -560,7 +562,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEliminarAdeudo2;
-        
+
         /// <summary>
         /// Control ltrAdeudo2.
         /// </summary>
@@ -569,7 +571,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal ltrAdeudo2;
-        
+
         /// <summary>
         /// Control txtObservacionesBienesInmuebles.
         /// </summary>
@@ -578,7 +580,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtObservacionesBienesInmuebles;
-        
+
         /// <summary>
         /// Control btnCerrarInmuebles.
         /// </summary>
@@ -587,7 +589,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCerrarInmuebles;
-        
+
         /// <summary>
         /// Control btnGuardarInmueble.
         /// </summary>
@@ -596,7 +598,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardarInmueble;
-        
+
         /// <summary>
         /// Control mppMuebles.
         /// </summary>
@@ -605,7 +607,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AlanWebControls.AlanModalPopUp mppMuebles;
-        
+
         /// <summary>
         /// Control dpTipoBienMueble.
         /// </summary>
@@ -614,7 +616,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dpTipoBienMueble;
-        
+
         /// <summary>
         /// Control txtEspecifica.
         /// </summary>
@@ -623,7 +625,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEspecifica;
-        
+
         /// <summary>
         /// Control moneytxtValorAdqusicionMueble.
         /// </summary>
@@ -632,7 +634,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox moneytxtValorAdqusicionMueble;
-        
+
         /// <summary>
         /// Control txtF_ADQUISICION.
         /// </summary>
@@ -641,7 +643,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtF_ADQUISICION;
-        
+
         /// <summary>
         /// Control txtF_ADQUISICION_C.
         /// </summary>
@@ -650,7 +652,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender txtF_ADQUISICION_C;
-        
+
         /// <summary>
         /// Control ddlTipoMonedaMue.
         /// </summary>
@@ -659,7 +661,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoMonedaMue;
-        
+
         /// <summary>
         /// Control txtTipoMonedaMueble.
         /// </summary>
@@ -668,7 +670,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTipoMonedaMueble;
-        
+
         /// <summary>
         /// Control cmbFormaAdquisicionMueble.
         /// </summary>
@@ -677,7 +679,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbFormaAdquisicionMueble;
-        
+
         /// <summary>
         /// Control cmbFormaPagoMueble.
         /// </summary>
@@ -686,7 +688,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbFormaPagoMueble;
-        
+
         /// <summary>
         /// Control chbDependietesMue.
         /// </summary>
@@ -695,7 +697,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList chbDependietesMue;
-        
+
         /// <summary>
         /// Control chbDependietesMuebles.
         /// </summary>
@@ -704,7 +706,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBoxList chbDependietesMuebles;
-        
+
         /// <summary>
         /// Control cmbTerceroMueble.
         /// </summary>
@@ -713,7 +715,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbTerceroMueble;
-        
+
         /// <summary>
         /// Control txtNombreTerceroMueble.
         /// </summary>
@@ -722,7 +724,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombreTerceroMueble;
-        
+
         /// <summary>
         /// Control txtRFCTerceroMueble.
         /// </summary>
@@ -731,7 +733,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRFCTerceroMueble;
-        
+
         /// <summary>
         /// Control cmbTransmisorMueble.
         /// </summary>
@@ -740,7 +742,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbTransmisorMueble;
-        
+
         /// <summary>
         /// Control txtNombreTransmisorMueble.
         /// </summary>
@@ -749,7 +751,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombreTransmisorMueble;
-        
+
         /// <summary>
         /// Control txtRFCTransmisorMueble.
         /// </summary>
@@ -758,7 +760,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRFCTransmisorMueble;
-        
+
         /// <summary>
         /// Control cmbRelacionTransmisorMueble.
         /// </summary>
@@ -767,7 +769,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbRelacionTransmisorMueble;
-        
+
         /// <summary>
         /// Control cmbMotivoBaja.
         /// </summary>
@@ -776,7 +778,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbMotivoBaja;
-        
+
         /// <summary>
         /// Control txtF_BAJA_MUEB.
         /// </summary>
@@ -785,7 +787,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtF_BAJA_MUEB;
-        
+
         /// <summary>
         /// Control CalendarExtender2.
         /// </summary>
@@ -794,7 +796,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender2;
-        
+
         /// <summary>
         /// Control txtObservacionesBienesMuebles.
         /// </summary>
@@ -803,7 +805,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtObservacionesBienesMuebles;
-        
+
         /// <summary>
         /// Control btnCerrarMueble.
         /// </summary>
@@ -812,7 +814,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCerrarMueble;
-        
+
         /// <summary>
         /// Control btnGuardarMueble.
         /// </summary>
@@ -821,7 +823,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardarMueble;
-        
+
         /// <summary>
         /// Control mppVehículos.
         /// </summary>
@@ -830,7 +832,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AlanWebControls.AlanModalPopUp mppVehículos;
-        
+
         /// <summary>
         /// Control cmbTipoVehiculo.
         /// </summary>
@@ -839,7 +841,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbTipoVehiculo;
-        
+
         /// <summary>
         /// Control cmbMarca.
         /// </summary>
@@ -848,7 +850,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbMarca;
-        
+
         /// <summary>
         /// Control txtTipo.
         /// </summary>
@@ -857,7 +859,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTipo;
-        
+
         /// <summary>
         /// Control txtFechaAdquisicionVehiculo.
         /// </summary>
@@ -866,7 +868,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFechaAdquisicionVehiculo;
-        
+
         /// <summary>
         /// Control txtFechaAdquisicionVehiculo_C.
         /// </summary>
@@ -875,7 +877,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender txtFechaAdquisicionVehiculo_C;
-        
+
         /// <summary>
         /// Control dpModelo.
         /// </summary>
@@ -884,7 +886,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dpModelo;
-        
+
         /// <summary>
         /// Control moneytxtValorAdquisicion.
         /// </summary>
@@ -893,7 +895,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox moneytxtValorAdquisicion;
-        
+
         /// <summary>
         /// Control dpTipoUso.
         /// </summary>
@@ -902,7 +904,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dpTipoUso;
-        
+
         /// <summary>
         /// Control ddlTipoMonedaVeh.
         /// </summary>
@@ -911,7 +913,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoMonedaVeh;
-        
+
         /// <summary>
         /// Control txtTipoMonedaVehiculo.
         /// </summary>
@@ -920,7 +922,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTipoMonedaVehiculo;
-        
+
         /// <summary>
         /// Control cmbFormaAdquisicionVehiculo.
         /// </summary>
@@ -929,7 +931,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbFormaAdquisicionVehiculo;
-        
+
         /// <summary>
         /// Control cmbFormaPagoVehiculo.
         /// </summary>
@@ -938,7 +940,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbFormaPagoVehiculo;
-        
+
         /// <summary>
         /// Control txtNumeroSerie.
         /// </summary>
@@ -947,7 +949,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNumeroSerie;
-        
+
         /// <summary>
         /// Control cmbPaisVehiculo.
         /// </summary>
@@ -956,7 +958,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbPaisVehiculo;
-        
+
         /// <summary>
         /// Control cmbEntidadFederativaVehiculo.
         /// </summary>
@@ -965,7 +967,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbEntidadFederativaVehiculo;
-        
+
         /// <summary>
         /// Control chbDependietesVeh.
         /// </summary>
@@ -974,7 +976,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList chbDependietesVeh;
-        
+
         /// <summary>
         /// Control chbDependietesVehiculo.
         /// </summary>
@@ -983,7 +985,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBoxList chbDependietesVehiculo;
-        
+
         /// <summary>
         /// Control cmbTerceroVehiculo.
         /// </summary>
@@ -992,7 +994,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbTerceroVehiculo;
-        
+
         /// <summary>
         /// Control txtNombreTerceroVehiculo.
         /// </summary>
@@ -1001,7 +1003,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombreTerceroVehiculo;
-        
+
         /// <summary>
         /// Control txtRFCTerceroVehiculo.
         /// </summary>
@@ -1010,7 +1012,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRFCTerceroVehiculo;
-        
+
         /// <summary>
         /// Control cmbTransmisorVehiculo.
         /// </summary>
@@ -1019,7 +1021,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbTransmisorVehiculo;
-        
+
         /// <summary>
         /// Control txtNombreTransmisorVehiculo.
         /// </summary>
@@ -1028,7 +1030,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombreTransmisorVehiculo;
-        
+
         /// <summary>
         /// Control txtRFCTransmisorVehiculo.
         /// </summary>
@@ -1037,7 +1039,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRFCTransmisorVehiculo;
-        
+
         /// <summary>
         /// Control cmbRelacionTransmisorVehiculo.
         /// </summary>
@@ -1046,7 +1048,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbRelacionTransmisorVehiculo;
-        
+
         /// <summary>
         /// Control cbxAdeudoVehiculo.
         /// </summary>
@@ -1055,7 +1057,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cbxAdeudoVehiculo;
-        
+
         /// <summary>
         /// Control tblAdeudoVehiculo.
         /// </summary>
@@ -1064,7 +1066,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTable tblAdeudoVehiculo;
-        
+
         /// <summary>
         /// Control btnEditarAdeudoVehiculo.
         /// </summary>
@@ -1073,7 +1075,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEditarAdeudoVehiculo;
-        
+
         /// <summary>
         /// Control btnEliminarAdeudo.
         /// </summary>
@@ -1082,7 +1084,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEliminarAdeudo;
-        
+
         /// <summary>
         /// Control ltrAdeudoVehiculo.
         /// </summary>
@@ -1091,7 +1093,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal ltrAdeudoVehiculo;
-        
+
         /// <summary>
         /// Control cmbVehiMotivoBaja.
         /// </summary>
@@ -1100,7 +1102,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbVehiMotivoBaja;
-        
+
         /// <summary>
         /// Control txtF_BAJA_VEHIC.
         /// </summary>
@@ -1109,7 +1111,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtF_BAJA_VEHIC;
-        
+
         /// <summary>
         /// Control CalendarExtender1.
         /// </summary>
@@ -1118,7 +1120,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
-        
+
         /// <summary>
         /// Control txtObservacionesVehiculos.
         /// </summary>
@@ -1127,7 +1129,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtObservacionesVehiculos;
-        
+
         /// <summary>
         /// Control btnCerrarMppVehículos.
         /// </summary>
@@ -1136,7 +1138,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCerrarMppVehículos;
-        
+
         /// <summary>
         /// Control btnGuardarVehiculo2.
         /// </summary>
@@ -1145,7 +1147,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardarVehiculo2;
-        
+
         /// <summary>
         /// Control btnGuardarVehiculo.
         /// </summary>
@@ -1154,7 +1156,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardarVehiculo;
-        
+
         /// <summary>
         /// Control mppAdeudos.
         /// </summary>
@@ -1163,7 +1165,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AlanWebControls.AlanModalPopUp mppAdeudos;
-        
+
         /// <summary>
         /// Control Adeudo.
         /// </summary>
@@ -1172,7 +1174,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::DeclaraINE.Formas.DeclaracionInicial.Adeudo Adeudo;
-        
+
         /// <summary>
         /// Control btnCerrarModal.
         /// </summary>
@@ -1181,7 +1183,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCerrarModal;
-        
+
         /// <summary>
         /// Control btnGuardarAdeudo.
         /// </summary>
@@ -1190,7 +1192,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardarAdeudo;
-        
+
         /// <summary>
         /// Control btnCerrarModalVehiculo.
         /// </summary>
@@ -1199,7 +1201,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCerrarModalVehiculo;
-        
+
         /// <summary>
         /// Control btnGuardarAdeudoVehiculo.
         /// </summary>

@@ -1933,7 +1933,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
             {
                 mppInmuebles.Hide();
                 mppAdeudos.Show(true);
-                Adeudo.Requerido = btnGuardarAdeudo.ClientID;
+                //Adeudo.Requerido = btnGuardarAdeudo.ClientID;
                 mppAdeudos.HeaderText = "Adeudo por concepto de crédito hipotecario";
                 btnCerrarModal.Visible = true;
                 btnGuardarAdeudo.Visible = true;
@@ -2059,7 +2059,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
             this.IndiceAdeudoSeleccionado = 0;
             mppInmuebles.Hide();
             mppAdeudos.Show(true);
-            Adeudo.Requerido = btnGuardarAdeudo.ClientID;
+            //Adeudo.Requerido = btnGuardarAdeudo.ClientID;
             mppAdeudos.HeaderText = "Adeudo por concepto de crédito hipotecario";
             btnCerrarModal.Visible = true;
             btnGuardarAdeudo.Visible = true;
@@ -2116,7 +2116,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
             {
                 mppInmuebles.Hide();
                 mppAdeudos.Show(true);
-                Adeudo.Requerido = btnGuardarAdeudo.ClientID;
+                //Adeudo.Requerido = btnGuardarAdeudo.ClientID;
                 mppAdeudos.HeaderText = "Adeudo por concepto de crédito hipotecario";
                 btnCerrarModal.Visible = true;
                 btnGuardarAdeudo.Visible = true;
@@ -2151,7 +2151,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
             mppInmuebles.Hide();
             mppAdeudos.Show(true);
             mppAdeudos.HeaderText = "Adeudo por concepto de crédito hipotecario";
-            Adeudo.Requerido = btnGuardarAdeudo.ClientID;
+            //Adeudo.Requerido = btnGuardarAdeudo.ClientID;
             btnCerrarModal.Visible = true;
             btnGuardarAdeudo.Visible = true;
             btnCerrarModalVehiculo.Visible = false;

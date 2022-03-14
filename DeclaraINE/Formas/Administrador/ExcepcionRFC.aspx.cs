@@ -56,7 +56,7 @@ namespace DeclaraINE.Formas.Administrador
                 var filePath = buildDir + @"\ExcepcionesRFC.txt";
 
 
-                StreamWriter file = File.AppendText(filePath);
+                StreamWriter file = File.AppendText(filePath);                
                 file.WriteLine(txtRfc.Text.ToUpper());
                 file.Close();
                 msgBox.ShowSuccess("Se agregó el RFC: " + txtRfc.Text.ToUpper() + " de manera correcta") ;
