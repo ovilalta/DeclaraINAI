@@ -62,6 +62,11 @@ namespace Declara_V2.BLL
         }
 
 
+        public string NOMBRE_UA {
+            get => datos_CAT_PUESTO.NOMBRE_UA;
+            set => datos_CAT_PUESTO.NOMBRE_UA = value;
+        }
+
         #region aux
 
         public System.Nullable<Boolean> lEsNuevoRegistro
@@ -86,10 +91,12 @@ namespace Declara_V2.BLL
 
         public bll_CAT_PUESTO(Int32 NID_PUESTO, String VID_PUESTO, String VID_NIVEL, String V_PUESTO, Boolean L_ACTIVO, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions lOpcionesRegistroExistente) => datos_CAT_PUESTO = new dald_CAT_PUESTO(NID_PUESTO, VID_PUESTO, VID_NIVEL, V_PUESTO, L_ACTIVO, lOpcionesRegistroExistente);
 
-     #endregion
+        public bll_CAT_PUESTO(Int32 NID_PUESTO, String VID_PUESTO, String VID_NIVEL, String V_PUESTO, Boolean L_ACTIVO, String NOMBRE_UA, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions lOpcionesRegistroExistente) => datos_CAT_PUESTO = new dald_CAT_PUESTO(NID_PUESTO, VID_PUESTO, VID_NIVEL, V_PUESTO, L_ACTIVO, NOMBRE_UA,lOpcionesRegistroExistente);
+
+        #endregion
 
 
-     #region *** Metodos ***
+        #region *** Metodos ***
 
         public void update()
         {

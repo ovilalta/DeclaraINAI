@@ -139,9 +139,14 @@
                                         <asp:Button ID="Button1" runat="server" Text="Declaración" CommandArgument='<%# Eval("NID_DECLARACION")  %>' OnClick="btnGridDeclaracion_Click" CssClass="mpdf" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Constancia" ItemStyle-HorizontalAlign="Center">
+                                <asp:TemplateField HeaderText="Constancia Código Ética" ItemStyle-HorizontalAlign="Center">
                                     <ItemTemplate>
-                                        <asp:Button ID="btnGridDeclaracionConstanciaEticaConducta" runat="server" Text="Constancia" CommandArgument='<%# Eval("NID_DECLARACION") %>' OnClick="btnGridDeclaracionConstanciaEticaConducta_Click" CssClass="mpdf" />                                        
+                                        <asp:Button ID="btnGridDeclaracionConstanciaEticaConducta" runat="server" Text="Constancia Código Ética" CommandArgument='<%# Eval("NID_DECLARACION") %>' OnClick="btnGridDeclaracionConstanciaEticaConducta_Click" CssClass="mpdf" />                                        
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Constancia Código Conducta" ItemStyle-HorizontalAlign="Center">
+                                    <ItemTemplate>
+                                        <asp:Button ID="btnGridDeclaracionConstanciaCodigoConducta" runat="server" Text="Constancia Código Conducta" CommandArgument='<%# Eval("NID_DECLARACION") %>' OnClick="btnGridDeclaracionConstanciaCodigoConducta_Click" CssClass="mpdf" />                                        
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <%--Campo para agregar observaciones a la declaracion--%>

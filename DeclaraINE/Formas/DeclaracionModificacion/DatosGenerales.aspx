@@ -351,15 +351,7 @@
                         </th>
                         <td>
                              <asp:DropDownList ID="cmbVID_CLAVEPUESTO" runat="server" requerido="btnSiguiente" OnSelectedIndexChanged="cmbVID_CLAVEPUESTO_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
-                           <%-- <ajaxToolkit:ComboBox ID="cmbVID_CLAVEPUESTO" runat="server"
-                                AutoPostBack="true"
-                                DropDownStyle="DropDownList"
-                                AutoCompleteMode="SuggestAppend"
-                                CaseSensitive="False"
-                                Width="100%"
-                                OnSelectedIndexChanged="cmbVID_CLAVEPUESTO_SelectedIndexChanged"
-                                ItemInsertLocation="Append">
-                            </ajaxToolkit:ComboBox>--%>
+                           
                         </td>
                     </tr>
 

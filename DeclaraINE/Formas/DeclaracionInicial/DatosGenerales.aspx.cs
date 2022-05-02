@@ -266,7 +266,10 @@ namespace DeclaraINE.Formas.DeclaracionInicial
 
                 blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
                 oPuesto.select();
-                cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO.OrderBy(x => x.VID_PUESTO);
+                cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO.OrderBy(x => x.NOMBRE_UA)
+                    .ThenBy(x => x.VID_NIVEL)
+                    .ThenBy(x => x.V_PUESTO);
+                //cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO.OrderBy(x => x.VID_PUESTO);
                 cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.VID_PUESTO.ToString();
                 cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString();
                 cmbVID_CLAVEPUESTO.DataBind();

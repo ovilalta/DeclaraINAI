@@ -141,6 +141,24 @@ namespace DeclaraINE.Formas
         protected global::System.Web.UI.WebControls.Button btnAcuseEtica;
 
         /// <summary>
+        /// Control pnlAcuseConducta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnlAcuseConducta;
+
+        /// <summary>
+        /// Control btnAcuseConducta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAcuseConducta;
+
+        /// <summary>
         /// Control lbMensaje.
         /// </summary>
         /// <remarks>

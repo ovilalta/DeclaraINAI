@@ -67,6 +67,7 @@ namespace DeclaraINE.Formas
             btnAcuseEnvio.CssClass = "big pdf";
             btnAcuseDeclaracion.CssClass = "big pdf";
             btnAcuseEtica.CssClass = "big pdf";
+            btnAcuseConducta.CssClass = "big pdf";
         }
 
         protected void btnAcuseEnvio_Click(object sender, EventArgs e)
@@ -152,7 +153,7 @@ namespace DeclaraINE.Formas
             {
                 MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
                 MODELDeclara_V2.DECLARACION registro = new MODELDeclara_V2.DECLARACION();
-                
+
                 byte[] b1 = null;
                 String VersionDeclaracion = string.Empty;
 
@@ -203,7 +204,7 @@ namespace DeclaraINE.Formas
                     db.SaveChanges();
 
                 }
-            
+
                 Response.Clear();
                 Response.ContentType = "application/pdf";
                 Response.AddHeader("Content-Disposition", "attachment; filename=Declaracion_" + TipoDeclaracion + "_" + _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE + ".pdf");
@@ -216,11 +217,11 @@ namespace DeclaraINE.Formas
             }
             catch (Exception ex)
             {
-              
+
             }
         }
 
- 
+
 
 
 
@@ -248,7 +249,40 @@ namespace DeclaraINE.Formas
                                                                                ,_oUsuario.VID_HOMOCLAVE
                                                                                ,_oDeclaracionTemp.NID_DECLARACION
                                                                                ,"Preliminarx"}.ToArray());
- 
+
+                Response.Clear();
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("Content-Disposition", "attachment; filename=" + sf.FileName);
+                Response.OutputStream.Write(sf.FileBytes, 0, sf.FileBytes.Length);
+                Response.OutputStream.Close();
+                Response.Flush();
+                Response.End();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        protected void btnAcuseConducta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string vTipoAcuse = string.Empty;
+                if (_oDeclaracionTemp.NID_TIPO_DECLARACION == 1 || _oDeclaracionTemp.NID_TIPO_DECLARACION == 2)
+                {
+
+                    vTipoAcuse = "ACUSE_CONSTANCIA_CONDUCTA";
+                }
+
+
+                file.fileSoapClient o = new file.fileSoapClient();
+                FileStream fs1;
+                SerializedFile sf = o.ObtenReportePorId(Pagina.FileServiceCredentials, 2020, vTipoAcuse, new List<object> { _oUsuario.VID_NOMBRE
+                                                                               ,_oUsuario.VID_FECHA
+                                                                               ,_oUsuario.VID_HOMOCLAVE
+                                                                               ,_oDeclaracionTemp.NID_DECLARACION
+                                                                               ,"Preliminarx"}.ToArray());
+
                 Response.Clear();
                 Response.ContentType = "application/pdf";
                 Response.AddHeader("Content-Disposition", "attachment; filename=" + sf.FileName);

@@ -2961,7 +2961,6 @@
     <Content Include="css\theme-default.map" />
     <Content Include="Formas\DeclaracionConflicto\_Conflicto.master" />
     <Content Include="pdf1\INE-JGE193-2019_Proyecto_DJ.pdf" />
-    <Content Include="pdf1\etica.pdf" />
     <Content Include="Formatos\Normas_e_Instructivo_para_Llenado_de_Declaraciones.pdf" />
     <Content Include="Formatos\Presentacion.pdf" />
     <Content Include="Formatos\Cuestionario_Declaracion_Modificacion.pdf" />
@@ -2997,6 +2996,7 @@
     <Content Include="pdf1\CatalogoPuestosINAI.pdf" />
     <Content Include="pdf1\GuiaRecuperarContrasena.pdf" />
     <Content Include="pdf1\conducta.pdf" />
+    <Content Include="pdf1\etica.pdf" />
     <None Include="Properties\PublishProfiles\OscarVilaltaPub.pubxml" />
     <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />

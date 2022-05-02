@@ -46,11 +46,15 @@ namespace Declara_V2.DAL
           set => registro.L_ACTIVO = value; 
         }
 
+        public string NOMBRE_UA {
+            get => registro.NOMBRE_UA;
+            set => registro.NOMBRE_UA = value;
 
-     #endregion
+        }
+        #endregion
 
 
-     #region *** Constructores ***
+        #region *** Constructores ***
 
         internal dal_CAT_PUESTO() => registro = new CAT_PUESTO();
 
@@ -108,11 +112,62 @@ namespace Declara_V2.DAL
                }
         }
 
+        internal dal_CAT_PUESTO(Int32 NID_PUESTO, String VID_PUESTO, String VID_NIVEL, String V_PUESTO, Boolean L_ACTIVO, String NOMBRE_UA, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions lOpcionesRegistroExistente)
+        {
+            registro = new CAT_PUESTO()
+            {
+                NID_PUESTO = NID_PUESTO,
+                VID_PUESTO = VID_PUESTO,
+                VID_NIVEL = VID_NIVEL,
+                V_PUESTO = V_PUESTO,
+                L_ACTIVO = L_ACTIVO,
+                NOMBRE_UA = NOMBRE_UA,
+            };
+            try
+            {
+                CAT_PUESTO registroCheck = db.CAT_PUESTO.Find(NID_PUESTO);
+                switch (lOpcionesRegistroExistente)
+                {
+                    //Arrojar Exepción de llave primaria
+                    case ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException:
+                        if (registroCheck == null) insert();
+                        else throw new ExistingPrimaryKeyException("CAT_PUESTO", NID_PUESTO.ToString() + ", ");
+                        break;
 
-     #endregion
+                    //Usar registro existente
+                    case ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.UseExisiting:
+                        if (registroCheck == null) insert();
+                        else registro = registroCheck;
+                        break;
+
+                    //Actualizar registro existente
+                    case ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.UpdateExisiting:
+                        if (registroCheck == null) insert();
+                        else
+                        {
+                            db.CAT_PUESTO.Attach(registro);
+                            ((IObjectContextAdapter)db).ObjectContext.ObjectStateManager.ChangeObjectState(registro, EntityState.Modified);
+                            update();
+                        }
+                        break;
+
+                    //Opcion no Implementada
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+            catch (Exception ex)
+            {
+                registro = null;
+                throw ex;
+            }
+        }
 
 
-     #region *** Metodos ***
+        #endregion
+
+
+        #region *** Metodos ***
 
         internal void insert()
         {

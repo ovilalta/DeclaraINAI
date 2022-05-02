@@ -46,15 +46,16 @@ namespace Declara_V2.DALD
         public dald_CAT_PUESTO(Int32 NID_PUESTO, String VID_PUESTO, String VID_NIVEL, String V_PUESTO, Boolean L_ACTIVO, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions lOpcionesRegistroExistente)
         : base(NID_PUESTO, VID_PUESTO, VID_NIVEL, V_PUESTO, L_ACTIVO, lOpcionesRegistroExistente)  { }
 
+        public dald_CAT_PUESTO(Int32 NID_PUESTO, String VID_PUESTO, String VID_NIVEL, String V_PUESTO, Boolean L_ACTIVO, String NOMBRE_UA, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions lOpcionesRegistroExistente)
+        : base(NID_PUESTO, VID_PUESTO, VID_NIVEL, V_PUESTO, L_ACTIVO, NOMBRE_UA, lOpcionesRegistroExistente) { }
+
+        #endregion
 
 
-     #endregion
+        #region *** Metodos ***
 
 
-     #region *** Metodos ***
-
-
-     #endregion
+        #endregion
 
     }
 }

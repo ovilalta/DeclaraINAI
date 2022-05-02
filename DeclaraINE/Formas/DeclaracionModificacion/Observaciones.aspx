@@ -85,6 +85,9 @@
                 <p style="text-align: justify"><a style="font-weight: bold">El Código de Ética </a>contiene y abarca los principios constitucionales, los valores y reglas de integridad en el 
                     ejercicio de nuestro servicio público, explicados de manera sencilla para facilitar su comprensión por nosotros, quienes formamos parte del servicio público, así como de los
                     particulares vinculados al mismo.</p>
+
+                <br />
+                <p style="text-align: justify"><a style="font-weight: bold">Última actualización 13 de abril de 2022  ACT-PUB/31/03/2022.6.</a></p>
                 <p style="text-align: right">
                 <p style="text-align: right">
                     <div class="  button-container" style="text-align: right;">
@@ -97,12 +100,16 @@
                 <p style="text-align: justify"><a style="font-weight: bold">El Código de Conducta </a>busca explicar cómo deben ponerse en práctica los principios y valores contenidos en el 
                     Código de Ética del INAI, así como los estándares de comportamiento que deben guiar la actuación de las funcionarias y funcionarios del INAI.</p>
                 <p style="text-align: right">
+
+                    <br />
+                <p style="text-align: justify"><a style="font-weight: bold">Última actualización 13 de abril de 2022  ACT-PUB/31/03/2022.6.</a></p>
                     <div class="  button-container" style="text-align: right;">
                         <asp:Button ID="btnsBuscaridConducta" Style="background-color: #fff;" runat="server" Text="Ver" OnClick="idConducta_Click" ClientIDMode="Static" />
                     </div>
                 </p>
                 
-                <p style="text-align: justify">Deberás oprimir el botón de "VER" para poder continuar con tu declaración.</p>
+                <p style="text-align: justify">Deberás oprimir el botón de <a style="font-weight: bold">"VER"</a> para poder continuar con tu declaración.</p>
+                
                 <br />
                 <br />
             </div>

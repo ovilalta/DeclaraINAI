@@ -332,8 +332,14 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                 blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
                 oPuesto.select();
+                //cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO.OrderBy(x => x.NOMBRE_UA )
+                //    .ThenBy(x=>x.VID_NIVEL)
+                //    .ThenBy(x=>x.V_PUESTO);
+
                 cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO.OrderBy(x => x.VID_PUESTO);
+
                 cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.VID_PUESTO.ToString();
+                //cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString();
                 cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString();
                 cmbVID_CLAVEPUESTO.DataBind();
 
@@ -1444,13 +1450,22 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
         {
             blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
 
-
-
+            //int indice_guion = cmbVID_CLAVEPUESTO.SelectedItem.Text.IndexOf("-");
             oPuesto.VID_PUESTO = new Declara_V2.StringFilter(cmbVID_CLAVEPUESTO.SelectedItem.Text);
+            //if (indice_guion==0)
+            //{
+            //    oPuesto.VID_PUESTO = new Declara_V2.StringFilter(cmbVID_CLAVEPUESTO.SelectedItem.Text);
+            //}
+            //else
+            //{
+            //    oPuesto.VID_PUESTO = new Declara_V2.StringFilter(cmbVID_CLAVEPUESTO.SelectedItem.Text.Substring(indice_guion, 4).Trim());
+            //}
+            
             oPuesto.L_ACTIVO = true;
             oPuesto.select();
             cmbVID_NIVEL.DataBind(oPuesto.lista_CAT_PUESTO.OrderBy(x => x.V_PUESTO), CAT_PUESTO.Properties.NID_PUESTO, CAT_PUESTO.Properties.V_PUESTO_NIVEL);
             txtV_DENOMINACION_PUESTO.Text = String.Empty;
+           txtV_DENOMINACION_PUESTO.Text = cmbVID_CLAVEPUESTO.SelectedItem.Text;
             cmbVID_NIVEL.Items.Insert(0, new ListItem(String.Empty));
             cmbVID_NIVEL.SelectedValue = String.Empty;
         }

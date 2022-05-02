@@ -59,11 +59,16 @@ namespace Declara_V2.BLLD
         {
         }
 
+        public blld_CAT_PUESTO(Int32 NID_PUESTO, String VID_PUESTO, String VID_NIVEL, String V_PUESTO, Boolean L_ACTIVO, String NOMBRE_UA)
+        : base(NID_PUESTO, VID_PUESTO, VID_NIVEL, V_PUESTO, L_ACTIVO, NOMBRE_UA, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException)
+        {
+        }
 
-     #endregion
+
+        #endregion
 
 
-     #region *** Metodos ***
+        #region *** Metodos ***
 
         //private void _Reload_DECLARACION_CARGOs()
         //{
@@ -93,7 +98,7 @@ namespace Declara_V2.BLLD
 
 
 
-     #endregion
+        #endregion
 
     }
 }

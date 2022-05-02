@@ -66,6 +66,13 @@ namespace Declara_V2.BLLD
             datos_CAT_PUESTO = new dald_CAT_PUESTO(NID_PUESTO, VID_PUESTO, VID_NIVEL, V_PUESTO, L_ACTIVO, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
         }
 
+        public blld_CAT_PUESTO(String VID_PUESTO, String VID_NIVEL, String V_PUESTO, Boolean L_ACTIVO, String NOMBRE_UA)
+        : base()
+        {
+            Int32 NID_PUESTO = dald_CAT_PUESTO.nNuevo_NID_PUESTO();
+            datos_CAT_PUESTO = new dald_CAT_PUESTO(NID_PUESTO, VID_PUESTO, VID_NIVEL, V_PUESTO, L_ACTIVO, NOMBRE_UA, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
+        }
+
         public blld_CAT_PUESTO(String VID_PUESTO, Int32 NID_PUESTO)
       : base()
         {

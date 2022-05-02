@@ -64,6 +64,18 @@ namespace Declara_V2.BLL
           set => datos_CAT_PUESTO.V_PUESTOs = value;
         }
 
+        public StringFilter NOMBRE_UA
+        {
+            get => datos_CAT_PUESTO.NOMBRE_UA;
+            set => datos_CAT_PUESTO.NOMBRE_UA = value;
+
+        }
+        public ListFilter<String> NOMBRE_UAs
+        {
+            get => datos_CAT_PUESTO.NOMBRE_UAs;
+            set => datos_CAT_PUESTO.NOMBRE_UAs = value;
+        }
+
         public System.Nullable<Boolean> L_ACTIVO
         {
           get => datos_CAT_PUESTO.L_ACTIVO;
@@ -94,10 +106,12 @@ namespace Declara_V2.BLL
         }
 
 
-     #endregion
+      
+
+        #endregion
 
 
-     #region *** Constructores ***
+        #region *** Constructores ***
 
         public bll__l_CAT_PUESTO() => datos_CAT_PUESTO = new dald__l_CAT_PUESTO();
 

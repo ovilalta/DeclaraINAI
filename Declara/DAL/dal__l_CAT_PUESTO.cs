@@ -32,6 +32,10 @@ namespace Declara_V2.DAL
         internal StringFilter V_PUESTO { get; set; }
         internal ListFilter<String> V_PUESTOs { get; set; }
 
+        internal StringFilter NOMBRE_UA { get; set; }
+        internal ListFilter<String> NOMBRE_UAs { get; set; }
+
+
         internal System.Nullable<Boolean> L_ACTIVO { get; set; }
         internal ListFilter<Boolean> L_ACTIVOs { get; set; }
 
@@ -67,6 +71,8 @@ namespace Declara_V2.DAL
             V_PUESTOs = new ListFilter<String>();
             L_ACTIVOs = new ListFilter<Boolean>();
             L_OBLIGADOs = new ListFilter<Boolean>();
+            NOMBRE_UAs = new ListFilter<String>();
+            
             query = null;
             single_query = null;
         }
@@ -95,6 +101,7 @@ namespace Declara_V2.DAL
                         V_PUESTO = qCAT_PUESTO.V_PUESTO,
                         L_ACTIVO = qCAT_PUESTO.L_ACTIVO,
                         L_OBLIGADO = qCAT_PUESTO.L_OBLIGADO,
+                        NOMBRE_UA = qCAT_PUESTO.NOMBRE_UA,
                     };
         }
 
@@ -111,6 +118,9 @@ namespace Declara_V2.DAL
 
             if (V_PUESTOs.Count > 0) single_query =  (V_PUESTOs.FilterCondition == ListFilter.FilterConditions.Normal) ? single_query.Where(p => V_PUESTOs.Contains(p.V_PUESTO)) : single_query.Where(p => !V_PUESTOs.Contains(p.V_PUESTO));
             single_query = StringFilterBuilder<MODELDeclara_V2.CAT_PUESTO>(V_PUESTO, Declara_V2.MODELextended.CAT_PUESTO.Properties.V_PUESTO.ToString(), single_query);
+
+            if (NOMBRE_UAs.Count > 0) single_query = (NOMBRE_UAs.FilterCondition == ListFilter.FilterConditions.Normal) ? single_query.Where(p => NOMBRE_UAs.Contains(p.NOMBRE_UA)) : single_query.Where(p => !NOMBRE_UAs.Contains(p.NOMBRE_UA));
+            single_query = StringFilterBuilder<MODELDeclara_V2.CAT_PUESTO>(NOMBRE_UA, Declara_V2.MODELextended.CAT_PUESTO.Properties.NOMBRE_UA.ToString(), single_query);
 
             if (L_ACTIVO.HasValue) single_query = single_query.Where<MODELDeclara_V2.CAT_PUESTO>(p => p.L_ACTIVO == L_ACTIVO );
 
@@ -129,6 +139,9 @@ namespace Declara_V2.DAL
 
             if (V_PUESTOs.Count > 0) query =  (V_PUESTOs.FilterCondition == ListFilter.FilterConditions.Normal) ? query.Where(p => V_PUESTOs.Contains(p.V_PUESTO)) : query.Where(p => !V_PUESTOs.Contains(p.V_PUESTO));
             query = StringFilterBuilder<Declara_V2.MODELextended.CAT_PUESTO>(V_PUESTO, Declara_V2.MODELextended.CAT_PUESTO.Properties.V_PUESTO.ToString(), query);
+
+            if (NOMBRE_UAs.Count > 0) query = (NOMBRE_UAs.FilterCondition == ListFilter.FilterConditions.Normal) ? query.Where(p => NOMBRE_UAs.Contains(p.NOMBRE_UA)) : query.Where(p => !NOMBRE_UAs.Contains(p.NOMBRE_UA));
+            query = StringFilterBuilder<Declara_V2.MODELextended.CAT_PUESTO>(NOMBRE_UA, Declara_V2.MODELextended.CAT_PUESTO.Properties.NOMBRE_UA.ToString(), query);
 
             if (L_ACTIVO.HasValue) query = query.Where<Declara_V2.MODELextended.CAT_PUESTO>(p => p.L_ACTIVO == L_ACTIVO );
 

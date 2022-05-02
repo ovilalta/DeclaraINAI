@@ -26,7 +26,9 @@ namespace MODELDeclara_V2
         public string V_PUESTO { get; set; }
         public bool L_ACTIVO { get; set; }
         public Nullable<bool> L_OBLIGADO { get; set; }
-    
+
+        public string NOMBRE_UA { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DECLARACION_CARGO> DECLARACION_CARGO { get; set; }
     }

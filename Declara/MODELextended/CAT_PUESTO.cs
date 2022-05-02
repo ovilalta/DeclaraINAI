@@ -15,6 +15,8 @@ namespace Declara_V2.MODELextended
 
         public string V_PUESTO_NIVEL => String.Concat(VID_NIVEL," - ",VID_PUESTO);
 
+        public string CLAVE_NOMBRE_PUESTO => String.Concat(NOMBRE_UA,  " - ", VID_NIVEL, " - ",  V_PUESTO," - ", VID_PUESTO );
+
         public enum Properties
         {
             NID_PUESTO,
@@ -23,6 +25,8 @@ namespace Declara_V2.MODELextended
             V_PUESTO,
             L_ACTIVO,
             V_PUESTO_NIVEL,
+            NOMBRE_UA,
+            CLAVE_NOMBRE_PUESTO
         }
 
      #endregion

@@ -48,7 +48,7 @@ namespace DeclaraINE.Formas
             if (!IsPostBack)
             {
                 Page.Title = "Consulta de Declaraciones";
-                
+
                 ltrSubTitulo.Text = "Declaración Patrimonial";
                 oUsuario.Reload_DECLARACIONs();
                 blld__l_DECLARACION_DIARIA o = new blld__l_DECLARACION_DIARIA();
@@ -174,7 +174,7 @@ namespace DeclaraINE.Formas
                                 VersionDeclaracion = "DECLARACION_CONCLUSION_SIMPLI";
                             break;
                     }
-                    
+
                     file.fileSoapClient o = new file.fileSoapClient();
                     SerializedFile sf = o.ObtenReportePorId(Pagina.FileServiceCredentials, 2020, VersionDeclaracion, new List<object> { oUsuario.VID_NOMBRE
                                                                                ,oUsuario.VID_FECHA
@@ -235,10 +235,10 @@ namespace DeclaraINE.Formas
 
         }
 
-        protected void btnAclaraciones_Click(object sender, EventArgs e) 
+        protected void btnAclaraciones_Click(object sender, EventArgs e)
         {
             Int32 NID_DECLARACION = Convert.ToInt32(((Button)sender).CommandArgument);
-            Response.Redirect("AgregarObservacion.aspx?idDec="+NID_DECLARACION);
+            Response.Redirect("AgregarObservacion.aspx?idDec=" + NID_DECLARACION);
         }
 
         protected void btnGridDeclaracionConstanciaEticaConducta_Click(object sender, EventArgs e)
@@ -288,6 +288,51 @@ namespace DeclaraINE.Formas
             }
         }
 
+        protected void btnGridDeclaracionConstanciaCodigoConducta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                blld_USUARIO oUsuario = _oUsuario;
+                Int32 NID_DECLARACION = Convert.ToInt32(((Button)sender).CommandArgument);
+                blld_DECLARACION oDeclaracion = new blld_DECLARACION(oUsuario.VID_NOMBRE, oUsuario.VID_FECHA, oUsuario.VID_HOMOCLAVE, NID_DECLARACION);
+                string vTipoAcuse = string.Empty;
+
+                int ejercicio = Convert.ToInt32( oDeclaracion.C_EJERCICIO);
+
+                //if ((oDeclaracion.NID_TIPO_DECLARACION == 1 && ejercicio > 2021) || (oDeclaracion.NID_TIPO_DECLARACION == 2 && ejercicio > 2020))
+                //{
+                //    vTipoAcuse = "ACUSE_CONSTANCIA_CONDUCTA";
+
+                //}
+                vTipoAcuse = "ACUSE_CONSTANCIA_CONDUCTA";
+
+                file.fileSoapClient o = new file.fileSoapClient();
+                FileStream fs1;
+                SerializedFile sf = o.ObtenReportePorId(Pagina.FileServiceCredentials, 2020, vTipoAcuse, new List<object> { oUsuario.VID_NOMBRE
+                                                                               ,oUsuario.VID_FECHA
+                                                                               ,oUsuario.VID_HOMOCLAVE
+                                                                               ,oDeclaracion.NID_DECLARACION
+                                                                               ,"Preliminarx"}.ToArray());
+                byte[] b1 = sf.FileBytes;
+                String File = String.Concat(Path.GetTempPath().ToString(), Path.DirectorySeparatorChar.ToString(), Path.GetRandomFileName().ToString(), "");
+                fs1 = new FileStream(File, FileMode.Create);
+                fs1.Write(b1, 0, b1.Length);
+                fs1.Close();
+                fs1 = null;
+                HttpContext.Current.Response.ClearContent();
+                HttpContext.Current.Response.Clear();
+                HttpContext.Current.Response.ContentType = "application/pdf"; // sf.MimeType;
+                HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=" + sf.FileName);
+                HttpContext.Current.Response.WriteFile(File);
+                HttpContext.Current.Response.Flush();
+                System.IO.File.Delete(File);
+                HttpContext.Current.Response.End();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
         protected void grdDP_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
@@ -303,15 +348,28 @@ namespace DeclaraINE.Formas
                 }
 
 
-                if (vTipo == "Inicial")
+                if (vTipo == "Inicial") { 
                     ((Button)e.Row.FindControl("btnGridDeclaracionConstanciaEticaConducta")).Text = "Declaración de Aceptación de cumplimiento al código de ética";
-
-                if (vTipo == "Modificación")
+                    ((Button)e.Row.FindControl("btnGridDeclaracionConstanciaCodigoConducta")).Text = "Acuse de cumplimiento al código de conducta";
+                    if (Convert.ToInt32(ejercicio) < 2022)
+                    {
+                        ((Button)e.Row.FindControl("btnGridDeclaracionConstanciaCodigoConducta")).Visible = false;
+                    }
+                    
+                }
+                if (vTipo == "Modificación") { 
                     ((Button)e.Row.FindControl("btnGridDeclaracionConstanciaEticaConducta")).Text = "Declaración Anual de cumplimiento al código de ética";
-
+                    ((Button)e.Row.FindControl("btnGridDeclaracionConstanciaCodigoConducta")).Text = "Acuse de cumplimiento al código de conducta";
+                    if (Convert.ToInt32(ejercicio) < 2021)
+                    {
+                        ((Button)e.Row.FindControl("btnGridDeclaracionConstanciaCodigoConducta")).Visible = false;
+                    }
+                }
                 //if (vTipo == "Conclusión" || !ejercicioValido) oevm 20200724
-                if (vTipo == "Conclusión" )
+                if (vTipo == "Conclusión") { 
                     ((Button)e.Row.FindControl("btnGridDeclaracionConstanciaEticaConducta")).Visible = false;
+                    ((Button)e.Row.FindControl("btnGridDeclaracionConstanciaCodigoConducta")).Visible = false;
+                }
             }
         }
         public static string GetSHA1(String texto)

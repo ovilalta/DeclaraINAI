@@ -94,7 +94,12 @@
             }
             
             function MensajeDeclaracionCodigos(state) {
-                $('#lbMensaje').html("Descargando Declaración de Aceptación de que se dio cumplimiento al código, favor de esperar, al finalizar verifique su descarga");
+                $('#lbMensaje').html("Descargando Declaración de Aceptación de que se dio cumplimiento al código de Ética, favor de esperar, al finalizar verifique su descarga");
+
+            }
+
+            function MensajeDeclaracionCodigoConducta(state) {
+                $('#lbMensaje').html("Descargando Declaración de Aceptación de que se dio cumplimiento al código de Conducta, favor de esperar, al finalizar verifique su descarga");
 
             }
 
@@ -170,7 +175,15 @@
                                 <asp:Button ID="btnAcuseEtica" runat="server" CssClass="big" Text="" OnClick="btnAcuseEtica_Click" OnClientClick="return MensajeDeclaracionCodigos(true)" />
                                 <div class="a">
                                     <label style="padding: 0px 13px  6px 0px;">
-                                        Descarga tu Declaración de Aceptación de que se dió cumplimiento al código.
+                                        Descarga tu Declaración de Aceptación de que se dió cumplimiento al código de Ética.
+                                    </label>
+                                </div>
+                            </div>
+                            <div style="width: 290px;" runat="server" id="pnlAcuseConducta">
+                                <asp:Button ID="btnAcuseConducta" runat="server" CssClass="big" Text="" OnClick="btnAcuseConducta_Click" OnClientClick="return MensajeDeclaracionCodigoConducta(true)" />
+                                <div class="a">
+                                    <label style="padding: 0px 13px  6px 0px;">
+                                        Descarga tu Declaración de Aceptación de que se dió cumplimiento al código de Conducta.
                                     </label>
                                 </div>
                             </div>
