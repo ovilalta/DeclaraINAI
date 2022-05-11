@@ -899,7 +899,8 @@
                             <l>Transmisor</l>
                         </th>
                         <td>
-                            <asp:DropDownList ID="cmbTransmisorVehiculo" runat="server" requerido="btnGuardarVehiculo2" >
+                            <%--<asp:DropDownList ID="cmbTransmisorVehiculo" runat="server" requerido="btnGuardarVehiculo2" >--%>
+                            <asp:DropDownList ID="cmbTransmisorVehiculo" runat="server"  >
                                 <asp:ListItem Text="" Value=""></asp:ListItem>
                                 <asp:ListItem Text="Persona Física" Value="F"></asp:ListItem>
                                 <asp:ListItem Text="Persona Moral"  Value="M"></asp:ListItem>
@@ -912,7 +913,8 @@
                         <l>Nombre o razón social del <br />transmisor de la propiedad</l>
                     </th>
                     <td>
-                        <asp:TextBox ID="txtNombreTransmisorVehiculo" runat="server" requerido="btnGuardarVehiculo2"  MaxLength="256"></asp:TextBox>
+                        <asp:TextBox ID="txtNombreTransmisorVehiculo" runat="server"   MaxLength="256"></asp:TextBox>
+                        <%--<asp:TextBox ID="TextBox1" runat="server" requerido="btnGuardarVehiculo2"  MaxLength="256"></asp:TextBox>--%>
                     </td>
                 </tr>
                 <tr>
@@ -920,7 +922,8 @@
                         <l>RFC del transmisor de la propiedad</l>
                     </th>
                     <td>
-                        <asp:TextBox ID="txtRFCTransmisorVehiculo" runat="server" requerido="btnGuardarVehiculo2"  MaxLength="13"></asp:TextBox>
+                        <asp:TextBox ID="txtRFCTransmisorVehiculo" runat="server"  MaxLength="13"></asp:TextBox>
+                        <%--<asp:TextBox ID="txtRFCTransmisorVehiculo" runat="server" requerido="btnGuardarVehiculo2"  MaxLength="13"></asp:TextBox>--%>
                     </td>
                 </tr>
                 <tr>
@@ -929,7 +932,8 @@
                     </th>
                     <td>
 
-                        <asp:DropDownList ID="cmbRelacionTransmisorVehiculo" runat="server" requerido="btnGuardarVehiculo2" ></asp:DropDownList>
+                        <%--<asp:DropDownList ID="cmbRelacionTransmisorVehiculo" runat="server" requerido="btnGuardarVehiculo2" ></asp:DropDownList>--%>
+                        <asp:DropDownList ID="cmbRelacionTransmisorVehiculo" runat="server"  ></asp:DropDownList>
 
                     </td>
                 </tr>
