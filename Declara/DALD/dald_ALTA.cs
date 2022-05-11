@@ -85,7 +85,8 @@ namespace Declara_V2.DALD
         internal dald_ALTA(ALTA ALTA) : base(ALTA) { }
         internal dald_ALTA(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, Int32 NID_DECLARACION)
         : base(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, NID_DECLARACION) { }
-        internal dald_ALTA(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, Int32 NID_DECLARACION, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions lOpcionesRegistroExistente)
+        //OEVM - 20220510
+        internal dald_ALTA(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, Int32 NID_DECLARACION,  ExistingPrimaryKeyException.ExistingPrimaryKeyConditions lOpcionesRegistroExistente)
         : base(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, NID_DECLARACION, lOpcionesRegistroExistente) { }
 
         #endregion

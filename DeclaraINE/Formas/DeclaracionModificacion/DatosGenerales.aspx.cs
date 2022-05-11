@@ -330,19 +330,6 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 txtVIdHomoClave.Text = oUsuario.VID_HOMOCLAVE;
 
 
-                blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
-                oPuesto.select();
-                //cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO.OrderBy(x => x.NOMBRE_UA )
-                //    .ThenBy(x=>x.VID_NIVEL)
-                //    .ThenBy(x=>x.V_PUESTO);
-
-                cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO.OrderBy(x => x.VID_PUESTO);
-
-                cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.VID_PUESTO.ToString();
-                //cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString();
-                cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString();
-                cmbVID_CLAVEPUESTO.DataBind();
-
                 blld__l_CAT_PRIMER_NIVEL oPrimerNivel = new blld__l_CAT_PRIMER_NIVEL();
                 oPrimerNivel.OrderByCriterios.Add(new Declara_V2.Order(CAT_PRIMER_NIVEL.Properties.V_PRIMER_NIVEL));
                 oPrimerNivel.select();
@@ -351,6 +338,22 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 cmbVID_PRIMER_NIVEL.DataValueField = CAT_PRIMER_NIVEL.Properties.VID_PRIMER_NIVEL.ToString();
                 cmbVID_PRIMER_NIVEL.DataBind();
                 txtVID_PRIMER_NIVEL_TextChanged(cmbVID_PRIMER_NIVEL, null);
+
+                blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
+                oPuesto.select();
+                cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO.OrderBy(x => x.NOMBRE_UA)
+                    .ThenBy(x => x.VID_NIVEL)
+                    .ThenBy(x => x.V_PUESTO);
+
+
+                //cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO.OrderBy(x => x.VID_PUESTO); //OEVM 2022-05-06 para usar el de arriba
+
+                cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.CLAVE_NOMBRE_PUESTO.ToString();
+                //cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString();  //OEVM 2022-05-06 para usar el de abajo
+                cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString(); //Trae la descripcion completa para el combo
+                cmbVID_CLAVEPUESTO.DataBind();
+
+
 
                 grdPreguntas.DataBind(oDeclaracion.DECLARACION_RESTRICCIONESs);
                 blld__l_CAT_ENTIDAD_FEDERATIVA oFed = new blld__l_CAT_ENTIDAD_FEDERATIVA();
@@ -377,14 +380,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             //cmbcIdEntidadFederativaNacimiento_SelectedIndexChanged(sender, e);
         }
 
-        //protected void cmbcIdEntidadFederativaNacimiento_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    blld__l_CAT_MUNICIPIO omun = new blld__l_CAT_MUNICIPIO();
-        //    omun.NID_PAIS = new Declara_V2.IntegerFilter(cmbnIdPaisNacimiento.SelectedValue());
-        //    omun.CID_ENTIDAD_FEDERATIVA = new Declara_V2.StringFilter(cmbcIdEntidadFederativaNacimiento.SelectedValue);
-        //    omun.select();
-        //    cmbcIdMunicipioNacimiento.DataBind(omun.lista_CAT_MUNICIPIO, CAT_MUNICIPIO.Properties.CID_MUNICIPIO, CAT_MUNICIPIO.Properties.V_MUNICIPIO);
-        //}
+
 
 
         #region *** Botones Navegacion ***
@@ -752,23 +748,34 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                                 try
                                 {
+
+
+                                    cmbVID_PRIMER_NIVEL.SelectedValue = oDeclaracion.DECLARACION_CARGO.VID_PRIMER_NIVEL;
+                                    txtVID_PRIMER_NIVEL_TextChanged(cmbVID_PRIMER_NIVEL, null);
+                                    cmbVID_SEGUNDO_NIVEL.SelectedValue = oDeclaracion.DECLARACION_CARGO.VID_SEGUNDO_NIVEL;
+
+
                                     blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
                                     oPuesto.select();
+                                    //cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO;
                                     cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO;
+
                                     cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.VID_PUESTO.ToString();
                                     cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString();
                                     cmbVID_CLAVEPUESTO.DataBind();
 
                                     cmbVID_CLAVEPUESTO.SelectedValue = oDeclaracion.DECLARACION_CARGO.NID_PUESTO.ToString();
                                     cmbVID_CLAVEPUESTO_SelectedIndexChanged(cmbVID_CLAVEPUESTO, null);
+
                                     cmbVID_NIVEL.SelectedValue = oDeclaracion.DECLARACION_CARGO.NID_PUESTO.ToString();
                                     cmbVID_NIVEL_SelectedIndexChanged(cmbVID_NIVEL, null);
+
                                     txt_DENOMINACION_CARGO.Text = oDeclaracion.DECLARACION_CARGO.V_FUNCION_PRINCIPAL;
-                                    cmbVID_PRIMER_NIVEL.SelectedValue = oDeclaracion.DECLARACION_CARGO.VID_PRIMER_NIVEL;
-                                    txtVID_PRIMER_NIVEL_TextChanged(cmbVID_PRIMER_NIVEL, null);
-                                    cmbVID_SEGUNDO_NIVEL.SelectedValue = oDeclaracion.DECLARACION_CARGO.VID_SEGUNDO_NIVEL;
+
+
                                     txtF_POSESION.Text = oDeclaracion.DECLARACION_CARGO.F_POSESION.ToString(strFormatoFecha);
                                     txtF_INGRESO.Text = oDeclaracion.DECLARACION_CARGO.F_INICIO.ToString(strFormatoFecha);
+
                                     // DATOS DEL DOMICILIO LABORAL
 
                                     C_CODIGO_POSTAL.Text = oDeclaracion.DECLARACION_DOM_LABORAL.C_CODIGO_POSTAL;
@@ -1196,7 +1203,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                             SubSeccionActiva = SubSecciones.DependienteEconomicos;
                             //OEVM
                             if (oDeclaracion.DECLARACION_DEPENDIENTESs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 6).First().L_ESTADO.Value) ;
-                            QstBoxDep.Ask("¿Cuenta con dependientes económicos y/o cónyuge que desee registrar?");
+                            QstBoxDep.Ask("¿Cuenta con dependientes económicos y/o cónyuge que deba registrar?");
                         }
                         break;
                     case SubSecciones.DependienteEconomicos:
@@ -1432,42 +1439,73 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
         }
 
-        protected void cmbVID_NIVEL_SelectedIndexChanged(object sender, EventArgs e)
+
+        protected void txtVID_PRIMER_NIVEL_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                blld_CAT_PUESTO oPuesto = new blld_CAT_PUESTO(cmbVID_CLAVEPUESTO.SelectedItem.Text, cmbVID_NIVEL.SelectedValue());
-                //txtV_DENOMINACION_PUESTO.Text = oPuesto.V_PUESTO_COMPUESTO;
-                txtV_DENOMINACION_PUESTO.Text = oPuesto.V_PUESTO;
-            }
-            catch
-            {
-                txtV_DENOMINACION_PUESTO.Text = String.Empty;
-            }
+            blld__l_CAT_SEGUNDO_NIVEL oSegundo = new blld__l_CAT_SEGUNDO_NIVEL();
+            oSegundo.VID_PRIMER_NIVEL = new Declara_V2.StringFilter(cmbVID_PRIMER_NIVEL.SelectedValue);
+            oSegundo.select();
+            cmbVID_SEGUNDO_NIVEL.DataBind(oSegundo.lista_CAT_SEGUNDO_NIVEL, CAT_SEGUNDO_NIVEL.Properties.VID_SEGUNDO_NIVEL, CAT_SEGUNDO_NIVEL.Properties.V_SEGUNDO_NIVEL);
         }
+
 
         protected void cmbVID_CLAVEPUESTO_SelectedIndexChanged(object sender, EventArgs e)
         {
             blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
 
-            //int indice_guion = cmbVID_CLAVEPUESTO.SelectedItem.Text.IndexOf("-");
-            oPuesto.VID_PUESTO = new Declara_V2.StringFilter(cmbVID_CLAVEPUESTO.SelectedItem.Text);
-            //if (indice_guion==0)
-            //{
-            //    oPuesto.VID_PUESTO = new Declara_V2.StringFilter(cmbVID_CLAVEPUESTO.SelectedItem.Text);
-            //}
-            //else
-            //{
-            //    oPuesto.VID_PUESTO = new Declara_V2.StringFilter(cmbVID_CLAVEPUESTO.SelectedItem.Text.Substring(indice_guion, 4).Trim());
-            //}
-            
+            int indice = cmbVID_CLAVEPUESTO.SelectedItem.Text.IndexOf("|");
+
+            if (indice > 0)
+            {
+                oPuesto.VID_PUESTO = new Declara_V2.StringFilter(cmbVID_CLAVEPUESTO.SelectedItem.Text.Substring(0, indice));
+
+            }
+            else
+            {
+                oPuesto.VID_PUESTO = new Declara_V2.StringFilter(cmbVID_CLAVEPUESTO.SelectedItem.Text);
+            }
+
             oPuesto.L_ACTIVO = true;
             oPuesto.select();
-            cmbVID_NIVEL.DataBind(oPuesto.lista_CAT_PUESTO.OrderBy(x => x.V_PUESTO), CAT_PUESTO.Properties.NID_PUESTO, CAT_PUESTO.Properties.V_PUESTO_NIVEL);
+
+            cmbVID_NIVEL.DataBind(oPuesto.lista_CAT_PUESTO.OrderBy(x => x.V_PUESTO)
+
+                            , CAT_PUESTO.Properties.NID_PUESTO, CAT_PUESTO.Properties.V_PUESTO_NIVEL);
+
+
             txtV_DENOMINACION_PUESTO.Text = String.Empty;
-           txtV_DENOMINACION_PUESTO.Text = cmbVID_CLAVEPUESTO.SelectedItem.Text;
+
+            txtV_DENOMINACION_PUESTO.Text = cmbVID_CLAVEPUESTO.SelectedItem.Text;
+
             cmbVID_NIVEL.Items.Insert(0, new ListItem(String.Empty));
             cmbVID_NIVEL.SelectedValue = String.Empty;
+
+        }
+
+        protected void cmbVID_NIVEL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int indice = cmbVID_CLAVEPUESTO.SelectedItem.Text.IndexOf("|");
+
+                if (indice > 0)
+                {
+                    blld_CAT_PUESTO oPuesto = new blld_CAT_PUESTO(cmbVID_CLAVEPUESTO.SelectedItem.Text.Substring(0, indice), cmbVID_NIVEL.SelectedValue());
+                    txtV_DENOMINACION_PUESTO.Text = oPuesto.V_PUESTO;
+                }
+                else
+                {
+
+                    blld_CAT_PUESTO oPuesto = new blld_CAT_PUESTO(cmbVID_CLAVEPUESTO.SelectedItem.Text, cmbVID_NIVEL.SelectedValue());
+                    txtV_DENOMINACION_PUESTO.Text = oPuesto.V_PUESTO;
+                }
+
+               
+            }
+            catch (Exception ex)
+            {
+                txtV_DENOMINACION_PUESTO.Text = String.Empty;
+            }
         }
 
         protected void btnAgregarDependientePareja_Click(object sender, EventArgs e)
@@ -1781,37 +1819,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
 
 
-                    ////TODO: COTA-DEPENDIENTES-MODIF
 
-                    //if (ctrlDependiente1.L_PAREJA == true)
-                    //{
-                    //    var X = oDeclaracion.DECLARACION_DEPENDIENTESs.Where(p => p.L_PAREJA == true).ToList();
-                    //    blld_DECLARACION_DEPENDIENTES o = oDeclaracion.DECLARACION_DEPENDIENTESs.Where(p => p.L_PAREJA == true).ToList().Last();
-                    //    UserControl item = (UserControl)Page.LoadControl("item.ascx");
-                    //    ((Item)item).Id = oDeclaracion.DECLARACION_DEPENDIENTESs.Where(p => p.L_PAREJA == true).ToList().Count() + 1;
-                    //    ((Item)item).State = true;
-                    //    ((Item)item).ID = String.Concat("grd", oDeclaracion.DECLARACION_DEPENDIENTESs.Where(p => p.L_PAREJA == true).ToList().Count() + 1);
-                    //    ((Item)item).TextoPrincipal = o.V_TIPO_DEPENDIENTE;
-                    //    ((Item)item).TextoSecundario = o.V_NOMBRE_COMPLETO;
-                    //    ((Item)item).ImageUrl = String.Concat("../../Images/CAT_TIPO_DEPENDIENTE/", o.NID_TIPO_DEPENDIENTE, ".png");
-                    //    ((Item)item).Editar += OnEditar;
-                    //    ((Item)item).Eliminar += OnEliminar;
-                    //    grd.Controls.AddAt(grd.Controls.Count - 3, item);
-                    //}
-                    //else
-                    //{
-                    //    blld_DECLARACION_DEPENDIENTES o = oDeclaracion.DECLARACION_DEPENDIENTESs.Where(p => p.L_PAREJA == false).ToList().Last();
-                    //    UserControl item = (UserControl)Page.LoadControl("item.ascx");
-                    //    ((Item)item).Id = oDeclaracion.DECLARACION_DEPENDIENTESs.Where(p => p.L_PAREJA == false).ToList().Count() + 1;
-                    //    ((Item)item).State = false;
-                    //    ((Item)item).ID = String.Concat("grdx7", oDeclaracion.DECLARACION_DEPENDIENTESs.Where(p => p.L_PAREJA == false).ToList().Count() + 1);
-                    //    ((Item)item).TextoPrincipal = o.V_TIPO_DEPENDIENTE;
-                    //    ((Item)item).TextoSecundario = o.V_NOMBRE_COMPLETO;
-                    //    ((Item)item).ImageUrl = String.Concat("../../Images/CAT_TIPO_DEPENDIENTE/", o.NID_TIPO_DEPENDIENTE, ".png");
-                    //    ((Item)item).Editar += OnEditar;
-                    //    ((Item)item).Eliminar += OnEliminar;
-                    //    grdx7.Controls.AddAt(grdx7.Controls.Count - 3, item);
-                    //}
 
 
                     if (ctrlDependiente1.L_PAREJA == true)
@@ -1919,13 +1927,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
         }
 
 
-        protected void txtVID_PRIMER_NIVEL_TextChanged(object sender, EventArgs e)
-        {
-            blld__l_CAT_SEGUNDO_NIVEL oSegundo = new blld__l_CAT_SEGUNDO_NIVEL();
-            oSegundo.VID_PRIMER_NIVEL = new Declara_V2.StringFilter(cmbVID_PRIMER_NIVEL.SelectedValue);
-            oSegundo.select();
-            cmbVID_SEGUNDO_NIVEL.DataBind(oSegundo.lista_CAT_SEGUNDO_NIVEL, CAT_SEGUNDO_NIVEL.Properties.VID_SEGUNDO_NIVEL, CAT_SEGUNDO_NIVEL.Properties.V_SEGUNDO_NIVEL);
-        }
+
 
         protected void QstBoxDep_Yes(object Sender, EventArgs e)
         {

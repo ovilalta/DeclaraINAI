@@ -129,16 +129,22 @@ namespace Declara_V2.BLLD
         {
         }
 
+        //OEVM - 20220510
         public blld_ALTA(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, Int32 NID_DECLARACION,bool lDif)
-        : base(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, NID_DECLARACION, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException)
+        : base(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, NID_DECLARACION,  ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException)
         {
         }
 
+       // public blld_ALTA(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, Int32 NID_DECLARACION, bool lDif)
+       //: base(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, NID_DECLARACION,  ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException)
+       // {
+       // }
 
-     #endregion
+
+        #endregion
 
 
-     #region *** Metodos ***
+        #region *** Metodos ***
 
         private void _Reload_ALTA_ADEUDOs()
         {

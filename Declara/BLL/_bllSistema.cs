@@ -14,6 +14,8 @@ namespace Declara_V2.BLL
     public class _bllSistema
     {
 
+
+
         public string Encripta(string Cadena)
         {
             if (String.IsNullOrEmpty(Cadena))
@@ -225,7 +227,7 @@ namespace Declara_V2.BLL
         public _bllSistema()
         { }
 
-
+        
 
     }
 }

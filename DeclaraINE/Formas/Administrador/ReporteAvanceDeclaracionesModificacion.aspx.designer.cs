@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas
+namespace DeclaraINE.Formas.Administrador
 {
 
 
-    public partial class ConsultaAcuse
+    public partial class ReporteAvanceDeclaracionesModificacion
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace DeclaraINE.Formas
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control msg.
+        /// Control msgBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal msg;
+        protected global::AlanWebControls.AlanMessageBox msgBox;
 
         /// <summary>
         /// Control lblIdentificacion.
@@ -78,102 +78,30 @@ namespace DeclaraINE.Formas
         protected global::System.Web.UI.WebControls.LinkButton lkVolver;
 
         /// <summary>
-        /// Control ltrSubTitulo.
+        /// Control ltrSubTituloAdmin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltrSubTitulo;
+        protected global::System.Web.UI.WebControls.Literal ltrSubTituloAdmin;
 
         /// <summary>
-        /// Control AlertaSuperior.
+        /// Control txtAnio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AlanWebControls.AlanAlert AlertaSuperior;
+        protected global::System.Web.UI.WebControls.TextBox txtAnio;
 
         /// <summary>
-        /// Control grd.
+        /// Control brnActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl grd;
-
-        /// <summary>
-        /// Control btnAcuseEnvio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAcuseEnvio;
-
-        /// <summary>
-        /// Control btnAcuseDeclaracion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAcuseDeclaracion;
-
-        /// <summary>
-        /// Control pnlAcuseEtica.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnlAcuseEtica;
-
-        /// <summary>
-        /// Control btnAcuseEtica.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAcuseEtica;
-
-        /// <summary>
-        /// Control pnlAcuseConducta.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnlAcuseConducta;
-
-        /// <summary>
-        /// Control btnAcuseConducta.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAcuseConducta;
-
-        /// <summary>
-        /// Control btnAceptar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAceptar;
-
-        /// <summary>
-        /// Control lbMensaje.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbMensaje;
+        protected global::System.Web.UI.WebControls.Button brnActualizar;
     }
 }

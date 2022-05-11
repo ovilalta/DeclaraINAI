@@ -58,11 +58,16 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     ViewState["lConducta"] = value;
             }
         }
-       
+
         blld_DECLARACION _oDeclaracion
         {
             get => (blld_DECLARACION)Session["oDeclaracion"];
             set => SessionAdd("oDeclaracion", value);
+        }
+
+        private void HabilitaBotonGuardar()
+        {
+            ((Button)Master.FindControl("btnSiguiente")).Visible = true;
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -77,8 +82,9 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 ((Button)Master.FindControl("btnSiguiente")).Text = "Guardar";
                 ((Button)Master.FindControl("btnSiguiente")).CssClass = "saveNext";
                 ((Button)Master.FindControl("btnSiguiente")).ToolTip = "Guardar e ir al siguiente apartado";
+                //((Button)Master.FindControl("btnSiguiente")).Enabled = false; //Agragdo por OEVM 2022-05-05 con el objetivo de no permitir que avancen los usuarios sin que hayan revisado los codigos
 
-               
+
                 //txtObservaciones.Text = oDeclaracion.E_OBSERVACIONES;
             }
 
@@ -86,7 +92,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 ((LinkButton)Master.FindControl("lkObservaciones")).CssClass = "completeve";
             else
                 ((LinkButton)Master.FindControl("lkObservaciones")).CssClass = "active";
-             
+
         }
 
         public void Anterior()
@@ -107,7 +113,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 {
                     Response.Redirect("Conflicto.aspx");
                 }
-           
+
         }
 
         public void Guardar()
@@ -116,16 +122,25 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
         public void Siguiente()
         {
-            if(lConducta && lEtica)
+            if (lConducta && lEtica)
             {
                 mppAcepta.Show(true);
+                marcaApartado(13);
+                blld_DECLARACION oDeclaracion = _oDeclaracion;
+                Response.Redirect("../DeclaracionFiscal/declaracionFiscal.aspx");
             }
-               marcaApartado(13);
-            blld_DECLARACION oDeclaracion = _oDeclaracion;
+            else
+            {
+                MsgBox.ShowDanger("Debe VER el código de Ética y el código de Conducta para cumplir con este apartado");
+
+            }
+
+
             //oDeclaracion.E_OBSERVACIONES = txtObservaciones.Text;
             //oDeclaracion.update();
             //Response.Redirect("Envio.aspx");
-            Response.Redirect("../DeclaracionFiscal/declaracionFiscal.aspx");
+
+            
         }
 
         private void marcaApartado(int NID_APARTADO)
@@ -157,7 +172,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
         }
 
-      
+
 
         protected void idConducta_Click(object sender, EventArgs e)
         {
@@ -172,7 +187,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             if (lConducta && lEtica)
                 mppAcepta.Show(true);
         }
-        
+
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -180,8 +195,8 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             marcaApartado(13);
         }
 
-       
-      
+
+
 
         protected void btnDocumento_Click(object sender, EventArgs e)
         {
@@ -204,7 +219,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             }
         }
 
-       
-       
+
+
     }
 }

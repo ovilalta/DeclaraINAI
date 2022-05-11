@@ -64,7 +64,8 @@ namespace Declara_V2.BLL
 
         public bll_ALTA(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, Int32 NID_DECLARACION) => datos_ALTA = new dald_ALTA(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, NID_DECLARACION);
 
-        public bll_ALTA(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, Int32 NID_DECLARACION, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions lOpcionesRegistroExistente) => datos_ALTA = new dald_ALTA(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, NID_DECLARACION, lOpcionesRegistroExistente);
+        //OEVM - 20220510
+        public bll_ALTA(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, Int32 NID_DECLARACION, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions lOpcionesRegistroExistente) => datos_ALTA = new dald_ALTA(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, NID_DECLARACION,  lOpcionesRegistroExistente);
 
      #endregion
 

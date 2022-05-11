@@ -147,6 +147,11 @@ namespace DeclaraINE.Formas
             Response.Redirect("Index.aspx");
         }
 
+        protected void btnConcluirDeclaracion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Index.aspx");
+        }
+
         protected void btnAcuseDeclaracion_Click(object sender, EventArgs e)
         {
             try

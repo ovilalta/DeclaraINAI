@@ -74,8 +74,9 @@
         <div class="alert alert-primary" role="alert">
             <asp:Literal Text=" " ID="msg" runat="server" ClientIDMode="Static" />
         </div>
+
         <script>
- 
+
             function MensajeAcuseEnvio(state) {
                 debugger
                 if (state) {
@@ -85,14 +86,14 @@
                 return true;
             }
             function MensajeAcuseEnvio(state) {
-                    $('#lbMensaje').html("Descargando Acuse de Envío, favor de esperar, al finalizar verifique su descarga");
+                $('#lbMensaje').html("Descargando Acuse de Envío, favor de esperar, al finalizar verifique su descarga");
             }
 
             function MensajeDeclaracionPresentada(state) {
-                    $('#lbMensaje').html("Descargando Declaracion Presentada, favor de esperar, al finalizar verifique su descarga");
-   
+                $('#lbMensaje').html("Descargando Declaracion Presentada, favor de esperar, al finalizar verifique su descarga");
+
             }
-            
+
             function MensajeDeclaracionCodigos(state) {
                 $('#lbMensaje').html("Descargando Declaración de Aceptación de que se dio cumplimiento al código de Ética, favor de esperar, al finalizar verifique su descarga");
 
@@ -107,7 +108,7 @@
 
         </script>
 
- 
+
         <div class="card">
 
             <div class="row register-info-box" style="background: url('../Images/ine-acerca-slide.jpg');">
@@ -189,7 +190,11 @@
                             </div>
                         </div>
 
-                        <div class="alert alert-primary" role="alert" style="text-align: center; ">
+
+                        <div class="right button-container">
+                                <asp:Button ID="btnAceptar" runat="server" Text="Concluir Declaración" OnClick="btnConcluirDeclaracion_Click" />
+                            </div>
+                        <div class="alert alert-primary" role="alert" style="text-align: center;">
                             <asp:Label ID="lbMensaje" runat="server" Style="font-weight: bold;" />
                         </div>
 

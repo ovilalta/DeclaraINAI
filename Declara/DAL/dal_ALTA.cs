@@ -40,7 +40,8 @@ namespace Declara_V2.DAL
 
         internal dal_ALTA(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, Int32 NID_DECLARACION) { registro = db.ALTA.Find(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, NID_DECLARACION); if (registro == null) throw new RowNotFoundException(); }
 
-        internal dal_ALTA(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, Int32 NID_DECLARACION, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions lOpcionesRegistroExistente)
+        //OEVM - 20220510
+        internal dal_ALTA(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, Int32 NID_DECLARACION,  ExistingPrimaryKeyException.ExistingPrimaryKeyConditions lOpcionesRegistroExistente)
         {
             registro = new ALTA()
             {

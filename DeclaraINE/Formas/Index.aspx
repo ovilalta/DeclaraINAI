@@ -143,8 +143,11 @@
                                                                 <asp:MenuItem Text="Menú Reportes" Value="Menú Reportes" ToolTip="Menú de reportes">
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteDeclaracionesConflictoIntereses.aspx" Text="Reporte Declaraciones Conflicto Intereses" ToolTip="Emite reporte de declaraciones de conflicto de intereses por rango de fecha" Value="Reporte Declaraciones de Conflicto de Intereses"></asp:MenuItem>
                                                                     <asp:MenuItem NavigateUrl="~/Formas/RegistrosAdmin.aspx" Text="Reporte Declaraciones Listado Detalle" ToolTip="Emite reporte de declaraciones por rango de fecha" Value="Reporte Declaraciones"></asp:MenuItem>
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteAvanceDeclaracionesModificacion.aspx" Text="Reporte Avance Declaraciones Modificacion" ToolTip="Emite reporte de avance de las declaraciones de modificación" Value="Reporte Avance Modificación"></asp:MenuItem>
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteDeclaracionesInformeTrim.aspx" Text="Reporte Declaraciones Informe Trimestral" ToolTip="Reporte Declaraciones Informe Trimestral" Value="Reporte Declaraciones Informe Trimestral"></asp:MenuItem>
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteSIPOT.aspx" Text="Reporte SIPOT" ToolTip="Reporte SIPOT" Value="Reporte SIPOT"></asp:MenuItem>
+                                                                    
+
                                                                     
                                                                 </asp:MenuItem>
                                                                 <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReseteoPassword.aspx" Text="Reseteo de Contraseña" ToolTip="Resetear contraseña del usuario" Value="Reseteo de contraseña"></asp:MenuItem>

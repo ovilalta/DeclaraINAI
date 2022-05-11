@@ -2,6 +2,7 @@
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ChildContent2" runat="server">
     <style>
      .VerDoc {
@@ -35,51 +36,20 @@
 
 }
 </style>
-    <%-- <script type="text/javascript">
-        function nombrecampo(nombre, area, maximo) {
-            NombreTXT = nombre;
-            limite = maximo;
-            numeroDeC = area.value.length;
-
-            if (numeroDeC > limite) {
-                area.value = area.value.substring(0, limite);
-            }
-            else {
-                if (NombreTXT == "txtObservaciones") {
-                    $('#<%=txtcuenta.ClientID%>').val(Text = "Número de caractéres capturados:" + numeroDeC);
-                }
-            }
-        }
-    </script>--%>
-
-
-    <%-- <asp:AlanQuestionBox runat="server" ID="QstBox" NoText="No" YesText="Si" OnNo="QstBox_No" OnYes="QstBox_Yes"  YesCssClass="" NoCssClass="" />
-
-    <div class="subtitulo">
-        <asp:Literal ID="ltrSubTitulo" runat="server" Text="Observaciones y Aclaraciones"></asp:Literal>
-    </div>
+   
     <asp:AlanMessageBox runat="server" ID="MsgBox" />
-    <asp:AlanAlert runat="server" ID="AlertaSuperior" />
- <div id="cuerpo">
-       <%-- <asp:TextBox ID="txtcuenta" Text="Número de caractéres capturados: 0" runat="server" BackColor="#EEEEEE" ReadOnly="True"></asp:TextBox>
-        <asp:TextBox ID="TextBox1" Text="Número máximo de caracteres permitidos: 1000" runat="server" BackColor="#EEEEEE" ReadOnly="True"></asp:TextBox>
-        <asp:TextBox ID="txtObservaciones" runat="server" onkeyDown="nombrecampo('txtObservaciones',this,'1000')"
-            onkeyup="nombrecampo('txtObservaciones',this,'1000')" MaxLength="1000" TextMode="MultiLine" Width="100%"></asp:TextBox>
 
-    </div>--%>
 
 
 
     <div class="modal-dialog" style="display: contents;">
-        <%--  <Triggers>
-             <asp:PostBackTrigger ControlID = "idConducta_Click"/>
-     </Triggers>--%>
+       
         <div class="modal-content" style="margin: 3% 10% 2% 10%;">
             <div class="modal-body etica" style="margin: 0px 2% 0px; max-height: none;">
                 <h3 class="subtitulo" style="text-align: center; font-weight: bold; margin: 3px 0; padding: 0px 0px 17px; background-color: #ffffff;">COMUNIDAD INAI</h3>
                 <p style="text-align: justify">Derivado de la aprobación del Código de Ética, por parte del Órgano Interno de Control, el cual contiene los principios, valores y reglas
-                    de integridad de los funcionarios públicos del INAI, lo hacemo de tu conocimiento, a fin de que en el desarrollo de tus funciones conduzcas tu comportamiento apegado
-                    al código, como integrante del INAI.</p>
+                    de integridad de los funcionarios públicos del INAI, lo hacemos de su conocimiento, a fin de que en el desarrollo de sus funciones conduzca su comportamiento apegado
+                    al código.</p>
                 <br />
                 <br />
                 <p style="text-align: justify"><a style="font-weight: bold">El Código de Ética </a>contiene y abarca los principios constitucionales, los valores y reglas de integridad en el 
@@ -171,10 +141,14 @@ Nacional de Transparencia, Acceso a la Información y Protección de Datos Perso
             window.open('../../pdf1/etica.pdf', '_blank');
         }
         function ValidarDescargaCodigo() {
-            $('#btnDocumento').prop( "disabled", false );
+            $('#btnDocumento').prop("disabled", false);
+            var botonGuardar = document.getElementById("btnSiguiente");
+            
              window.open('../../pdf1/conducta.pdf', '_blank');
             //$('#btnDocumento').show(); 
-        }         
+        }
+
+        
     </script>
    
 </asp:Content>

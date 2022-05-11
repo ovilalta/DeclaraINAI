@@ -116,81 +116,7 @@ namespace DeclaraINE.Formas.DeclaracionFiscal
             }
         }
 
-        //protected void Button1_Click(object sender, EventArgs e)
-        //{
-
-        //    //if (si.Checked==true)
-        //    //{
-        //         if (FileUpload1.HasFile )
-        //                    {
-        //                        string anio = DateTime.Today.Year.ToString();
-        //                        string rutaDirectorio = "\\Formas\\DeclaracionFiscal\\pdfFiscales\\" + anio;
-
-        //                        string fileExtension = Path.GetExtension(FileUpload1.FileName);
-        //                        string nombreArchivo = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
-        //                        //string ruta = "\\Formas\\DeclaracionFiscal\\pdfFiscales\\" + FileUpload1.FileName;
-        //                        string ruta = rutaDirectorio + "\\";  //+ nombreArchivo+fileExtension;
-        //                        string path = AppDomain.CurrentDomain.BaseDirectory + ruta;
-
-        //                        if (!Directory.Exists(path))
-        //                        {
-        //                            Directory.CreateDirectory(path);
-        //                        }
-
-
-        //                        if (fileExtension.ToLower() == ".pdf")
-        //                        {
-        //                            if (File.Exists(path + nombreArchivo + fileExtension))
-        //                            {
-
-        //                                MsgBox.ShowDanger("Cuidado", "El archivo ya existe");
-        //                            }
-        //                            else
-        //                            {
-
-        //                                FileUpload1.SaveAs(Server.MapPath("~" + ruta + nombreArchivo + fileExtension));
-        //                                string usuarioObligado = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
-        //                                //if (si.Checked==true)
-        //                                //{
-        //                                    //Incluir actualizacion a BD tabla USUARIO en el campo OBL_DECLARACION
-
-        //                                    bool obligado = true;
-        //                                    ActualizaObligadoFiscal(usuarioObligado, obligado);
-        //                                //}
-        //                                //else
-        //                                //{
-        //                                    //Incluir actualizacion a BD tabla USUARIO en el campo OBL_DECLARACION
-
-        //                                //}
-
-        //                                MsgBox.ShowSuccess("Archivo Guardado", "Carga de Acuse Fiscal y guardado de dato obligado fiscal, Exitoso! ");
-        //                            }
-
-        //                        }
-        //                        else
-        //                        {
-
-        //                                MsgBox.ShowDanger("Cuidado", "El acuse debe ser en formato pdf, revisar el archivo a cargar, por favor!");
-
-        //                        }
-
-        //                    }
-        //         else
-        //         {
-        //            MsgBox.ShowDanger("Cuidado", "Por favor, seleccione su acuse de la Declaración Fiscal");               
-        //         }
-        //    //}
-        //    //else
-        //    //{
-        //    //    string usuarioObligado = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
-        //    //    bool obligado = false;
-        //    //    ActualizaObligadoFiscal(usuarioObligado, obligado);
-        //    //    MsgBox.ShowSuccess("Datos Guardados", "Guardado de dato obligado fiscal, Exitoso! ");
-        //    //}
-
-
-
-        //}
+        
 
         protected void btnVerTutorial_Click(object sender, EventArgs e)
         {
@@ -256,7 +182,26 @@ namespace DeclaraINE.Formas.DeclaracionFiscal
             }
             else
             {
-                QstBox.AskWarning("Bajo protesta de decir verdad, ¿Eres obligado a presentar declaración fiscal ante el SAT?");
+                //Meter condiciones para validar si existe el archivo pdf
+                string anio = DateTime.Today.Year.ToString();
+                string rutaDirectorio = "\\Formas\\DeclaracionFiscal\\pdfFiscales\\" + anio;
+
+                
+                string nombreArchivo = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
+
+                string ruta = rutaDirectorio + "\\";
+                string path = AppDomain.CurrentDomain.BaseDirectory + ruta;
+
+
+                if (File.Exists(path + nombreArchivo + ".pdf"))
+                {
+                    Response.Redirect("../DeclaracionModificacion/Envio.aspx");
+                }
+                else
+                {
+                    QstBox.AskWarning("Bajo protesta de decir verdad, ¿Eres obligado a presentar declaración fiscal ante el SAT?");
+                }
+                
             }
 
 
@@ -290,7 +235,7 @@ namespace DeclaraINE.Formas.DeclaracionFiscal
 
         protected void QstBox_Yes(object Sender, EventArgs e)
         {
-            //No hagas nada 
+            
         }
 
         protected void QstBox_No(object Sender, EventArgs e)

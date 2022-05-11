@@ -770,7 +770,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                                     oDeclaracion.DECLARACION_CARGO.V_FUNCION_PRINCIPAL = txt_DENOMINACION_CARGO.Text;
                                     oDeclaracion.DECLARACION_CARGO.VID_PRIMER_NIVEL = cmbVID_PRIMER_NIVEL.Text;
                                     oDeclaracion.DECLARACION_CARGO.VID_SEGUNDO_NIVEL = cmbVID_SEGUNDO_NIVEL.SelectedValue;
-                                    oDeclaracion.DECLARACION_CARGO.F_POSESION = txtF_POSESION.Date(Pagina.esMX);
+                                    oDeclaracion.DECLARACION_CARGO.F_POSESION = txtF_POSESION.Date(Pagina.esMX); 
                                     oDeclaracion.DECLARACION_CARGO.F_INICIO = txtF_POSESION.Date(Pagina.esMX); // SE ASUME QUE LA FECHA DE INGRESO ES IGUAL A LA DE POSESION txtF_INGRESO
                                     oDeclaracion.DECLARACION_CARGO.update();
 

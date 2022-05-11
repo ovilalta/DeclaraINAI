@@ -7,11 +7,22 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.DeclaracionModificacion {
-    
-    
-    public partial class Observaciones {
-        
+namespace DeclaraINE.Formas.DeclaracionModificacion
+{
+
+
+    public partial class Observaciones
+    {
+
+        /// <summary>
+        /// Control MsgBox.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AlanWebControls.AlanMessageBox MsgBox;
+
         /// <summary>
         /// Control btnsBuscaridEtica.
         /// </summary>
@@ -20,7 +31,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnsBuscaridEtica;
-        
+
         /// <summary>
         /// Control btnsBuscaridConducta.
         /// </summary>
@@ -29,7 +40,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnsBuscaridConducta;
-        
+
         /// <summary>
         /// Control mppAcepta.
         /// </summary>
@@ -38,7 +49,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AlanWebControls.AlanModalPopUp mppAcepta;
-        
+
         /// <summary>
         /// Control btnsGuardar.
         /// </summary>
@@ -47,7 +58,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnsGuardar;
-        
+
         /// <summary>
         /// Control mppMensaje.
         /// </summary>
@@ -56,7 +67,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AlanWebControls.AlanModalPopUp mppMensaje;
-        
+
         /// <summary>
         /// Control lblMensaje.
         /// </summary>
@@ -65,7 +76,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMensaje;
-        
+
         /// <summary>
         /// Control btnDocumento.
         /// </summary>

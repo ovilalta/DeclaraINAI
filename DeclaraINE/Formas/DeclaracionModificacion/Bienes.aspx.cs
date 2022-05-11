@@ -796,6 +796,8 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
         }
 
 
+        
+
         protected void OnEditar(object sender, ItemEventArgs e)
         {
 
@@ -908,7 +910,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     // oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 9).First().L_ESTADO.Value)
                     // chbDependietesInm.SelectedValue = i.ALTA_INMUEBLE_TITULARs.Where(p => p.NID_INMUEBLE == i.NID_INMUEBLE).First().NID_DEPENDIENTE.ToString();
                     // chbDependietes.ClearSelection();
-                    chbDependietesInm.SelectedValue = i.ALTA_INMUEBLE_TITULARs.First().NID_DEPENDIENTE.ToString();
+                    //chbDependietesInm.SelectedValue = i.ALTA_INMUEBLE_TITULARs.First().NID_DEPENDIENTE.ToString();
                    
                     chbDependietesInm_SelectedIndexChanged(sender, e);
                     foreach (blld_ALTA_INMUEBLE_TITULAR item in i.ALTA_INMUEBLE_TITULARs)
@@ -946,7 +948,12 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     try { cmbMotivoBaja.SelectedValue = m.E_NOMBRE_TRANSMISOR.ToString().Split('|')[1]; } catch { }
                     //txtNombreTransmisorMueble.Text = m.E_NOMBRE_TRANSMISOR.ToString();
 
+                   
+
                     try  { txtRFCTransmisorMueble.Text = m.E_RFC_TRANSMISOR.ToString(); } catch { }
+
+
+
 
                     try { txtF_BAJA_MUEB.Text = oDeclaracion.MODIFICACION.MODIFICACION_BAJAs.Where(p => p.NID_PATRIMONIO == m.NID_PATRIMONIO).First().F_BAJA.ToString(Pagina.strFormatoFecha); } catch { }
 
@@ -968,7 +975,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     }
                     chbDependietesMuebles.ClearSelection();
                    
-                    chbDependietesMue.SelectedValue = m.ALTA_MUEBLE_TITULARs.First().NID_DEPENDIENTE.ToString();
+                    //chbDependietesMue.SelectedValue = m.ALTA_MUEBLE_TITULARs.First().NID_DEPENDIENTE.ToString();
                     chbDependietesMue_SelectedIndexChanged(sender, e);
                     foreach (blld_ALTA_MUEBLE_TITULAR item in m.ALTA_MUEBLE_TITULARs)
                     {
@@ -1030,7 +1037,32 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                     try { txtF_BAJA_VEHIC.Text= oDeclaracion.MODIFICACION.MODIFICACION_BAJAs.Where(p => p.NID_PATRIMONIO == v.NID_PATRIMONIO).First().F_BAJA.ToString(Pagina.strFormatoFecha); } catch { }
 
-                    try{ txtRFCTransmisorVehiculo.Text = v.E_RFC_TRANSMISOR.ToString(); } catch { }
+                    string rfcTransmisor;
+                    using (var bd = new MODELDeclara_V2.cnxDeclara())
+
+                    {
+                        rfcTransmisor =  (bd.ALTA_VEHICULO.Where(p => p.VID_NOMBRE == oDeclaracion.VID_NOMBRE
+                        && p.VID_FECHA == oDeclaracion.VID_FECHA
+                        && p.VID_HOMOCLAVE == oDeclaracion.VID_HOMOCLAVE
+                        && p.NID_DECLARACION == oDeclaracion.NID_DECLARACION
+                        && p.NID_VEHICULO == v.NID_VEHICULO
+                        )).First().E_RFC_TRANSMISOR;
+                    }
+
+                    //bool esBase64 = _bllSistema.DesEncriptaStatic(rfcTransmisor);
+
+                    //if (esBase64)
+                    //{
+                    //    txtRFCTransmisorVehiculo.Text = _bllSistema.DesEncriptaStatic(rfcTransmisor);
+                    //}
+                    //else
+                    //{
+                    //    txtRFCTransmisorVehiculo.Text = rfcTransmisor;
+                    //}
+
+                    
+
+                    //try { txtRFCTransmisorVehiculo.Text = v.E_RFC_TRANSMISOR.ToString(); } catch { }
 
                     cmbRelacionTransmisorVehiculo.SelectedValue = v.NID_RELACION_TRANSMISOR.ToString();
 
@@ -1052,7 +1084,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                     checaAdeudoVehiculo();
                     chbDependietesVehiculo.ClearSelection();
-                    chbDependietesVeh.SelectedValue=v.ALTA_VEHICULO_TITULARs.First().NID_DEPENDIENTE.ToString();
+                    //chbDependietesVeh.SelectedValue=v.ALTA_VEHICULO_TITULARs.First().NID_DEPENDIENTE.ToString();
                     chbDependietesVeh_SelectedIndexChanged(sender, e);
                     foreach (blld_ALTA_VEHICULO_TITULAR item in v.ALTA_VEHICULO_TITULARs)
                     {
