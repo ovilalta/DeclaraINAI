@@ -410,6 +410,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             if (lEditar)
             {
                 ActualizaInversion();
+                Response.Redirect("Inversiones.aspx"); //OEVM - 20220511 - Se incuye para forzar la actualizacion de la pagina y asi se visualicen los cambios realizados
             }
             else
             {
@@ -551,6 +552,8 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             {
                 MsgBox.ShowDanger("Advertencia", "El RFC del otorgante NO puede ser el mismo del declarante");
             }
+
+
         }
 
         protected void cmbNID_INSTITUCION_SelectedIndexChanged(object sender, EventArgs e)

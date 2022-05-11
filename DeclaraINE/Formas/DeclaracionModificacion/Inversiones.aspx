@@ -239,6 +239,7 @@
         </ContentTemplate>
 
     </asp:AlanModalPopUp>
+
          <asp:AlanModalPopUp runat="server" ID="mppBaja">
         <ContentTemplate>
             <ascx:ctrlDesincorpora runat="server" ID="ctrlDesincorpora1" />

@@ -272,6 +272,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             if (lEditar)
             {
                 ActualizaAdeudo();
+                Response.Redirect("Adeudos.aspx"); //OEVM - 20220511 - Se incuye para forzar la actualizacion de la pagina y asi se visualicen los cambios realizados
             }
             else
             {
