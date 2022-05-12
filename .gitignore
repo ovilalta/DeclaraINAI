@@ -364,3 +364,6 @@ FodyWeavers.xsd
 /DeclaraINE/Formas/DeclaracionFiscal/pdfFiscales/2020
 /DeclaraINE/versionesFiscales
 /DeclaraINE/versionesPublicas
+/DeclaraINE/Formas/Administrador/ExcepcionAcuseFiscal.aspx
+/DeclaraINE/Formas/Administrador/ExcepcionAcuseFiscal.aspx.cs
+/DeclaraINE/Formas/Administrador/ExcepcionAcuseFiscal.aspx.designer.cs

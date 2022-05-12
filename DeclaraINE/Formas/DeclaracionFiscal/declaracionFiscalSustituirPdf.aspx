@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="declaracionFiscal.aspx.cs" Inherits="DeclaraINE.Formas.DeclaracionFiscal.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="declaracionFiscalSustituirPdf.aspx.cs" Inherits="DeclaraINE.Formas.declaracionFiscalSustituirPdf.WebForm1" %>
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
@@ -95,7 +95,9 @@
 
         <div class="container">
             <asp:AlanMessageBox ID="MsgBox" runat="server" style="font-size: 200%" />
-            <asp:AlanQuestionBox runat="server" ID="QstBox" NoText="No" YesText="Si" OnNo="QstBox_No" OnYes="QstBox_Yes" YesCssClass="" NoCssClass="" />
+            <asp:AlanQuestionBox runat="server" ID="QstBox" YesText="Salir" OnYes="QstBox_Yes" YesCssClass="" />
+            <%--<asp:AlanAlert ID="AlertFiscal" runat="server" />--%>
+
             <div class="row">
                 <div class="col-md-4"></div>
 
@@ -129,54 +131,31 @@
             </div>
             <br />
             <hr />
-            <%--<div class="row mb-5">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6  d-flex justify-content-center">
-                        <asp:Label ID="Label2" runat="server" Text="¿Eres obligado a presentar declaración fiscal ante el SAT?"></asp:Label>
-                        <br />
-                        
-                    </div>
-                    <div class="col-md-3"></div>
-                        
-                </div>
-                <div class="row">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6  d-flex justify-content-center">
-                            <asp:RadioButton ID="si" runat="server" GroupName="FiscalObligado" Text="SI" value="si" OnChekedChanged="FiscalObligado_CheckedChanged" AutoPostBack="true"/>
-                    </div>
-                    <div class="col-md-3"></div>
-                        
-                </div>
-                <div class="row">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6  d-flex justify-content-center">
-                            <asp:RadioButton ID="no" runat="server" GroupName="FiscalObligado" Text="NO" Value="no" OnChekedChanged="FiscalObligado_CheckedChanged" AutoPostBack="true"/>
-                    </div>
-                    <div class="col-md-3"></div>
-                        
-                </div>--%>
+
 
 
 
 
             <%-- Boton carga archivo pdf --%>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-2">
                 </div>
-                <div class="col-md-4" align="center">
+                <div class="col-md-8" align="center">
                     <label>
                         <h3>Carga aquí tu acuse fiscal</h3>
                     </label>
-                    <br />
-                    <br />
-                    <iframe style="display:block" id="pdfFiscal" width="400" height="200"></iframe>
-                    <asp:FileUpload ID="FileUpload1" runat="server" Width="400px" Height="50px" accept="application/pdf" onchange="previewPDF()"/>
-                </div>
-                <div class="col-md-4">
+
+                    <iframe style="display: block" id="pdfFiscal" width="1000" height="400" runat="server" src="D:\DevDeclaraINAI2022\DeclaraINAI\DeclaraINE\Formas\DeclaracionFiscal\pdfFiscales\2022\VIMO730413V48.pdf"></iframe>
+                    
+                    <asp:FileUpload ID="FileUpload1" runat="server" Width="400px" Height="50px" accept="application/pdf" onchange="previewPDF()" />
+
                 </div>
             </div>
+            <div class="col-md-2">
+            </div>
+        </div>
 
-            <%--<div class="row">                    
+        <%--<div class="row">                    
                     <div class="col-md-3">                            
                     </div>                    
                     <div class="col-md-6" align="center">
@@ -186,80 +165,80 @@
                     <div class="col-md-3">                        
                     </div>                    
                  </div>--%>
-            <br />
-            <%-- Botones de cargar y cancelar --%>
-            <div class="row">
-                <div class="col-md-3">
-                </div>
-                <div class="col-md-6" align="center">
-                    <asp:Button Text="Anterior" ID="btnAtras" runat="server" OnClick="btnAtras_Click" CssClass="Image-Prev" Width="210" />
-                    <asp:Button Text="Siguiente" ID="btnSiguiente" runat="server" OnClick="btnSiguiente_Click" CssClass="Image-Next" Width="210" />
-                </div>
-                <div class="col-md-3">
-                </div>
+        <br />
+        <%-- Botones de cargar y cancelar --%>
+        <div class="row">
+            <div class="col-md-3">
             </div>
-            <br />
-            <br />
-            <div class="row">
-                <div class="col-md-4">
-                </div>
-                <div class="col-md-4" align="center">
-                    <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="#009933" Font-Size="X-Large"></asp:Label>
-                </div>
-                <div class="col-md-4">
-                </div>
+            <div class="col-md-6" align="center">
+                <%--<asp:Button Text="Salir" ID="btnAtras" runat="server" OnClick="btnAtras_Click" CssClass="Image-Prev" Width="210" />--%>
+                <asp:Button Text="Guardar Archivo" ID="btnSiguiente" runat="server" OnClick="btnSiguiente_Click" CssClass="Image-Next" Width="210" />
             </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4" align="center">
+                <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="#009933" Font-Size="X-Large"></asp:Label>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
 
-            <asp:AlanModalPopUp runat="server" ID="mdlTutorial" HeaderText="Tutorial de la Declaración Fiscal" ModalSize="medium">
+        <asp:AlanModalPopUp runat="server" ID="mdlTutorial" HeaderText="Tutorial de la Declaración Fiscal" ModalSize="medium">
 
-                <ContentTemplate>
+            <ContentTemplate>
 
-                    <div id="myCarousel" class="carousel slide" data-ride="false">
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                            <li data-target="#myCarousel" data-slide-to="3"></li>
-                            <li data-target="#myCarousel" data-slide-to="4"></li>
-                        </ol>
+                <div id="myCarousel" class="carousel slide" data-ride="false">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                        <li data-target="#myCarousel" data-slide-to="4"></li>
+                    </ol>
 
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <img src="../../Images/TutorialFiscal/01.png" />
-                            </div>
-
-
-                            <div class="item">
-                                <img src="../../Images/TutorialFiscal/02.png" />
-                            </div>
-
-                            <div class="item">
-                                <img src="../../Images/TutorialFiscal/03.png" />
-                            </div>
-
-                            <div class="item">
-                                <img src="../../Images/TutorialFiscal/04.png" />
-                            </div>
-
-                            <div class="item">
-                                <img src="../../Images/TutorialFiscal/05.png" />
-                            </div>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="../../Images/TutorialFiscal/01.png" />
                         </div>
 
-                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+
+                        <div class="item">
+                            <img src="../../Images/TutorialFiscal/02.png" />
+                        </div>
+
+                        <div class="item">
+                            <img src="../../Images/TutorialFiscal/03.png" />
+                        </div>
+
+                        <div class="item">
+                            <img src="../../Images/TutorialFiscal/04.png" />
+                        </div>
+
+                        <div class="item">
+                            <img src="../../Images/TutorialFiscal/05.png" />
+                        </div>
                     </div>
-                    <div class="center total-width">
-                        <asp:Button ID="btnCerrarModal" runat="server" Text="Cerrar el Tutorial de la Declaración Fiscal" OnClick="btnCerrarModal_Click" />
-                    </div>
-                </ContentTemplate>
-            </asp:AlanModalPopUp>
+
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="center total-width">
+                    <asp:Button ID="btnCerrarModal" runat="server" Text="Cerrar el Tutorial de la Declaración Fiscal" OnClick="btnCerrarModal_Click" />
+                </div>
+            </ContentTemplate>
+        </asp:AlanModalPopUp>
 
         </div>
 
@@ -274,7 +253,7 @@
 </html>
 
 <script>
-const { read } = require("@popperjs/core");
+    const { read } = require("@popperjs/core");
 
     function previewPDF() {
         var reader = new FileReader();
@@ -283,4 +262,6 @@ const { read } = require("@popperjs/core");
             document.getElementById("pdfFiscal").src = reader.result;
         }
     }
+
+
 </script>

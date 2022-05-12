@@ -11,6 +11,7 @@ namespace DeclaraINE.Formas
     {
         blld_USUARIO _oUsuario
         {
+
             get => (blld_USUARIO)Session["oUsuario"];
             set => SessionAdd("oUsuario", value);
         }
@@ -18,10 +19,16 @@ namespace DeclaraINE.Formas
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            blld_USUARIO oUsuario = _oUsuario;
-            string VID_RFC = oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE;
+            
+                blld_USUARIO oUsuario = _oUsuario;
+                string VID_RFC = oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE;
+
+            
+
             DateTime FechaIni = Convert.ToDateTime(System.Configuration.ConfigurationManager.AppSettings["FechaIniMod"]);
             DateTime FechaFin = Convert.ToDateTime(System.Configuration.ConfigurationManager.AppSettings["FechaFinMod"]);
+
+            #region Logica Permisos Admin para menu
             string line;
             bool excep = false;
             var buildDir = HttpRuntime.AppDomainAppPath;
@@ -38,28 +45,40 @@ namespace DeclaraINE.Formas
             if (excep == false)
             {
                 btnAdmin.Visible = false;
-
-                //btnAdmin2.Visible = false;
-                //btnAdmin3.Visible = false;
-                //btnAdmin4.Visible = false;
-                //btnAdmin5.Visible = false;
-                //btnAdmin6.Visible = false;
-                //btnAdmin7.Visible = false;
+                LkFiscal.Visible = false;
             }
             else
             {
                 btnAdmin.Visible = true;
-
-                //btnAdmin2.Visible = true;
-                //btnAdmin3.Visible = true;
-                //btnAdmin4.Visible = true;
-                //btnAdmin5.Visible = true;
-                //btnAdmin6.Visible = true;
-                //btnAdmin7.Visible = true;
-
+                LkFiscal.Visible = true;
             }
+            #endregion  
 
+            #region Logica Permisos para visualizar boton acuse fiscal
+            string lineFiscal;
+            bool excepFiscal = false;
+            var buildDirFiscal = HttpRuntime.AppDomainAppPath;
+            var filePathFiscal = buildDirFiscal + @"\bin\CargaAcuseFiscalExcepcion.txt";
+            StreamReader fileFiscal = new StreamReader(filePathFiscal);
+            while ((lineFiscal = fileFiscal.ReadLine()) != null)
+            {
+                if (VID_RFC.Equals(lineFiscal))
+                {
+                    excepFiscal = true;
+                }
+            }
+            fileFiscal.Close();
+            if (excepFiscal == false)
+            {
 
+                LkFiscal.Visible = false;
+            }
+            else
+            {
+
+                LkFiscal.Visible = true;
+            }
+            #endregion  
 
             LabNombre.Text = oUsuario.V_NOMBRE_COMPLETO;
             labFecha.Text = DateTime.Today.ToString("dd/MMMM/yyyy", new CultureInfo("es-MX")).ToUpper();
@@ -118,25 +137,7 @@ namespace DeclaraINE.Formas
         protected void btnInicio_Click(object sender, EventArgs e)
         {
             Response.Redirect("AvisoPrivacidadDeclaracionInicial.aspx", false);
-            //try
-            //{
-            //    blld_USUARIO oUsuario = _oUsuario;
-            //    blld_DECLARACION oDeclaracion = new blld_DECLARACION(oUsuario.VID_NOMBRE
-            //                                                        , oUsuario.VID_FECHA
-            //                                                        , oUsuario.VID_HOMOCLAVE
-            //                                                        , DateTime.Now.Year.ToString()
-            //                                                        ,1);
-            //    SessionAdd("oDeclaracion", oDeclaracion);
-            //    Response.Redirect("AvisoPrivacidadDeclaracionInicial.aspx",false);
-            //}
-            //catch (Exception ex)
-            //{
-            //    if (ex is CustomException || ex is ConvertionException)
-            //    {
-            //        MsgBox.ShowDanger(ex.Message);
-            //    }
-            //    else throw ex;
-            //}
+
         }
         protected void btnConsultaDeclaracion_Click(object sender, EventArgs e)
         {
@@ -173,21 +174,14 @@ namespace DeclaraINE.Formas
             Response.Redirect("Login.aspx");
         }
 
-        //protected void lkConflicto_Click(object sender, EventArgs e)
-        //{
-        //    //Response.Redirect("DeclaracionConflicto\\Conflicto.aspx"); //Activar de nuevo la llamada de la declaración de conflicto de intereses
-        //    //Response.Redirect("AvisoPrivacidadConflicto.aspx");
-        //}
+
 
         protected void lkFiscal_Click(object sender, EventArgs e)
         {
-            Response.Redirect("DeclaracionFiscal\\declaracionFiscal.aspx");
+            //Pantalla para sustituir el archivo pdf del acuse fiscal
+            Response.Redirect("DeclaracionFiscal\\declaracionFiscalSustituirPdf.aspx");
+
         }
-
-
-
-
-
 
     }
 }

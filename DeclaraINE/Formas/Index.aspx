@@ -138,6 +138,7 @@
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/DescargaAcusesFiscales.aspx" Text="Descarga Acuses Fiscales" ToolTip="Descarga Acuses Fiscales por año" Value="Descarga Acuses Fiscales"></asp:MenuItem>
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/DescargaDeclaracionesPDFs.aspx" Text="Descarga PDF Declaraciones" ToolTip="Descarga PDF's Declaraciones por rango de fecha" Value="Descarga PDF Declaraciones"></asp:MenuItem>
                                                                 </asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/ExcepcionAcuseFiscal.aspx" Text="Excepción Acuse Fiscal RFC" ToolTip="Agregar Excepción para acuse fiscal" Value="RFC Cambio Acuse Fiscal"></asp:MenuItem>
                                                                 <asp:MenuItem NavigateUrl="~/Formas/Administrador/ExcepcionRFC.aspx" Text="Excepción RFC" ToolTip="Agregar Excepción de RFC" Value="Excepción RFC"></asp:MenuItem>
                                                                 <asp:MenuItem NavigateUrl="~/Formas/Administrador/GeneraNombreArchivoPDF.aspx" Text="Genera Nombre Archivo PDF" ToolTip="Genera Nombre del archivo PDF" Value="Genera PDF"></asp:MenuItem>
                                                                 <asp:MenuItem Text="Menú Reportes" Value="Menú Reportes" ToolTip="Menú de reportes">
@@ -296,17 +297,21 @@
                             </div>
                         </div>--%>
 
+                        
                         <!--OEVM Imagen de acceso para la pantalla de Declaración Fiscal-->
-                        <%--<div class="col-lg-4 col-md-6">
+                        <!--OEVM-20220511 - Se activa bajo una condicion de contar con permisos para visualizarlo-->
+                        <div class="col-lg-4 col-md-6">
                             <div class="single_destination">
                                 <asp:LinkButton ID="LkFiscal" runat="server" OnClick="lkFiscal_Click"> <div class="thumb">
                                     <img src="../Images/DeclaraFiscal.png" />
                                 </div>
                                 <div class="content">
                                     <p class="d-flex align-items-center">
-                                       Declaración Fiscal </p></div></asp:LinkButton>
+                                       Sustituir Acuse Fiscal </p></div></asp:LinkButton>
                             </div>
-                        </div>--%>
+                        </div>
+
+
                         <div class="col-lg-4 col-md-6">
                             <div class="single_destination">
                                 <asp:LinkButton ID="lkAdmin" runat="server" OnClick="lkAdmin_Click"> <div class="thumb"><img src="../Images/administration.jpg" />
