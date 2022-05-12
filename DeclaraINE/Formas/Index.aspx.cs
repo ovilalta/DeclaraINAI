@@ -1,5 +1,7 @@
 ﻿using Declara_V2.BLLD;
 using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.IO;
 using System.Web;
@@ -17,13 +19,15 @@ namespace DeclaraINE.Formas
         }
 
 
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-                blld_USUARIO oUsuario = _oUsuario;
-                string VID_RFC = oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE;
 
-            
+            blld_USUARIO oUsuario = _oUsuario;
+            string VID_RFC = oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE;
+
+
 
             DateTime FechaIni = Convert.ToDateTime(System.Configuration.ConfigurationManager.AppSettings["FechaIniMod"]);
             DateTime FechaFin = Convert.ToDateTime(System.Configuration.ConfigurationManager.AppSettings["FechaFinMod"]);
@@ -52,33 +56,59 @@ namespace DeclaraINE.Formas
                 btnAdmin.Visible = true;
                 LkFiscal.Visible = true;
             }
-            #endregion  
+            #endregion
 
             #region Logica Permisos para visualizar boton acuse fiscal
-            string lineFiscal;
+
+            MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+            string connString = db.Database.Connection.ConnectionString;
+            string sql = "SP_BuscaRfcAcuseFiscal";
             bool excepFiscal = false;
-            var buildDirFiscal = HttpRuntime.AppDomainAppPath;
-            var filePathFiscal = buildDirFiscal + @"\bin\CargaAcuseFiscalExcepcion.txt";
-            StreamReader fileFiscal = new StreamReader(filePathFiscal);
-            while ((lineFiscal = fileFiscal.ReadLine()) != null)
+            using (SqlConnection conn = new SqlConnection(connString))
             {
-                if (VID_RFC.Equals(lineFiscal))
+                try
                 {
-                    excepFiscal = true;
+                    conn.Open();
+                    using (SqlCommand cmd= new SqlCommand(sql, conn))
+                    {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        SqlDataReader drd = cmd.ExecuteReader(CommandBehavior.Default);
+
+                        if (drd!=null)
+                        {
+
+                            while (drd.Read())
+                            {
+                                string rfcTemp = drd.GetString(0);
+                                if (rfcTemp == VID_RFC)
+                                {
+                                    excepFiscal = true;
+                                }
+                            }
+                            conn.Close();
+                        }
+                        
+                        if (excepFiscal == false)
+                        {
+                            LkFiscal.Visible = false;
+                        }
+                        else
+                        {
+                            LkFiscal.Visible = true;
+                        }
+
+                    }
                 }
-            }
-            fileFiscal.Close();
-            if (excepFiscal == false)
-            {
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
 
-                LkFiscal.Visible = false;
             }
-            else
-            {
 
-                LkFiscal.Visible = true;
-            }
-            #endregion  
+            #endregion
 
             LabNombre.Text = oUsuario.V_NOMBRE_COMPLETO;
             labFecha.Text = DateTime.Today.ToString("dd/MMMM/yyyy", new CultureInfo("es-MX")).ToUpper();

@@ -35,17 +35,14 @@ namespace DeclaraINE.Formas.declaracionFiscalSustituirPdf
             string FileName = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
 
             string anio = DateTime.Today.Year.ToString();
-            string rutaDirectorio = "\\Formas\\DeclaracionFiscal\\pdfFiscales\\" + anio;
+            string rutaDirectorio = "pdfFiscales\\" + anio;
 
-            string fileExtension = Path.GetExtension(FileUpload1.FileName);
+           
             
-
-            string ruta = rutaDirectorio + "\\";
-            string path = AppDomain.CurrentDomain.BaseDirectory + ruta;
+            string path = rutaDirectorio + "\\" + FileName + ".pdf";
 
 
-            //pdfFiscal.Attributes["src"] = path + FileName + ".pdf";
-            //pdfembed.Attributes["src"] = path + FileName + ".pdf";
+            pdfFiscal.Attributes["src"] = rutaDirectorio + "\\" + FileName + ".pdf";
 
         }
 
@@ -83,11 +80,12 @@ namespace DeclaraINE.Formas.declaracionFiscalSustituirPdf
                 if (fileExtension.ToLower() == ".pdf")
                 {
                     FileUpload1.SaveAs(Server.MapPath("~" + ruta + nombreArchivo + fileExtension));
-                    //string usuarioObligado = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
+                    
+                   EliminaRFC(nombreArchivo);
+                   
+                    
 
-                    QstBox.AskSuccess("Proceso Satisfactorio", "Su acuse fiscal se sustituyó de manera correcta!");
-                    EliminaRFC(nombreArchivo);
-                    //MsgBox.ShowSuccess("Proceso Satisfactorio", "Su acuse fiscal se sustituyó de manera correcta!");
+                   
                 }
                 else
                 {
@@ -104,7 +102,6 @@ namespace DeclaraINE.Formas.declaracionFiscalSustituirPdf
         protected void QstBox_Yes(object Sender, EventArgs e)
         {
 
-
             Response.Redirect("../Index.aspx");
         }
 
@@ -113,50 +110,58 @@ namespace DeclaraINE.Formas.declaracionFiscalSustituirPdf
             Response.Redirect("../Index.aspx");
         }
 
-        private void EliminaRFC(string RFC)
+        private  void EliminaRFC(string RFC)
         {
-
-
 
             #region Logica quitar Permisos para visualizar boton acuse fiscal
 
-            var buildDirFiscal = HttpRuntime.AppDomainAppPath;
-            var filePathFiscal = buildDirFiscal + @"\bin\CargaAcuseFiscalExcepcion.txt";
-            var fileTemp = buildDirFiscal + @"\bin\fileTemp.txt";
 
-            using (StreamWriter fileWrite = new StreamWriter(fileTemp))
+
+            MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+            string connString = db.Database.Connection.ConnectionString;
+            string sql = "SP_EliminaRfcAcuseFiscal";
+            int rpta = 0;
+            using (SqlConnection conn = new SqlConnection(connString))
             {
-                using (StreamReader fileFiscal = new StreamReader(filePathFiscal))
+                try
                 {
-                    string lineFiscal;
-
-                    while ((lineFiscal = fileFiscal.ReadLine()) != null)
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
 
-                        if (RFC != lineFiscal)
-                        {
-                            fileWrite.WriteLine(lineFiscal);
-                        }
-                    }
-                    fileFiscal.Close();
-                }
-            }
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@rfc", RFC);
 
-            //aqui se renombrea el archivo temporal
-            File.Delete(filePathFiscal);
-            File.Move(fileTemp, filePathFiscal);
+                        rpta = cmd.ExecuteNonQuery();
+
+
+                    }
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    conn.Close();
+                    rpta = 0;
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+
+            }
 
             #endregion
 
+            if (rpta == -1)
+            {
+                QstBox.AskSuccess("Proceso Satisfactorio", "Su acuse fiscal se sustituyó de manera correcta!");
+            }
         }
 
 
-        //protected void btnAtras_Click(object sender, EventArgs e)
-        //{
-        //    //Atras regresara a la pantalla principal
-        //    Response.Redirect("../Index.aspx");
+        protected void btnAtras_Click(object sender, EventArgs e)
+        {
+            //Atras regresara a la pantalla principal
+            Response.Redirect("../Index.aspx");
 
-        //}
+        }
 
 
 

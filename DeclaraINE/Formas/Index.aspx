@@ -25,8 +25,8 @@
     <link rel="stylesheet" href="../css/font-awesome.min.css" />
     <link rel="stylesheet" href="../css/animate.css" />
     <link rel="stylesheet" href="../css/slicknav.css" />
-    <link rel="stylesheet" href="../css/style.css?1" />
-    <link rel="stylesheet" href="../css/modal.css?1" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/modal.css" />
     <style>
         .ocultarBoton {
             display: none;
@@ -298,18 +298,7 @@
                         </div>--%>
 
                         
-                        <!--OEVM Imagen de acceso para la pantalla de Declaración Fiscal-->
-                        <!--OEVM-20220511 - Se activa bajo una condicion de contar con permisos para visualizarlo-->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single_destination">
-                                <asp:LinkButton ID="LkFiscal" runat="server" OnClick="lkFiscal_Click"> <div class="thumb">
-                                    <img src="../Images/DeclaraFiscal.png" />
-                                </div>
-                                <div class="content">
-                                    <p class="d-flex align-items-center">
-                                       Sustituir Acuse Fiscal </p></div></asp:LinkButton>
-                            </div>
-                        </div>
+                        
 
 
                         <div class="col-lg-4 col-md-6">
@@ -330,9 +319,21 @@
                                     <p>Consulta de Declaraciones</p></div></asp:LinkButton>
                             </div>
                         </div>
+                        <!--OEVM Imagen de acceso para la pantalla de Declaración Fiscal-->
+                        <!--OEVM-20220511 - Se activa bajo una condicion de contar con permisos para visualizarlo-->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single_destination">
+                                <asp:LinkButton ID="LkFiscal" runat="server" OnClick="lkFiscal_Click"> <div class="thumb">
+                                    <img src="../Images/DeclaraFiscal.png" />
+                                </div>
+                                <div class="content">
+                                    <p class="d-flex align-items-center">
+                                       Sustituir Acuse Fiscal </p></div></asp:LinkButton>
+                            </div>
+                        </div>
                     </div>
 
-
+                    
 
                 </div>
             </div>

@@ -159,15 +159,6 @@ namespace DeclaraINE.Formas
         protected global::System.Web.UI.WebControls.LinkButton lkConclusion;
 
         /// <summary>
-        /// Control LkFiscal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LkFiscal;
-
-        /// <summary>
         /// Control lkAdmin.
         /// </summary>
         /// <remarks>
@@ -184,6 +175,15 @@ namespace DeclaraINE.Formas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lkConsultaDeclaraciones;
+
+        /// <summary>
+        /// Control LkFiscal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LkFiscal;
 
         /// <summary>
         /// Control btnConsultaDeclaracion.

@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - DeclaraINAI</title>
     <asp:PlaceHolder runat="server"></asp:PlaceHolder>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <script src="../../Scripts/AlanWebControls.js"></script>
     <script src="../../Scripts/Site.js"></script>
@@ -124,54 +124,41 @@
                 </div>
                 <div class="col-md-6" align="center">
                     <label>Ejemplo Acuse Fiscal</label>
-                    <img src="../../images/HeaderFiscal.jpg" width="550px" height="280px" />
+                    <img src="../../images/HeaderFiscal.jpg" width="550" height="280" />
                 </div>
                 <div class="col-md-3">
                 </div>
             </div>
-            <br />
+
             <hr />
-
-
-
-
 
             <%-- Boton carga archivo pdf --%>
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-3">
                 </div>
-                <div class="col-md-8" align="center">
-                    <label>
-                        <h3>Carga aquí tu acuse fiscal</h3>
-                    </label>
+                <div class="col-md-6" align="center">
 
-                    <iframe style="display: block" id="pdfFiscal" width="1000" height="400" runat="server" src="D:\DevDeclaraINAI2022\DeclaraINAI\DeclaraINE\Formas\DeclaracionFiscal\pdfFiscales\2022\VIMO730413V48.pdf"></iframe>
+                    <label class="h2" style="color:tomato">Previsualización del archivo cargado con anterioridad</label>
+                    <br />
                     
+                    
+                    <iframe style="display: block" id="pdfFiscal" width="600" height="400" runat="server" type="application/pdf" ></iframe>
+                         <br />               
                     <asp:FileUpload ID="FileUpload1" runat="server" Width="400px" Height="50px" accept="application/pdf" onchange="previewPDF()" />
 
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
             </div>
         </div>
 
-        <%--<div class="row">                    
-                    <div class="col-md-3">                            
-                    </div>                    
-                    <div class="col-md-6" align="center">
-                        <asp:Button Text="Guardar" ID="Button1" runat="server" OnClick="Button1_Click" CssClass="Image-SaveArchive" width="210" />
-                        
-                    </div>                    
-                    <div class="col-md-3">                        
-                    </div>                    
-                 </div>--%>
-        <br />
+
         <%-- Botones de cargar y cancelar --%>
         <div class="row">
             <div class="col-md-3">
             </div>
             <div class="col-md-6" align="center">
-                <%--<asp:Button Text="Salir" ID="btnAtras" runat="server" OnClick="btnAtras_Click" CssClass="Image-Prev" Width="210" />--%>
+                <asp:Button Text="Salir" ID="btnAtras" runat="server" OnClick="btnAtras_Click" CssClass="Image-Prev" Width="210" />
                 <asp:Button Text="Guardar Archivo" ID="btnSiguiente" runat="server" OnClick="btnSiguiente_Click" CssClass="Image-Next" Width="210" />
             </div>
             <div class="col-md-3">
@@ -240,7 +227,7 @@
             </ContentTemplate>
         </asp:AlanModalPopUp>
 
-        </div>
+
 
 
     </form>
@@ -263,5 +250,5 @@
         }
     }
 
-
+   
 </script>
