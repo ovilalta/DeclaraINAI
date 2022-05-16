@@ -14,6 +14,7 @@ using Spire.Xls;
 using System.Linq;
 
 using System.Collections.Generic;
+using System.IO.Compression;
 
 namespace DeclaraINE.Formas.Administrador
 {
@@ -140,42 +141,42 @@ namespace DeclaraINE.Formas.Administrador
                                     if (drd != null)
                                     {
                                         int i = 2;
-                                        
+
 
                                         while (drd.Read())
                                         {
-                                            
+
                                             string uaTemp = drd.GetString(0).Trim();
-                                            
 
-                                                using (SqlDataAdapter da2 = new SqlDataAdapter())
-                                                {
-                                                    
-                                                    //Reporte detalle
-                                                    da2.SelectCommand = new SqlCommand(sql4, conn);
-                                                    da2.SelectCommand.CommandType = CommandType.StoredProcedure;
-                                                    da2.SelectCommand.Parameters.Add(new SqlParameter("@anio", SqlDbType.VarChar)).Value = txtAnio.Text;
-                                                    da2.SelectCommand.Parameters.Add(new SqlParameter("@ua", SqlDbType.VarChar)).Value = uaTemp;
 
-                                                    DataTable dt3 = new DataTable();
-                                                    da2.Fill(dt3);
+                                            using (SqlDataAdapter da2 = new SqlDataAdapter())
+                                            {
 
-                                                    sheet = book.Worksheets[i];
+                                                //Reporte detalle
+                                                da2.SelectCommand = new SqlCommand(sql4, conn);
+                                                da2.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                                da2.SelectCommand.Parameters.Add(new SqlParameter("@anio", SqlDbType.VarChar)).Value = txtAnio.Text;
+                                                da2.SelectCommand.Parameters.Add(new SqlParameter("@ua", SqlDbType.VarChar)).Value = uaTemp;
 
-                                                    sheet.Name = uaTemp;
-                                                    sheet.InsertDataTable(dt3, true, 1, 1);
-                                                    sheet.DefaultColumnWidth = 25;
+                                                DataTable dt3 = new DataTable();
+                                                da2.Fill(dt3);
 
-                                                    
-                                                    //book.SaveToHttpResponse(uaTemp + ".xls", Response);
+                                                sheet = book.Worksheets[i];
 
-                                                }
+                                                sheet.Name = uaTemp;
+                                                sheet.InsertDataTable(dt3, true, 1, 1);
+                                                sheet.DefaultColumnWidth = 25;
 
-                                            
+
+                                                //book.SaveToHttpResponse(uaTemp + ".xls", Response);
+
+                                            }
+
+
                                             i++;
                                         }
                                         conn.Close();
-                                        
+
                                     }
 
 
@@ -199,14 +200,37 @@ namespace DeclaraINE.Formas.Administrador
                         Console.WriteLine("Error: " + ex.Message);
                     }
                 }
-                
-              
-                
+
+
+
 
             }
         }
 
-
+        public static void CreateEmptyDirectory(string fullPath)
+        {
+            if (!System.IO.Directory.Exists(fullPath))
+            {
+                System.IO.Directory.CreateDirectory(fullPath);
+            }
+        }
+        public static void DeleteFolder(string fullPath)
+        {
+            if (System.IO.Directory.Exists(fullPath))
+            {
+                System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(fullPath)
+                {
+                    Attributes = System.IO.FileAttributes.Normal
+                };
+                foreach (var info in directory.GetFileSystemInfos("*", System.IO.SearchOption.AllDirectories))
+                {
+                    System.IO.FileInfo fInfo = info as System.IO.FileInfo;
+                    if (fInfo != null) info.Attributes = System.IO.FileAttributes.Normal;
+                }
+                System.Threading.Thread.Sleep(100);
+                directory.Delete(true);
+            }
+        }
         protected void btnDescargar_ActualizarZIP(object sender, EventArgs e)
         {
             if (txtAnio.Text == "" || txtAnio.Text == null)
@@ -222,6 +246,11 @@ namespace DeclaraINE.Formas.Administrador
                 string sql2 = "SP_ReporteDeclaracionesPlantillaModificacionResumen";
                 string sql3 = "SP_ReporteListaUAs";
                 string sql4 = "SP_ReporteDeclaracionesPlantillaModificacionArea";
+
+
+                string rutaDirectorio = AppDomain.CurrentDomain.BaseDirectory + "Formas\\zip"; //Asigna ruta donde se guardaran los archivos pdf
+                DeleteFolder(rutaDirectorio);  //Limpia el folder para asegurar que no tenga archivos
+                CreateEmptyDirectory(rutaDirectorio); //Crea el folder de nueva cuenta para ser utilizado
 
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
@@ -250,7 +279,7 @@ namespace DeclaraINE.Formas.Administrador
                             //Guarda la info en el excel
 
                             Workbook book = new Workbook();
-                            book.CreateEmptySheets(40);
+                            //book.CreateEmptySheets(40);
                             Worksheet sheet = book.Worksheets[0];
                             Worksheet sheet2 = book.Worksheets[1];
 
@@ -268,7 +297,7 @@ namespace DeclaraINE.Formas.Administrador
                             sheet.DefaultColumnWidth = 25;
                             sheet2.DefaultColumnWidth = 25;
 
-                            book.SaveToFile("AvanceDeclaraciones2022.xls");
+                            book.SaveToFile(rutaDirectorio + @"\AvanceDeclaraciones2022.xls", ExcelVersion.Version97to2003);
 
                             //Lista UAs
                             //Reporte que genera xls por area
@@ -284,12 +313,12 @@ namespace DeclaraINE.Formas.Administrador
 
                                     if (drd != null)
                                     {
-                                        int i = 2;
+                                        //int i = 0;
 
 
                                         while (drd.Read())
                                         {
-
+                                            Workbook book2 = new Workbook();
                                             string uaTemp = drd.GetString(0).Trim();
 
 
@@ -305,14 +334,19 @@ namespace DeclaraINE.Formas.Administrador
                                                 DataTable dt3 = new DataTable();
                                                 da2.Fill(dt3);
 
-                                                sheet = book.Worksheets[i];
+                                                sheet = book2.Worksheets[0];
 
                                                 sheet.Name = uaTemp;
                                                 sheet.InsertDataTable(dt3, true, 1, 1);
                                                 sheet.DefaultColumnWidth = 25;
 
+                                                dt3.Clear();
+
                                             }
-                                            i++;
+                                            //i++;
+
+                                            book2.SaveToFile(rutaDirectorio + "\\" + uaTemp + @".xls", ExcelVersion.Version97to2003);
+
                                         }
                                         conn.Close();
 
@@ -325,8 +359,25 @@ namespace DeclaraINE.Formas.Administrador
                                 Console.WriteLine("Error: " + ex.Message);
                             }
 
-                           
-                            book.SaveToHttpResponse("ReporteDeclaracionesPlantillaModificacion.xls", Response);
+                            string startPath = rutaDirectorio; //folder to add
+                            string zipPath = AppDomain.CurrentDomain.BaseDirectory + "Formas\\zipAvanceDeclaraciones" + "\\AvancePorArea.zip"; //URL for your Zip file
+
+                            ZipFile.CreateFromDirectory(startPath, zipPath, CompressionLevel.Optimal, true);
+
+                            DeleteFolder(rutaDirectorio);  //Limpia el folder para asegurar que no tenga archivos
+                            CreateEmptyDirectory(rutaDirectorio); //Crea el folder de nueva cuenta para ser utilizado
+
+                            HttpContext.Current.Response.ClearContent();
+                            HttpContext.Current.Response.Clear();
+                            HttpContext.Current.Response.ContentType = "application/zip"; // sf.MimeType;
+                            HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=AvancePorArea.zip");
+                            HttpContext.Current.Response.WriteFile(zipPath);
+                            HttpContext.Current.Response.Flush();
+                            System.IO.File.Delete(zipPath);
+                            HttpContext.Current.Response.End();
+
+
+
 
                         }
                     }
@@ -340,4 +391,3 @@ namespace DeclaraINE.Formas.Administrador
         }
     }
 }
-
