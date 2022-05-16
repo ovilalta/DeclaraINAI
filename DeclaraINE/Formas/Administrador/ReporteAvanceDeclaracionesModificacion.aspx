@@ -126,6 +126,7 @@
 
                         <br />
                         <asp:Button ID="brnActualizar" runat="server" Text="Generar reporte" OnClick="btnDescargar_Actualizar" CssClass="xls" />
+                        <asp:Button ID="BtnDescargaZip" runat="server" Text="Generar reporte Archivos Separados" OnClick="btnDescargar_ActualizarZIP" CssClass="xls" />
                         <div class="bar">
                         </div>
                     </div>
