@@ -15,6 +15,15 @@ namespace DeclaraINE.Formas.DeclaracionInicial
     {
 
         /// <summary>
+        /// Control MsgBox.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AlanWebControls.AlanMessageBox MsgBox;
+
+        /// <summary>
         /// Control btnsBuscaridEtica.
         /// </summary>
         /// <remarks>

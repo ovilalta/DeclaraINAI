@@ -122,10 +122,14 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             if (lConducta && lEtica)
             {
                 mppAcepta.Show(true);
+                marcaApartado(13);
+                blld_DECLARACION oDeclaracion = _oDeclaracion;
+                Response.Redirect("Envio.aspx");
             }
-            marcaApartado(13);
-            blld_DECLARACION oDeclaracion = _oDeclaracion;
-            Response.Redirect("Envio.aspx");
+            else
+            {
+                MsgBox.ShowDanger("Debe VER el código de Ética y el código de Conducta para cumplir con este apartado");
+            }
         }
 
         private void marcaApartado(int NID_APARTADO)
@@ -148,7 +152,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
 
         protected void QstBox_No(object Sender, EventArgs e)
         {
-            marcaApartado(13);
+            //marcaApartado(13);
             Response.Redirect("Envio.aspx");
         }
 

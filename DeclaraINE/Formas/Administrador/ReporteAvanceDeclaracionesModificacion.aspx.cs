@@ -339,7 +339,7 @@ namespace DeclaraINE.Formas.Administrador
 
 
                                                 IEnumerable<DataRow> responsable = dt3.AsEnumerable()
-                                                    .Where(p => p.Field<string>("NIVEL").Trim() == "KA4" || p.Field<string>("NIVEL").Trim() == "KB2" || p.Field<string>("NIVEL").Trim() == "MC5");
+                                                    .Where(p => p.Field<string>("NIVEL").Trim() == "KA4" || p.Field<string>("NIVEL").Trim() == "KB2" || p.Field<string>("NIVEL").Trim() == "MC5" || p.Field<string>("NIVEL").Trim() == "MB2");
 
                                                 
                                                     DataRow nombreResponsable = responsable.OrderBy(r=>r[2]).    First();

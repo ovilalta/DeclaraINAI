@@ -34,38 +34,10 @@
 
 }
 </style>
-    <%--    <script type="text/javascript">
-        function nombrecampo(nombre, area, maximo) {
-            NombreTXT = nombre;
-            limite = maximo;
-            numeroDeC = area.value.length;
-
-            if (numeroDeC > limite) {
-                area.value = area.value.substring(0, limite);
-            }
-            else {
-                if (NombreTXT == "txtObservaciones") {
-                    $('#<%=txtcuenta.ClientID%>').val(Text = "Número de caractéres capturados:" + numeroDeC);
-                }
-            }
-        }
-    </script>
 
 
-    <asp:AlanQuestionBox runat="server" ID="QstBox" NoText="No" YesText="Si" OnNo="QstBox_No" OnYes="QstBox_Yes"  YesCssClass="" NoCssClass="" />
-
-    <div class="subtitulo">
-        <asp:Literal ID="ltrSubTitulo" runat="server" Text="Observaciones y Aclaraciones"></asp:Literal>
-    </div>
     <asp:AlanMessageBox runat="server" ID="MsgBox" />
-    <asp:AlanAlert runat="server" ID="AlertaSuperior" />
-    <div id="cuerpo">
-        <asp:TextBox ID="txtcuenta" Text="Número de caractéres capturados: 0" runat="server" BackColor="#EEEEEE" ReadOnly="True"></asp:TextBox>
-        <asp:TextBox ID="TextBox1" Text="Número máximo de caracteres permitidos: 1000" runat="server" BackColor="#EEEEEE" ReadOnly="True"></asp:TextBox>
-        <asp:TextBox ID="txtObservaciones" runat="server" onkeyDown="nombrecampo('txtObservaciones',this,'1000')"
-            onkeyup="nombrecampo('txtObservaciones',this,'1000')" MaxLength="1000" TextMode="MultiLine" Width="100%"></asp:TextBox>
-
-    </div>--%>
+   
     <div class="modal-dialog" style="display: contents;">
         <%--  <Triggers>
              <asp:PostBackTrigger ControlID = "idConducta_Click"/>
@@ -93,12 +65,14 @@
                 <p style="text-align: justify"><a style="font-weight: bold">El Código de Conducta </a>busca explicar cómo deben ponerse en práctica los principios y valores contenidos en el 
                     Código de Ética del INAI, así como los estándares de comportamiento que deben guiar la actuación de las funcionarias y funcionarios del INAI.</p>
                 <p style="text-align: right">
+
+                    <p style="text-align: justify"><a style="font-weight: bold">Última actualización 13 de abril de 2022  ACT-PUB/31/03/2022.6.</a></p>
                     <div class="  button-container" style="text-align: right;">
                         <asp:Button ID="btnsBuscaridConducta" Style="background-color: #fff;" runat="server" Text="Ver" OnClick="idConducta_Click" ClientIDMode="Static" />
                     </div>
                 </p>
                
-                <p style="text-align: justify">Deberás oprimir el botón de "VER" para poder continuar con tu declaración.</p>
+                <p style="text-align: justify">Deberás oprimir el botón de <a style="font-weight: bold">"VER" </a> para poder continuar con tu declaración.</p>
                 <br />
                 <br />
             </div>
