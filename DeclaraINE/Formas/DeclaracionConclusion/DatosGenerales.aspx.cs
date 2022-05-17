@@ -266,15 +266,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                 txtVIdHomoClave.Text = oUsuario.VID_HOMOCLAVE;
 
 
-                blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
-                oPuesto.select();
-                cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO.OrderBy(x => x.NOMBRE_UA)
-                    .ThenBy(x => x.VID_NIVEL)
-                    .ThenBy(x => x.V_PUESTO);
-                //cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO.OrderBy(x => x.VID_PUESTO);
-                cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.VID_PUESTO.ToString();
-                cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString();
-                cmbVID_CLAVEPUESTO.DataBind();
+               
 
                 blld__l_CAT_PRIMER_NIVEL oPrimerNivel = new blld__l_CAT_PRIMER_NIVEL();
                 oPrimerNivel.OrderByCriterios.Add(new Declara_V2.Order(CAT_PRIMER_NIVEL.Properties.V_PRIMER_NIVEL));
@@ -284,6 +276,19 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                 cmbVID_PRIMER_NIVEL.DataValueField = CAT_PRIMER_NIVEL.Properties.VID_PRIMER_NIVEL.ToString();
                 cmbVID_PRIMER_NIVEL.DataBind();
                 txtVID_PRIMER_NIVEL_TextChanged(cmbVID_PRIMER_NIVEL, null);
+
+                //OEVM - lo movi de lugar para que se lea posterior a la carga del combo de primer nivel - 20220517
+                blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
+                oPuesto.select();
+                cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO.OrderBy(x => x.NOMBRE_UA)
+                    .ThenBy(x => x.VID_NIVEL)
+                    .ThenBy(x => x.V_PUESTO);
+
+                //OEVM - Agregue estas lineas para que salga la info completa en el combo de catalogo de puestos - 20220517
+                cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.CLAVE_NOMBRE_PUESTO.ToString();
+                cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString(); //Trae la descripcion completa para el combo
+                cmbVID_CLAVEPUESTO.DataBind();
+
 
                 grdPreguntas.DataBind(oDeclaracion.DECLARACION_RESTRICCIONESs);
                 blld__l_CAT_ENTIDAD_FEDERATIVA oFed = new blld__l_CAT_ENTIDAD_FEDERATIVA();
@@ -1241,9 +1246,20 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
         {
             try
             {
-                blld_CAT_PUESTO oPuesto = new blld_CAT_PUESTO(cmbVID_CLAVEPUESTO.SelectedItem.Text, cmbVID_NIVEL.SelectedValue());
-                //txtV_DENOMINACION_PUESTO.Text = oPuesto.V_PUESTO_COMPUESTO;
-                txtV_DENOMINACION_PUESTO.Text = oPuesto.V_PUESTO;
+                //OEVM - 20220517 - Se agrega todo lo del try para manejo del catalogo de puestos
+                int indice = cmbVID_CLAVEPUESTO.SelectedItem.Text.IndexOf("|");
+
+                if (indice > 0)
+                {
+                    blld_CAT_PUESTO oPuesto = new blld_CAT_PUESTO(cmbVID_CLAVEPUESTO.SelectedItem.Text.Substring(0, indice), cmbVID_NIVEL.SelectedValue());
+                    txtV_DENOMINACION_PUESTO.Text = oPuesto.V_PUESTO;
+                }
+                else
+                {
+
+                    blld_CAT_PUESTO oPuesto = new blld_CAT_PUESTO(cmbVID_CLAVEPUESTO.SelectedItem.Text, cmbVID_NIVEL.SelectedValue());
+                    txtV_DENOMINACION_PUESTO.Text = oPuesto.V_PUESTO;
+                }
             }
             catch
             {
@@ -1254,7 +1270,20 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
         protected void cmbVID_CLAVEPUESTO_SelectedIndexChanged(object sender, EventArgs e)
         {
             blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
-            oPuesto.VID_PUESTO = new Declara_V2.StringFilter(cmbVID_CLAVEPUESTO.SelectedItem.Text);
+
+
+            //OEVM - 20220517 - se agrega para el manejo del combo
+            int indice = cmbVID_CLAVEPUESTO.SelectedItem.Text.IndexOf("|");
+
+            if (indice > 0)
+            {
+                oPuesto.VID_PUESTO = new Declara_V2.StringFilter(cmbVID_CLAVEPUESTO.SelectedItem.Text.Substring(0, indice));
+
+            }
+            else
+            {
+                oPuesto.VID_PUESTO = new Declara_V2.StringFilter(cmbVID_CLAVEPUESTO.SelectedItem.Text);
+            }
             oPuesto.L_ACTIVO = true;
             //if(oPuesto.L_OBLIGADO==false)
             //{
@@ -1263,8 +1292,10 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
             //}
 
             oPuesto.select();
-            cmbVID_NIVEL.DataBind(oPuesto.lista_CAT_PUESTO.OrderBy(x => x.V_PUESTO), CAT_PUESTO.Properties.NID_PUESTO, CAT_PUESTO.Properties.V_PUESTO_NIVEL);
+            cmbVID_NIVEL.DataBind(oPuesto.lista_CAT_PUESTO.OrderBy(x => x.V_PUESTO), 
+                CAT_PUESTO.Properties.NID_PUESTO, CAT_PUESTO.Properties.V_PUESTO_NIVEL);
             txtV_DENOMINACION_PUESTO.Text = String.Empty;
+            txtV_DENOMINACION_PUESTO.Text = cmbVID_CLAVEPUESTO.SelectedItem.Text; //OEVM - 20220517 - Se agrega para el manejo del combo de cat puesto
             cmbVID_NIVEL.Items.Insert(0, new ListItem(String.Empty));
             cmbVID_NIVEL.SelectedValue = String.Empty;
         }
