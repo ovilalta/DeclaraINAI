@@ -292,6 +292,8 @@ namespace DeclaraINE.Formas.Administrador
                             sheet2.Name = "Resumen";
                             //Inserta datos en las hojas
                             sheet.InsertDataTable(dt, true, 1, 1);
+                            sheet.Range["A1:J1"].Style.Font.IsBold = true;
+                            sheet.AutoFilters.Range = sheet.Range["A1:J1"];
                             sheet2.InsertDataTable(dt2, true, 1, 1);
 
                             sheet.DefaultColumnWidth = 25;
@@ -334,10 +336,39 @@ namespace DeclaraINE.Formas.Administrador
                                                 DataTable dt3 = new DataTable();
                                                 da2.Fill(dt3);
 
+
+
+                                                IEnumerable<DataRow> responsable = dt3.AsEnumerable()
+                                                    .Where(p => p.Field<string>("NIVEL").Trim() == "KA4" || p.Field<string>("NIVEL").Trim() == "KB2" || p.Field<string>("NIVEL").Trim() == "MC5");
+
+                                                
+                                                    DataRow nombreResponsable = responsable.OrderBy(r=>r[2]).    First();
+
+                                                
+
+                                                DataRow row = dt3.Rows[1];
+                                                string UaNombre = row["UnidadAdministrativa"].ToString().Trim();
+                                                string nomResponsable = nombreResponsable["NOMBRE"].ToString().Trim();
+
                                                 sheet = book2.Worksheets[0];
 
                                                 sheet.Name = uaTemp;
-                                                sheet.InsertDataTable(dt3, true, 1, 1);
+                                                sheet.Range[1, 1].Value = "Nombre del área";
+                                                sheet.Range[2, 1].Value = "Nombre del responsable";
+                                                sheet.Range[1, 2].Value = UaNombre;
+                                                sheet.Range[2, 2].Value = nomResponsable;
+                                                //sheet.Range[2, 2].Value = responsable;
+                                                sheet.Range["A1"].Style.Font.IsBold = true;
+                                                sheet.Range["A2"].Style.Font.IsBold = true;
+                                                sheet.Range["A5:E5"].Style.Font.IsBold = true;
+                                                sheet.InsertDataTable(dt3, true, 5, 1);
+                                                sheet.Range[5, 1].Value = "Nombre del personal";
+                                                sheet.Range[5, 2].Value = "Estatus Declaración";
+                                                sheet.Range[5, 3].Value = "Puesto";
+                                                sheet.Range[5, 4].Value = "Denominación del cargo";
+                                                sheet.Range[5, 5].Value = "Unidad Administrativa";
+                                                sheet.HideColumn(5);
+                                                sheet.AutoFilters.Range = sheet.Range["A5:E5"];
                                                 sheet.DefaultColumnWidth = 25;
 
                                                 dt3.Clear();
