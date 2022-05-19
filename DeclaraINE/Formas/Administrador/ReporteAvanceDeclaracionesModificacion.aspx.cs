@@ -121,13 +121,13 @@ namespace DeclaraINE.Formas.Administrador
                             sheet2.Name = "Resumen";
                             //Inserta datos en las hojas
                             sheet.InsertDataTable(dt, true, 1, 1);
+                            sheet2.InsertDataTable(dt2, true, 1, 1);
 
                             sheet.AutoFilters.Range = sheet.Range["A1:J1"];
                             sheet.Range["A1:J1"].Style.Font.IsBold = true;
-                            sheet2.InsertDataTable(dt2, true, 1, 1);
-                            sheet2.AutoFilters.Range = sheet.Range["A1:C1"];
-                            sheet2.Range["A1:C1"].Style.Font.IsBold = true;
                             sheet.DefaultColumnWidth = 25;
+                            sheet2.AutoFilters.Range = sheet2.Range["A1:C1"];
+                            sheet2.Range["A1:C1"].Style.Font.IsBold = true;
                             sheet2.DefaultColumnWidth = 25;
 
                             //Lista UAs
@@ -310,14 +310,14 @@ namespace DeclaraINE.Formas.Administrador
 
                                     if (drd != null)
                                     {
-                         
+
 
                                         while (drd.Read())
                                         {
                                             Workbook book2 = new Workbook();
                                             string uaTemp = drd.GetString(0).Trim();
 
-
+                                            bool flag = false;
                                             using (SqlDataAdapter da2 = new SqlDataAdapter())
                                             {
 
@@ -328,52 +328,62 @@ namespace DeclaraINE.Formas.Administrador
                                                 da2.SelectCommand.Parameters.Add(new SqlParameter("@ua", SqlDbType.VarChar)).Value = uaTemp;
 
                                                 DataTable dt3 = new DataTable();
-                                                
+
                                                 da2.Fill(dt3);
 
-                                                
-                                                SqlCommand cmd2 = new SqlCommand(sql5, conn);
-                                                cmd2.CommandType = CommandType.StoredProcedure;
-                                                cmd2.Parameters.AddWithValue("@anio", txtAnio.Text);
-                                                cmd2.Parameters.AddWithValue("@ua", uaTemp);
 
-                                                string nombreResponsable="";
+                                                //Revisar si el dt no esta vacio
+                                                if (dt3.Rows.Count > 0)
+                                                {
+                                                    flag = true;
+                                                    SqlCommand cmd2 = new SqlCommand(sql5, conn);
+                                                    cmd2.CommandType = CommandType.StoredProcedure;
+                                                    cmd2.Parameters.AddWithValue("@anio", txtAnio.Text);
+                                                    cmd2.Parameters.AddWithValue("@ua", uaTemp);
 
-                                                nombreResponsable = Convert.ToString(cmd2.ExecuteScalar());
-                                                DataRow row = dt3.Rows[1];
+                                                    string nombreResponsable = "";
 
-                                                string UaNombre = row["UnidadAdministrativa"].ToString().Trim();
-                                              
+                                                    nombreResponsable = Convert.ToString(cmd2.ExecuteScalar());
+                                                    DataRow row = dt3.Rows[0];
 
-                                                sheet = book2.Worksheets[0];
+                                                    string UaNombre = row["UnidadAdministrativa"].ToString().Trim();
 
-                                                sheet.Name = uaTemp;
-                                                sheet.Range[1, 1].Value = "Nombre del área";
-                                                sheet.Range[2, 1].Value = "Nombre del responsable";
-                                                sheet.Range[1, 2].Value = UaNombre;
-                                                sheet.Range[2, 2].Value = nombreResponsable.Trim();
-                                                
-                                                sheet.Range["A1"].Style.Font.IsBold = true;
-                                                sheet.Range["A2"].Style.Font.IsBold = true;
-                                                sheet.Range["A5:E5"].Style.Font.IsBold = true;
-                                                
-                                                sheet.InsertDataTable(dt3, true, 5, 1);
 
-                                                sheet.Range[5, 1].Value = "Nombre del personal";
-                                                sheet.Range[5, 2].Value = "Estatus Declaración";
-                                                sheet.Range[5, 3].Value = "Puesto";
-                                                sheet.Range[5, 4].Value = "Denominación del cargo";
-                                                sheet.Range[5, 5].Value = "Unidad Administrativa";
-                                                sheet.HideColumn(5);
-                                                sheet.AutoFilters.Range = sheet.Range["A5:E5"];
-                                                sheet.DefaultColumnWidth = 25;
+                                                    sheet = book2.Worksheets[0];
 
-                                                dt3.Clear();
+                                                    sheet.Name = uaTemp;
+                                                    sheet.Range[1, 1].Value = "Nombre del área";
+                                                    sheet.Range[2, 1].Value = "Nombre del responsable";
+                                                    sheet.Range[1, 2].Value = UaNombre;
+                                                    sheet.Range[2, 2].Value = nombreResponsable.Trim();
+
+                                                    sheet.Range["A1"].Style.Font.IsBold = true;
+                                                    sheet.Range["A2"].Style.Font.IsBold = true;
+                                                    sheet.Range["A5:E5"].Style.Font.IsBold = true;
+
+                                                    sheet.InsertDataTable(dt3, true, 5, 1);
+
+                                                    sheet.Range[5, 1].Value = "Nombre del personal";
+                                                    sheet.Range[5, 2].Value = "Estatus Declaración";
+                                                    sheet.Range[5, 3].Value = "Puesto";
+                                                    sheet.Range[5, 4].Value = "Denominación del cargo";
+                                                    sheet.Range[5, 5].Value = "Unidad Administrativa";
+                                                    sheet.HideColumn(5);
+                                                    sheet.AutoFilters.Range = sheet.Range["A5:E5"];
+                                                    sheet.DefaultColumnWidth = 25;
+
+                                                    dt3.Clear();
+                                                }
+
 
                                             }
                                             //i++;
 
-                                            book2.SaveToFile(rutaDirectorio + "\\" + uaTemp + @".xls", ExcelVersion.Version97to2003);
+                                            if (flag == true)
+                                            {
+
+                                                book2.SaveToFile(rutaDirectorio + "\\" + uaTemp + @".xls", ExcelVersion.Version97to2003);
+                                            }
 
                                         }
                                         conn.Close();
