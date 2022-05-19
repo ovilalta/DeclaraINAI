@@ -121,8 +121,12 @@ namespace DeclaraINE.Formas.Administrador
                             sheet2.Name = "Resumen";
                             //Inserta datos en las hojas
                             sheet.InsertDataTable(dt, true, 1, 1);
-                            sheet2.InsertDataTable(dt2, true, 1, 1);
 
+                            sheet.AutoFilters.Range = sheet.Range["A1:J1"];
+                            sheet.Range["A1:J1"].Style.Font.IsBold = true;
+                            sheet2.InsertDataTable(dt2, true, 1, 1);
+                            sheet2.AutoFilters.Range = sheet.Range["A1:C1"];
+                            sheet2.Range["A1:C1"].Style.Font.IsBold = true;
                             sheet.DefaultColumnWidth = 25;
                             sheet2.DefaultColumnWidth = 25;
 
@@ -167,9 +171,6 @@ namespace DeclaraINE.Formas.Administrador
                                                 sheet.InsertDataTable(dt3, true, 1, 1);
                                                 sheet.DefaultColumnWidth = 25;
 
-
-                                                //book.SaveToHttpResponse(uaTemp + ".xls", Response);
-
                                             }
 
 
@@ -179,8 +180,6 @@ namespace DeclaraINE.Formas.Administrador
 
                                     }
 
-
-
                                 }
                             }
                             catch (Exception ex)
@@ -188,9 +187,6 @@ namespace DeclaraINE.Formas.Administrador
                                 Console.WriteLine("Error: " + ex.Message);
                             }
 
-
-
-                            //book.SaveToFile("ReporteUAsPorPestania.xlsx");
                             book.SaveToHttpResponse("ReporteDeclaracionesPlantillaModificacion.xls", Response);
 
                         }
@@ -200,8 +196,6 @@ namespace DeclaraINE.Formas.Administrador
                         Console.WriteLine("Error: " + ex.Message);
                     }
                 }
-
-
 
 
             }
@@ -246,6 +240,7 @@ namespace DeclaraINE.Formas.Administrador
                 string sql2 = "SP_ReporteDeclaracionesPlantillaModificacionResumen";
                 string sql3 = "SP_ReporteListaUAs";
                 string sql4 = "SP_ReporteDeclaracionesPlantillaModificacionArea";
+                string sql5 = "SP_ReporteDeclaracionesPlantillaModificacionAreaResponsable";
 
 
                 string rutaDirectorio = AppDomain.CurrentDomain.BaseDirectory + "Formas\\zip"; //Asigna ruta donde se guardaran los archivos pdf
@@ -315,8 +310,7 @@ namespace DeclaraINE.Formas.Administrador
 
                                     if (drd != null)
                                     {
-                                        //int i = 0;
-
+                         
 
                                         while (drd.Read())
                                         {
@@ -334,21 +328,22 @@ namespace DeclaraINE.Formas.Administrador
                                                 da2.SelectCommand.Parameters.Add(new SqlParameter("@ua", SqlDbType.VarChar)).Value = uaTemp;
 
                                                 DataTable dt3 = new DataTable();
+                                                
                                                 da2.Fill(dt3);
 
-
-
-                                                IEnumerable<DataRow> responsable = dt3.AsEnumerable()
-                                                    .Where(p => p.Field<string>("NIVEL").Trim() == "KA4" || p.Field<string>("NIVEL").Trim() == "KB2" || p.Field<string>("NIVEL").Trim() == "MC5" || p.Field<string>("NIVEL").Trim() == "MB2");
-
                                                 
-                                                    DataRow nombreResponsable = responsable.OrderBy(r=>r[2]).    First();
+                                                SqlCommand cmd2 = new SqlCommand(sql5, conn);
+                                                cmd2.CommandType = CommandType.StoredProcedure;
+                                                cmd2.Parameters.AddWithValue("@anio", txtAnio.Text);
+                                                cmd2.Parameters.AddWithValue("@ua", uaTemp);
 
-                                                
+                                                string nombreResponsable="";
 
+                                                nombreResponsable = Convert.ToString(cmd2.ExecuteScalar());
                                                 DataRow row = dt3.Rows[1];
+
                                                 string UaNombre = row["UnidadAdministrativa"].ToString().Trim();
-                                                string nomResponsable = nombreResponsable["NOMBRE"].ToString().Trim();
+                                              
 
                                                 sheet = book2.Worksheets[0];
 
@@ -356,12 +351,14 @@ namespace DeclaraINE.Formas.Administrador
                                                 sheet.Range[1, 1].Value = "Nombre del área";
                                                 sheet.Range[2, 1].Value = "Nombre del responsable";
                                                 sheet.Range[1, 2].Value = UaNombre;
-                                                sheet.Range[2, 2].Value = nomResponsable;
-                                                //sheet.Range[2, 2].Value = responsable;
+                                                sheet.Range[2, 2].Value = nombreResponsable.Trim();
+                                                
                                                 sheet.Range["A1"].Style.Font.IsBold = true;
                                                 sheet.Range["A2"].Style.Font.IsBold = true;
                                                 sheet.Range["A5:E5"].Style.Font.IsBold = true;
+                                                
                                                 sheet.InsertDataTable(dt3, true, 5, 1);
+
                                                 sheet.Range[5, 1].Value = "Nombre del personal";
                                                 sheet.Range[5, 2].Value = "Estatus Declaración";
                                                 sheet.Range[5, 3].Value = "Puesto";
