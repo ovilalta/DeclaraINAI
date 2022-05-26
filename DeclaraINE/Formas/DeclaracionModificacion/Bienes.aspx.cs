@@ -821,7 +821,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                     //String Paso = i.ALTA_INMUEBLE_TITULARs.First().NID_DEPENDIENTE.ToString();
                     //String Paso1 = i.ALTA_INMUEBLE_TITULARs.Where(p => p.NID_INMUEBLE == i.NID_INMUEBLE).First().NID_DEPENDIENTE.ToString();
-                    //chbDependietesInm.SelectedValue = i.ALTA_INMUEBLE_TITULARs.First().NID_DEPENDIENTE.ToString();
+                    chbDependietesInm.SelectedValue = i.ALTA_INMUEBLE_TITULARs.First().NID_DEPENDIENTE.ToString(); //Se descomento esta linea porque no cargaba el valor del combo OEVM-20220525
                    
 
 
