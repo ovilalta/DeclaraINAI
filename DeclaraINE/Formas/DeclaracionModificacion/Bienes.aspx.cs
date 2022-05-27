@@ -1084,7 +1084,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                     checaAdeudoVehiculo();
                     chbDependietesVehiculo.ClearSelection();
-                    //chbDependietesVeh.SelectedValue=v.ALTA_VEHICULO_TITULARs.First().NID_DEPENDIENTE.ToString();
+                    chbDependietesVeh.SelectedValue=v.ALTA_VEHICULO_TITULARs.First().NID_DEPENDIENTE.ToString();
                     chbDependietesVeh_SelectedIndexChanged(sender, e);
                     foreach (blld_ALTA_VEHICULO_TITULAR item in v.ALTA_VEHICULO_TITULARs)
                     {
