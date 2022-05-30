@@ -250,7 +250,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 grd.Controls.RemoveAt(e.Id);
                 //((UpdatePanel)Master.FindControl("pnlMain")).Update();
                 _oDeclaracion = oDeclaracion;
-                AlertaSuperior.ShowSuccess("Se eliminó correctamente la inversión");
+                MsgBox.ShowSuccess("Se eliminó correctamente la inversión");
             }
             catch (Exception ex)
             {
@@ -410,7 +410,8 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             if (lEditar)
             {
                 ActualizaInversion();
-                Response.Redirect("Inversiones.aspx"); //OEVM - 20220511 - Se incuye para forzar la actualizacion de la pagina y asi se visualicen los cambios realizados
+
+                //Response.Redirect("Inversiones.aspx"); //OEVM - 20220511 - Se incuye para forzar la actualizacion de la pagina y asi se visualicen los cambios realizados
             }
             else
             {
@@ -487,7 +488,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     grd.Controls.AddAt(x1, item);
                     mppInversion.Hide();
                     marcaApartado(11);
-                    AlertaSuperior.ShowSuccess("Se agregó correctamente la inversión");
+                    MsgBox.ShowSuccess("Se agregó correctamente la inversión");
                 }
                 else
                 {
@@ -535,9 +536,16 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     if (txtF_BAJA.Text.Length > 8)
                         oDeclaracion.MODIFICACION.Add_MODIFICACION_BAJAs(oDeclaracion.ALTA.ALTA_INVERSIONs[Indice].NID_PATRIMONIO, 1, txtF_BAJA.Date(Pagina.esMX));
 
-                    AlertaSuperior.ShowSuccess("Se actualizaron correctamente los datos de la inversión");
-                    _oDeclaracion = oDeclaracion;
                     mppInversion.Hide();
+                    MsgBox.ShowSuccess("Se actualizaron correctamente los datos de la inversión");
+                    _oDeclaracion = oDeclaracion;
+
+                    //OEVM para actualizar pantalla despues de la actualizacion
+
+                    Response.Redirect("Inversiones.aspx");
+
+                    
+                    //OEVM todo lo de arriba hasta el otro comentario se agrego para ver si actualiza los datos despues de la edicion OEVM 20220530
                 }
                 catch (Exception ex)
                 {
@@ -551,6 +559,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             else
             {
                 MsgBox.ShowDanger("Advertencia", "El RFC del otorgante NO puede ser el mismo del declarante");
+                
             }
 
 
@@ -634,13 +643,13 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
         {
             ctrlDesincorpora1.Guarda();
             mppBaja.Hide();
-            AlertaSuperior.ShowSuccess("Se guardó exitosamenta la baja del bien patrimonial");
+            MsgBox.ShowSuccess("Se guardó exitosamenta la baja del bien patrimonial");
         }
         protected void btnEliminarBaja_Click(object sender, EventArgs e)
         {
             ctrlDesincorpora1.Elimina();
             mppBaja.Hide();
-            AlertaSuperior.ShowSuccess("Se eliminó exitosamenta la baja del bien patrimonial");
+            MsgBox.ShowSuccess("Se eliminó exitosamenta la baja del bien patrimonial");
         }
 
         public void EliminaF_baja(string Patrimonio)

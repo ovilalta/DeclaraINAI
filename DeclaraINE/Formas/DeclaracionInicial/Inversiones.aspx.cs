@@ -514,7 +514,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                     AlertaSuperior.ShowSuccess("Se actualizaron correctamente los datos de la inversión");
                     _oDeclaracion = oDeclaracion;
                     mppInversion.Hide();
-                    
+                    Response.Redirect("Inversiones.aspx");
                 }
                 catch (Exception ex)
                 {

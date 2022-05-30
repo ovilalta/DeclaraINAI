@@ -272,7 +272,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             if (lEditar)
             {
                 ActualizaAdeudo();
-                Response.Redirect("Adeudos.aspx"); //OEVM - 20220511 - Se incuye para forzar la actualizacion de la pagina y asi se visualicen los cambios realizados
+                //Response.Redirect("Adeudos.aspx"); //OEVM - 20220511 - Se incuye para forzar la actualizacion de la pagina y asi se visualicen los cambios realizados
             }
             else
             {
@@ -324,6 +324,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                         AlertaSuperior.ShowSuccess("Se actualizaron correctamente los datos del adeudo");
                         _oDeclaracion = oDeclaracion;
                         mppAdeudo.Hide();
+                        Response.Redirect("Adeudos.aspx"); //OEVM - 20220511 - Se incuye para forzar la actualizacion de la pagina y asi se visualicen los cambios realizados
                     }
                     catch (Exception ex)
                     {

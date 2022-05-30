@@ -292,6 +292,8 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                         AlertaSuperior.ShowSuccess("Se actualizaron correctamente los datos del adeudo");
                         _oDeclaracion = oDeclaracion;
                         mppAdeudo.Hide();
+                        Response.Redirect("Adeudos.aspx");
+
                     }
                     catch (Exception ex)
                     {
