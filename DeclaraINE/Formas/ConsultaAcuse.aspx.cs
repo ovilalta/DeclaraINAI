@@ -50,12 +50,15 @@ namespace DeclaraINE.Formas
             {
                 case 1:
                     pnlAcuseEtica.Visible = true;
+                    pnlAcuseConducta.Visible = true;
                     break;
                 case 2:
                     pnlAcuseEtica.Visible = true;
+                    pnlAcuseConducta.Visible = true;
                     break;
                 case 3:
                     pnlAcuseEtica.Visible = false;
+                    pnlAcuseConducta.Visible = false;
                     break;
                 default:
                     break;
