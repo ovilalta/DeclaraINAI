@@ -113,7 +113,8 @@ namespace DeclaraINE.Formas
 
                 file.fileSoapClient o = new file.fileSoapClient();
 
-                SerializedFile sf = o.ObtenReportePorId(Pagina.FileServiceCredentials, 2020, VersionDeclaracion, new List<object> { oUsuario.VID_NOMBRE
+                SerializedFile sf = o.ObtenReportePorId(Pagina.FileServiceCredentials, 2020, VersionDeclaracion,
+                                                                                new List<object> { oUsuario.VID_NOMBRE
                                                                                ,oUsuario.VID_FECHA
                                                                                ,oUsuario.VID_HOMOCLAVE
                                                                                ,numeroDeclaracion
@@ -141,62 +142,6 @@ namespace DeclaraINE.Formas
             {
             }
 
-            //try
-            //{
-            //    MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
-            //    String HASH = null;
-            //    HASH = db.DECLARACION.Find(_oDeclaracionTemp.VID_NOMBRE, _oDeclaracionTemp.VID_FECHA, _oDeclaracionTemp.VID_HOMOCLAVE, _oDeclaracionTemp.NID_DECLARACION).V_HASH;
-
-            //    if (HASH == null)
-            //    {
-            //        String File = "";
-            //        byte[] b1 = null;
-            //        String VersionDeclaracion = string.Empty;
-            //        MODELDeclara_V2.DECLARACION registro = new MODELDeclara_V2.DECLARACION();
-
-            //        int nTipoDeclaracion = db.CAT_TIPO_DECLARACION.Where(q => q.NID_TIPO_DECLARACION == _oDeclaracionTemp.NID_TIPO_DECLARACION).First().NID_TIPO_DECLARACION;
-            //        string TipoDeclaracion = db.CAT_TIPO_DECLARACION.Where(q => q.NID_TIPO_DECLARACION == _oDeclaracionTemp.NID_TIPO_DECLARACION).First().V_TIPO_DECLARACION;
-
-            //        blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
-            //        oPuesto.select();
-            //        var obligado = oPuesto.lista_CAT_PUESTO.ToList().Where(p => p.NID_PUESTO.Equals(_oDeclaracionTemp.DECLARACION_CARGO.NID_PUESTO)).Single().L_OBLIGADO;
-
-            //        switch (nTipoDeclaracion)
-            //        {
-            //            case 1:
-            //                if (obligado.Equals(true))
-            //                    VersionDeclaracion = "DECLARACION_INICIAL";
-            //                else
-            //                    VersionDeclaracion = "DECLARACION_INICIAL_SIMPLI";
-            //                break;
-            //            case 2:
-            //                if (obligado.Equals(true))
-            //                    VersionDeclaracion = "DECLARACION_MODIFICACION";
-            //                else
-            //                    VersionDeclaracion = "DECLARACION_MODIFICACION_SIMPLI";
-            //                break;
-            //            case 3:
-            //                if (obligado.Equals(true))
-            //                    VersionDeclaracion = "DECLARACION_CONCLUSION";
-            //                else
-            //                    VersionDeclaracion = "DECLARACION_CONCLUSION_SIMPLI";
-            //                break;
-            //        }
-
-            //        file.fileSoapClient o = new file.fileSoapClient();
-            //        SerializedFile sf = o.ObtenReportePorId(Pagina.FileServiceCredentials, 2020, VersionDeclaracion, new List<object> { _oDeclaracionTemp.VID_NOMBRE
-            //                                                                   ,_oDeclaracionTemp.VID_FECHA
-            //                                                                   ,_oDeclaracionTemp.VID_HOMOCLAVE
-            //                                                                   ,_oDeclaracionTemp.NID_DECLARACION
-            //                                                                   ,"Preliminarx"}.ToArray());
-            //        registro.V_HASH = GetSHA1(sf.FileBytes.ToString());
-            //        registro.B_FILE_DECLARACION = sf.FileBytes;
-            //        db.SaveChanges();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //}
 
         }
 

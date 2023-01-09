@@ -13,6 +13,9 @@ using DeclaraINE.file;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using System.Data.SqlClient;
+using System.Data;
+using MODELDeclara_V2;
 
 namespace DeclaraINE.Formas.DeclaracionConflicto
 {
@@ -58,21 +61,65 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
             if (!IsPostBack)
             {
                 ((Button)Master.FindControl("btnAnterior")).Visible = false;
-                ((Button)Master.FindControl("btnSiguiente")).Visible = true;
+                ((Button)Master.FindControl("btnSiguiente")).Visible = false;
                 ((Button)Master.FindControl("btnSiguiente")).Text = "Guardar y Salir";
                 ((Button)Master.FindControl("btnSiguiente")).CssClass = "saveNext";
                 ((Button)Master.FindControl("btnSiguiente")).ToolTip = "Guardar Conflictos de Intereses";
-
-
                 create();
                 grdRubros.DataSource = _oConflicto.CONFLICTO_RUBROs;
                 grdRubros.DataBind();
+                //Recuperar datos del campo Observaciones
+
+                GuardarObservacionesConflicto.Text = RecuperaFechaObservacionesDecConflicto();
             }
 
             if (oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 14).First().L_ESTADO.Value)
                 ((LinkButton)Master.FindControl("lknConflicto")).CssClass = "completeve";
             else
                 ((LinkButton)Master.FindControl("lknConflicto")).CssClass = "active";
+        }
+
+        private string RecuperaFechaObservacionesDecConflicto()
+        {
+            //SP recupera fecha
+            MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+            string connString = db.Database.Connection.ConnectionString;
+            string sql = "SP_RecuperaFechaActualizaDecConflicto";
+            string fechaActualizacionConflicto = "";
+            string v_aclaraciones = "";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    using (SqlDataAdapter da = new SqlDataAdapter())
+                    {
+                        da.SelectCommand = new SqlCommand(sql, conn);
+                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                        da.SelectCommand.Parameters.Add(new SqlParameter("@vid_nombre", _oUsuario.VID_NOMBRE));
+                        da.SelectCommand.Parameters.Add(new SqlParameter("@vid_fecha", _oUsuario.VID_FECHA));
+                        da.SelectCommand.Parameters.Add(new SqlParameter("@vid_homo", _oUsuario.VID_HOMOCLAVE));
+                        da.SelectCommand.Parameters.Add(new SqlParameter("@nid_declaracion", _oDeclaracion.NID_DECLARACION));
+
+                        DataTable dt = new DataTable();
+                        dt.Clear();
+                        da.Fill(dt);
+
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            fechaActualizacionConflicto = dt.Rows[i]["f_actualizacion"].ToString();
+                            v_aclaraciones = dt.Rows[i]["v_aclaraciones"].ToString();
+                        }
+                    }
+                }
+                return v_aclaraciones;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            //Fin sp
         }
 
         private void create()
@@ -242,6 +289,8 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
                 grdRubros.DataSource = oConflicto.CONFLICTO_RUBROs;
 
                 grdRubros.DataBind();
+
+               
             }
             catch (Exception ex)
             {
@@ -249,6 +298,203 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
                     MsgBox.ShowDanger(ex.Message);
                 else
                     throw ex;
+            }
+        }
+
+        protected void btnGuardarObservacionesConflicto(object sender, EventArgs e)
+        {
+            string observacionesConflicto = GuardarObservacionesConflicto.Text;
+            try
+            {
+                blld_USUARIO oUsuario = _oUsuario;
+                
+                //Recuperar numero de ultima declaracion
+                int numeroDeclaracion = 0;
+                MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+                string connString = db.Database.Connection.ConnectionString;
+                string sql = "SP_RecuperaUltimaDeclaracion";
+                string ultimaDeclaracion = "";
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(connString))
+                    {
+                        using (SqlDataAdapter da = new SqlDataAdapter())
+                        {
+                            da.SelectCommand = new SqlCommand(sql, conn);
+                            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                            da.SelectCommand.Parameters.Add(new SqlParameter("@vid_nombre", oUsuario.VID_NOMBRE));
+                            da.SelectCommand.Parameters.Add(new SqlParameter("@vid_fecha", oUsuario.VID_FECHA));
+                            da.SelectCommand.Parameters.Add(new SqlParameter("@vid_homo", oUsuario.VID_HOMOCLAVE));
+
+
+                            DataTable dt = new DataTable();
+                            dt.Clear();
+                            da.Fill(dt);
+
+                            for (int i = 0; i < dt.Rows.Count; i++)
+                            {
+                                ultimaDeclaracion = dt.Rows[i]["NID_DECLARACION"].ToString();
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    throw;
+                }
+
+                numeroDeclaracion = Convert.ToInt32(ultimaDeclaracion);
+
+                string sql2 = "SP_GuardaObservacionesDecConflicto";
+                int rpta = 0;
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    try
+                    {
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand(sql2, conn))
+                        {
+
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@vid_nombre", _oUsuario.VID_NOMBRE);
+                            cmd.Parameters.AddWithValue("@vid_fecha", _oUsuario.VID_FECHA);
+                            cmd.Parameters.AddWithValue("@vid_homo", _oUsuario.VID_HOMOCLAVE);
+                            cmd.Parameters.AddWithValue("@nid_declaracion", _oDeclaracion.NID_DECLARACION);
+                            cmd.Parameters.AddWithValue("@observaciones", observacionesConflicto);
+
+                            rpta = cmd.ExecuteNonQuery();
+
+                        }
+                        conn.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                        rpta = 0;
+                        Console.WriteLine("Error: " + ex.Message);
+                    }
+                }
+                ActualizaFecha();
+                CambiaEstadoDeclaracion(2);
+                Response.Redirect("../ImprimeActualizacionConflicto.aspx");
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        protected void btnRegresarIndex2(object sender, EventArgs e)
+        {
+            CambiaEstadoDeclaracion(2);
+            Response.Redirect("../Index.aspx");
+        }
+
+        public void CambiaEstadoDeclaracion(int param)
+        {
+            //ACTUALIZAR FECHA CON SP
+            MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+            string connString = db.Database.Connection.ConnectionString;
+            string sql = "SP_CambiaEstadoDeclaracion";
+            string sql2 = "SP_RecuperaUltimaDeclaracion";
+            int rpta = 0;
+            int numeroDeclaracion = 0;
+            string ultimaDeclaracion = "";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    using (SqlDataAdapter da = new SqlDataAdapter())
+                    {
+                        da.SelectCommand = new SqlCommand(sql2, conn);
+                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                        da.SelectCommand.Parameters.Add(new SqlParameter("@vid_nombre", _oUsuario.VID_NOMBRE));
+                        da.SelectCommand.Parameters.Add(new SqlParameter("@vid_fecha", _oUsuario.VID_FECHA));
+                        da.SelectCommand.Parameters.Add(new SqlParameter("@vid_homo", _oUsuario.VID_HOMOCLAVE));
+
+                        DataTable dt = new DataTable();
+                        dt.Clear();
+                        da.Fill(dt);
+
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            ultimaDeclaracion = dt.Rows[i]["NID_DECLARACION"].ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            numeroDeclaracion = Convert.ToInt32(ultimaDeclaracion);
+
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@vid_nombre", _oUsuario.VID_NOMBRE);
+                        cmd.Parameters.AddWithValue("@vid_fecha", _oUsuario.VID_FECHA);
+                        cmd.Parameters.AddWithValue("@vid_homo", _oUsuario.VID_HOMOCLAVE);
+                        cmd.Parameters.AddWithValue("@nid_declaracion", numeroDeclaracion);
+                        cmd.Parameters.AddWithValue("@param", param);
+
+                        rpta = cmd.ExecuteNonQuery();
+
+                    }
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    conn.Close();
+                    rpta = 0;
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+        }
+
+        public void ActualizaFecha()
+        {
+            //ACTUALIZAR FECHA CON SP
+            MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+            string connString = db.Database.Connection.ConnectionString;
+            string sql = "SP_FechaActualizaDecConflicto";
+            int rpta = 0;
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@vid_nombre", _oUsuario.VID_NOMBRE);
+                        cmd.Parameters.AddWithValue("@vid_fecha", _oUsuario.VID_FECHA);
+                        cmd.Parameters.AddWithValue("@vid_homo", _oUsuario.VID_HOMOCLAVE);
+                        cmd.Parameters.AddWithValue("@nid_declaracion", _oDeclaracion.NID_DECLARACION);
+
+
+                        rpta = cmd.ExecuteNonQuery();
+
+                    }
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    conn.Close();
+                    rpta = 0;
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+
             }
         }
 
@@ -374,9 +620,7 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
         {
             GridViewRow row = grdPreguntas.Rows[Convert.ToInt32(((DropDownList)sender).SelectedValue.Split('|')[0])];
             ((TextBox)row.FindControl("txtRespuesta")).Text = ((DropDownList)sender).SelectedItem.Text;
-        }
-
-      
+        }      
 
         public static string GetSHA1(String texto)
         {

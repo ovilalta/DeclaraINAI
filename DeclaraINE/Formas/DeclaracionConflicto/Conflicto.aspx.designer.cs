@@ -42,6 +42,33 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
         protected global::System.Web.UI.WebControls.GridView grdRubros;
 
         /// <summary>
+        /// Control GuardarObservacionesConflicto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox GuardarObservacionesConflicto;
+
+        /// <summary>
+        /// Control btnGuardarObservacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuardarObservacion;
+
+        /// <summary>
+        /// Control btnRegresarIndex.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegresarIndex;
+
+        /// <summary>
         /// Control mppPreguntas.
         /// </summary>
         /// <remarks>

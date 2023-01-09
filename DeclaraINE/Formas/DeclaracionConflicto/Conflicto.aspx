@@ -15,8 +15,6 @@
                 <asp:Literal ID="ltrSubTitulo" runat="server" Text="Declaración de Intereses <br/><h6> Todos los datos de la participación en empresas, sociedades o asociaciones de la pareja o dependientes económicos no serán públicos"></asp:Literal>
             </div>
             <div class="col-md-2">
-                
-                
             </div>
         </div>
     </div>
@@ -75,6 +73,22 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
+        <%-- Campo para aclaraciones solicitado por TOIC el 9enero2023 --%>
+        <%--<label>Observaciones y/o Aclaraciones</label>--%>
+        <div class="row">            
+                <l>Aclaraciones/Observaciones</l>            
+            
+                <asp:TextBox ID="GuardarObservacionesConflicto" runat="server" onkeyDown="nombrecampo('btnGuardarObservacionesConflicto',this,'1000')"
+                    onkeyup="nombrecampo('btnGuardarObservacionesConflicto',this,'1000')" MaxLength="1000" TextMode="MultiLine" Width="100%"></asp:TextBox>            
+        </div>
+        <div>
+            <br />
+        </div>
+        <div class="row">
+            <asp:Button ID="btnGuardarObservacion" runat="server" Text="Guardar" OnClick="btnGuardarObservacionesConflicto"  Visible="true" />
+            <asp:Button ID="btnRegresarIndex" runat="server" Text="Regresar" OnClick="btnRegresarIndex2"  Visible="true" />
+        </div>
+
     </div>
     <br />
     <br />
@@ -124,6 +138,9 @@
             </div>
         </ContentTemplate>
     </asp:AlanModalPopUp>
+
+
+
 
 </asp:Content>
 

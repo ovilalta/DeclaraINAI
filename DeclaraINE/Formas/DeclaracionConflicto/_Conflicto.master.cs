@@ -568,10 +568,7 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
         {
             ActualizaFecha();
             CambiaEstadoDeclaracion(2);
-            Response.Redirect("../ImprimeActualizacionConflicto.aspx");
-
-            
-
+            Response.Redirect("../ImprimeActualizacionConflicto.aspx");  
         }
     }
     internal interface IDeclaracionInicial
