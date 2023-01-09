@@ -1,16 +1,21 @@
-﻿using AlanWebControls;
-using Declara_V2.BLLD;
-using DeclaraINE.file;
+﻿using Declara_V2.BLLD;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
-using System.Linq;
-using System.Reflection;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
+using System.Linq;
+using DeclaraINE.file;
+using System.Collections.Generic;
+using Declara_V2.MODELextended;
+using Declara_V2;
 using System.Web.UI.WebControls;
+using System.Security.Cryptography;
+using System.Text;
+using System.Web.UI;
+using System.Data.SqlClient;
+using System.Data;
+using MODELDeclara_V2;
+using Declara_V2.Exceptions;
+using Declara_V2.BLL;
 
 namespace DeclaraINE.Formas.DeclaracionConflicto
 {
@@ -42,13 +47,118 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
             get => (blld_USUARIO)Session["oUsuario"];
             set => SessionAdd("oUsuario", value);
         }
+
+        public void CambiaEstadoDeclaracion(int param)
+        {
+            //ACTUALIZAR FECHA CON SP
+            MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+            string connString = db.Database.Connection.ConnectionString;
+            string sql = "SP_CambiaEstadoDeclaracion";
+            string sql2 = "SP_RecuperaUltimaDeclaracion";
+            int rpta = 0;
+            int numeroDeclaracion = 0;
+            string ultimaDeclaracion = "";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    using (SqlDataAdapter da = new SqlDataAdapter())
+                    {
+                        da.SelectCommand = new SqlCommand(sql2, conn);
+                        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                        da.SelectCommand.Parameters.Add(new SqlParameter("@vid_nombre", _oUsuario.VID_NOMBRE));
+                        da.SelectCommand.Parameters.Add(new SqlParameter("@vid_fecha", _oUsuario.VID_FECHA));
+                        da.SelectCommand.Parameters.Add(new SqlParameter("@vid_homo", _oUsuario.VID_HOMOCLAVE));
+
+                        DataTable dt = new DataTable();
+                        dt.Clear();
+                        da.Fill(dt);
+
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            ultimaDeclaracion = dt.Rows[i]["NID_DECLARACION"].ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
+            numeroDeclaracion = Convert.ToInt32(ultimaDeclaracion);
+
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@vid_nombre", _oUsuario.VID_NOMBRE);
+                        cmd.Parameters.AddWithValue("@vid_fecha", _oUsuario.VID_FECHA);
+                        cmd.Parameters.AddWithValue("@vid_homo", _oUsuario.VID_HOMOCLAVE);
+                        cmd.Parameters.AddWithValue("@nid_declaracion", numeroDeclaracion);
+                        cmd.Parameters.AddWithValue("@param", param);
+
+                        rpta = cmd.ExecuteNonQuery();
+
+                    }
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    conn.Close();
+                    rpta = 0;
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+        }
+
         protected void Page_Init(object sender, EventArgs e)
         {
+
+            blld_USUARIO oUsuario = _oUsuario;
+            CambiaEstadoDeclaracion(1);
+            blld__l_DECLARACION oBusqueda = new blld__l_DECLARACION();
+            oBusqueda.VID_NOMBRE = new Declara_V2.StringFilter(oUsuario.VID_NOMBRE);
+            oBusqueda.VID_FECHA = new Declara_V2.StringFilter(oUsuario.VID_FECHA);
+            oBusqueda.VID_HOMOCLAVE = new Declara_V2.StringFilter(oUsuario.VID_HOMOCLAVE);
+            oBusqueda.NID_TIPO_DECLARACION = new Declara_V2.IntegerFilter(2);
+            oBusqueda.NID_ESTADO = new Declara_V2.IntegerFilter(2);            
+            oBusqueda.select();
+            //datos_DECLARACION = new dald_DECLARACION(oBusqueda.lista_DECLARACION.Last());
+            //blld_DECLARACION oDeclaracion = new blld_DECLARACION(oBusqueda.lista_DECLARACION.Last());
+
+            //SessionAdd("oDeclaracion", oDeclaracion);
+
+
+            if (!oBusqueda.lista_DECLARACION.Any())
+            {
+
+                //datos_DECLARACION = new dald_DECLARACION(oBusquedaDeclaracion.lista_DECLARACION.Last());
+                //SessionAdd("oDeclaracion", oDeclaracion1);
+            }
+            else
+            {
+                blld_DECLARACION oDeclaracion1 = new blld_DECLARACION(oUsuario.VID_NOMBRE
+                                                                    , oUsuario.VID_FECHA
+                                                                    , oUsuario.VID_HOMOCLAVE
+                                                                    //, (DateTime.Now.Year - 1).ToString()
+                                                                    , 2
+                                                                    , true);
+                SessionAdd("oDeclaracion", oDeclaracion1);
+            }
+
+
             if (_oDeclaracion == null)
                 Response.Redirect("~/Formas/Index.aspx");
-
-            blld_DECLARACION oDeclaracion = _oDeclaracion;
-            blld_USUARIO oUsuario = _oUsuario;
+           blld_DECLARACION oDeclaracion = _oDeclaracion;
+            
+            //blld_USUARIO oUsuario = _oUsuario;
             blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
             oPuesto.select();
             if (String.IsNullOrEmpty(Page.Title))
@@ -57,129 +167,11 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
                 Page.Title = String.Concat("Declaración Conflicto: ", Page.Title);
             if (!IsPostBack)
             {
-               // this.lblEjercicio.Text = string.Concat("Ejercicio :", oDeclaracion.C_EJERCICIO);
+                // this.lblEjercicio.Text = string.Concat("Ejercicio :", oDeclaracion.C_EJERCICIO);
                 this.lblEjercicio.Text = string.Empty;
                 this.lblIdentificacion.Text = string.Concat("Declaración Conflicto ", oDeclaracion.VID_NOMBRE, oDeclaracion.VID_FECHA, oDeclaracion.VID_HOMOCLAVE, " - ", oUsuario.V_NOMBRE_COMPLETO);
             }
-            //if (oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 4).First().L_ESTADO.Value)
-            //{
-            //    //var o = oPuesto.lista_CAT_PUESTO.ToList().Where(p => p.NID_PUESTO.Equals(oDeclaracion.DECLARACION_CARGO.NID_PUESTO)).Single();
-            //    //bool? obligado = o.L_OBLIGADO;
-            //    //if (obligado != null)
-            //    //    if (obligado.Equals(false))
-            //    //    {
-            //            lkDependientesEconomicos.Visible = false;
-            //            lkDomicilioLaboral.Visible = false;
-            //        //}
-            //        //else
-            //        //{
-            //        //    lkDependientesEconomicos.Visible = true;
-            //        //    lkDomicilioLaboral.Visible = true;
-            //        //}
-            //}
-
-            if (oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 1).First().L_ESTADO.Value)
-            {
-
-                //    var o = oPuesto.lista_CAT_PUESTO.ToList().Where(p => p.NID_PUESTO.Equals(oDeclaracion.DECLARACION_CARGO.NID_PUESTO)).Single();
-
-                //bool? obligado = o.L_OBLIGADO;
-                //if (obligado != null)
-                //    if (obligado.Equals(false))
-                //    {
-                liBienes.Visible = false;
-                        liInversiones.Visible = false;
-                        imgAdeudos.Visible = false;
-                        liAdeudos.Visible = false;
-                        //liObservaciones.Visible = true;
-                        liComodato.Visible = false;
-                        liConflictoInteres.Visible = false;
-                        lkDependientesEconomicos.Visible = false;
-                        lkDomicilioLaboral.Visible = false;
-
-                    //}
-                    //else
-                    //{
-                    //    liBienes.Visible = true;
-                    //    liInversiones.Visible = true;
-                    //    imgAdeudos.Visible = true;
-                    //    liAdeudos.Visible = true;
-                    //    liComodato.Visible = true;
-                    //    liConflictoInteres.Visible = true;
-                    //}
-                liDatosGenerales.Visible = false;
-                liObservaciones.Visible = false;
-                liIngresos.Visible = false;
-                liConflictoInteres.Visible = true;
-                //liDesemp.Visible = true;
-
-                liEnvio.Visible = true;
-                menu1.Visible = false;
-                menu2.Visible = false;
-                menu3.Visible = false;
-                menu4.Visible = false;
-                menu5.Visible = false;
-                menu6.Visible = true;
-                menu7.Visible = true;
-                menu8.Visible = false;
-                menu9.Visible = false;
-                menu10.Visible = false;
-
-                imgDatosGenerales.Src = "../../Content/ok.png";
-                if (oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 4).First().L_ESTADO.Value)
-                    this.lblEjercicio.Visible = true;
-                else
-                    this.lblEjercicio.Visible = false;
-                if (oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 7).First().L_ESTADO.Value)
-                    imgBienes.Src = "../../Content/ok.png";
-                if (oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 11).First().L_ESTADO.Value)
-                {
-                    imgInversiones.Src = "../../Content/ok.png";
-                    lkInversiones.CssClass = "complete";
-                }
-                if (oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 12).First().L_ESTADO.Value)
-                {
-                    imgAdeudos.Src = "../../Content/ok.png";
-                    lkAdeudos.CssClass = "complete";
-                }
-                if (oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 13).First().L_ESTADO.Value)
-                {
-                    imgObservaciones.Src = "../../Content/ok.png";
-                    lkObservaciones.CssClass = "complete";
-                }
-                if (oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 14).First().L_ESTADO.Value)
-                {
-                    imgConflictoInteres.Src = "../../Content/ok.png";
-                    lknConflicto.CssClass = "complete";
-                }
-                if (oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 15).First().L_ESTADO.Value)
-                {
-                    imgEnvio.Src = "../../Content/ok.png";
-                    lkEnvio.CssClass = "complete";
-                }
-
-                if (oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 18).First().L_ESTADO.Value)
-                {
-                    imgIngresos.Src = "../../Content/ok.png";
-                    lkIngresos.CssClass = "complete";
-                }
-
-                //if (oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 20).First().L_ESTADO.Value)
-                //{
-                //    imgDesemp.Src = "../../Content/ok.png";
-                //    lkDesemp.CssClass = "complete";
-                //}
-
-                if (oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 19).First().L_ESTADO.Value)
-                {
-                    imgComodato.Src = "../../Content/ok.png";
-                    lkComodato.CssClass = "complete";
-                }
-
-                links_Bienes(ref oDeclaracion);
-            }
-
-            links_DatosGenerales(ref oDeclaracion);
+           
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -237,11 +229,12 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
 
         protected void btnAnterior_Click(object sender, EventArgs e)
         {
-            IDeclaracionInicial pageInterface = Page as IDeclaracionInicial;
-            if (pageInterface != null)
-            {
-                pageInterface.Anterior();
-            }
+            //IDeclaracionInicial pageInterface = Page as IDeclaracionInicial;
+            //if (pageInterface != null)
+            //{
+            //    pageInterface.Anterior();
+            //}
+            Response.Redirect("../Index.aspx");
         }
 
         //protected void btnGuardar_Click(object sender, EventArgs e)
@@ -254,13 +247,49 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
 
         //}
 
+        public void ActualizaFecha()
+        {
+            //ACTUALIZAR FECHA CON SP
+            MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+            string connString = db.Database.Connection.ConnectionString;
+            string sql = "SP_FechaActualizaDecConflicto";
+            int rpta = 0;
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@vid_nombre", _oUsuario.VID_NOMBRE);
+                        cmd.Parameters.AddWithValue("@vid_fecha", _oUsuario.VID_FECHA);
+                        cmd.Parameters.AddWithValue("@vid_homo", _oUsuario.VID_HOMOCLAVE);
+                        cmd.Parameters.AddWithValue("@nid_declaracion", _oDeclaracion.NID_DECLARACION);
+
+
+                        rpta = cmd.ExecuteNonQuery();
+
+                    }
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    conn.Close();
+                    rpta = 0;
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+
+            }
+        }
+
         protected void btnSiguiente_Click(object sender, EventArgs e)
         {
-            IDeclaracionInicial pageInterface = Page as IDeclaracionInicial;
-            if (pageInterface != null)
-            {
-                pageInterface.Siguiente();
-            }
+
+            ActualizaFecha();
+            CambiaEstadoDeclaracion(2);
+            Response.Redirect("../Index.aspx");
         }
 
         protected void lkDatosPersonales_Click(object sender, EventArgs e)
@@ -535,7 +564,15 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
             HttpContext.Current.Response.End();
         }
 
+        protected void btnImprimir_Click2(object sender, EventArgs e)
+        {
+            ActualizaFecha();
+            CambiaEstadoDeclaracion(2);
+            Response.Redirect("../ImprimeActualizacionConflicto.aspx");
 
+            
+
+        }
     }
     internal interface IDeclaracionInicial
     {

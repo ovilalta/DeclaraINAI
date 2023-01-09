@@ -298,12 +298,7 @@ namespace DeclaraINE.Formas
                 string vTipoAcuse = string.Empty;
 
                 int ejercicio = Convert.ToInt32( oDeclaracion.C_EJERCICIO);
-
-                //if ((oDeclaracion.NID_TIPO_DECLARACION == 1 && ejercicio > 2021) || (oDeclaracion.NID_TIPO_DECLARACION == 2 && ejercicio > 2020))
-                //{
-                //    vTipoAcuse = "ACUSE_CONSTANCIA_CONDUCTA";
-
-                //}
+               
                 vTipoAcuse = "ACUSE_CONSTANCIA_CONDUCTA";
 
                 file.fileSoapClient o = new file.fileSoapClient();

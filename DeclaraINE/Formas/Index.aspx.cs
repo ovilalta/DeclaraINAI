@@ -213,5 +213,10 @@ namespace DeclaraINE.Formas
 
         }
 
+        protected void lkConflicto_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DeclaracionConflicto\\Conflicto.aspx");
+        }
+
     }
 }

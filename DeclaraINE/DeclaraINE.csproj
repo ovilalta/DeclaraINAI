@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DeclaraINE</RootNamespace>
     <AssemblyName>DeclaraINE</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -68,6 +68,7 @@
     <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
       <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DotNetZip, Version=1.15.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.15.0\lib\net40\DotNetZip.dll</HintPath>
     </Reference>
@@ -190,9 +191,9 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -416,6 +417,7 @@
     <Content Include="Formas\AvisoPrivacidadRegistro.aspx" />
     <Content Include="Formas\CambiaCorreo.aspx" />
     <Content Include="Formas\Confirma.aspx" />
+    <Content Include="Formas\ImprimeActualizacionConflicto.aspx" />
     <Content Include="Formas\ConsultaDeclaracionAdmin.aspx" />
     <Content Include="Formas\ConsultaDeclaracion.aspx" />
     <Content Include="Formas\ConsultaAcuse.aspx" />
@@ -473,7 +475,6 @@
     <Content Include="Formas\DeclaracionModificacion\autocomplete.asmx" />
     <Content Include="Formas\DeclaracionModificacion\Bienes.aspx" />
     <Content Include="Formas\DeclaracionModificacion\Comodato.aspx" />
-    <Content Include="Formas\DeclaracionModificacion\Conflicto.aspx" />
     <Content Include="Formas\DeclaracionModificacion\ctrlDatosCurriculares.ascx" />
     <Content Include="Formas\DeclaracionModificacion\ctrlDependiente.ascx" />
     <Content Include="Formas\DeclaracionModificacion\ctrlDesincorpora.ascx" />
@@ -3253,6 +3254,13 @@
     <Compile Include="Formas\Confirma.aspx.designer.cs">
       <DependentUpon>Confirma.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formas\ImprimeActualizacionConflicto.aspx.cs">
+      <DependentUpon>ImprimeActualizacionConflicto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\ImprimeActualizacionConflicto.aspx.designer.cs">
+      <DependentUpon>ImprimeActualizacionConflicto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formas\ConsultaDeclaracionAdmin.aspx.cs">
       <DependentUpon>ConsultaDeclaracionAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3658,13 +3666,6 @@
     </Compile>
     <Compile Include="Formas\DeclaracionModificacion\Comodato.aspx.designer.cs">
       <DependentUpon>Comodato.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formas\DeclaracionModificacion\Conflicto.aspx.cs">
-      <DependentUpon>Conflicto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formas\DeclaracionModificacion\Conflicto.aspx.designer.cs">
-      <DependentUpon>Conflicto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formas\DeclaracionModificacion\ctrlDatosCurriculares.ascx.cs">
       <DependentUpon>ctrlDatosCurriculares.ascx</DependentUpon>

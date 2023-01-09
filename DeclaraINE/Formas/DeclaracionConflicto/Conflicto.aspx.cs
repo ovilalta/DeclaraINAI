@@ -9,6 +9,10 @@ using Declara_V2.BLLD;
 using Declara_V2.MODELextended;
 using Declara_V2.Exceptions;
 using AlanWebControls;
+using DeclaraINE.file;
+using System.IO;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace DeclaraINE.Formas.DeclaracionConflicto
 {
@@ -46,6 +50,8 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Agregar las lineas que recuperan los datos de la declaracion
+
             blld_DECLARACION oDeclaracion = _oDeclaracion;
             ((HtmlControl)Master.FindControl("liConflictoInteres")).Attributes.Add("class", "active");
             ((HtmlControl)Master.FindControl("menu6")).Attributes.Add("class", "tab-pane fade level1 active in");
@@ -53,9 +59,9 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
             {
                 ((Button)Master.FindControl("btnAnterior")).Visible = false;
                 ((Button)Master.FindControl("btnSiguiente")).Visible = true;
-                ((Button)Master.FindControl("btnSiguiente")).Text = "Siguiente";
-                ((Button)Master.FindControl("btnSiguiente")).CssClass = "next";
-                ((Button)Master.FindControl("btnSiguiente")).ToolTip = "Siguiente apartado";
+                ((Button)Master.FindControl("btnSiguiente")).Text = "Guardar y Salir";
+                ((Button)Master.FindControl("btnSiguiente")).CssClass = "saveNext";
+                ((Button)Master.FindControl("btnSiguiente")).ToolTip = "Guardar Conflictos de Intereses";
 
 
                 create();
@@ -76,7 +82,8 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
             obc.VID_NOMBRE = new Declara_V2.StringFilter(oDeclaracion.VID_NOMBRE);
             obc.VID_FECHA = new Declara_V2.StringFilter(oDeclaracion.VID_FECHA);
             obc.VID_HOMOCLAVE = new Declara_V2.StringFilter(oDeclaracion.VID_HOMOCLAVE);
-            obc.NID_DEC_ASOS = new Declara_V2.IntegerFilter(oDeclaracion.NID_DECLARACION);
+            //obc.NID_DEC_ASOS = new Declara_V2.IntegerFilter(oDeclaracion.NID_DECLARACION + 1);
+            obc.NID_DEC_ASOS = new Declara_V2.IntegerFilter(oDeclaracion.NID_DECLARACION );
             //obc.NID_ESTADO_CONFLICTO = new Declara_V2.IntegerFilter(1);
             obc.select();
             //_oConflicto = new blld_CONFLICTO(obc.lista_CONFLICTO.First());
@@ -85,7 +92,7 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
 
         public void Anterior()
         {
-           
+
         }
 
         public void Siguiente()
@@ -190,7 +197,7 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
             mppPreguntas.Show(true);
             grdPreguntas.DataSource = oConflicto.CONFLICTO_RUBROs.Where(p => p.NID_RUBRO == NID_RUBRO).First().CONFLICTO_ENCABEZADOs.Where(p => p.NID_ENCABEZADO == NID_ENCABEZADO).First().CONFLICTO_RESPUESTAs;
             grdPreguntas.DataBind();
-           
+
             _oConflicto = oConflicto;
         }
 
@@ -325,10 +332,10 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
                 Int32 NID_RUBRO = Convert.ToInt32(((Label)e.Row.FindControl("NID_RUBRO")).Text);
                 Int32 NID_ENCABEZADO = Convert.ToInt32(((Label)e.Row.FindControl("NID_ENCABEZADO")).Text);
                 Int32 NID_PREGUNTA = Convert.ToInt32(((Label)e.Row.FindControl("NID_PREGUNTA")).Text);
-                if(NID_RUBRO==6)
+                if (NID_RUBRO == 6)
                 {
                     lblEncabezado.Visible = true;
-                   lblEncabezado.Text = "Es cuando el declarante actúa a nombre de otra persona física o moral (Representante) o cuando una persona actúa a nombre del Declarante(representado) deberá reportar hasta los ultimos dos años.";
+                    lblEncabezado.Text = "Es cuando el declarante actúa a nombre de otra persona física o moral (Representante) o cuando una persona actúa a nombre del Declarante(representado) deberá reportar hasta los ultimos dos años.";
                 }
                 else if (NID_RUBRO == 7)
                 {
@@ -340,13 +347,13 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
                     lblEncabezado.Text = "";
                     lblEncabezado.Visible = false;
                 }
-                   
-                    blld_CAT_CONFLICTO_PREGUNTA oPregunta = new blld_CAT_CONFLICTO_PREGUNTA(NID_RUBRO, NID_PREGUNTA);
+
+                blld_CAT_CONFLICTO_PREGUNTA oPregunta = new blld_CAT_CONFLICTO_PREGUNTA(NID_RUBRO, NID_PREGUNTA);
                 if (String.IsNullOrEmpty(oPregunta.V_OPCIONES))
                 {
                     ((TextBox)e.Row.FindControl("txtRespuesta")).CssClass = String.Empty;
                     ((DropDownList)e.Row.FindControl("cmbRespuesta")).CssClass = "invisible";
-                   if (e.Row.RowIndex ==-1) ((TextBox)e.Row.FindControl("txtRespuesta")).Attributes.Add("requerido", btnGuardarPreguntas.ClientID);
+                    if (e.Row.RowIndex == -1) ((TextBox)e.Row.FindControl("txtRespuesta")).Attributes.Add("requerido", btnGuardarPreguntas.ClientID);
                 }
                 else
                 {
@@ -355,7 +362,7 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
                     if (e.Row.RowIndex == -1) ((DropDownList)e.Row.FindControl("cmbRespuesta")).Attributes.Add("requerido", btnGuardarPreguntas.ClientID);
                     Int32 x = 0;
                     foreach (String str in oPregunta.V_OPCIONES.Split('|'))
-                        ((DropDownList)e.Row.FindControl("cmbRespuesta")).Items.Add(new ListItem(str, String.Concat(e.Row.RowIndex, '|',x++)));
+                        ((DropDownList)e.Row.FindControl("cmbRespuesta")).Items.Add(new ListItem(str, String.Concat(e.Row.RowIndex, '|', x++)));
                     try { ((DropDownList)e.Row.FindControl("cmbRespuesta")).SelectedIndex = ((DropDownList)e.Row.FindControl("cmbRespuesta")).Items.IndexOf(((DropDownList)e.Row.FindControl("cmbRespuesta")).Items.FindByText(((TextBox)e.Row.FindControl("txtRespuesta")).Text)); }
                     catch { }
 
@@ -367,6 +374,21 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
         {
             GridViewRow row = grdPreguntas.Rows[Convert.ToInt32(((DropDownList)sender).SelectedValue.Split('|')[0])];
             ((TextBox)row.FindControl("txtRespuesta")).Text = ((DropDownList)sender).SelectedItem.Text;
+        }
+
+      
+
+        public static string GetSHA1(String texto)
+        {
+            SHA1 sha1 = SHA1CryptoServiceProvider.Create();
+            Byte[] textOriginal = ASCIIEncoding.Default.GetBytes(texto);
+            Byte[] hash = sha1.ComputeHash(textOriginal);
+            StringBuilder cadena = new StringBuilder();
+            foreach (byte i in hash)
+            {
+                cadena.AppendFormat("{0:x2}", i);
+            }
+            return cadena.ToString();
         }
     }
 }

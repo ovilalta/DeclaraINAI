@@ -60,24 +60,6 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
         protected global::System.Web.UI.WebControls.Button dummy;
 
         /// <summary>
-        /// Control liDatosGenerales.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liDatosGenerales;
-
-        /// <summary>
-        /// Control imgDatosGenerales.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgDatosGenerales;
-
-        /// <summary>
         /// Control liIngresos.
         /// </summary>
         /// <remarks>
@@ -652,6 +634,15 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkButton5;
+
+        /// <summary>
+        /// Control Btn_Imprimir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Imprimir;
 
         /// <summary>
         /// Control ChildContent2.

@@ -286,16 +286,16 @@
                             </div>
                         </div>
 
-                        <%--<div class="col-lg-4 col-md-6">
+                        <div class="col-lg-4 col-md-6">
                             <div class="single_destination">
-                                <asp:LinkButton enabled="false" ID="lkConflicto" runat="server" OnClick="lkConflicto_Click"> <div class="thumb">
+                                <asp:LinkButton enabled="true" ID="lkConflicto" runat="server" OnClick="lkConflicto_Click"> <div class="thumb">
                                     <img src="../Images/DeclaraConclusion.jpg" />
                                 </div>
                                 <div class="content">
                                     <p class="d-flex align-items-center">
                                        Declaración de Intereses </p></div></asp:LinkButton>
                             </div>
-                        </div>--%>
+                        </div>
 
                         
                         

@@ -4,13 +4,21 @@
 <%@ Register Src="~/Formas/SioNo.ascx" TagPrefix="uc1" TagName="SioNo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ChildContent2" runat="server">
-<script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
     <script src="../../Scripts/Site.js"></script>
     <script src="../../Scripts/AlanWebControls.js"></script>
 
     <asp:AlanMessageBox runat="server" ID="MsgBox" />
     <div class="subtitulo">
-        <asp:Literal ID="ltrSubTitulo" runat="server" Text="Declaración de Intereses <br/><h6> Todos los datos de la participación en empresas, sociedades o asociaciones de la pareja o dependientes económicos no serán públicos"></asp:Literal>
+        <div class="row">
+            <div class="col-md-10">
+                <asp:Literal ID="ltrSubTitulo" runat="server" Text="Declaración de Intereses <br/><h6> Todos los datos de la participación en empresas, sociedades o asociaciones de la pareja o dependientes económicos no serán públicos"></asp:Literal>
+            </div>
+            <div class="col-md-2">
+                
+                
+            </div>
+        </div>
     </div>
     <div id="cuerpo">
         <label>
@@ -25,7 +33,7 @@
                         <asp:Label ID="NID_RUBRO" runat="server" Text='<%# Eval("NID_RUBRO") %>' CssClass="invisible"></asp:Label>
                         <asp:Literal ID="ltrPregunta" runat="server" Text='<%# Eval("V_RUBRO") %>'></asp:Literal>
                         <br />
-                        <asp:Panel runat="server" ID="panel" Visible='<%# Eval("L_ENCABEZADOS") %>' ClientIDMode="Static" CssClass="right" >
+                        <asp:Panel runat="server" ID="panel" Visible='<%# Eval("L_ENCABEZADOS") %>' ClientIDMode="Static" CssClass="right">
                             <asp:GridView ID="grdEncabezados" runat="server" CssClass="table table-striped table-condensed table-hover" ShowHeader="false" AutoGenerateColumns="false">
                                 <Columns>
                                     <asp:TemplateField>
@@ -47,12 +55,12 @@
                                 </Columns>
                             </asp:GridView>
 
-                       
+
                         </asp:Panel>
-                             <br />
+                        <br />
                         <asp:Button ID="btnAgregarEncabezado" runat="server" Text="Agregar " OnClick="btnSI_Click" CommandArgument='<%# Eval("NID_RUBRO") %>' Visible="false" />
-                             <br />
-                             <br />
+                        <br />
+                        <br />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Si">
@@ -74,7 +82,7 @@
 
     <asp:AlanModalPopUp runat="server" ID="mppPreguntas" HeaderText="Información Adicional">
         <ContentTemplate>
-             <table class="f" style="display:none">
+            <table class="f" style="display: none">
                 <tr>
                     <td>
                         <asp:Label ID="lblEncabezado" runat="server" Text="" Font-Size="Smaller"></asp:Label></br>
@@ -84,7 +92,7 @@
                 </tr>
             </table>
 
-             <table class="f" >
+            <table class="f">
                 <tr>
                     <td>
                         <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
@@ -108,7 +116,7 @@
                 </Columns>
             </asp:GridView>
 
-           
+
 
             <div class="right">
                 <asp:Button ID="btnCerrarModal" runat="server" ToolTip="" Text="Cerrar" OnClick="btnCerrarModal_Click" />
@@ -118,3 +126,6 @@
     </asp:AlanModalPopUp>
 
 </asp:Content>
+
+
+
