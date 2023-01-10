@@ -86,7 +86,7 @@
         </div>
         <div class="row">
             <asp:Button ID="btnGuardarObservacion" runat="server" Text="Guardar" OnClick="btnGuardarObservacionesConflicto"  Visible="true" />
-            <asp:Button ID="btnRegresarIndex" runat="server" Text="Regresar" OnClick="btnRegresarIndex2"  Visible="true" />
+            <asp:Button ID="btnRegresarIndex" runat="server" Text="Terminar" OnClick="btnRegresarIndex2"  Visible="true" />
         </div>
 
     </div>
