@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.DeclaracionModificacion {
-    
-    
-    public partial class Conflicto {
-        
+namespace DeclaraINE.Formas.DeclaracionModificacion
+{
+
+
+    public partial class Conflicto
+    {
+
         /// <summary>
         /// Control MsgBox.
         /// </summary>
@@ -20,7 +22,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AlanWebControls.AlanMessageBox MsgBox;
-        
+
         /// <summary>
         /// Control ltrSubTitulo.
         /// </summary>
@@ -29,7 +31,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal ltrSubTitulo;
-        
+
         /// <summary>
         /// Control grdRubros.
         /// </summary>
@@ -38,7 +40,25 @@ namespace DeclaraINE.Formas.DeclaracionModificacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdRubros;
-        
+
+        /// <summary>
+        /// Control GuardarObservacionesConflicto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox GuardarObservacionesConflicto;
+
+        /// <summary>
+        /// Control btnGuardarObservacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuardarObservacion;
+
         /// <summary>
         /// Control mppPreguntas.
         /// </summary>
@@ -47,7 +67,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AlanWebControls.AlanModalPopUp mppPreguntas;
-        
+
         /// <summary>
         /// Control lblEncabezado.
         /// </summary>
@@ -56,7 +76,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEncabezado;
-        
+
         /// <summary>
         /// Control cbx.
         /// </summary>
@@ -65,7 +85,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::DeclaraINE.Formas.SioNo cbx;
-        
+
         /// <summary>
         /// Control lblMensaje.
         /// </summary>
@@ -74,7 +94,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMensaje;
-        
+
         /// <summary>
         /// Control grdPreguntas.
         /// </summary>
@@ -83,7 +103,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdPreguntas;
-        
+
         /// <summary>
         /// Control btnCerrarModal.
         /// </summary>
@@ -92,7 +112,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCerrarModal;
-        
+
         /// <summary>
         /// Control btnGuardarPreguntas.
         /// </summary>

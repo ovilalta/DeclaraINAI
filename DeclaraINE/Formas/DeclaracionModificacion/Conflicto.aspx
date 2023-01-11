@@ -63,6 +63,20 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
+
+        <div class="row">            
+                <l>Aclaraciones/Observaciones</l>            
+            
+                <asp:TextBox ID="GuardarObservacionesConflicto" runat="server" onkeyDown="nombrecampo('btnGuardarObservacionesConflicto',this,'1000')"
+                    onkeyup="nombrecampo('btnGuardarObservacionesConflicto',this,'1000')" MaxLength="1000" TextMode="MultiLine" Width="100%"></asp:TextBox>            
+        </div>
+        <div>
+            <br />
+        </div>
+        <div class="row">
+            <asp:Button ID="btnGuardarObservacion" runat="server" Text="Guardar" OnClick="btnGuardarObservacionesConflicto"  Visible="true" />
+            <%--<asp:Button ID="btnRegresarIndex" runat="server" Text="Terminar" OnClick="btnRegresarIndex2"  Visible="true" />--%>
+        </div>
     </div>
     <br />
     <br />
