@@ -132,7 +132,7 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
             oBusqueda.select();
             //datos_DECLARACION = new dald_DECLARACION(oBusqueda.lista_DECLARACION.Last());
             //blld_DECLARACION oDeclaracion = new blld_DECLARACION(oBusqueda.lista_DECLARACION.Last());
-
+            
             //SessionAdd("oDeclaracion", oDeclaracion);
 
 
@@ -171,7 +171,7 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
                 this.lblEjercicio.Text = string.Empty;
                 this.lblIdentificacion.Text = string.Concat("Declaración Conflicto ", oDeclaracion.VID_NOMBRE, oDeclaracion.VID_FECHA, oDeclaracion.VID_HOMOCLAVE, " - ", oUsuario.V_NOMBRE_COMPLETO);
             }
-           
+            CambiaEstadoDeclaracion(2);
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -286,7 +286,6 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
 
         protected void btnSiguiente_Click(object sender, EventArgs e)
         {
-
             ActualizaFecha();
             CambiaEstadoDeclaracion(2);
             Response.Redirect("../Index.aspx");
@@ -570,6 +569,8 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
             CambiaEstadoDeclaracion(2);
             Response.Redirect("../ImprimeActualizacionConflicto.aspx");  
         }
+
+
     }
     internal interface IDeclaracionInicial
     {
