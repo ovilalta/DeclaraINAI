@@ -189,6 +189,11 @@ namespace DeclaraINE.Formas
 
         }
 
+        protected void btnRegresarPantallaLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login");
+        }
+
         protected void btnAceptarCorreo_Click(object sender, EventArgs e)
         {
             try

@@ -156,6 +156,8 @@
                                 <td colspan="2" class="center">
                                     <br />
                                     <asp:Button ID="btnAceptarCorreo" runat="server" Text="Aceptar" OnClick="btnAceptarCorreo_Click" EnableViewState="false" ClientIDMode="Static" OnClientClick="return CheckReq();" />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;                                    
+                                    <asp:Button ID="btnRegresarPantallaLogin" runat="server" Text="Regresar" OnClick="btnRegresarPantallaLogin_Click" />
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                                         <asp:Button ID="btnVerTutorial" runat="server" Text="Ver Tutorial" CssClass="Image-Assistant" OnClick="btnVerTutorial_Click" EnableViewState="false" />
                                     &nbsp;&nbsp;&nbsp;&nbsp;
