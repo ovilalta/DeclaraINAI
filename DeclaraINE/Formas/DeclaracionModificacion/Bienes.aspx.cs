@@ -107,7 +107,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
             if (!IsPostBack)
             {
-                txtFechaAfquisicion_C.StartDate = new DateTime(1900,1,1);
+                txtFechaAfquisicion_C.StartDate = new DateTime(1900, 1, 1);
                 txtFechaAfquisicion_C.EndDate = DateTime.Today.AddDays(-1);
                 txtFechaAdquisicionVehiculo_C.StartDate = new DateTime(1900, 1, 1);
                 txtFechaAdquisicionVehiculo_C.EndDate = DateTime.Today.AddDays(-1);
@@ -197,7 +197,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 //---------------Inmuebles
 
                 //cmbTipoBien
-               
+
                 blld__l_CAT_TIPO_INMUEBLE oTipoBien = new blld__l_CAT_TIPO_INMUEBLE();
                 oTipoBien.L_ACTIVO = true;
                 oTipoBien.select();
@@ -222,13 +222,13 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 oRelacionTransmisor.select();
                 cmbRelacionTransmisor.DataBind(oRelacionTransmisor.lista_CAT_RELACION_TRANSMISOR, CAT_RELACION_TRANSMISOR.Properties.NID_RELACION_TRANSMISOR, CAT_RELACION_TRANSMISOR.Properties.V_RELACION_TRANSMISOR);
                 cmbRelacionTransmisor.Items.Insert(0, new ListItem(String.Empty));
-               
+
                 //forma de adquisicion
                 blld__l_CAT_FORMA_ADQUISICION oFormaAdquisicion = new blld__l_CAT_FORMA_ADQUISICION();
                 oFormaAdquisicion.select();
                 cmbFormaAdquisicionInmueble.DataBind(oFormaAdquisicion.lista_CAT_FORMA_ADQUISICION, CAT_FORMA_ADQUISICION.Properties.NID_FORMA_ADQUISICION, CAT_FORMA_ADQUISICION.Properties.V_FORMA_ADQUISICION);
                 cmbFormaAdquisicionInmueble.Items.Insert(0, new ListItem(String.Empty));
-               
+
                 //forma de pago
                 blld__l_CAT_FORMA_PAGO oFormaPago = new blld__l_CAT_FORMA_PAGO();
                 oFormaPago.select();
@@ -248,7 +248,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 //
                 blld__l_CAT_PAIS oCAT_PAIS = new blld__l_CAT_PAIS();
                 oCAT_PAIS.select();
-                
+
                 cmbPaisInmueble.DataBind(oCAT_PAIS.lista_CAT_PAIS, CAT_PAIS.Properties.NID_PAIS, CAT_PAIS.Properties.V_PAIS, false);
                 cmbPaisInmueble.Items.Insert(0, new ListItem(String.Empty));
                 cmbPaisInmueble.SelectedIndex = 0;
@@ -262,7 +262,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 //String Paso= oDeclaracion.DECLARACION_DEPENDIENTESs.First().NID_DEPENDIENTE.ToString();
                 //chbDependietesInm.SelectedValue = oDeclaracion.DECLARACION_DEPENDIENTESs.First().NID_DEPENDIENTE.ToString();
 
-               // .L_ESTADO.Value
+                // .L_ESTADO.Value
 
                 chbDependietes.DataSource = oDeclaracion.DECLARACION_DEPENDIENTESs;
                 chbDependietes.DataTextField = DECLARACION_DEPENDIENTES.Properties.V_NOMBRE_COMPLETO_TIPO.ToString();
@@ -432,8 +432,8 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                 //if (b.F_ADQUISICION > String.Concat("01/01/", Convert.ToString(System.DateTime.Today.Year - 1)).Date())
                 //{
-                    ((Button)((ItemBaja)item).FindControl("btnEliminar")).Visible = true;
-                    ((Button)((ItemBaja)item).FindControl("btnBaja")).Visible = false;
+                ((Button)((ItemBaja)item).FindControl("btnEliminar")).Visible = true;
+                ((Button)((ItemBaja)item).FindControl("btnBaja")).Visible = false;
                 //}
                 grdMueble.Controls.AddAt(0 + x, item);
             }
@@ -554,8 +554,8 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                 //if (v.F_ADQUISICION > String.Concat("01/01/", Convert.ToString(System.DateTime.Today.Year - 1)).Date())
                 //{
-                    ((Button)((ItemBaja)item).FindControl("btnEliminar")).Visible = true;
-                    ((Button)((ItemBaja)item).FindControl("btnBaja")).Visible = false;
+                ((Button)((ItemBaja)item).FindControl("btnEliminar")).Visible = true;
+                ((Button)((ItemBaja)item).FindControl("btnBaja")).Visible = false;
                 //}
                 grdVehiculos.Controls.AddAt(0 + x, item);
             }
@@ -588,8 +588,9 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                         pnlBienesInmuebles.Visible = true;
                         pnlOtrosBienes.Visible = false;
                         pnlVehiculos.Visible = false;
-                        if (oDeclaracion.ALTA.ALTA_INMUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 8).First().L_ESTADO.Value)
-                            QstBoxInm.Ask("Debes registrar los inmuebles de tu propiedad, de tu pareja y/o dependientes económicos. </br></br>¿Deseas continuar con el registro en este momento?");
+                        //OEVM abril 2023
+                        //if (oDeclaracion.ALTA.ALTA_INMUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 8).First().L_ESTADO.Value)
+                        //    QstBoxInm.Ask("Debes registrar los inmuebles de tu propiedad, de tu pareja y/o dependientes económicos. </br></br>¿Deseas continuar con el registro en este momento?");
                         break;
 
                     case SubSecciones.OtrosBienes:
@@ -601,8 +602,9 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                         pnlBienesInmuebles.Visible = false;
                         pnlOtrosBienes.Visible = true;
                         pnlVehiculos.Visible = false;
-                        if (oDeclaracion.ALTA.ALTA_MUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 9).First().L_ESTADO.Value)
-                            QstBoxMue.Ask("Debes registrar los muebles de tu propiedad, de tu pareja y/o dependientes económicos.</br></br>¿Deseas continuar con el registro en este momento?");
+                        //OEVM abril 2023
+                        //if (oDeclaracion.ALTA.ALTA_MUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 9).First().L_ESTADO.Value)
+                        //    QstBoxMue.Ask("Debes registrar los muebles de tu propiedad, de tu pareja y/o dependientes económicos.</br></br>¿Deseas continuar con el registro en este momento?");
                         break;
                     case SubSecciones.Vehiculos:
                         ((Button)Master.FindControl("btnAnterior")).Visible = true;
@@ -613,8 +615,9 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                         pnlBienesInmuebles.Visible = false;
                         pnlOtrosBienes.Visible = false;
                         pnlVehiculos.Visible = true;
-                        if (oDeclaracion.ALTA.ALTA_MUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 10).First().L_ESTADO.Value)
-                            QstBoxVehic.Ask("Debes registrar los vehículos de tu propiedad, de tu pareja y/o dependientes económicos. </br></br>¿Deseas continuar con el registro en este momento?");
+                        //OEVM abril 2023
+                        //if (oDeclaracion.ALTA.ALTA_MUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 10).First().L_ESTADO.Value)
+                        //    QstBoxVehic.Ask("Debes registrar los vehículos de tu propiedad, de tu pareja y/o dependientes económicos. </br></br>¿Deseas continuar con el registro en este momento?");
                         break;
                 }
 
@@ -723,7 +726,9 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             {
                 case SubSecciones.BienesInmuebles:
                     if (oDeclaracion.ALTA.ALTA_INMUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 8).First().L_ESTADO.Value)
-                    { }
+                    {
+                        marcaApartado(ref oDeclaracion, 8);
+                    }
                     else
                     {
                         marcaApartado(ref oDeclaracion, 8);
@@ -731,18 +736,19 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     ltrSubTitulo.Text = "10. Vehículos (entre el 1 de enero y el 31 de diciembre del año inmediato anterior)</br><h6> Todos los datos de vehículos declarados a nombre de la pareja, dependientes económicos y/o terceros o que sean en copropiedad con el declarante no serán públicos</br> Debes registrar los vehículos de tu propiedad, de tu pareja y/o dependientes económicos.";
                     ((Button)Master.FindControl("btnAnterior")).Visible = true;
                     pnlBienesInmuebles.Visible = false;
-                   // pnlOtrosBienes.Visible = true;
+                    // pnlOtrosBienes.Visible = true;
 
                     pnlOtrosBienes.Visible = false;
                     //pnlVehiculos.Visible = false;
                     pnlVehiculos.Visible = true;
-                   // SubSeccionActiva = SubSecciones.OtrosBienes;
+                    // SubSeccionActiva = SubSecciones.OtrosBienes;
                     SubSeccionActiva = SubSecciones.Vehiculos;
 
                     //if (oDeclaracion.ALTA.ALTA_MUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 9).First().L_ESTADO.Value)
                     //    QstBoxMue.Ask("¿Tiene Otros Bienes Muebles que registrar?");
-                    if (oDeclaracion.ALTA.ALTA_VEHICULOs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 10).First().L_ESTADO.Value)
-                        QstBoxVehic.Ask(" Debes registrar los vehículos de tu propiedad, de tu pareja y/o dependientes económicos.</br></br>¿Deseas continuar con el registro en este momento?");
+                    //OEVM abril 2023
+                    //if (oDeclaracion.ALTA.ALTA_VEHICULOs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 10).First().L_ESTADO.Value)
+                    //    QstBoxVehic.Ask(" Debes registrar los vehículos de tu propiedad, de tu pareja y/o dependientes económicos.</br></br>¿Deseas continuar con el registro en este momento?");
                     break;
 
                 //case SubSecciones.OtrosBienes:
@@ -764,7 +770,10 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 //    break;
                 case SubSecciones.OtrosBienes:
                     if (oDeclaracion.ALTA.ALTA_MUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 9).First().L_ESTADO.Value)
-                    { }
+                    {
+                        //OEVM abril 2023
+                        marcaApartado(ref oDeclaracion, 9);
+                    }
                     else
                     {
                         marcaApartado(ref oDeclaracion, 9);
@@ -774,7 +783,9 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                 case SubSecciones.Vehiculos:
                     if (oDeclaracion.ALTA.ALTA_VEHICULOs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 10).First().L_ESTADO.Value)
-                    { }
+                    {
+                        marcaApartado(ref oDeclaracion, 10);
+                    }
                     else
                     {
                         marcaApartado(ref oDeclaracion, 10);
@@ -786,8 +797,9 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     pnlOtrosBienes.Visible = true;
                     pnlVehiculos.Visible = false;
                     SubSeccionActiva = SubSecciones.OtrosBienes;
-                    if (oDeclaracion.ALTA.ALTA_MUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 9).First().L_ESTADO.Value)
-                        QstBoxMue.Ask("Debes registrar los muebles de tu propiedad, de tu pareja y/o dependientes económicos. </br></br>¿Deseas continuar con el registro en este momento?");
+                    //OEVM abril 2023
+                    //if (oDeclaracion.ALTA.ALTA_MUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 9).First().L_ESTADO.Value)
+                    //    QstBoxMue.Ask("Debes registrar los muebles de tu propiedad, de tu pareja y/o dependientes económicos. </br></br>¿Deseas continuar con el registro en este momento?");
                     break;
 
             }
@@ -796,7 +808,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
         }
 
 
-        
+
 
         protected void OnEditar(object sender, ItemEventArgs e)
         {
@@ -809,8 +821,8 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 case SubSecciones.BienesInmuebles:
 
                     blld_ALTA_INMUEBLE i;
-                   
-                    
+
+
                     lEditar = true;
                     txtF_BAJA_INM.Text = string.Empty;
                     cmbInmuMotivoBajaInmu.ClearSelection();
@@ -822,11 +834,11 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     //String Paso = i.ALTA_INMUEBLE_TITULARs.First().NID_DEPENDIENTE.ToString();
                     //String Paso1 = i.ALTA_INMUEBLE_TITULARs.Where(p => p.NID_INMUEBLE == i.NID_INMUEBLE).First().NID_DEPENDIENTE.ToString();
                     chbDependietesInm.SelectedValue = i.ALTA_INMUEBLE_TITULARs.First().NID_DEPENDIENTE.ToString(); //Se descomento esta linea porque no cargaba el valor del combo OEVM-20220525
-                   
+
 
 
                     IndiceItemSeleccionado = e.Id;
-                   // chbDependietes.ClearSelection();
+                    // chbDependietes.ClearSelection();
                     cmbTipoBien.SelectedValue = i.NID_TIPO.ToString();
                     //txtUbicacionInmueble.Text = i.E_UBICACION.ToString();
                     numbertxtSuperficieTerreno.Text = i.N_TERRENO.ToString();
@@ -835,17 +847,17 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     moneytxtValorAdqusicion.Text = i.M_VALOR_INMUEBLE.ToString();
                     InmuebleSeccionTipoBien(i.N_CONSTRUCCION.ToString());
                     cmbTipoUso.SelectedValue = i.NID_USO.ToString();
-                   
+
                     numbertxtPorcentajeDeclarante.Text = i.N_PORCENTAJE_DECLARANTE.ToString();
                     txtTipoMoneda.Text = i.V_TIPO_MONEDA.ToString();
-                    try { ddlTipoMonedaInm.SelectedValue= i.V_TIPO_MONEDA.ToString().Split('|')[0]; } catch { }
+                    try { ddlTipoMonedaInm.SelectedValue = i.V_TIPO_MONEDA.ToString().Split('|')[0]; } catch { }
 
                     cmbFormaAdquisicionInmueble.SelectedValue = i.NID_FORMA_ADQUISICION.ToString();
                     cmbFormaPagoInmueble.SelectedValue = i.NID_FORMA_PAGO.ToString();
 
 
                     try { txtRegistroPublicoPropiedad.Text = i.E_REGISTRO_PUBLICO_PROPIEDAD.ToString(); } catch { }
-                   // txtRegistroPublicoPropiedad.Text = i.E_REGISTRO_PUBLICO_PROPIEDAD.ToString();
+                    // txtRegistroPublicoPropiedad.Text = i.E_REGISTRO_PUBLICO_PROPIEDAD.ToString();
 
                     cmbValorAdquisicion.SelectedValue = i.NID_VALOR_ADQUISICION.ToString();
                     cmbTransmisor.SelectedValue = i.CID_TIPO_PERSONA_TRANSMISOR.ToString();
@@ -855,7 +867,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     // txtNombreTransmisor.Text = i.E_NOMBRE_TRANSMISOR.ToString();
                     try { txtRFCTransmisor.Text = i.E_RFC_TRANSMISOR.ToString(); } catch { }
                     //txtRFCTransmisor.Text = i.E_RFC_TRANSMISOR.ToString();
-                   
+
                     cmbRelacionTransmisor.SelectedValue = i.NID_RELACION_TRANSMISOR.ToString();
 
                     try { txtObservacionesBienesInmuebles.Text = i.E_OBSERVACIONES.ToString(); } catch { }
@@ -868,8 +880,8 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     catch { }
 
                     try
-                    { 
-                    txtF_BAJA_INM.Text = oDeclaracion.MODIFICACION.MODIFICACION_BAJAs.Where(p => p.NID_PATRIMONIO == i.NID_PATRIMONIO).First().F_BAJA.ToString(Pagina.strFormatoFecha);
+                    {
+                        txtF_BAJA_INM.Text = oDeclaracion.MODIFICACION.MODIFICACION_BAJAs.Where(p => p.NID_PATRIMONIO == i.NID_PATRIMONIO).First().F_BAJA.ToString(Pagina.strFormatoFecha);
                     }
                     catch { }
 
@@ -883,7 +895,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     txtNumeroExteriorInmueble.Text = i.V_NUMERO_EXTERNO;
                     txtNumeroInteriorInmueble.Text = i.V_NUMERO_INTERNO;
 
-                    if (String.IsNullOrEmpty( i.ALTA_INMUEBLE_COPROPIETARIO.CID_TIPO_PERSONA))
+                    if (String.IsNullOrEmpty(i.ALTA_INMUEBLE_COPROPIETARIO.CID_TIPO_PERSONA))
                     {
                         cmbTercero.ClearSelection();
                         txtNombreTercero.Text = String.Empty;
@@ -895,12 +907,12 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                         txtNombreTercero.Text = i.ALTA_INMUEBLE_COPROPIETARIO.V_NOMBRE;
                         txtRFCTercero.Text = i.ALTA_INMUEBLE_COPROPIETARIO.V_RFC;
                     }
- 
+
                     checaAdeudoImueble();
 
                     //if (i.F_ADQUISICION > String.Concat("01/01/", Convert.ToString(System.DateTime.Today.Year - 1)).Date())
                     //{
-                        this.RenglonAdeudo.Visible = true;
+                    this.RenglonAdeudo.Visible = true;
                     //}
                     //else
                     //{
@@ -911,7 +923,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     // chbDependietesInm.SelectedValue = i.ALTA_INMUEBLE_TITULARs.Where(p => p.NID_INMUEBLE == i.NID_INMUEBLE).First().NID_DEPENDIENTE.ToString();
                     // chbDependietes.ClearSelection();
                     //chbDependietesInm.SelectedValue = i.ALTA_INMUEBLE_TITULARs.First().NID_DEPENDIENTE.ToString();
-                   
+
                     chbDependietesInm_SelectedIndexChanged(sender, e);
                     foreach (blld_ALTA_INMUEBLE_TITULAR item in i.ALTA_INMUEBLE_TITULARs)
                     {
@@ -948,9 +960,9 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     try { cmbMotivoBaja.SelectedValue = m.E_NOMBRE_TRANSMISOR.ToString().Split('|')[1]; } catch { }
                     //txtNombreTransmisorMueble.Text = m.E_NOMBRE_TRANSMISOR.ToString();
 
-                   
 
-                    try  { txtRFCTransmisorMueble.Text = m.E_RFC_TRANSMISOR.ToString(); } catch { }
+
+                    try { txtRFCTransmisorMueble.Text = m.E_RFC_TRANSMISOR.ToString(); } catch { }
 
 
 
@@ -959,7 +971,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                     cmbRelacionTransmisorMueble.SelectedValue = m.NID_RELACION_TRANSMISOR.ToString();
                     try { txtObservacionesBienesMuebles.Text = m.E_OBSERVACIONES.ToString(); } catch { }
-                    
+
 
                     if (String.IsNullOrEmpty(m.ALTA_MUEBLE_COPROPIETARIO.CID_TIPO_PERSONA))
                     {
@@ -974,7 +986,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                         txtRFCTerceroMueble.Text = m.ALTA_MUEBLE_COPROPIETARIO.V_RFC;
                     }
                     chbDependietesMuebles.ClearSelection();
-                   
+
                     //chbDependietesMue.SelectedValue = m.ALTA_MUEBLE_TITULARs.First().NID_DEPENDIENTE.ToString();
                     chbDependietesMue_SelectedIndexChanged(sender, e);
                     foreach (blld_ALTA_MUEBLE_TITULAR item in m.ALTA_MUEBLE_TITULARs)
@@ -1007,13 +1019,13 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     cmbPaisVehiculo_SelectedIndexChanged(sender, null);
                     //cmbPaisVehiculo_SelectedIndexChanged(cmbPaisVehiculo, null);
                     cmbEntidadFederativaVehiculo.SelectedValue = v.CID_ENTIDAD_FEDERATIVA;
-                    
+
                     txtTipoMonedaVehiculo.Text = v.V_TIPO_MONEDA.ToString();
 
                     try { ddlTipoMonedaVeh.SelectedValue = v.V_TIPO_MONEDA.ToString().Split('|')[0]; } catch { }
 
                     try { txtNumeroSerie.Text = v.E_NUMERO_SERIE.ToString(); } catch { }
-                   // txtNumeroSerie.Text = v.E_NUMERO_SERIE.ToString();
+                    // txtNumeroSerie.Text = v.E_NUMERO_SERIE.ToString();
 
                     cmbFormaAdquisicionVehiculo.SelectedValue = v.NID_FORMA_ADQUISICION.ToString();
                     cmbFormaPagoVehiculo.SelectedValue = v.NID_FORMA_PAGO.ToString();
@@ -1022,7 +1034,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                     //if (v.F_ADQUISICION > String.Concat("01/01/", Convert.ToString(System.DateTime.Today.Year - 1)).Date())
                     //{
-                        this.RenglonAdeudoVeh.Visible = true;
+                    this.RenglonAdeudoVeh.Visible = true;
                     //}
                     //else
                     //{
@@ -1035,13 +1047,13 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                     try { cmbVehiMotivoBaja.SelectedValue = v.E_NOMBRE_TRANSMISOR.ToString().Split('|')[1]; } catch { }
 
-                    try { txtF_BAJA_VEHIC.Text= oDeclaracion.MODIFICACION.MODIFICACION_BAJAs.Where(p => p.NID_PATRIMONIO == v.NID_PATRIMONIO).First().F_BAJA.ToString(Pagina.strFormatoFecha); } catch { }
+                    try { txtF_BAJA_VEHIC.Text = oDeclaracion.MODIFICACION.MODIFICACION_BAJAs.Where(p => p.NID_PATRIMONIO == v.NID_PATRIMONIO).First().F_BAJA.ToString(Pagina.strFormatoFecha); } catch { }
 
                     string rfcTransmisor;
                     using (var bd = new MODELDeclara_V2.cnxDeclara())
 
                     {
-                        rfcTransmisor =  (bd.ALTA_VEHICULO.Where(p => p.VID_NOMBRE == oDeclaracion.VID_NOMBRE
+                        rfcTransmisor = (bd.ALTA_VEHICULO.Where(p => p.VID_NOMBRE == oDeclaracion.VID_NOMBRE
                         && p.VID_FECHA == oDeclaracion.VID_FECHA
                         && p.VID_HOMOCLAVE == oDeclaracion.VID_HOMOCLAVE
                         && p.NID_DECLARACION == oDeclaracion.NID_DECLARACION
@@ -1060,7 +1072,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     //    txtRFCTransmisorVehiculo.Text = rfcTransmisor;
                     //}
 
-                    
+
 
                     //try { txtRFCTransmisorVehiculo.Text = v.E_RFC_TRANSMISOR.ToString(); } catch { }
 
@@ -1084,7 +1096,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                     checaAdeudoVehiculo();
                     chbDependietesVehiculo.ClearSelection();
-                    chbDependietesVeh.SelectedValue=v.ALTA_VEHICULO_TITULARs.First().NID_DEPENDIENTE.ToString(); //Se activa de nuevo porque no estaba cargando el combo con los datos previamente guardados
+                    chbDependietesVeh.SelectedValue = v.ALTA_VEHICULO_TITULARs.First().NID_DEPENDIENTE.ToString(); //Se activa de nuevo porque no estaba cargando el combo con los datos previamente guardados
                     chbDependietesVeh_SelectedIndexChanged(sender, e);
                     foreach (blld_ALTA_VEHICULO_TITULAR item in v.ALTA_VEHICULO_TITULARs)
                     {
@@ -1198,7 +1210,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             blld_USUARIO oUsuario = _oUsuario;
             blld_DECLARACION oDeclaracion = _oDeclaracion;
             lEditar = false;
-                            
+
             mppInmuebles.HeaderText = "Agregar Inmueble";
             mppInmuebles.Show(true);
 
@@ -1214,7 +1226,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
             txtColoniaInmueble.Text = String.Empty;
             txtCalleInmueble.Text = String.Empty;
-            txtNumeroExteriorInmueble.Text = String.Empty; 
+            txtNumeroExteriorInmueble.Text = String.Empty;
             txtNumeroInteriorInmueble.Text = String.Empty;
             numbertxtSuperficieTerreno.Text = String.Empty;
             numbertxtSuperficieConstruccion.Text = String.Empty;
@@ -1236,12 +1248,12 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             txtRFCTercero.Text = String.Empty;
             checaAdeudoImueble();
             //chbDependietes.ClearSelection();
-           // cmbTipoUso.ClearSelection();
+            // cmbTipoUso.ClearSelection();
             cmbTipoBien.ClearSelection();
             cmbTipoBienSelect_Change(sender, e);
             ddlTipoMonedaInm.SelectedValue = "101"; //Por default MXN
             ddlTipoMonedaInm_SelectedIndexChanged(sender, e);
-           
+
 
         }
 
@@ -1311,14 +1323,14 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 Decimal SupCostruccion;
                 Decimal PorcentajeDeclarante;
                 String lvUbicacion;
-                lvUbicacion = String.Concat(txtcCodigoPostalInmueble.Text,"|",
+                lvUbicacion = String.Concat(txtcCodigoPostalInmueble.Text, "|",
                                             cmbPaisInmueble.SelectedValue, "|",
                                             cmbEntidadFederativaInmueble.SelectedValue, "|",
                                             cmbMunicipioInmueble.SelectedValue, "|",
                                             txtColoniaInmueble.Text, "|",
                                             txtCalleInmueble.Text, "|",
                                             txtNumeroInteriorInmueble.Text, "|",
-                                            txtNumeroExteriorInmueble.Text 
+                                            txtNumeroExteriorInmueble.Text
                                             );
                 if (String.IsNullOrEmpty(numbertxtSuperficieConstruccion.Text)) SupCostruccion = 0;
                 else SupCostruccion = numbertxtSuperficieConstruccion.Decimal();
@@ -1353,15 +1365,15 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 oDeclaracion.ALTA.Add_ALTA_INMUEBLEs(cmbTipoBien.SelectedValue()
                                                    , txtFechaAfquisicion.Date(esMX)
                                                    , 1
-                                                   ,1 // Tipo de uso
+                                                   , 1 // Tipo de uso
                                                    , lvUbicacion
                                                    , numbertxtSuperficieTerreno.Decimal()
                                                    , SupCostruccion
                                                    , moneytxtValorAdqusicion.Money()
                                                    , numbertxtPorcentajeDeclarante.Decimal()
                                                    //, cmbTransmisor.SelectedValue
-                                                   ,Paso1
-                                                   , txtNombreTransmisor.Text+"|"+ cmbInmuMotivoBajaInmu.SelectedValue.ToString()+"|"+cmbInmuMotivoBajaInmu.SelectedItem.Text
+                                                   , Paso1
+                                                   , txtNombreTransmisor.Text + "|" + cmbInmuMotivoBajaInmu.SelectedValue.ToString() + "|" + cmbInmuMotivoBajaInmu.SelectedItem.Text
                                                    //, txtNombreTransmisor.Text 
                                                    , txtRFCTransmisor.Text
                                                    //, Convert.ToInt32(cmbRelacionTransmisor.SelectedValue)
@@ -1379,7 +1391,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                                                    );
 
-               
+
                 if (InfoAdeudo != null)
                 {
                     oDeclaracion.ALTA.ALTA_INMUEBLEs.Last().Add_ALTA_INMUEBLE_ADEUDOs
@@ -1397,7 +1409,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                            , InfoAdeudo.NID_TITULARs
                         );
 
-                   
+
 
                     InfoAdeudo = null;
                 }
@@ -1422,11 +1434,11 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                 //if (o.F_ADQUISICION > String.Concat("01/01/", Convert.ToString(System.DateTime.Today.Year - 1)).Date())
                 //{
-                    ((Button)((ItemBaja)item).FindControl("btnEliminar")).Visible = true;
-                    ((Button)((ItemBaja)item).FindControl("btnBaja")).Visible = false;
+                ((Button)((ItemBaja)item).FindControl("btnEliminar")).Visible = true;
+                ((Button)((ItemBaja)item).FindControl("btnBaja")).Visible = false;
                 //}
                 grdInmueble.Controls.AddAt(x, item);
-          
+
                 mppInmuebles.Hide();
             }
             catch (Exception ex)
@@ -1466,9 +1478,9 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             {
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].NID_TIPO = cmbTipoBien.SelectedValue();
 
-               //oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].E_UBICACION = "";
+                //oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].E_UBICACION = "";
 
-               // oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].V_CODIGO_POSTAL = txtcCodigoPostalInmueble.Text;
+                // oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].V_CODIGO_POSTAL = txtcCodigoPostalInmueble.Text;
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].V_PAIS = cmbPaisInmueble.SelectedValue;
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].V_ENTIDAD_FEDERATIVA = cmbEntidadFederativaInmueble.SelectedValue;
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].V_MUNICIPIO = cmbMunicipioInmueble.SelectedValue;
@@ -1491,7 +1503,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].E_REGISTRO_PUBLICO_PROPIEDAD = txtRegistroPublicoPropiedad.Text;
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].N_PORCENTAJE_DECLARANTE = numbertxtPorcentajeDeclarante.Decimal();
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].CID_TIPO_PERSONA_TRANSMISOR = cmbTransmisor.SelectedValue;
-                oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].E_NOMBRE_TRANSMISOR = txtNombreTransmisor.Text+"|"+ cmbInmuMotivoBajaInmu.SelectedValue.ToString()+"|"+ cmbInmuMotivoBajaInmu.SelectedItem.Text;
+                oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].E_NOMBRE_TRANSMISOR = txtNombreTransmisor.Text + "|" + cmbInmuMotivoBajaInmu.SelectedValue.ToString() + "|" + cmbInmuMotivoBajaInmu.SelectedItem.Text;
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].E_RFC_TRANSMISOR = txtRFCTransmisor.Text;
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].NID_RELACION_TRANSMISOR = cmbRelacionTransmisor.SelectedValue();
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].NID_FORMA_ADQUISICION = cmbFormaAdquisicionInmueble.SelectedValue();
@@ -1506,8 +1518,8 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].update(chbDependietes.SelectedValuesInteger(), cmbTercero.SelectedValue, txtNombreTercero.Text, txtRFCTercero.Text);
 
                 EliminaF_baja(oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].NID_PATRIMONIO.ToString());
-                if(txtF_BAJA_INM.Text.Length>8)
-                oDeclaracion.MODIFICACION.Add_MODIFICACION_BAJAs(oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].NID_PATRIMONIO, 1, txtF_BAJA_INM.Date(Pagina.esMX));
+                if (txtF_BAJA_INM.Text.Length > 8)
+                    oDeclaracion.MODIFICACION.Add_MODIFICACION_BAJAs(oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].NID_PATRIMONIO, 1, txtF_BAJA_INM.Date(Pagina.esMX));
                 mppInmuebles.Hide();
             }
             catch (Exception ex)
@@ -1544,7 +1556,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
         protected void cmbPaisInmueble_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbPaisInmueble.SelectedValue=="1")
+            if (cmbPaisInmueble.SelectedValue == "1")
             {
                 this.idLocal_colon.Text = "Localidad o Colonia";
                 idEnt_Munic.Text = "Entidad/Municipio o Alcaldía";
@@ -1587,7 +1599,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             omun.NID_PAIS = new Declara_V2.IntegerFilter(cmbPaisInmueble.SelectedValue());
             omun.CID_ENTIDAD_FEDERATIVA = new Declara_V2.StringFilter(cmbEntidadFederativaVehiculo.SelectedValue);
             omun.select();
-        
+
         }
         protected void btnCerrarMueble_Click(object sender, EventArgs e)
         {
@@ -1682,7 +1694,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                                                 , txtF_ADQUISICION.Date(esMX)
                                                 //, cmbTransmisorMueble.SelectedValue
                                                 , Paso1
-                                                , txtNombreTransmisorMueble.Text+"|"+cmbMotivoBaja.SelectedValue.ToString()+"|"+cmbMotivoBaja.SelectedItem.Text
+                                                , txtNombreTransmisorMueble.Text + "|" + cmbMotivoBaja.SelectedValue.ToString() + "|" + cmbMotivoBaja.SelectedItem.Text
                                                 //, txtNombreTransmisorMueble.Text
                                                 , txtRFCTransmisorMueble.Text
                                                 , Convert.ToInt32(Paso)
@@ -1717,8 +1729,8 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                 //if (o.F_ADQUISICION > String.Concat("01/01/", Convert.ToString(System.DateTime.Today.Year - 1)).Date())
                 //{
-                    ((Button)((ItemBaja)item).FindControl("btnEliminar")).Visible = true;
-                    ((Button)((ItemBaja)item).FindControl("btnBaja")).Visible = false;
+                ((Button)((ItemBaja)item).FindControl("btnEliminar")).Visible = true;
+                ((Button)((ItemBaja)item).FindControl("btnBaja")).Visible = false;
                 //}
 
                 grdMueble.Controls.AddAt(x, item);
@@ -1754,7 +1766,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                 oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].V_TIPO_MONEDA = txtTipoMonedaMueble.Text;
                 oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].CID_TIPO_PERSONA_TRANSMISOR = cmbTransmisorMueble.SelectedValue;
-                oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].E_NOMBRE_TRANSMISOR = txtNombreTransmisorMueble.Text+"|"+cmbMotivoBaja.SelectedValue.ToString()+"|" +cmbMotivoBaja.SelectedItem.Text;
+                oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].E_NOMBRE_TRANSMISOR = txtNombreTransmisorMueble.Text + "|" + cmbMotivoBaja.SelectedValue.ToString() + "|" + cmbMotivoBaja.SelectedItem.Text;
                 //oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].E_NOMBRE_TRANSMISOR = txtNombreTransmisorMueble.Text;
                 oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].E_RFC_TRANSMISOR = txtRFCTransmisorMueble.Text;
                 oDeclaracion.ALTA.ALTA_MUEBLEs[Indice].NID_RELACION_TRANSMISOR = cmbRelacionTransmisorMueble.SelectedValue();
@@ -1833,7 +1845,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
 
             checaAdeudoVehiculo();
-           // dpTipoUso.ClearSelection();
+            // dpTipoUso.ClearSelection();
 
             chbDependietesVehiculo.ClearSelection();
 
@@ -1903,11 +1915,11 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                                                    , moneytxtValorAdquisicion.Money()
                                                    , Convert.ToInt32(cmbPaisVehiculo.SelectedValue)
                                                    , cmbEntidadFederativaVehiculo.SelectedValue
-                                                   //, cmbTransmisorVehiculo.SelectedValue
+                                                    //, cmbTransmisorVehiculo.SelectedValue
                                                     , Paso1
                                                    , txtNombreTransmisorVehiculo.Text + "|" + cmbVehiMotivoBaja.SelectedValue.ToString() + "|" + cmbVehiMotivoBaja.SelectedItem.Text
-                                                  // , txtNombreTransmisorVehiculo.Text 
-                                                   , txtRFCTransmisorVehiculo.Text 
+                                                   // , txtNombreTransmisorVehiculo.Text 
+                                                   , txtRFCTransmisorVehiculo.Text
                                                    //, Convert.ToInt32(cmbRelacionTransmisorVehiculo.SelectedValue)
                                                    , Convert.ToInt32(Paso)
                                                    , txtTipoMonedaVehiculo.Text
@@ -1919,7 +1931,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                                                    , txtNombreTerceroVehiculo.Text
                                                    , txtRFCTerceroVehiculo.Text
                                                    , chbDependietesVehiculo.SelectedValuesInteger());
-                
+
                 if (InfoAdeudo != null)
                 {
                     oDeclaracion.ALTA.ALTA_VEHICULOs.Last().Add_ALTA_VEHICULO_ADEUDO
@@ -1939,7 +1951,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     InfoAdeudo = null;
                 }
                 v = oDeclaracion.ALTA.ALTA_VEHICULOs.Last();
-              
+
                 if (txtF_BAJA_VEHIC.Text.Length > 8)
                     oDeclaracion.MODIFICACION.Add_MODIFICACION_BAJAs(v.NID_PATRIMONIO, 1, txtF_BAJA_VEHIC.Date(Pagina.esMX));
 
@@ -1960,8 +1972,8 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                 //if (v.F_ADQUISICION > String.Concat("01/01/", Convert.ToString(System.DateTime.Today.Year - 1)).Date())
                 //{
-                    ((Button)((ItemBaja)item).FindControl("btnEliminar")).Visible = true;
-                    ((Button)((ItemBaja)item).FindControl("btnBaja")).Visible = false;
+                ((Button)((ItemBaja)item).FindControl("btnEliminar")).Visible = true;
+                ((Button)((ItemBaja)item).FindControl("btnBaja")).Visible = false;
                 //}
 
                 grdVehiculos.Controls.AddAt(x, item);
@@ -2173,7 +2185,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 mppInmuebles.Hide();
                 mppAdeudos.Show(true);
                 //Adeudo.Requerido = btnGuardarAdeudo.ClientID;
-                
+
                 mppAdeudos.HeaderText = "Adeudo por concepto de crédito hipotecario";
                 btnCerrarModal.Visible = true;
                 btnGuardarAdeudo.Visible = true;
@@ -2245,7 +2257,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                                 (
                                   Adeudo.NID_PAIS
                                  , Adeudo.CID_ENTIDAD_FEDERATIVA
-                                 , Adeudo.V_LUGAR + "|" + Adeudo.V_TIPO_MONEDA + "|" + Adeudo.CID_TIPO_PERSONA_OTORGANTE + "|" + Adeudo.E_RFC +"|"+ Adeudo.E_OBSERVACIONES + "|" + Adeudo.NID_TERCERO + "|" + Adeudo.E_NOMBRE_TERCERO + "|" + Adeudo.E_RFC_TERCERO
+                                 , Adeudo.V_LUGAR + "|" + Adeudo.V_TIPO_MONEDA + "|" + Adeudo.CID_TIPO_PERSONA_OTORGANTE + "|" + Adeudo.E_RFC + "|" + Adeudo.E_OBSERVACIONES + "|" + Adeudo.NID_TERCERO + "|" + Adeudo.E_NOMBRE_TERCERO + "|" + Adeudo.E_RFC_TERCERO
                                  , Adeudo.NID_INSTITUCION
                                  , Adeudo.V_OTRA
                                  , Adeudo.NID_TIPO_ADEUDO
@@ -2256,7 +2268,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                                  , Adeudo.NID_TITULARs
                                 );
 
-                           
+
 
                         }
                         else
@@ -2266,7 +2278,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                                 NID_TIPO_ADEUDO = Adeudo.NID_TIPO_ADEUDO,
                                 NID_PAIS = Adeudo.NID_PAIS,
                                 CID_ENTIDAD_FEDERATIVA = Adeudo.CID_ENTIDAD_FEDERATIVA,
-                                V_LUGAR = Adeudo.V_LUGAR+"|"+ Adeudo.V_TIPO_MONEDA + "|" + Adeudo.CID_TIPO_PERSONA_OTORGANTE + "|" + Adeudo.E_RFC + "|" +Adeudo.E_OBSERVACIONES + "|" + Adeudo.NID_TERCERO + "|" + Adeudo.E_NOMBRE_TERCERO+"|"+ Adeudo.E_RFC_TERCERO,
+                                V_LUGAR = Adeudo.V_LUGAR + "|" + Adeudo.V_TIPO_MONEDA + "|" + Adeudo.CID_TIPO_PERSONA_OTORGANTE + "|" + Adeudo.E_RFC + "|" + Adeudo.E_OBSERVACIONES + "|" + Adeudo.NID_TERCERO + "|" + Adeudo.E_NOMBRE_TERCERO + "|" + Adeudo.E_RFC_TERCERO,
                                 NID_INSTITUCION = Adeudo.NID_INSTITUCION,
                                 V_OTRA = Adeudo.V_OTRA,
                                 F_ADEUDO = Adeudo.F_ADEUDO,
@@ -2276,7 +2288,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                                 NID_TITULARs = Adeudo.NID_TITULARs,
                             };
 
-                           
+
 
                         }
                     }
@@ -2311,7 +2323,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             btnGuardarAdeudoVehiculo.Visible = false;
             lEditaAdeudo = true;
             Adeudo.NID_TIPO_ADEUDO = oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[0].NID_TIPO_ADEUDO;
-            
+
             Adeudo.NID_PAIS = oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[0].NID_PAIS;
             Adeudo.CID_ENTIDAD_FEDERATIVA = oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[0].CID_ENTIDAD_FEDERATIVA;
             Adeudo.V_LUGAR = oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[0].V_LUGAR;
@@ -2321,9 +2333,9 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             Adeudo.M_ORIGINAL = oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[0].M_ORIGINAL;
             Adeudo.M_SALDO = oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[0].M_SALDO;
             Adeudo.E_CUENTA = oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[0].E_CUENTA;
-           
+
             Adeudo.NID_TITULARs = oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[0].ALTA_ADEUDO_TITULARs.Select(p => p.NID_DEPENDIENTE).ToList();
-            Adeudo.NOM_DEPENDIENTE = oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[0].ALTA_ADEUDO_TITULARs.Select(p => p.NID_DEPENDIENTE).First(); 
+            Adeudo.NOM_DEPENDIENTE = oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[0].ALTA_ADEUDO_TITULARs.Select(p => p.NID_DEPENDIENTE).First();
             // Agregado de nuevos campos
             Adeudo.V_TIPO_MONEDA = oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[0].V_TIPO_MONEDA;
             Adeudo.CID_TIPO_PERSONA_OTORGANTE = oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[0].CID_TIPO_PERSONA_OTORGANTE;
@@ -2619,7 +2631,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                                , Adeudo.CID_ENTIDAD_FEDERATIVA
                                , Adeudo.V_LUGAR + "|" + Adeudo.V_TIPO_MONEDA + "|" + Adeudo.CID_TIPO_PERSONA_OTORGANTE + "|" + Adeudo.E_RFC + "|" + Adeudo.E_OBSERVACIONES + "|" + Adeudo.NID_TERCERO + "|" + Adeudo.E_NOMBRE_TERCERO + "|" + Adeudo.E_RFC_TERCERO
                                , Adeudo.NID_INSTITUCION
-                               , Adeudo.V_OTRA 
+                               , Adeudo.V_OTRA
                                , 2
                                , Adeudo.F_ADEUDO
                                , Adeudo.M_ORIGINAL.Value
@@ -2741,9 +2753,9 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                               where p.VID_NOMBRE == VID_NOMBRE &&
                                     p.VID_FECHA == VID_FECHA &&
                                     p.VID_HOMOCLAVE == VID_HOMOCLAVE &&
-                                    p.NID_DECLARACION == NID_DECLARACION 
-                                    
-                              select  p.NID_ADEUDO).Max());
+                                    p.NID_DECLARACION == NID_DECLARACION
+
+                              select p.NID_ADEUDO).Max());
                 return query;
             }
             catch
@@ -2807,7 +2819,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             try
             {
                 blld_DECLARACION oDeclaracion = _oDeclaracion;
-                oDeclaracion.MODIFICACION.MODIFICACION_BAJAs.Remove(oDeclaracion.MODIFICACION.MODIFICACION_BAJAs.Where(p => p.NID_PATRIMONIO ==Convert.ToInt32( Patrimonio)).First());
+                oDeclaracion.MODIFICACION.MODIFICACION_BAJAs.Remove(oDeclaracion.MODIFICACION.MODIFICACION_BAJAs.Where(p => p.NID_PATRIMONIO == Convert.ToInt32(Patrimonio)).First());
                 _oDeclaracion = oDeclaracion;
             }
             catch { }
@@ -2815,7 +2827,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
         protected void ddlTipoMonedaInm_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtTipoMoneda.Text = ddlTipoMonedaInm.SelectedValue.ToString()+'|' + ddlTipoMonedaInm.SelectedItem.Text;
+            txtTipoMoneda.Text = ddlTipoMonedaInm.SelectedValue.ToString() + '|' + ddlTipoMonedaInm.SelectedItem.Text;
         }
 
         protected void ddlTipoMonedaMue_SelectedIndexChanged(object sender, EventArgs e)
@@ -2825,7 +2837,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
         protected void ddlTipoMonedaVeh_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtTipoMonedaVehiculo.Text=ddlTipoMonedaVeh.SelectedValue.ToString() + '|' + ddlTipoMonedaVeh.SelectedItem.Text;
+            txtTipoMonedaVehiculo.Text = ddlTipoMonedaVeh.SelectedValue.ToString() + '|' + ddlTipoMonedaVeh.SelectedItem.Text;
         }
 
         protected void chbDependietesInm_SelectedIndexChanged(object sender, EventArgs e)

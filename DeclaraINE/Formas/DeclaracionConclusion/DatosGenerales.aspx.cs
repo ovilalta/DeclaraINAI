@@ -985,9 +985,9 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                             pnlDomicilioLaboral.Visible = false;
                             pnlDependientes.Visible = true;
                             SubSeccionActiva = SubSecciones.DependienteEconomicos;
-                            //OEVM
-                            if (oDeclaracion.DECLARACION_DEPENDIENTESs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 6).First().L_ESTADO.Value) ;
-                               QstBoxDep.Ask("¿Cuenta con dependientes económicos y/o cónyuge que desee registrar?");
+                            //OEVM abril 2023
+                            //if (oDeclaracion.DECLARACION_DEPENDIENTESs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 6).First().L_ESTADO.Value) ;
+                            //   QstBoxDep.Ask("¿Cuenta con dependientes económicos y/o cónyuge que desee registrar?");
                         }
                         break;
                     case SubSecciones.DependienteEconomicos:

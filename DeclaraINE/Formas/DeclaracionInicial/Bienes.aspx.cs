@@ -519,8 +519,9 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                         pnlBienesInmuebles.Visible = true;
                         pnlOtrosBienes.Visible = false;
                         pnlVehiculos.Visible = false;
-                        if (oDeclaracion.ALTA.ALTA_INMUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 8).First().L_ESTADO.Value)
-                            QstBoxInm.Ask("¿Tiene Bienes Inmuebles que registrar?");
+                        //oevm abril 2023
+                        //if (oDeclaracion.ALTA.ALTA_INMUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 8).First().L_ESTADO.Value)
+                        //    QstBoxInm.Ask("¿Tiene Bienes Inmuebles que registrar?");
                         break;
 
                     case SubSecciones.OtrosBienes:
@@ -531,8 +532,9 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                         pnlBienesInmuebles.Visible = false;
                         pnlOtrosBienes.Visible = true;
                         pnlVehiculos.Visible = false;
-                        if (oDeclaracion.ALTA.ALTA_MUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 9).First().L_ESTADO.Value)
-                            QstBoxMue.Ask("¿Tiene Otros Bienes Muebles que registrar?");
+                        //oevm abril 2023
+                        //if (oDeclaracion.ALTA.ALTA_MUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 9).First().L_ESTADO.Value)
+                            //QstBoxMue.Ask("¿Tiene Otros Bienes Muebles que registrar?");
                         break;
                     case SubSecciones.Vehiculos:
                         ((Button)Master.FindControl("btnAnterior")).Visible = true;
@@ -542,8 +544,9 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                         pnlBienesInmuebles.Visible = false;
                         pnlOtrosBienes.Visible = false;
                         pnlVehiculos.Visible = true;
-                        if (oDeclaracion.ALTA.ALTA_MUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 10).First().L_ESTADO.Value)
-                            QstBoxVehic.Ask("¿Tiene vehículos que registrar?");
+                        //oevm abril 2023
+                        //if (oDeclaracion.ALTA.ALTA_MUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 10).First().L_ESTADO.Value)
+                        //    QstBoxVehic.Ask("¿Tiene vehículos que registrar?");
                         break;
                 }
 
@@ -652,7 +655,10 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             {
                 case SubSecciones.BienesInmuebles:
                     if (oDeclaracion.ALTA.ALTA_INMUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 8).First().L_ESTADO.Value)
-                    { }
+                    {
+                        //oevm abril 2023
+                        marcaApartado(ref oDeclaracion, 8);
+                    }
                     else
                     {
                         marcaApartado(ref oDeclaracion, 8);
@@ -670,8 +676,9 @@ namespace DeclaraINE.Formas.DeclaracionInicial
 
                     //if (oDeclaracion.ALTA.ALTA_MUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 9).First().L_ESTADO.Value)
                     //    QstBoxMue.Ask("¿Tiene Otros Bienes Muebles que registrar?");
-                    if (oDeclaracion.ALTA.ALTA_VEHICULOs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 10).First().L_ESTADO.Value)
-                        QstBoxVehic.Ask("¿Tiene vehículos que registrar?");
+                    //oevm abril 2023
+                    //if (oDeclaracion.ALTA.ALTA_VEHICULOs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 10).First().L_ESTADO.Value)
+                    //    QstBoxVehic.Ask("¿Tiene vehículos que registrar?");
                     break;
 
                 //case SubSecciones.OtrosBienes:
@@ -693,7 +700,10 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 //    break;
                 case SubSecciones.OtrosBienes:
                     if (oDeclaracion.ALTA.ALTA_MUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 9).First().L_ESTADO.Value)
-                    { }
+                    {
+                        //oevm abril 2023
+                        marcaApartado(ref oDeclaracion, 9);
+                    }
                     else
                     {
                         marcaApartado(ref oDeclaracion, 9);
@@ -703,7 +713,10 @@ namespace DeclaraINE.Formas.DeclaracionInicial
 
                 case SubSecciones.Vehiculos:
                     if (oDeclaracion.ALTA.ALTA_VEHICULOs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 10).First().L_ESTADO.Value)
-                    { }
+                    {
+                        //oevm abril 2023
+                        marcaApartado(ref oDeclaracion, 10);
+                    }
                     else
                     {
                         marcaApartado(ref oDeclaracion, 10);
@@ -715,8 +728,8 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                     pnlOtrosBienes.Visible = true;
                     pnlVehiculos.Visible = false;
                     SubSeccionActiva = SubSecciones.OtrosBienes;
-                    if (oDeclaracion.ALTA.ALTA_MUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 9).First().L_ESTADO.Value)
-                        QstBoxMue.Ask("¿Tiene Otros Bienes Muebles que registrar?");
+                    //if (oDeclaracion.ALTA.ALTA_MUEBLEs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 9).First().L_ESTADO.Value)
+                    //    QstBoxMue.Ask("¿Tiene Otros Bienes Muebles que registrar?");
                     break;
 
             }
