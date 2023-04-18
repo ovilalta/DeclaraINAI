@@ -396,7 +396,9 @@
     <Content Include="Formas\Administrador\AdministradoresReporte.txt" />
     <Content Include="Formas\Administrador\BuscaRegistroUsuario.aspx" />
     <Content Include="Formas\Administrador\DesencriptaDescMueble.aspx" />
+    <Content Include="Formas\Administrador\ExcepcionEdicionConflictoI.aspx" />
     <Content Include="Formas\Administrador\ExcepcionAcuseFiscal.aspx" />
+    <Content Include="Formas\Administrador\PermisoEdicionConflictoI.txt" />
     <Content Include="Formas\Administrador\ReporteAvanceDeclaracionesModificacion.aspx" />
     <Content Include="Formas\Administrador\ReseteoPassword.aspx" />
     <Content Include="Formas\Administrador\GeneraNombreArchivoPDF.aspx" />
@@ -3113,6 +3115,13 @@
     </Compile>
     <Compile Include="Formas\Administrador\DesencriptaDescMueble.aspx.designer.cs">
       <DependentUpon>DesencriptaDescMueble.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Administrador\ExcepcionEdicionConflictoI.aspx.cs">
+      <DependentUpon>ExcepcionEdicionConflictoI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\ExcepcionEdicionConflictoI.aspx.designer.cs">
+      <DependentUpon>ExcepcionEdicionConflictoI.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formas\Administrador\ExcepcionAcuseFiscal.aspx.cs">
       <DependentUpon>ExcepcionAcuseFiscal.aspx</DependentUpon>

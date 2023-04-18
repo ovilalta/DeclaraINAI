@@ -139,6 +139,7 @@
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/DescargaDeclaracionesPDFs.aspx" Text="Descarga PDF Declaraciones" ToolTip="Descarga PDF's Declaraciones por rango de fecha" Value="Descarga PDF Declaraciones"></asp:MenuItem>
                                                                 </asp:MenuItem>
                                                                 <asp:MenuItem NavigateUrl="~/Formas/Administrador/ExcepcionAcuseFiscal.aspx" Text="Excepción Acuse Fiscal RFC" ToolTip="Agregar Excepción para acuse fiscal" Value="RFC Cambio Acuse Fiscal"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/ExcepcionEdicionConflictoI.aspx" Text="Excepción Edición Conflicto Intereses" ToolTip="Agregar Excepción para edición de conflicto de intereses" Value="RFC Edición Conflicto Intereses"></asp:MenuItem>
                                                                 <asp:MenuItem NavigateUrl="~/Formas/Administrador/ExcepcionRFC.aspx" Text="Excepción RFC" ToolTip="Agregar Excepción de RFC" Value="Excepción RFC"></asp:MenuItem>
                                                                 <asp:MenuItem NavigateUrl="~/Formas/Administrador/GeneraNombreArchivoPDF.aspx" Text="Genera Nombre Archivo PDF" ToolTip="Genera Nombre del archivo PDF" Value="Genera PDF"></asp:MenuItem>
                                                                 <asp:MenuItem Text="Menú Reportes" Value="Menú Reportes" ToolTip="Menú de reportes">
@@ -295,11 +296,7 @@
                                     <p class="d-flex align-items-center">
                                        Declaración de Intereses </p></div></asp:LinkButton>
                             </div>
-                        </div>
-
-                        
-                        
-
+                        </div>            
 
                         <div class="col-lg-4 col-md-6">
                             <div class="single_destination">
@@ -332,8 +329,6 @@
                             </div>
                         </div>
                     </div>
-
-                    
 
                 </div>
             </div>

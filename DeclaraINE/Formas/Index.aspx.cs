@@ -27,8 +27,6 @@ namespace DeclaraINE.Formas
             blld_USUARIO oUsuario = _oUsuario;
             string VID_RFC = oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE;
 
-
-
             DateTime FechaIni = Convert.ToDateTime(System.Configuration.ConfigurationManager.AppSettings["FechaIniMod"]);
             DateTime FechaFin = Convert.ToDateTime(System.Configuration.ConfigurationManager.AppSettings["FechaFinMod"]);
 
@@ -56,27 +54,23 @@ namespace DeclaraINE.Formas
                 btnAdmin.Visible = true;
                 LkFiscal.Visible = true;
             }
-            #endregion
 
-            #region Logica Permisos para visualizar boton acuse fiscal
-
-            MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
-            string connString = db.Database.Connection.ConnectionString;
-            string sql = "SP_BuscaRfcAcuseFiscal";
-            bool excepFiscal = false;
-            using (SqlConnection conn = new SqlConnection(connString))
+            //Agregar logica para revisar si existe autorizacion para usar la edicion de conflicto de intereses
+            MODELDeclara_V2.cnxDeclara dbBuscaConflictoI = new MODELDeclara_V2.cnxDeclara();
+            string connStringConflictoI = dbBuscaConflictoI.Database.Connection.ConnectionString;
+            string sqlConflictoIBuscar = "SP_BuscaRfcConflictoI";
+            bool excepConflictoI = false;
+            using (SqlConnection connConflictoI = new SqlConnection(connStringConflictoI))
             {
                 try
                 {
-                    conn.Open();
-                    using (SqlCommand cmd= new SqlCommand(sql, conn))
+                    connConflictoI.Open();
+                    using (SqlCommand cmd = new SqlCommand(sqlConflictoIBuscar, connConflictoI))
                     {
-
                         cmd.CommandType = CommandType.StoredProcedure;
-
                         SqlDataReader drd = cmd.ExecuteReader(CommandBehavior.Default);
 
-                        if (drd!=null)
+                        if (drd != null)
                         {
 
                             while (drd.Read())
@@ -84,19 +78,19 @@ namespace DeclaraINE.Formas
                                 string rfcTemp = drd.GetString(0);
                                 if (rfcTemp == VID_RFC)
                                 {
-                                    excepFiscal = true;
+                                    excepConflictoI = true;
                                 }
                             }
-                            conn.Close();
+                            connConflictoI.Close();
                         }
-                        
-                        if (excepFiscal == false)
+
+                        if (excepConflictoI == false)
                         {
-                            LkFiscal.Visible = false;
+                            lkConflicto.Enabled = false;
                         }
                         else
                         {
-                            LkFiscal.Visible = true;
+                            lkConflicto.Enabled = true;
                         }
 
                     }
@@ -106,52 +100,101 @@ namespace DeclaraINE.Formas
                     Console.WriteLine("Error: " + ex.Message);
                 }
 
-            }
+                #endregion
 
-            #endregion
+                #region Logica Permisos para visualizar boton acuse fiscal
 
-            LabNombre.Text = oUsuario.V_NOMBRE_COMPLETO;
-            labFecha.Text = DateTime.Today.ToString("dd/MMMM/yyyy", new CultureInfo("es-MX")).ToUpper();
-
-            if (!IsPostBack)
-            {
-                if (DateTime.Now < FechaIni || DateTime.Now > FechaFin)
+                MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+                string connString = db.Database.Connection.ConnectionString;
+                string sql = "SP_BuscaRfcAcuseFiscal";
+                bool excepFiscal = false;
+                using (SqlConnection conn = new SqlConnection(connString))
                 {
-                    LinkButton22.Enabled = false;
-                    lkModificacion.Enabled = false;
+                    try
+                    {
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand(sql, conn))
+                        {
+
+                            cmd.CommandType = CommandType.StoredProcedure;
+
+                            SqlDataReader drd = cmd.ExecuteReader(CommandBehavior.Default);
+
+                            if (drd != null)
+                            {
+                                while (drd.Read())
+                                {
+                                    string rfcTemp = drd.GetString(0);
+                                    if (rfcTemp == VID_RFC)
+                                    {
+                                        excepFiscal = true;
+                                    }
+                                }
+                                conn.Close();
+                            }
+
+                            if (excepFiscal == false)
+                            {
+                                LkFiscal.Visible = false;
+                            }
+                            else
+                            {
+                                LkFiscal.Visible = true;
+                            }
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error: " + ex.Message);
+                    }
+
                 }
 
+                #endregion
 
-                QstBox.AskWarning("<b>Compañero(a) Servidor(a) Público(a):</b><br/>De conformidad con los artículos 26, 27, 32," +
-                    " 33, 46, 47 y 48 de la LGRA todos los servidores públicos tenemos la obligación de presentar las declaraciones" +
-                    " de situación patrimonial, de intereses y la constancia de presentación de declaración fiscal, bajo protesta " +
-                    "de decir verdad y ante el Órgano Interno de Control, en los términos, plazos y modalidad que establece la propia " +
-                    "legislación aplicable; así como cumplir el Código de Ética. ¿Realmente deseas comenzar a llenar tu Declaración de " +
-                    "Situación Patrimonial y de Intereses, así como la constancia de presentación de declaración fiscal?</p></h3>");
+                LabNombre.Text = oUsuario.V_NOMBRE_COMPLETO;
+                labFecha.Text = DateTime.Today.ToString("dd/MMMM/yyyy", new CultureInfo("es-MX")).ToUpper();
 
-                _oUsuario.ExtenderSesion();
-                this.Page.Title = "Menú Principal";
-
-                if (clsSistema.lActivaAviso)
-                    pnlAviso.Visible = true;
-                else
-                    pnlAviso.Visible = false;
-            }
-            try
-            {
-                if (Session["oMensaje"] != null)
+                if (!IsPostBack)
                 {
-                    QstBox.AskWarning((String)Session["oMensaje"]);
-                    QstBox.YesText = "Aceptar";
-                    QstBox.NoText = "Cerrar";
-                    QstBox.NoCssClass = "ocultarBoton ";
-                    Session.Remove("oMensaje");
+                    if (DateTime.Now < FechaIni || DateTime.Now > FechaFin)
+                    {
+                        LinkButton22.Enabled = false;
+                        lkModificacion.Enabled = false;
+                    }
+
+
+                    QstBox.AskWarning("<b>Compañero(a) Servidor(a) Público(a):</b><br/>De conformidad con los artículos 26, 27, 32," +
+                        " 33, 46, 47 y 48 de la LGRA todos los servidores públicos tenemos la obligación de presentar las declaraciones" +
+                        " de situación patrimonial, de intereses y la constancia de presentación de declaración fiscal, bajo protesta " +
+                        "de decir verdad y ante el Órgano Interno de Control, en los términos, plazos y modalidad que establece la propia " +
+                        "legislación aplicable; así como cumplir el Código de Ética. ¿Realmente deseas comenzar a llenar tu Declaración de " +
+                        "Situación Patrimonial y de Intereses, así como la constancia de presentación de declaración fiscal?</p></h3>");
+
+                    _oUsuario.ExtenderSesion();
+                    this.Page.Title = "Menú Principal";
+
+                    if (clsSistema.lActivaAviso)
+                        pnlAviso.Visible = true;
+                    else
+                        pnlAviso.Visible = false;
+                }
+                try
+                {
+                    if (Session["oMensaje"] != null)
+                    {
+                        QstBox.AskWarning((String)Session["oMensaje"]);
+                        QstBox.YesText = "Aceptar";
+                        QstBox.NoText = "Cerrar";
+                        QstBox.NoCssClass = "ocultarBoton ";
+                        Session.Remove("oMensaje");
+                    }
+                }
+                catch
+                {
                 }
             }
-            catch
-            {
-            }
-
         }
 
         protected void QstBox_No(object Sender, EventArgs e)

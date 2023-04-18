@@ -16,6 +16,7 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 using MODELDeclara_V2;
+//using System.Windows.Forms;
 
 namespace DeclaraINE.Formas.DeclaracionConflicto
 {
@@ -388,7 +389,48 @@ namespace DeclaraINE.Formas.DeclaracionConflicto
         protected void btnRegresarIndex2(object sender, EventArgs e)
         {
             CambiaEstadoDeclaracion(2);
+            EliminaRFC(_oUsuario.VID_NOMBRE+_oUsuario.VID_FECHA+_oUsuario.VID_HOMOCLAVE);
             Response.Redirect("../Index.aspx");
+        }
+
+        private void EliminaRFC(string RFC)
+        {
+
+            #region Logica quitar Permisos para visualizar boton acuse fiscal
+
+            MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+            string connString = db.Database.Connection.ConnectionString;
+            string sql = "SP_EliminaRfcConflictoI";
+            int rpta = 0;
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@rfc", RFC);
+
+                        rpta = cmd.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    conn.Close();
+                    rpta = 0;
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+
+            }
+
+            #endregion
+
+            //if (rpta == -1)
+            //{
+            //    QstBox.AskSuccess("Proceso Satisfactorio", "Su acuse fiscal se sustituyó de manera correcta!");
+            //}
         }
 
         public void CambiaEstadoDeclaracion(int param)

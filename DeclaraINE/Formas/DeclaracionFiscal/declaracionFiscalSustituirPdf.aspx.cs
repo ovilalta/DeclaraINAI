@@ -81,17 +81,12 @@ namespace DeclaraINE.Formas.declaracionFiscalSustituirPdf
                 {
                     FileUpload1.SaveAs(Server.MapPath("~" + ruta + nombreArchivo + fileExtension));
                     
-                   EliminaRFC(nombreArchivo);
-                   
-                    
-
+                   EliminaRFC(nombreArchivo);       
                    
                 }
                 else
                 {
-
                     MsgBox.ShowDanger("Cuidado", "El acuse debe ser en formato pdf, revisar el archivo a cargar, por favor!");
-
                 }
 
             }
@@ -114,8 +109,6 @@ namespace DeclaraINE.Formas.declaracionFiscalSustituirPdf
         {
 
             #region Logica quitar Permisos para visualizar boton acuse fiscal
-
-
 
             MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
             string connString = db.Database.Connection.ConnectionString;
