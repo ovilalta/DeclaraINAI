@@ -992,7 +992,10 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                         break;
                     case SubSecciones.DependienteEconomicos:
                         if (oDeclaracion.DECLARACION_DEPENDIENTESs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 6).First().L_ESTADO.Value)
-                        { }
+                        {
+                            marcaApartado(ref oDeclaracion, 5);
+                            marcaApartado(ref oDeclaracion, 6);
+                        }
                         else
                         {
 

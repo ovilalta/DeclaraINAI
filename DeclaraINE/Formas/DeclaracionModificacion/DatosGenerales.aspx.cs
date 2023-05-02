@@ -204,7 +204,6 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
             if (!IsPostBack)
             {
-
                 _oDeclaracion = oDeclaracion;
                 ctrlDependiente1.Requerido = btnGuardarDependiente.ClientID;
                 //blld_DECLARACION oDeclaracion = _oDeclaracion;
@@ -379,8 +378,6 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             cmbcIdEntidadFederativaNacimiento.DataBind(oEntidadFederativa.lista_CAT_ENTIDAD_FEDERATIVA, CAT_ENTIDAD_FEDERATIVA.Properties.CID_ENTIDAD_FEDERATIVA, CAT_ENTIDAD_FEDERATIVA.Properties.V_ENTIDAD_FEDERATIVA);
             //cmbcIdEntidadFederativaNacimiento_SelectedIndexChanged(sender, e);
         }
-
-
 
 
         #region *** Botones Navegacion ***
@@ -1208,10 +1205,12 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                         break;
                     case SubSecciones.DependienteEconomicos:
                         if (oDeclaracion.DECLARACION_DEPENDIENTESs.Count == 0 && !oDeclaracion.DECLARACION_APARTADOs.Where(p => p.NID_APARTADO == 6).First().L_ESTADO.Value)
-                        { }
+                        {
+                            marcaApartado(ref oDeclaracion, 5);
+                            marcaApartado(ref oDeclaracion, 6);
+                        }
                         else
                         {
-
                             marcaApartado(ref oDeclaracion, 5);
                             marcaApartado(ref oDeclaracion, 6);
 
@@ -1349,9 +1348,6 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             pnlDependientes.Visible = true;
         }
 
-
-
-
         protected void cmbcGenero_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbcGenero.SelectedValue == "F")
@@ -1439,15 +1435,14 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
         }
 
-
         protected void txtVID_PRIMER_NIVEL_TextChanged(object sender, EventArgs e)
         {
             blld__l_CAT_SEGUNDO_NIVEL oSegundo = new blld__l_CAT_SEGUNDO_NIVEL();
             oSegundo.VID_PRIMER_NIVEL = new Declara_V2.StringFilter(cmbVID_PRIMER_NIVEL.SelectedValue);
             oSegundo.select();
             cmbVID_SEGUNDO_NIVEL.DataBind(oSegundo.lista_CAT_SEGUNDO_NIVEL, CAT_SEGUNDO_NIVEL.Properties.VID_SEGUNDO_NIVEL, CAT_SEGUNDO_NIVEL.Properties.V_SEGUNDO_NIVEL);
+            
         }
-
 
         protected void cmbVID_CLAVEPUESTO_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1523,9 +1518,6 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             ctrlDependiente1.limpia();
             ctrlDependiente1.SelectDependiente();
         }
-
-
-
 
         protected void btnGuardaDependiente_Click(object sender, EventArgs e)
         {
@@ -1886,7 +1878,6 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             ctrlDependiente1.llena(personaSeleccionada);
         }
 
-
         protected void OnEliminar(object sender, ItemEventArgs e)
         {
             try
@@ -1925,9 +1916,6 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 }
             }
         }
-
-
-
 
         protected void QstBoxDep_Yes(object Sender, EventArgs e)
         {
@@ -2035,7 +2023,6 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             oMunicipio_Otro.select();
             cmbCARGO_CID_MUNICIPIO_OTRO.DataBind(oMunicipio_Otro.lista_CAT_MUNICIPIO, CAT_MUNICIPIO.Properties.CID_MUNICIPIO, CAT_MUNICIPIO.Properties.V_MUNICIPIO);
         }
-
 
     }
 }
