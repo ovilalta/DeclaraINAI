@@ -18,9 +18,6 @@ namespace DeclaraINE.Formas
             set => SessionAdd("oUsuario", value);
         }
 
-
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
 

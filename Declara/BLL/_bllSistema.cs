@@ -13,9 +13,6 @@ namespace Declara_V2.BLL
 {
     public class _bllSistema
     {
-
-
-
         public string Encripta(string Cadena)
         {
             if (String.IsNullOrEmpty(Cadena))
@@ -125,7 +122,7 @@ namespace Declara_V2.BLL
 
             SmtpClient smtpClient = new SmtpClient(BLLD.clsSistema.ServidorCorreo, BLLD.clsSistema.PuertoCorreo);
             
-            smtpClient.Credentials = new System.Net.NetworkCredential("luis.aldana@inai.mx", "f3rnando$");
+            smtpClient.Credentials = new System.Net.NetworkCredential("oscar.vilalta@inai.mx", "M414valeria&");
             MailMessage mail = new MailMessage();
 
             mail.From = new MailAddress(BLLD.clsSistema.CorreoSalida, "DeclaraInai");

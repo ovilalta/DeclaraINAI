@@ -1321,6 +1321,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_INMUEBLE_COPROPIETARIO.CID_TIPO_PERSONA = cmbTercero.SelectedValue;
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_INMUEBLE_COPROPIETARIO.V_NOMBRE = txtNombreTercero.Text;
                 oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_INMUEBLE_COPROPIETARIO.V_RFC = txtRFCTercero.Text;
+                oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].update();
                 //oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_INMUEBLE_COPROPIETARIO.update();
                 //Revisar para que se manda la lista de dependientes, si solo deber[ia actualizarse el dependiente seleccionado en el combo
                 //oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].update(chbDependietes.SelectedValuesInteger(), cmbTercero.SelectedValue, txtNombreTercero.Text, txtRFCTercero.Text);

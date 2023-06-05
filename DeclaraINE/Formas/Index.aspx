@@ -148,19 +148,12 @@
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteAvanceDeclaracionesModificacion.aspx" Text="Reporte Avance Declaraciones Modificacion" ToolTip="Emite reporte de avance de las declaraciones de modificación" Value="Reporte Avance Modificación"></asp:MenuItem>
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteDeclaracionesInformeTrim.aspx" Text="Reporte Declaraciones Informe Trimestral" ToolTip="Reporte Declaraciones Informe Trimestral" Value="Reporte Declaraciones Informe Trimestral"></asp:MenuItem>
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteSIPOT.aspx" Text="Reporte SIPOT" ToolTip="Reporte SIPOT" Value="Reporte SIPOT"></asp:MenuItem>
-                                                                    
-
-                                                                    
                                                                 </asp:MenuItem>
                                                                 <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReseteoPassword.aspx" Text="Reseteo de Contraseña" ToolTip="Resetear contraseña del usuario" Value="Reseteo de contraseña"></asp:MenuItem>
                                                             </asp:MenuItem>
                                                         </Items>
                                                     </asp:Menu>
-
                                                 </ul>
-
-
-
                                             </nav>
                                         </div>
                                     </div>
