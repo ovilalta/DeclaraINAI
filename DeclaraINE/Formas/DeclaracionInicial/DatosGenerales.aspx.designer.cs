@@ -381,7 +381,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox cmbVID_PRIMER_NIVEL;
+        protected global::System.Web.UI.WebControls.DropDownList cmbVID_PRIMER_NIVEL;
 
         /// <summary>
         /// Control cmbVID_SEGUNDO_NIVEL.
@@ -399,7 +399,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AjaxControlToolkit.ComboBox cmbVID_CLAVEPUESTO;
+        protected global::System.Web.UI.WebControls.DropDownList cmbVID_CLAVEPUESTO;
 
         /// <summary>
         /// Control grdPreguntas.

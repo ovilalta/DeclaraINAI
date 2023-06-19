@@ -1,4 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CambiaCorreo.aspx.cs" Inherits="DeclaraINE.Formas.CambiaCorreo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EliminarConclusionErronea.aspx.cs" Inherits="DeclaraINE.Formas.EliminarConclusionErronea" %>
+
+<%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
+
+
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <!DOCTYPE html>
@@ -8,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - <%: Declara_V2.BLLD.clsSistema.V_SISTEMA %></title>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />    
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="../css/font-awesome.min.css" />
     <link rel="stylesheet" href="../css/Declaracion.css" />
     <link rel="stylesheet" href="../css/style.css" />
@@ -69,7 +73,7 @@
             }
         </style>
         <div class="card">
-            <asp:AlanAlert runat="server" ID="msgx"></asp:AlanAlert>
+            <asp:AlanMessageBox runat="server" ID="msgBox" />
             <div class="row register-info-box" style="background: url('../Images/ine-acerca-slide.jpg');">
                 <div>
                     <div class="row align-items-left" style="display: flex;">
@@ -88,7 +92,7 @@
                     </div>
                     <ul class="nav nav-tabs menu2020">
                         <li runat="server" enableviewstate="false" id="liDatosGenerales" class="active">
-                            <a href="#menu1" data-toggle="tab">Agregar una nueva cuenta de correo personal</a>
+                            <a href="#menu1" data-toggle="tab">Eliminar Declaración Conclusión</a>
                         </li>
                     </ul>
                 </div>
@@ -110,30 +114,76 @@
                     </div>
                     <div class="subtitulo">
                         <asp:Literal ID="ltrSubTituloAdmin" runat="server"></asp:Literal>
-                        
+
                         <!--<div class="input-container">-->
-                                <label for="txtRFC" >RFC:</label>
-                                <br />
-                                <asp:TextBox ID="txtRFC" runat="server"></asp:TextBox>
-                                <br /><br />
-                                <!--<label for="txtCorreoInst">Correo institucional:</label>
-                                <br />
-                                <asp:TextBox ID="txtCorreoInst" runat="server"></asp:TextBox>
-                                <br /><br />-->
-                                <label for="txtCorreoPers">Correo personal:</label>
-                                <br />
-                                <asp:TextBox ID="txtCorreoPers" runat="server"></asp:TextBox>
-                                <br /><br />
-                                <asp:Button ID="brnActualizar" runat="server" Text="Agregar correo" OnClick="btnDescargar_Actualizar" CssClass="contact"/>
-                                <div class="bar">
-                                </div>
+                        
+                        <label for="txtRfc">Indicar el método de búsqueda:</label>
+                        <div class="form-check">
+                            <asp:RadioButton class="form-check-input" Text=" RFC " runat="server" ID="rbRFC" GroupName="RadioGroup1" />
+                        </div>
+                        <%--<div class="form-check">
+                            <asp:RadioButton class="form-check-input" Text=" Nombre " runat="server" ID="rbNombre" GroupName="RadioGroup1" />
+                        </div>--%>
+                        
+                        <asp:TextBox ID="txtRfc" runat="server"></asp:TextBox>
+                        <br />
+                        <br />
+                        <asp:Button ID="btnDescargar" runat="server" Text="Buscar" OnClick="btnDescargar_Click" CssClass="mpdf" />
+                        <%--<div class="bar">
+                        </div>--%>
+
+                        <!--</div>-->
+                    </div>
+                    <div id="cuerpo" style="padding: 10px 20px 20px 20px;">
+                        <asp:AlanAlert runat="server" ID="AlertaSuperior" />
+
+                        <asp:GridView ID="grdDP" runat="server" AutoGenerateColumns="false" CssClass="table table-condensed table-striped bordeless table-hover" OnRowDataBound="grdDP_RowDataBound" OnSelectedIndexChanged="grdDP_SelectedIndexChanged">
+                            <Columns>
+                                <asp:TemplateField HeaderText="RFC" Visible="false">
+                                    <ItemTemplate>
+                                        <asp:Literal ID="ltrRFC" runat="server" Text='<%# Eval("RFC") %>'></asp:Literal>
+
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Nombre Funcionario">
+                                    <ItemTemplate>
+                                        <asp:Literal ID="ltrNombreDP" runat="server" Text='<%# Eval("V_NOMBRE_COMPLETO") %>'></asp:Literal>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Tipo Declaración">
+                                    <ItemTemplate>
+                                        <asp:Literal ID="ltrDescripcionDP" runat="server" Text='<%# Eval("V_TIPO_DECLARACION") %>'></asp:Literal>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Id Declaración">
+                                    <ItemTemplate>
+                                        <asp:Literal ID="ltrIdDeclaracion" runat="server" Text='<%# Eval("NID_DECLARACION") %>'></asp:Literal>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Fecha Envío">
+                                    <ItemTemplate>
+                                        <asp:Literal ID="ltrFechaEDP" runat="server" Text='<%# Eval("F_PRESENTACION") %>'></asp:Literal>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Ejercicio">
+                                    <ItemTemplate>
+                                        <asp:Literal ID="ltrEjercicioDP" runat="server" Text='<%# Eval("C_EJERCICIO") %>'></asp:Literal>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Botón Eliminar">
+                                    <ItemTemplate>
+                                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar Declaración" CommandArgument='<%# Eval("NID_DECLARACION") %>' OnClick="btnEliminarConclusion_Click" CssClass="delete" />  
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 
-                         <!--</div>-->
+
+                            </Columns>
+                        </asp:GridView>
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </form>
 </body>
 </html>

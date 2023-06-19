@@ -102,7 +102,7 @@
                                     </div>
                                     <div class="col-xl-8 col-lg-8">
                                         <%-- Cambie el tamanio del menu block para que se vea desde el movil --%>
-                                        <div class="main-menu  d-none d-sm-block">  
+                                        <div class="main-menu  d-none d-sm-block">
                                             <%--<div class="main-menu  d-none d-lg-block">--%>
                                             <nav>
                                                 <ul id="navigation">
@@ -117,31 +117,20 @@
                                                     <%--<li>
                                                         <asp:LinkButton ID="LinkButton200" runat="server" OnClick=" lkFiscal_Click" CssClass="active" Text="Fiscal"></asp:LinkButton></li>--%>
                                                     <li>
-                                                    <asp:LinkButton ID="btnaCerrar" Text="Salir" runat="server" OnClick="btnCerrar_Click"></asp:LinkButton></li>
+                                                        <asp:LinkButton ID="btnaCerrar" Text="Salir" runat="server" OnClick="btnCerrar_Click"></asp:LinkButton></li>
                                                 </ul>
+
 
                                                 <ul id="navigation2">
 
                                                     <asp:Menu ID="btnAdmin" runat="server" CssClass="navbar navbar-fixed-top" StaticMenuStyle-CssClass="nav navbar-nav" StaticSelectedStyle-CssClass="active" DynamicMenuStyle-CssClass="dropdown-menu">
                                                         <Items>
                                                             <asp:MenuItem Text="Menú Administrador" Value="Menú Administrador" ToolTip="Opciones de administrador para el OIC">
-                                                                <asp:MenuItem NavigateUrl="~/Formas/ActivacionesAdmin.aspx" Text="Activar Cuenta" ToolTip="Activar cuenta de usuario" Value="Activar Cuenta"></asp:MenuItem>
-                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/BuscaRegistroUsuario.aspx" Text="Busca Registro Usuario" ToolTip="Busca si ya se registró el usuario" Value="Busca Registro Usuario"></asp:MenuItem>
-                                                                <asp:MenuItem Text="Cargas" Value="Cargas" ToolTip="Menú de Cargas">
-                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/CargaAcusesFiscales.aspx" Text="Carga Acuses Fiscales" ToolTip="Carga Acuses Fiscales" Value="Carga Acuses Fiscales"></asp:MenuItem>
-                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/CargaDeclaraciones.aspx" Text="Carga Declaraciones Patrimoniales" ToolTip="Carga Declaraciones Patrimoniales" Value="Carga Declaraciones Patrimoniales"></asp:MenuItem>
+                                                                <asp:MenuItem Text="Declaraciones" Value="Declaraciones" ToolTip="Menú de Declaraciones">
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/ConsultaDeclaracionAdmin.aspx" Text="Busca Declaraciones" ToolTip="Buscar Declaraciones por RFC" Value="Declaraciones"></asp:MenuItem>
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/DescargaDeclaracionesPDFs.aspx" Text="Descarga Versiones Públicas" ToolTip="Descarga versiones públicas" Value="Descarga versiones públicas"></asp:MenuItem>
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/GeneraNombreArchivoPDF.aspx" Text="Genera Nombre Archivo PDF" ToolTip="Genera Nombre del archivo PDF" Value="Genera PDF"></asp:MenuItem>
                                                                 </asp:MenuItem>
-                                                                <asp:MenuItem NavigateUrl="~/Formas/CambiaCorreo.aspx" Text="Correo Alterno" ToolTip="Agregar correo personal" Value="Correo Alterno"></asp:MenuItem>
-                                                                <asp:MenuItem NavigateUrl="~/Formas/ConsultaDeclaracionAdmin.aspx" Text="Declaraciones" ToolTip="Buscar Declaraciones por RFC" Value="Declaraciones"></asp:MenuItem>
-                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/DesencriptaDescMueble.aspx" Text="Desencripta Bien Mueble" ToolTip="Desencripta Descripción Bienes Muebles" Value="Desencripta"></asp:MenuItem>
-                                                                <asp:MenuItem Text="Descargas" Value="Descargas" ToolTip="Menú de descargas">
-                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/DescargaAcusesFiscales.aspx" Text="Descarga Acuses Fiscales" ToolTip="Descarga Acuses Fiscales por año" Value="Descarga Acuses Fiscales"></asp:MenuItem>
-                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/DescargaDeclaracionesPDFs.aspx" Text="Descarga PDF Declaraciones" ToolTip="Descarga PDF's Declaraciones por rango de fecha" Value="Descarga PDF Declaraciones"></asp:MenuItem>
-                                                                </asp:MenuItem>
-                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/ExcepcionAcuseFiscal.aspx" Text="Excepción Acuse Fiscal RFC" ToolTip="Agregar Excepción para acuse fiscal" Value="RFC Cambio Acuse Fiscal"></asp:MenuItem>
-                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/ExcepcionEdicionConflictoI.aspx" Text="Excepción Edición Conflicto Intereses" ToolTip="Agregar Excepción para edición de conflicto de intereses" Value="RFC Edición Conflicto Intereses"></asp:MenuItem>
-                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/ExcepcionRFC.aspx" Text="Excepción RFC" ToolTip="Agregar Excepción de RFC" Value="Excepción RFC"></asp:MenuItem>
-                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/GeneraNombreArchivoPDF.aspx" Text="Genera Nombre Archivo PDF" ToolTip="Genera Nombre del archivo PDF" Value="Genera PDF"></asp:MenuItem>
                                                                 <asp:MenuItem Text="Menú Reportes" Value="Menú Reportes" ToolTip="Menú de reportes">
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteDeclaracionesConflictoIntereses.aspx" Text="Reporte Declaraciones Conflicto Intereses" ToolTip="Emite reporte de declaraciones de conflicto de intereses por rango de fecha" Value="Reporte Declaraciones de Conflicto de Intereses"></asp:MenuItem>
                                                                     <asp:MenuItem NavigateUrl="~/Formas/RegistrosAdmin.aspx" Text="Reporte Declaraciones Listado Detalle" ToolTip="Emite reporte de declaraciones por rango de fecha" Value="Reporte Declaraciones"></asp:MenuItem>
@@ -149,6 +138,31 @@
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteDeclaracionesInformeTrim.aspx" Text="Reporte Declaraciones Informe Trimestral" ToolTip="Reporte Declaraciones Informe Trimestral" Value="Reporte Declaraciones Informe Trimestral"></asp:MenuItem>
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteSIPOT.aspx" Text="Reporte SIPOT" ToolTip="Reporte SIPOT" Value="Reporte SIPOT"></asp:MenuItem>
                                                                 </asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/Formas/EliminarConclusionErronea.aspx" Text="Eliminar Conclusión Erronea" ToolTip="Eliminar Conclusión" Value="Eliminar Conclusión"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/Formas/ActivacionesAdmin.aspx" Text="Activar Cuenta" ToolTip="Activar cuenta de usuario" Value="Activar Cuenta"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/Formas/Administrador/BuscaRegistroUsuario.aspx" Text="Busca Registro Usuario" ToolTip="Busca si ya se registró el usuario" Value="Busca Registro Usuario"></asp:MenuItem>
+                                                                <%--<asp:MenuItem Text="Cargas" Value="Cargas" ToolTip="Menú de Cargas">
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/CargaAcusesFiscales.aspx" Text="Carga Acuses Fiscales" ToolTip="Carga Acuses Fiscales" Value="Carga Acuses Fiscales"></asp:MenuItem>
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/CargaDeclaraciones.aspx" Text="Carga Declaraciones Patrimoniales" ToolTip="Carga Declaraciones Patrimoniales" Value="Carga Declaraciones Patrimoniales"></asp:MenuItem>
+                                                                </asp:MenuItem>--%>
+
+                                                                <asp:MenuItem NavigateUrl="~/Formas/CambiaCorreo.aspx" Text="Correo Alterno" ToolTip="Agregar correo personal" Value="Correo Alterno"></asp:MenuItem>
+                                                                
+
+                                                                <%--<asp:MenuItem NavigateUrl="~/Formas/Administrador/DesencriptaDescMueble.aspx" Text="Desencripta Bien Mueble" ToolTip="Desencripta Descripción Bienes Muebles" Value="Desencripta"></asp:MenuItem>--%>
+                                                                <asp:MenuItem Text="Acuses Fiscales" Value="Acuses Fiscales" ToolTip="Menú de acuses fiscales">
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/DescargaAcusesFiscales.aspx" Text="Descarga Acuses Fiscales" ToolTip="Descarga Acuses Fiscales por año" Value="Descarga Acuses Fiscales"></asp:MenuItem>
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/ConsultaAcusesFiscales.aspx" Text="Consulta Acuse Individual" ToolTip="Consulta Acuse Fiscal" Value="Consulta Acuse"></asp:MenuItem>
+                                                                </asp:MenuItem>
+
+                                                                <asp:MenuItem Text="Excepciones" Value="Excepciones" ToolTip="Excepciones">
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/ExcepcionAcuseFiscal.aspx" Text="Excepción Acuse Fiscal RFC" ToolTip="Agregar Excepción para acuse fiscal" Value="RFC Cambio Acuse Fiscal"></asp:MenuItem>
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/ExcepcionEdicionConflictoI.aspx" Text="Excepción Edición Conflicto Intereses" ToolTip="Agregar Excepción para edición de conflicto de intereses" Value="RFC Edición Conflicto Intereses"></asp:MenuItem>
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/ExcepcionRFC.aspx" Text="Excepción RFC registro" ToolTip="Agregar Excepción de RFC" Value="Excepción RFC"></asp:MenuItem>
+                                                                </asp:MenuItem>
+
+
+                                                                
                                                                 <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReseteoPassword.aspx" Text="Reseteo de Contraseña" ToolTip="Resetear contraseña del usuario" Value="Reseteo de contraseña"></asp:MenuItem>
                                                             </asp:MenuItem>
                                                         </Items>
@@ -282,14 +296,14 @@
 
                         <div class="col-lg-4 col-md-6">
                             <div class="single_destination">
-                                <asp:LinkButton enabled="true" ID="lkConflicto" runat="server" OnClick="lkConflicto_Click"> <div class="thumb">
+                                <asp:LinkButton Enabled="true" ID="lkConflicto" runat="server" OnClick="lkConflicto_Click"> <div class="thumb">
                                     <img src="../Images/DeclaraConclusion.jpg" />
                                 </div>
                                 <div class="content">
                                     <p class="d-flex align-items-center">
                                        Declaración de Intereses </p></div></asp:LinkButton>
                             </div>
-                        </div>            
+                        </div>
 
                         <div class="col-lg-4 col-md-6">
                             <div class="single_destination">

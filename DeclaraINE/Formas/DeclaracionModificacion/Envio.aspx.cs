@@ -40,6 +40,16 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 ((Button)Master.FindControl("btnSiguiente")).Text = "Enviar";
                 ((Button)Master.FindControl("btnSiguiente")).CssClass = "send";
                 ((Button)Master.FindControl("btnSiguiente")).ToolTip = "Enviar declaración";
+
+                //Meter condición de fecha para mostrar el botón de envio de declaracion hasta la fecha autorizada - OEVM 20230608
+                DateTime FechaBtnEnvMod = Convert.ToDateTime(System.Configuration.ConfigurationManager.AppSettings["FechaActBtnEnvMod"]);
+                if (DateTime.Now < FechaBtnEnvMod)
+                {
+                    ((Button)Master.FindControl("btnSiguiente")).Visible = false;
+                }
+
+                //Fin de condición para mostrar botón
+
                 cambiarBoton();
                 PostBackTrigger trigger = new PostBackTrigger();
                 trigger.ControlID = btnPrevisualizar.UniqueID;
@@ -75,6 +85,13 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             }
             btnPrevisualizar.CssClass = "big enviar";
             lrtAccion.Text = "Enviar la declaración";
+            //Condicion de fecha para activar boton de envio de declaracion
+            DateTime FechaBtnEnvMod = Convert.ToDateTime(System.Configuration.ConfigurationManager.AppSettings["FechaActBtnEnvMod"]);
+            if (DateTime.Now<FechaBtnEnvMod)
+            {
+                lrtAccion.Text = "Podrá enviar su declaración a partir del día 1 de mayo";
+                btnPrevisualizar.Enabled = false;
+            }
 
         }
 
@@ -113,7 +130,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     //////                                                           ,_oUsuario.VID_HOMOCLAVE
                     //////                                                           ,_oDeclaracion.NID_DECLARACION
                     //////                                                           ,"Preliminarx"}.ToArray());
-                    
+
                     //////registro.V_HASH = GetSHA1(sf.FileBytes.ToString());
                     ////registro.B_FILE_DECLARACION = sf.FileBytes;
                     db.SaveChanges();
@@ -150,8 +167,6 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                         throw ex;
                     }
                 }
-
-
             }
 
         }

@@ -298,15 +298,7 @@
                             <l>Unidad Administrativa</l>
                         </th>
                         <td>
-                            <ajaxToolkit:ComboBox ID="cmbVID_PRIMER_NIVEL" runat="server"
-                                AutoPostBack="true"
-                                Width="100%"
-                                DropDownStyle="DropDownList"
-                                AutoCompleteMode="SuggestAppend"
-                                CaseSensitive="False"
-                                OnSelectedIndexChanged="txtVID_PRIMER_NIVEL_TextChanged"
-                                ItemInsertLocation="Append">
-                            </ajaxToolkit:ComboBox>
+                            <asp:DropDownList ID="cmbVID_PRIMER_NIVEL" runat="server" requerido="btnSiguiente" OnSelectedIndexChanged="txtVID_PRIMER_NIVEL_TextChanged" AutoPostBack="true"></asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
@@ -324,7 +316,8 @@
                             <a href="../../pdf1/CatalogoPuestosINAI.pdf" target="_blank">&nbsp<i class="fa fa-book fa-3" aria-hidden="true"></i>Catálogo de Puestos INAI</a>
                         </th>
                         <td>
-                            <ajaxToolkit:ComboBox ID="cmbVID_CLAVEPUESTO" runat="server"
+                            <asp:DropDownList ID="cmbVID_CLAVEPUESTO" runat="server" requerido="btnSiguiente" OnSelectedIndexChanged="cmbVID_CLAVEPUESTO_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                            <%--<ajaxToolkit:ComboBox ID="cmbVID_CLAVEPUESTO" runat="server"
                                 AutoPostBack="true"
                                 DropDownStyle="DropDownList"
                                 AutoCompleteMode="SuggestAppend"
@@ -332,7 +325,7 @@
                                 Width="100%"
                                 OnSelectedIndexChanged="cmbVID_CLAVEPUESTO_SelectedIndexChanged"
                                 ItemInsertLocation="Append">
-                            </ajaxToolkit:ComboBox>
+                            </ajaxToolkit:ComboBox>--%>
                         </td>
                     </tr>
 

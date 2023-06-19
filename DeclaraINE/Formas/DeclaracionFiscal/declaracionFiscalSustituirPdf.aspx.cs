@@ -35,18 +35,13 @@ namespace DeclaraINE.Formas.declaracionFiscalSustituirPdf
             string FileName = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
 
             string anio = DateTime.Today.Year.ToString();
-            string rutaDirectorio = "pdfFiscales\\" + anio;
-
-           
+            string rutaDirectorio = "pdfFiscales\\" + anio;           
             
             string path = rutaDirectorio + "\\" + FileName + ".pdf";
-
 
             pdfFiscal.Attributes["src"] = rutaDirectorio + "\\" + FileName + ".pdf";
 
         }
-
-
 
         protected void btnVerTutorial_Click(object sender, EventArgs e)
         {
@@ -92,7 +87,6 @@ namespace DeclaraINE.Formas.declaracionFiscalSustituirPdf
             }
 
         }
-
 
         protected void QstBox_Yes(object Sender, EventArgs e)
         {

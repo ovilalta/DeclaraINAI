@@ -865,6 +865,18 @@ input[id*="btnFalse"] {
     background-image: url(../Images/icons/ColorX24/ok.png) !important;
 }
 
+.Search {
+    background-image: url(../Images/icons/ColorX24/Search.png) !important;
+}
+
+.key {
+    background-image: url(../Images/icons/ColorX24/Key.png) !important;
+}
+
+.delete {
+    background-image: url(../Images/icons/ColorX24/Delete.png) !important;
+}
+
 
 .mbtn {
     display: inline-block;

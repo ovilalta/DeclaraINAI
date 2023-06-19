@@ -1,12 +1,15 @@
 ﻿using Declara_V2.Exceptions;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Declara_V2.BLL
@@ -117,6 +120,19 @@ namespace Declara_V2.BLL
             return System.Net.WebUtility.HtmlDecode(textoLimpio);
         }
 
+        //Validación de formato de correo electrónico
+        //OEVM 20230606
+        public static bool IsValidEmail(string email)
+        {
+            // Expresión regular para validar el formato del correo electrónico
+            string pattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
+
+            // Validar el formato utilizando la expresión regular
+            bool isValid = Regex.IsMatch(email, pattern);
+
+            return isValid;
+        }
+
         public static Boolean EnviarCorreo(String vCorreo, String vAsunto, String vContenido)
         {
 
@@ -158,6 +174,42 @@ namespace Declara_V2.BLL
 
             byte[] decbuff = Convert.FromBase64String(str);
             return System.Text.Encoding.UTF8.GetString(decbuff);
+        }
+
+        public static int InsertaRfcCambioAcuse(string rfc)
+        {
+            #region Logica agregar a tabla el RFC  que se autorizara para actualizar acuse fiscal
+
+            MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+            string connString = db.Database.Connection.ConnectionString;
+            string sql = "SP_InsertaRfcAcuseFiscal";
+            int rpta = 0;
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@rfc", rfc.ToUpper());
+
+                        rpta = cmd.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    conn.Close();
+                    rpta = 0;
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+
+            }
+            return rpta;
+            #endregion
+
         }
         // SME-NF-I
         protected String Testa(String value)
@@ -221,6 +273,8 @@ namespace Declara_V2.BLL
             }
         }
         // SME-NF-F
+
+
         public _bllSistema()
         { }
 

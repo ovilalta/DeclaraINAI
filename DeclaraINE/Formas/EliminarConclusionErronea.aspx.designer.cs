@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.DeclaracionFiscal
+namespace DeclaraINE.Formas
 {
 
 
-    public partial class WebForm1
+    public partial class EliminarConclusionErronea
     {
 
         /// <summary>
@@ -24,102 +24,111 @@ namespace DeclaraINE.Formas.DeclaracionFiscal
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control ScriptManager1.
+        /// Control msgBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::AlanWebControls.AlanMessageBox msgBox;
 
         /// <summary>
-        /// Control MsgBox.
+        /// Control lblIdentificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AlanWebControls.AlanMessageBox MsgBox;
+        protected global::System.Web.UI.WebControls.Label lblIdentificacion;
 
         /// <summary>
-        /// Control QstBox.
+        /// Control lblEjercicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AlanWebControls.AlanQuestionBox QstBox;
+        protected global::System.Web.UI.WebControls.Label lblEjercicio;
 
         /// <summary>
-        /// Control button3.
+        /// Control liDatosGenerales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button button3;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liDatosGenerales;
 
         /// <summary>
-        /// Control pdfFiscal.
+        /// Control menu1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlIframe pdfFiscal;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl menu1;
 
         /// <summary>
-        /// Control FileUpload1.
+        /// Control lkVolver.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.LinkButton lkVolver;
 
         /// <summary>
-        /// Control btnAtras.
+        /// Control ltrSubTituloAdmin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAtras;
+        protected global::System.Web.UI.WebControls.Literal ltrSubTituloAdmin;
 
         /// <summary>
-        /// Control btnSiguiente.
+        /// Control rbRFC.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSiguiente;
+        protected global::System.Web.UI.WebControls.RadioButton rbRFC;
 
         /// <summary>
-        /// Control Label1.
+        /// Control txtRfc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.TextBox txtRfc;
 
         /// <summary>
-        /// Control mdlTutorial.
+        /// Control btnDescargar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AlanWebControls.AlanModalPopUp mdlTutorial;
+        protected global::System.Web.UI.WebControls.Button btnDescargar;
 
         /// <summary>
-        /// Control btnCerrarModal.
+        /// Control AlertaSuperior.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCerrarModal;
+        protected global::AlanWebControls.AlanAlert AlertaSuperior;
+
+        /// <summary>
+        /// Control grdDP.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdDP;
     }
 }

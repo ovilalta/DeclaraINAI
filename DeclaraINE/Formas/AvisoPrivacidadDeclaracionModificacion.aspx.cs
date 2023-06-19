@@ -49,17 +49,18 @@ namespace DeclaraINE.Formas
             oBusqueda.select();
             if (!oBusqueda.lista_DECLARACION.Any())
             {
-                
+
                 ValidaDeclaracion();
             }
-            else {
-               
+            else
+            {
+
                 blld_DECLARACION oDeclaracion = new blld_DECLARACION(oUsuario.VID_NOMBRE
                                                                     , oUsuario.VID_FECHA
                                                                     , oUsuario.VID_HOMOCLAVE
                                                                     //, (DateTime.Now.Year - 1).ToString()
                                                                     , 2
-                                                                    ,true);
+                                                                    , true);
                 SessionAdd("oDeclaracion", oDeclaracion);
             }
         }
@@ -103,7 +104,15 @@ namespace DeclaraINE.Formas
                 {
                     try { Session.Remove("oDeclaracion"); } catch { }
                     //Mensaje que manda en pantalla cuando ya hicieron la declaracion de modificacion y se vuelven a meter "No se encontro el registro"
-                    SessionAdd("oMensaje", "La declaración de modificación se presentó de manera exitosa, use la opción de 'Consulta Declaraciones', si desea consultar los detalles.");
+                    //OEVM 20230607 Se ajusta el texto a mostrar con una condición para los casos de funcionarios que mandan por error una conclusión y después quieren ingresar a modificación
+                    if (ex.Message == "No se ha presentado una declaración de inicio")
+                    {
+                        SessionAdd("oMensaje", "Su última declaración fue de conclusión, por lo anterior, no puede realizar una declaración de modificación. Por favor busque al OIC para que le brinden apoyo.");
+                    }
+                    else
+                    {
+                        SessionAdd("oMensaje", "La declaración de modificación se presentó de manera exitosa, use la opción de 'Consulta Declaraciones', si desea consultar los detalles.");
+                    }
                     //SessionAdd("oMensaje", ex.Message);
                     Response.Redirect("Index.aspx");
                     //MsgBox.ShowDanger(ex.Message);
@@ -131,9 +140,9 @@ namespace DeclaraINE.Formas
                                                                     , oUsuario.VID_FECHA
                                                                     , oUsuario.VID_HOMOCLAVE
                                                                     , 2
-                                                                    ,true);
+                                                                    , true);
                 SessionAdd("oDeclaracion", oDeclaracion);
-              //  Response.Redirect("AvisoPrivacidadDeclaracionModificacion.aspx");
+                //  Response.Redirect("AvisoPrivacidadDeclaracionModificacion.aspx");
             }
             catch (Exception ex)
             {

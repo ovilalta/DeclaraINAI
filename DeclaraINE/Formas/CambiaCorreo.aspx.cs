@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web.UI;
-
+using Declara_V2.BLL;
 
 namespace DeclaraINE.Formas
 {
@@ -55,12 +55,22 @@ namespace DeclaraINE.Formas
             blld_USUARIO oUsuario = new blld_USUARIO(txtRFC.Text);
             try
             {
-                oUsuario.Reload_USUARIO_CORREOs();
-                oUsuario.Add_USUARIO_CORREOs(txtCorreoPers.Text, false, true);
-                string vCorreo = blld_USUARIO_REC_PASS.SolicitaRecuperacionV2(txtRFC.Text);
-                msgx.ShowSuccess("Se ha enviado un correo a " + vCorreo + ", con un enlace para restablecer su contraseña");
+                bool CorreoValidar = _bllSistema.IsValidEmail(txtCorreoPers.Text); //Envía datos capturados para validar si tiene el formato de correo electrónico
+                //Si la validación de formato de correo electrónica es verdadera, procede con la inserción del dato.
+                if (CorreoValidar)
+                {
+                    oUsuario.Reload_USUARIO_CORREOs();
+                    oUsuario.Add_USUARIO_CORREOs(txtCorreoPers.Text, false, true);
+                    string vCorreo = blld_USUARIO_REC_PASS.SolicitaRecuperacionV2(txtRFC.Text);
+                    oUsuario.FinalizarSesion(); //OEVM 20230606 
+                    msgx.ShowSuccess("Se ha enviado un correo a " + vCorreo + ", con un enlace para restablecer su contraseña");
+                }
+                else
+                {
+                    msgx.ShowDanger("El texto capturado " + txtCorreoPers.Text + ", no es un correo electrónico");
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 msgx.ShowDanger(ex.Message);
             }

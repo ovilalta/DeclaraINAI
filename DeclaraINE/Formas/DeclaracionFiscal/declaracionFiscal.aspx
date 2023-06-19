@@ -169,7 +169,7 @@
                     </label>
                     <br />
                     <br />
-                    <iframe style="display:block" id="pdfFiscal" width="400" height="200"></iframe>
+                    <iframe style="display:block" id="pdfFiscal" width="500" height="500" runat="server"></iframe>
                     <asp:FileUpload ID="FileUpload1" runat="server" Width="400px" Height="50px" accept="application/pdf" onchange="previewPDF()"/>
                 </div>
                 <div class="col-md-4">

@@ -293,8 +293,9 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     cmbEstadoCivil.SelectedValue = oDeclaracion.DECLARACION_PERSONALES.NID_ESTADO_CIVIL.ToString();
 
                     txtV_CORREO_PERSONAL.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.V_CORREO;
-                    //txtV_CORREO_INE.Text = oDeclaracion.DECLARACION_DOM_LABORAL.V_CORREO_LABORAL;
-                    txtV_CORREO_INE.Text = _oUsuario.USUARIO_CORREOs.Where(p => p.L_CONFIRMADO == true).First().V_CORREO;
+                    //OEVM 20230612 Se agrega validación para considerar el correo institucional como el dato a reccuperar para los casos donde tienen correos personales como principales
+                    txtV_CORREO_INE.Text = _oUsuario.USUARIO_CORREOs.Where(p => p.L_CONFIRMADO == true && p.L_PRINCIPAL == true && p.V_CORREO.Contains("@inai.org.mx")).First().V_CORREO;
+
                     txtV_TEL_PARTICULAR.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.V_TEL_PARTICULAR;
                     txtV_TEL_CELULAR.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.V_TEL_CELULAR;
                     if (oDeclaracion.DECLARACION_REGIMEN_MATRIMONIALs.Count > 0)
@@ -339,25 +340,38 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 txtVID_PRIMER_NIVEL_TextChanged(cmbVID_PRIMER_NIVEL, null);
 
                 blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
-                oPuesto.select();
-                cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO.OrderBy(x => x.NOMBRE_UA)
-                    .ThenBy(x => x.VID_NIVEL)
-                    .ThenBy(x => x.V_PUESTO);
+                string valorSeleccionado = "";
+                if (cmbVID_PRIMER_NIVEL.SelectedValue != "")
+                {
+                    valorSeleccionado = cmbVID_PRIMER_NIVEL.SelectedValue.Substring(0, 3);
+                    oPuesto.select();
+                    if (valorSeleccionado != "210")
+                    {
+                        cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
+                                                .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) || p.VID_PUESTO.Contains("CH-"))
+                                                .OrderBy(x => x.VID_PUESTO)
+                                                .ThenBy(x => x.VID_NIVEL)
+                                                .ThenBy(x => x.V_PUESTO);
+                    }
+                    else
+                    {
+                        cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
+                        .Where(p => p.VID_PUESTO.StartsWith("210") || p.VID_PUESTO.StartsWith("211") || p.VID_PUESTO.StartsWith("212") || p.VID_PUESTO.StartsWith("214") || p.VID_PUESTO.Contains("CH-"))
+                        .OrderBy(x => x.VID_PUESTO)
+                        .ThenBy(x => x.VID_NIVEL)
+                        .ThenBy(x => x.V_PUESTO);
+                    }
 
-
-                //cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO.OrderBy(x => x.VID_PUESTO); //OEVM 2022-05-06 para usar el de arriba
+                }
 
                 cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.CLAVE_NOMBRE_PUESTO.ToString();
-                //cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString();  //OEVM 2022-05-06 para usar el de abajo
                 cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString(); //Trae la descripcion completa para el combo
                 cmbVID_CLAVEPUESTO.DataBind();
-
-
 
                 grdPreguntas.DataBind(oDeclaracion.DECLARACION_RESTRICCIONESs);
                 blld__l_CAT_ENTIDAD_FEDERATIVA oFed = new blld__l_CAT_ENTIDAD_FEDERATIVA();
                 oFed.select();
-                //cmbCID_ENTIDAD_FEDERATIVA_LABORAL.DataBind(oFed.lista_CAT_ENTIDAD_FEDERATIVA, CAT_ENTIDAD_FEDERATIVA.Properties.CID_ENTIDAD_FEDERATIVA, CAT_ENTIDAD_FEDERATIVA.Properties.V_ENTIDAD_FEDERATIVA);
+                
 
                 cmbCID_ENTIDAD_FEDERATIVA_LABORAL_SelectedIndexChanged(sender, e);
                 active();
@@ -515,10 +529,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                                             }
                                             conn.Close();
                                         }
-
-
                                     }
-
                                 }
 
                                 //Termina logica para insertar datos en Usuario_Correo
@@ -551,8 +562,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                                                                                txtObservacionesDatosGenerales.Text,
                                                                                cmbRegimenMatrimonial.SelectedValue()
                                                                                );
-                                    //public blld_DECLARACION_DOM_PARTICULAR(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, Int32 NID_DECLARACION, String C_CODIGO_POSTAL,
-                                    //Int32 NID_PAIS, String CID_ENTIDAD_FEDERATIVA, String CID_MUNICIPIO, String V_COLONIA, String V_CALLE 10, String V_NUMERO_EXTERNO, String V_NUMERO_INTERNO, String V_CORREO, String V_TEL_PARTICULAR, String V_TEL_CELULAR, String E_OBSERVACIONES, String V_ENTIDAD_FEDERATIVA, String V_MUNICIPIO)
+                                    
                                     oDeclaracion.DECLARACION_DOM_PARTICULAR = new blld_DECLARACION_DOM_PARTICULAR(oDeclaracion.VID_NOMBRE
                                                                                                                          , oDeclaracion.VID_FECHA
                                                                                                                          , oDeclaracion.VID_HOMOCLAVE
@@ -605,21 +615,10 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                                 txtcCodigoPostal.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.C_CODIGO_POSTAL;
                                 cmbPaisDomParticular.SelectedValue = oDeclaracion.DECLARACION_DOM_PARTICULAR.NID_PAIS.ToString();
                                 cmbPaisDomParticular_SelectedIndexChanged(cmbPaisDomParticular, null);
-
-
-
-                                //if (cmbPaisDomParticular.SelectedValue == "1")
-                                //{
+                                
                                 cmbEntidadFederativaDomParticular.SelectedValue = oDeclaracion.DECLARACION_DOM_PARTICULAR.CID_ENTIDAD_FEDERATIVA;
                                 cmbEntidadFederativaDomParticular_SelectedIndexChanged(cmbEntidadFederativaDomParticular, null);
-                                cmbMunicipioDomParticular.SelectedValue = oDeclaracion.DECLARACION_DOM_PARTICULAR.CID_MUNICIPIO;
-                                // cmbEntidadFederativaDomParticular.SelectedValue = oDeclaracion.DECLARACION_DOM_PARTICULAR.CID_MUNICIPIO;
-                                //}
-                                //else
-                                //{
-                                //    txtbEntidadFederativaDomicilioParticular.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.V_ENTIDAD_FEDERATIVA;
-                                //    txtMunicipioDomicilioParticular.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.V_MUNICIPIO;
-                                //}
+                                cmbMunicipioDomParticular.SelectedValue = oDeclaracion.DECLARACION_DOM_PARTICULAR.CID_MUNICIPIO;                                
 
                                 txtColoniaParticular.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.V_COLONIA;
                                 txtCalleDomParticular.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.V_CALLE;
@@ -629,10 +628,6 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                                 //txtV_TEL_CELULAR.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.V_TEL_CELULAR;
                                 //txtV_CORREO_PERSONAL.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.V_CORREO;
                                 txtE_OBSERVACIONES.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.E_OBSERVACIONES;
-
-
-
-
                             }
                             catch (Exception ex)
                             {
@@ -1441,6 +1436,38 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             oSegundo.VID_PRIMER_NIVEL = new Declara_V2.StringFilter(cmbVID_PRIMER_NIVEL.SelectedValue);
             oSegundo.select();
             cmbVID_SEGUNDO_NIVEL.DataBind(oSegundo.lista_CAT_SEGUNDO_NIVEL, CAT_SEGUNDO_NIVEL.Properties.VID_SEGUNDO_NIVEL, CAT_SEGUNDO_NIVEL.Properties.V_SEGUNDO_NIVEL);
+
+            //OEVM 20230613 - Mejoras para que el catalogo de puestos se arme a partir de la unidad administrativa seleccionada
+            string primerNivel =  oSegundo.VID_PRIMER_NIVEL.Value;
+            if (primerNivel != "")
+            {
+                blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
+                //Ver como agregar al listado los honorarios
+                string valorSeleccionado = cmbVID_PRIMER_NIVEL.SelectedValue.Substring(0, 3);
+
+                if (valorSeleccionado != "210")
+                {
+                    oPuesto.select();
+                    cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
+                        .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) || p.VID_PUESTO.Contains("CH-"))
+                        .OrderBy(x => x.VID_PUESTO)
+                        .ThenBy(x => x.VID_NIVEL)
+                        .ThenBy(x => x.V_PUESTO);
+                }
+                else
+                {
+                    oPuesto.select();
+                    cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
+                        .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) || p.VID_PUESTO.StartsWith("211") || p.VID_PUESTO.StartsWith("212") || p.VID_PUESTO.StartsWith("214") || p.VID_PUESTO.Contains("CH-"))
+                        .OrderBy(x => x.VID_PUESTO)
+                        .ThenBy(x => x.VID_NIVEL)
+                        .ThenBy(x => x.V_PUESTO);
+                }
+
+                cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.CLAVE_NOMBRE_PUESTO.ToString();
+                cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString(); //Trae la descripcion completa para el combo
+                cmbVID_CLAVEPUESTO.DataBind();
+            }
             
         }
 
@@ -1495,7 +1522,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     txtV_DENOMINACION_PUESTO.Text = oPuesto.V_PUESTO;
                 }
 
-               
+
             }
             catch (Exception ex)
             {

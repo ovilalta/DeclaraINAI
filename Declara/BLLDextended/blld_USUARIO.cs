@@ -753,8 +753,6 @@ namespace Declara_V2.BLLD
             datos_USUARIO.principal(v_CORREO);
         }
 
-
-
         public void CorreoConfirmado(String V_CORREO)
         {
             blld_USUARIO_CORREO CorreoConf = new blld_USUARIO_CORREO(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, V_CORREO);
@@ -814,7 +812,6 @@ namespace Declara_V2.BLLD
             this.update();
         }
 
-
         public void Activar(String V_CORREO, String V_CODIGO)
         {
             if (L_ACTIVO)
@@ -844,7 +841,7 @@ namespace Declara_V2.BLLD
             if (L_ACTIVO)
                 throw new CustomException("El RFC: " + RFC + " ya se encontraba activado.");
 
-            datos_USUARIO.L_ACTIVO = true;
+            datos_USUARIO.L_ACTIVO = true;            
            
             update();
         }

@@ -43,7 +43,7 @@ namespace DeclaraINE.Formas
             oBusqueda.select();
             if (!oBusqueda.lista_DECLARACION.Any())
             {
-                QstBox.AskWarning("Cuando el servidor público concluye su encargo dispone de <b>60 días naturales</b> para presentar su <b>declaración patrimonial de conclusión</b>.</b><br><br><br> <h3><p style='color:#FF0000';> ¿Realmente desea realizar la declaración de Conclusión? </p></h3>");
+                QstBox.AskWarning("Cuando el servidor público concluye su encargo dispone de <b>60 días naturales</b> para presentar su <b>declaración patrimonial de conclusión</b>.<br><br><br> <h5 style='color:#FF0000';> ¿Realmente desea realizar la declaración de Conclusión? </h5>");
             }
             else
             {

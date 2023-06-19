@@ -400,6 +400,7 @@
     <Content Include="Formas\Administrador\ExcepcionAcuseFiscal.aspx" />
     <Content Include="Formas\Administrador\PermisoEdicionConflictoI.txt" />
     <Content Include="Formas\Administrador\ReporteAvanceDeclaracionesModificacion.aspx" />
+    <Content Include="Formas\Administrador\ConsultaAcusesFiscales.aspx" />
     <Content Include="Formas\Administrador\ReseteoPassword.aspx" />
     <Content Include="Formas\Administrador\GeneraNombreArchivoPDF.aspx" />
     <Content Include="Formas\Administrador\ExcepcionRFC.aspx" />
@@ -419,6 +420,7 @@
     <Content Include="Formas\AvisoPrivacidadRegistro.aspx" />
     <Content Include="Formas\CambiaCorreo.aspx" />
     <Content Include="Formas\Confirma.aspx" />
+    <Content Include="Formas\EliminarConclusionErronea.aspx" />
     <Content Include="Formas\DeclaracionModificacion\Conflicto.aspx" />
     <Content Include="Formas\ImprimeActualizacionConflicto.aspx" />
     <Content Include="Formas\ConsultaDeclaracionAdmin.aspx" />
@@ -3004,6 +3006,7 @@
     <Content Include="pdf1\GuiaRecuperarContrasena.pdf" />
     <Content Include="pdf1\conducta.pdf" />
     <Content Include="pdf1\etica.pdf" />
+    <Content Include="Formas\DeclaracionFiscal\pdfFiscales\2023\VIMO730413V48.pdf" />
     <None Include="Properties\PublishProfiles\OscarVilaltaPub.pubxml" />
     <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -3138,6 +3141,13 @@
     <Compile Include="Formas\Administrador\ReporteAvanceDeclaracionesModificacion.aspx.designer.cs">
       <DependentUpon>ReporteAvanceDeclaracionesModificacion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formas\Administrador\ConsultaAcusesFiscales.aspx.cs">
+      <DependentUpon>ConsultaAcusesFiscales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\ConsultaAcusesFiscales.aspx.designer.cs">
+      <DependentUpon>ConsultaAcusesFiscales.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formas\Administrador\ReseteoPassword.aspx.cs">
       <DependentUpon>ReseteoPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3263,6 +3273,13 @@
     </Compile>
     <Compile Include="Formas\Confirma.aspx.designer.cs">
       <DependentUpon>Confirma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\EliminarConclusionErronea.aspx.cs">
+      <DependentUpon>EliminarConclusionErronea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\EliminarConclusionErronea.aspx.designer.cs">
+      <DependentUpon>EliminarConclusionErronea.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formas\DeclaracionModificacion\Conflicto.aspx.cs">
       <DependentUpon>Conflicto.aspx</DependentUpon>

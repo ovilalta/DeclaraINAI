@@ -26,6 +26,7 @@ namespace DeclaraINE.Formas
 
             DateTime FechaIni = Convert.ToDateTime(System.Configuration.ConfigurationManager.AppSettings["FechaIniMod"]);
             DateTime FechaFin = Convert.ToDateTime(System.Configuration.ConfigurationManager.AppSettings["FechaFinMod"]);
+            //DateTime FechaBtnEnvMod = Convert.ToDateTime(System.Configuration.ConfigurationManager.AppSettings["FechaActBtnEnvMod"]);
 
             #region Logica Permisos Admin para menu
             string line;
@@ -166,8 +167,7 @@ namespace DeclaraINE.Formas
                         " 33, 46, 47 y 48 de la LGRA todos los servidores públicos tenemos la obligación de presentar las declaraciones" +
                         " de situación patrimonial, de intereses y la constancia de presentación de declaración fiscal, bajo protesta " +
                         "de decir verdad y ante el Órgano Interno de Control, en los términos, plazos y modalidad que establece la propia " +
-                        "legislación aplicable; así como cumplir el Código de Ética. ¿Realmente deseas comenzar a llenar tu Declaración de " +
-                        "Situación Patrimonial y de Intereses, así como la constancia de presentación de declaración fiscal?</p></h3>");
+                        "legislación aplicable; así como cumplir el Código de Ética y Código de Conducta. ¿Desea ingresar a su cuenta en DeclaraINAI?</p></h3>");
 
                     _oUsuario.ExtenderSesion();
                     this.Page.Title = "Menú Principal";
@@ -196,7 +196,8 @@ namespace DeclaraINE.Formas
 
         protected void QstBox_No(object Sender, EventArgs e)
         {
-
+            Session.Remove("oUsuario");
+            Response.Redirect("Login.aspx");
         }
 
         protected void QstBox_Yes(object Sender, EventArgs e)
@@ -222,12 +223,10 @@ namespace DeclaraINE.Formas
         protected void lkModificacion_Click(object sender, EventArgs e)
         {
             Response.Redirect("AvisoPrivacidadDeclaracionModificacion.aspx");
-
         }
         protected void lkConclusion_Click(object sender, EventArgs e)
         {
             Response.Redirect("AvisoPrivacidadConclusion.aspx");
-
         }
 
 

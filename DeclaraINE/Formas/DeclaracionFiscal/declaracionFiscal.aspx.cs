@@ -1,14 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Declara_V2.BLLD;
+using System;
+using System.IO;
+using System.Threading.Tasks;
+using System.IO.Compression;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using AlanWebControls;
-using System.IO;
-using Declara_V2.BLLD;
 using System.Data.SqlClient;
 using System.Data;
+using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
+using System.Text;
+using System.Diagnostics;
+using System.Threading;
+using Spire.Xls;
+using System.Windows.Forms;
+using System.Linq;
+using DeclaraINE.file;
+using System.Collections.Generic;
+using System.Security.Cryptography;
+using AlanWebControls;
 
 namespace DeclaraINE.Formas.DeclaracionFiscal
 {
@@ -41,59 +51,24 @@ namespace DeclaraINE.Formas.DeclaracionFiscal
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            //bool obligado=false;
-            //if  (!IsPostBack)
-            //{
-            //    MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
-            //    string connString = db.Database.Connection.ConnectionString;
 
+            //Poner logica de previsualizacion
 
-            //    using (SqlConnection conn = new SqlConnection(connString))
+            string FileName = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
 
-            //    {
-            //        try
-            //        {
-            //            using (SqlCommand cmd = new SqlCommand("Sp_Recupera_FiscalObligado", conn))
-            //            {
+            string anio = DateTime.Today.Year.ToString();
+            string rutaBase = HttpContext.Current.Server.MapPath("~") + "\\Formas\\DeclaracionFiscal\\";
+            string rutaDirectorio = "pdfFiscales\\" + anio;
 
-            //                cmd.CommandType = CommandType.StoredProcedure;
-            //                cmd.Parameters.Add(new SqlParameter("@rfc", _oUsuario.VID_NOMBRE+_oUsuario.VID_FECHA+_oUsuario.VID_HOMOCLAVE));
+            string path = rutaDirectorio + "\\" + FileName + ".pdf";
+            
+            bool existe = File.Exists(rutaBase+path);
 
-            //                conn.Open();
-            //                obligado = Convert.ToBoolean( cmd.ExecuteScalar()); //Con el executeScalar solo recuperas un solo valor
-            //                conn.Close();
+            if (existe)
+            {
+                pdfFiscal.Attributes["src"] = rutaDirectorio + "\\" + FileName + ".pdf";
+            }
 
-            //                if (obligado == true)
-            //                {
-            //                    si.Checked = true;
-            //                    //FileUpload1.Visible = true;
-            //                }
-            //                else
-            //                {
-            //                    no.Checked = true;
-            //                    //FileUpload1.Visible = false;
-            //                }
-
-            //            }
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            Console.WriteLine("Error: " + ex.Message);
-            //        }
-            //    }
-
-
-            //}
-
-            //if (si.Checked)
-            //{
-            //    FileUpload1.Visible = true;
-            //}
-
-            //if (no.Checked)
-            //{
-            //    FileUpload1.Visible = false;
-            //}
 
         }
 
@@ -116,7 +91,7 @@ namespace DeclaraINE.Formas.DeclaracionFiscal
             }
         }
 
-        
+
 
         protected void btnVerTutorial_Click(object sender, EventArgs e)
         {
@@ -186,7 +161,7 @@ namespace DeclaraINE.Formas.DeclaracionFiscal
                 string anio = DateTime.Today.Year.ToString();
                 string rutaDirectorio = "\\Formas\\DeclaracionFiscal\\pdfFiscales\\" + anio;
 
-                
+
                 string nombreArchivo = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
 
                 string ruta = rutaDirectorio + "\\";
@@ -201,7 +176,7 @@ namespace DeclaraINE.Formas.DeclaracionFiscal
                 {
                     QstBox.AskWarning("Bajo protesta de decir verdad, ¿Eres obligado a presentar declaración fiscal ante el SAT?");
                 }
-                
+
             }
 
 
@@ -235,7 +210,7 @@ namespace DeclaraINE.Formas.DeclaracionFiscal
 
         protected void QstBox_Yes(object Sender, EventArgs e)
         {
-            
+
         }
 
         protected void QstBox_No(object Sender, EventArgs e)

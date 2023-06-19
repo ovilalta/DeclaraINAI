@@ -279,10 +279,29 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
 
                 //OEVM - lo movi de lugar para que se lea posterior a la carga del combo de primer nivel - 20220517
                 blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
-                oPuesto.select();
-                cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO.OrderBy(x => x.NOMBRE_UA)
-                    .ThenBy(x => x.VID_NIVEL)
-                    .ThenBy(x => x.V_PUESTO);
+                string valorSeleccionado = "";
+                if (cmbVID_PRIMER_NIVEL.SelectedValue != "")
+                {
+                    valorSeleccionado = cmbVID_PRIMER_NIVEL.SelectedValue.Substring(0, 3);
+                    oPuesto.select();
+                    if (valorSeleccionado != "210")
+                    {
+                        cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
+                                                .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) || p.VID_PUESTO.Contains("CH-"))
+                                                .OrderBy(x => x.VID_PUESTO)
+                                                .ThenBy(x => x.VID_NIVEL)
+                                                .ThenBy(x => x.V_PUESTO);
+                    }
+                    else
+                    {
+                        cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
+                        .Where(p => p.VID_PUESTO.StartsWith("210") || p.VID_PUESTO.StartsWith("211") || p.VID_PUESTO.StartsWith("212") || p.VID_PUESTO.StartsWith("214") || p.VID_PUESTO.Contains("CH-"))
+                        .OrderBy(x => x.VID_PUESTO)
+                        .ThenBy(x => x.VID_NIVEL)
+                        .ThenBy(x => x.V_PUESTO);
+                    }
+
+                }
 
                 //OEVM - Agregue estas lineas para que salga la info completa en el combo de catalogo de puestos - 20220517
                 cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.CLAVE_NOMBRE_PUESTO.ToString();
@@ -1663,6 +1682,38 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
             oSegundo.VID_PRIMER_NIVEL = new Declara_V2.StringFilter(cmbVID_PRIMER_NIVEL.SelectedValue);
             oSegundo.select();
             cmbVID_SEGUNDO_NIVEL.DataBind(oSegundo.lista_CAT_SEGUNDO_NIVEL, CAT_SEGUNDO_NIVEL.Properties.VID_SEGUNDO_NIVEL, CAT_SEGUNDO_NIVEL.Properties.V_SEGUNDO_NIVEL);
+
+            //OEVM 20230613 - Mejoras para que el catalogo de puestos se arme a partir de la unidad administrativa seleccionada
+            string primerNivel = oSegundo.VID_PRIMER_NIVEL.Value;
+            if (primerNivel != "")
+            {
+                blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
+                //Ver como agregar al listado los honorarios
+                string valorSeleccionado = cmbVID_PRIMER_NIVEL.SelectedValue.Substring(0, 3);
+
+                if (valorSeleccionado != "210")
+                {
+                    oPuesto.select();
+                    cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
+                        .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) || p.VID_PUESTO.Contains("CH-"))
+                        .OrderBy(x => x.VID_PUESTO)
+                        .ThenBy(x => x.VID_NIVEL)
+                        .ThenBy(x => x.V_PUESTO);
+                }
+                else
+                {
+                    oPuesto.select();
+                    cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
+                        .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) || p.VID_PUESTO.StartsWith("211") || p.VID_PUESTO.StartsWith("212") || p.VID_PUESTO.StartsWith("214") || p.VID_PUESTO.Contains("CH-"))
+                        .OrderBy(x => x.VID_PUESTO)
+                        .ThenBy(x => x.VID_NIVEL)
+                        .ThenBy(x => x.V_PUESTO);
+                }
+
+                cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.CLAVE_NOMBRE_PUESTO.ToString();
+                cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString(); //Trae la descripcion completa para el combo
+                cmbVID_CLAVEPUESTO.DataBind();
+            }
         }
 
         protected void QstBoxDep_Yes(object Sender, EventArgs e)
