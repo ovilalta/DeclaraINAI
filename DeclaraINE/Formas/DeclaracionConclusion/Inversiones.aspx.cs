@@ -209,7 +209,8 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
             {
                 foreach (blld_ALTA_INVERSION_TITULAR item in oDeclaracion.ALTA.ALTA_INVERSIONs[e.Id].ALTA_INVERSION_TITULARs)
                 {
-                    cblTitulares.Items.FindByValue(item.NID_DEPENDIENTE.ToString()).Selected = true;
+                    //cblTitulares.Items.FindByValue(item.NID_DEPENDIENTE.ToString()).Selected = true;
+                    chbDependietesInm.SelectedValue = item.NID_DEPENDIENTE.ToString();
                 }
             }
             catch (Exception ex)
@@ -485,7 +486,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                     oDeclaracion.ALTA.ALTA_INVERSIONs[Indice].CID_ENTIDAD_FEDERATIVA = cmbCID_ENTIDAD_FEDERATIVA.SelectedValue;
                     oDeclaracion.ALTA.ALTA_INVERSIONs[Indice].V_LUGAR = txtV_LUGAR.Text;
                     oDeclaracion.ALTA.ALTA_INVERSIONs[Indice].F_APERTURA = txtF_APERTURA.Date(esMX);
-
+                    cblTitulares.SelectedValue = chbDependietesInm.SelectedValue;
                     oDeclaracion.ALTA.ALTA_INVERSIONs[Indice].V_TIPO_MONEDA = txtTipoMoneda.Text;
                     oDeclaracion.ALTA.ALTA_INVERSIONs[Indice].E_OBSERVACIONES = txtObservaciones.Text;
                     oDeclaracion.ALTA.ALTA_INVERSIONs[Indice].update(cblTitulares.SelectedValuesInteger(), cmbTerceroInversion.SelectedValue, txtTerceroNombre.Text, txtTerceroRFC.Text);

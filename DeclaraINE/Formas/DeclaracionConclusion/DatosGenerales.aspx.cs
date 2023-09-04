@@ -264,9 +264,9 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                 txtvIdNombre.Text = oUsuario.VID_NOMBRE;
                 txtvIdFecha.Text = oUsuario.VID_FECHA;
                 txtVIdHomoClave.Text = oUsuario.VID_HOMOCLAVE;
+                int idPuesto = oDeclaracion.DECLARACION_CARGO.NID_PUESTO;
 
 
-               
 
                 blld__l_CAT_PRIMER_NIVEL oPrimerNivel = new blld__l_CAT_PRIMER_NIVEL();
                 oPrimerNivel.OrderByCriterios.Add(new Declara_V2.Order(CAT_PRIMER_NIVEL.Properties.V_PRIMER_NIVEL));
@@ -307,7 +307,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                 cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.CLAVE_NOMBRE_PUESTO.ToString();
                 cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString(); //Trae la descripcion completa para el combo
                 cmbVID_CLAVEPUESTO.DataBind();
-
+                cmbVID_CLAVEPUESTO.SelectedValue = idPuesto.ToString();
 
                 grdPreguntas.DataBind(oDeclaracion.DECLARACION_RESTRICCIONESs);
                 blld__l_CAT_ENTIDAD_FEDERATIVA oFed = new blld__l_CAT_ENTIDAD_FEDERATIVA();

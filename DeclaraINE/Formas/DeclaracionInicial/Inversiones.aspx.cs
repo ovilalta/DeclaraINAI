@@ -204,7 +204,8 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             {
                 foreach (blld_ALTA_INVERSION_TITULAR item in oDeclaracion.ALTA.ALTA_INVERSIONs[e.Id].ALTA_INVERSION_TITULARs)
                 {
-                    cblTitulares.Items.FindByValue(item.NID_DEPENDIENTE.ToString()).Selected = true;
+                    //cblTitulares.Items.FindByValue(item.NID_DEPENDIENTE.ToString()).Selected = true;
+                    chbDependietesInm.SelectedValue = item.NID_DEPENDIENTE.ToString();
                 }
             }
             catch (Exception ex)
@@ -218,7 +219,6 @@ namespace DeclaraINE.Formas.DeclaracionInicial
         {
             try
             {
-
                 blld_USUARIO oUsuario = _oUsuario;
                 blld_DECLARACION oDeclaracion = _oDeclaracion;
                 blld_ALTA_INVERSION o;
@@ -336,7 +336,6 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             mppInversion.Hide();
         }
 
-
         protected void cmbNID_TIPO_INVERSION_SelectedIndexChanged(object sender, EventArgs e)
         {
             if ((new Int32[] { 5, 8, 7 }).Contains(cmbNID_TIPO_INVERSION.SelectedValue()))
@@ -359,9 +358,6 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             cmbNID_SUBTIPO_INVERSION.DataBind(oSubtipoInversion.lista_CAT_SUBTIPO_INVERSION, CAT_SUBTIPO_INVERSION.Properties.NID_SUBTIPO_INVERSION, CAT_SUBTIPO_INVERSION.Properties.V_SUBTIPO_INVERSION);
         }
 
-
-
-
         protected void cmbNID_PAIS_SelectedIndexChanged(object sender, EventArgs e)
         {
             blld__l_CAT_ENTIDAD_FEDERATIVA oEntidadFederativa = new blld__l_CAT_ENTIDAD_FEDERATIVA();
@@ -374,8 +370,6 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             //    txtV_LUGAR.Text = String.Empty;
         }
 
-
-
         protected void btnGuarda_Click(object sender, EventArgs e)
         {
             if (lEditar)
@@ -387,8 +381,6 @@ namespace DeclaraINE.Formas.DeclaracionInicial
             {
                 NuevaInversion();
             }
-
-
         }
 
         protected void chbDependietesInm_SelectedIndexChanged(object sender, EventArgs e)
@@ -505,12 +497,14 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                     oDeclaracion.ALTA.ALTA_INVERSIONs[Indice].NID_PAIS = cmbNID_PAIS.SelectedValue();
                     oDeclaracion.ALTA.ALTA_INVERSIONs[Indice].CID_ENTIDAD_FEDERATIVA = cmbCID_ENTIDAD_FEDERATIVA.SelectedValue;
                     oDeclaracion.ALTA.ALTA_INVERSIONs[Indice].V_LUGAR = txtV_LUGAR.Text;
-                    oDeclaracion.ALTA.ALTA_INVERSIONs[Indice].F_APERTURA = txtF_APERTURA.Date(esMX);
-
+                    oDeclaracion.ALTA.ALTA_INVERSIONs[Indice].F_APERTURA = txtF_APERTURA.Date(esMX);                    
                     oDeclaracion.ALTA.ALTA_INVERSIONs[Indice].V_TIPO_MONEDA = txtTipoMoneda.Text;
                     oDeclaracion.ALTA.ALTA_INVERSIONs[Indice].E_OBSERVACIONES = txtObservaciones.Text;
-                    oDeclaracion.ALTA.ALTA_INVERSIONs[Indice].update(cblTitulares.SelectedValuesInteger(), cmbTerceroInversion.SelectedValue, txtTerceroNombre.Text, txtTerceroRFC.Text);
+                    cblTitulares.SelectedValue = chbDependietesInm.SelectedValue;
 
+                    oDeclaracion.ALTA.ALTA_INVERSIONs[Indice].update(cblTitulares.SelectedValuesInteger(), cmbTerceroInversion.SelectedValue, txtTerceroNombre.Text, txtTerceroRFC.Text);
+                    
+                    
                     AlertaSuperior.ShowSuccess("Se actualizaron correctamente los datos de la inversión");
                     _oDeclaracion = oDeclaracion;
                     mppInversion.Hide();
