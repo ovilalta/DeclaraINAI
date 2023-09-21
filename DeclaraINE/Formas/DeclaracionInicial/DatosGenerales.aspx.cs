@@ -263,7 +263,11 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 txtvIdNombre.Text = oUsuario.VID_NOMBRE;
                 txtvIdFecha.Text = oUsuario.VID_FECHA;
                 txtVIdHomoClave.Text = oUsuario.VID_HOMOCLAVE;
-                int idPuesto = oDeclaracion.DECLARACION_CARGO.NID_PUESTO;
+                int idPuesto = 0;
+                if (oDeclaracion.NID_DECLARACION > 1)
+                {
+                    idPuesto = oDeclaracion.DECLARACION_CARGO.NID_PUESTO;
+                }
 
 
 
@@ -283,7 +287,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 {
                     valorSeleccionado = cmbVID_PRIMER_NIVEL.SelectedValue.Substring(0, 3);
                     oPuesto.select();
-                    if (valorSeleccionado!="210")
+                    if (valorSeleccionado != "210")
                     {
                         cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
                                                 .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) || p.VID_PUESTO.Contains("CH-"))
@@ -295,12 +299,12 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                     {
                         cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
                         .Where(p => p.VID_PUESTO.StartsWith("210") || p.VID_PUESTO.StartsWith("211") || p.VID_PUESTO.StartsWith("212") || p.VID_PUESTO.StartsWith("214") || p.VID_PUESTO.Contains("CH-"))
-                        .OrderBy(x => x.VID_PUESTO)                        
+                        .OrderBy(x => x.VID_PUESTO)
                         .ThenBy(x => x.VID_NIVEL)
                         .ThenBy(x => x.V_PUESTO);
                     }
-                    
-                }                
+
+                }
 
                 //cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO.OrderBy(x => x.NOMBRE_UA)
                 //    .ThenBy(x => x.VID_NIVEL)
@@ -310,7 +314,10 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.CLAVE_NOMBRE_PUESTO.ToString();
                 cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString(); //Trae la descripcion completa para el combo
                 cmbVID_CLAVEPUESTO.DataBind();
-                cmbVID_CLAVEPUESTO.SelectedValue = idPuesto.ToString();
+                if (oDeclaracion.NID_DECLARACION > 1)
+                {
+                    cmbVID_CLAVEPUESTO.SelectedValue = idPuesto.ToString();
+                }
 
                 grdPreguntas.DataBind(oDeclaracion.DECLARACION_RESTRICCIONESs);
                 blld__l_CAT_ENTIDAD_FEDERATIVA oFed = new blld__l_CAT_ENTIDAD_FEDERATIVA();
@@ -1721,12 +1728,12 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 //Ver como agregar al listado los honorarios
                 string valorSeleccionado = cmbVID_PRIMER_NIVEL.SelectedValue.Substring(0, 3);
 
-                if (valorSeleccionado!="210")
+                if (valorSeleccionado != "210")
                 {
                     oPuesto.select();
                     cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
-                        .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado)  || p.VID_PUESTO.Contains("CH-"))
-                        .OrderBy(x => x.VID_PUESTO)                        
+                        .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) || p.VID_PUESTO.Contains("CH-"))
+                        .OrderBy(x => x.VID_PUESTO)
                         .ThenBy(x => x.VID_NIVEL)
                         .ThenBy(x => x.V_PUESTO);
                 }
@@ -1735,11 +1742,11 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                     oPuesto.select();
                     cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
                         .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) || p.VID_PUESTO.StartsWith("211") || p.VID_PUESTO.StartsWith("212") || p.VID_PUESTO.StartsWith("214") || p.VID_PUESTO.Contains("CH-"))
-                        .OrderBy(x => x.VID_PUESTO)                        
+                        .OrderBy(x => x.VID_PUESTO)
                         .ThenBy(x => x.VID_NIVEL)
                         .ThenBy(x => x.V_PUESTO);
                 }
-                
+
 
                 cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.CLAVE_NOMBRE_PUESTO.ToString();
                 cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString(); //Trae la descripcion completa para el combo
