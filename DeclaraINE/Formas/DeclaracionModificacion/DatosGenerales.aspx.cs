@@ -372,7 +372,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 grdPreguntas.DataBind(oDeclaracion.DECLARACION_RESTRICCIONESs);
                 blld__l_CAT_ENTIDAD_FEDERATIVA oFed = new blld__l_CAT_ENTIDAD_FEDERATIVA();
                 oFed.select();
-                
+
 
                 cmbCID_ENTIDAD_FEDERATIVA_LABORAL_SelectedIndexChanged(sender, e);
                 active();
@@ -563,7 +563,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                                                                                txtObservacionesDatosGenerales.Text,
                                                                                cmbRegimenMatrimonial.SelectedValue()
                                                                                );
-                                    
+
                                     oDeclaracion.DECLARACION_DOM_PARTICULAR = new blld_DECLARACION_DOM_PARTICULAR(oDeclaracion.VID_NOMBRE
                                                                                                                          , oDeclaracion.VID_FECHA
                                                                                                                          , oDeclaracion.VID_HOMOCLAVE
@@ -616,10 +616,10 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                                 txtcCodigoPostal.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.C_CODIGO_POSTAL;
                                 cmbPaisDomParticular.SelectedValue = oDeclaracion.DECLARACION_DOM_PARTICULAR.NID_PAIS.ToString();
                                 cmbPaisDomParticular_SelectedIndexChanged(cmbPaisDomParticular, null);
-                                
+
                                 cmbEntidadFederativaDomParticular.SelectedValue = oDeclaracion.DECLARACION_DOM_PARTICULAR.CID_ENTIDAD_FEDERATIVA;
                                 cmbEntidadFederativaDomParticular_SelectedIndexChanged(cmbEntidadFederativaDomParticular, null);
-                                cmbMunicipioDomParticular.SelectedValue = oDeclaracion.DECLARACION_DOM_PARTICULAR.CID_MUNICIPIO;                                
+                                cmbMunicipioDomParticular.SelectedValue = oDeclaracion.DECLARACION_DOM_PARTICULAR.CID_MUNICIPIO;
 
                                 txtColoniaParticular.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.V_COLONIA;
                                 txtCalleDomParticular.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.V_CALLE;
@@ -1439,13 +1439,22 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             cmbVID_SEGUNDO_NIVEL.DataBind(oSegundo.lista_CAT_SEGUNDO_NIVEL, CAT_SEGUNDO_NIVEL.Properties.VID_SEGUNDO_NIVEL, CAT_SEGUNDO_NIVEL.Properties.V_SEGUNDO_NIVEL);
 
             //OEVM 20230613 - Mejoras para que el catalogo de puestos se arme a partir de la unidad administrativa seleccionada
-            string primerNivel =  oSegundo.VID_PRIMER_NIVEL.Value;
+            string primerNivel = oSegundo.VID_PRIMER_NIVEL.Value;
             if (primerNivel != "")
             {
                 blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
                 //Ver como agregar al listado los honorarios
                 string valorSeleccionado = cmbVID_PRIMER_NIVEL.SelectedValue.Substring(0, 3);
+                int ListaPuestoArea = 0;
+                int idIntPuesto = 0;
+                int PuestoTemporal = 0;
 
+                string idPuestoTest = cmbVID_CLAVEPUESTO.SelectedValue;
+                if (idPuestoTest != "")
+                {
+                    idIntPuesto = Convert.ToInt32(idPuestoTest);
+
+                }
                 if (valorSeleccionado != "210")
                 {
                     oPuesto.select();
@@ -1454,6 +1463,22 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                         .OrderBy(x => x.VID_PUESTO)
                         .ThenBy(x => x.VID_NIVEL)
                         .ThenBy(x => x.V_PUESTO);
+
+                    if (idPuestoTest != "")
+                    {
+                        ListaPuestoArea = (from puesto in oPuesto.lista_CAT_PUESTO
+                                           where (puesto.VID_PUESTO.StartsWith(valorSeleccionado)
+                                           || puesto.VID_PUESTO.Contains("CH-"))
+                                           && puesto.NID_PUESTO == idIntPuesto
+                                           select puesto).Count();
+                        if (ListaPuestoArea == 0)
+                        {
+                            PuestoTemporal = (from puesto in oPuesto.lista_CAT_PUESTO
+                                              where puesto.VID_PUESTO.StartsWith(valorSeleccionado)
+                                              || puesto.VID_PUESTO.Contains("CH-")                                              
+                                              select puesto.NID_PUESTO).FirstOrDefault();
+                        }
+                    }
                 }
                 else
                 {
@@ -1463,13 +1488,43 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                         .OrderBy(x => x.VID_PUESTO)
                         .ThenBy(x => x.VID_NIVEL)
                         .ThenBy(x => x.V_PUESTO);
+                    if (idPuestoTest != "")
+                    {
+                        ListaPuestoArea = (from puesto in oPuesto.lista_CAT_PUESTO
+                                           where (puesto.VID_PUESTO.StartsWith(valorSeleccionado)
+                                           || puesto.VID_PUESTO.Contains("CH-"))
+                                           && puesto.NID_PUESTO == idIntPuesto
+                                           select puesto).Count();
+                        if (ListaPuestoArea == 0)
+                        {
+                            PuestoTemporal = (from puesto in oPuesto.lista_CAT_PUESTO
+                                              where puesto.VID_PUESTO.StartsWith(valorSeleccionado)
+                                              || puesto.VID_PUESTO.Contains("CH-")                                              
+                                              select puesto.NID_PUESTO).FirstOrDefault();
+                        }
+                    }
                 }
 
                 cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.CLAVE_NOMBRE_PUESTO.ToString();
                 cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString(); //Trae la descripcion completa para el combo
-                cmbVID_CLAVEPUESTO.DataBind();
+
+
+                if (cmbVID_CLAVEPUESTO.SelectedValue != "")
+                {
+                    if (ListaPuestoArea > 0)
+                    {
+                        cmbVID_CLAVEPUESTO.DataBind();
+                    }
+                    else
+                    {
+                        cmbVID_CLAVEPUESTO.SelectedValue = PuestoTemporal.ToString();
+                        cmbVID_CLAVEPUESTO.DataBind();
+                        MsgBox.ShowDanger("Por favor, verifique la información del CÓDIGO DE PUESTO");
+                    }
+                }
+
             }
-            
+
         }
 
         protected void cmbVID_CLAVEPUESTO_SelectedIndexChanged(object sender, EventArgs e)

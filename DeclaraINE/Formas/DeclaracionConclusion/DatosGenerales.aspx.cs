@@ -1690,6 +1690,15 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                 blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
                 //Ver como agregar al listado los honorarios
                 string valorSeleccionado = cmbVID_PRIMER_NIVEL.SelectedValue.Substring(0, 3);
+                int ListaPuestoArea = 0;
+                int idIntPuesto = 0;
+                int PuestoTemporal = 0;
+                string idPuestoTest = cmbVID_CLAVEPUESTO.SelectedValue;
+                if (idPuestoTest != "")
+                {
+                    idIntPuesto = Convert.ToInt32(idPuestoTest);
+
+                }
 
                 if (valorSeleccionado != "210")
                 {
@@ -1699,6 +1708,22 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                         .OrderBy(x => x.VID_PUESTO)
                         .ThenBy(x => x.VID_NIVEL)
                         .ThenBy(x => x.V_PUESTO);
+
+                    if (idPuestoTest != "")
+                    {
+                        ListaPuestoArea = (from puesto in oPuesto.lista_CAT_PUESTO
+                                           where (puesto.VID_PUESTO.StartsWith(valorSeleccionado)
+                                           || puesto.VID_PUESTO.Contains("CH-"))
+                                           && puesto.NID_PUESTO == idIntPuesto
+                                           select puesto).Count();
+                        if (ListaPuestoArea == 0)
+                        {
+                            PuestoTemporal = (from puesto in oPuesto.lista_CAT_PUESTO
+                                              where puesto.VID_PUESTO.StartsWith(valorSeleccionado)
+                                              || puesto.VID_PUESTO.Contains("CH-")
+                                              select puesto.NID_PUESTO).FirstOrDefault();
+                        }
+                    }
                 }
                 else
                 {
@@ -1708,11 +1733,40 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                         .OrderBy(x => x.VID_PUESTO)
                         .ThenBy(x => x.VID_NIVEL)
                         .ThenBy(x => x.V_PUESTO);
+
+                    if (idPuestoTest != "")
+                    {
+                        ListaPuestoArea = (from puesto in oPuesto.lista_CAT_PUESTO
+                                           where (puesto.VID_PUESTO.StartsWith(valorSeleccionado)
+                                           || puesto.VID_PUESTO.Contains("CH-"))
+                                           && puesto.NID_PUESTO == idIntPuesto
+                                           select puesto).Count();
+                        if (ListaPuestoArea == 0)
+                        {
+                            PuestoTemporal = (from puesto in oPuesto.lista_CAT_PUESTO
+                                              where puesto.VID_PUESTO.StartsWith(valorSeleccionado)
+                                              || puesto.VID_PUESTO.Contains("CH-")
+                                              select puesto.NID_PUESTO).FirstOrDefault();
+                        }
+                    }
                 }
 
                 cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.CLAVE_NOMBRE_PUESTO.ToString();
                 cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString(); //Trae la descripcion completa para el combo
-                cmbVID_CLAVEPUESTO.DataBind();
+
+                if (cmbVID_CLAVEPUESTO.SelectedValue != "")
+                {
+                    if (ListaPuestoArea > 0)
+                    {
+                        cmbVID_CLAVEPUESTO.DataBind();
+                    }
+                    else
+                    {
+                        cmbVID_CLAVEPUESTO.SelectedValue = PuestoTemporal.ToString();
+                        cmbVID_CLAVEPUESTO.DataBind();
+                        MsgBox.ShowDanger("Por favor, verifique la información del CÓDIGO DE PUESTO");
+                    }
+                }
             }
         }
 
