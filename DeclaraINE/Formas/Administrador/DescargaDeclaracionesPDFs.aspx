@@ -19,8 +19,63 @@
 </head>
 
 <body onload="ComprobarVentana()">
-    
-    
+    <style>
+        div[id*="grd"] > div .a {
+            overflow: hidden;
+            height: 100px;
+            padding-top: 4px;
+            text-align: center;
+            width: inherit;
+            padding-bottom: 110px;
+        }
+
+        div[id*="grd"] > div {
+            position: relative;
+            display: inline-block;
+            margin: 8px;
+            border: 1px solid #ddd;
+            box-shadow: none;
+            padding: 6px;
+            float: none;
+            text-align: center;
+            min-width: 290px;
+            height: 130px;
+        }
+
+        td {
+            color: black;
+            font-weight: normal;
+            font-size: small;
+            padding: 8px;
+        }
+
+        th {
+            text-align: center;
+            font-size: small;
+            padding: 8px;
+        }
+
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            opacity: .8;
+            background-color: #ffffff;
+        }
+
+            .loader img {
+                margin: 15% 45%;
+                height: 117px;
+                display: flex;
+            }
+    </style>
+    <div class="loader" align="center" valign="center">
+        <img src="../../Images/pageLoader.gif" />
+    </div>
+
     <form id="form1" runat="server" autocomplete="off">
         <asp:ScriptManager runat="server" EnablePartialRendering="true">
             <Scripts>
@@ -39,121 +94,97 @@
                 <asp:ScriptReference Name="WebFormsBundle" />
             </Scripts>
         </asp:ScriptManager>
-        
-        <style>
-            div[id*="grd"] > div .a {
-                overflow: hidden;
-                height: 100px;
-                padding-top: 4px;
-                text-align: center;
-                width: inherit;
-                padding-bottom: 110px;
-            }
 
-            div[id*="grd"] > div {
-                position: relative;
-                display: inline-block;
-                margin: 8px;
-                border: 1px solid #ddd;
-                box-shadow: none;
-                padding: 6px;
-                float: none;
-                text-align: center;
-                min-width: 290px;
-                height: 130px;
-            }
 
-            td {
-                color: black;
-                font-weight: normal;
-                font-size: small;
-                padding: 8px;
-            }
 
-            th {
-                text-align: center;
-                font-size: small;
-                padding: 8px;
-            }
-        </style>
-        <div class="card">
-            <asp:AlanMessageBox runat="server" ID="msgBox" />
-            <div class="row register-info-box" style="background: url('../../Images/ine-acerca-slide.jpg');">
-                <div>
-                    <div class="row align-items-left" style="display: flex;">
-                        <div>
-                            <img src="../../Images/Declaraine.png" style="height: 32px; margin: 10px 12px 0px;" />
+
+            <div class="card">
+                <asp:AlanMessageBox runat="server" ID="msgBox" />
+                <div class="row register-info-box" style="background: url('../../Images/ine-acerca-slide.jpg');">
+                    <div>
+                        <div class="row align-items-left" style="display: flex;">
+                            <div>
+                                <img src="../../Images/Declaraine.png" style="height: 32px; margin: 10px 12px 0px;" />
+                            </div>
+                            <div style="width: 100%;">
+                                <h3 style="margin: 7px; font-size: 22px; float: right;">
+                                    <asp:Label ID="lblIdentificacion" runat="server" Text=" " Font-Size="Small"></asp:Label>
+                                    <asp:Label ID="lblEjercicio" runat="server" Font-Size="Small" Text=" "></asp:Label>
+
+                                </h3>
+                            </div>
                         </div>
-                        <div style="width: 100%;">
-                            <h3 style="margin: 7px; font-size: 22px; float: right;">
-                                <asp:Label ID="lblIdentificacion" runat="server" Text=" " Font-Size="Small"></asp:Label>
-                                <asp:Label ID="lblEjercicio" runat="server" Font-Size="Small" Text=" "></asp:Label>
-
-                            </h3>
+                        <div style="height: 60px;">
+                            <h2 style="margin-top: 0px; margin-bottom: 0px; margin-left: 15px;">Sistema de Declaración Patrimonial</h2>
                         </div>
+                        <ul class="nav nav-tabs menu2020">
+                            <li runat="server" enableviewstate="false" id="liDatosGenerales" class="active">
+                                <a href="#menu1" data-toggle="tab">Descarga Declaraciones PDF's</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div style="height: 60px;">
-                        <h2 style="margin-top: 0px; margin-bottom: 0px; margin-left: 15px;">Sistema de Declaración Patrimonial</h2>
-                    </div>
-                    <ul class="nav nav-tabs menu2020">
-                        <li runat="server" enableviewstate="false" id="liDatosGenerales" class="active">
-                            <a href="#menu1" data-toggle="tab">Descarga Declaraciones PDF's</a>
-                        </li>
-                    </ul>
+
                 </div>
 
-            </div>
+                <div class="row">
+                    <div class="col">
 
-            <div class="row">
-                <div class="col">
-
-                    <div class="tab-content">
-                        <div runat="server" enableviewstate="false" class="tab-pane fade level1 active in" id="menu1">
-                            <ul class="nav nav-tabs ">
-                                <li>
-                                    <asp:LinkButton ID="lkVolver" runat="server" d-t="Volver al menú principal" OnClick="lkVolver_Click" EnableViewState="false" Text="Volver al menù principal">                       
+                        <div class="tab-content">
+                            <div runat="server" enableviewstate="false" class="tab-pane fade level1 active in" id="menu1">
+                                <ul class="nav nav-tabs ">
+                                    <li>
+                                        <asp:LinkButton ID="lkVolver" runat="server" d-t="Volver al menú principal" OnClick="lkVolver_Click" EnableViewState="false" Text="Volver al menù principal">                       
                         <img src="../../images/icons/ColorX32/Circled%20Left.png"/></asp:LinkButton>
-                                </li>
-                            </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="subtitulo">
-                        <asp:Literal ID="ltrSubTituloAdmin" runat="server"></asp:Literal>
-                        <label style="float: left;">Fecha de inicio:</label>
-                        <br />
-                        <asp:TextBox ID="txtFInicio" runat="server" AutoCompleteType="Disabled" MaxLength="10" Date="S"></asp:TextBox>
-                        <br />
-                        <asp:CalendarExtender runat="server" ID="txtInicio" TargetControlID="txtFInicio" Format="dd/MM/yyyy" />
-                        <br />
-                        <br />
-                        <label style="float: left;">Fecha de fin:</label>
-                        <br />
-                        <asp:TextBox ID="txtFFin" runat="server" AutoCompleteType="Disabled" MaxLength="10" Date="S"></asp:TextBox>
-                        <br />
-                        <asp:CalendarExtender runat="server" ID="txtFin" TargetControlID="txtFFin" Format="dd/MM/yyyy" />
-                        <br />
-                        <br />
-                        
-                            <asp:Button ID="brnActualizar" runat="server" Text="Descarga PDF's" OnClientClick="ValidatebtnEntrar();" OnClick="btnDescargar_Actualizar" CssClass="download" class="mb-3"/>
+                        <div class="subtitulo">
+                            <asp:Literal ID="ltrSubTituloAdmin" runat="server"></asp:Literal>
+                            <label style="float: left;">Fecha de inicio:</label>
                             <br />
-                            <br />  
+                            <asp:TextBox ID="txtFInicio" runat="server" AutoCompleteType="Disabled" MaxLength="10" Date="S"></asp:TextBox>
+                            <br />
+                            <asp:CalendarExtender runat="server" ID="txtInicio" TargetControlID="txtFInicio" Format="dd/MM/yyyy" />
+                            <br />
+                            <br />
+                            <label style="float: left;">Fecha de fin:</label>
+                            <br />
+                            <asp:TextBox ID="txtFFin" runat="server" AutoCompleteType="Disabled" MaxLength="10" Date="S"></asp:TextBox>
+                            <br />
+                            <asp:CalendarExtender runat="server" ID="txtFin" TargetControlID="txtFFin" Format="dd/MM/yyyy" />
+                            <br />
+                            <br />
+
+                            <asp:Button ID="brnActualizar" runat="server" Text="Descarga PDF's" OnClientClick="ValidatebtnEntrar();" OnClick="btnDescargar_Actualizar" CssClass="download" class="mb-3" />
+                            <br />
+                            <br />
                             <%-- Barra de progreso --%>
-                        
-                        
-                        
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
-        <script type="text/javascript"> 
-                        $(window).ready(function () {
-                            $(".loader").fadeOut("slow");
-                            
-                        });
 
-                        
-        </script>
+            <script type="text/javascript"> 
+                $(window).ready(function () {
+                    $(".loader").fadeOut("slow");
+
+                });
+
+            </script>
+
+<%--        <asp:UpdateProgress AssociatedUpdatePanelID="DescargaPdf" runat="server" EnableViewState="false">
+            <ProgressTemplate>
+                <div style="position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 9999; opacity: .8; background-color: #ffffff;">
+                    <img src="../Images/pageLoader.gif" style="margin: 15% 45%; height: 117px; display: flex;" />
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>--%>
+    </form>
+
+
+
+
 </body>
 </html>
 

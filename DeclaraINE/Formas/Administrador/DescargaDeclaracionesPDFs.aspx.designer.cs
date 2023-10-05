@@ -50,8 +50,6 @@ namespace DeclaraINE.Formas.Administrador
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEjercicio;
 
-        protected global::System.Web.UI.WebControls.Label lblAvance;
-
         /// <summary>
         /// Control liDatosGenerales.
         /// </summary>

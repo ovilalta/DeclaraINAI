@@ -281,6 +281,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 txtVID_PRIMER_NIVEL_TextChanged(cmbVID_PRIMER_NIVEL, null);
 
                 //OEVM - lo movi de lugar para que se lea posterior a la carga del combo de primer nivel - 20220517
+
                 blld__l_CAT_PUESTO oPuesto = new blld__l_CAT_PUESTO();
                 string valorSeleccionado = "";
                 if (cmbVID_PRIMER_NIVEL.SelectedValue != "")
@@ -306,9 +307,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
 
                 }
 
-                //cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO.OrderBy(x => x.NOMBRE_UA)
-                //    .ThenBy(x => x.VID_NIVEL)
-                //    .ThenBy(x => x.V_PUESTO);
+
 
                 //OEVM - Agregue estas lineas para que salga la info completa en el combo de catalogo de puestos - 20220517
                 cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.CLAVE_NOMBRE_PUESTO.ToString();
@@ -1786,6 +1785,8 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                                               where puesto.VID_PUESTO.StartsWith(valorSeleccionado)
                                               || puesto.VID_PUESTO.Contains("CH-")
                                               select puesto.NID_PUESTO).FirstOrDefault();
+
+
                         }
                     }
                 }
@@ -1802,9 +1803,18 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                     }
                     else
                     {
-                        cmbVID_CLAVEPUESTO.SelectedValue = PuestoTemporal.ToString();
-                        cmbVID_CLAVEPUESTO.DataBind();
-                        MsgBox.ShowDanger("Por favor, verifique la información del CÓDIGO DE PUESTO");
+                        cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.CLAVE_NOMBRE_PUESTO.ToString();
+                        cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString();
+                        
+                        if (_oDeclaracion.NID_DECLARACION > 1)
+                        {
+                            MsgBox.ShowDanger("Por favor, verifique la información del CÓDIGO DE PUESTO");
+                        }
+                        else
+                        {
+                            cmbVID_CLAVEPUESTO.DataBind();
+                            cmbVID_CLAVEPUESTO.SelectedValue = PuestoTemporal.ToString();
+                        }
                     }
                 }
             }

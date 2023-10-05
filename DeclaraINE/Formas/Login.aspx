@@ -320,7 +320,7 @@
                             <br />
                             <br />
                             <br />
-                            <p style="color:whitesmoke;">V.2023-09-21-1200</p>
+                            <p style="color:whitesmoke;">V.2023-10-04-1700</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-md-6 col-lg-4 ">
@@ -345,7 +345,7 @@
                                 Correos electrónicos:<br />
                                 alejandro.rodriguez@inai.org.mx<br />
                                 oscar.vilalta@inai.org.mx<br />
-                                silvia.gomez@inai.org.mx<br />
+                                francisco.flores@inai.org.mx<br />
                                 <br />
                             </p>
                         </div>

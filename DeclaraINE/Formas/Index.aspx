@@ -377,7 +377,7 @@
                                     <br />
                                     oscar.vilalta@inai.org.mx
                                     <br />
-                                    silvia.gomez@inai.org.mx
+                                    francisco.flores@inai.org.mx
                                     <br />
 
                                 </p>

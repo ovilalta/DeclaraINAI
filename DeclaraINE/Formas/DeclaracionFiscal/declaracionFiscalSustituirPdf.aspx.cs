@@ -32,7 +32,8 @@ namespace DeclaraINE.Formas.declaracionFiscalSustituirPdf
         {
             //Poner logica de previsualizacion
 
-            string FileName = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
+            //string FileName = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
+            string FileName = _oUsuario.V_NOMBRE_COMPLETO.Replace(" ", "");
 
             string anio = DateTime.Today.Year.ToString();
             string rutaDirectorio = "pdfFiscales\\" + anio;           
@@ -61,7 +62,7 @@ namespace DeclaraINE.Formas.declaracionFiscalSustituirPdf
                 string rutaDirectorio = "\\Formas\\DeclaracionFiscal\\pdfFiscales\\" + anio;
 
                 string fileExtension = Path.GetExtension(FileUpload1.FileName);
-                string nombreArchivo = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
+                string nombreArchivo = _oUsuario.V_NOMBRE_COMPLETO.Replace(" ", "");
 
                 string ruta = rutaDirectorio + "\\";
                 string path = AppDomain.CurrentDomain.BaseDirectory + ruta;
