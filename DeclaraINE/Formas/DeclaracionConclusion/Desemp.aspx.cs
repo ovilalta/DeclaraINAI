@@ -322,7 +322,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                     V_COMPLEMENTO = ((TextBox)row.FindControl("txtRespuesta")).Text;
                     V_MONTO = ((TextBox)row.FindControl("txtMonto")).Text;
                     ID_INGRESO++;
-                    if (Convert.ToInt32(ID_INGRESO) == 200 && Convert.ToInt32(V_MONTO.Money()) == 0)
+                    if (Convert.ToInt32(ID_INGRESO) == 201 && Convert.ToInt32(V_MONTO.Money()) == 0)
                     {
                         
                         flag = "true";

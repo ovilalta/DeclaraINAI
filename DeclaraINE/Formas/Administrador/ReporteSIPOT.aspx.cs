@@ -11,6 +11,7 @@ using System.Text;
 using System.Diagnostics;
 using System.Threading;
 using Spire.Xls;
+using System.Globalization;
 
 namespace DeclaraINE.Formas.Administrador
 {
@@ -52,6 +53,12 @@ namespace DeclaraINE.Formas.Administrador
         {
             Response.Redirect("../Index.aspx");
         }
+
+        static string CapitalizeWords(string input)
+        {
+            TextInfo textInfo = new CultureInfo("es-MX", false).TextInfo;
+            return textInfo.ToTitleCase(input);
+        }
         protected void btnDescargar_Actualizar(object sender, EventArgs e)
         {
             if (txtFInicio.Text == "" || txtFInicio.Text == null)
@@ -84,6 +91,19 @@ namespace DeclaraINE.Formas.Administrador
                             da.SelectCommand.Parameters.Add(new SqlParameter("@fechaFin", SqlDbType.VarChar)).Value = txtFFin.Text;
                             DataTable dt = new DataTable();
                             da.Fill(dt);
+
+                            foreach (DataRow item in dt.Rows)
+                            {                                        
+                                string nombre = item["NOMBRE"].ToString().ToLower();
+                                string primerA = item["PRIMERAPELLIDO"].ToString().ToLower();
+                                string segundoA = item["SEGUNDOAPELLIDO"].ToString().ToLower();
+                                string nombreTemp = CapitalizeWords(nombre);
+                                string primerATemp = CapitalizeWords(primerA);
+                                string segundoATemp = CapitalizeWords(segundoA);
+                                item["NOMBRE"] = nombreTemp;
+                                item["PRIMERAPELLIDO"] = primerATemp;
+                                item["SEGUNDOAPELLIDO"] = segundoATemp;
+                            }
 
                             Workbook book = new Workbook();
                             Worksheet sheet = book.Worksheets[0];
