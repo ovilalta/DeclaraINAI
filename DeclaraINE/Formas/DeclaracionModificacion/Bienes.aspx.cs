@@ -2488,7 +2488,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             {
                 mppVehículos.Hide();
                 mppAdeudos.Show(true);
-                Adeudo.Requerido = btnGuardarAdeudoVehiculo.ClientID;
+                //Adeudo.Requerido = btnGuardarAdeudoVehiculo.ClientID;
                 mppAdeudos.HeaderText = "Adeudo por concepto de crédito automotriz";
                 btnCerrarModal.Visible = false;
                 btnGuardarAdeudo.Visible = false;
@@ -2509,7 +2509,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             IndiceAdeudoSeleccionado = 0;
             Int32 IndiceAdeudo = this.IndiceAdeudoSeleccionado;
             mppAdeudos.Show(true);
-            Adeudo.Requerido = btnGuardarAdeudoVehiculo.ClientID;
+            //Adeudo.Requerido = btnGuardarAdeudoVehiculo.ClientID;
             mppAdeudos.HeaderText = "Adeudo por concepto de crédito automotriz";
             btnCerrarModal.Visible = false;
             btnGuardarAdeudo.Visible = false;

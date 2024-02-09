@@ -388,7 +388,8 @@
 
                     <tr>
                         <th>
-                            <l>Fecha de conclusión del empleo, cargo o comisión</l>
+                            <%-- Se agrega el bold y color rojo para resaltar el campo de la fecha de conclusion - OEVM20231130 --%>
+                            <l><strong style="color:red">Fecha de conclusión del empleo, cargo o comisión</strong></l>
                         </th>
                         <td>
                             <asp:TextBox ID="txtF_POSESION" runat="server" date="S" requerido="btnSiguiente" MaxLength="10"></asp:TextBox>

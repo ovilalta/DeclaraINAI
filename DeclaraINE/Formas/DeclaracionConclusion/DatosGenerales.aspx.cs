@@ -234,7 +234,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                     txtV_TEL_PARTICULAR.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.V_TEL_PARTICULAR;
                     txtV_TEL_CELULAR.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.V_TEL_CELULAR;
                     //if (oDeclaracion.DECLARACION_REGIMEN_MATRIMONIALs.Count > 0)
-                        //cmbRegimenMatrimonial.SelectedValue = oDeclaracion.DECLARACION_REGIMEN_MATRIMONIALs.First().NID_REGIMEN_MATRIMONIAL.ToString();
+                    //cmbRegimenMatrimonial.SelectedValue = oDeclaracion.DECLARACION_REGIMEN_MATRIMONIALs.First().NID_REGIMEN_MATRIMONIAL.ToString();
 
 
                 }
@@ -271,7 +271,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                 blld__l_CAT_PRIMER_NIVEL oPrimerNivel = new blld__l_CAT_PRIMER_NIVEL();
                 oPrimerNivel.OrderByCriterios.Add(new Declara_V2.Order(CAT_PRIMER_NIVEL.Properties.V_PRIMER_NIVEL));
                 oPrimerNivel.select();
-                cmbVID_PRIMER_NIVEL.DataSource = oPrimerNivel.lista_CAT_PRIMER_NIVEL.OrderBy(x=>x.V_PRIMER_NIVEL);
+                cmbVID_PRIMER_NIVEL.DataSource = oPrimerNivel.lista_CAT_PRIMER_NIVEL.OrderBy(x => x.V_PRIMER_NIVEL);
                 cmbVID_PRIMER_NIVEL.DataTextField = CAT_PRIMER_NIVEL.Properties.V_PRIMER_NIVEL.ToString();
                 cmbVID_PRIMER_NIVEL.DataValueField = CAT_PRIMER_NIVEL.Properties.VID_PRIMER_NIVEL.ToString();
                 cmbVID_PRIMER_NIVEL.DataBind();
@@ -725,7 +725,20 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                                     cmbVID_PRIMER_NIVEL.SelectedValue = oDeclaracion.DECLARACION_CARGO.VID_PRIMER_NIVEL;
                                     txtVID_PRIMER_NIVEL_TextChanged(cmbVID_PRIMER_NIVEL, null);
                                     cmbVID_SEGUNDO_NIVEL.SelectedValue = oDeclaracion.DECLARACION_CARGO.VID_SEGUNDO_NIVEL;
-                                    txtF_POSESION.Text = oDeclaracion.DECLARACION_CARGO.F_POSESION.ToString(strFormatoFecha);
+
+                                    //Recuperar fecha posesion de la declaracion previa
+                                    MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+                                    DateTime FechaComparar = db.DECLARACION_CARGO.Where(x => x.VID_NOMBRE == oDeclaracion.VID_NOMBRE
+                                    && x.VID_FECHA == oDeclaracion.VID_FECHA
+                                    && x.VID_HOMOCLAVE == oDeclaracion.VID_HOMOCLAVE
+                                    && x.NID_DECLARACION == oDeclaracion.NID_DECLARACION - 1)
+                                        .Select(x => x.F_POSESION).First();
+                                    //
+                                    if (FechaComparar != oDeclaracion.DECLARACION_CARGO.F_POSESION)
+                                    {
+                                        txtF_POSESION.Text = oDeclaracion.DECLARACION_CARGO.F_POSESION.ToString(strFormatoFecha);
+                                    }
+
                                     txtF_INGRESO.Text = oDeclaracion.DECLARACION_CARGO.F_INICIO.ToString(strFormatoFecha);
                                     // DATOS DEL DOMICILIO LABORAL
 
@@ -794,7 +807,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                                     oDeclaracion.DECLARACION_CARGO.V_FUNCION_PRINCIPAL = txt_DENOMINACION_CARGO.Text;
                                     oDeclaracion.DECLARACION_CARGO.VID_PRIMER_NIVEL = cmbVID_PRIMER_NIVEL.Text;
                                     oDeclaracion.DECLARACION_CARGO.VID_SEGUNDO_NIVEL = cmbVID_SEGUNDO_NIVEL.SelectedValue;
-                                    oDeclaracion.DECLARACION_CARGO.F_POSESION = txtF_POSESION.Date(Pagina.esMX); 
+                                    oDeclaracion.DECLARACION_CARGO.F_POSESION = txtF_POSESION.Date(Pagina.esMX);
                                     oDeclaracion.DECLARACION_CARGO.F_INICIO = txtF_POSESION.Date(Pagina.esMX); // SE ASUME QUE LA FECHA DE INGRESO ES IGUAL A LA DE POSESION txtF_INGRESO
                                     oDeclaracion.DECLARACION_CARGO.update();
 
@@ -1314,7 +1327,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
             //}
 
             oPuesto.select();
-            cmbVID_NIVEL.DataBind(oPuesto.lista_CAT_PUESTO.OrderBy(x => x.V_PUESTO), 
+            cmbVID_NIVEL.DataBind(oPuesto.lista_CAT_PUESTO.OrderBy(x => x.V_PUESTO),
                 CAT_PUESTO.Properties.NID_PUESTO, CAT_PUESTO.Properties.V_PUESTO_NIVEL);
             txtV_DENOMINACION_PUESTO.Text = String.Empty;
             txtV_DENOMINACION_PUESTO.Text = cmbVID_CLAVEPUESTO.SelectedItem.Text; //OEVM - 20220517 - Se agrega para el manejo del combo de cat puesto
@@ -1510,7 +1523,8 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                         ((Item)grd.FindControl(String.Concat("grd", ctrlDependiente1.Selected_id))).TextoPrincipal = oDeclaracion.DECLARACION_DEPENDIENTESs[ctrlDependiente1.Selected_id].V_TIPO_DEPENDIENTE;
                         ((Item)grd.FindControl(String.Concat("grd", ctrlDependiente1.Selected_id))).TextoSecundario = oDeclaracion.DECLARACION_DEPENDIENTESs[ctrlDependiente1.Selected_id].V_NOMBRE_COMPLETO;
                     }
-                    else {
+                    else
+                    {
                         ((Item)grdx7.FindControl(String.Concat("grdx7", ctrlDependiente1.Selected_id))).ImageUrl = String.Concat("../../Images/CAT_TIPO_DEPENDIENTE/", ctrlDependiente1.NID_TIPO_DEPENDIENTE, ".png");
                         ((Item)grdx7.FindControl(String.Concat("grdx7", ctrlDependiente1.Selected_id))).TextoPrincipal = oDeclaracion.DECLARACION_DEPENDIENTESs[ctrlDependiente1.Selected_id].V_TIPO_DEPENDIENTE;
                         ((Item)grdx7.FindControl(String.Concat("grdx7", ctrlDependiente1.Selected_id))).TextoSecundario = oDeclaracion.DECLARACION_DEPENDIENTESs[ctrlDependiente1.Selected_id].V_NOMBRE_COMPLETO;
@@ -1585,7 +1599,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                     else
                     {
 
-                        blld_DECLARACION_DEPENDIENTES  o = oDeclaracion.DECLARACION_DEPENDIENTESs.Where(p => p.L_PAREJA == false).ToList().Last();
+                        blld_DECLARACION_DEPENDIENTES o = oDeclaracion.DECLARACION_DEPENDIENTESs.Where(p => p.L_PAREJA == false).ToList().Last();
                         UserControl item = (UserControl)Page.LoadControl("item.ascx");
                         ((Item)item).Id = oDeclaracion.DECLARACION_DEPENDIENTESs.Where(p => p.L_PAREJA == false).ToList().Count() + 1;
                         ((Item)item).State = false;

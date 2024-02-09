@@ -131,7 +131,9 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
             cmbDoctoObtenido.SelectedValue = d.NID_DOCUMENTO_OBTENIDO.ToString();
             txtF_OBT_DOCTO_C.Text = d.F_OBTENCION.ToString();
             cmbPais.SelectedValue = d.NID_PAIS.ToString();
-            mltObservaciones.Text = d.E_OBSERVACIONES.ToString();
+
+
+            mltObservaciones.Text = d.E_OBSERVACIONES == null ? "" : d.E_OBSERVACIONES.ToString();
             cmbNIVEL_ESCOLARIDAD.SelectedValue = oDeclaracion.DECLARACION_ESCOLARIDADs[e.Id].NID_NIVEL_ESCOLARIDAD.ToString();
         }
 
