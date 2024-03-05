@@ -320,7 +320,7 @@
                             <br />
                             <br />
                             <br />
-                            <p style="color:whitesmoke;">V.2024-02-08-1700</p>
+                            <p style="color:dimgray;">V.2024-03-05-1400</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-md-6 col-lg-4 ">
@@ -339,13 +339,12 @@
                             <p>
                                 Número de conmutador: 50042400
                                 <br />
-                                Extensiones: 3435, 2363 y 2461<br />
+                                Extensiones: 3435, 2363<br />
                                 CDMX e Interior de la República
                                 <br />
                                 Correos electrónicos:<br />
                                 alejandro.rodriguez@inai.org.mx<br />
-                                oscar.vilalta@inai.org.mx<br />
-                                francisco.flores@inai.org.mx<br />
+                                oscar.vilalta@inai.org.mx<br />                                
                                 <br />
                             </p>
                         </div>

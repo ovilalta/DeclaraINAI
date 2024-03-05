@@ -137,6 +137,7 @@
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteAvanceDeclaracionesModificacion.aspx" Text="Reporte Avance Declaraciones Modificacion" ToolTip="Emite reporte de avance de las declaraciones de modificación" Value="Reporte Avance Modificación"></asp:MenuItem>
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteDeclaracionesInformeTrim.aspx" Text="Reporte Declaraciones Informe Trimestral" ToolTip="Reporte Declaraciones Informe Trimestral" Value="Reporte Declaraciones Informe Trimestral"></asp:MenuItem>
                                                                     <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteSIPOT.aspx" Text="Reporte SIPOT" ToolTip="Reporte SIPOT" Value="Reporte SIPOT"></asp:MenuItem>
+                                                                    <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteAcusesFiscales.aspx" Text="Reporte Total de Acuses Fiscaeles" ToolTip="Reporte Total de Acuses Fiscaeles" Value="Reporte Total de Acuses Fiscaeles"></asp:MenuItem>
                                                                 </asp:MenuItem>
                                                                 <asp:MenuItem NavigateUrl="~/Formas/EliminarConclusionErronea.aspx" Text="Eliminar Conclusión Erronea" ToolTip="Eliminar Conclusión" Value="Eliminar Conclusión"></asp:MenuItem>
                                                                 <asp:MenuItem NavigateUrl="~/Formas/ActivacionesAdmin.aspx" Text="Activar Cuenta" ToolTip="Activar cuenta de usuario" Value="Activar Cuenta"></asp:MenuItem>
@@ -366,7 +367,7 @@
                             <div>
                                 <h4 style="color: #000"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;Llámanos o escríbenos</h4>
                                 <p>
-                                    50042400 ext: 3435, 2363, 2461
+                                    50042400 ext: 3435, 2363
                                     <br />
                                     CDMX e Interior de la República
                                     <br />
@@ -377,8 +378,7 @@
                                     <br />
                                     oscar.vilalta@inai.org.mx
                                     <br />
-                                    francisco.flores@inai.org.mx
-                                    <br />
+                                    
 
                                 </p>
                             </div>

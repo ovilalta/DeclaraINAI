@@ -156,6 +156,7 @@ namespace DeclaraINE.Formas
 
                 if (!IsPostBack)
                 {
+                    //Condicion para activar el boton de modificacion dentro del periodo autorizado
                     if (DateTime.Now < FechaIni || DateTime.Now > FechaFin)
                     {
                         LinkButton22.Enabled = false;
