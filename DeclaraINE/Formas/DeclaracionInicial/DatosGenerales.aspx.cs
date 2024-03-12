@@ -264,7 +264,12 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 txtvIdFecha.Text = oUsuario.VID_FECHA;
                 txtVIdHomoClave.Text = oUsuario.VID_HOMOCLAVE;
                 int idPuesto = 0;
-                if (oDeclaracion.NID_DECLARACION > 1)
+                //if (oDeclaracion.NID_DECLARACION > 1)
+                //{
+                //    idPuesto = oDeclaracion.DECLARACION_CARGO.NID_PUESTO;
+                //}
+                //OEVM 20240307 Para que se ponga el valor seleccionado en el combo dentro de la pantalla del cargo
+                if (oDeclaracion.DECLARACION_CARGO.NID_PUESTO > 0)
                 {
                     idPuesto = oDeclaracion.DECLARACION_CARGO.NID_PUESTO;
                 }
@@ -313,7 +318,8 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 cmbVID_CLAVEPUESTO.DataTextField = CAT_PUESTO.Properties.CLAVE_NOMBRE_PUESTO.ToString();
                 cmbVID_CLAVEPUESTO.DataValueField = CAT_PUESTO.Properties.NID_PUESTO.ToString(); //Trae la descripcion completa para el combo
                 cmbVID_CLAVEPUESTO.DataBind();
-                if (oDeclaracion.NID_DECLARACION > 1)
+                //Se valida para los casos donde en la inicial ya se tiene un puesto seleccionado, lo muestre en pantalla
+                if (idPuesto > 0)
                 {
                     cmbVID_CLAVEPUESTO.SelectedValue = idPuesto.ToString();
                 }
