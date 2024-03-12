@@ -1776,6 +1776,9 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                     }
                     else
                     {
+                        //cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO;
+                        cmbVID_CLAVEPUESTO.DataBind();
+                        //cmbVID_CLAVEPUESTO.SelectedValue = "";
                         cmbVID_CLAVEPUESTO.SelectedValue = PuestoTemporal.ToString();
                         cmbVID_CLAVEPUESTO.DataBind();
                         MsgBox.ShowDanger("Por favor, verifique la información del CÓDIGO DE PUESTO");

@@ -269,12 +269,14 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 //    idPuesto = oDeclaracion.DECLARACION_CARGO.NID_PUESTO;
                 //}
                 //OEVM 20240307 Para que se ponga el valor seleccionado en el combo dentro de la pantalla del cargo
-                if (oDeclaracion.DECLARACION_CARGO.NID_PUESTO > 0)
+                //OEVM 20240312 Le regrese la validacion del numero de declaracion porque al ser una inicial no existen datos de cargo lo que provoca que truene el proceso
+                if (oDeclaracion.NID_DECLARACION > 1)
                 {
-                    idPuesto = oDeclaracion.DECLARACION_CARGO.NID_PUESTO;
+                    if (oDeclaracion.DECLARACION_CARGO.NID_PUESTO > 0)
+                    {
+                        idPuesto = oDeclaracion.DECLARACION_CARGO.NID_PUESTO;
+                    }
                 }
-
-
 
                 blld__l_CAT_PRIMER_NIVEL oPrimerNivel = new blld__l_CAT_PRIMER_NIVEL();
                 oPrimerNivel.OrderByCriterios.Add(new Declara_V2.Order(CAT_PRIMER_NIVEL.Properties.V_PRIMER_NIVEL));
