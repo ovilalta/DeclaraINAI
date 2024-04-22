@@ -1517,8 +1517,8 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     }
                     else
                     {
-                        cmbVID_CLAVEPUESTO.SelectedValue = PuestoTemporal.ToString();
                         cmbVID_CLAVEPUESTO.DataBind();
+                        cmbVID_CLAVEPUESTO.SelectedValue = PuestoTemporal.ToString();
                         MsgBox.ShowDanger("Por favor, verifique la información del CÓDIGO DE PUESTO");
                     }
                 }

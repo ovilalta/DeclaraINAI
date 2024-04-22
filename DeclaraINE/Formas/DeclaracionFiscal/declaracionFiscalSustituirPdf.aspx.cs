@@ -32,7 +32,7 @@ namespace DeclaraINE.Formas.declaracionFiscalSustituirPdf
         {
             //Poner logica de previsualizacion
 
-            //string FileName = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
+            //string rfc = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
             string FileName = _oUsuario.V_NOMBRE_COMPLETO.Replace(" ", "");
 
             string anio = DateTime.Today.Year.ToString();
@@ -76,8 +76,8 @@ namespace DeclaraINE.Formas.declaracionFiscalSustituirPdf
                 if (fileExtension.ToLower() == ".pdf")
                 {
                     FileUpload1.SaveAs(Server.MapPath("~" + ruta + nombreArchivo + fileExtension));
-                    
-                   EliminaRFC(nombreArchivo);       
+                    string rfc = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
+                    EliminaRFC(rfc);       
                    
                 }
                 else
@@ -116,13 +116,10 @@ namespace DeclaraINE.Formas.declaracionFiscalSustituirPdf
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
-
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@rfc", RFC);
 
                         rpta = cmd.ExecuteNonQuery();
-
-
                     }
                     conn.Close();
                 }

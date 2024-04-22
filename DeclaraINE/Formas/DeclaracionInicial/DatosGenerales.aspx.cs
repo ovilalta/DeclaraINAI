@@ -1743,7 +1743,6 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 if (idPuestoTest != "")
                 {
                     idIntPuesto = Convert.ToInt32(idPuestoTest);
-
                 }
 
                 if (valorSeleccionado != "210")
@@ -1768,6 +1767,9 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                                               where puesto.VID_PUESTO.StartsWith(valorSeleccionado)
                                               || puesto.VID_PUESTO.Contains("CH-")
                                               select puesto.NID_PUESTO).FirstOrDefault();
+
+                            cmbVID_CLAVEPUESTO.DataBind();
+                            cmbVID_CLAVEPUESTO.SelectedValue = PuestoTemporal.ToString();
                         }
                     }
                 }
