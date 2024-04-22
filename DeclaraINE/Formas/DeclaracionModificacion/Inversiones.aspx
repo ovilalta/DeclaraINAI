@@ -202,6 +202,7 @@
 								<asp:ListItem Text="MXN-Peso Mexicano" Value="101"></asp:ListItem>
                                 <asp:ListItem Text="USN-Dolar Americano"  Value="148"></asp:ListItem>
                                 <asp:ListItem Text="CAD-Dolar Canadiense"  Value="27"></asp:ListItem>
+								<asp:ListItem Text="EUR-EUro"  Value="48"></asp:ListItem>
 						</asp:DropDownList>
 							<asp:TextBox ID="txtTipoMoneda" runat="server"  Visible="false" MaxLength="50"></asp:TextBox>
 						</td>
