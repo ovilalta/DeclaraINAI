@@ -298,7 +298,9 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                     if (valorSeleccionado != "210")
                     {
                         cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
-                                                .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) || p.VID_PUESTO.Contains("CH-"))
+                                                .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) 
+                                                || p.VID_PUESTO.Contains("CH-")
+                                                || p.VID_PUESTO.Contains("EV-"))
                                                 .OrderBy(x => x.VID_PUESTO)
                                                 .ThenBy(x => x.VID_NIVEL)
                                                 .ThenBy(x => x.V_PUESTO);
@@ -306,7 +308,12 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                     else
                     {
                         cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
-                        .Where(p => p.VID_PUESTO.StartsWith("210") || p.VID_PUESTO.StartsWith("211") || p.VID_PUESTO.StartsWith("212") || p.VID_PUESTO.StartsWith("214") || p.VID_PUESTO.Contains("CH-"))
+                        .Where(p => p.VID_PUESTO.StartsWith("210")
+                        || p.VID_PUESTO.StartsWith("211")
+                        || p.VID_PUESTO.StartsWith("212") 
+                        || p.VID_PUESTO.StartsWith("214") 
+                        || p.VID_PUESTO.Contains("CH-")
+                        || p.VID_PUESTO.Contains("EV-"))
                         .OrderBy(x => x.VID_PUESTO)
                         .ThenBy(x => x.VID_NIVEL)
                         .ThenBy(x => x.V_PUESTO);
@@ -1749,7 +1756,9 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 {
                     oPuesto.select();
                     cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
-                        .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) || p.VID_PUESTO.Contains("CH-"))
+                        .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) 
+                        || p.VID_PUESTO.Contains("CH-")
+                        || p.VID_PUESTO.Contains("EV-"))
                         .OrderBy(x => x.VID_PUESTO)
                         .ThenBy(x => x.VID_NIVEL)
                         .ThenBy(x => x.V_PUESTO);
@@ -1758,7 +1767,8 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                     {
                         ListaPuestoArea = (from puesto in oPuesto.lista_CAT_PUESTO
                                            where (puesto.VID_PUESTO.StartsWith(valorSeleccionado)
-                                           || puesto.VID_PUESTO.Contains("CH-"))
+                                           || puesto.VID_PUESTO.Contains("CH-")
+                                           || puesto.VID_PUESTO.Contains("EV-"))
                                            && puesto.NID_PUESTO == idIntPuesto
                                            select puesto).Count();
                         if (ListaPuestoArea == 0)
@@ -1766,6 +1776,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                             PuestoTemporal = (from puesto in oPuesto.lista_CAT_PUESTO
                                               where puesto.VID_PUESTO.StartsWith(valorSeleccionado)
                                               || puesto.VID_PUESTO.Contains("CH-")
+                                              || puesto.VID_PUESTO.Contains("EV-")
                                               select puesto.NID_PUESTO).FirstOrDefault();
 
                             cmbVID_CLAVEPUESTO.DataBind();
@@ -1777,7 +1788,12 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                 {
                     oPuesto.select();
                     cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
-                        .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) || p.VID_PUESTO.StartsWith("211") || p.VID_PUESTO.StartsWith("212") || p.VID_PUESTO.StartsWith("214") || p.VID_PUESTO.Contains("CH-"))
+                        .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) 
+                        || p.VID_PUESTO.StartsWith("211") 
+                        || p.VID_PUESTO.StartsWith("212") 
+                        || p.VID_PUESTO.StartsWith("214") 
+                        || p.VID_PUESTO.Contains("CH-")
+                        || p.VID_PUESTO.Contains("EV-"))
                         .OrderBy(x => x.VID_PUESTO)
                         .ThenBy(x => x.VID_NIVEL)
                         .ThenBy(x => x.V_PUESTO);
@@ -1786,7 +1802,8 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                     {
                         ListaPuestoArea = (from puesto in oPuesto.lista_CAT_PUESTO
                                            where (puesto.VID_PUESTO.StartsWith(valorSeleccionado)
-                                           || puesto.VID_PUESTO.Contains("CH-"))
+                                           || puesto.VID_PUESTO.Contains("CH-")
+                                           || puesto.VID_PUESTO.Contains("EV-"))
                                            && puesto.NID_PUESTO == idIntPuesto
                                            select puesto).Count();
                         if (ListaPuestoArea == 0)
@@ -1794,6 +1811,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial
                             PuestoTemporal = (from puesto in oPuesto.lista_CAT_PUESTO
                                               where puesto.VID_PUESTO.StartsWith(valorSeleccionado)
                                               || puesto.VID_PUESTO.Contains("CH-")
+                                              || puesto.VID_PUESTO.Contains("EV-")
                                               select puesto.NID_PUESTO).FirstOrDefault();
 
 
