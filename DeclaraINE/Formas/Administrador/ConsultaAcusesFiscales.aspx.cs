@@ -47,15 +47,38 @@ namespace DeclaraINE.Formas.Administrador
             if (txtRfc.Text.Length == 13)
             {
                 try
-                {                    
+                {
                     MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
                     string connString = db.Database.Connection.ConnectionString;
-                    int existeUsuario = db.USUARIO.Where(p => p.VID_NOMBRE.Equals(txtRfc.Text.Substring(0,4))
+                    int existeUsuario = db.USUARIO.Where(p => p.VID_NOMBRE.Equals(txtRfc.Text.Substring(0, 4))
                     && p.VID_FECHA.Equals(txtRfc.Text.Substring(4, 6)) && p.VID_HOMOCLAVE.Equals(txtRfc.Text.Substring(10, 3))).Count();
 
                     if (existeUsuario != 0)
                     {
-                        string FileName = txtRfc.Text;
+                        //Aqui buscar el nombre completo del usuario mediante el RFC capturado para buscar ahora por el nombre su archivo pdf
+                        string rfcNombre = txtRfc.Text.Substring(0, 4);
+                        string rfcFecha = txtRfc.Text.Substring(4, 6);
+                        string rfcHomo = txtRfc.Text.Substring(10, 3);
+
+                        string FileNameNombre = db.USUARIO
+                            .Where(u => u.VID_NOMBRE == rfcNombre
+                            && u.VID_FECHA == rfcFecha
+                            && u.VID_HOMOCLAVE == rfcHomo)
+                            .Select(u => u.V_NOMBRE ).First();     //txtRfc.Text;
+
+                        string FileNamePAp = db.USUARIO
+                            .Where(u => u.VID_NOMBRE == rfcNombre
+                            && u.VID_FECHA == rfcFecha
+                            && u.VID_HOMOCLAVE == rfcHomo)
+                            .Select(u =>  u.V_PRIMER_A ).First();     //txtRfc.Text;
+
+                        string FileNameSAp= db.USUARIO
+                            .Where(u => u.VID_NOMBRE == rfcNombre
+                            && u.VID_FECHA == rfcFecha
+                            && u.VID_HOMOCLAVE == rfcHomo)
+                            .Select(u =>  u.V_SEGUNDO_A).First();     //txtRfc.Text;
+
+                        string FileName =  (FileNameNombre+FileNamePAp+FileNameSAp).Replace(" ","");
 
                         string anio = DateTime.Today.Year.ToString();
                         string rutaBase = HttpContext.Current.Server.MapPath("~") + "\\Formas\\DeclaracionFiscal\\";
@@ -67,18 +90,18 @@ namespace DeclaraINE.Formas.Administrador
 
                         if (existe)
                         {
-                            pdfFiscal.Attributes["src"] = "../DeclaracionFiscal/" + rutaDirectorio + "\\" +FileName + ".pdf";
+                            pdfFiscal.Attributes["src"] = "../DeclaracionFiscal/" + rutaDirectorio + "\\" + FileName + ".pdf";
                         }
                         else
                         {
-                            msgBox.ShowDanger("No se encontró el acuse fiscal con rfc"+ txtRfc.Text.ToUpper());
+                            msgBox.ShowDanger("No se encontró el acuse fiscal con rfc" + txtRfc.Text.ToUpper());
                         }
 
                     }
                     else
                     {
                         msgBox.ShowDanger("No está registrado el usuario con RFC: " + txtRfc.Text.ToUpper());
-                    }                    
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -96,7 +119,7 @@ namespace DeclaraINE.Formas.Administrador
         {
             if (txtRfc.Text.Length == 13)
             {
-               int rpta = _bllSistema.InsertaRfcCambioAcuse(txtRfc.Text);
+                int rpta = _bllSistema.InsertaRfcCambioAcuse(txtRfc.Text);
                 if (rpta == -1)
                 {
                     msgBox.ShowSuccess("Se agregó el RFC: " + txtRfc.Text.ToUpper() + " de manera correcta");
