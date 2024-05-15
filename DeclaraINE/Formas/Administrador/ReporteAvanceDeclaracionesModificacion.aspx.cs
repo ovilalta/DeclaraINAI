@@ -105,7 +105,7 @@ namespace DeclaraINE.Formas.Administrador
                             //Guarda la info en el excel
 
                             Workbook book = new Workbook();
-                            book.CreateEmptySheets(41);
+                            book.CreateEmptySheets(42);
                             Worksheet sheet = book.Worksheets[0];
                             Worksheet sheet2 = book.Worksheets[1];
 
