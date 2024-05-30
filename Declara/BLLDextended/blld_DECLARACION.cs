@@ -430,8 +430,8 @@ namespace Declara_V2.BLLD
                                     datos_DECLARACION = new dald_DECLARACION(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, ejercicio.ToString(), NID_TIPO_DECLARACION, NID_ESTADO, E_OBSERVACIONES, E_OBSERVACIONES_MARCADO, V_OBSERVACIONES_TESTADO, NID_ESTADO_TESTADO, L_AUTORIZA_PUBLICAR, F_ENVIO, L_CONFLICTO, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
                                     break;
                                 }
-                                
-                                
+
+                                C_EJERCICIO = (DateTime.Now.Year ).ToString(); //Ajuste para asegurar que el sistema guardara el año actual para la declaracion inicial
                                 datos_DECLARACION = new dald_DECLARACION(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE,C_EJERCICIO, NID_TIPO_DECLARACION, NID_ESTADO, E_OBSERVACIONES, E_OBSERVACIONES_MARCADO, V_OBSERVACIONES_TESTADO, NID_ESTADO_TESTADO, L_AUTORIZA_PUBLICAR, F_ENVIO, L_CONFLICTO, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
                                     break;
                                 
@@ -445,8 +445,9 @@ namespace Declara_V2.BLLD
                                     }
                                     else
                                     {
-                                        C_EJERCICIO = (Convert.ToInt32(oDeclaracion.C_EJERCICIO) + 1).ToString();
-                                        ValidaMes(C_EJERCICIO);
+                                    //C_EJERCICIO = (Convert.ToInt32(oDeclaracion.C_EJERCICIO) + 1).ToString(); // no funciona de manera correcta en los casos de reingresos calcula mal el año del ejercicio
+                                    C_EJERCICIO = (DateTime.Now.Year-1).ToString(); //Ajuste para asegurar que el sistema guardara el año anterior al ejercicio de modificación
+                                    ValidaMes(C_EJERCICIO);
                                         datos_DECLARACION = new dald_DECLARACION(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, C_EJERCICIO, NID_TIPO_DECLARACION, NID_ESTADO, E_OBSERVACIONES, E_OBSERVACIONES_MARCADO, V_OBSERVACIONES_TESTADO, NID_ESTADO_TESTADO, L_AUTORIZA_PUBLICAR, F_ENVIO, L_CONFLICTO, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
                                     }
                                     break;
