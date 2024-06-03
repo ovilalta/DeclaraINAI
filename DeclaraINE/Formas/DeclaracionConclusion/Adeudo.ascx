@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Adeudo.ascx.cs" Inherits="DeclaraINE.Formas.DeclaracionConclusion.Adeudo" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Adeudo.ascx.cs" Inherits="DeclaraINAI.Formas.DeclaracionConclusion.Adeudo" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
         <script type="text/javascript">

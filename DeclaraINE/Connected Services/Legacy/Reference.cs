@@ -8,14 +8,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Legacy {
+namespace DeclaraINAI.Legacy {
     using System.Runtime.Serialization;
     using System;
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ListaDeclara", Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ListaDeclara", Namespace="http://inai.mx/")]
     [System.SerializableAttribute()]
     public partial class ListaDeclara : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -183,7 +183,7 @@ namespace DeclaraINE.Legacy {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ListaAnt2010", Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ListaAnt2010", Namespace="http://inai.mx/")]
     [System.SerializableAttribute()]
     public partial class ListaAnt2010 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -305,92 +305,92 @@ namespace DeclaraINE.Legacy {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://ine.mx/", ConfigurationName="Legacy.fileSoap")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://inai.mx/", ConfigurationName="Legacy.fileSoap")]
     public interface fileSoap {
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento NOMARCH del espacio de nombres http://ine.mx/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Transparencia", ReplyAction="*")]
-        DeclaraINE.Legacy.TransparenciaResponse Transparencia(DeclaraINE.Legacy.TransparenciaRequest request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento NOMARCH del espacio de nombres http://inai.mx/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Transparencia", ReplyAction="*")]
+        DeclaraINAI.Legacy.TransparenciaResponse Transparencia(DeclaraINAI.Legacy.TransparenciaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Transparencia", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.TransparenciaResponse> TransparenciaAsync(DeclaraINE.Legacy.TransparenciaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Transparencia", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.TransparenciaResponse> TransparenciaAsync(DeclaraINAI.Legacy.TransparenciaRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento NOMARCH del espacio de nombres http://ine.mx/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Modificacion", ReplyAction="*")]
-        DeclaraINE.Legacy.ModificacionResponse Modificacion(DeclaraINE.Legacy.ModificacionRequest request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento NOMARCH del espacio de nombres http://inai.mx/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Modificacion", ReplyAction="*")]
+        DeclaraINAI.Legacy.ModificacionResponse Modificacion(DeclaraINAI.Legacy.ModificacionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Modificacion", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.ModificacionResponse> ModificacionAsync(DeclaraINE.Legacy.ModificacionRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Modificacion", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.ModificacionResponse> ModificacionAsync(DeclaraINAI.Legacy.ModificacionRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento NOMARCH del espacio de nombres http://ine.mx/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Inicial", ReplyAction="*")]
-        DeclaraINE.Legacy.InicialResponse Inicial(DeclaraINE.Legacy.InicialRequest request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento NOMARCH del espacio de nombres http://inai.mx/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Inicial", ReplyAction="*")]
+        DeclaraINAI.Legacy.InicialResponse Inicial(DeclaraINAI.Legacy.InicialRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Inicial", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.InicialResponse> InicialAsync(DeclaraINE.Legacy.InicialRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Inicial", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.InicialResponse> InicialAsync(DeclaraINAI.Legacy.InicialRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento NOMARCH del espacio de nombres http://ine.mx/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Conclusion", ReplyAction="*")]
-        DeclaraINE.Legacy.ConclusionResponse Conclusion(DeclaraINE.Legacy.ConclusionRequest request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento NOMARCH del espacio de nombres http://inai.mx/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Conclusion", ReplyAction="*")]
+        DeclaraINAI.Legacy.ConclusionResponse Conclusion(DeclaraINAI.Legacy.ConclusionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Conclusion", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.ConclusionResponse> ConclusionAsync(DeclaraINE.Legacy.ConclusionRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Conclusion", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.ConclusionResponse> ConclusionAsync(DeclaraINAI.Legacy.ConclusionRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento NOMARCH del espacio de nombres http://ine.mx/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Acuse", ReplyAction="*")]
-        DeclaraINE.Legacy.AcuseResponse Acuse(DeclaraINE.Legacy.AcuseRequest request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento NOMARCH del espacio de nombres http://inai.mx/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Acuse", ReplyAction="*")]
+        DeclaraINAI.Legacy.AcuseResponse Acuse(DeclaraINAI.Legacy.AcuseRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Acuse", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.AcuseResponse> AcuseAsync(DeclaraINE.Legacy.AcuseRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Acuse", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.AcuseResponse> AcuseAsync(DeclaraINAI.Legacy.AcuseRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ResponsivaResult del espacio de nombres http://ine.mx/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Responsiva", ReplyAction="*")]
-        DeclaraINE.Legacy.ResponsivaResponse Responsiva(DeclaraINE.Legacy.ResponsivaRequest request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ResponsivaResult del espacio de nombres http://inai.mx/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Responsiva", ReplyAction="*")]
+        DeclaraINAI.Legacy.ResponsivaResponse Responsiva(DeclaraINAI.Legacy.ResponsivaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Responsiva", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.ResponsivaResponse> ResponsivaAsync(DeclaraINE.Legacy.ResponsivaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Responsiva", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.ResponsivaResponse> ResponsivaAsync(DeclaraINAI.Legacy.ResponsivaRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento EstadisticaResult del espacio de nombres http://ine.mx/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Estadistica", ReplyAction="*")]
-        DeclaraINE.Legacy.EstadisticaResponse Estadistica(DeclaraINE.Legacy.EstadisticaRequest request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento EstadisticaResult del espacio de nombres http://inai.mx/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Estadistica", ReplyAction="*")]
+        DeclaraINAI.Legacy.EstadisticaResponse Estadistica(DeclaraINAI.Legacy.EstadisticaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Estadistica", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.EstadisticaResponse> EstadisticaAsync(DeclaraINE.Legacy.EstadisticaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Estadistica", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.EstadisticaResponse> EstadisticaAsync(DeclaraINAI.Legacy.EstadisticaRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Dia del espacio de nombres http://ine.mx/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Conflicto", ReplyAction="*")]
-        DeclaraINE.Legacy.ConflictoResponse Conflicto(DeclaraINE.Legacy.ConflictoRequest request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Dia del espacio de nombres http://inai.mx/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Conflicto", ReplyAction="*")]
+        DeclaraINAI.Legacy.ConflictoResponse Conflicto(DeclaraINAI.Legacy.ConflictoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Conflicto", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.ConflictoResponse> ConflictoAsync(DeclaraINE.Legacy.ConflictoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Conflicto", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.ConflictoResponse> ConflictoAsync(DeclaraINAI.Legacy.ConflictoRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento RFC del espacio de nombres http://ine.mx/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Consulta", ReplyAction="*")]
-        DeclaraINE.Legacy.ConsultaResponse Consulta(DeclaraINE.Legacy.ConsultaRequest request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento RFC del espacio de nombres http://inai.mx/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Consulta", ReplyAction="*")]
+        DeclaraINAI.Legacy.ConsultaResponse Consulta(DeclaraINAI.Legacy.ConsultaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Consulta", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.ConsultaResponse> ConsultaAsync(DeclaraINE.Legacy.ConsultaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Consulta", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.ConsultaResponse> ConsultaAsync(DeclaraINAI.Legacy.ConsultaRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento RFC del espacio de nombres http://ine.mx/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Consulta2010", ReplyAction="*")]
-        DeclaraINE.Legacy.Consulta2010Response Consulta2010(DeclaraINE.Legacy.Consulta2010Request request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento RFC del espacio de nombres http://inai.mx/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Consulta2010", ReplyAction="*")]
+        DeclaraINAI.Legacy.Consulta2010Response Consulta2010(DeclaraINAI.Legacy.Consulta2010Request request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/Consulta2010", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.Consulta2010Response> Consulta2010Async(DeclaraINE.Legacy.Consulta2010Request request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/Consulta2010", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.Consulta2010Response> Consulta2010Async(DeclaraINAI.Legacy.Consulta2010Request request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Archivo del espacio de nombres http://ine.mx/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/AcuseAnt2010", ReplyAction="*")]
-        DeclaraINE.Legacy.AcuseAnt2010Response AcuseAnt2010(DeclaraINE.Legacy.AcuseAnt2010Request request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Archivo del espacio de nombres http://inai.mx/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/AcuseAnt2010", ReplyAction="*")]
+        DeclaraINAI.Legacy.AcuseAnt2010Response AcuseAnt2010(DeclaraINAI.Legacy.AcuseAnt2010Request request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/AcuseAnt2010", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.AcuseAnt2010Response> AcuseAnt2010Async(DeclaraINE.Legacy.AcuseAnt2010Request request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/AcuseAnt2010", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.AcuseAnt2010Response> AcuseAnt2010Async(DeclaraINAI.Legacy.AcuseAnt2010Request request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Archivo del espacio de nombres http://ine.mx/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/DeclaraAnt2010", ReplyAction="*")]
-        DeclaraINE.Legacy.DeclaraAnt2010Response DeclaraAnt2010(DeclaraINE.Legacy.DeclaraAnt2010Request request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Archivo del espacio de nombres http://inai.mx/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/DeclaraAnt2010", ReplyAction="*")]
+        DeclaraINAI.Legacy.DeclaraAnt2010Response DeclaraAnt2010(DeclaraINAI.Legacy.DeclaraAnt2010Request request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/DeclaraAnt2010", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.DeclaraAnt2010Response> DeclaraAnt2010Async(DeclaraINE.Legacy.DeclaraAnt2010Request request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/DeclaraAnt2010", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.DeclaraAnt2010Response> DeclaraAnt2010Async(DeclaraINAI.Legacy.DeclaraAnt2010Request request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -399,13 +399,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class TransparenciaRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Transparencia", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.TransparenciaRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Transparencia", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.TransparenciaRequestBody Body;
         
         public TransparenciaRequest() {
         }
         
-        public TransparenciaRequest(DeclaraINE.Legacy.TransparenciaRequestBody Body) {
+        public TransparenciaRequest(DeclaraINAI.Legacy.TransparenciaRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -413,7 +413,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class TransparenciaRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -461,13 +461,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class TransparenciaResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="TransparenciaResponse", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.TransparenciaResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="TransparenciaResponse", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.TransparenciaResponseBody Body;
         
         public TransparenciaResponse() {
         }
         
-        public TransparenciaResponse(DeclaraINE.Legacy.TransparenciaResponseBody Body) {
+        public TransparenciaResponse(DeclaraINAI.Legacy.TransparenciaResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -475,7 +475,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class TransparenciaResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -495,13 +495,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ModificacionRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Modificacion", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.ModificacionRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Modificacion", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.ModificacionRequestBody Body;
         
         public ModificacionRequest() {
         }
         
-        public ModificacionRequest(DeclaraINE.Legacy.ModificacionRequestBody Body) {
+        public ModificacionRequest(DeclaraINAI.Legacy.ModificacionRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -509,7 +509,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class ModificacionRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -545,13 +545,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ModificacionResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ModificacionResponse", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.ModificacionResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ModificacionResponse", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.ModificacionResponseBody Body;
         
         public ModificacionResponse() {
         }
         
-        public ModificacionResponse(DeclaraINE.Legacy.ModificacionResponseBody Body) {
+        public ModificacionResponse(DeclaraINAI.Legacy.ModificacionResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -559,7 +559,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class ModificacionResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -579,13 +579,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class InicialRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Inicial", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.InicialRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Inicial", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.InicialRequestBody Body;
         
         public InicialRequest() {
         }
         
-        public InicialRequest(DeclaraINE.Legacy.InicialRequestBody Body) {
+        public InicialRequest(DeclaraINAI.Legacy.InicialRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -593,7 +593,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class InicialRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -629,13 +629,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class InicialResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="InicialResponse", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.InicialResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InicialResponse", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.InicialResponseBody Body;
         
         public InicialResponse() {
         }
         
-        public InicialResponse(DeclaraINE.Legacy.InicialResponseBody Body) {
+        public InicialResponse(DeclaraINAI.Legacy.InicialResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -643,7 +643,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class InicialResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -663,13 +663,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConclusionRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Conclusion", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.ConclusionRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Conclusion", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.ConclusionRequestBody Body;
         
         public ConclusionRequest() {
         }
         
-        public ConclusionRequest(DeclaraINE.Legacy.ConclusionRequestBody Body) {
+        public ConclusionRequest(DeclaraINAI.Legacy.ConclusionRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -677,7 +677,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class ConclusionRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -713,13 +713,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConclusionResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConclusionResponse", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.ConclusionResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConclusionResponse", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.ConclusionResponseBody Body;
         
         public ConclusionResponse() {
         }
         
-        public ConclusionResponse(DeclaraINE.Legacy.ConclusionResponseBody Body) {
+        public ConclusionResponse(DeclaraINAI.Legacy.ConclusionResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -727,7 +727,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class ConclusionResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -747,13 +747,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AcuseRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Acuse", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.AcuseRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Acuse", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.AcuseRequestBody Body;
         
         public AcuseRequest() {
         }
         
-        public AcuseRequest(DeclaraINE.Legacy.AcuseRequestBody Body) {
+        public AcuseRequest(DeclaraINAI.Legacy.AcuseRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -761,7 +761,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class AcuseRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -797,13 +797,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AcuseResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AcuseResponse", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.AcuseResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AcuseResponse", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.AcuseResponseBody Body;
         
         public AcuseResponse() {
         }
         
-        public AcuseResponse(DeclaraINE.Legacy.AcuseResponseBody Body) {
+        public AcuseResponse(DeclaraINAI.Legacy.AcuseResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -811,7 +811,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class AcuseResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -831,13 +831,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ResponsivaRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Responsiva", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.ResponsivaRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Responsiva", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.ResponsivaRequestBody Body;
         
         public ResponsivaRequest() {
         }
         
-        public ResponsivaRequest(DeclaraINE.Legacy.ResponsivaRequestBody Body) {
+        public ResponsivaRequest(DeclaraINAI.Legacy.ResponsivaRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -845,7 +845,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class ResponsivaRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -865,13 +865,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ResponsivaResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ResponsivaResponse", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.ResponsivaResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ResponsivaResponse", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.ResponsivaResponseBody Body;
         
         public ResponsivaResponse() {
         }
         
-        public ResponsivaResponse(DeclaraINE.Legacy.ResponsivaResponseBody Body) {
+        public ResponsivaResponse(DeclaraINAI.Legacy.ResponsivaResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -879,7 +879,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class ResponsivaResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -899,13 +899,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class EstadisticaRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Estadistica", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.EstadisticaRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Estadistica", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.EstadisticaRequestBody Body;
         
         public EstadisticaRequest() {
         }
         
-        public EstadisticaRequest(DeclaraINE.Legacy.EstadisticaRequestBody Body) {
+        public EstadisticaRequest(DeclaraINAI.Legacy.EstadisticaRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -913,7 +913,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class EstadisticaRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -937,13 +937,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class EstadisticaResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="EstadisticaResponse", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.EstadisticaResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EstadisticaResponse", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.EstadisticaResponseBody Body;
         
         public EstadisticaResponse() {
         }
         
-        public EstadisticaResponse(DeclaraINE.Legacy.EstadisticaResponseBody Body) {
+        public EstadisticaResponse(DeclaraINAI.Legacy.EstadisticaResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -951,7 +951,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class EstadisticaResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -971,13 +971,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConflictoRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Conflicto", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.ConflictoRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Conflicto", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.ConflictoRequestBody Body;
         
         public ConflictoRequest() {
         }
         
-        public ConflictoRequest(DeclaraINE.Legacy.ConflictoRequestBody Body) {
+        public ConflictoRequest(DeclaraINAI.Legacy.ConflictoRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -985,7 +985,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class ConflictoRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -1013,13 +1013,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConflictoResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConflictoResponse", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.ConflictoResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConflictoResponse", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.ConflictoResponseBody Body;
         
         public ConflictoResponse() {
         }
         
-        public ConflictoResponse(DeclaraINE.Legacy.ConflictoResponseBody Body) {
+        public ConflictoResponse(DeclaraINAI.Legacy.ConflictoResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1027,7 +1027,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class ConflictoResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -1047,13 +1047,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConsultaRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Consulta", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.ConsultaRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Consulta", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.ConsultaRequestBody Body;
         
         public ConsultaRequest() {
         }
         
-        public ConsultaRequest(DeclaraINE.Legacy.ConsultaRequestBody Body) {
+        public ConsultaRequest(DeclaraINAI.Legacy.ConsultaRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1061,7 +1061,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class ConsultaRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -1081,13 +1081,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConsultaResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsultaResponse", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.ConsultaResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsultaResponse", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.ConsultaResponseBody Body;
         
         public ConsultaResponse() {
         }
         
-        public ConsultaResponse(DeclaraINE.Legacy.ConsultaResponseBody Body) {
+        public ConsultaResponse(DeclaraINAI.Legacy.ConsultaResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1095,16 +1095,16 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class ConsultaResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public DeclaraINE.Legacy.ListaDeclara[] ConsultaResult;
+        public DeclaraINAI.Legacy.ListaDeclara[] ConsultaResult;
         
         public ConsultaResponseBody() {
         }
         
-        public ConsultaResponseBody(DeclaraINE.Legacy.ListaDeclara[] ConsultaResult) {
+        public ConsultaResponseBody(DeclaraINAI.Legacy.ListaDeclara[] ConsultaResult) {
             this.ConsultaResult = ConsultaResult;
         }
     }
@@ -1115,13 +1115,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class Consulta2010Request {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Consulta2010", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.Consulta2010RequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Consulta2010", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.Consulta2010RequestBody Body;
         
         public Consulta2010Request() {
         }
         
-        public Consulta2010Request(DeclaraINE.Legacy.Consulta2010RequestBody Body) {
+        public Consulta2010Request(DeclaraINAI.Legacy.Consulta2010RequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1129,7 +1129,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class Consulta2010RequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -1149,13 +1149,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class Consulta2010Response {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Consulta2010Response", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.Consulta2010ResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Consulta2010Response", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.Consulta2010ResponseBody Body;
         
         public Consulta2010Response() {
         }
         
-        public Consulta2010Response(DeclaraINE.Legacy.Consulta2010ResponseBody Body) {
+        public Consulta2010Response(DeclaraINAI.Legacy.Consulta2010ResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1163,16 +1163,16 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class Consulta2010ResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public DeclaraINE.Legacy.ListaAnt2010[] Consulta2010Result;
+        public DeclaraINAI.Legacy.ListaAnt2010[] Consulta2010Result;
         
         public Consulta2010ResponseBody() {
         }
         
-        public Consulta2010ResponseBody(DeclaraINE.Legacy.ListaAnt2010[] Consulta2010Result) {
+        public Consulta2010ResponseBody(DeclaraINAI.Legacy.ListaAnt2010[] Consulta2010Result) {
             this.Consulta2010Result = Consulta2010Result;
         }
     }
@@ -1183,13 +1183,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AcuseAnt2010Request {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AcuseAnt2010", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.AcuseAnt2010RequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AcuseAnt2010", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.AcuseAnt2010RequestBody Body;
         
         public AcuseAnt2010Request() {
         }
         
-        public AcuseAnt2010Request(DeclaraINE.Legacy.AcuseAnt2010RequestBody Body) {
+        public AcuseAnt2010Request(DeclaraINAI.Legacy.AcuseAnt2010RequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1197,7 +1197,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class AcuseAnt2010RequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -1221,13 +1221,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AcuseAnt2010Response {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AcuseAnt2010Response", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.AcuseAnt2010ResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AcuseAnt2010Response", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.AcuseAnt2010ResponseBody Body;
         
         public AcuseAnt2010Response() {
         }
         
-        public AcuseAnt2010Response(DeclaraINE.Legacy.AcuseAnt2010ResponseBody Body) {
+        public AcuseAnt2010Response(DeclaraINAI.Legacy.AcuseAnt2010ResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1235,7 +1235,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class AcuseAnt2010ResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -1255,13 +1255,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DeclaraAnt2010Request {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeclaraAnt2010", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.DeclaraAnt2010RequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeclaraAnt2010", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.DeclaraAnt2010RequestBody Body;
         
         public DeclaraAnt2010Request() {
         }
         
-        public DeclaraAnt2010Request(DeclaraINE.Legacy.DeclaraAnt2010RequestBody Body) {
+        public DeclaraAnt2010Request(DeclaraINAI.Legacy.DeclaraAnt2010RequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1269,7 +1269,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class DeclaraAnt2010RequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -1293,13 +1293,13 @@ namespace DeclaraINE.Legacy {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DeclaraAnt2010Response {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeclaraAnt2010Response", Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.Legacy.DeclaraAnt2010ResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeclaraAnt2010Response", Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.Legacy.DeclaraAnt2010ResponseBody Body;
         
         public DeclaraAnt2010Response() {
         }
         
-        public DeclaraAnt2010Response(DeclaraINE.Legacy.DeclaraAnt2010ResponseBody Body) {
+        public DeclaraAnt2010Response(DeclaraINAI.Legacy.DeclaraAnt2010ResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1307,7 +1307,7 @@ namespace DeclaraINE.Legacy {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://ine.mx/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://inai.mx/")]
     public partial class DeclaraAnt2010ResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -1322,12 +1322,12 @@ namespace DeclaraINE.Legacy {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface fileSoapChannel : DeclaraINE.Legacy.fileSoap, System.ServiceModel.IClientChannel {
+    public interface fileSoapChannel : DeclaraINAI.Legacy.fileSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class fileSoapClient : System.ServiceModel.ClientBase<DeclaraINE.Legacy.fileSoap>, DeclaraINE.Legacy.fileSoap {
+    public partial class fileSoapClient : System.ServiceModel.ClientBase<DeclaraINAI.Legacy.fileSoap>, DeclaraINAI.Legacy.fileSoap {
         
         public fileSoapClient() {
         }
@@ -1349,13 +1349,13 @@ namespace DeclaraINE.Legacy {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.Legacy.TransparenciaResponse DeclaraINE.Legacy.fileSoap.Transparencia(DeclaraINE.Legacy.TransparenciaRequest request) {
+        DeclaraINAI.Legacy.TransparenciaResponse DeclaraINAI.Legacy.fileSoap.Transparencia(DeclaraINAI.Legacy.TransparenciaRequest request) {
             return base.Channel.Transparencia(request);
         }
         
         public byte[] Transparencia(int NUM_EMPLEADO, int ID_DECLARA, int T_D, int ANIO, string NOMARCH, string ENVIADO, string FIMPRESION, string FEC_ENVIO) {
-            DeclaraINE.Legacy.TransparenciaRequest inValue = new DeclaraINE.Legacy.TransparenciaRequest();
-            inValue.Body = new DeclaraINE.Legacy.TransparenciaRequestBody();
+            DeclaraINAI.Legacy.TransparenciaRequest inValue = new DeclaraINAI.Legacy.TransparenciaRequest();
+            inValue.Body = new DeclaraINAI.Legacy.TransparenciaRequestBody();
             inValue.Body.NUM_EMPLEADO = NUM_EMPLEADO;
             inValue.Body.ID_DECLARA = ID_DECLARA;
             inValue.Body.T_D = T_D;
@@ -1364,18 +1364,18 @@ namespace DeclaraINE.Legacy {
             inValue.Body.ENVIADO = ENVIADO;
             inValue.Body.FIMPRESION = FIMPRESION;
             inValue.Body.FEC_ENVIO = FEC_ENVIO;
-            DeclaraINE.Legacy.TransparenciaResponse retVal = ((DeclaraINE.Legacy.fileSoap)(this)).Transparencia(inValue);
+            DeclaraINAI.Legacy.TransparenciaResponse retVal = ((DeclaraINAI.Legacy.fileSoap)(this)).Transparencia(inValue);
             return retVal.Body.TransparenciaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.TransparenciaResponse> DeclaraINE.Legacy.fileSoap.TransparenciaAsync(DeclaraINE.Legacy.TransparenciaRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.TransparenciaResponse> DeclaraINAI.Legacy.fileSoap.TransparenciaAsync(DeclaraINAI.Legacy.TransparenciaRequest request) {
             return base.Channel.TransparenciaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.Legacy.TransparenciaResponse> TransparenciaAsync(int NUM_EMPLEADO, int ID_DECLARA, int T_D, int ANIO, string NOMARCH, string ENVIADO, string FIMPRESION, string FEC_ENVIO) {
-            DeclaraINE.Legacy.TransparenciaRequest inValue = new DeclaraINE.Legacy.TransparenciaRequest();
-            inValue.Body = new DeclaraINE.Legacy.TransparenciaRequestBody();
+        public System.Threading.Tasks.Task<DeclaraINAI.Legacy.TransparenciaResponse> TransparenciaAsync(int NUM_EMPLEADO, int ID_DECLARA, int T_D, int ANIO, string NOMARCH, string ENVIADO, string FIMPRESION, string FEC_ENVIO) {
+            DeclaraINAI.Legacy.TransparenciaRequest inValue = new DeclaraINAI.Legacy.TransparenciaRequest();
+            inValue.Body = new DeclaraINAI.Legacy.TransparenciaRequestBody();
             inValue.Body.NUM_EMPLEADO = NUM_EMPLEADO;
             inValue.Body.ID_DECLARA = ID_DECLARA;
             inValue.Body.T_D = T_D;
@@ -1384,324 +1384,324 @@ namespace DeclaraINE.Legacy {
             inValue.Body.ENVIADO = ENVIADO;
             inValue.Body.FIMPRESION = FIMPRESION;
             inValue.Body.FEC_ENVIO = FEC_ENVIO;
-            return ((DeclaraINE.Legacy.fileSoap)(this)).TransparenciaAsync(inValue);
+            return ((DeclaraINAI.Legacy.fileSoap)(this)).TransparenciaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.Legacy.ModificacionResponse DeclaraINE.Legacy.fileSoap.Modificacion(DeclaraINE.Legacy.ModificacionRequest request) {
+        DeclaraINAI.Legacy.ModificacionResponse DeclaraINAI.Legacy.fileSoap.Modificacion(DeclaraINAI.Legacy.ModificacionRequest request) {
             return base.Channel.Modificacion(request);
         }
         
         public byte[] Modificacion(int NUM_EMPLEADO, int ID_DECLARA, int T_D, int ANIO, string NOMARCH) {
-            DeclaraINE.Legacy.ModificacionRequest inValue = new DeclaraINE.Legacy.ModificacionRequest();
-            inValue.Body = new DeclaraINE.Legacy.ModificacionRequestBody();
+            DeclaraINAI.Legacy.ModificacionRequest inValue = new DeclaraINAI.Legacy.ModificacionRequest();
+            inValue.Body = new DeclaraINAI.Legacy.ModificacionRequestBody();
             inValue.Body.NUM_EMPLEADO = NUM_EMPLEADO;
             inValue.Body.ID_DECLARA = ID_DECLARA;
             inValue.Body.T_D = T_D;
             inValue.Body.ANIO = ANIO;
             inValue.Body.NOMARCH = NOMARCH;
-            DeclaraINE.Legacy.ModificacionResponse retVal = ((DeclaraINE.Legacy.fileSoap)(this)).Modificacion(inValue);
+            DeclaraINAI.Legacy.ModificacionResponse retVal = ((DeclaraINAI.Legacy.fileSoap)(this)).Modificacion(inValue);
             return retVal.Body.ModificacionResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.ModificacionResponse> DeclaraINE.Legacy.fileSoap.ModificacionAsync(DeclaraINE.Legacy.ModificacionRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.ModificacionResponse> DeclaraINAI.Legacy.fileSoap.ModificacionAsync(DeclaraINAI.Legacy.ModificacionRequest request) {
             return base.Channel.ModificacionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.Legacy.ModificacionResponse> ModificacionAsync(int NUM_EMPLEADO, int ID_DECLARA, int T_D, int ANIO, string NOMARCH) {
-            DeclaraINE.Legacy.ModificacionRequest inValue = new DeclaraINE.Legacy.ModificacionRequest();
-            inValue.Body = new DeclaraINE.Legacy.ModificacionRequestBody();
+        public System.Threading.Tasks.Task<DeclaraINAI.Legacy.ModificacionResponse> ModificacionAsync(int NUM_EMPLEADO, int ID_DECLARA, int T_D, int ANIO, string NOMARCH) {
+            DeclaraINAI.Legacy.ModificacionRequest inValue = new DeclaraINAI.Legacy.ModificacionRequest();
+            inValue.Body = new DeclaraINAI.Legacy.ModificacionRequestBody();
             inValue.Body.NUM_EMPLEADO = NUM_EMPLEADO;
             inValue.Body.ID_DECLARA = ID_DECLARA;
             inValue.Body.T_D = T_D;
             inValue.Body.ANIO = ANIO;
             inValue.Body.NOMARCH = NOMARCH;
-            return ((DeclaraINE.Legacy.fileSoap)(this)).ModificacionAsync(inValue);
+            return ((DeclaraINAI.Legacy.fileSoap)(this)).ModificacionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.Legacy.InicialResponse DeclaraINE.Legacy.fileSoap.Inicial(DeclaraINE.Legacy.InicialRequest request) {
+        DeclaraINAI.Legacy.InicialResponse DeclaraINAI.Legacy.fileSoap.Inicial(DeclaraINAI.Legacy.InicialRequest request) {
             return base.Channel.Inicial(request);
         }
         
         public byte[] Inicial(int NUM_EMPLEADO, int ID_DECLARA, int T_D, int ANIO, string NOMARCH) {
-            DeclaraINE.Legacy.InicialRequest inValue = new DeclaraINE.Legacy.InicialRequest();
-            inValue.Body = new DeclaraINE.Legacy.InicialRequestBody();
+            DeclaraINAI.Legacy.InicialRequest inValue = new DeclaraINAI.Legacy.InicialRequest();
+            inValue.Body = new DeclaraINAI.Legacy.InicialRequestBody();
             inValue.Body.NUM_EMPLEADO = NUM_EMPLEADO;
             inValue.Body.ID_DECLARA = ID_DECLARA;
             inValue.Body.T_D = T_D;
             inValue.Body.ANIO = ANIO;
             inValue.Body.NOMARCH = NOMARCH;
-            DeclaraINE.Legacy.InicialResponse retVal = ((DeclaraINE.Legacy.fileSoap)(this)).Inicial(inValue);
+            DeclaraINAI.Legacy.InicialResponse retVal = ((DeclaraINAI.Legacy.fileSoap)(this)).Inicial(inValue);
             return retVal.Body.InicialResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.InicialResponse> DeclaraINE.Legacy.fileSoap.InicialAsync(DeclaraINE.Legacy.InicialRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.InicialResponse> DeclaraINAI.Legacy.fileSoap.InicialAsync(DeclaraINAI.Legacy.InicialRequest request) {
             return base.Channel.InicialAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.Legacy.InicialResponse> InicialAsync(int NUM_EMPLEADO, int ID_DECLARA, int T_D, int ANIO, string NOMARCH) {
-            DeclaraINE.Legacy.InicialRequest inValue = new DeclaraINE.Legacy.InicialRequest();
-            inValue.Body = new DeclaraINE.Legacy.InicialRequestBody();
+        public System.Threading.Tasks.Task<DeclaraINAI.Legacy.InicialResponse> InicialAsync(int NUM_EMPLEADO, int ID_DECLARA, int T_D, int ANIO, string NOMARCH) {
+            DeclaraINAI.Legacy.InicialRequest inValue = new DeclaraINAI.Legacy.InicialRequest();
+            inValue.Body = new DeclaraINAI.Legacy.InicialRequestBody();
             inValue.Body.NUM_EMPLEADO = NUM_EMPLEADO;
             inValue.Body.ID_DECLARA = ID_DECLARA;
             inValue.Body.T_D = T_D;
             inValue.Body.ANIO = ANIO;
             inValue.Body.NOMARCH = NOMARCH;
-            return ((DeclaraINE.Legacy.fileSoap)(this)).InicialAsync(inValue);
+            return ((DeclaraINAI.Legacy.fileSoap)(this)).InicialAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.Legacy.ConclusionResponse DeclaraINE.Legacy.fileSoap.Conclusion(DeclaraINE.Legacy.ConclusionRequest request) {
+        DeclaraINAI.Legacy.ConclusionResponse DeclaraINAI.Legacy.fileSoap.Conclusion(DeclaraINAI.Legacy.ConclusionRequest request) {
             return base.Channel.Conclusion(request);
         }
         
         public byte[] Conclusion(int NUM_EMPLEADO, int ID_DECLARA, int T_D, int ANIO, string NOMARCH) {
-            DeclaraINE.Legacy.ConclusionRequest inValue = new DeclaraINE.Legacy.ConclusionRequest();
-            inValue.Body = new DeclaraINE.Legacy.ConclusionRequestBody();
+            DeclaraINAI.Legacy.ConclusionRequest inValue = new DeclaraINAI.Legacy.ConclusionRequest();
+            inValue.Body = new DeclaraINAI.Legacy.ConclusionRequestBody();
             inValue.Body.NUM_EMPLEADO = NUM_EMPLEADO;
             inValue.Body.ID_DECLARA = ID_DECLARA;
             inValue.Body.T_D = T_D;
             inValue.Body.ANIO = ANIO;
             inValue.Body.NOMARCH = NOMARCH;
-            DeclaraINE.Legacy.ConclusionResponse retVal = ((DeclaraINE.Legacy.fileSoap)(this)).Conclusion(inValue);
+            DeclaraINAI.Legacy.ConclusionResponse retVal = ((DeclaraINAI.Legacy.fileSoap)(this)).Conclusion(inValue);
             return retVal.Body.ConclusionResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.ConclusionResponse> DeclaraINE.Legacy.fileSoap.ConclusionAsync(DeclaraINE.Legacy.ConclusionRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.ConclusionResponse> DeclaraINAI.Legacy.fileSoap.ConclusionAsync(DeclaraINAI.Legacy.ConclusionRequest request) {
             return base.Channel.ConclusionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.Legacy.ConclusionResponse> ConclusionAsync(int NUM_EMPLEADO, int ID_DECLARA, int T_D, int ANIO, string NOMARCH) {
-            DeclaraINE.Legacy.ConclusionRequest inValue = new DeclaraINE.Legacy.ConclusionRequest();
-            inValue.Body = new DeclaraINE.Legacy.ConclusionRequestBody();
+        public System.Threading.Tasks.Task<DeclaraINAI.Legacy.ConclusionResponse> ConclusionAsync(int NUM_EMPLEADO, int ID_DECLARA, int T_D, int ANIO, string NOMARCH) {
+            DeclaraINAI.Legacy.ConclusionRequest inValue = new DeclaraINAI.Legacy.ConclusionRequest();
+            inValue.Body = new DeclaraINAI.Legacy.ConclusionRequestBody();
             inValue.Body.NUM_EMPLEADO = NUM_EMPLEADO;
             inValue.Body.ID_DECLARA = ID_DECLARA;
             inValue.Body.T_D = T_D;
             inValue.Body.ANIO = ANIO;
             inValue.Body.NOMARCH = NOMARCH;
-            return ((DeclaraINE.Legacy.fileSoap)(this)).ConclusionAsync(inValue);
+            return ((DeclaraINAI.Legacy.fileSoap)(this)).ConclusionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.Legacy.AcuseResponse DeclaraINE.Legacy.fileSoap.Acuse(DeclaraINE.Legacy.AcuseRequest request) {
+        DeclaraINAI.Legacy.AcuseResponse DeclaraINAI.Legacy.fileSoap.Acuse(DeclaraINAI.Legacy.AcuseRequest request) {
             return base.Channel.Acuse(request);
         }
         
         public byte[] Acuse(int NUM_EMPLEADO, int ID_DECLARA, int T_D, int ANIO, string NOMARCH) {
-            DeclaraINE.Legacy.AcuseRequest inValue = new DeclaraINE.Legacy.AcuseRequest();
-            inValue.Body = new DeclaraINE.Legacy.AcuseRequestBody();
+            DeclaraINAI.Legacy.AcuseRequest inValue = new DeclaraINAI.Legacy.AcuseRequest();
+            inValue.Body = new DeclaraINAI.Legacy.AcuseRequestBody();
             inValue.Body.NUM_EMPLEADO = NUM_EMPLEADO;
             inValue.Body.ID_DECLARA = ID_DECLARA;
             inValue.Body.T_D = T_D;
             inValue.Body.ANIO = ANIO;
             inValue.Body.NOMARCH = NOMARCH;
-            DeclaraINE.Legacy.AcuseResponse retVal = ((DeclaraINE.Legacy.fileSoap)(this)).Acuse(inValue);
+            DeclaraINAI.Legacy.AcuseResponse retVal = ((DeclaraINAI.Legacy.fileSoap)(this)).Acuse(inValue);
             return retVal.Body.AcuseResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.AcuseResponse> DeclaraINE.Legacy.fileSoap.AcuseAsync(DeclaraINE.Legacy.AcuseRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.AcuseResponse> DeclaraINAI.Legacy.fileSoap.AcuseAsync(DeclaraINAI.Legacy.AcuseRequest request) {
             return base.Channel.AcuseAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.Legacy.AcuseResponse> AcuseAsync(int NUM_EMPLEADO, int ID_DECLARA, int T_D, int ANIO, string NOMARCH) {
-            DeclaraINE.Legacy.AcuseRequest inValue = new DeclaraINE.Legacy.AcuseRequest();
-            inValue.Body = new DeclaraINE.Legacy.AcuseRequestBody();
+        public System.Threading.Tasks.Task<DeclaraINAI.Legacy.AcuseResponse> AcuseAsync(int NUM_EMPLEADO, int ID_DECLARA, int T_D, int ANIO, string NOMARCH) {
+            DeclaraINAI.Legacy.AcuseRequest inValue = new DeclaraINAI.Legacy.AcuseRequest();
+            inValue.Body = new DeclaraINAI.Legacy.AcuseRequestBody();
             inValue.Body.NUM_EMPLEADO = NUM_EMPLEADO;
             inValue.Body.ID_DECLARA = ID_DECLARA;
             inValue.Body.T_D = T_D;
             inValue.Body.ANIO = ANIO;
             inValue.Body.NOMARCH = NOMARCH;
-            return ((DeclaraINE.Legacy.fileSoap)(this)).AcuseAsync(inValue);
+            return ((DeclaraINAI.Legacy.fileSoap)(this)).AcuseAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.Legacy.ResponsivaResponse DeclaraINE.Legacy.fileSoap.Responsiva(DeclaraINE.Legacy.ResponsivaRequest request) {
+        DeclaraINAI.Legacy.ResponsivaResponse DeclaraINAI.Legacy.fileSoap.Responsiva(DeclaraINAI.Legacy.ResponsivaRequest request) {
             return base.Channel.Responsiva(request);
         }
         
         public byte[] Responsiva(int NUM_EMPLEADO) {
-            DeclaraINE.Legacy.ResponsivaRequest inValue = new DeclaraINE.Legacy.ResponsivaRequest();
-            inValue.Body = new DeclaraINE.Legacy.ResponsivaRequestBody();
+            DeclaraINAI.Legacy.ResponsivaRequest inValue = new DeclaraINAI.Legacy.ResponsivaRequest();
+            inValue.Body = new DeclaraINAI.Legacy.ResponsivaRequestBody();
             inValue.Body.NUM_EMPLEADO = NUM_EMPLEADO;
-            DeclaraINE.Legacy.ResponsivaResponse retVal = ((DeclaraINE.Legacy.fileSoap)(this)).Responsiva(inValue);
+            DeclaraINAI.Legacy.ResponsivaResponse retVal = ((DeclaraINAI.Legacy.fileSoap)(this)).Responsiva(inValue);
             return retVal.Body.ResponsivaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.ResponsivaResponse> DeclaraINE.Legacy.fileSoap.ResponsivaAsync(DeclaraINE.Legacy.ResponsivaRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.ResponsivaResponse> DeclaraINAI.Legacy.fileSoap.ResponsivaAsync(DeclaraINAI.Legacy.ResponsivaRequest request) {
             return base.Channel.ResponsivaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.Legacy.ResponsivaResponse> ResponsivaAsync(int NUM_EMPLEADO) {
-            DeclaraINE.Legacy.ResponsivaRequest inValue = new DeclaraINE.Legacy.ResponsivaRequest();
-            inValue.Body = new DeclaraINE.Legacy.ResponsivaRequestBody();
+        public System.Threading.Tasks.Task<DeclaraINAI.Legacy.ResponsivaResponse> ResponsivaAsync(int NUM_EMPLEADO) {
+            DeclaraINAI.Legacy.ResponsivaRequest inValue = new DeclaraINAI.Legacy.ResponsivaRequest();
+            inValue.Body = new DeclaraINAI.Legacy.ResponsivaRequestBody();
             inValue.Body.NUM_EMPLEADO = NUM_EMPLEADO;
-            return ((DeclaraINE.Legacy.fileSoap)(this)).ResponsivaAsync(inValue);
+            return ((DeclaraINAI.Legacy.fileSoap)(this)).ResponsivaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.Legacy.EstadisticaResponse DeclaraINE.Legacy.fileSoap.Estadistica(DeclaraINE.Legacy.EstadisticaRequest request) {
+        DeclaraINAI.Legacy.EstadisticaResponse DeclaraINAI.Legacy.fileSoap.Estadistica(DeclaraINAI.Legacy.EstadisticaRequest request) {
             return base.Channel.Estadistica(request);
         }
         
         public byte[] Estadistica(int NUM_EMPLEADO, int CONTROL) {
-            DeclaraINE.Legacy.EstadisticaRequest inValue = new DeclaraINE.Legacy.EstadisticaRequest();
-            inValue.Body = new DeclaraINE.Legacy.EstadisticaRequestBody();
+            DeclaraINAI.Legacy.EstadisticaRequest inValue = new DeclaraINAI.Legacy.EstadisticaRequest();
+            inValue.Body = new DeclaraINAI.Legacy.EstadisticaRequestBody();
             inValue.Body.NUM_EMPLEADO = NUM_EMPLEADO;
             inValue.Body.CONTROL = CONTROL;
-            DeclaraINE.Legacy.EstadisticaResponse retVal = ((DeclaraINE.Legacy.fileSoap)(this)).Estadistica(inValue);
+            DeclaraINAI.Legacy.EstadisticaResponse retVal = ((DeclaraINAI.Legacy.fileSoap)(this)).Estadistica(inValue);
             return retVal.Body.EstadisticaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.EstadisticaResponse> DeclaraINE.Legacy.fileSoap.EstadisticaAsync(DeclaraINE.Legacy.EstadisticaRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.EstadisticaResponse> DeclaraINAI.Legacy.fileSoap.EstadisticaAsync(DeclaraINAI.Legacy.EstadisticaRequest request) {
             return base.Channel.EstadisticaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.Legacy.EstadisticaResponse> EstadisticaAsync(int NUM_EMPLEADO, int CONTROL) {
-            DeclaraINE.Legacy.EstadisticaRequest inValue = new DeclaraINE.Legacy.EstadisticaRequest();
-            inValue.Body = new DeclaraINE.Legacy.EstadisticaRequestBody();
+        public System.Threading.Tasks.Task<DeclaraINAI.Legacy.EstadisticaResponse> EstadisticaAsync(int NUM_EMPLEADO, int CONTROL) {
+            DeclaraINAI.Legacy.EstadisticaRequest inValue = new DeclaraINAI.Legacy.EstadisticaRequest();
+            inValue.Body = new DeclaraINAI.Legacy.EstadisticaRequestBody();
             inValue.Body.NUM_EMPLEADO = NUM_EMPLEADO;
             inValue.Body.CONTROL = CONTROL;
-            return ((DeclaraINE.Legacy.fileSoap)(this)).EstadisticaAsync(inValue);
+            return ((DeclaraINAI.Legacy.fileSoap)(this)).EstadisticaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.Legacy.ConflictoResponse DeclaraINE.Legacy.fileSoap.Conflicto(DeclaraINE.Legacy.ConflictoRequest request) {
+        DeclaraINAI.Legacy.ConflictoResponse DeclaraINAI.Legacy.fileSoap.Conflicto(DeclaraINAI.Legacy.ConflictoRequest request) {
             return base.Channel.Conflicto(request);
         }
         
         public byte[] Conflicto(string Dia, int NUM_EMPLEADO, int CONTROL) {
-            DeclaraINE.Legacy.ConflictoRequest inValue = new DeclaraINE.Legacy.ConflictoRequest();
-            inValue.Body = new DeclaraINE.Legacy.ConflictoRequestBody();
+            DeclaraINAI.Legacy.ConflictoRequest inValue = new DeclaraINAI.Legacy.ConflictoRequest();
+            inValue.Body = new DeclaraINAI.Legacy.ConflictoRequestBody();
             inValue.Body.Dia = Dia;
             inValue.Body.NUM_EMPLEADO = NUM_EMPLEADO;
             inValue.Body.CONTROL = CONTROL;
-            DeclaraINE.Legacy.ConflictoResponse retVal = ((DeclaraINE.Legacy.fileSoap)(this)).Conflicto(inValue);
+            DeclaraINAI.Legacy.ConflictoResponse retVal = ((DeclaraINAI.Legacy.fileSoap)(this)).Conflicto(inValue);
             return retVal.Body.ConflictoResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.ConflictoResponse> DeclaraINE.Legacy.fileSoap.ConflictoAsync(DeclaraINE.Legacy.ConflictoRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.ConflictoResponse> DeclaraINAI.Legacy.fileSoap.ConflictoAsync(DeclaraINAI.Legacy.ConflictoRequest request) {
             return base.Channel.ConflictoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.Legacy.ConflictoResponse> ConflictoAsync(string Dia, int NUM_EMPLEADO, int CONTROL) {
-            DeclaraINE.Legacy.ConflictoRequest inValue = new DeclaraINE.Legacy.ConflictoRequest();
-            inValue.Body = new DeclaraINE.Legacy.ConflictoRequestBody();
+        public System.Threading.Tasks.Task<DeclaraINAI.Legacy.ConflictoResponse> ConflictoAsync(string Dia, int NUM_EMPLEADO, int CONTROL) {
+            DeclaraINAI.Legacy.ConflictoRequest inValue = new DeclaraINAI.Legacy.ConflictoRequest();
+            inValue.Body = new DeclaraINAI.Legacy.ConflictoRequestBody();
             inValue.Body.Dia = Dia;
             inValue.Body.NUM_EMPLEADO = NUM_EMPLEADO;
             inValue.Body.CONTROL = CONTROL;
-            return ((DeclaraINE.Legacy.fileSoap)(this)).ConflictoAsync(inValue);
+            return ((DeclaraINAI.Legacy.fileSoap)(this)).ConflictoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.Legacy.ConsultaResponse DeclaraINE.Legacy.fileSoap.Consulta(DeclaraINE.Legacy.ConsultaRequest request) {
+        DeclaraINAI.Legacy.ConsultaResponse DeclaraINAI.Legacy.fileSoap.Consulta(DeclaraINAI.Legacy.ConsultaRequest request) {
             return base.Channel.Consulta(request);
         }
         
-        public DeclaraINE.Legacy.ListaDeclara[] Consulta(string RFC) {
-            DeclaraINE.Legacy.ConsultaRequest inValue = new DeclaraINE.Legacy.ConsultaRequest();
-            inValue.Body = new DeclaraINE.Legacy.ConsultaRequestBody();
+        public DeclaraINAI.Legacy.ListaDeclara[] Consulta(string RFC) {
+            DeclaraINAI.Legacy.ConsultaRequest inValue = new DeclaraINAI.Legacy.ConsultaRequest();
+            inValue.Body = new DeclaraINAI.Legacy.ConsultaRequestBody();
             inValue.Body.RFC = RFC;
-            DeclaraINE.Legacy.ConsultaResponse retVal = ((DeclaraINE.Legacy.fileSoap)(this)).Consulta(inValue);
+            DeclaraINAI.Legacy.ConsultaResponse retVal = ((DeclaraINAI.Legacy.fileSoap)(this)).Consulta(inValue);
             return retVal.Body.ConsultaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.ConsultaResponse> DeclaraINE.Legacy.fileSoap.ConsultaAsync(DeclaraINE.Legacy.ConsultaRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.ConsultaResponse> DeclaraINAI.Legacy.fileSoap.ConsultaAsync(DeclaraINAI.Legacy.ConsultaRequest request) {
             return base.Channel.ConsultaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.Legacy.ConsultaResponse> ConsultaAsync(string RFC) {
-            DeclaraINE.Legacy.ConsultaRequest inValue = new DeclaraINE.Legacy.ConsultaRequest();
-            inValue.Body = new DeclaraINE.Legacy.ConsultaRequestBody();
+        public System.Threading.Tasks.Task<DeclaraINAI.Legacy.ConsultaResponse> ConsultaAsync(string RFC) {
+            DeclaraINAI.Legacy.ConsultaRequest inValue = new DeclaraINAI.Legacy.ConsultaRequest();
+            inValue.Body = new DeclaraINAI.Legacy.ConsultaRequestBody();
             inValue.Body.RFC = RFC;
-            return ((DeclaraINE.Legacy.fileSoap)(this)).ConsultaAsync(inValue);
+            return ((DeclaraINAI.Legacy.fileSoap)(this)).ConsultaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.Legacy.Consulta2010Response DeclaraINE.Legacy.fileSoap.Consulta2010(DeclaraINE.Legacy.Consulta2010Request request) {
+        DeclaraINAI.Legacy.Consulta2010Response DeclaraINAI.Legacy.fileSoap.Consulta2010(DeclaraINAI.Legacy.Consulta2010Request request) {
             return base.Channel.Consulta2010(request);
         }
         
-        public DeclaraINE.Legacy.ListaAnt2010[] Consulta2010(string RFC) {
-            DeclaraINE.Legacy.Consulta2010Request inValue = new DeclaraINE.Legacy.Consulta2010Request();
-            inValue.Body = new DeclaraINE.Legacy.Consulta2010RequestBody();
+        public DeclaraINAI.Legacy.ListaAnt2010[] Consulta2010(string RFC) {
+            DeclaraINAI.Legacy.Consulta2010Request inValue = new DeclaraINAI.Legacy.Consulta2010Request();
+            inValue.Body = new DeclaraINAI.Legacy.Consulta2010RequestBody();
             inValue.Body.RFC = RFC;
-            DeclaraINE.Legacy.Consulta2010Response retVal = ((DeclaraINE.Legacy.fileSoap)(this)).Consulta2010(inValue);
+            DeclaraINAI.Legacy.Consulta2010Response retVal = ((DeclaraINAI.Legacy.fileSoap)(this)).Consulta2010(inValue);
             return retVal.Body.Consulta2010Result;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.Consulta2010Response> DeclaraINE.Legacy.fileSoap.Consulta2010Async(DeclaraINE.Legacy.Consulta2010Request request) {
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.Consulta2010Response> DeclaraINAI.Legacy.fileSoap.Consulta2010Async(DeclaraINAI.Legacy.Consulta2010Request request) {
             return base.Channel.Consulta2010Async(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.Legacy.Consulta2010Response> Consulta2010Async(string RFC) {
-            DeclaraINE.Legacy.Consulta2010Request inValue = new DeclaraINE.Legacy.Consulta2010Request();
-            inValue.Body = new DeclaraINE.Legacy.Consulta2010RequestBody();
+        public System.Threading.Tasks.Task<DeclaraINAI.Legacy.Consulta2010Response> Consulta2010Async(string RFC) {
+            DeclaraINAI.Legacy.Consulta2010Request inValue = new DeclaraINAI.Legacy.Consulta2010Request();
+            inValue.Body = new DeclaraINAI.Legacy.Consulta2010RequestBody();
             inValue.Body.RFC = RFC;
-            return ((DeclaraINE.Legacy.fileSoap)(this)).Consulta2010Async(inValue);
+            return ((DeclaraINAI.Legacy.fileSoap)(this)).Consulta2010Async(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.Legacy.AcuseAnt2010Response DeclaraINE.Legacy.fileSoap.AcuseAnt2010(DeclaraINE.Legacy.AcuseAnt2010Request request) {
+        DeclaraINAI.Legacy.AcuseAnt2010Response DeclaraINAI.Legacy.fileSoap.AcuseAnt2010(DeclaraINAI.Legacy.AcuseAnt2010Request request) {
             return base.Channel.AcuseAnt2010(request);
         }
         
         public byte[] AcuseAnt2010(string Archivo, string NOMARCH) {
-            DeclaraINE.Legacy.AcuseAnt2010Request inValue = new DeclaraINE.Legacy.AcuseAnt2010Request();
-            inValue.Body = new DeclaraINE.Legacy.AcuseAnt2010RequestBody();
+            DeclaraINAI.Legacy.AcuseAnt2010Request inValue = new DeclaraINAI.Legacy.AcuseAnt2010Request();
+            inValue.Body = new DeclaraINAI.Legacy.AcuseAnt2010RequestBody();
             inValue.Body.Archivo = Archivo;
             inValue.Body.NOMARCH = NOMARCH;
-            DeclaraINE.Legacy.AcuseAnt2010Response retVal = ((DeclaraINE.Legacy.fileSoap)(this)).AcuseAnt2010(inValue);
+            DeclaraINAI.Legacy.AcuseAnt2010Response retVal = ((DeclaraINAI.Legacy.fileSoap)(this)).AcuseAnt2010(inValue);
             return retVal.Body.AcuseAnt2010Result;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.AcuseAnt2010Response> DeclaraINE.Legacy.fileSoap.AcuseAnt2010Async(DeclaraINE.Legacy.AcuseAnt2010Request request) {
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.AcuseAnt2010Response> DeclaraINAI.Legacy.fileSoap.AcuseAnt2010Async(DeclaraINAI.Legacy.AcuseAnt2010Request request) {
             return base.Channel.AcuseAnt2010Async(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.Legacy.AcuseAnt2010Response> AcuseAnt2010Async(string Archivo, string NOMARCH) {
-            DeclaraINE.Legacy.AcuseAnt2010Request inValue = new DeclaraINE.Legacy.AcuseAnt2010Request();
-            inValue.Body = new DeclaraINE.Legacy.AcuseAnt2010RequestBody();
+        public System.Threading.Tasks.Task<DeclaraINAI.Legacy.AcuseAnt2010Response> AcuseAnt2010Async(string Archivo, string NOMARCH) {
+            DeclaraINAI.Legacy.AcuseAnt2010Request inValue = new DeclaraINAI.Legacy.AcuseAnt2010Request();
+            inValue.Body = new DeclaraINAI.Legacy.AcuseAnt2010RequestBody();
             inValue.Body.Archivo = Archivo;
             inValue.Body.NOMARCH = NOMARCH;
-            return ((DeclaraINE.Legacy.fileSoap)(this)).AcuseAnt2010Async(inValue);
+            return ((DeclaraINAI.Legacy.fileSoap)(this)).AcuseAnt2010Async(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.Legacy.DeclaraAnt2010Response DeclaraINE.Legacy.fileSoap.DeclaraAnt2010(DeclaraINE.Legacy.DeclaraAnt2010Request request) {
+        DeclaraINAI.Legacy.DeclaraAnt2010Response DeclaraINAI.Legacy.fileSoap.DeclaraAnt2010(DeclaraINAI.Legacy.DeclaraAnt2010Request request) {
             return base.Channel.DeclaraAnt2010(request);
         }
         
         public byte[] DeclaraAnt2010(string Archivo, string NOMARCH) {
-            DeclaraINE.Legacy.DeclaraAnt2010Request inValue = new DeclaraINE.Legacy.DeclaraAnt2010Request();
-            inValue.Body = new DeclaraINE.Legacy.DeclaraAnt2010RequestBody();
+            DeclaraINAI.Legacy.DeclaraAnt2010Request inValue = new DeclaraINAI.Legacy.DeclaraAnt2010Request();
+            inValue.Body = new DeclaraINAI.Legacy.DeclaraAnt2010RequestBody();
             inValue.Body.Archivo = Archivo;
             inValue.Body.NOMARCH = NOMARCH;
-            DeclaraINE.Legacy.DeclaraAnt2010Response retVal = ((DeclaraINE.Legacy.fileSoap)(this)).DeclaraAnt2010(inValue);
+            DeclaraINAI.Legacy.DeclaraAnt2010Response retVal = ((DeclaraINAI.Legacy.fileSoap)(this)).DeclaraAnt2010(inValue);
             return retVal.Body.DeclaraAnt2010Result;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.Legacy.DeclaraAnt2010Response> DeclaraINE.Legacy.fileSoap.DeclaraAnt2010Async(DeclaraINE.Legacy.DeclaraAnt2010Request request) {
+        System.Threading.Tasks.Task<DeclaraINAI.Legacy.DeclaraAnt2010Response> DeclaraINAI.Legacy.fileSoap.DeclaraAnt2010Async(DeclaraINAI.Legacy.DeclaraAnt2010Request request) {
             return base.Channel.DeclaraAnt2010Async(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.Legacy.DeclaraAnt2010Response> DeclaraAnt2010Async(string Archivo, string NOMARCH) {
-            DeclaraINE.Legacy.DeclaraAnt2010Request inValue = new DeclaraINE.Legacy.DeclaraAnt2010Request();
-            inValue.Body = new DeclaraINE.Legacy.DeclaraAnt2010RequestBody();
+        public System.Threading.Tasks.Task<DeclaraINAI.Legacy.DeclaraAnt2010Response> DeclaraAnt2010Async(string Archivo, string NOMARCH) {
+            DeclaraINAI.Legacy.DeclaraAnt2010Request inValue = new DeclaraINAI.Legacy.DeclaraAnt2010Request();
+            inValue.Body = new DeclaraINAI.Legacy.DeclaraAnt2010RequestBody();
             inValue.Body.Archivo = Archivo;
             inValue.Body.NOMARCH = NOMARCH;
-            return ((DeclaraINE.Legacy.fileSoap)(this)).DeclaraAnt2010Async(inValue);
+            return ((DeclaraINAI.Legacy.fileSoap)(this)).DeclaraAnt2010Async(inValue);
         }
     }
 }

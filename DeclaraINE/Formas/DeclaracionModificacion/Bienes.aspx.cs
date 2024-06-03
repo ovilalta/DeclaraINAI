@@ -11,7 +11,7 @@ using Declara_V2.Exceptions;
 using AlanWebControls;
 using Declara_V2.BLL;
 
-namespace DeclaraINE.Formas.DeclaracionModificacion
+namespace DeclaraINAI.Formas.DeclaracionModificacion
 {
     public partial class Bienes : Pagina, IDeclaracionInicial
     {

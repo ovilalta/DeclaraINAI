@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionModificacion/_Modificacion.master" AutoEventWireup="true" CodeBehind="DatosCurriculares.aspx.cs" Inherits="DeclaraINE.Formas.DeclaracionModificacion.DatosCurriculares" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionModificacion/_Modificacion.master" AutoEventWireup="true" CodeBehind="DatosCurriculares.aspx.cs" Inherits="DeclaraINAI.Formas.DeclaracionModificacion.DatosCurriculares" %>
 
 <%@ Register TagPrefix="ascx" TagName="Item" Src="~/Formas/DeclaracionInicial/Item.ascx" %>
 

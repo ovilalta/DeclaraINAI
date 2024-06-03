@@ -5,7 +5,7 @@ using System;
 using System.Linq;
 using System.Data.Entity.Core.Objects;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
     public partial class AvisoPrivacidadConflicto : Pagina
     {

@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.DeclaracionInicial {
+namespace DeclaraINAI.Formas.DeclaracionInicial {
     
     
     public partial class ExperienciaLaboral {
@@ -73,7 +73,7 @@ namespace DeclaraINE.Formas.DeclaracionInicial {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::DeclaraINE.Formas.DeclaracionInicial.ctrlExperienciaLaboral ctrlExperienciaLaboral;
+        protected global::DeclaraINAI.Formas.DeclaracionInicial.ctrlExperienciaLaboral ctrlExperienciaLaboral;
         
         /// <summary>
         /// Control btnCerrarModal.

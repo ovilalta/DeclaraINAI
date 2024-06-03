@@ -10,7 +10,7 @@ using Declara_V2.MODELextended;
 using Declara_V2.Exceptions;
 using AlanWebControls;
 
-namespace DeclaraINE.Formas.DeclaracionConclusion
+namespace DeclaraINAI.Formas.DeclaracionConclusion
 {
     public partial class Conflicto : Pagina, IDeclaracionInicial
     {

@@ -11,9 +11,9 @@ using Declara_V2.BLLD;
 using Declara_V2.MODELextended;
 using Declara_V2.Exceptions;
 using System.IO;
-using DeclaraINE.file;
+using DeclaraINAI.file;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
     public partial class AdministracionCuenta : Pagina
     {

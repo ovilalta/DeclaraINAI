@@ -12,7 +12,7 @@ using System.Diagnostics;
 using System.Threading;
 using Spire.Xls;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
     public partial class RegistrosAdmin : Pagina
     {

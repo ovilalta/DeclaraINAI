@@ -9,10 +9,10 @@ using Declara_V2.BLLD;
 using Declara_V2.MODELextended;
 using Declara_V2.Exceptions;
 using AlanWebControls;
-using DeclaraINE.Formas.Patrimonio;
+using DeclaraINAI.Formas.Patrimonio;
 using System.Data;
 
-namespace DeclaraINE.Formas.Patrimonio
+namespace DeclaraINAI.Formas.Patrimonio
 {
     public partial class Patrimonio : Pagina
     {

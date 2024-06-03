@@ -10,7 +10,7 @@ using System.Web.Security;
 using System.Web.SessionState;
 
 
-namespace DeclaraINE
+namespace DeclaraINAI
 {
     public class Global : HttpApplication
     {

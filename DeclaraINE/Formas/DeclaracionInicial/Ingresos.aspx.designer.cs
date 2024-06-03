@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.DeclaracionInicial {
+namespace DeclaraINAI.Formas.DeclaracionInicial {
     
     
     public partial class Ingresos {

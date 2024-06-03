@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
 
 
@@ -66,7 +66,7 @@ namespace DeclaraINE.Formas
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::DeclaraINE.Formas.AvisoPrivacidad AvisoPrivacidad;
+        protected global::DeclaraINAI.Formas.AvisoPrivacidad AvisoPrivacidad;
 
         /// <summary>
         /// Control btnAceptar.

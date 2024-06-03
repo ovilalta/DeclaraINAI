@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.DeclaracionModificacion {
+namespace DeclaraINAI.Formas.DeclaracionModificacion {
     
     
     public partial class Item {

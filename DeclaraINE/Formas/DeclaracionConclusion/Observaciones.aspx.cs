@@ -9,7 +9,7 @@ using Declara_V2.BLLD;
 using Declara_V2.Exceptions;
 using Declara_V2.MODELextended;
 
-namespace DeclaraINE.Formas.DeclaracionConclusion
+namespace DeclaraINAI.Formas.DeclaracionConclusion
 {
     public partial class Observaciones : Pagina, IDeclaracionInicial
     {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionConclusion/_Conclusion.master" AutoEventWireup="true" CodeBehind="Ingresos.aspx.cs" Inherits="DeclaraINE.Formas.DeclaracionConclusion.Ingresos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionConclusion/_Conclusion.master" AutoEventWireup="true" CodeBehind="Ingresos.aspx.cs" Inherits="DeclaraINAI.Formas.DeclaracionConclusion.Ingresos" %>
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>

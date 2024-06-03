@@ -602,6 +602,7 @@
     <Content Include="Images\DeclaraConclusion.jpg" />
     <Content Include="Images\DeclaraConsulta.png" />
     <Content Include="Images\DeclaraFiscal.png" />
+    <Content Include="Images\Declarainai.png" />
     <Content Include="Images\Declaraine.png" />
     <Content Include="Images\DeclaraInicio.jpg" />
     <Content Include="Images\DeclaraModificacion.jpg" />
@@ -2879,6 +2880,7 @@
     <Content Include="Images\icons\masx8.png" />
     <Content Include="Images\icons\menosx16.png" />
     <Content Include="Images\icons\menosx8.png" />
+    <Content Include="Images\inai-acerca-slide.jpg" />
     <Content Include="Images\ine-acerca-slide.jpg" />
     <Content Include="Images\INE_Login.png" />
     <Content Include="Images\inicio\base.png" />

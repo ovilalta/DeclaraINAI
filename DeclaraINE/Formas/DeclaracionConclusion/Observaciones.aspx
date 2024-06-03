@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionConclusion/_Conclusion.master" AutoEventWireup="true" CodeBehind="Observaciones.aspx.cs" Inherits="DeclaraINE.Formas.DeclaracionConclusion.Observaciones" Culture="es-MX" UICulture="es-MX" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionConclusion/_Conclusion.master" AutoEventWireup="true" CodeBehind="Observaciones.aspx.cs" Inherits="DeclaraINAI.Formas.DeclaracionConclusion.Observaciones" Culture="es-MX" UICulture="es-MX" %>
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ChildContent2" runat="server">

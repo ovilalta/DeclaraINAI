@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionInicial/_Inicial.master" AutoEventWireup="true" CodeBehind="Envio.aspx.cs" Inherits="DeclaraINE.Formas.DeclaracionInicial.Envio" Culture="es-MX" UICulture="es-MX" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionInicial/_Inicial.master" AutoEventWireup="true" CodeBehind="Envio.aspx.cs" Inherits="DeclaraINAI.Formas.DeclaracionInicial.Envio" Culture="es-MX" UICulture="es-MX" %>
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 <%@ Register Src="~/Formas/SioNo.ascx" TagPrefix="uc1" TagName="SioNo" %>

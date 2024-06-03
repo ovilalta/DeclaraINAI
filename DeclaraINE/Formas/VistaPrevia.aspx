@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VistaPrevia.aspx.cs" Inherits="DeclaraINE.Formas.VistaPrevia" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VistaPrevia.aspx.cs" Inherits="DeclaraINAI.Formas.VistaPrevia" %>
 
 <!DOCTYPE html>
 

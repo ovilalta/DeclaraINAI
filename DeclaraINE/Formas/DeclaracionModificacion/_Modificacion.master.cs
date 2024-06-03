@@ -1,6 +1,6 @@
 ﻿using AlanWebControls;
 using Declara_V2.BLLD;
-using DeclaraINE.file;
+using DeclaraINAI.file;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
-namespace DeclaraINE.Formas.DeclaracionModificacion
+namespace DeclaraINAI.Formas.DeclaracionModificacion
 {
     public partial class _Modificacion : System.Web.UI.MasterPage
     {

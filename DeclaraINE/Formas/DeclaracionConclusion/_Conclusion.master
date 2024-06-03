@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_Conclusion.master.cs" Inherits="DeclaraINE.Formas.DeclaracionConclusion._Conclusion" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_Conclusion.master.cs" Inherits="DeclaraINAI.Formas.DeclaracionConclusion._Conclusion" %>
 
 
 <!DOCTYPE html>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/Patrimonio/_patrimonio.master" AutoEventWireup="true" CodeBehind="Patrimonio.aspx.cs" Inherits="DeclaraINE.Formas.Patrimonio.Patrimonio" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/Patrimonio/_patrimonio.master" AutoEventWireup="true" CodeBehind="Patrimonio.aspx.cs" Inherits="DeclaraINAI.Formas.Patrimonio.Patrimonio" %>
 
 <%@ Register TagPrefix="ascx" TagName="Item" Src="~/Formas/Patrimonio/Item.ascx" %>
 <%@ Register Src="~/Formas/Patrimonio/Adeudo.ascx" TagPrefix="uc1" TagName="Adeudo" %>

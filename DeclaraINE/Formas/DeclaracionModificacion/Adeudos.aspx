@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionModificacion/_Modificacion.master" AutoEventWireup="true" CodeBehind="Adeudos.aspx.cs" Inherits="DeclaraINE.Formas.DeclaracionModificacion.Adeudos" Culture="es-MX" UICulture="es-MX" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionModificacion/_Modificacion.master" AutoEventWireup="true" CodeBehind="Adeudos.aspx.cs" Inherits="DeclaraINAI.Formas.DeclaracionModificacion.Adeudos" Culture="es-MX" UICulture="es-MX" %>
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 <%@ Register Src="~/Formas/DeclaracionModificacion/Adeudo.ascx" TagPrefix="uc1" TagName="Adeudo" %>
 <%@ Register Src="~/Formas/DeclaracionModificacion/ctrlDesincorpora.ascx" TagPrefix="ascx" TagName="ctrlDesincorpora" %>

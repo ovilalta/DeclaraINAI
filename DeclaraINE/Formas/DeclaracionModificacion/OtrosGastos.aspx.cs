@@ -11,7 +11,7 @@ using Declara_V2.MODELextended;
 using Declara_V2.Exceptions;
 using AlanWebControls;
 
-namespace DeclaraINE.Formas.DeclaracionModificacion
+namespace DeclaraINAI.Formas.DeclaracionModificacion
 {
     public partial class OtrosGastos : Pagina, IDeclaracionInicial
     {

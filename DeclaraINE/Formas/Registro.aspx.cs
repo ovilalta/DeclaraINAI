@@ -12,7 +12,7 @@ using Declara_V2.Exceptions;
 using AlanWebControls;
 
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
 
 

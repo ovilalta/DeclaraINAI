@@ -8,138 +8,138 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.file {
+namespace DeclaraINAI.file {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://ine.mx/", ConfigurationName="file.fileSoap")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://inai.mx/", ConfigurationName="file.fileSoap")]
     public interface fileSoap {
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje ListaDocumentosRequest tiene encabezados.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ListaDocumentos", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ListaDocumentos", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        DeclaraINE.file.ListaDocumentosResponse ListaDocumentos(DeclaraINE.file.ListaDocumentosRequest request);
+        DeclaraINAI.file.ListaDocumentosResponse ListaDocumentos(DeclaraINAI.file.ListaDocumentosRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ListaDocumentos", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.file.ListaDocumentosResponse> ListaDocumentosAsync(DeclaraINE.file.ListaDocumentosRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ListaDocumentos", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.file.ListaDocumentosResponse> ListaDocumentosAsync(DeclaraINAI.file.ListaDocumentosRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje ObtenDocumentoRequest tiene encabezados.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenDocumento", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenDocumento", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        DeclaraINE.file.ObtenDocumentoResponse ObtenDocumento(DeclaraINE.file.ObtenDocumentoRequest request);
+        DeclaraINAI.file.ObtenDocumentoResponse ObtenDocumento(DeclaraINAI.file.ObtenDocumentoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenDocumento", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenDocumentoResponse> ObtenDocumentoAsync(DeclaraINE.file.ObtenDocumentoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenDocumento", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenDocumentoResponse> ObtenDocumentoAsync(DeclaraINAI.file.ObtenDocumentoRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje ObtenReportePorIdRequest tiene encabezados.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenReportePorId", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenReportePorId", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        DeclaraINE.file.ObtenReportePorIdResponse ObtenReportePorId(DeclaraINE.file.ObtenReportePorIdRequest request);
+        DeclaraINAI.file.ObtenReportePorIdResponse ObtenReportePorId(DeclaraINAI.file.ObtenReportePorIdRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenReportePorId", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenReportePorIdResponse> ObtenReportePorIdAsync(DeclaraINE.file.ObtenReportePorIdRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenReportePorId", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReportePorIdResponse> ObtenReportePorIdAsync(DeclaraINAI.file.ObtenReportePorIdRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje ObtenReportePorIdyFechaRequest tiene encabezados.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenReportePorIdyFecha", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenReportePorIdyFecha", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        DeclaraINE.file.ObtenReportePorIdyFechaResponse ObtenReportePorIdyFecha(DeclaraINE.file.ObtenReportePorIdyFechaRequest request);
+        DeclaraINAI.file.ObtenReportePorIdyFechaResponse ObtenReportePorIdyFecha(DeclaraINAI.file.ObtenReportePorIdyFechaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenReportePorIdyFecha", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenReportePorIdyFechaResponse> ObtenReportePorIdyFechaAsync(DeclaraINE.file.ObtenReportePorIdyFechaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenReportePorIdyFecha", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReportePorIdyFechaResponse> ObtenReportePorIdyFechaAsync(DeclaraINAI.file.ObtenReportePorIdyFechaRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje ObtenReporteGemeloPorIdRequest tiene encabezados.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenReporteGemeloPorId", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenReporteGemeloPorId", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        DeclaraINE.file.ObtenReporteGemeloPorIdResponse ObtenReporteGemeloPorId(DeclaraINE.file.ObtenReporteGemeloPorIdRequest request);
+        DeclaraINAI.file.ObtenReporteGemeloPorIdResponse ObtenReporteGemeloPorId(DeclaraINAI.file.ObtenReporteGemeloPorIdRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenReporteGemeloPorId", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenReporteGemeloPorIdResponse> ObtenReporteGemeloPorIdAsync(DeclaraINE.file.ObtenReporteGemeloPorIdRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenReporteGemeloPorId", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReporteGemeloPorIdResponse> ObtenReporteGemeloPorIdAsync(DeclaraINAI.file.ObtenReporteGemeloPorIdRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje ObtenReporteGemeloPorIdyFechaRequest tiene encabezados.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenReporteGemeloPorIdyFecha", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenReporteGemeloPorIdyFecha", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        DeclaraINE.file.ObtenReporteGemeloPorIdyFechaResponse ObtenReporteGemeloPorIdyFecha(DeclaraINE.file.ObtenReporteGemeloPorIdyFechaRequest request);
+        DeclaraINAI.file.ObtenReporteGemeloPorIdyFechaResponse ObtenReporteGemeloPorIdyFecha(DeclaraINAI.file.ObtenReporteGemeloPorIdyFechaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenReporteGemeloPorIdyFecha", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenReporteGemeloPorIdyFechaResponse> ObtenReporteGemeloPorIdyFechaAsync(DeclaraINE.file.ObtenReporteGemeloPorIdyFechaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenReporteGemeloPorIdyFecha", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReporteGemeloPorIdyFechaResponse> ObtenReporteGemeloPorIdyFechaAsync(DeclaraINAI.file.ObtenReporteGemeloPorIdyFechaRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje ObtenReportePorId_DataSourceRequest tiene encabezados.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenReportePorId_DataSource", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenReportePorId_DataSource", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        DeclaraINE.file.ObtenReportePorId_DataSourceResponse ObtenReportePorId_DataSource(DeclaraINE.file.ObtenReportePorId_DataSourceRequest request);
+        DeclaraINAI.file.ObtenReportePorId_DataSourceResponse ObtenReportePorId_DataSource(DeclaraINAI.file.ObtenReportePorId_DataSourceRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenReportePorId_DataSource", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenReportePorId_DataSourceResponse> ObtenReportePorId_DataSourceAsync(DeclaraINE.file.ObtenReportePorId_DataSourceRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenReportePorId_DataSource", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReportePorId_DataSourceResponse> ObtenReportePorId_DataSourceAsync(DeclaraINAI.file.ObtenReportePorId_DataSourceRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje ObtenReportePorIdyFecha_DataSourceRequest tiene encabezados.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenReportePorIdyFecha_DataSource", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenReportePorIdyFecha_DataSource", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        DeclaraINE.file.ObtenReportePorIdyFecha_DataSourceResponse ObtenReportePorIdyFecha_DataSource(DeclaraINE.file.ObtenReportePorIdyFecha_DataSourceRequest request);
+        DeclaraINAI.file.ObtenReportePorIdyFecha_DataSourceResponse ObtenReportePorIdyFecha_DataSource(DeclaraINAI.file.ObtenReportePorIdyFecha_DataSourceRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenReportePorIdyFecha_DataSource", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenReportePorIdyFecha_DataSourceResponse> ObtenReportePorIdyFecha_DataSourceAsync(DeclaraINE.file.ObtenReportePorIdyFecha_DataSourceRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenReportePorIdyFecha_DataSource", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReportePorIdyFecha_DataSourceResponse> ObtenReportePorIdyFecha_DataSourceAsync(DeclaraINAI.file.ObtenReportePorIdyFecha_DataSourceRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje ObtenReporteGemeloPorId_DataSourceRequest tiene encabezados.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenReporteGemeloPorId_DataSource", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenReporteGemeloPorId_DataSource", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        DeclaraINE.file.ObtenReporteGemeloPorId_DataSourceResponse ObtenReporteGemeloPorId_DataSource(DeclaraINE.file.ObtenReporteGemeloPorId_DataSourceRequest request);
+        DeclaraINAI.file.ObtenReporteGemeloPorId_DataSourceResponse ObtenReporteGemeloPorId_DataSource(DeclaraINAI.file.ObtenReporteGemeloPorId_DataSourceRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenReporteGemeloPorId_DataSource", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenReporteGemeloPorId_DataSourceResponse> ObtenReporteGemeloPorId_DataSourceAsync(DeclaraINE.file.ObtenReporteGemeloPorId_DataSourceRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenReporteGemeloPorId_DataSource", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReporteGemeloPorId_DataSourceResponse> ObtenReporteGemeloPorId_DataSourceAsync(DeclaraINAI.file.ObtenReporteGemeloPorId_DataSourceRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje ObtenReporteGemeloPorIdyFecha_DataSourceRequest tiene encabezados.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenReporteGemeloPorIdyFecha_DataSource", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenReporteGemeloPorIdyFecha_DataSource", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        DeclaraINE.file.ObtenReporteGemeloPorIdyFecha_DataSourceResponse ObtenReporteGemeloPorIdyFecha_DataSource(DeclaraINE.file.ObtenReporteGemeloPorIdyFecha_DataSourceRequest request);
+        DeclaraINAI.file.ObtenReporteGemeloPorIdyFecha_DataSourceResponse ObtenReporteGemeloPorIdyFecha_DataSource(DeclaraINAI.file.ObtenReporteGemeloPorIdyFecha_DataSourceRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenReporteGemeloPorIdyFecha_DataSource", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenReporteGemeloPorIdyFecha_DataSourceResponse> ObtenReporteGemeloPorIdyFecha_DataSourceAsync(DeclaraINE.file.ObtenReporteGemeloPorIdyFecha_DataSourceRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenReporteGemeloPorIdyFecha_DataSource", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReporteGemeloPorIdyFecha_DataSourceResponse> ObtenReporteGemeloPorIdyFecha_DataSourceAsync(DeclaraINAI.file.ObtenReporteGemeloPorIdyFecha_DataSourceRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje ObtenerDefinicionPorIdRequest tiene encabezados.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenerDefinicionPorId", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenerDefinicionPorId", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        DeclaraINE.file.ObtenerDefinicionPorIdResponse ObtenerDefinicionPorId(DeclaraINE.file.ObtenerDefinicionPorIdRequest request);
+        DeclaraINAI.file.ObtenerDefinicionPorIdResponse ObtenerDefinicionPorId(DeclaraINAI.file.ObtenerDefinicionPorIdRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenerDefinicionPorId", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenerDefinicionPorIdResponse> ObtenerDefinicionPorIdAsync(DeclaraINE.file.ObtenerDefinicionPorIdRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenerDefinicionPorId", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenerDefinicionPorIdResponse> ObtenerDefinicionPorIdAsync(DeclaraINAI.file.ObtenerDefinicionPorIdRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje ObtenerDefinicionPorIdyFechaRequest tiene encabezados.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenerDefinicionPorIdyFecha", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenerDefinicionPorIdyFecha", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        DeclaraINE.file.ObtenerDefinicionPorIdyFechaResponse ObtenerDefinicionPorIdyFecha(DeclaraINE.file.ObtenerDefinicionPorIdyFechaRequest request);
+        DeclaraINAI.file.ObtenerDefinicionPorIdyFechaResponse ObtenerDefinicionPorIdyFecha(DeclaraINAI.file.ObtenerDefinicionPorIdyFechaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenerDefinicionPorIdyFecha", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenerDefinicionPorIdyFechaResponse> ObtenerDefinicionPorIdyFechaAsync(DeclaraINE.file.ObtenerDefinicionPorIdyFechaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenerDefinicionPorIdyFecha", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenerDefinicionPorIdyFechaResponse> ObtenerDefinicionPorIdyFechaAsync(DeclaraINAI.file.ObtenerDefinicionPorIdyFechaRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje ObtenerDefinicionGemelaPorIdRequest tiene encabezados.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenerDefinicionGemelaPorId", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenerDefinicionGemelaPorId", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        DeclaraINE.file.ObtenerDefinicionGemelaPorIdResponse ObtenerDefinicionGemelaPorId(DeclaraINE.file.ObtenerDefinicionGemelaPorIdRequest request);
+        DeclaraINAI.file.ObtenerDefinicionGemelaPorIdResponse ObtenerDefinicionGemelaPorId(DeclaraINAI.file.ObtenerDefinicionGemelaPorIdRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenerDefinicionGemelaPorId", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenerDefinicionGemelaPorIdResponse> ObtenerDefinicionGemelaPorIdAsync(DeclaraINE.file.ObtenerDefinicionGemelaPorIdRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenerDefinicionGemelaPorId", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenerDefinicionGemelaPorIdResponse> ObtenerDefinicionGemelaPorIdAsync(DeclaraINAI.file.ObtenerDefinicionGemelaPorIdRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje ObtenerDefinicionGemelaPorIdyFechaRequest tiene encabezados.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenerDefinicionGemelaPorIdyFecha", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenerDefinicionGemelaPorIdyFecha", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        DeclaraINE.file.ObtenerDefinicionGemelaPorIdyFechaResponse ObtenerDefinicionGemelaPorIdyFecha(DeclaraINE.file.ObtenerDefinicionGemelaPorIdyFechaRequest request);
+        DeclaraINAI.file.ObtenerDefinicionGemelaPorIdyFechaResponse ObtenerDefinicionGemelaPorIdyFecha(DeclaraINAI.file.ObtenerDefinicionGemelaPorIdyFechaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ine.mx/ObtenerDefinicionGemelaPorIdyFecha", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenerDefinicionGemelaPorIdyFechaResponse> ObtenerDefinicionGemelaPorIdyFechaAsync(DeclaraINE.file.ObtenerDefinicionGemelaPorIdyFechaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://inai.mx/ObtenerDefinicionGemelaPorIdyFecha", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenerDefinicionGemelaPorIdyFechaResponse> ObtenerDefinicionGemelaPorIdyFechaAsync(DeclaraINAI.file.ObtenerDefinicionGemelaPorIdyFechaRequest request);
     }
     
     /// <remarks/>
@@ -147,7 +147,7 @@ namespace DeclaraINE.file {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ine.mx/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://inai.mx/")]
     public partial class SOAPHeaderCredentials : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string userNameField;
@@ -207,7 +207,7 @@ namespace DeclaraINE.file {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ine.mx/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://inai.mx/")]
     public partial class ParametroDelReporte : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string vID_PARAMETROField;
@@ -253,7 +253,7 @@ namespace DeclaraINE.file {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ine.mx/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://inai.mx/")]
     public partial class DefinicionDelReporte : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int nID_SISTEMAField;
@@ -397,7 +397,7 @@ namespace DeclaraINE.file {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ine.mx/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://inai.mx/")]
     public partial class SerializedFile : object, System.ComponentModel.INotifyPropertyChanged {
         
         private byte[] fileBytesField;
@@ -457,7 +457,7 @@ namespace DeclaraINE.file {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ine.mx/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://inai.mx/")]
     public partial class Documento : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int nID_DOCUMENTOField;
@@ -529,19 +529,19 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ListaDocumentos", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ListaDocumentos", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ListaDocumentosRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://ine.mx/")]
-        public DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials;
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://inai.mx/")]
+        public DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
         public int NID_SISTEMA;
         
         public ListaDocumentosRequest() {
         }
         
-        public ListaDocumentosRequest(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA) {
+        public ListaDocumentosRequest(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA) {
             this.SOAPHeaderCredentials = SOAPHeaderCredentials;
             this.NID_SISTEMA = NID_SISTEMA;
         }
@@ -550,16 +550,16 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ListaDocumentosResponse", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ListaDocumentosResponse", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ListaDocumentosResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.file.Documento[] ListaDocumentosResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.file.Documento[] ListaDocumentosResult;
         
         public ListaDocumentosResponse() {
         }
         
-        public ListaDocumentosResponse(DeclaraINE.file.Documento[] ListaDocumentosResult) {
+        public ListaDocumentosResponse(DeclaraINAI.file.Documento[] ListaDocumentosResult) {
             this.ListaDocumentosResult = ListaDocumentosResult;
         }
     }
@@ -567,22 +567,22 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenDocumento", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenDocumento", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenDocumentoRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://ine.mx/")]
-        public DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials;
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://inai.mx/")]
+        public DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
         public int NID_SISTEMA;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=1)]
         public int NID_DOCUMENTO;
         
         public ObtenDocumentoRequest() {
         }
         
-        public ObtenDocumentoRequest(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, int NID_DOCUMENTO) {
+        public ObtenDocumentoRequest(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, int NID_DOCUMENTO) {
             this.SOAPHeaderCredentials = SOAPHeaderCredentials;
             this.NID_SISTEMA = NID_SISTEMA;
             this.NID_DOCUMENTO = NID_DOCUMENTO;
@@ -592,16 +592,16 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenDocumentoResponse", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenDocumentoResponse", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenDocumentoResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.file.SerializedFile ObtenDocumentoResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.file.SerializedFile ObtenDocumentoResult;
         
         public ObtenDocumentoResponse() {
         }
         
-        public ObtenDocumentoResponse(DeclaraINE.file.SerializedFile ObtenDocumentoResult) {
+        public ObtenDocumentoResponse(DeclaraINAI.file.SerializedFile ObtenDocumentoResult) {
             this.ObtenDocumentoResult = ObtenDocumentoResult;
         }
     }
@@ -609,25 +609,25 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReportePorId", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReportePorId", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenReportePorIdRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://ine.mx/")]
-        public DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials;
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://inai.mx/")]
+        public DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
         public int NID_SISTEMA;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=1)]
         public string VID_REPORTE;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=2)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=2)]
         public object[] ParametrosDeConsulta;
         
         public ObtenReportePorIdRequest() {
         }
         
-        public ObtenReportePorIdRequest(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, object[] ParametrosDeConsulta) {
+        public ObtenReportePorIdRequest(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, object[] ParametrosDeConsulta) {
             this.SOAPHeaderCredentials = SOAPHeaderCredentials;
             this.NID_SISTEMA = NID_SISTEMA;
             this.VID_REPORTE = VID_REPORTE;
@@ -638,16 +638,16 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReportePorIdResponse", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReportePorIdResponse", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenReportePorIdResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.file.SerializedFile ObtenReportePorIdResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.file.SerializedFile ObtenReportePorIdResult;
         
         public ObtenReportePorIdResponse() {
         }
         
-        public ObtenReportePorIdResponse(DeclaraINE.file.SerializedFile ObtenReportePorIdResult) {
+        public ObtenReportePorIdResponse(DeclaraINAI.file.SerializedFile ObtenReportePorIdResult) {
             this.ObtenReportePorIdResult = ObtenReportePorIdResult;
         }
     }
@@ -655,28 +655,28 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReportePorIdyFecha", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReportePorIdyFecha", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenReportePorIdyFechaRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://ine.mx/")]
-        public DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials;
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://inai.mx/")]
+        public DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
         public int NID_SISTEMA;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=1)]
         public string VID_REPORTE;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=2)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=2)]
         public System.DateTime F_FECHA;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=3)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=3)]
         public object[] ParametrosDeConsulta;
         
         public ObtenReportePorIdyFechaRequest() {
         }
         
-        public ObtenReportePorIdyFechaRequest(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA, object[] ParametrosDeConsulta) {
+        public ObtenReportePorIdyFechaRequest(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA, object[] ParametrosDeConsulta) {
             this.SOAPHeaderCredentials = SOAPHeaderCredentials;
             this.NID_SISTEMA = NID_SISTEMA;
             this.VID_REPORTE = VID_REPORTE;
@@ -688,16 +688,16 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReportePorIdyFechaResponse", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReportePorIdyFechaResponse", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenReportePorIdyFechaResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.file.SerializedFile ObtenReportePorIdyFechaResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.file.SerializedFile ObtenReportePorIdyFechaResult;
         
         public ObtenReportePorIdyFechaResponse() {
         }
         
-        public ObtenReportePorIdyFechaResponse(DeclaraINE.file.SerializedFile ObtenReportePorIdyFechaResult) {
+        public ObtenReportePorIdyFechaResponse(DeclaraINAI.file.SerializedFile ObtenReportePorIdyFechaResult) {
             this.ObtenReportePorIdyFechaResult = ObtenReportePorIdyFechaResult;
         }
     }
@@ -705,28 +705,28 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReporteGemeloPorId", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReporteGemeloPorId", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenReporteGemeloPorIdRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://ine.mx/")]
-        public DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials;
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://inai.mx/")]
+        public DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
         public int NID_SISTEMA;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=1)]
         public string VID_REPORTE;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=2)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=2)]
         public int NID_GEMELO;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=3)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=3)]
         public object[] ParametrosDeConsulta;
         
         public ObtenReporteGemeloPorIdRequest() {
         }
         
-        public ObtenReporteGemeloPorIdRequest(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, object[] ParametrosDeConsulta) {
+        public ObtenReporteGemeloPorIdRequest(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, object[] ParametrosDeConsulta) {
             this.SOAPHeaderCredentials = SOAPHeaderCredentials;
             this.NID_SISTEMA = NID_SISTEMA;
             this.VID_REPORTE = VID_REPORTE;
@@ -738,16 +738,16 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReporteGemeloPorIdResponse", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReporteGemeloPorIdResponse", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenReporteGemeloPorIdResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.file.SerializedFile ObtenReporteGemeloPorIdResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.file.SerializedFile ObtenReporteGemeloPorIdResult;
         
         public ObtenReporteGemeloPorIdResponse() {
         }
         
-        public ObtenReporteGemeloPorIdResponse(DeclaraINE.file.SerializedFile ObtenReporteGemeloPorIdResult) {
+        public ObtenReporteGemeloPorIdResponse(DeclaraINAI.file.SerializedFile ObtenReporteGemeloPorIdResult) {
             this.ObtenReporteGemeloPorIdResult = ObtenReporteGemeloPorIdResult;
         }
     }
@@ -755,31 +755,31 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReporteGemeloPorIdyFecha", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReporteGemeloPorIdyFecha", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenReporteGemeloPorIdyFechaRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://ine.mx/")]
-        public DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials;
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://inai.mx/")]
+        public DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
         public int NID_SISTEMA;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=1)]
         public string VID_REPORTE;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=2)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=2)]
         public int NID_GEMELO;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=3)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=3)]
         public System.DateTime F_FECHA;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=4)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=4)]
         public object[] ParametrosDeConsulta;
         
         public ObtenReporteGemeloPorIdyFechaRequest() {
         }
         
-        public ObtenReporteGemeloPorIdyFechaRequest(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA, object[] ParametrosDeConsulta) {
+        public ObtenReporteGemeloPorIdyFechaRequest(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA, object[] ParametrosDeConsulta) {
             this.SOAPHeaderCredentials = SOAPHeaderCredentials;
             this.NID_SISTEMA = NID_SISTEMA;
             this.VID_REPORTE = VID_REPORTE;
@@ -792,16 +792,16 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReporteGemeloPorIdyFechaResponse", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReporteGemeloPorIdyFechaResponse", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenReporteGemeloPorIdyFechaResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.file.SerializedFile ObtenReporteGemeloPorIdyFechaResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.file.SerializedFile ObtenReporteGemeloPorIdyFechaResult;
         
         public ObtenReporteGemeloPorIdyFechaResponse() {
         }
         
-        public ObtenReporteGemeloPorIdyFechaResponse(DeclaraINE.file.SerializedFile ObtenReporteGemeloPorIdyFechaResult) {
+        public ObtenReporteGemeloPorIdyFechaResponse(DeclaraINAI.file.SerializedFile ObtenReporteGemeloPorIdyFechaResult) {
             this.ObtenReporteGemeloPorIdyFechaResult = ObtenReporteGemeloPorIdyFechaResult;
         }
     }
@@ -809,28 +809,28 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReportePorId_DataSource", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReportePorId_DataSource", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenReportePorId_DataSourceRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://ine.mx/")]
-        public DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials;
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://inai.mx/")]
+        public DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
         public int NID_SISTEMA;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=1)]
         public string VID_REPORTE;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=2)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=2)]
         public object[] Parametros;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=3)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=3)]
         public object DataSource;
         
         public ObtenReportePorId_DataSourceRequest() {
         }
         
-        public ObtenReportePorId_DataSourceRequest(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, object[] Parametros, object DataSource) {
+        public ObtenReportePorId_DataSourceRequest(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, object[] Parametros, object DataSource) {
             this.SOAPHeaderCredentials = SOAPHeaderCredentials;
             this.NID_SISTEMA = NID_SISTEMA;
             this.VID_REPORTE = VID_REPORTE;
@@ -842,16 +842,16 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReportePorId_DataSourceResponse", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReportePorId_DataSourceResponse", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenReportePorId_DataSourceResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.file.SerializedFile ObtenReportePorId_DataSourceResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.file.SerializedFile ObtenReportePorId_DataSourceResult;
         
         public ObtenReportePorId_DataSourceResponse() {
         }
         
-        public ObtenReportePorId_DataSourceResponse(DeclaraINE.file.SerializedFile ObtenReportePorId_DataSourceResult) {
+        public ObtenReportePorId_DataSourceResponse(DeclaraINAI.file.SerializedFile ObtenReportePorId_DataSourceResult) {
             this.ObtenReportePorId_DataSourceResult = ObtenReportePorId_DataSourceResult;
         }
     }
@@ -859,31 +859,31 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReportePorIdyFecha_DataSource", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReportePorIdyFecha_DataSource", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenReportePorIdyFecha_DataSourceRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://ine.mx/")]
-        public DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials;
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://inai.mx/")]
+        public DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
         public int NID_SISTEMA;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=1)]
         public string VID_REPORTE;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=2)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=2)]
         public System.DateTime F_FECHA;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=3)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=3)]
         public object[] Parametros;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=4)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=4)]
         public object DataSource;
         
         public ObtenReportePorIdyFecha_DataSourceRequest() {
         }
         
-        public ObtenReportePorIdyFecha_DataSourceRequest(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA, object[] Parametros, object DataSource) {
+        public ObtenReportePorIdyFecha_DataSourceRequest(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA, object[] Parametros, object DataSource) {
             this.SOAPHeaderCredentials = SOAPHeaderCredentials;
             this.NID_SISTEMA = NID_SISTEMA;
             this.VID_REPORTE = VID_REPORTE;
@@ -896,16 +896,16 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReportePorIdyFecha_DataSourceResponse", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReportePorIdyFecha_DataSourceResponse", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenReportePorIdyFecha_DataSourceResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.file.SerializedFile ObtenReportePorIdyFecha_DataSourceResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.file.SerializedFile ObtenReportePorIdyFecha_DataSourceResult;
         
         public ObtenReportePorIdyFecha_DataSourceResponse() {
         }
         
-        public ObtenReportePorIdyFecha_DataSourceResponse(DeclaraINE.file.SerializedFile ObtenReportePorIdyFecha_DataSourceResult) {
+        public ObtenReportePorIdyFecha_DataSourceResponse(DeclaraINAI.file.SerializedFile ObtenReportePorIdyFecha_DataSourceResult) {
             this.ObtenReportePorIdyFecha_DataSourceResult = ObtenReportePorIdyFecha_DataSourceResult;
         }
     }
@@ -913,31 +913,31 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReporteGemeloPorId_DataSource", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReporteGemeloPorId_DataSource", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenReporteGemeloPorId_DataSourceRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://ine.mx/")]
-        public DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials;
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://inai.mx/")]
+        public DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
         public int NID_SISTEMA;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=1)]
         public string VID_REPORTE;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=2)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=2)]
         public int NID_GEMELO;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=3)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=3)]
         public object[] Parametros;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=4)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=4)]
         public object DataSource;
         
         public ObtenReporteGemeloPorId_DataSourceRequest() {
         }
         
-        public ObtenReporteGemeloPorId_DataSourceRequest(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, object[] Parametros, object DataSource) {
+        public ObtenReporteGemeloPorId_DataSourceRequest(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, object[] Parametros, object DataSource) {
             this.SOAPHeaderCredentials = SOAPHeaderCredentials;
             this.NID_SISTEMA = NID_SISTEMA;
             this.VID_REPORTE = VID_REPORTE;
@@ -950,16 +950,16 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReporteGemeloPorId_DataSourceResponse", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReporteGemeloPorId_DataSourceResponse", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenReporteGemeloPorId_DataSourceResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.file.SerializedFile ObtenReporteGemeloPorId_DataSourceResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.file.SerializedFile ObtenReporteGemeloPorId_DataSourceResult;
         
         public ObtenReporteGemeloPorId_DataSourceResponse() {
         }
         
-        public ObtenReporteGemeloPorId_DataSourceResponse(DeclaraINE.file.SerializedFile ObtenReporteGemeloPorId_DataSourceResult) {
+        public ObtenReporteGemeloPorId_DataSourceResponse(DeclaraINAI.file.SerializedFile ObtenReporteGemeloPorId_DataSourceResult) {
             this.ObtenReporteGemeloPorId_DataSourceResult = ObtenReporteGemeloPorId_DataSourceResult;
         }
     }
@@ -967,34 +967,34 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReporteGemeloPorIdyFecha_DataSource", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReporteGemeloPorIdyFecha_DataSource", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenReporteGemeloPorIdyFecha_DataSourceRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://ine.mx/")]
-        public DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials;
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://inai.mx/")]
+        public DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
         public int NID_SISTEMA;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=1)]
         public string VID_REPORTE;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=2)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=2)]
         public int NID_GEMELO;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=3)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=3)]
         public System.DateTime F_FECHA;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=4)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=4)]
         public object[] Parametros;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=5)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=5)]
         public object DataSource;
         
         public ObtenReporteGemeloPorIdyFecha_DataSourceRequest() {
         }
         
-        public ObtenReporteGemeloPorIdyFecha_DataSourceRequest(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA, object[] Parametros, object DataSource) {
+        public ObtenReporteGemeloPorIdyFecha_DataSourceRequest(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA, object[] Parametros, object DataSource) {
             this.SOAPHeaderCredentials = SOAPHeaderCredentials;
             this.NID_SISTEMA = NID_SISTEMA;
             this.VID_REPORTE = VID_REPORTE;
@@ -1008,16 +1008,16 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReporteGemeloPorIdyFecha_DataSourceResponse", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenReporteGemeloPorIdyFecha_DataSourceResponse", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenReporteGemeloPorIdyFecha_DataSourceResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.file.SerializedFile ObtenReporteGemeloPorIdyFecha_DataSourceResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.file.SerializedFile ObtenReporteGemeloPorIdyFecha_DataSourceResult;
         
         public ObtenReporteGemeloPorIdyFecha_DataSourceResponse() {
         }
         
-        public ObtenReporteGemeloPorIdyFecha_DataSourceResponse(DeclaraINE.file.SerializedFile ObtenReporteGemeloPorIdyFecha_DataSourceResult) {
+        public ObtenReporteGemeloPorIdyFecha_DataSourceResponse(DeclaraINAI.file.SerializedFile ObtenReporteGemeloPorIdyFecha_DataSourceResult) {
             this.ObtenReporteGemeloPorIdyFecha_DataSourceResult = ObtenReporteGemeloPorIdyFecha_DataSourceResult;
         }
     }
@@ -1025,22 +1025,22 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenerDefinicionPorId", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenerDefinicionPorId", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenerDefinicionPorIdRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://ine.mx/")]
-        public DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials;
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://inai.mx/")]
+        public DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
         public int NID_SISTEMA;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=1)]
         public string VID_REPORTE;
         
         public ObtenerDefinicionPorIdRequest() {
         }
         
-        public ObtenerDefinicionPorIdRequest(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE) {
+        public ObtenerDefinicionPorIdRequest(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE) {
             this.SOAPHeaderCredentials = SOAPHeaderCredentials;
             this.NID_SISTEMA = NID_SISTEMA;
             this.VID_REPORTE = VID_REPORTE;
@@ -1050,16 +1050,16 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenerDefinicionPorIdResponse", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenerDefinicionPorIdResponse", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenerDefinicionPorIdResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.file.DefinicionDelReporte ObtenerDefinicionPorIdResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.file.DefinicionDelReporte ObtenerDefinicionPorIdResult;
         
         public ObtenerDefinicionPorIdResponse() {
         }
         
-        public ObtenerDefinicionPorIdResponse(DeclaraINE.file.DefinicionDelReporte ObtenerDefinicionPorIdResult) {
+        public ObtenerDefinicionPorIdResponse(DeclaraINAI.file.DefinicionDelReporte ObtenerDefinicionPorIdResult) {
             this.ObtenerDefinicionPorIdResult = ObtenerDefinicionPorIdResult;
         }
     }
@@ -1067,25 +1067,25 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenerDefinicionPorIdyFecha", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenerDefinicionPorIdyFecha", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenerDefinicionPorIdyFechaRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://ine.mx/")]
-        public DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials;
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://inai.mx/")]
+        public DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
         public int NID_SISTEMA;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=1)]
         public string VID_REPORTE;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=2)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=2)]
         public System.DateTime F_FECHA;
         
         public ObtenerDefinicionPorIdyFechaRequest() {
         }
         
-        public ObtenerDefinicionPorIdyFechaRequest(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA) {
+        public ObtenerDefinicionPorIdyFechaRequest(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA) {
             this.SOAPHeaderCredentials = SOAPHeaderCredentials;
             this.NID_SISTEMA = NID_SISTEMA;
             this.VID_REPORTE = VID_REPORTE;
@@ -1096,16 +1096,16 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenerDefinicionPorIdyFechaResponse", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenerDefinicionPorIdyFechaResponse", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenerDefinicionPorIdyFechaResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.file.DefinicionDelReporte ObtenerDefinicionPorIdyFechaResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.file.DefinicionDelReporte ObtenerDefinicionPorIdyFechaResult;
         
         public ObtenerDefinicionPorIdyFechaResponse() {
         }
         
-        public ObtenerDefinicionPorIdyFechaResponse(DeclaraINE.file.DefinicionDelReporte ObtenerDefinicionPorIdyFechaResult) {
+        public ObtenerDefinicionPorIdyFechaResponse(DeclaraINAI.file.DefinicionDelReporte ObtenerDefinicionPorIdyFechaResult) {
             this.ObtenerDefinicionPorIdyFechaResult = ObtenerDefinicionPorIdyFechaResult;
         }
     }
@@ -1113,25 +1113,25 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenerDefinicionGemelaPorId", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenerDefinicionGemelaPorId", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenerDefinicionGemelaPorIdRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://ine.mx/")]
-        public DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials;
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://inai.mx/")]
+        public DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
         public int NID_SISTEMA;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=1)]
         public int NID_GEMELO;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=2)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=2)]
         public string VID_REPORTE;
         
         public ObtenerDefinicionGemelaPorIdRequest() {
         }
         
-        public ObtenerDefinicionGemelaPorIdRequest(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, int NID_GEMELO, string VID_REPORTE) {
+        public ObtenerDefinicionGemelaPorIdRequest(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, int NID_GEMELO, string VID_REPORTE) {
             this.SOAPHeaderCredentials = SOAPHeaderCredentials;
             this.NID_SISTEMA = NID_SISTEMA;
             this.NID_GEMELO = NID_GEMELO;
@@ -1142,16 +1142,16 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenerDefinicionGemelaPorIdResponse", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenerDefinicionGemelaPorIdResponse", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenerDefinicionGemelaPorIdResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.file.DefinicionDelReporte ObtenerDefinicionGemelaPorIdResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.file.DefinicionDelReporte ObtenerDefinicionGemelaPorIdResult;
         
         public ObtenerDefinicionGemelaPorIdResponse() {
         }
         
-        public ObtenerDefinicionGemelaPorIdResponse(DeclaraINE.file.DefinicionDelReporte ObtenerDefinicionGemelaPorIdResult) {
+        public ObtenerDefinicionGemelaPorIdResponse(DeclaraINAI.file.DefinicionDelReporte ObtenerDefinicionGemelaPorIdResult) {
             this.ObtenerDefinicionGemelaPorIdResult = ObtenerDefinicionGemelaPorIdResult;
         }
     }
@@ -1159,28 +1159,28 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenerDefinicionGemelaPorIdyFecha", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenerDefinicionGemelaPorIdyFecha", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenerDefinicionGemelaPorIdyFechaRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://ine.mx/")]
-        public DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials;
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://inai.mx/")]
+        public DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
         public int NID_SISTEMA;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=1)]
         public string VID_REPORTE;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=2)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=2)]
         public int NID_GEMELO;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=3)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=3)]
         public System.DateTime F_FECHA;
         
         public ObtenerDefinicionGemelaPorIdyFechaRequest() {
         }
         
-        public ObtenerDefinicionGemelaPorIdyFechaRequest(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA) {
+        public ObtenerDefinicionGemelaPorIdyFechaRequest(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA) {
             this.SOAPHeaderCredentials = SOAPHeaderCredentials;
             this.NID_SISTEMA = NID_SISTEMA;
             this.VID_REPORTE = VID_REPORTE;
@@ -1192,27 +1192,27 @@ namespace DeclaraINE.file {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenerDefinicionGemelaPorIdyFechaResponse", WrapperNamespace="http://ine.mx/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ObtenerDefinicionGemelaPorIdyFechaResponse", WrapperNamespace="http://inai.mx/", IsWrapped=true)]
     public partial class ObtenerDefinicionGemelaPorIdyFechaResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ine.mx/", Order=0)]
-        public DeclaraINE.file.DefinicionDelReporte ObtenerDefinicionGemelaPorIdyFechaResult;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://inai.mx/", Order=0)]
+        public DeclaraINAI.file.DefinicionDelReporte ObtenerDefinicionGemelaPorIdyFechaResult;
         
         public ObtenerDefinicionGemelaPorIdyFechaResponse() {
         }
         
-        public ObtenerDefinicionGemelaPorIdyFechaResponse(DeclaraINE.file.DefinicionDelReporte ObtenerDefinicionGemelaPorIdyFechaResult) {
+        public ObtenerDefinicionGemelaPorIdyFechaResponse(DeclaraINAI.file.DefinicionDelReporte ObtenerDefinicionGemelaPorIdyFechaResult) {
             this.ObtenerDefinicionGemelaPorIdyFechaResult = ObtenerDefinicionGemelaPorIdyFechaResult;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface fileSoapChannel : DeclaraINE.file.fileSoap, System.ServiceModel.IClientChannel {
+    public interface fileSoapChannel : DeclaraINAI.file.fileSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class fileSoapClient : System.ServiceModel.ClientBase<DeclaraINE.file.fileSoap>, DeclaraINE.file.fileSoap {
+    public partial class fileSoapClient : System.ServiceModel.ClientBase<DeclaraINAI.file.fileSoap>, DeclaraINAI.file.fileSoap {
         
         public fileSoapClient() {
         }
@@ -1234,285 +1234,285 @@ namespace DeclaraINE.file {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.file.ListaDocumentosResponse DeclaraINE.file.fileSoap.ListaDocumentos(DeclaraINE.file.ListaDocumentosRequest request) {
+        DeclaraINAI.file.ListaDocumentosResponse DeclaraINAI.file.fileSoap.ListaDocumentos(DeclaraINAI.file.ListaDocumentosRequest request) {
             return base.Channel.ListaDocumentos(request);
         }
         
-        public DeclaraINE.file.Documento[] ListaDocumentos(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA) {
-            DeclaraINE.file.ListaDocumentosRequest inValue = new DeclaraINE.file.ListaDocumentosRequest();
+        public DeclaraINAI.file.Documento[] ListaDocumentos(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA) {
+            DeclaraINAI.file.ListaDocumentosRequest inValue = new DeclaraINAI.file.ListaDocumentosRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
-            DeclaraINE.file.ListaDocumentosResponse retVal = ((DeclaraINE.file.fileSoap)(this)).ListaDocumentos(inValue);
+            DeclaraINAI.file.ListaDocumentosResponse retVal = ((DeclaraINAI.file.fileSoap)(this)).ListaDocumentos(inValue);
             return retVal.ListaDocumentosResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.file.ListaDocumentosResponse> DeclaraINE.file.fileSoap.ListaDocumentosAsync(DeclaraINE.file.ListaDocumentosRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.file.ListaDocumentosResponse> DeclaraINAI.file.fileSoap.ListaDocumentosAsync(DeclaraINAI.file.ListaDocumentosRequest request) {
             return base.Channel.ListaDocumentosAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.file.ListaDocumentosResponse> ListaDocumentosAsync(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA) {
-            DeclaraINE.file.ListaDocumentosRequest inValue = new DeclaraINE.file.ListaDocumentosRequest();
+        public System.Threading.Tasks.Task<DeclaraINAI.file.ListaDocumentosResponse> ListaDocumentosAsync(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA) {
+            DeclaraINAI.file.ListaDocumentosRequest inValue = new DeclaraINAI.file.ListaDocumentosRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
-            return ((DeclaraINE.file.fileSoap)(this)).ListaDocumentosAsync(inValue);
+            return ((DeclaraINAI.file.fileSoap)(this)).ListaDocumentosAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.file.ObtenDocumentoResponse DeclaraINE.file.fileSoap.ObtenDocumento(DeclaraINE.file.ObtenDocumentoRequest request) {
+        DeclaraINAI.file.ObtenDocumentoResponse DeclaraINAI.file.fileSoap.ObtenDocumento(DeclaraINAI.file.ObtenDocumentoRequest request) {
             return base.Channel.ObtenDocumento(request);
         }
         
-        public DeclaraINE.file.SerializedFile ObtenDocumento(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, int NID_DOCUMENTO) {
-            DeclaraINE.file.ObtenDocumentoRequest inValue = new DeclaraINE.file.ObtenDocumentoRequest();
+        public DeclaraINAI.file.SerializedFile ObtenDocumento(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, int NID_DOCUMENTO) {
+            DeclaraINAI.file.ObtenDocumentoRequest inValue = new DeclaraINAI.file.ObtenDocumentoRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.NID_DOCUMENTO = NID_DOCUMENTO;
-            DeclaraINE.file.ObtenDocumentoResponse retVal = ((DeclaraINE.file.fileSoap)(this)).ObtenDocumento(inValue);
+            DeclaraINAI.file.ObtenDocumentoResponse retVal = ((DeclaraINAI.file.fileSoap)(this)).ObtenDocumento(inValue);
             return retVal.ObtenDocumentoResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenDocumentoResponse> DeclaraINE.file.fileSoap.ObtenDocumentoAsync(DeclaraINE.file.ObtenDocumentoRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenDocumentoResponse> DeclaraINAI.file.fileSoap.ObtenDocumentoAsync(DeclaraINAI.file.ObtenDocumentoRequest request) {
             return base.Channel.ObtenDocumentoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.file.ObtenDocumentoResponse> ObtenDocumentoAsync(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, int NID_DOCUMENTO) {
-            DeclaraINE.file.ObtenDocumentoRequest inValue = new DeclaraINE.file.ObtenDocumentoRequest();
+        public System.Threading.Tasks.Task<DeclaraINAI.file.ObtenDocumentoResponse> ObtenDocumentoAsync(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, int NID_DOCUMENTO) {
+            DeclaraINAI.file.ObtenDocumentoRequest inValue = new DeclaraINAI.file.ObtenDocumentoRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.NID_DOCUMENTO = NID_DOCUMENTO;
-            return ((DeclaraINE.file.fileSoap)(this)).ObtenDocumentoAsync(inValue);
+            return ((DeclaraINAI.file.fileSoap)(this)).ObtenDocumentoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.file.ObtenReportePorIdResponse DeclaraINE.file.fileSoap.ObtenReportePorId(DeclaraINE.file.ObtenReportePorIdRequest request) {
+        DeclaraINAI.file.ObtenReportePorIdResponse DeclaraINAI.file.fileSoap.ObtenReportePorId(DeclaraINAI.file.ObtenReportePorIdRequest request) {
             return base.Channel.ObtenReportePorId(request);
         }
         
-        public DeclaraINE.file.SerializedFile ObtenReportePorId(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, object[] ParametrosDeConsulta) {
-            DeclaraINE.file.ObtenReportePorIdRequest inValue = new DeclaraINE.file.ObtenReportePorIdRequest();
+        public DeclaraINAI.file.SerializedFile ObtenReportePorId(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, object[] ParametrosDeConsulta) {
+            DeclaraINAI.file.ObtenReportePorIdRequest inValue = new DeclaraINAI.file.ObtenReportePorIdRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.ParametrosDeConsulta = ParametrosDeConsulta;
-            DeclaraINE.file.ObtenReportePorIdResponse retVal = ((DeclaraINE.file.fileSoap)(this)).ObtenReportePorId(inValue);
+            DeclaraINAI.file.ObtenReportePorIdResponse retVal = ((DeclaraINAI.file.fileSoap)(this)).ObtenReportePorId(inValue);
             return retVal.ObtenReportePorIdResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenReportePorIdResponse> DeclaraINE.file.fileSoap.ObtenReportePorIdAsync(DeclaraINE.file.ObtenReportePorIdRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReportePorIdResponse> DeclaraINAI.file.fileSoap.ObtenReportePorIdAsync(DeclaraINAI.file.ObtenReportePorIdRequest request) {
             return base.Channel.ObtenReportePorIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.file.ObtenReportePorIdResponse> ObtenReportePorIdAsync(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, object[] ParametrosDeConsulta) {
-            DeclaraINE.file.ObtenReportePorIdRequest inValue = new DeclaraINE.file.ObtenReportePorIdRequest();
+        public System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReportePorIdResponse> ObtenReportePorIdAsync(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, object[] ParametrosDeConsulta) {
+            DeclaraINAI.file.ObtenReportePorIdRequest inValue = new DeclaraINAI.file.ObtenReportePorIdRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.ParametrosDeConsulta = ParametrosDeConsulta;
-            return ((DeclaraINE.file.fileSoap)(this)).ObtenReportePorIdAsync(inValue);
+            return ((DeclaraINAI.file.fileSoap)(this)).ObtenReportePorIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.file.ObtenReportePorIdyFechaResponse DeclaraINE.file.fileSoap.ObtenReportePorIdyFecha(DeclaraINE.file.ObtenReportePorIdyFechaRequest request) {
+        DeclaraINAI.file.ObtenReportePorIdyFechaResponse DeclaraINAI.file.fileSoap.ObtenReportePorIdyFecha(DeclaraINAI.file.ObtenReportePorIdyFechaRequest request) {
             return base.Channel.ObtenReportePorIdyFecha(request);
         }
         
-        public DeclaraINE.file.SerializedFile ObtenReportePorIdyFecha(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA, object[] ParametrosDeConsulta) {
-            DeclaraINE.file.ObtenReportePorIdyFechaRequest inValue = new DeclaraINE.file.ObtenReportePorIdyFechaRequest();
+        public DeclaraINAI.file.SerializedFile ObtenReportePorIdyFecha(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA, object[] ParametrosDeConsulta) {
+            DeclaraINAI.file.ObtenReportePorIdyFechaRequest inValue = new DeclaraINAI.file.ObtenReportePorIdyFechaRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.F_FECHA = F_FECHA;
             inValue.ParametrosDeConsulta = ParametrosDeConsulta;
-            DeclaraINE.file.ObtenReportePorIdyFechaResponse retVal = ((DeclaraINE.file.fileSoap)(this)).ObtenReportePorIdyFecha(inValue);
+            DeclaraINAI.file.ObtenReportePorIdyFechaResponse retVal = ((DeclaraINAI.file.fileSoap)(this)).ObtenReportePorIdyFecha(inValue);
             return retVal.ObtenReportePorIdyFechaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenReportePorIdyFechaResponse> DeclaraINE.file.fileSoap.ObtenReportePorIdyFechaAsync(DeclaraINE.file.ObtenReportePorIdyFechaRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReportePorIdyFechaResponse> DeclaraINAI.file.fileSoap.ObtenReportePorIdyFechaAsync(DeclaraINAI.file.ObtenReportePorIdyFechaRequest request) {
             return base.Channel.ObtenReportePorIdyFechaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.file.ObtenReportePorIdyFechaResponse> ObtenReportePorIdyFechaAsync(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA, object[] ParametrosDeConsulta) {
-            DeclaraINE.file.ObtenReportePorIdyFechaRequest inValue = new DeclaraINE.file.ObtenReportePorIdyFechaRequest();
+        public System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReportePorIdyFechaResponse> ObtenReportePorIdyFechaAsync(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA, object[] ParametrosDeConsulta) {
+            DeclaraINAI.file.ObtenReportePorIdyFechaRequest inValue = new DeclaraINAI.file.ObtenReportePorIdyFechaRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.F_FECHA = F_FECHA;
             inValue.ParametrosDeConsulta = ParametrosDeConsulta;
-            return ((DeclaraINE.file.fileSoap)(this)).ObtenReportePorIdyFechaAsync(inValue);
+            return ((DeclaraINAI.file.fileSoap)(this)).ObtenReportePorIdyFechaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.file.ObtenReporteGemeloPorIdResponse DeclaraINE.file.fileSoap.ObtenReporteGemeloPorId(DeclaraINE.file.ObtenReporteGemeloPorIdRequest request) {
+        DeclaraINAI.file.ObtenReporteGemeloPorIdResponse DeclaraINAI.file.fileSoap.ObtenReporteGemeloPorId(DeclaraINAI.file.ObtenReporteGemeloPorIdRequest request) {
             return base.Channel.ObtenReporteGemeloPorId(request);
         }
         
-        public DeclaraINE.file.SerializedFile ObtenReporteGemeloPorId(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, object[] ParametrosDeConsulta) {
-            DeclaraINE.file.ObtenReporteGemeloPorIdRequest inValue = new DeclaraINE.file.ObtenReporteGemeloPorIdRequest();
+        public DeclaraINAI.file.SerializedFile ObtenReporteGemeloPorId(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, object[] ParametrosDeConsulta) {
+            DeclaraINAI.file.ObtenReporteGemeloPorIdRequest inValue = new DeclaraINAI.file.ObtenReporteGemeloPorIdRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.NID_GEMELO = NID_GEMELO;
             inValue.ParametrosDeConsulta = ParametrosDeConsulta;
-            DeclaraINE.file.ObtenReporteGemeloPorIdResponse retVal = ((DeclaraINE.file.fileSoap)(this)).ObtenReporteGemeloPorId(inValue);
+            DeclaraINAI.file.ObtenReporteGemeloPorIdResponse retVal = ((DeclaraINAI.file.fileSoap)(this)).ObtenReporteGemeloPorId(inValue);
             return retVal.ObtenReporteGemeloPorIdResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenReporteGemeloPorIdResponse> DeclaraINE.file.fileSoap.ObtenReporteGemeloPorIdAsync(DeclaraINE.file.ObtenReporteGemeloPorIdRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReporteGemeloPorIdResponse> DeclaraINAI.file.fileSoap.ObtenReporteGemeloPorIdAsync(DeclaraINAI.file.ObtenReporteGemeloPorIdRequest request) {
             return base.Channel.ObtenReporteGemeloPorIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.file.ObtenReporteGemeloPorIdResponse> ObtenReporteGemeloPorIdAsync(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, object[] ParametrosDeConsulta) {
-            DeclaraINE.file.ObtenReporteGemeloPorIdRequest inValue = new DeclaraINE.file.ObtenReporteGemeloPorIdRequest();
+        public System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReporteGemeloPorIdResponse> ObtenReporteGemeloPorIdAsync(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, object[] ParametrosDeConsulta) {
+            DeclaraINAI.file.ObtenReporteGemeloPorIdRequest inValue = new DeclaraINAI.file.ObtenReporteGemeloPorIdRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.NID_GEMELO = NID_GEMELO;
             inValue.ParametrosDeConsulta = ParametrosDeConsulta;
-            return ((DeclaraINE.file.fileSoap)(this)).ObtenReporteGemeloPorIdAsync(inValue);
+            return ((DeclaraINAI.file.fileSoap)(this)).ObtenReporteGemeloPorIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.file.ObtenReporteGemeloPorIdyFechaResponse DeclaraINE.file.fileSoap.ObtenReporteGemeloPorIdyFecha(DeclaraINE.file.ObtenReporteGemeloPorIdyFechaRequest request) {
+        DeclaraINAI.file.ObtenReporteGemeloPorIdyFechaResponse DeclaraINAI.file.fileSoap.ObtenReporteGemeloPorIdyFecha(DeclaraINAI.file.ObtenReporteGemeloPorIdyFechaRequest request) {
             return base.Channel.ObtenReporteGemeloPorIdyFecha(request);
         }
         
-        public DeclaraINE.file.SerializedFile ObtenReporteGemeloPorIdyFecha(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA, object[] ParametrosDeConsulta) {
-            DeclaraINE.file.ObtenReporteGemeloPorIdyFechaRequest inValue = new DeclaraINE.file.ObtenReporteGemeloPorIdyFechaRequest();
+        public DeclaraINAI.file.SerializedFile ObtenReporteGemeloPorIdyFecha(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA, object[] ParametrosDeConsulta) {
+            DeclaraINAI.file.ObtenReporteGemeloPorIdyFechaRequest inValue = new DeclaraINAI.file.ObtenReporteGemeloPorIdyFechaRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.NID_GEMELO = NID_GEMELO;
             inValue.F_FECHA = F_FECHA;
             inValue.ParametrosDeConsulta = ParametrosDeConsulta;
-            DeclaraINE.file.ObtenReporteGemeloPorIdyFechaResponse retVal = ((DeclaraINE.file.fileSoap)(this)).ObtenReporteGemeloPorIdyFecha(inValue);
+            DeclaraINAI.file.ObtenReporteGemeloPorIdyFechaResponse retVal = ((DeclaraINAI.file.fileSoap)(this)).ObtenReporteGemeloPorIdyFecha(inValue);
             return retVal.ObtenReporteGemeloPorIdyFechaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenReporteGemeloPorIdyFechaResponse> DeclaraINE.file.fileSoap.ObtenReporteGemeloPorIdyFechaAsync(DeclaraINE.file.ObtenReporteGemeloPorIdyFechaRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReporteGemeloPorIdyFechaResponse> DeclaraINAI.file.fileSoap.ObtenReporteGemeloPorIdyFechaAsync(DeclaraINAI.file.ObtenReporteGemeloPorIdyFechaRequest request) {
             return base.Channel.ObtenReporteGemeloPorIdyFechaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.file.ObtenReporteGemeloPorIdyFechaResponse> ObtenReporteGemeloPorIdyFechaAsync(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA, object[] ParametrosDeConsulta) {
-            DeclaraINE.file.ObtenReporteGemeloPorIdyFechaRequest inValue = new DeclaraINE.file.ObtenReporteGemeloPorIdyFechaRequest();
+        public System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReporteGemeloPorIdyFechaResponse> ObtenReporteGemeloPorIdyFechaAsync(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA, object[] ParametrosDeConsulta) {
+            DeclaraINAI.file.ObtenReporteGemeloPorIdyFechaRequest inValue = new DeclaraINAI.file.ObtenReporteGemeloPorIdyFechaRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.NID_GEMELO = NID_GEMELO;
             inValue.F_FECHA = F_FECHA;
             inValue.ParametrosDeConsulta = ParametrosDeConsulta;
-            return ((DeclaraINE.file.fileSoap)(this)).ObtenReporteGemeloPorIdyFechaAsync(inValue);
+            return ((DeclaraINAI.file.fileSoap)(this)).ObtenReporteGemeloPorIdyFechaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.file.ObtenReportePorId_DataSourceResponse DeclaraINE.file.fileSoap.ObtenReportePorId_DataSource(DeclaraINE.file.ObtenReportePorId_DataSourceRequest request) {
+        DeclaraINAI.file.ObtenReportePorId_DataSourceResponse DeclaraINAI.file.fileSoap.ObtenReportePorId_DataSource(DeclaraINAI.file.ObtenReportePorId_DataSourceRequest request) {
             return base.Channel.ObtenReportePorId_DataSource(request);
         }
         
-        public DeclaraINE.file.SerializedFile ObtenReportePorId_DataSource(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, object[] Parametros, object DataSource) {
-            DeclaraINE.file.ObtenReportePorId_DataSourceRequest inValue = new DeclaraINE.file.ObtenReportePorId_DataSourceRequest();
+        public DeclaraINAI.file.SerializedFile ObtenReportePorId_DataSource(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, object[] Parametros, object DataSource) {
+            DeclaraINAI.file.ObtenReportePorId_DataSourceRequest inValue = new DeclaraINAI.file.ObtenReportePorId_DataSourceRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.Parametros = Parametros;
             inValue.DataSource = DataSource;
-            DeclaraINE.file.ObtenReportePorId_DataSourceResponse retVal = ((DeclaraINE.file.fileSoap)(this)).ObtenReportePorId_DataSource(inValue);
+            DeclaraINAI.file.ObtenReportePorId_DataSourceResponse retVal = ((DeclaraINAI.file.fileSoap)(this)).ObtenReportePorId_DataSource(inValue);
             return retVal.ObtenReportePorId_DataSourceResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenReportePorId_DataSourceResponse> DeclaraINE.file.fileSoap.ObtenReportePorId_DataSourceAsync(DeclaraINE.file.ObtenReportePorId_DataSourceRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReportePorId_DataSourceResponse> DeclaraINAI.file.fileSoap.ObtenReportePorId_DataSourceAsync(DeclaraINAI.file.ObtenReportePorId_DataSourceRequest request) {
             return base.Channel.ObtenReportePorId_DataSourceAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.file.ObtenReportePorId_DataSourceResponse> ObtenReportePorId_DataSourceAsync(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, object[] Parametros, object DataSource) {
-            DeclaraINE.file.ObtenReportePorId_DataSourceRequest inValue = new DeclaraINE.file.ObtenReportePorId_DataSourceRequest();
+        public System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReportePorId_DataSourceResponse> ObtenReportePorId_DataSourceAsync(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, object[] Parametros, object DataSource) {
+            DeclaraINAI.file.ObtenReportePorId_DataSourceRequest inValue = new DeclaraINAI.file.ObtenReportePorId_DataSourceRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.Parametros = Parametros;
             inValue.DataSource = DataSource;
-            return ((DeclaraINE.file.fileSoap)(this)).ObtenReportePorId_DataSourceAsync(inValue);
+            return ((DeclaraINAI.file.fileSoap)(this)).ObtenReportePorId_DataSourceAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.file.ObtenReportePorIdyFecha_DataSourceResponse DeclaraINE.file.fileSoap.ObtenReportePorIdyFecha_DataSource(DeclaraINE.file.ObtenReportePorIdyFecha_DataSourceRequest request) {
+        DeclaraINAI.file.ObtenReportePorIdyFecha_DataSourceResponse DeclaraINAI.file.fileSoap.ObtenReportePorIdyFecha_DataSource(DeclaraINAI.file.ObtenReportePorIdyFecha_DataSourceRequest request) {
             return base.Channel.ObtenReportePorIdyFecha_DataSource(request);
         }
         
-        public DeclaraINE.file.SerializedFile ObtenReportePorIdyFecha_DataSource(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA, object[] Parametros, object DataSource) {
-            DeclaraINE.file.ObtenReportePorIdyFecha_DataSourceRequest inValue = new DeclaraINE.file.ObtenReportePorIdyFecha_DataSourceRequest();
+        public DeclaraINAI.file.SerializedFile ObtenReportePorIdyFecha_DataSource(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA, object[] Parametros, object DataSource) {
+            DeclaraINAI.file.ObtenReportePorIdyFecha_DataSourceRequest inValue = new DeclaraINAI.file.ObtenReportePorIdyFecha_DataSourceRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.F_FECHA = F_FECHA;
             inValue.Parametros = Parametros;
             inValue.DataSource = DataSource;
-            DeclaraINE.file.ObtenReportePorIdyFecha_DataSourceResponse retVal = ((DeclaraINE.file.fileSoap)(this)).ObtenReportePorIdyFecha_DataSource(inValue);
+            DeclaraINAI.file.ObtenReportePorIdyFecha_DataSourceResponse retVal = ((DeclaraINAI.file.fileSoap)(this)).ObtenReportePorIdyFecha_DataSource(inValue);
             return retVal.ObtenReportePorIdyFecha_DataSourceResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenReportePorIdyFecha_DataSourceResponse> DeclaraINE.file.fileSoap.ObtenReportePorIdyFecha_DataSourceAsync(DeclaraINE.file.ObtenReportePorIdyFecha_DataSourceRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReportePorIdyFecha_DataSourceResponse> DeclaraINAI.file.fileSoap.ObtenReportePorIdyFecha_DataSourceAsync(DeclaraINAI.file.ObtenReportePorIdyFecha_DataSourceRequest request) {
             return base.Channel.ObtenReportePorIdyFecha_DataSourceAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.file.ObtenReportePorIdyFecha_DataSourceResponse> ObtenReportePorIdyFecha_DataSourceAsync(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA, object[] Parametros, object DataSource) {
-            DeclaraINE.file.ObtenReportePorIdyFecha_DataSourceRequest inValue = new DeclaraINE.file.ObtenReportePorIdyFecha_DataSourceRequest();
+        public System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReportePorIdyFecha_DataSourceResponse> ObtenReportePorIdyFecha_DataSourceAsync(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA, object[] Parametros, object DataSource) {
+            DeclaraINAI.file.ObtenReportePorIdyFecha_DataSourceRequest inValue = new DeclaraINAI.file.ObtenReportePorIdyFecha_DataSourceRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.F_FECHA = F_FECHA;
             inValue.Parametros = Parametros;
             inValue.DataSource = DataSource;
-            return ((DeclaraINE.file.fileSoap)(this)).ObtenReportePorIdyFecha_DataSourceAsync(inValue);
+            return ((DeclaraINAI.file.fileSoap)(this)).ObtenReportePorIdyFecha_DataSourceAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.file.ObtenReporteGemeloPorId_DataSourceResponse DeclaraINE.file.fileSoap.ObtenReporteGemeloPorId_DataSource(DeclaraINE.file.ObtenReporteGemeloPorId_DataSourceRequest request) {
+        DeclaraINAI.file.ObtenReporteGemeloPorId_DataSourceResponse DeclaraINAI.file.fileSoap.ObtenReporteGemeloPorId_DataSource(DeclaraINAI.file.ObtenReporteGemeloPorId_DataSourceRequest request) {
             return base.Channel.ObtenReporteGemeloPorId_DataSource(request);
         }
         
-        public DeclaraINE.file.SerializedFile ObtenReporteGemeloPorId_DataSource(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, object[] Parametros, object DataSource) {
-            DeclaraINE.file.ObtenReporteGemeloPorId_DataSourceRequest inValue = new DeclaraINE.file.ObtenReporteGemeloPorId_DataSourceRequest();
+        public DeclaraINAI.file.SerializedFile ObtenReporteGemeloPorId_DataSource(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, object[] Parametros, object DataSource) {
+            DeclaraINAI.file.ObtenReporteGemeloPorId_DataSourceRequest inValue = new DeclaraINAI.file.ObtenReporteGemeloPorId_DataSourceRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.NID_GEMELO = NID_GEMELO;
             inValue.Parametros = Parametros;
             inValue.DataSource = DataSource;
-            DeclaraINE.file.ObtenReporteGemeloPorId_DataSourceResponse retVal = ((DeclaraINE.file.fileSoap)(this)).ObtenReporteGemeloPorId_DataSource(inValue);
+            DeclaraINAI.file.ObtenReporteGemeloPorId_DataSourceResponse retVal = ((DeclaraINAI.file.fileSoap)(this)).ObtenReporteGemeloPorId_DataSource(inValue);
             return retVal.ObtenReporteGemeloPorId_DataSourceResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenReporteGemeloPorId_DataSourceResponse> DeclaraINE.file.fileSoap.ObtenReporteGemeloPorId_DataSourceAsync(DeclaraINE.file.ObtenReporteGemeloPorId_DataSourceRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReporteGemeloPorId_DataSourceResponse> DeclaraINAI.file.fileSoap.ObtenReporteGemeloPorId_DataSourceAsync(DeclaraINAI.file.ObtenReporteGemeloPorId_DataSourceRequest request) {
             return base.Channel.ObtenReporteGemeloPorId_DataSourceAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.file.ObtenReporteGemeloPorId_DataSourceResponse> ObtenReporteGemeloPorId_DataSourceAsync(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, object[] Parametros, object DataSource) {
-            DeclaraINE.file.ObtenReporteGemeloPorId_DataSourceRequest inValue = new DeclaraINE.file.ObtenReporteGemeloPorId_DataSourceRequest();
+        public System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReporteGemeloPorId_DataSourceResponse> ObtenReporteGemeloPorId_DataSourceAsync(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, object[] Parametros, object DataSource) {
+            DeclaraINAI.file.ObtenReporteGemeloPorId_DataSourceRequest inValue = new DeclaraINAI.file.ObtenReporteGemeloPorId_DataSourceRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.NID_GEMELO = NID_GEMELO;
             inValue.Parametros = Parametros;
             inValue.DataSource = DataSource;
-            return ((DeclaraINE.file.fileSoap)(this)).ObtenReporteGemeloPorId_DataSourceAsync(inValue);
+            return ((DeclaraINAI.file.fileSoap)(this)).ObtenReporteGemeloPorId_DataSourceAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.file.ObtenReporteGemeloPorIdyFecha_DataSourceResponse DeclaraINE.file.fileSoap.ObtenReporteGemeloPorIdyFecha_DataSource(DeclaraINE.file.ObtenReporteGemeloPorIdyFecha_DataSourceRequest request) {
+        DeclaraINAI.file.ObtenReporteGemeloPorIdyFecha_DataSourceResponse DeclaraINAI.file.fileSoap.ObtenReporteGemeloPorIdyFecha_DataSource(DeclaraINAI.file.ObtenReporteGemeloPorIdyFecha_DataSourceRequest request) {
             return base.Channel.ObtenReporteGemeloPorIdyFecha_DataSource(request);
         }
         
-        public DeclaraINE.file.SerializedFile ObtenReporteGemeloPorIdyFecha_DataSource(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA, object[] Parametros, object DataSource) {
-            DeclaraINE.file.ObtenReporteGemeloPorIdyFecha_DataSourceRequest inValue = new DeclaraINE.file.ObtenReporteGemeloPorIdyFecha_DataSourceRequest();
+        public DeclaraINAI.file.SerializedFile ObtenReporteGemeloPorIdyFecha_DataSource(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA, object[] Parametros, object DataSource) {
+            DeclaraINAI.file.ObtenReporteGemeloPorIdyFecha_DataSourceRequest inValue = new DeclaraINAI.file.ObtenReporteGemeloPorIdyFecha_DataSourceRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
@@ -1520,17 +1520,17 @@ namespace DeclaraINE.file {
             inValue.F_FECHA = F_FECHA;
             inValue.Parametros = Parametros;
             inValue.DataSource = DataSource;
-            DeclaraINE.file.ObtenReporteGemeloPorIdyFecha_DataSourceResponse retVal = ((DeclaraINE.file.fileSoap)(this)).ObtenReporteGemeloPorIdyFecha_DataSource(inValue);
+            DeclaraINAI.file.ObtenReporteGemeloPorIdyFecha_DataSourceResponse retVal = ((DeclaraINAI.file.fileSoap)(this)).ObtenReporteGemeloPorIdyFecha_DataSource(inValue);
             return retVal.ObtenReporteGemeloPorIdyFecha_DataSourceResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenReporteGemeloPorIdyFecha_DataSourceResponse> DeclaraINE.file.fileSoap.ObtenReporteGemeloPorIdyFecha_DataSourceAsync(DeclaraINE.file.ObtenReporteGemeloPorIdyFecha_DataSourceRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReporteGemeloPorIdyFecha_DataSourceResponse> DeclaraINAI.file.fileSoap.ObtenReporteGemeloPorIdyFecha_DataSourceAsync(DeclaraINAI.file.ObtenReporteGemeloPorIdyFecha_DataSourceRequest request) {
             return base.Channel.ObtenReporteGemeloPorIdyFecha_DataSourceAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.file.ObtenReporteGemeloPorIdyFecha_DataSourceResponse> ObtenReporteGemeloPorIdyFecha_DataSourceAsync(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA, object[] Parametros, object DataSource) {
-            DeclaraINE.file.ObtenReporteGemeloPorIdyFecha_DataSourceRequest inValue = new DeclaraINE.file.ObtenReporteGemeloPorIdyFecha_DataSourceRequest();
+        public System.Threading.Tasks.Task<DeclaraINAI.file.ObtenReporteGemeloPorIdyFecha_DataSourceResponse> ObtenReporteGemeloPorIdyFecha_DataSourceAsync(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA, object[] Parametros, object DataSource) {
+            DeclaraINAI.file.ObtenReporteGemeloPorIdyFecha_DataSourceRequest inValue = new DeclaraINAI.file.ObtenReporteGemeloPorIdyFecha_DataSourceRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
@@ -1538,123 +1538,123 @@ namespace DeclaraINE.file {
             inValue.F_FECHA = F_FECHA;
             inValue.Parametros = Parametros;
             inValue.DataSource = DataSource;
-            return ((DeclaraINE.file.fileSoap)(this)).ObtenReporteGemeloPorIdyFecha_DataSourceAsync(inValue);
+            return ((DeclaraINAI.file.fileSoap)(this)).ObtenReporteGemeloPorIdyFecha_DataSourceAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.file.ObtenerDefinicionPorIdResponse DeclaraINE.file.fileSoap.ObtenerDefinicionPorId(DeclaraINE.file.ObtenerDefinicionPorIdRequest request) {
+        DeclaraINAI.file.ObtenerDefinicionPorIdResponse DeclaraINAI.file.fileSoap.ObtenerDefinicionPorId(DeclaraINAI.file.ObtenerDefinicionPorIdRequest request) {
             return base.Channel.ObtenerDefinicionPorId(request);
         }
         
-        public DeclaraINE.file.DefinicionDelReporte ObtenerDefinicionPorId(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE) {
-            DeclaraINE.file.ObtenerDefinicionPorIdRequest inValue = new DeclaraINE.file.ObtenerDefinicionPorIdRequest();
+        public DeclaraINAI.file.DefinicionDelReporte ObtenerDefinicionPorId(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE) {
+            DeclaraINAI.file.ObtenerDefinicionPorIdRequest inValue = new DeclaraINAI.file.ObtenerDefinicionPorIdRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
-            DeclaraINE.file.ObtenerDefinicionPorIdResponse retVal = ((DeclaraINE.file.fileSoap)(this)).ObtenerDefinicionPorId(inValue);
+            DeclaraINAI.file.ObtenerDefinicionPorIdResponse retVal = ((DeclaraINAI.file.fileSoap)(this)).ObtenerDefinicionPorId(inValue);
             return retVal.ObtenerDefinicionPorIdResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenerDefinicionPorIdResponse> DeclaraINE.file.fileSoap.ObtenerDefinicionPorIdAsync(DeclaraINE.file.ObtenerDefinicionPorIdRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenerDefinicionPorIdResponse> DeclaraINAI.file.fileSoap.ObtenerDefinicionPorIdAsync(DeclaraINAI.file.ObtenerDefinicionPorIdRequest request) {
             return base.Channel.ObtenerDefinicionPorIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.file.ObtenerDefinicionPorIdResponse> ObtenerDefinicionPorIdAsync(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE) {
-            DeclaraINE.file.ObtenerDefinicionPorIdRequest inValue = new DeclaraINE.file.ObtenerDefinicionPorIdRequest();
+        public System.Threading.Tasks.Task<DeclaraINAI.file.ObtenerDefinicionPorIdResponse> ObtenerDefinicionPorIdAsync(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE) {
+            DeclaraINAI.file.ObtenerDefinicionPorIdRequest inValue = new DeclaraINAI.file.ObtenerDefinicionPorIdRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
-            return ((DeclaraINE.file.fileSoap)(this)).ObtenerDefinicionPorIdAsync(inValue);
+            return ((DeclaraINAI.file.fileSoap)(this)).ObtenerDefinicionPorIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.file.ObtenerDefinicionPorIdyFechaResponse DeclaraINE.file.fileSoap.ObtenerDefinicionPorIdyFecha(DeclaraINE.file.ObtenerDefinicionPorIdyFechaRequest request) {
+        DeclaraINAI.file.ObtenerDefinicionPorIdyFechaResponse DeclaraINAI.file.fileSoap.ObtenerDefinicionPorIdyFecha(DeclaraINAI.file.ObtenerDefinicionPorIdyFechaRequest request) {
             return base.Channel.ObtenerDefinicionPorIdyFecha(request);
         }
         
-        public DeclaraINE.file.DefinicionDelReporte ObtenerDefinicionPorIdyFecha(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA) {
-            DeclaraINE.file.ObtenerDefinicionPorIdyFechaRequest inValue = new DeclaraINE.file.ObtenerDefinicionPorIdyFechaRequest();
+        public DeclaraINAI.file.DefinicionDelReporte ObtenerDefinicionPorIdyFecha(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA) {
+            DeclaraINAI.file.ObtenerDefinicionPorIdyFechaRequest inValue = new DeclaraINAI.file.ObtenerDefinicionPorIdyFechaRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.F_FECHA = F_FECHA;
-            DeclaraINE.file.ObtenerDefinicionPorIdyFechaResponse retVal = ((DeclaraINE.file.fileSoap)(this)).ObtenerDefinicionPorIdyFecha(inValue);
+            DeclaraINAI.file.ObtenerDefinicionPorIdyFechaResponse retVal = ((DeclaraINAI.file.fileSoap)(this)).ObtenerDefinicionPorIdyFecha(inValue);
             return retVal.ObtenerDefinicionPorIdyFechaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenerDefinicionPorIdyFechaResponse> DeclaraINE.file.fileSoap.ObtenerDefinicionPorIdyFechaAsync(DeclaraINE.file.ObtenerDefinicionPorIdyFechaRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenerDefinicionPorIdyFechaResponse> DeclaraINAI.file.fileSoap.ObtenerDefinicionPorIdyFechaAsync(DeclaraINAI.file.ObtenerDefinicionPorIdyFechaRequest request) {
             return base.Channel.ObtenerDefinicionPorIdyFechaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.file.ObtenerDefinicionPorIdyFechaResponse> ObtenerDefinicionPorIdyFechaAsync(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA) {
-            DeclaraINE.file.ObtenerDefinicionPorIdyFechaRequest inValue = new DeclaraINE.file.ObtenerDefinicionPorIdyFechaRequest();
+        public System.Threading.Tasks.Task<DeclaraINAI.file.ObtenerDefinicionPorIdyFechaResponse> ObtenerDefinicionPorIdyFechaAsync(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, System.DateTime F_FECHA) {
+            DeclaraINAI.file.ObtenerDefinicionPorIdyFechaRequest inValue = new DeclaraINAI.file.ObtenerDefinicionPorIdyFechaRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.F_FECHA = F_FECHA;
-            return ((DeclaraINE.file.fileSoap)(this)).ObtenerDefinicionPorIdyFechaAsync(inValue);
+            return ((DeclaraINAI.file.fileSoap)(this)).ObtenerDefinicionPorIdyFechaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.file.ObtenerDefinicionGemelaPorIdResponse DeclaraINE.file.fileSoap.ObtenerDefinicionGemelaPorId(DeclaraINE.file.ObtenerDefinicionGemelaPorIdRequest request) {
+        DeclaraINAI.file.ObtenerDefinicionGemelaPorIdResponse DeclaraINAI.file.fileSoap.ObtenerDefinicionGemelaPorId(DeclaraINAI.file.ObtenerDefinicionGemelaPorIdRequest request) {
             return base.Channel.ObtenerDefinicionGemelaPorId(request);
         }
         
-        public DeclaraINE.file.DefinicionDelReporte ObtenerDefinicionGemelaPorId(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, int NID_GEMELO, string VID_REPORTE) {
-            DeclaraINE.file.ObtenerDefinicionGemelaPorIdRequest inValue = new DeclaraINE.file.ObtenerDefinicionGemelaPorIdRequest();
+        public DeclaraINAI.file.DefinicionDelReporte ObtenerDefinicionGemelaPorId(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, int NID_GEMELO, string VID_REPORTE) {
+            DeclaraINAI.file.ObtenerDefinicionGemelaPorIdRequest inValue = new DeclaraINAI.file.ObtenerDefinicionGemelaPorIdRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.NID_GEMELO = NID_GEMELO;
             inValue.VID_REPORTE = VID_REPORTE;
-            DeclaraINE.file.ObtenerDefinicionGemelaPorIdResponse retVal = ((DeclaraINE.file.fileSoap)(this)).ObtenerDefinicionGemelaPorId(inValue);
+            DeclaraINAI.file.ObtenerDefinicionGemelaPorIdResponse retVal = ((DeclaraINAI.file.fileSoap)(this)).ObtenerDefinicionGemelaPorId(inValue);
             return retVal.ObtenerDefinicionGemelaPorIdResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenerDefinicionGemelaPorIdResponse> DeclaraINE.file.fileSoap.ObtenerDefinicionGemelaPorIdAsync(DeclaraINE.file.ObtenerDefinicionGemelaPorIdRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenerDefinicionGemelaPorIdResponse> DeclaraINAI.file.fileSoap.ObtenerDefinicionGemelaPorIdAsync(DeclaraINAI.file.ObtenerDefinicionGemelaPorIdRequest request) {
             return base.Channel.ObtenerDefinicionGemelaPorIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.file.ObtenerDefinicionGemelaPorIdResponse> ObtenerDefinicionGemelaPorIdAsync(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, int NID_GEMELO, string VID_REPORTE) {
-            DeclaraINE.file.ObtenerDefinicionGemelaPorIdRequest inValue = new DeclaraINE.file.ObtenerDefinicionGemelaPorIdRequest();
+        public System.Threading.Tasks.Task<DeclaraINAI.file.ObtenerDefinicionGemelaPorIdResponse> ObtenerDefinicionGemelaPorIdAsync(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, int NID_GEMELO, string VID_REPORTE) {
+            DeclaraINAI.file.ObtenerDefinicionGemelaPorIdRequest inValue = new DeclaraINAI.file.ObtenerDefinicionGemelaPorIdRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.NID_GEMELO = NID_GEMELO;
             inValue.VID_REPORTE = VID_REPORTE;
-            return ((DeclaraINE.file.fileSoap)(this)).ObtenerDefinicionGemelaPorIdAsync(inValue);
+            return ((DeclaraINAI.file.fileSoap)(this)).ObtenerDefinicionGemelaPorIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeclaraINE.file.ObtenerDefinicionGemelaPorIdyFechaResponse DeclaraINE.file.fileSoap.ObtenerDefinicionGemelaPorIdyFecha(DeclaraINE.file.ObtenerDefinicionGemelaPorIdyFechaRequest request) {
+        DeclaraINAI.file.ObtenerDefinicionGemelaPorIdyFechaResponse DeclaraINAI.file.fileSoap.ObtenerDefinicionGemelaPorIdyFecha(DeclaraINAI.file.ObtenerDefinicionGemelaPorIdyFechaRequest request) {
             return base.Channel.ObtenerDefinicionGemelaPorIdyFecha(request);
         }
         
-        public DeclaraINE.file.DefinicionDelReporte ObtenerDefinicionGemelaPorIdyFecha(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA) {
-            DeclaraINE.file.ObtenerDefinicionGemelaPorIdyFechaRequest inValue = new DeclaraINE.file.ObtenerDefinicionGemelaPorIdyFechaRequest();
+        public DeclaraINAI.file.DefinicionDelReporte ObtenerDefinicionGemelaPorIdyFecha(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA) {
+            DeclaraINAI.file.ObtenerDefinicionGemelaPorIdyFechaRequest inValue = new DeclaraINAI.file.ObtenerDefinicionGemelaPorIdyFechaRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.NID_GEMELO = NID_GEMELO;
             inValue.F_FECHA = F_FECHA;
-            DeclaraINE.file.ObtenerDefinicionGemelaPorIdyFechaResponse retVal = ((DeclaraINE.file.fileSoap)(this)).ObtenerDefinicionGemelaPorIdyFecha(inValue);
+            DeclaraINAI.file.ObtenerDefinicionGemelaPorIdyFechaResponse retVal = ((DeclaraINAI.file.fileSoap)(this)).ObtenerDefinicionGemelaPorIdyFecha(inValue);
             return retVal.ObtenerDefinicionGemelaPorIdyFechaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeclaraINE.file.ObtenerDefinicionGemelaPorIdyFechaResponse> DeclaraINE.file.fileSoap.ObtenerDefinicionGemelaPorIdyFechaAsync(DeclaraINE.file.ObtenerDefinicionGemelaPorIdyFechaRequest request) {
+        System.Threading.Tasks.Task<DeclaraINAI.file.ObtenerDefinicionGemelaPorIdyFechaResponse> DeclaraINAI.file.fileSoap.ObtenerDefinicionGemelaPorIdyFechaAsync(DeclaraINAI.file.ObtenerDefinicionGemelaPorIdyFechaRequest request) {
             return base.Channel.ObtenerDefinicionGemelaPorIdyFechaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeclaraINE.file.ObtenerDefinicionGemelaPorIdyFechaResponse> ObtenerDefinicionGemelaPorIdyFechaAsync(DeclaraINE.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA) {
-            DeclaraINE.file.ObtenerDefinicionGemelaPorIdyFechaRequest inValue = new DeclaraINE.file.ObtenerDefinicionGemelaPorIdyFechaRequest();
+        public System.Threading.Tasks.Task<DeclaraINAI.file.ObtenerDefinicionGemelaPorIdyFechaResponse> ObtenerDefinicionGemelaPorIdyFechaAsync(DeclaraINAI.file.SOAPHeaderCredentials SOAPHeaderCredentials, int NID_SISTEMA, string VID_REPORTE, int NID_GEMELO, System.DateTime F_FECHA) {
+            DeclaraINAI.file.ObtenerDefinicionGemelaPorIdyFechaRequest inValue = new DeclaraINAI.file.ObtenerDefinicionGemelaPorIdyFechaRequest();
             inValue.SOAPHeaderCredentials = SOAPHeaderCredentials;
             inValue.NID_SISTEMA = NID_SISTEMA;
             inValue.VID_REPORTE = VID_REPORTE;
             inValue.NID_GEMELO = NID_GEMELO;
             inValue.F_FECHA = F_FECHA;
-            return ((DeclaraINE.file.fileSoap)(this)).ObtenerDefinicionGemelaPorIdyFechaAsync(inValue);
+            return ((DeclaraINAI.file.fileSoap)(this)).ObtenerDefinicionGemelaPorIdyFechaAsync(inValue);
         }
     }
 }

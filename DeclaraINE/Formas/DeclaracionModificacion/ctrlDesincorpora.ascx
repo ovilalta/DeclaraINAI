@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlDesincorpora.ascx.cs" Inherits="DeclaraINE.Formas.DeclaracionModificacion.ctrlDesincorpora" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlDesincorpora.ascx.cs" Inherits="DeclaraINAI.Formas.DeclaracionModificacion.ctrlDesincorpora" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Src="~/Formas/SioNo.ascx" TagPrefix="uc1" TagName="SioNo" %>
 

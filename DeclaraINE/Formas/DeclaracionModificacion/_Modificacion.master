@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_Modificacion.master.cs" Inherits="DeclaraINE.Formas.DeclaracionModificacion._Modificacion" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_Modificacion.master.cs" Inherits="DeclaraINAI.Formas.DeclaracionModificacion._Modificacion" %>
 
 
 <!DOCTYPE html>

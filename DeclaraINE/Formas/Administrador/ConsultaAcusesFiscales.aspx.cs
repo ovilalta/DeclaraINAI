@@ -15,13 +15,13 @@ using System.Threading;
 using Spire.Xls;
 using System.Windows.Forms;
 using System.Linq;
-using DeclaraINE.file;
+using DeclaraINAI.file;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using AlanWebControls;
 using Declara_V2.BLL;
 
-namespace DeclaraINE.Formas.Administrador
+namespace DeclaraINAI.Formas.Administrador
 {
     public partial class ConsultaAcusesFiscales : Pagina
     {

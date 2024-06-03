@@ -12,7 +12,7 @@ using AlanWebControls;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace DeclaraINE.Formas.DeclaracionInicial
+namespace DeclaraINAI.Formas.DeclaracionInicial
 {
     public partial class Conflicto : Pagina, IDeclaracionInicial
     {

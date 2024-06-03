@@ -11,7 +11,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 
-namespace DeclaraINE.Formas.Patrimonio
+namespace DeclaraINAI.Formas.Patrimonio
 {
     public partial class _patrimonio : System.Web.UI.MasterPage
     {

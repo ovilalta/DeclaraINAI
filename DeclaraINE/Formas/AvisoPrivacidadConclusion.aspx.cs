@@ -4,7 +4,7 @@ using Declara_V2.Exceptions;
 using System;
 using System.Linq;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
     public partial class AvisoPrivacidadConclusion : Pagina
     {

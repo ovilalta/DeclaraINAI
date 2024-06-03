@@ -12,7 +12,7 @@ using Declara_V2.Exceptions;
 using AlanWebControls;
 
 
-namespace DeclaraINE.Formas.DeclaracionConflicto
+namespace DeclaraINAI.Formas.DeclaracionConflicto
 {
     public partial class DatosGenerales : Pagina, IDeclaracionInicial
     {

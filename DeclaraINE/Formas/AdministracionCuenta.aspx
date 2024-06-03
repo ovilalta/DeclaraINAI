@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdministracionCuenta.aspx.cs" Inherits="DeclaraINE.Formas.AdministracionCuenta" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdministracionCuenta.aspx.cs" Inherits="DeclaraINAI.Formas.AdministracionCuenta" %>
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
@@ -64,21 +64,22 @@
             </Scripts>
         </asp:ScriptManager>
         <%: Scripts.Render("~/bundles/modernizr") %>
-        <%: Scripts.Render("~/bundles/ine") %>
+        <%: Scripts.Render("~/bundles/inai") %>
 
         <div class="card">
 
-            <div class="row register-info-box" style="background: url('../Images/ine-acerca-slide.jpg');">
+            <div class="row register-info-box" style="background: url('../Images/inai-acerca-slide.jpg');">
                 <div>
                     <div class="row align-items-left" style="display: flex;">
                         <div>
-                            <img src="../Images/Declaraine.png" style="height: 32px; margin: 10px 12px 0px;" />
+                            <img src="../Images/Declarainai.png" style="height: 32px; margin: 10px 12px 0px;" />
                         </div>
                         <div style="width: 100%;">
                         </div>
                     </div>
                     <div style="height: 60px;">
                         <h2 style="margin-top: 0px; margin-bottom: 0px; margin-left: 15px;">Sistema de Declaración Patrimonial</h2>
+
                     </div>
                     <ul class="nav nav-tabs menu2020 LT">
                         <li>
@@ -101,7 +102,7 @@
             </div>
 
 
-            <%--            <div class="row" style="background: url(https://www.ine.mx/wp-content/uploads/2017/03/ine-acerca-slide.jpg);">
+            <%--            <div class="row" style="background: url(https://www.inai.mx/wp-content/uploads/2017/03/inai-acerca-slide.jpg);">
                 <div class="register-info-box">
                     <div class="row" style="display: flex">
                         <h2 style="margin: 14px; font-size: 26px;">DeclaraINE |</h2>

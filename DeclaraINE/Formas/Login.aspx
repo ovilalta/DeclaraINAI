@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="DeclaraINE.Formas.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="DeclaraINAI.Formas.Login" %>
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 
@@ -215,7 +215,7 @@
                                     <h3>Sistema de Declaraciones Patrimonial y de Intereses </h3>
                                     <br>
                                     <br>
-                                    <img src="../Images/Declaraine.png" width="400" height="65">
+                                    <img src="../Images/Declarainai.png" width="400" height="65">
                                     <br>
                                     <br>
                                 </div>
@@ -320,7 +320,7 @@
                             <br />
                             <br />
                             <br />
-                            <p style="color:dimgray;">V.2024-05-15-1030</p>
+                            <p style="color:dimgray;">V.2024-05-30-1330</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-md-6 col-lg-4 ">

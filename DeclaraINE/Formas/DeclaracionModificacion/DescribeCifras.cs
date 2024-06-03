@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace DeclaraINE.Formas.DeclaracionModificacion
+namespace DeclaraINAI.Formas.DeclaracionModificacion
 {
     public  class DescribeCifras
     {

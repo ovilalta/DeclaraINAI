@@ -16,7 +16,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.IO.Compression;
 
-namespace DeclaraINE.Formas.Administrador
+namespace DeclaraINAI.Formas.Administrador
 {
     public partial class ReporteAvanceDeclaracionesModificacion : Pagina
     {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionModificacion/_Modificacion.master" AutoEventWireup="true" CodeBehind="Bienes.aspx.cs" Inherits="DeclaraINE.Formas.DeclaracionModificacion.Bienes" Culture="es-MX" UICulture="es-MX" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionModificacion/_Modificacion.master" AutoEventWireup="true" CodeBehind="Bienes.aspx.cs" Inherits="DeclaraINAI.Formas.DeclaracionModificacion.Bienes" Culture="es-MX" UICulture="es-MX" %>
 
 <%@ Register TagPrefix="ascx" TagName="Item" Src="~/Formas/DeclaracionModificacion/ItemBaja.ascx" %>
 

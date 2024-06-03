@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionModificacion/_Modificacion.master" AutoEventWireup="true" CodeBehind="ImpuestosYRetenciones.aspx.cs" Inherits="DeclaraINE.Formas.DeclaracionModificacion.ImpuestosYRetenciones" Culture="es-MX" UICulture="es-MX" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionModificacion/_Modificacion.master" AutoEventWireup="true" CodeBehind="ImpuestosYRetenciones.aspx.cs" Inherits="DeclaraINAI.Formas.DeclaracionModificacion.ImpuestosYRetenciones" Culture="es-MX" UICulture="es-MX" %>
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>

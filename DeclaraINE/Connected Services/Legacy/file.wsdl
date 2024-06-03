@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ine.mx/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ine.mx/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://inai.mx/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://inai.mx/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
-    <s:schema elementFormDefault="qualified" targetNamespace="http://ine.mx/">
+    <s:schema elementFormDefault="qualified" targetNamespace="http://inai.mx/">
       <s:element name="Transparencia">
         <s:complexType>
           <s:sequence>
@@ -358,7 +358,7 @@
   <wsdl:binding name="fileSoap" type="tns:fileSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Transparencia">
-      <soap:operation soapAction="http://ine.mx/Transparencia" style="document" />
+      <soap:operation soapAction="http://inai.mx/Transparencia" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -367,7 +367,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Modificacion">
-      <soap:operation soapAction="http://ine.mx/Modificacion" style="document" />
+      <soap:operation soapAction="http://inai.mx/Modificacion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -376,7 +376,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Inicial">
-      <soap:operation soapAction="http://ine.mx/Inicial" style="document" />
+      <soap:operation soapAction="http://inai.mx/Inicial" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -385,7 +385,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Conclusion">
-      <soap:operation soapAction="http://ine.mx/Conclusion" style="document" />
+      <soap:operation soapAction="http://inai.mx/Conclusion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -394,7 +394,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Acuse">
-      <soap:operation soapAction="http://ine.mx/Acuse" style="document" />
+      <soap:operation soapAction="http://inai.mx/Acuse" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -403,7 +403,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Responsiva">
-      <soap:operation soapAction="http://ine.mx/Responsiva" style="document" />
+      <soap:operation soapAction="http://inai.mx/Responsiva" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -412,7 +412,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Estadistica">
-      <soap:operation soapAction="http://ine.mx/Estadistica" style="document" />
+      <soap:operation soapAction="http://inai.mx/Estadistica" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -421,7 +421,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Conflicto">
-      <soap:operation soapAction="http://ine.mx/Conflicto" style="document" />
+      <soap:operation soapAction="http://inai.mx/Conflicto" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -430,7 +430,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Consulta">
-      <soap:operation soapAction="http://ine.mx/Consulta" style="document" />
+      <soap:operation soapAction="http://inai.mx/Consulta" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -439,7 +439,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Consulta2010">
-      <soap:operation soapAction="http://ine.mx/Consulta2010" style="document" />
+      <soap:operation soapAction="http://inai.mx/Consulta2010" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -448,7 +448,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AcuseAnt2010">
-      <soap:operation soapAction="http://ine.mx/AcuseAnt2010" style="document" />
+      <soap:operation soapAction="http://inai.mx/AcuseAnt2010" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -457,7 +457,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeclaraAnt2010">
-      <soap:operation soapAction="http://ine.mx/DeclaraAnt2010" style="document" />
+      <soap:operation soapAction="http://inai.mx/DeclaraAnt2010" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -469,7 +469,7 @@
   <wsdl:binding name="fileSoap12" type="tns:fileSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Transparencia">
-      <soap12:operation soapAction="http://ine.mx/Transparencia" style="document" />
+      <soap12:operation soapAction="http://inai.mx/Transparencia" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -478,7 +478,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Modificacion">
-      <soap12:operation soapAction="http://ine.mx/Modificacion" style="document" />
+      <soap12:operation soapAction="http://inai.mx/Modificacion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -487,7 +487,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Inicial">
-      <soap12:operation soapAction="http://ine.mx/Inicial" style="document" />
+      <soap12:operation soapAction="http://inai.mx/Inicial" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -496,7 +496,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Conclusion">
-      <soap12:operation soapAction="http://ine.mx/Conclusion" style="document" />
+      <soap12:operation soapAction="http://inai.mx/Conclusion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -505,7 +505,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Acuse">
-      <soap12:operation soapAction="http://ine.mx/Acuse" style="document" />
+      <soap12:operation soapAction="http://inai.mx/Acuse" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -514,7 +514,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Responsiva">
-      <soap12:operation soapAction="http://ine.mx/Responsiva" style="document" />
+      <soap12:operation soapAction="http://inai.mx/Responsiva" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -523,7 +523,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Estadistica">
-      <soap12:operation soapAction="http://ine.mx/Estadistica" style="document" />
+      <soap12:operation soapAction="http://inai.mx/Estadistica" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -532,7 +532,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Conflicto">
-      <soap12:operation soapAction="http://ine.mx/Conflicto" style="document" />
+      <soap12:operation soapAction="http://inai.mx/Conflicto" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -541,7 +541,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Consulta">
-      <soap12:operation soapAction="http://ine.mx/Consulta" style="document" />
+      <soap12:operation soapAction="http://inai.mx/Consulta" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -550,7 +550,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Consulta2010">
-      <soap12:operation soapAction="http://ine.mx/Consulta2010" style="document" />
+      <soap12:operation soapAction="http://inai.mx/Consulta2010" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -559,7 +559,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AcuseAnt2010">
-      <soap12:operation soapAction="http://ine.mx/AcuseAnt2010" style="document" />
+      <soap12:operation soapAction="http://inai.mx/AcuseAnt2010" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -568,7 +568,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeclaraAnt2010">
-      <soap12:operation soapAction="http://ine.mx/DeclaraAnt2010" style="document" />
+      <soap12:operation soapAction="http://inai.mx/DeclaraAnt2010" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

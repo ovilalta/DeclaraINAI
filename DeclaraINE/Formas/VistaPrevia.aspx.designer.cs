@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
 
 

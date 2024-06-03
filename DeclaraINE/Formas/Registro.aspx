@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registro.aspx.cs" Inherits="DeclaraINE.Formas.Registro" Culture="es-MX" UICulture="es-MX" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registro.aspx.cs" Inherits="DeclaraINAI.Formas.Registro" Culture="es-MX" UICulture="es-MX" %>
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
@@ -59,7 +59,7 @@
 
 
         <div class="card">
-            <div class="row" style="background: url(../Images/ine-acerca-slide.jpg);">
+            <div class="row" style="background: url(../Images/inai-acerca-slide.jpg);">
                 <div class="register-info-box">
                     <div class="row">
                         <div class=" ">

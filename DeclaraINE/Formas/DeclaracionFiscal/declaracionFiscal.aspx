@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="declaracionFiscal.aspx.cs" Inherits="DeclaraINE.Formas.DeclaracionFiscal.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="declaracionFiscal.aspx.cs" Inherits="DeclaraINAI.Formas.DeclaracionFiscal.WebForm1" %>
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
@@ -53,11 +53,11 @@
 
 <body>
     <%-- Codigo encabezado donde aparece la imagen de DeclaraINAI --%>
-    <div class="row register-info-box" style="background: url('../../Images/ine-acerca-slide.jpg');">
+    <div class="row register-info-box" style="background: url('../../Images/inai-acerca-slide.jpg');">
         <%--<div>--%>
         <div class="row align-items-left" style="display: flex;">
             <div>
-                <img src="../../Images/Declaraine.png" style="height: 80px; margin: 10px 4px 10px 40px;" />
+                <img src="../../Images/Declarainai.png" style="height: 80px; margin: 10px 4px 10px 40px;" />
             </div>
             <div style="width: 100%;">
             </div>

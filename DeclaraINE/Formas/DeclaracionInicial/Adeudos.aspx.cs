@@ -15,7 +15,7 @@ using Declara_V2.BLL;
 
 
 
-namespace DeclaraINE.Formas.DeclaracionInicial
+namespace DeclaraINAI.Formas.DeclaracionInicial
 {
     public partial class Adeudos : Pagina, IDeclaracionInicial
     {

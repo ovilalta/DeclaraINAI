@@ -12,7 +12,7 @@ using System.Diagnostics;
 using System.Threading;
 using Spire.Xls;
 
-namespace DeclaraINE.Formas.Administrador
+namespace DeclaraINAI.Formas.Administrador
 {
     public partial class ReporteDeclaracionesConflictoIntereses : Pagina
     {

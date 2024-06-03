@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.DeclaracionModificacion {
+namespace DeclaraINAI.Formas.DeclaracionModificacion {
     
     
     public partial class OtrosGastos {
@@ -55,7 +55,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DeclaraINE.Formas.DeclaracionModificacion.ctrlGastos ctrlGastos;
+        protected global::DeclaraINAI.Formas.DeclaracionModificacion.ctrlGastos ctrlGastos;
         
         /// <summary>
         /// btnGuardar control.

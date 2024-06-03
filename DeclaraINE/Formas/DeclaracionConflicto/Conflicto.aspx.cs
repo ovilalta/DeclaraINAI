@@ -9,7 +9,7 @@ using Declara_V2.BLLD;
 using Declara_V2.MODELextended;
 using Declara_V2.Exceptions;
 using AlanWebControls;
-using DeclaraINE.file;
+using DeclaraINAI.file;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -18,7 +18,7 @@ using System.Data;
 using MODELDeclara_V2;
 //using System.Windows.Forms;
 
-namespace DeclaraINE.Formas.DeclaracionConflicto
+namespace DeclaraINAI.Formas.DeclaracionConflicto
 {
     public partial class Conflicto : Pagina, IDeclaracionInicial
     {

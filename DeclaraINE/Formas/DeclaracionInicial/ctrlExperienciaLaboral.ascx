@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlExperienciaLaboral.ascx.cs" Inherits="DeclaraINE.Formas.DeclaracionInicial.ctrlExperienciaLaboral" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlExperienciaLaboral.ascx.cs" Inherits="DeclaraINAI.Formas.DeclaracionInicial.ctrlExperienciaLaboral" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 

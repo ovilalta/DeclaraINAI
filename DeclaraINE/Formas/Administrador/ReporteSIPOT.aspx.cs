@@ -13,7 +13,7 @@ using System.Threading;
 using Spire.Xls;
 using System.Globalization;
 
-namespace DeclaraINE.Formas.Administrador
+namespace DeclaraINAI.Formas.Administrador
 {
     public partial class ReporteSIPOT : Pagina
     {

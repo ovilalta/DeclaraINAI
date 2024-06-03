@@ -10,7 +10,7 @@ using Declara_V2.MODELextended;
 using Declara_V2.Exceptions;
 
 
-namespace DeclaraINE.Formas.DeclaracionModificacion
+namespace DeclaraINAI.Formas.DeclaracionModificacion
 {
     public partial class ctrlDesincorpora : System.Web.UI.UserControl
     {

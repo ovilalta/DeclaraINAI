@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
-namespace DeclaraINE.Formas.DeclaracionInicial
+namespace DeclaraINAI.Formas.DeclaracionInicial
 {
     public partial class Tarjetas : System.Web.UI.Page
     {

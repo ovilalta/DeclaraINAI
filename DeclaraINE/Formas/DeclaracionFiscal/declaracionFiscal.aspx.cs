@@ -15,12 +15,12 @@ using System.Threading;
 using Spire.Xls;
 using System.Windows.Forms;
 using System.Linq;
-using DeclaraINE.file;
+using DeclaraINAI.file;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using AlanWebControls;
 
-namespace DeclaraINE.Formas.DeclaracionFiscal
+namespace DeclaraINAI.Formas.DeclaracionFiscal
 {
     //System.Web.UI.Page
     public partial class WebForm1 : Pagina

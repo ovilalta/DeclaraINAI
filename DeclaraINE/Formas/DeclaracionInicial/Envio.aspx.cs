@@ -10,10 +10,10 @@ using System.Web.UI.WebControls;
 using System.Text;
 using System.IO;
 using System.Security.Cryptography;
-using DeclaraINE.file;
+using DeclaraINAI.file;
 using System.Collections.Generic;
 
-namespace DeclaraINE.Formas.DeclaracionInicial
+namespace DeclaraINAI.Formas.DeclaracionInicial
 {
     public partial class Envio : Pagina, IDeclaracionInicial
     {

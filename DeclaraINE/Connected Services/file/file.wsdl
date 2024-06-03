@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ine.mx/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ine.mx/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://inai.mx/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://inai.mx/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
-    <s:schema elementFormDefault="qualified" targetNamespace="http://ine.mx/">
+    <s:schema elementFormDefault="qualified" targetNamespace="http://inai.mx/">
       <s:element name="ListaDocumentos">
         <s:complexType>
           <s:sequence>
@@ -481,7 +481,7 @@
   <wsdl:binding name="fileSoap" type="tns:fileSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="ListaDocumentos">
-      <soap:operation soapAction="http://ine.mx/ListaDocumentos" style="document" />
+      <soap:operation soapAction="http://inai.mx/ListaDocumentos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:ListaDocumentosSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -491,7 +491,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenDocumento">
-      <soap:operation soapAction="http://ine.mx/ObtenDocumento" style="document" />
+      <soap:operation soapAction="http://inai.mx/ObtenDocumento" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:ObtenDocumentoSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -501,7 +501,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenReportePorId">
-      <soap:operation soapAction="http://ine.mx/ObtenReportePorId" style="document" />
+      <soap:operation soapAction="http://inai.mx/ObtenReportePorId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:ObtenReportePorIdSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -511,7 +511,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenReportePorIdyFecha">
-      <soap:operation soapAction="http://ine.mx/ObtenReportePorIdyFecha" style="document" />
+      <soap:operation soapAction="http://inai.mx/ObtenReportePorIdyFecha" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:ObtenReportePorIdyFechaSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -521,7 +521,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenReporteGemeloPorId">
-      <soap:operation soapAction="http://ine.mx/ObtenReporteGemeloPorId" style="document" />
+      <soap:operation soapAction="http://inai.mx/ObtenReporteGemeloPorId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:ObtenReporteGemeloPorIdSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -531,7 +531,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenReporteGemeloPorIdyFecha">
-      <soap:operation soapAction="http://ine.mx/ObtenReporteGemeloPorIdyFecha" style="document" />
+      <soap:operation soapAction="http://inai.mx/ObtenReporteGemeloPorIdyFecha" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:ObtenReporteGemeloPorIdyFechaSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -541,7 +541,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenReportePorId_DataSource">
-      <soap:operation soapAction="http://ine.mx/ObtenReportePorId_DataSource" style="document" />
+      <soap:operation soapAction="http://inai.mx/ObtenReportePorId_DataSource" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:ObtenReportePorId_DataSourceSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -551,7 +551,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenReportePorIdyFecha_DataSource">
-      <soap:operation soapAction="http://ine.mx/ObtenReportePorIdyFecha_DataSource" style="document" />
+      <soap:operation soapAction="http://inai.mx/ObtenReportePorIdyFecha_DataSource" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:ObtenReportePorIdyFecha_DataSourceSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -561,7 +561,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenReporteGemeloPorId_DataSource">
-      <soap:operation soapAction="http://ine.mx/ObtenReporteGemeloPorId_DataSource" style="document" />
+      <soap:operation soapAction="http://inai.mx/ObtenReporteGemeloPorId_DataSource" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:ObtenReporteGemeloPorId_DataSourceSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -571,7 +571,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenReporteGemeloPorIdyFecha_DataSource">
-      <soap:operation soapAction="http://ine.mx/ObtenReporteGemeloPorIdyFecha_DataSource" style="document" />
+      <soap:operation soapAction="http://inai.mx/ObtenReporteGemeloPorIdyFecha_DataSource" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:ObtenReporteGemeloPorIdyFecha_DataSourceSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -581,7 +581,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenerDefinicionPorId">
-      <soap:operation soapAction="http://ine.mx/ObtenerDefinicionPorId" style="document" />
+      <soap:operation soapAction="http://inai.mx/ObtenerDefinicionPorId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:ObtenerDefinicionPorIdSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -591,7 +591,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenerDefinicionPorIdyFecha">
-      <soap:operation soapAction="http://ine.mx/ObtenerDefinicionPorIdyFecha" style="document" />
+      <soap:operation soapAction="http://inai.mx/ObtenerDefinicionPorIdyFecha" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:ObtenerDefinicionPorIdyFechaSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -601,7 +601,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenerDefinicionGemelaPorId">
-      <soap:operation soapAction="http://ine.mx/ObtenerDefinicionGemelaPorId" style="document" />
+      <soap:operation soapAction="http://inai.mx/ObtenerDefinicionGemelaPorId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:ObtenerDefinicionGemelaPorIdSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -611,7 +611,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenerDefinicionGemelaPorIdyFecha">
-      <soap:operation soapAction="http://ine.mx/ObtenerDefinicionGemelaPorIdyFecha" style="document" />
+      <soap:operation soapAction="http://inai.mx/ObtenerDefinicionGemelaPorIdyFecha" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:ObtenerDefinicionGemelaPorIdyFechaSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -624,7 +624,7 @@
   <wsdl:binding name="fileSoap12" type="tns:fileSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="ListaDocumentos">
-      <soap12:operation soapAction="http://ine.mx/ListaDocumentos" style="document" />
+      <soap12:operation soapAction="http://inai.mx/ListaDocumentos" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:ListaDocumentosSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -634,7 +634,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenDocumento">
-      <soap12:operation soapAction="http://ine.mx/ObtenDocumento" style="document" />
+      <soap12:operation soapAction="http://inai.mx/ObtenDocumento" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:ObtenDocumentoSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -644,7 +644,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenReportePorId">
-      <soap12:operation soapAction="http://ine.mx/ObtenReportePorId" style="document" />
+      <soap12:operation soapAction="http://inai.mx/ObtenReportePorId" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:ObtenReportePorIdSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -654,7 +654,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenReportePorIdyFecha">
-      <soap12:operation soapAction="http://ine.mx/ObtenReportePorIdyFecha" style="document" />
+      <soap12:operation soapAction="http://inai.mx/ObtenReportePorIdyFecha" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:ObtenReportePorIdyFechaSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -664,7 +664,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenReporteGemeloPorId">
-      <soap12:operation soapAction="http://ine.mx/ObtenReporteGemeloPorId" style="document" />
+      <soap12:operation soapAction="http://inai.mx/ObtenReporteGemeloPorId" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:ObtenReporteGemeloPorIdSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -674,7 +674,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenReporteGemeloPorIdyFecha">
-      <soap12:operation soapAction="http://ine.mx/ObtenReporteGemeloPorIdyFecha" style="document" />
+      <soap12:operation soapAction="http://inai.mx/ObtenReporteGemeloPorIdyFecha" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:ObtenReporteGemeloPorIdyFechaSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -684,7 +684,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenReportePorId_DataSource">
-      <soap12:operation soapAction="http://ine.mx/ObtenReportePorId_DataSource" style="document" />
+      <soap12:operation soapAction="http://inai.mx/ObtenReportePorId_DataSource" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:ObtenReportePorId_DataSourceSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -694,7 +694,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenReportePorIdyFecha_DataSource">
-      <soap12:operation soapAction="http://ine.mx/ObtenReportePorIdyFecha_DataSource" style="document" />
+      <soap12:operation soapAction="http://inai.mx/ObtenReportePorIdyFecha_DataSource" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:ObtenReportePorIdyFecha_DataSourceSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -704,7 +704,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenReporteGemeloPorId_DataSource">
-      <soap12:operation soapAction="http://ine.mx/ObtenReporteGemeloPorId_DataSource" style="document" />
+      <soap12:operation soapAction="http://inai.mx/ObtenReporteGemeloPorId_DataSource" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:ObtenReporteGemeloPorId_DataSourceSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -714,7 +714,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenReporteGemeloPorIdyFecha_DataSource">
-      <soap12:operation soapAction="http://ine.mx/ObtenReporteGemeloPorIdyFecha_DataSource" style="document" />
+      <soap12:operation soapAction="http://inai.mx/ObtenReporteGemeloPorIdyFecha_DataSource" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:ObtenReporteGemeloPorIdyFecha_DataSourceSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -724,7 +724,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenerDefinicionPorId">
-      <soap12:operation soapAction="http://ine.mx/ObtenerDefinicionPorId" style="document" />
+      <soap12:operation soapAction="http://inai.mx/ObtenerDefinicionPorId" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:ObtenerDefinicionPorIdSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -734,7 +734,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenerDefinicionPorIdyFecha">
-      <soap12:operation soapAction="http://ine.mx/ObtenerDefinicionPorIdyFecha" style="document" />
+      <soap12:operation soapAction="http://inai.mx/ObtenerDefinicionPorIdyFecha" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:ObtenerDefinicionPorIdyFechaSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -744,7 +744,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenerDefinicionGemelaPorId">
-      <soap12:operation soapAction="http://ine.mx/ObtenerDefinicionGemelaPorId" style="document" />
+      <soap12:operation soapAction="http://inai.mx/ObtenerDefinicionGemelaPorId" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:ObtenerDefinicionGemelaPorIdSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />
@@ -754,7 +754,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenerDefinicionGemelaPorIdyFecha">
-      <soap12:operation soapAction="http://ine.mx/ObtenerDefinicionGemelaPorIdyFecha" style="document" />
+      <soap12:operation soapAction="http://inai.mx/ObtenerDefinicionGemelaPorIdyFecha" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:ObtenerDefinicionGemelaPorIdyFechaSOAPHeaderCredentials" part="SOAPHeaderCredentials" use="literal" />

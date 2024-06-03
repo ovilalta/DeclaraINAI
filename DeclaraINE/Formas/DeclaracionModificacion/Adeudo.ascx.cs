@@ -9,7 +9,7 @@ using Declara_V2.BLLD;
 using Declara_V2.MODELextended;
 using Declara_V2.Exceptions;
 
-namespace DeclaraINE.Formas.DeclaracionModificacion
+namespace DeclaraINAI.Formas.DeclaracionModificacion
 {
     public partial class Adeudo : System.Web.UI.UserControl
     {

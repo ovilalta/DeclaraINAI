@@ -1,13 +1,13 @@
 ﻿using Declara_V2.BLLD;
-using DeclaraINE.Formas.DeclaracionInicial;
-using DeclaraINE.Formas.DeclaracionModificacion;
-using DeclaraINE.Formas.DeclaracionConclusion;
-using DeclaraINE.Formas.DeclaracionConflicto;
+using DeclaraINAI.Formas.DeclaracionInicial;
+using DeclaraINAI.Formas.DeclaracionModificacion;
+using DeclaraINAI.Formas.DeclaracionConclusion;
+using DeclaraINAI.Formas.DeclaracionConflicto;
 using System;
 using System.IO;
 using System.Web;
 using System.Linq;
-using DeclaraINE.file;
+using DeclaraINAI.file;
 using System.Collections.Generic;
 using Declara_V2.MODELextended;
 using Declara_V2;
@@ -15,7 +15,7 @@ using System.Web.UI.WebControls;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
     public partial class ConsultaDeclaracion : Pagina
     {

@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace DeclaraINE.Formas.DeclaracionModificacion
+namespace DeclaraINAI.Formas.DeclaracionModificacion
 {
     public partial class DatosGenerales : Pagina, IDeclaracionInicial
     {

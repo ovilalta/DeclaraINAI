@@ -23,7 +23,7 @@
                 <tr>
                     <td colspan="5">
                         <div style="color: #fff;padding:5px">
-                            <div style="margin-top:45px"><img src="../Images/Declaraine.png" width="400" height="65"></div>
+                            <div style="margin-top:45px"><img src="../Images/Declarainai.png" width="400" height="65"></div>
                             <p style="color: #fff; text-align:justify;  font-size:16px">
                                 Estás visitando esta página porque detectamos un navegador no compatible.<br />
                                 Su navegador no admite las funciones de seguridad que requerimos.<br />

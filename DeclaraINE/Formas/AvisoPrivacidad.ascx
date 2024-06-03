@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AvisoPrivacidad.ascx.cs" Inherits="DeclaraINE.Formas.AvisoPrivacidad" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AvisoPrivacidad.ascx.cs" Inherits="DeclaraINAI.Formas.AvisoPrivacidad" %>
 <script src="../Scripts/Site.js"></script>
 <style>
     .contenido {

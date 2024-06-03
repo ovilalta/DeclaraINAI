@@ -1,5 +1,5 @@
 ﻿using Declara_V2.BLLD;
-using DeclaraINE.file;
+using DeclaraINAI.file;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace DeclaraINE.Formas.DeclaracionConclusion
+namespace DeclaraINAI.Formas.DeclaracionConclusion
 {
 
     public partial class _Conclusion : System.Web.UI.MasterPage

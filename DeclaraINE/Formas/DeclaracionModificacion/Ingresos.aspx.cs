@@ -12,7 +12,7 @@ using Declara_V2.Exceptions;
 using Declara_V2.BLL;
 using Declara_V2.DALD;
 
-namespace DeclaraINE.Formas.DeclaracionModificacion
+namespace DeclaraINAI.Formas.DeclaracionModificacion
 {
     public partial class Ingresos : Pagina, IDeclaracionInicial
     {

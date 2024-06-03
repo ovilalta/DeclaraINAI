@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas {
+namespace DeclaraINAI.Formas {
     
     
     public partial class AvisoPrivacidad {

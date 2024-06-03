@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionInicial/_Inicial.master" AutoEventWireup="true" CodeBehind="Adeudos.aspx.cs" Inherits="DeclaraINE.Formas.DeclaracionInicial.Adeudos" Culture="es-MX" UICulture="es-MX" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionInicial/_Inicial.master" AutoEventWireup="true" CodeBehind="Adeudos.aspx.cs" Inherits="DeclaraINAI.Formas.DeclaracionInicial.Adeudos" Culture="es-MX" UICulture="es-MX" %>
 
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>

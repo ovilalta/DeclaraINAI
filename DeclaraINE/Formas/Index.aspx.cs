@@ -7,7 +7,7 @@ using System.IO;
 using System.Web;
 using System.Web.UI;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
     public partial class Index : Pagina
     {

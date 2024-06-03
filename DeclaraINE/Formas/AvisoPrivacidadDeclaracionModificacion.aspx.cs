@@ -10,7 +10,7 @@ using Declara_V2.MODELextended;
 using System.Globalization;
 using AlanWebControls;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
     public partial class AvisoPrivacidadDeclaracionModificacion : Pagina
     {

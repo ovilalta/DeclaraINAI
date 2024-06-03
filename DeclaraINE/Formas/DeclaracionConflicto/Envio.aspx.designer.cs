@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.DeclaracionConflicto {
+namespace DeclaraINAI.Formas.DeclaracionConflicto {
     
     
     public partial class Envio {

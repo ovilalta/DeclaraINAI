@@ -11,7 +11,7 @@ using AlanWebControls;
 using System.Web.Services;
 using System.Net;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
     public partial class Login : Pagina
     {

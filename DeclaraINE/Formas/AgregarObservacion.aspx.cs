@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 using System.Data;
 using iText.Layout.Element;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
 
     public partial class AgregarObservacion : System.Web.UI.Page

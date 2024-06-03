@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_Conflicto.master.cs" Inherits="DeclaraINE.Formas.DeclaracionConflicto._Conflicto" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_Conflicto.master.cs" Inherits="DeclaraINAI.Formas.DeclaracionConflicto._Conflicto" %>
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>

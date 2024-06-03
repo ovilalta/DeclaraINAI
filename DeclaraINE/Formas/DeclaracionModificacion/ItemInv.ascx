@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ItemInv.ascx.cs" Inherits="DeclaraINE.Formas.DeclaracionModificacion.ItemInv" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ItemInv.ascx.cs" Inherits="DeclaraINAI.Formas.DeclaracionModificacion.ItemInv" %>
 
 <div >
     <asp:Image ID="img" runat="server" />

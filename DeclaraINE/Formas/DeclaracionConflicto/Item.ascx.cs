@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace DeclaraINE.Formas.DeclaracionConflicto
+namespace DeclaraINAI.Formas.DeclaracionConflicto
 {
     public partial class Item : System.Web.UI.UserControl
     {

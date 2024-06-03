@@ -13,7 +13,7 @@ using Declara_V2.BLL;
 using Declara_V2.DALD;
 
 
-namespace DeclaraINE.Formas.DeclaracionConclusion
+namespace DeclaraINAI.Formas.DeclaracionConclusion
 {
     public partial class Comodato : Pagina, IDeclaracionInicial
     {

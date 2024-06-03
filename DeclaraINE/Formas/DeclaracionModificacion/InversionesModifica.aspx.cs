@@ -14,7 +14,7 @@ using System.Data;
 using Declara_V2.BLL;
 
 
-namespace DeclaraINE.Formas.DeclaracionModificacion
+namespace DeclaraINAI.Formas.DeclaracionModificacion
 {
     public partial class InversionesModifica : Pagina, IDeclaracionInicial
     {
