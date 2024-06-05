@@ -105,7 +105,11 @@ namespace DeclaraINAI.Formas.Administrador
             string startPath = AppDomain.CurrentDomain.BaseDirectory + "Formas\\zip2";
             string zipPath = AppDomain.CurrentDomain.BaseDirectory + "Formas\\zip2" + "\\AcusesFiscales" + ddlLista.SelectedValue + ".zip"; //URL for your Zip file
 
-                DeleteFolder(startPath);  //Limpia el folder para asegurar que no tenga archivos
+            //Registra la búsqueda en bitácora
+            BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                , "Descarga acuses fiscales", "Se realiza la descarga de acuses fiscales del año: " + ddlLista.SelectedValue);
+
+            DeleteFolder(startPath);  //Limpia el folder para asegurar que no tenga archivos
                 CreateEmptyDirectory(startPath); //Crea el folder de nueva cuenta para ser utilizado
                 ZipFile.CreateFromDirectory(rutaDirectorio, zipPath, CompressionLevel.Optimal, true);
                 

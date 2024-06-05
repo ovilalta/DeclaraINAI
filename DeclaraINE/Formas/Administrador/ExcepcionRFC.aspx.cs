@@ -59,6 +59,9 @@ namespace DeclaraINAI.Formas.Administrador
                 StreamWriter file = File.AppendText(filePath);                
                 file.WriteLine(txtRfc.Text.ToUpper());
                 file.Close();
+                //Registra la búsqueda en bitácora
+                BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                    , "Excepción para registrar usuario con RFC fuera de regla de validación", "Se dan los permisos para permitir el registro de usuario con RFC: " + txtRfc.Text);
                 msgBox.ShowSuccess("Se agregó el RFC: " + txtRfc.Text.ToUpper() + " de manera correcta") ;
                 txtRfc.Text = "";
             }

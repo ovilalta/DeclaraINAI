@@ -83,6 +83,9 @@ namespace DeclaraINAI.Formas.Administrador
                 if (rpta == -1)
                 {
                     msgBox.ShowSuccess("Se agregó el RFC: " + txtRfc.Text.ToUpper() + " de manera correcta");
+                    //Registra la búsqueda en bitácora
+                    BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                        , "Excepción para editar la sección de conflicto de intereses", "Se dan los permisos para editar la sección de conflicto de intereses del RFC: " + txtRfc.Text);
                     txtRfc.Text = "";
                 }
                 else
@@ -90,7 +93,7 @@ namespace DeclaraINAI.Formas.Administrador
                     msgBox.ShowWarning("Ya existe el RFC: " + txtRfc.Text.ToUpper() + " , favor de validar la información");
                     txtRfc.Text = "";
                 }
-
+                
             }
             else
             {

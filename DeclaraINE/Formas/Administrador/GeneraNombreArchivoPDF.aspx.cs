@@ -103,9 +103,6 @@ namespace DeclaraINAI.Formas.Administrador
         }
         protected void btnDescargar_Actualizar(object sender, EventArgs e)
         {
-
-
-
             if (txtFInicio.Text == "" || txtFInicio.Text == null)
             {
                 msgBox.ShowDanger("Debe especificar una fecha de inicio.");
@@ -153,20 +150,13 @@ namespace DeclaraINAI.Formas.Administrador
 
                             String File = "";
 
-
-
-
                             string rutaDirectorio = AppDomain.CurrentDomain.BaseDirectory + "Formas\\PdfDeclaracionesTemp"; //Asigna ruta donde se guardaran los archivos pdf
                             DeleteFolder(rutaDirectorio);  //Limpia el folder para asegurar que no tenga archivos
                             CreateEmptyDirectory(rutaDirectorio); //Crea el folder de nueva cuenta para ser utilizado
                                                                   //Mandar llamar la logica de armado de pdfs
                             for (int i = 0; i < dt.Rows.Count; i++)
                             {
-
-
                                 MODELDeclara_V2.DECLARACION registro = new MODELDeclara_V2.DECLARACION();
-
-
                                 byte[] b1 = null;
                                 tipoDeclaracion = Convert.ToInt32(dt.Rows[i]["NID_TIPO_DECLARACION"].ToString());
                                 switch (tipoDeclaracion)
@@ -194,76 +184,12 @@ namespace DeclaraINAI.Formas.Administrador
                                 int idDeclaracion = Convert.ToInt32(dt.Rows[i]["NID_DECLARACION"].ToString());
                                 string nombreFile = nombreCompleto + "_" + tipoDeclaracionN + "_" + idDeclaracion + ".pdf";
 
-                                ActualizaNombreArchivoDeclaracion(vid_nombre, vid_fecha, vid_homo, idDeclaracion, nombreFile);
-
-
-                                //    switch (tipoDeclaracion)
-                                //        {
-                                //            case 1:
-                                //                if (obligado.Equals(true))
-                                //                    VersionDeclaracion = "DECLARACION_INICIAL_PUB";
-                                //                else
-                                //                    VersionDeclaracion = "DECLARACION_INICIAL_SIMPLI_PUB";
-                                //                break;
-                                //            case 2:
-                                //                if (obligado.Equals(true))
-                                //                    VersionDeclaracion = "DECLARACION_MODIFICACION_PUB";
-                                //                else
-                                //                    VersionDeclaracion = "DECLARACION_MODIFICACION_SIMPLI_PUB";
-                                //                break;
-                                //            case 3:
-                                //                if (obligado.Equals(true))
-                                //                    VersionDeclaracion = "DECLARACION_CONCLUSION_PUB";
-                                //                else
-                                //                    VersionDeclaracion = "DECLARACION_CONCLUSION_SIMPLI_PUB";
-                                //                break;
-
-                                //        }
-
-                                //        file.fileSoapClient o = new file.fileSoapClient();
-                                //        SerializedFile sf = o.ObtenReportePorId(Pagina.FileServiceCredentials, 2020, VersionDeclaracion, new List<object> { vid_nombre
-                                //                                                       ,vid_fecha
-                                //                                                       ,vid_homo
-                                //                                                       ,idDeclaracion
-                                //                                                       ,"Preliminarx"}.ToArray());
-
-                                //        b1 = sf.FileBytes;
-
-                                //        FileStream fs1;
-
-                                //        File = AppDomain.CurrentDomain.BaseDirectory + "Formas\\PdfDeclaracionesTemp\\"+ nombreFile;
-
-
-                                //        fs1 = new FileStream(File, FileMode.Create);
-                                //        fs1.Write(b1, 0, b1.Length);
-
-                                //        fs1.Close();
-                                //        fs1 = null;
-
-
-                                //    }
-
-
-
-                                //string startPath = rutaDirectorio; //folder to add
-                                //string zipPath = AppDomain.CurrentDomain.BaseDirectory + "Formas\\zip" + "\\result.zip"; //URL for your Zip file
-
-                                //ZipFile.CreateFromDirectory(startPath, zipPath, CompressionLevel.Optimal, true);
-
-                                //DeleteFolder(rutaDirectorio);  //Limpia el folder para asegurar que no tenga archivos
-                                //CreateEmptyDirectory(rutaDirectorio); //Crea el folder de nueva cuenta para ser utilizado
-
-                                //HttpContext.Current.Response.ClearContent();
-                                //HttpContext.Current.Response.Clear();
-                                //HttpContext.Current.Response.ContentType = "application/zip"; // sf.MimeType;
-                                //HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=result.zip");
-                                //HttpContext.Current.Response.WriteFile(zipPath);
-                                //HttpContext.Current.Response.Flush();
-                                //System.IO.File.Delete(zipPath);
-                                //HttpContext.Current.Response.End();
-
+                                ActualizaNombreArchivoDeclaracion(vid_nombre, vid_fecha, vid_homo, idDeclaracion, nombreFile);                               
 
                             }
+                            //Registra la búsqueda en bitácora
+                            BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                                , "Genera nombre de archivos de declaraciones", "Se generan los nombres de archivo de declaraciones del periodo del " + txtFInicio.Text + " al " + txtFFin.Text);
                         }
 
                     }
@@ -275,7 +201,6 @@ namespace DeclaraINAI.Formas.Administrador
                 }
             }
         }
-
 
         protected void ActualizaNombreArchivoDeclaracion(string VID_NOMBRE, string VID_FECHA, string VID_HOMO, int NID_DECLARACION, string NOMBRE_ARCHIVO)
         {

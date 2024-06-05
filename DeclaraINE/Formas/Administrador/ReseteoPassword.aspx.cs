@@ -76,7 +76,9 @@ namespace DeclaraINAI.Formas.Administrador
                             }
                             conn.Close();
 
-                            
+                            //Registra la búsqueda en bitácora
+                            BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                                , "Reseteo de contraseña", "Se reseteo la contraseña del RFC: " + txtRfc.Text);
                             msgBox.ShowSuccess("Se reseteo la contraseña del RFC: " + "'" + txtRfc.Text.ToUpper() + "'" + " en DeclaraINAI, quedando: Mexico1234");
                         }
                     }

@@ -84,6 +84,10 @@ namespace DeclaraINAI.Formas
                             da.SelectCommand.Parameters.Add(new SqlParameter("@fechaFin", SqlDbType.VarChar)).Value = txtFFin.Text;
                             DataTable dt = new DataTable();
                             da.Fill(dt);
+
+                            //Registra la búsqueda en bitácora
+                            BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                                , "Genera reporte declaraciones listado detalle", "Se genera el reporte de declaraciones listado detalle del periodo del " + txtFInicio.Text + " al " + txtFFin.Text);
                             Workbook book = new Workbook();
                             Worksheet sheet = book.Worksheets[0];
                             sheet.InsertDataTable(dt, true, 1, 1);

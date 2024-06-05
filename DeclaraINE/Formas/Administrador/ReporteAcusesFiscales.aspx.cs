@@ -91,7 +91,11 @@ namespace DeclaraINAI.Formas.Administrador
             }
 
             TotalAcusesFiscales.Text = "El total de acuses fiscales en el año: " + anio + " es: " + contadorPDF.ToString();
-         }
+
+            //Registra la búsqueda en bitácora
+            BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                , "Genera reporte del total de acuses fiscales", "Se genera el reporte del total de acuses fiscales del año: " + anio );
+        }
      
     }
  }

@@ -392,6 +392,9 @@
     <Content Include="fonts\themify.svg" />
     <Content Include="Formas\ActivacionesAdmin.aspx" />
     <Content Include="Formas\AdministracionCuenta.aspx" />
+    <Content Include="Formas\Administrador\AdministradoresBitacora.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Formas\Administrador\Administradores.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -406,6 +409,7 @@
     <Content Include="Formas\Administrador\PermisoEdicionConflictoI.txt" />
     <Content Include="Formas\Administrador\ReporteAvanceDeclaracionesModificacion.aspx" />
     <Content Include="Formas\Administrador\ConsultaAcusesFiscales.aspx" />
+    <Content Include="Formas\Administrador\ReporteBitacora.aspx" />
     <Content Include="Formas\Administrador\ReseteoPassword.aspx" />
     <Content Include="Formas\Administrador\GeneraNombreArchivoPDF.aspx" />
     <Content Include="Formas\Administrador\ExcepcionRFC.aspx" />
@@ -3161,6 +3165,13 @@
     <Compile Include="Formas\Administrador\ConsultaAcusesFiscales.aspx.designer.cs">
       <DependentUpon>ConsultaAcusesFiscales.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formas\Administrador\ReporteBitacora.aspx.cs">
+      <DependentUpon>ReporteBitacora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\ReporteBitacora.aspx.designer.cs">
+      <DependentUpon>ReporteBitacora.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formas\Administrador\ReseteoPassword.aspx.cs">
       <DependentUpon>ReseteoPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4006,6 +4017,7 @@
     <Compile Include="Formas\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Utilerias\BitacoraAdmin.cs" />
     <Compile Include="VerifyCaptcha.asmx.cs">
       <DependentUpon>VerifyCaptcha.asmx</DependentUpon>
       <SubType>Component</SubType>

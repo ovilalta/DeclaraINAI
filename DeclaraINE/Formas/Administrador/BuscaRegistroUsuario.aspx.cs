@@ -108,6 +108,10 @@ namespace DeclaraINAI.Formas
                                 }
 
                             }
+
+                            //Registra la búsqueda en bitácora
+                            BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                                , "Busca registro de usuario por RFC", "Se realiza la búsqueda del usuario con RFC: " + txtRfc.Text);
                         }
                         catch (Exception ex)
                         {
@@ -158,6 +162,10 @@ namespace DeclaraINAI.Formas
                                 }
 
                             }
+
+                            //Registra la búsqueda en bitácora
+                            BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                                , "Busca registro de usuario por nombre", "Se realiza la búsqueda del usuario con nombre: " + txtRfc.Text);
                         }
                         catch (Exception ex)
                         {

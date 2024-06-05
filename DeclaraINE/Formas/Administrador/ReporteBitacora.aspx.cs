@@ -15,7 +15,7 @@ using System.Globalization;
 
 namespace DeclaraINAI.Formas.Administrador
 {
-    public partial class ReporteSIPOT : Pagina
+    public partial class ReporteBitacora : Pagina
     {
         blld_USUARIO _oUsuario
         {
@@ -28,12 +28,11 @@ namespace DeclaraINAI.Formas.Administrador
             string VID_RFC = oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE;
             if (!IsPostBack)
             {
-                Page.Title = "Reporte SIPOT";
+                Page.Title = "Reporte Bitácora";
                 string line;
                 bool excep = false;
                 var buildDir = HttpRuntime.AppDomainAppPath;
-                var filePath = buildDir + @"\Formas\Administrador\Administradores.txt";
-                //var filePath = buildDir + @"\Formas\Administrador\AdministradoresReporte.txt";
+                var filePath = buildDir + @"\Formas\Administrador\AdministradoresBitacora.txt";
                 StreamReader file = new StreamReader(filePath);
                 while ((line = file.ReadLine()) != null)
                 {
@@ -77,7 +76,7 @@ namespace DeclaraINAI.Formas.Administrador
             {
                 MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
                 string connString = db.Database.Connection.ConnectionString;
-                string sql = "SP_ReporteSIPOT";
+                string sql = "SP_ReporteBitacora";
 
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
@@ -92,19 +91,6 @@ namespace DeclaraINAI.Formas.Administrador
                             DataTable dt = new DataTable();
                             da.Fill(dt);
 
-                            foreach (DataRow item in dt.Rows)
-                            {                                        
-                                string nombre = item["NOMBRE"].ToString().ToLower();
-                                string primerA = item["PRIMERAPELLIDO"].ToString().ToLower();
-                                string segundoA = item["SEGUNDOAPELLIDO"].ToString().ToLower();
-                                string nombreTemp = CapitalizeWords(nombre);
-                                string primerATemp = CapitalizeWords(primerA);
-                                string segundoATemp = CapitalizeWords(segundoA);
-                                item["NOMBRE"] = nombreTemp;
-                                item["PRIMERAPELLIDO"] = primerATemp;
-                                item["SEGUNDOAPELLIDO"] = segundoATemp;
-                            }
-
                             //Registra la búsqueda en bitácora
                             BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
                                 , "Genera reporte para carga SIPOT", "Se genera el reporte para la carga de SIPOT del periodo del " + txtFInicio.Text + " al " + txtFFin.Text);
@@ -112,7 +98,8 @@ namespace DeclaraINAI.Formas.Administrador
                             Workbook book = new Workbook();
                             Worksheet sheet = book.Worksheets[0];
                             sheet.InsertDataTable(dt, true, 1, 1);
-                            book.SaveToHttpResponse("ReporteSIPOT.xls", Response);
+                            //string nameFile = "ReporteBitacora-" + DateTime.Now.ToString() + ".xls";
+                            book.SaveToHttpResponse("ReporteBitacora-" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".xls", Response);
                         }
                     }
                     catch (Exception ex)

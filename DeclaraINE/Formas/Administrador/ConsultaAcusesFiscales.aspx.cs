@@ -80,6 +80,10 @@ namespace DeclaraINAI.Formas.Administrador
 
                         string FileName =  (FileNameNombre+FileNamePAp+FileNameSAp).Replace(" ","");
 
+                        //Registra la búsqueda en bitácora
+                        BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                            , "Búsqueda de acuse fiscal", "Se realiza la búsqueda del acuse fiscal del rfc: " + txtRfc.Text);
+
                         string anio = DateTime.Today.Year.ToString();
                         string rutaBase = HttpContext.Current.Server.MapPath("~") + "\\Formas\\DeclaracionFiscal\\";
                         string rutaDirectorio = "pdfFiscales\\" + anio;

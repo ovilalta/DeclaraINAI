@@ -29,6 +29,7 @@ namespace DeclaraINAI.Formas.Administrador
         {
             blld_USUARIO oUsuario = _oUsuario;
             string VID_RFC = oUsuario.VID_NOMBRE + oUsuario.VID_FECHA + oUsuario.VID_HOMOCLAVE;
+            txtAnio.Text = Convert.ToString( DateTime.Now.Year);
             if (!IsPostBack)
             {
                 Page.Title = "Reporte Avance Declaraciones por Unidad Administrativa";
@@ -74,17 +75,12 @@ namespace DeclaraINAI.Formas.Administrador
                 string sql3 = "SP_ReporteListaUAs";
                 string sql4 = "SP_ReporteDeclaracionesPlantillaModificacionArea";
 
-
-
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
                     try
                     {
-
                         using (SqlDataAdapter da = new SqlDataAdapter())
                         {
-
-
                             //Reporte detalle
                             da.SelectCommand = new SqlCommand(sql, conn);
                             da.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -101,6 +97,10 @@ namespace DeclaraINAI.Formas.Administrador
 
                             DataTable dt2 = new DataTable();
                             da.Fill(dt2);
+
+                            //Registra la búsqueda en bitácora
+                            BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                                , "Genera reporte avance declaraciones modificación", "Se genera el reporte de avance declaraciones modificación del periodo del ejercicio: " + txtAnio.Text);
 
                             //Guarda la info en el excel
 

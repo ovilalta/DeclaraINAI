@@ -63,6 +63,9 @@ namespace DeclaraINAI.Formas
                     oUsuario.Add_USUARIO_CORREOs(txtCorreoPers.Text, false, true);
                     string vCorreo = blld_USUARIO_REC_PASS.SolicitaRecuperacionV2(txtRFC.Text);
                     oUsuario.FinalizarSesion(); //OEVM 20230606 
+                    //Registra la búsqueda en bitácora
+                    BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                        , "Registrar correo electrónico alternativo", "Se registra el correo alternativo para la cuenta con RFC: " + txtRFC.Text);
                     msgx.ShowSuccess("Se ha enviado un correo a " + vCorreo + ", con un enlace para restablecer su contraseña");
                 }
                 else

@@ -69,6 +69,9 @@ namespace DeclaraINAI.Formas
                 try
                 {
                     oUsuario.ActivarAdmin(txtRFC.Text);
+                    //Registra la búsqueda en bitácora
+                    BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                        , "Activar cuenta de usuario", "Se actualiza la cuenta del usuario con rfc: " + txtRFC.Text);
                     msgBox.ShowSuccess("Se ha activado el usuario con RFC: " + txtRFC.Text + " con éxito.");
                 }
                 catch (Exception ex)

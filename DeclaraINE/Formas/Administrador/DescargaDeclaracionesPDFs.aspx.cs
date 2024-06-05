@@ -117,7 +117,6 @@ namespace DeclaraINAI.Formas.Administrador
             }
             else
             {
-
                 MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
                 string connString = db.Database.Connection.ConnectionString;
 
@@ -238,6 +237,10 @@ namespace DeclaraINAI.Formas.Administrador
 
                             DeleteFolder(rutaDirectorio);  //Limpia el folder para asegurar que no tenga archivos
                             CreateEmptyDirectory(rutaDirectorio); //Crea el folder de nueva cuenta para ser utilizado
+
+                            //Registra la búsqueda en bitácora
+                            BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                                , "Descarga Versiones Públicas", "Se descargan versiones públicas del " + txtFInicio.Text + " al " + txtFFin.Text);
 
                             HttpContext.Current.Response.ClearContent();
                             HttpContext.Current.Response.Clear();

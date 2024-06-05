@@ -85,6 +85,10 @@ namespace DeclaraINAI.Formas.Administrador
                             DataTable dt = new DataTable();
                             da.Fill(dt);
 
+                            //Registra la búsqueda en bitácora
+                            BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                                , "Genera reporte informe trimestral", "Se genera el reporte para el informe trimestral del periodo del " + txtFInicio.Text + " al " + txtFFin.Text);
+
                             Workbook book = new Workbook();
                             Worksheet sheet = book.Worksheets[0];
                             sheet.InsertDataTable(dt, true, 1, 1);
