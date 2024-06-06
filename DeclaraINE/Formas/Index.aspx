@@ -155,6 +155,7 @@
                                                                         </asp:MenuItem>
 
                                                                         <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReseteoPassword.aspx" Text="Reseteo de Contraseña" ToolTip="Resetear contraseña del usuario" Value="Reseteo de contraseña"></asp:MenuItem>
+                                                                        <asp:MenuItem NavigateUrl="~/Formas/Administrador/ConsultaCatalogoPuestos.aspx" Text="Consultar Catálogo Puestos" ToolTip="Consultar catálogo de puestos" Value="Catálogo de puestos"></asp:MenuItem>
 
                                                                     </asp:MenuItem>
                                                                 </Items>

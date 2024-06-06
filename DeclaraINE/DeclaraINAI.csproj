@@ -402,6 +402,7 @@
     <Content Include="Formas\Administrador\AdministradoresCorreos.txt" />
     <Content Include="Formas\Administrador\AdministradoresReporte.txt" />
     <Content Include="Formas\Administrador\BuscaRegistroUsuario.aspx" />
+    <Content Include="Formas\Administrador\ConsultaCatalogoPuestos.aspx" />
     <Content Include="Formas\Administrador\ReporteAcusesFiscales.aspx" />
     <Content Include="Formas\Administrador\DesencriptaDescMueble.aspx" />
     <Content Include="Formas\Administrador\ExcepcionEdicionConflictoI.aspx" />
@@ -3121,6 +3122,13 @@
     </Compile>
     <Compile Include="Formas\Administrador\BuscaRegistroUsuario.aspx.designer.cs">
       <DependentUpon>BuscaRegistroUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Administrador\ConsultaCatalogoPuestos.aspx.cs">
+      <DependentUpon>ConsultaCatalogoPuestos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\ConsultaCatalogoPuestos.aspx.designer.cs">
+      <DependentUpon>ConsultaCatalogoPuestos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formas\Administrador\ReporteAcusesFiscales.aspx.cs">
       <DependentUpon>ReporteAcusesFiscales.aspx</DependentUpon>
