@@ -25,6 +25,8 @@
     <div class="subtitulo">
         <asp:Literal ID="ltrSubTitulo" runat="server"></asp:Literal>
     </div>
+    <asp:Label ID="lblError" runat="server" ForeColor="Red" Visible="False"></asp:Label>
+    <div id="errorMsg" style="display:none; color: red;"></div>
     <asp:AlanMessageBox runat="server" ID="MsgBox" />
     <asp:AlanQuestionBox runat="server" ID="QstBoxDep" NoText="No" YesText="Si" OnYes="QstBoxDep_Yes" OnNo="QstBoxDep_No" YesCssClass="" NoCssClass="" />
     <asp:AlanQuestionBox runat="server" ID="QstEjercicio" NoText="No" YesText="Si" OnYes="QstEjercicio_Yes" OnNo="QstEjercicio_No" YesCssClass="" NoCssClass="" />

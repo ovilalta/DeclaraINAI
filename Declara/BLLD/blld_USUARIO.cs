@@ -263,6 +263,15 @@ namespace Declara_V2.BLLD
             _USUARIO_CORREOs[FindIndex_USUARIO_CORREOs(V_CORREO)] = oUSUARIO_CORREO;
         }
 
+        private void _Add_USUARIO_CORREOs(String V_CORREO, Boolean lEnviaConfirmacion, bool confirmado, bool principal)
+        {
+            blld_USUARIO_CORREO oUSUARIO_CORREO = new blld_USUARIO_CORREO(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, V_CORREO, true, lEnviaConfirmacion, confirmado, principal);
+            if (oUSUARIO_CORREO.lEsNuevoRegistro.Value) USUARIO_CORREOs.Add(oUSUARIO_CORREO);
+            _USUARIO_CORREOs[FindIndex_USUARIO_CORREOs(V_CORREO)] = oUSUARIO_CORREO;
+        }
+
+
+
         public Int32 FindIndex_USUARIO_CORREOs(String V_CORREO)
         {
             return  USUARIO_CORREOs.FindIndex(p =>
