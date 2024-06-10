@@ -157,6 +157,7 @@
                             <br />
 
                             <asp:Button ID="brnActualizar" runat="server" Text="Descarga PDF's" OnClientClick="ValidatebtnEntrar();" OnClick="btnDescargar_Actualizar" CssClass="download" class="mb-3" />
+                            <asp:Button ID="BtnDescagarPdfHilos" runat="server" Text="Descarga PDF's Hilos" OnClientClick="ValidatebtnEntrar();" OnClick="btnDescargar_ActualizarHilos" CssClass="download" class="mb-3" />
                             <br />
                             <br />
                             <%-- Barra de progreso --%>
