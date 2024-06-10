@@ -1,6 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Adeudo.ascx.cs" Inherits="DeclaraINAI.Formas.DeclaracionModificacion.Adeudo" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
+
         <script type="text/javascript">
 
             function nombrecampo(nombre, area, maximo) {
@@ -17,9 +18,9 @@
                     }
                 }
             }
-
-
  </script>
+
+
 <table class="f">
     <tbody>
          <tr>
@@ -87,6 +88,7 @@
         <tr>
             <th>
                 <l>Fecha de Adquisición del adeudo/pasivo</l>
+                <p style="color: red;"> (Respete el formato de fecha dd/mm/aaaa)</p>
             </th>
             <td>
                 <asp:TextBox ID="txtF_ADEUDO" requerido="btnGuardarAdeudo" Date="S" runat="server"  MaxLength="10"></asp:TextBox>

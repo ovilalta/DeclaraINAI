@@ -64,6 +64,7 @@
           <tr>
             <th>
                 <l>Fecha de Adquisición del adeudo</l>
+                 <p style="color: red;"> (Respete el formato de fecha dd/mm/aaaa)</p>
             </th>
             <td>
                 <asp:TextBox ID="txtF_ADEUDO" requerido="btnGuardarAdeudo" Date="S" runat="server"  MaxLength="10"></asp:TextBox>
