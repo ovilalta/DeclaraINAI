@@ -63,7 +63,7 @@ namespace DeclaraINAI.Formas.DeclaracionConclusion
                 UserControl item = (UserControl)Page.LoadControl("item.ascx");
                 ((Item)item).Id = x;
                 ((Item)item).ID = String.Concat("grd", ((Item)item).Id);
-                ((Item)item).TextoPrincipal = o.V_TIPO_ADEUDO;
+                ((Item)item).TextoPrincipal = o.V_TIPO_ADEUDO + "<br>" + o.V_INSTITUCION;
                 ((Item)item).TextoSecundario = "No. Cuenta:" + o.E_CUENTA + "<br> Monto original: " + o.M_ORIGINAL.ToString("C") + "<br>  Saldo : " + o.M_SALDO.ToString("C");
                 ((Item)item).ImageUrl = String.Concat("../../Images/CAT_TIPO_ADEUDO/", o.NID_TIPO_ADEUDO, ".png");
                 ((Item)item).Editar += OnEditar;

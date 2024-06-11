@@ -63,7 +63,7 @@ namespace DeclaraINAI.Formas.DeclaracionModificacion
                 UserControl item = (UserControl)Page.LoadControl("ItemBaja.ascx");
                 ((ItemBaja)item).Id = x;
                 ((ItemBaja)item).ID = String.Concat("grd", ((ItemBaja)item).Id);
-                ((ItemBaja)item).TextoPrincipal = o.V_TIPO_ADEUDO;
+                ((ItemBaja)item).TextoPrincipal = o.V_TIPO_ADEUDO + "<br>" + o.V_INSTITUCION;
                 ((ItemBaja)item).TextoSecundario = "No. Cuenta:" + o.E_CUENTA + "<br> Monto original: " + o.M_ORIGINAL.ToString("C") + "<br>  Saldo : " + o.M_SALDO.ToString("C");
                 ((ItemBaja)item).ImageUrl = String.Concat("../../Images/CAT_TIPO_ADEUDO/", o.NID_TIPO_ADEUDO, ".png");
                 ((ItemBaja)item).Editar += OnEditar;

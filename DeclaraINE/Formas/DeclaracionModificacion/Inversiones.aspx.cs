@@ -3,6 +3,7 @@ using Declara_V2;
 using Declara_V2.BLLD;
 using Declara_V2.Exceptions;
 using Declara_V2.MODELextended;
+using MODELDeclara_V2;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -57,9 +58,10 @@ namespace DeclaraINAI.Formas.DeclaracionModificacion
             for (int x = 0; x < oDeclaracion.ALTA.ALTA_INVERSIONs.Count; x++)
             {
                 o = oDeclaracion.ALTA.ALTA_INVERSIONs[x];
+                
                 UserControl item = (UserControl)Page.LoadControl("ItemBaja.ascx");
                 ((ItemBaja)item).Id = x;
-                ((ItemBaja)item).TextoPrincipal = o.V_TIPO_INVERSION + "<br>" + o.V_SUBTIPO_INVERSION;
+                ((ItemBaja)item).TextoPrincipal = o.V_TIPO_INVERSION + "<br>" + o.V_SUBTIPO_INVERSION + "<br>" + o.V_INSTITUCION ;
                 ((ItemBaja)item).TextoSecundario = "<br>No. Cuenta :" + o.E_CUENTA + "<br> Saldo : " + o.M_SALDO.ToString("C"); ;
                 ((ItemBaja)item).ImageUrl = String.Concat("../../Images/CAT_TIPO_INVERSION/", o.NID_TIPO_INVERSION, ".png");
                 ((ItemBaja)item).Editar += OnEditar;
