@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.DeclaracionConflicto {
+namespace DeclaraINAI.Formas.DeclaracionConflicto {
     
     
     public partial class DatosGenerales {
@@ -1486,7 +1486,7 @@ namespace DeclaraINE.Formas.DeclaracionConflicto {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::DeclaraINE.Formas.DeclaracionConflicto.ctrlDependiente ctrlDependiente1;
+        protected global::DeclaraINAI.Formas.DeclaracionConflicto.ctrlDependiente ctrlDependiente1;
         
         /// <summary>
         /// Control btnCerrar.

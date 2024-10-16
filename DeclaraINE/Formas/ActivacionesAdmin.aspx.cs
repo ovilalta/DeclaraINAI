@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Web;
 using System.Linq;
-using DeclaraINE.file;
+using DeclaraINAI.file;
 using System.Collections.Generic;
 using Declara_V2.MODELextended;
 using Declara_V2;
@@ -12,7 +12,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web.UI;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
     public partial class ActivacionesAdmin : Pagina
     {
@@ -69,6 +69,9 @@ namespace DeclaraINE.Formas
                 try
                 {
                     oUsuario.ActivarAdmin(txtRFC.Text);
+                    //Registra la búsqueda en bitácora
+                    BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                        , "Activar cuenta de usuario", "Se actualiza la cuenta del usuario con rfc: " + txtRFC.Text);
                     msgBox.ShowSuccess("Se ha activado el usuario con RFC: " + txtRFC.Text + " con éxito.");
                 }
                 catch (Exception ex)

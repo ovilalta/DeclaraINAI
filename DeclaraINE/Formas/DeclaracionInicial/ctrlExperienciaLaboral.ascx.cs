@@ -5,7 +5,7 @@ using Declara_V2.MODELextended;
 using System;
 using System.Web.UI.WebControls;
 
-namespace DeclaraINE.Formas.DeclaracionInicial
+namespace DeclaraINAI.Formas.DeclaracionInicial
 {
     public partial class ctrlExperienciaLaboral : System.Web.UI.UserControl
     {

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlDatosCurriculares.ascx.cs" Inherits="DeclaraINE.Formas.DeclaracionModificacion.ctrlDatosCurriculares" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlDatosCurriculares.ascx.cs" Inherits="DeclaraINAI.Formas.DeclaracionModificacion.ctrlDatosCurriculares" %>
 
             <div>
                 <asp:Image ID="img" runat="server" />

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AvisoPrivacidadRegistro.aspx.cs" Inherits="DeclaraINE.Formas.AvisoPrivacidadRegistro" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AvisoPrivacidadRegistro.aspx.cs" Inherits="DeclaraINAI.Formas.AvisoPrivacidadRegistro" %>
 
 <%@ Register Src="~/Formas/AvisoPrivacidad.ascx" TagPrefix="uc1" TagName="AvisoPrivacidad" %>
 
@@ -43,7 +43,7 @@
             </Triggers>
             <ContentTemplate>
                 <div class="card">
-                    <div class="row" style="background: url(../Images/ine-acerca-slide.jpg);">
+                    <div class="row" style="background: url(../Images/inai-acerca-slide.jpg);">
                         <div class="register-info-box">
                             <div class="row">
                                 <div class=" ">

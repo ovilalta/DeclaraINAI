@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionInicial/_Inicial.master" AutoEventWireup="true" CodeBehind="Bienes.aspx.cs" Inherits="DeclaraINE.Formas.DeclaracionInicial.Bienes" Culture="es-MX" UICulture="es-MX" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionInicial/_Inicial.master" AutoEventWireup="true" CodeBehind="Bienes.aspx.cs" Inherits="DeclaraINAI.Formas.DeclaracionInicial.Bienes" Culture="es-MX" UICulture="es-MX" %>
 
 <%@ Register TagPrefix="ascx" TagName="Item" Src="~/Formas/DeclaracionInicial/Item.ascx" %>
 

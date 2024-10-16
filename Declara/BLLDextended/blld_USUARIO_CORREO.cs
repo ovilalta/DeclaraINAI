@@ -92,6 +92,17 @@ namespace Declara_V2.BLLD
             if ((!L_PRINCIPAL) && (lEnviaConfirmacion)) EnviarConfirmarCorreo();
         }
 
+        public blld_USUARIO_CORREO(String VID_NOMBRE, String VID_FECHA, String VID_HOMOCLAVE, String V_CORREO, Boolean L_DIF, Boolean lEnviaConfirmacion, Boolean confirmado, Boolean principal)
+        {
+            Boolean L_PRINCIPAL = principal;
+            Boolean L_ACTIVO = true;
+            Boolean L_CONFIRMADO = true;
+            Int32 N_CODIGO = blld_USUARIO_REC_PASS.Codigo;
+
+            datos_USUARIO_CORREO = new dald_USUARIO_CORREO(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, V_CORREO, L_PRINCIPAL, L_ACTIVO, L_CONFIRMADO, N_CODIGO, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.ThrowException);
+            if ((!L_PRINCIPAL) && (lEnviaConfirmacion)) EnviarConfirmarCorreo();
+        }
+
         #endregion
 
 

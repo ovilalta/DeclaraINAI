@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlDependiente.ascx.cs" Inherits="DeclaraINE.Formas.DeclaracionConflicto.ctrlDependiente" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlDependiente.ascx.cs" Inherits="DeclaraINAI.Formas.DeclaracionConflicto.ctrlDependiente" %>
 <%@ Register Src="~/Formas/SioNo.ascx" TagPrefix="uc1" TagName="SioNo" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 

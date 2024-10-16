@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.Patrimonio {
+namespace DeclaraINAI.Formas.Patrimonio {
     
     
     public partial class Patrimonio {

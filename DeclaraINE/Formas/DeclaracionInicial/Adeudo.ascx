@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Adeudo.ascx.cs" Inherits="DeclaraINE.Formas.DeclaracionInicial.Adeudo" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Adeudo.ascx.cs" Inherits="DeclaraINAI.Formas.DeclaracionInicial.Adeudo" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <script type="text/javascript">
@@ -64,6 +64,7 @@
         <tr>
             <th>
                 <l>Fecha de Adquisición del adeudo</l>
+                 <p style="color: red;"> (Respete el formato de fecha dd/mm/aaaa)</p>
             </th>
             <td>
                 <asp:TextBox ID="txtF_ADEUDO" requerido="btnGuardarAdeudo" Date="S" runat="server" MaxLength="10"></asp:TextBox>

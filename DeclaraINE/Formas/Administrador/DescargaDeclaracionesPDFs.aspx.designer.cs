@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.Administrador
+namespace DeclaraINAI.Formas.Administrador
 {
 
 
@@ -130,5 +130,14 @@ namespace DeclaraINE.Formas.Administrador
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button brnActualizar;
+
+        /// <summary>
+        /// Control BtnDescagarPdfHilos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnDescagarPdfHilos;
     }
 }

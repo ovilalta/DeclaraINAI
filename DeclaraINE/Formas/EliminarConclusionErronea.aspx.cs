@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Web;
 using System.Linq;
-using DeclaraINE.file;
+using DeclaraINAI.file;
 using System.Collections.Generic;
 using Declara_V2.MODELextended;
 using Declara_V2;
@@ -15,7 +15,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Drawing;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
     public partial class EliminarConclusionErronea : Pagina
     {

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlGastos.ascx.cs" Inherits="DeclaraINE.Formas.DeclaracionModificacion.ctrlGastos" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlGastos.ascx.cs" Inherits="DeclaraINAI.Formas.DeclaracionModificacion.ctrlGastos" %>
 
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>

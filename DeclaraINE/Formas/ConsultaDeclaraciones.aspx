@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ConsultaDeclaraciones.aspx.cs" Inherits="DeclaraINE.Formas.ConsultaDeclaraciones" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ConsultaDeclaraciones.aspx.cs" Inherits="DeclaraINAI.Formas.ConsultaDeclaraciones" %>
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>

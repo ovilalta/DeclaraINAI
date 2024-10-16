@@ -12,7 +12,7 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
-namespace DeclaraINE.Formas.DeclaracionConclusion
+namespace DeclaraINAI.Formas.DeclaracionConclusion
 {
     public partial class Inversiones : Pagina, IDeclaracionInicial
     {
@@ -59,7 +59,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion
                 o = oDeclaracion.ALTA.ALTA_INVERSIONs[x];
                 UserControl item = (UserControl)Page.LoadControl("item.ascx");
                 ((Item)item).Id = x;
-                ((Item)item).TextoPrincipal = o.V_TIPO_INVERSION + "<br>" + o.V_SUBTIPO_INVERSION;
+                ((Item)item).TextoPrincipal = o.V_TIPO_INVERSION + "<br>" + o.V_SUBTIPO_INVERSION + "<br>" + o.V_INSTITUCION;
                 ((Item)item).TextoSecundario = "<br>No. Cuenta :" + o.E_CUENTA + "<br> Saldo : " + o.M_SALDO.ToString("C"); ;
                 ((Item)item).ImageUrl = String.Concat("../../Images/CAT_TIPO_INVERSION/", o.NID_TIPO_INVERSION, ".png");
                 ((Item)item).Editar += OnEditar;

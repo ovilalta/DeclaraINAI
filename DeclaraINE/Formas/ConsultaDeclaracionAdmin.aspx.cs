@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Web;
 using System.Linq;
-using DeclaraINE.file;
+using DeclaraINAI.file;
 using System.Collections.Generic;
 using Declara_V2.MODELextended;
 using Declara_V2;
@@ -15,7 +15,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Drawing;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
     public partial class ConsultaDeclaracionAdmin : Pagina
     {
@@ -85,8 +85,6 @@ namespace DeclaraINE.Formas
 
                 blld_DECLARACION oDeclaracion;
 
-
-
                 if (o.lista_DECLARACION_DIARIA.Any())
                 {
                     oDeclaracion = new blld_DECLARACION
@@ -131,15 +129,15 @@ namespace DeclaraINE.Formas
                                          )
                                                                       );
                 }
-
-                //grdDP.DataSource = Declaraciones.OrderBy(p => p.NID_ORIGEN).ThenBy(p => p.C_EJERCICIO).ToArray();
-                //grdDP.DataBind();
             }
 
             catch
             {
                 //msgBox.ShowDanger("No está registrado el usuario con RFC: " + txtRfc.Text + " en DeclaraINAI.");
                 msgBox.ShowDanger("No está registrado el usuario con RFC: " + txtRfc + " en DeclaraINAI o no cuenta con declaraciones patrimoniales.");
+                //Registra la búsqueda en bitácora
+                BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                    , "Busqueda de Declaraciones por RFC", "Se buscan las declaraciones asociadas a: " + txtRfc + " , sin encontrar resultados");
                 grdDP.DataSource = null;
                 grdDP.DataBind();
             }
@@ -157,6 +155,9 @@ namespace DeclaraINE.Formas
                 if (rbRFC.Checked == true)
                 {
                     BuscarDeclaraciones(txtRfc.Text);
+                    //Registra la búsqueda en bitácora
+                    BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                        , "Busqueda de Declaraciones por RFC", "Se buscan las declaraciones asociadas a: " + txtRfc.Text);
                 }
                 //Busqueda de declaraciones por nombre
                 if (rbNombre.Checked == true)
@@ -190,10 +191,16 @@ namespace DeclaraINE.Formas
                                     {
                                         BuscarDeclaraciones(dt.Rows[i]["RFC"].ToString());
                                     }
+                                    //Registra la búsqueda en bitácora
+                                    BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                                        , "Busqueda de Declaraciones por Nombre", "Se buscan las declaraciones asociadas a: " + txtRfc.Text);
                                 }
                                 else
                                 {
                                     msgBox.ShowDanger("No se encontró registrado el nombre: " + "'" + txtRfc.Text.ToUpper() + "'" + " en DeclaraINAI ");
+                                    //Registra la búsqueda en bitácora
+                                    BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                                        , "Busqueda de Declaraciones por Nombre", "Se buscan las declaraciones asociadas a: " + txtRfc.Text + " , sin encontrar resultados");
                                 }
 
                             }
@@ -218,13 +225,11 @@ namespace DeclaraINE.Formas
 
         protected void btnGridDeclaracion_Click(object sender, EventArgs e)
         {
-
             int tamanioTotal = ((Button)sender).CommandArgument.Length;
             int tamanioArg1 = tamanioTotal - 14;
             int inicioArg2 = tamanioArg1 + 1;
             Int32 NID_DECLARACION = Convert.ToInt32(((Button)sender).CommandArgument.Substring(0, tamanioArg1));
             string rfc = Convert.ToString(((Button)sender).CommandArgument.Substring(inicioArg2, 13));
-
 
             //blld_USUARIO oUsuarioReporte = new blld_USUARIO(rfc);
             MODELDeclara_V2.cnxDeclara bd = new MODELDeclara_V2.cnxDeclara();
@@ -234,13 +239,7 @@ namespace DeclaraINE.Formas
 
             if (existeUsuario != 0)
             {
-
-
-
                 blld_DECLARACION oDeclaracion = new blld_DECLARACION(rfc.Substring(0, 4), rfc.Substring(4, 6), rfc.Substring(10, 3), NID_DECLARACION);
-
-
-
                 try
                 {
                     MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
@@ -252,9 +251,7 @@ namespace DeclaraINE.Formas
 
                     registro = db.DECLARACION.Find(rfc.Substring(0, 4), rfc.Substring(4, 6), rfc.Substring(10, 3), oDeclaracion.NID_DECLARACION);
 
-
                     string TipoDeclaracion = db.CAT_TIPO_DECLARACION.Where(q => q.NID_TIPO_DECLARACION == oDeclaracion.NID_TIPO_DECLARACION).First().V_TIPO_DECLARACION;
-
 
                     String VersionDeclaracion = string.Empty;
 
@@ -268,23 +265,39 @@ namespace DeclaraINE.Formas
                     {
                         case 1:
                             if (obligado.Equals(true))
+                            {
                                 VersionDeclaracion = "DECLARACION_INICIAL";
+                                
+                            }
                             else
                                 VersionDeclaracion = "DECLARACION_INICIAL_SIMPLI";
+                            
                             break;
                         case 2:
                             if (obligado.Equals(true))
+                            {
                                 VersionDeclaracion = "DECLARACION_MODIFICACION";
+                                
+                            }
                             else
                                 VersionDeclaracion = "DECLARACION_MODIFICACION_SIMPLI";
+                            
                             break;
                         case 3:
                             if (obligado.Equals(true))
+                            {
                                 VersionDeclaracion = "DECLARACION_CONCLUSION";
+                                
+                            }
                             else
                                 VersionDeclaracion = "DECLARACION_CONCLUSION_SIMPLI";
+                            
                             break;
                     }
+
+                    //Registra la búsqueda en bitácora
+                    BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                        , "Descarga Pdf Declaración", "Se descarga " + VersionDeclaracion + " de: " + txtRfc.Text);
 
                     file.fileSoapClient o = new file.fileSoapClient();
                     SerializedFile sf = o.ObtenReportePorId(Pagina.FileServiceCredentials, 2020, VersionDeclaracion, new List<object> { rfc.Substring(0, 4)
@@ -296,10 +309,8 @@ namespace DeclaraINE.Formas
                     registro.B_FILE_DECLARACION = sf.FileBytes;
                     db.SaveChanges();
 
-
                     registro = db.DECLARACION.Find(rfc.Substring(0, 4), rfc.Substring(4, 6), rfc.Substring(10, 3), oDeclaracion.NID_DECLARACION);
                     b1 = registro.B_FILE_DECLARACION;
-
 
                     FileStream fs1;
                     File = String.Concat(Path.GetTempPath().ToString(), Path.DirectorySeparatorChar.ToString(), Path.GetRandomFileName().ToString(), "");
@@ -316,7 +327,6 @@ namespace DeclaraINE.Formas
                     System.IO.File.Delete(File);
 
                     HttpContext.Current.Response.End();
-
 
                 }
                 catch (Exception ex)
@@ -356,7 +366,6 @@ namespace DeclaraINE.Formas
         }
         protected void btnGridDeclaracionAcuse_Click(object sender, EventArgs e)
         {
-
             int tamanioTotal = ((Button)sender).CommandArgument.Length;
             int tamanioArg1 = tamanioTotal - 14;
             int inicioArg2 = tamanioArg1 + 1;
@@ -403,25 +412,39 @@ namespace DeclaraINE.Formas
                     {
                         case 1:
                             if (obligado.Equals(true))
+                            {
                                 VersionDeclaracion = "DECLARACION_INICIAL_PUB";
+                                
+                            }
                             else
                                 VersionDeclaracion = "DECLARACION_INICIAL_SIMPLI_PUB";
+                            
                             break;
                         case 2:
                             if (obligado.Equals(true))
+                            {
                                 VersionDeclaracion = "DECLARACION_MODIFICACION_PUB";
+                                
+                            }
                             else
                                 VersionDeclaracion = "DECLARACION_MODIFICACION_SIMPLI_PUB";
+                            
                             break;
                         case 3:
                             if (obligado.Equals(true))
+                            {
                                 VersionDeclaracion = "DECLARACION_CONCLUSION_PUB";
+                                
+                            }
                             else
                                 VersionDeclaracion = "DECLARACION_CONCLUSION_SIMPLI_PUB";
+                            
                             break;
                     }
 
-
+                    //Registra la búsqueda en bitácora
+                    BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                        , "Descarga Pdf Declaración", "Se descarga " + VersionDeclaracion + " de: " + txtRfc.Text);
 
                     file.fileSoapClient o = new file.fileSoapClient();
                     SerializedFile sf = o.ObtenReportePorId(Pagina.FileServiceCredentials, 2020, VersionDeclaracion, new List<object> { rfc.Substring(0, 4)

@@ -15,13 +15,13 @@ using System.Threading;
 using Spire.Xls;
 using System.Windows.Forms;
 using System.Linq;
-using DeclaraINE.file;
+using DeclaraINAI.file;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using AlanWebControls;
 using Declara_V2.BLL;
 
-namespace DeclaraINE.Formas.Administrador
+namespace DeclaraINAI.Formas.Administrador
 {
     public partial class ConsultaAcusesFiscales : Pagina
     {
@@ -79,6 +79,10 @@ namespace DeclaraINE.Formas.Administrador
                             .Select(u =>  u.V_SEGUNDO_A).First();     //txtRfc.Text;
 
                         string FileName =  (FileNameNombre+FileNamePAp+FileNameSAp).Replace(" ","");
+
+                        //Registra la búsqueda en bitácora
+                        BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                            , "Búsqueda de acuse fiscal", "Se realiza la búsqueda del acuse fiscal del rfc: " + txtRfc.Text);
 
                         string anio = DateTime.Today.Year.ToString();
                         string rutaBase = HttpContext.Current.Server.MapPath("~") + "\\Formas\\DeclaracionFiscal\\";

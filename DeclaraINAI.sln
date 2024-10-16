@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeclaraINE", "DeclaraINE\DeclaraINE.csproj", "{5EEB7DAD-3D49-487E-8A1F-DAA5D0BED49A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeclaraINAI", "DeclaraINE\DeclaraINAI.csproj", "{5EEB7DAD-3D49-487E-8A1F-DAA5D0BED49A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Declara", "Declara\Declara.csproj", "{A4C549C1-08A4-45D2-B8D2-50F836DB08D7}"
 EndProject

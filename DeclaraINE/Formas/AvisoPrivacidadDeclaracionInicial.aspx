@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AvisoPrivacidadDeclaracionInicial.aspx.cs" Inherits="DeclaraINE.Formas.AvisoPrivacidadDeclaracionInicial" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AvisoPrivacidadDeclaracionInicial.aspx.cs" Inherits="DeclaraINAI.Formas.AvisoPrivacidadDeclaracionInicial" %>
 
 <%@ Register Src="~/Formas/AvisoPrivacidad.ascx" TagPrefix="uc1" TagName="AvisoPrivacidad" %>
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
@@ -24,7 +24,7 @@
             <ContentTemplate>
 
                 <div class="card">
-                    <div class="row" style="background: url(../Images/ine-acerca-slide.jpg);">
+                    <div class="row" style="background: url(../Images/inai-acerca-slide.jpg);">
                         <div class="register-info-box">
                             <div class="row">
                                 <div class=" " style="margin: -12px;">

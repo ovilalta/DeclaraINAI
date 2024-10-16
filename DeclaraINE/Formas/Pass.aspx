@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Pass.aspx.cs" Inherits="DeclaraINE.Formas.Pass" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Pass.aspx.cs" Inherits="DeclaraINAI.Formas.Pass" %>
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 <!DOCTYPE html>

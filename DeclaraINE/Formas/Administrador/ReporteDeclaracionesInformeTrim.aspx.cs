@@ -12,7 +12,7 @@ using System.Diagnostics;
 using System.Threading;
 using Spire.Xls;
 
-namespace DeclaraINE.Formas.Administrador
+namespace DeclaraINAI.Formas.Administrador
 {
     public partial class ReporteDeclaracionesInformeTrim : Pagina
     {
@@ -84,6 +84,10 @@ namespace DeclaraINE.Formas.Administrador
                             da.SelectCommand.Parameters.Add(new SqlParameter("@fechaFin", SqlDbType.VarChar)).Value = txtFFin.Text;
                             DataTable dt = new DataTable();
                             da.Fill(dt);
+
+                            //Registra la búsqueda en bitácora
+                            BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                                , "Genera reporte informe trimestral", "Se genera el reporte para el informe trimestral del periodo del " + txtFInicio.Text + " al " + txtFFin.Text);
 
                             Workbook book = new Workbook();
                             Worksheet sheet = book.Worksheets[0];

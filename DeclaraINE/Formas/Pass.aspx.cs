@@ -10,7 +10,7 @@ using AlanWebControls;
 using Declara_V2.Exceptions;
 
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
     public partial class Pass : Pagina
     {

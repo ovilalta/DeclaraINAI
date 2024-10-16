@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Web;
 using System.Linq;
-using DeclaraINE.file;
+using DeclaraINAI.file;
 using System.Collections.Generic;
 using Declara_V2.MODELextended;
 using Declara_V2;
@@ -17,7 +17,7 @@ using MODELDeclara_V2;
 using Declara_V2.Exceptions;
 using Declara_V2.BLL;
 
-namespace DeclaraINE.Formas.DeclaracionConflicto
+namespace DeclaraINAI.Formas.DeclaracionConflicto
 {
     public partial class _Conflicto : System.Web.UI.MasterPage
     {

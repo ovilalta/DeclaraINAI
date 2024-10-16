@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.declaracionFiscalSustituirPdf
+namespace DeclaraINAI.Formas.declaracionFiscalSustituirPdf
 {
 
 

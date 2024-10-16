@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.DeclaracionModificacion
+namespace DeclaraINAI.Formas.DeclaracionModificacion
 {
 
 
@@ -165,7 +165,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::DeclaraINE.Formas.DeclaracionModificacion.ctrlDesincorpora ctrlDesincorpora1;
+        protected global::DeclaraINAI.Formas.DeclaracionModificacion.ctrlDesincorpora ctrlDesincorpora1;
 
         /// <summary>
         /// Control btnCerrarBaja.
@@ -1245,7 +1245,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::DeclaraINE.Formas.DeclaracionModificacion.Adeudo Adeudo;
+        protected global::DeclaraINAI.Formas.DeclaracionModificacion.Adeudo Adeudo;
 
         /// <summary>
         /// Control btnCerrarModal.

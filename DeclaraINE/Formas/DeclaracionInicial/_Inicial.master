@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_Inicial.master.cs" Inherits="DeclaraINE.Formas.DeclaracionInicial._Inicial" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_Inicial.master.cs" Inherits="DeclaraINAI.Formas.DeclaracionInicial._Inicial" %>
 
 
 <!DOCTYPE html>

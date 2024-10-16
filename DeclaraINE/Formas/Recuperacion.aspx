@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Recuperacion.aspx.cs" Inherits="DeclaraINE.Formas.Recuperacion" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Recuperacion.aspx.cs" Inherits="DeclaraINAI.Formas.Recuperacion" %>
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 <!DOCTYPE html>
@@ -82,7 +82,7 @@
 
 
         <div class="card">
-            <div class="row" style="background: url('../Images/ine-acerca-slide.jpg');">
+            <div class="row" style="background: url('../Images/inai-acerca-slide.jpg');">
                 <div class="register-info-box">
                     <div class="row">
                         <div class=" ">

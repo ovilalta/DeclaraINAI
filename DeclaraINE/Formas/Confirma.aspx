@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Confirma.aspx.cs" Inherits="DeclaraINE.Formas.Confirma" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Confirma.aspx.cs" Inherits="DeclaraINAI.Formas.Confirma" %>
 
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
@@ -60,7 +60,7 @@
 
         </asp:ScriptManager>
         <div class="card">
-            <div class="row" style="background: url('../Images/ine-acerca-slide.jpg');">
+            <div class="row" style="background: url('../Images/inai-acerca-slide.jpg');">
                 <div class="register-info-box">
                     <div class="row">
                         <div class=" ">

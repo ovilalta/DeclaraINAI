@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="DeclaraINE.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="DeclaraINAI.Global" Language="C#" %>

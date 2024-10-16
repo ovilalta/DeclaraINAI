@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Web;
 using System.Linq;
-using DeclaraINE.file;
+using DeclaraINAI.file;
 using System.Collections.Generic;
 using Declara_V2.MODELextended;
 using Declara_V2;
@@ -15,7 +15,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Drawing;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
     public partial class BuscaRegistroUsuario : Pagina
     {
@@ -108,6 +108,10 @@ namespace DeclaraINE.Formas
                                 }
 
                             }
+
+                            //Registra la búsqueda en bitácora
+                            BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                                , "Busca registro de usuario por RFC", "Se realiza la búsqueda del usuario con RFC: " + txtRfc.Text);
                         }
                         catch (Exception ex)
                         {
@@ -158,6 +162,10 @@ namespace DeclaraINE.Formas
                                 }
 
                             }
+
+                            //Registra la búsqueda en bitácora
+                            BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                                , "Busca registro de usuario por nombre", "Se realiza la búsqueda del usuario con nombre: " + txtRfc.Text);
                         }
                         catch (Exception ex)
                         {

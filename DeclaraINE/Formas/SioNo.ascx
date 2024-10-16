@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SioNo.ascx.cs" Inherits="DeclaraINE.Formas.SioNo" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SioNo.ascx.cs" Inherits="DeclaraINAI.Formas.SioNo" %>
 
 <div class="yesno">
     <div>

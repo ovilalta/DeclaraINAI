@@ -10,7 +10,7 @@ using Declara_V2.BLLD;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace DeclaraINE.Formas.declaracionFiscalSustituirPdf
+namespace DeclaraINAI.Formas.declaracionFiscalSustituirPdf
 {
     //System.Web.UI.Page
     public partial class WebForm1 : Pagina

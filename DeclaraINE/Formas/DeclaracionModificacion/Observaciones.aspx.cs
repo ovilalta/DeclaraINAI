@@ -15,7 +15,7 @@ using System.IO;
 
 using System.ComponentModel;
 
-namespace DeclaraINE.Formas.DeclaracionModificacion
+namespace DeclaraINAI.Formas.DeclaracionModificacion
 {
     public partial class Observaciones : Pagina, IDeclaracionInicial
     {

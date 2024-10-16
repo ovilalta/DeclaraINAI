@@ -1,1 +1,1 @@
-﻿<%@ WebService Language="C#" CodeBehind="VerifyCaptcha.asmx.cs" Class="DeclaraINE.Formas.VerifyCaptcha" %>
+﻿<%@ WebService Language="C#" CodeBehind="VerifyCaptcha.asmx.cs" Class="DeclaraINAI.Formas.VerifyCaptcha" %>

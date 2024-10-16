@@ -673,6 +673,26 @@ namespace Declara_V2.BLLD
             }
         }
 
+        public void Add_USUARIO_CORREOs(String V_CORREO, Boolean lEnviaConfirmacion, Boolean confirmado, Boolean principal)
+        {
+            try
+            {
+                _Add_USUARIO_CORREOs(V_CORREO.ToLower(), lEnviaConfirmacion, confirmado, principal);
+            }
+            catch (Exception e)
+            {
+                //if (e is ExistingPrimaryKeyException)
+                //{
+                //    ///Codigo Para Controlar la Excepcion de clave primaria existente
+                //}
+                //else
+                //{
+                //    throw e;
+                //}
+                throw e;
+            }
+        }
+
         public void Reload_DECLARACIONs()
         {
             _Reload_DECLARACIONs();

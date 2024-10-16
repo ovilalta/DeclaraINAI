@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GeneraDeclaracion.aspx.cs" Inherits="DeclaraINE.Formas.Administrador.GeneraDeclaracion" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GeneraDeclaracion.aspx.cs" Inherits="DeclaraINAI.Formas.Administrador.GeneraDeclaracion" %>
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 

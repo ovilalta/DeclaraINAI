@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
 
 
@@ -174,7 +174,7 @@ namespace DeclaraINE.Formas
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::DeclaraINE.Formas.SioNo SioNo1;
+        protected global::DeclaraINAI.Formas.SioNo SioNo1;
 
         /// <summary>
         /// Control SioNo2.
@@ -183,7 +183,7 @@ namespace DeclaraINE.Formas
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::DeclaraINE.Formas.SioNo SioNo2;
+        protected global::DeclaraINAI.Formas.SioNo SioNo2;
 
         /// <summary>
         /// Control ltrPreCorreo.

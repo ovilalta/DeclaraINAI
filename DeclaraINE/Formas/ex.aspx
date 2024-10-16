@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ex.aspx.cs" Inherits="DeclaraINE.Formas.ex" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ex.aspx.cs" Inherits="DeclaraINAI.Formas.ex" %>
 
 <!DOCTYPE html>
 

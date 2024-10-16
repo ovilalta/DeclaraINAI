@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.DeclaracionFiscal
+namespace DeclaraINAI.Formas.DeclaracionFiscal
 {
 
 

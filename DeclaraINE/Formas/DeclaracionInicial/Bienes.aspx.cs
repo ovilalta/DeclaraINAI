@@ -10,7 +10,7 @@ using Declara_V2.MODELextended;
 using Declara_V2.Exceptions;
 using AlanWebControls;
 using Declara_V2.BLL;
-namespace DeclaraINE.Formas.DeclaracionInicial
+namespace DeclaraINAI.Formas.DeclaracionInicial
 {
     public partial class Bienes : Pagina, IDeclaracionInicial
     {

@@ -12,7 +12,7 @@ using System.Net;
 using System.Security.Principal;
 using System.IO;
 
-namespace DeclaraINE.Formas.DeclaracionInicial
+namespace DeclaraINAI.Formas.DeclaracionInicial
 {
     public partial class Observaciones : Pagina, IDeclaracionInicial
     {

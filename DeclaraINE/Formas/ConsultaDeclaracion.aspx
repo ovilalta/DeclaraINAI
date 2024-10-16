@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ConsultaDeclaracion.aspx.cs" Inherits="DeclaraINE.Formas.ConsultaDeclaracion" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ConsultaDeclaracion.aspx.cs" Inherits="DeclaraINAI.Formas.ConsultaDeclaracion" %>
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
 
@@ -74,11 +74,11 @@
             }
         </style>
         <div class="card">
-            <div class="row register-info-box" style="background: url('../Images/ine-acerca-slide.jpg');">
+            <div class="row register-info-box" style="background: url('../Images/inai-acerca-slide.jpg');">
                 <div>
                     <div class="row align-items-left" style="display: flex;">
                         <div>
-                            <img src="../Images/Declaraine.png" style="height: 32px; margin: 10px 12px 0px;" />
+                            <img src="../Images/Declarainai.png" style="height: 32px; margin: 10px 12px 0px;" />
                         </div>
                         <div style="width: 100%;">
                             <h3 style="margin: 7px; font-size: 22px; float: right;">

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using static DeclaraINE.Formas.DeclaracionConclusion.Bienes;
+using static DeclaraINAI.Formas.DeclaracionConclusion.Bienes;
 using AlanWebControls;
 using Declara_V2.BLL;
 using Declara_V2.MODELextended;
@@ -14,7 +14,7 @@ using Declara_V2.Exceptions;
 using Declara_V2;
 using System.Web.UI;
 
-namespace DeclaraINE.Formas.DeclaracionConclusion
+namespace DeclaraINAI.Formas.DeclaracionConclusion
 {
     public partial class DatosCurriculares : Pagina, IDeclaracionInicial
     {

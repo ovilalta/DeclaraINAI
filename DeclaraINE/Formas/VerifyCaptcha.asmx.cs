@@ -6,7 +6,7 @@ using System.Net;
 using System.Web;
 using System.Web.Services;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
     /// <summary>
     /// Summary description for VerifyCaptcha

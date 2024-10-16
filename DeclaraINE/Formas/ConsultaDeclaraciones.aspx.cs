@@ -11,11 +11,11 @@ using Declara_V2.BLLD;
 using Declara_V2.MODELextended;
 using Declara_V2.Exceptions;
 using System.IO;
-using DeclaraINE.file;
-using DeclaraINE.Legacy;
+using DeclaraINAI.file;
+using DeclaraINAI.Legacy;
 using Declara_V2;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
     public partial class ConsultaDeclaraciones : Pagina
     {
@@ -100,7 +100,7 @@ namespace DeclaraINE.Formas
                 }
                 try
                 {
-                    DeclaraINE.Legacy.fileSoapClient DeclaracionesAnteriores = new DeclaraINE.Legacy.fileSoapClient();
+                    DeclaraINAI.Legacy.fileSoapClient DeclaracionesAnteriores = new DeclaraINAI.Legacy.fileSoapClient();
                     ListaDeclara[] ListaAnteriores = DeclaracionesAnteriores.Consulta(VID_RFC);
                     ListaAnt2010[] listaAnt2010 = DeclaracionesAnteriores.Consulta2010(VID_RFC);
                     DeclaracionesAnteriores.Close();
@@ -598,7 +598,7 @@ namespace DeclaraINE.Formas
                 default:
                     break;
             }
-            DeclaraINE.Legacy.fileSoapClient o = new Legacy.fileSoapClient();
+            DeclaraINAI.Legacy.fileSoapClient o = new Legacy.fileSoapClient();
             FileStream fs1;
             if (Tipo == 1)
             {
@@ -649,7 +649,7 @@ namespace DeclaraINE.Formas
                 default:
                     break;
             }
-            DeclaraINE.Legacy.fileSoapClient o = new Legacy.fileSoapClient();
+            DeclaraINAI.Legacy.fileSoapClient o = new Legacy.fileSoapClient();
             FileStream fs1;
             byte[] b1 = o.Acuse(Convert.ToInt32(Emps), Convert.ToInt32(Ids), Tipo, Ianio, Rep);
             String Nombre = String.Concat(T_ds, Emps, Anios, ".pdf");
@@ -676,7 +676,7 @@ namespace DeclaraINE.Formas
             Int32 Emp = Convert.ToInt32(Emps.ToString());
             Int32 Control = Convert.ToInt32(Ids.Substring(10, 2));
 
-            DeclaraINE.Legacy.fileSoapClient o = new Legacy.fileSoapClient();
+            DeclaraINAI.Legacy.fileSoapClient o = new Legacy.fileSoapClient();
             FileStream fs1;
             byte[] b1 = o.Conflicto(Dia, Emp, Control);
             String Nombre = String.Concat("Conflicto", Emps, "_", Control, ".pdf");
@@ -699,7 +699,7 @@ namespace DeclaraINE.Formas
         private void DeclaAnt2010(string Nombre)
         {
 
-            DeclaraINE.Legacy.fileSoapClient o = new Legacy.fileSoapClient();
+            DeclaraINAI.Legacy.fileSoapClient o = new Legacy.fileSoapClient();
             FileStream fs1;
             byte[] b1 = o.DeclaraAnt2010(Nombre, "pdf");
             String File = String.Concat(Path.GetTempPath().ToString(), Path.DirectorySeparatorChar.ToString(), Nombre, ".pdf");
@@ -721,7 +721,7 @@ namespace DeclaraINE.Formas
         private void AcuseAnt2010(string Nombre1)
         {
 
-            DeclaraINE.Legacy.fileSoapClient o = new Legacy.fileSoapClient();
+            DeclaraINAI.Legacy.fileSoapClient o = new Legacy.fileSoapClient();
             FileStream fs1;
             byte[] b1 = o.AcuseAnt2010(Nombre1, "pdf");
 

@@ -11,7 +11,7 @@ using System.Text;
 using System.IO;
 using System.Security.Cryptography;
 
-namespace DeclaraINE.Formas.DeclaracionConflicto
+namespace DeclaraINAI.Formas.DeclaracionConflicto
 {
     public partial class Envio : Pagina, IDeclaracionInicial
     {

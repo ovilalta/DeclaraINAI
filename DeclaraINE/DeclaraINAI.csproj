@@ -198,6 +198,24 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.3.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.3.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -392,6 +410,9 @@
     <Content Include="fonts\themify.svg" />
     <Content Include="Formas\ActivacionesAdmin.aspx" />
     <Content Include="Formas\AdministracionCuenta.aspx" />
+    <Content Include="Formas\Administrador\AdministradoresBitacora.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Formas\Administrador\Administradores.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -399,6 +420,7 @@
     <Content Include="Formas\Administrador\AdministradoresCorreos.txt" />
     <Content Include="Formas\Administrador\AdministradoresReporte.txt" />
     <Content Include="Formas\Administrador\BuscaRegistroUsuario.aspx" />
+    <Content Include="Formas\Administrador\ConsultaCatalogoPuestos.aspx" />
     <Content Include="Formas\Administrador\ReporteAcusesFiscales.aspx" />
     <Content Include="Formas\Administrador\DesencriptaDescMueble.aspx" />
     <Content Include="Formas\Administrador\ExcepcionEdicionConflictoI.aspx" />
@@ -406,6 +428,7 @@
     <Content Include="Formas\Administrador\PermisoEdicionConflictoI.txt" />
     <Content Include="Formas\Administrador\ReporteAvanceDeclaracionesModificacion.aspx" />
     <Content Include="Formas\Administrador\ConsultaAcusesFiscales.aspx" />
+    <Content Include="Formas\Administrador\ReporteBitacora.aspx" />
     <Content Include="Formas\Administrador\ReseteoPassword.aspx" />
     <Content Include="Formas\Administrador\GeneraNombreArchivoPDF.aspx" />
     <Content Include="Formas\Administrador\ExcepcionRFC.aspx" />
@@ -602,6 +625,7 @@
     <Content Include="Images\DeclaraConclusion.jpg" />
     <Content Include="Images\DeclaraConsulta.png" />
     <Content Include="Images\DeclaraFiscal.png" />
+    <Content Include="Images\Declarainai.png" />
     <Content Include="Images\Declaraine.png" />
     <Content Include="Images\DeclaraInicio.jpg" />
     <Content Include="Images\DeclaraModificacion.jpg" />
@@ -2879,6 +2903,7 @@
     <Content Include="Images\icons\masx8.png" />
     <Content Include="Images\icons\menosx16.png" />
     <Content Include="Images\icons\menosx8.png" />
+    <Content Include="Images\inai-acerca-slide.jpg" />
     <Content Include="Images\ine-acerca-slide.jpg" />
     <Content Include="Images\INE_Login.png" />
     <Content Include="Images\inicio\base.png" />
@@ -3116,6 +3141,13 @@
     <Compile Include="Formas\Administrador\BuscaRegistroUsuario.aspx.designer.cs">
       <DependentUpon>BuscaRegistroUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formas\Administrador\ConsultaCatalogoPuestos.aspx.cs">
+      <DependentUpon>ConsultaCatalogoPuestos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\ConsultaCatalogoPuestos.aspx.designer.cs">
+      <DependentUpon>ConsultaCatalogoPuestos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formas\Administrador\ReporteAcusesFiscales.aspx.cs">
       <DependentUpon>ReporteAcusesFiscales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3158,6 +3190,13 @@
     </Compile>
     <Compile Include="Formas\Administrador\ConsultaAcusesFiscales.aspx.designer.cs">
       <DependentUpon>ConsultaAcusesFiscales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Administrador\ReporteBitacora.aspx.cs">
+      <DependentUpon>ReporteBitacora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\ReporteBitacora.aspx.designer.cs">
+      <DependentUpon>ReporteBitacora.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formas\Administrador\ReseteoPassword.aspx.cs">
       <DependentUpon>ReseteoPassword.aspx</DependentUpon>
@@ -4004,6 +4043,7 @@
     <Compile Include="Formas\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Utilerias\BitacoraAdmin.cs" />
     <Compile Include="VerifyCaptcha.asmx.cs">
       <DependentUpon>VerifyCaptcha.asmx</DependentUpon>
       <SubType>Component</SubType>

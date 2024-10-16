@@ -15,14 +15,14 @@ using System.Threading;
 using Spire.Xls;
 using System.Windows.Forms;
 using System.Linq;
-using DeclaraINE.file;
+using DeclaraINAI.file;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using AlanWebControls;
 
 
 
-namespace DeclaraINE.Formas.Administrador
+namespace DeclaraINAI.Formas.Administrador
 {
     public partial class ExcepcionRFC : Pagina
     {
@@ -59,6 +59,9 @@ namespace DeclaraINE.Formas.Administrador
                 StreamWriter file = File.AppendText(filePath);                
                 file.WriteLine(txtRfc.Text.ToUpper());
                 file.Close();
+                //Registra la búsqueda en bitácora
+                BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                    , "Excepción para registrar usuario con RFC fuera de regla de validación", "Se dan los permisos para permitir el registro de usuario con RFC: " + txtRfc.Text);
                 msgBox.ShowSuccess("Se agregó el RFC: " + txtRfc.Text.ToUpper() + " de manera correcta") ;
                 txtRfc.Text = "";
             }

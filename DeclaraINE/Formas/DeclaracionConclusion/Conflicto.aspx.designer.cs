@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace DeclaraINE.Formas.DeclaracionConclusion {
+namespace DeclaraINAI.Formas.DeclaracionConclusion {
     
     
     public partial class Conflicto {
@@ -64,7 +64,7 @@ namespace DeclaraINE.Formas.DeclaracionConclusion {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::DeclaraINE.Formas.SioNo cbx;
+        protected global::DeclaraINAI.Formas.SioNo cbx;
         
         /// <summary>
         /// Control lblMensaje.

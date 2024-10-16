@@ -7,7 +7,7 @@ using System.IO;
 using System.Web;
 using System.Web.UI;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
     public partial class Index : Pagina
     {
@@ -52,6 +52,32 @@ namespace DeclaraINE.Formas
                 btnAdmin.Visible = true;
                 LkFiscal.Visible = true;
             }
+            #endregion
+
+            #region Logica Permisos Admin para menu bitacora
+            string lineBitacora;
+            bool excepBitacora = false;
+            var buildDirBitacora = HttpRuntime.AppDomainAppPath;
+            var filePathBitacora = buildDir + @"\Formas\Administrador\AdministradoresBitacora.txt";
+            StreamReader fileBitacora = new StreamReader(filePathBitacora);
+            while ((lineBitacora = fileBitacora.ReadLine()) != null)
+            {
+                if (VID_RFC.Equals(lineBitacora))
+                {
+                    excepBitacora = true;
+                }
+            }
+            fileBitacora.Close();
+            if (excepBitacora == false)
+            {
+                btnAdminBitacora.Visible = false;
+                
+            }
+            else
+            {
+                btnAdminBitacora.Visible = true;                
+            }
+            #endregion
 
             //Agregar logica para revisar si existe autorizacion para usar la edicion de conflicto de intereses
             MODELDeclara_V2.cnxDeclara dbBuscaConflictoI = new MODELDeclara_V2.cnxDeclara();
@@ -98,7 +124,7 @@ namespace DeclaraINE.Formas
                     Console.WriteLine("Error: " + ex.Message);
                 }
 
-                #endregion
+                
 
                 #region Logica Permisos para visualizar boton acuse fiscal
 
@@ -206,10 +232,14 @@ namespace DeclaraINE.Formas
 
         }
 
+        protected void btnBitacora_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Administrador/ReporteBitacora.aspx", false);
+        }
+
         protected void btnInicio_Click(object sender, EventArgs e)
         {
             Response.Redirect("AvisoPrivacidadDeclaracionInicial.aspx", false);
-
         }
         protected void btnConsultaDeclaracion_Click(object sender, EventArgs e)
         {

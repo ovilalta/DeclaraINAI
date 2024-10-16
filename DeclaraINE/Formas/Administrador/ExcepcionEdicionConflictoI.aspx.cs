@@ -15,14 +15,14 @@ using System.Threading;
 using Spire.Xls;
 using System.Windows.Forms;
 using System.Linq;
-using DeclaraINE.file;
+using DeclaraINAI.file;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using AlanWebControls;
 
 
 
-namespace DeclaraINE.Formas.Administrador
+namespace DeclaraINAI.Formas.Administrador
 {
     public partial class ExcepcionEdicionConflictoI : Pagina
     {
@@ -83,6 +83,9 @@ namespace DeclaraINE.Formas.Administrador
                 if (rpta == -1)
                 {
                     msgBox.ShowSuccess("Se agregó el RFC: " + txtRfc.Text.ToUpper() + " de manera correcta");
+                    //Registra la búsqueda en bitácora
+                    BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                        , "Excepción para editar la sección de conflicto de intereses", "Se dan los permisos para editar la sección de conflicto de intereses del RFC: " + txtRfc.Text);
                     txtRfc.Text = "";
                 }
                 else
@@ -90,7 +93,7 @@ namespace DeclaraINE.Formas.Administrador
                     msgBox.ShowWarning("Ya existe el RFC: " + txtRfc.Text.ToUpper() + " , favor de validar la información");
                     txtRfc.Text = "";
                 }
-
+                
             }
             else
             {

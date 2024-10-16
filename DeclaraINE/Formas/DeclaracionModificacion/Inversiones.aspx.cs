@@ -3,6 +3,7 @@ using Declara_V2;
 using Declara_V2.BLLD;
 using Declara_V2.Exceptions;
 using Declara_V2.MODELextended;
+using MODELDeclara_V2;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,7 +13,7 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
-namespace DeclaraINE.Formas.DeclaracionModificacion
+namespace DeclaraINAI.Formas.DeclaracionModificacion
 {
     public partial class Inversiones : Pagina, IDeclaracionInicial
     {
@@ -57,9 +58,10 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             for (int x = 0; x < oDeclaracion.ALTA.ALTA_INVERSIONs.Count; x++)
             {
                 o = oDeclaracion.ALTA.ALTA_INVERSIONs[x];
+                
                 UserControl item = (UserControl)Page.LoadControl("ItemBaja.ascx");
                 ((ItemBaja)item).Id = x;
-                ((ItemBaja)item).TextoPrincipal = o.V_TIPO_INVERSION + "<br>" + o.V_SUBTIPO_INVERSION;
+                ((ItemBaja)item).TextoPrincipal = o.V_TIPO_INVERSION + "<br>" + o.V_SUBTIPO_INVERSION + "<br>" + o.V_INSTITUCION ;
                 ((ItemBaja)item).TextoSecundario = "<br>No. Cuenta :" + o.E_CUENTA + "<br> Saldo : " + o.M_SALDO.ToString("C"); ;
                 ((ItemBaja)item).ImageUrl = String.Concat("../../Images/CAT_TIPO_INVERSION/", o.NID_TIPO_INVERSION, ".png");
                 ((ItemBaja)item).Editar += OnEditar;
@@ -103,17 +105,17 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 ((Button)Master.FindControl("btnSiguiente")).ToolTip = "Siguiente apartado";
 
                 //OEVM quitó renglones comentados - 20200617
-                cmbNID_TIPO_INVERSION.DataBinder<blld__l_CAT_TIPO_INVERSION>(new blld__l_CAT_TIPO_INVERSION(), CAT_TIPO_INVERSION.Properties.NID_TIPO_INVERSION, CAT_TIPO_INVERSION.Properties.V_TIPO_INVERSION, false);
+                cmbNID_TIPO_INVERSION.DataBinder<blld__l_CAT_TIPO_INVERSION>(new blld__l_CAT_TIPO_INVERSION(), Declara_V2.MODELextended.CAT_TIPO_INVERSION.Properties.NID_TIPO_INVERSION, Declara_V2.MODELextended.CAT_TIPO_INVERSION.Properties.V_TIPO_INVERSION, false);
                 cmbNID_TIPO_INVERSION_SelectedIndexChanged(sender, e);
                 cmbNID_TIPO_INVERSION.Items.Insert(0, new ListItem(String.Empty));
 
-                cmbNID_PAIS.DataBinder<blld__l_CAT_PAIS>(new blld__l_CAT_PAIS(), CAT_PAIS.Properties.NID_PAIS, CAT_PAIS.Properties.V_PAIS, false);
+                cmbNID_PAIS.DataBinder<blld__l_CAT_PAIS>(new blld__l_CAT_PAIS(), Declara_V2.MODELextended.CAT_PAIS.Properties.NID_PAIS, Declara_V2.MODELextended.CAT_PAIS.Properties.V_PAIS, false);
                 //cmbNID_PAIS_SelectedIndexChanged(sender, e);
                 cmbNID_PAIS.Items.Insert(0, new ListItem(String.Empty));
                 blld__l_CAT_INST_FINANCIERA oInstitucion = new blld__l_CAT_INST_FINANCIERA();
-                oInstitucion.OrderByCriterios.Add(new Order(CAT_INST_FINANCIERA.Properties.V_INSTITUCION));
+                oInstitucion.OrderByCriterios.Add(new Order(Declara_V2.MODELextended.CAT_INST_FINANCIERA.Properties.V_INSTITUCION));
                 oInstitucion.select();
-                cmbNID_INSTITUCION.DataBind(oInstitucion.lista_CAT_INST_FINANCIERA, CAT_INST_FINANCIERA.Properties.NID_INSTITUCION, CAT_INST_FINANCIERA.Properties.V_INSTITUCION, false);
+                cmbNID_INSTITUCION.DataBind(oInstitucion.lista_CAT_INST_FINANCIERA, Declara_V2.MODELextended.CAT_INST_FINANCIERA.Properties.NID_INSTITUCION, Declara_V2.MODELextended.CAT_INST_FINANCIERA.Properties.V_INSTITUCION, false);
                 cmbNID_INSTITUCION_SelectedIndexChanged(sender, e);
                 cmbNID_INSTITUCION.Items.Insert(0, new ListItem(String.Empty));
                 // cmbNID_INSTITUCION.Items.Insert(0, new ListItem("Seleccione", ""));
@@ -381,7 +383,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             oSubtipoInversion.L_ACTIVO = true;
             oSubtipoInversion.NID_TIPO_INVERSION = new Declara_V2.IntegerFilter(cmbNID_TIPO_INVERSION.SelectedValue());
             oSubtipoInversion.select();
-            cmbNID_SUBTIPO_INVERSION.DataBind(oSubtipoInversion.lista_CAT_SUBTIPO_INVERSION, CAT_SUBTIPO_INVERSION.Properties.NID_SUBTIPO_INVERSION, CAT_SUBTIPO_INVERSION.Properties.V_SUBTIPO_INVERSION);
+            cmbNID_SUBTIPO_INVERSION.DataBind(oSubtipoInversion.lista_CAT_SUBTIPO_INVERSION, Declara_V2.MODELextended.CAT_SUBTIPO_INVERSION.Properties.NID_SUBTIPO_INVERSION, Declara_V2.MODELextended.CAT_SUBTIPO_INVERSION.Properties.V_SUBTIPO_INVERSION);
         }
 
 
@@ -392,7 +394,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
             blld__l_CAT_ENTIDAD_FEDERATIVA oEntidadFederativa = new blld__l_CAT_ENTIDAD_FEDERATIVA();
             oEntidadFederativa.NID_PAIS = new Declara_V2.IntegerFilter(cmbNID_PAIS.SelectedValue());
             oEntidadFederativa.select();
-            cmbCID_ENTIDAD_FEDERATIVA.DataBind(oEntidadFederativa.lista_CAT_ENTIDAD_FEDERATIVA, CAT_ENTIDAD_FEDERATIVA.Properties.CID_ENTIDAD_FEDERATIVA, CAT_ENTIDAD_FEDERATIVA.Properties.V_ENTIDAD_FEDERATIVA);
+            cmbCID_ENTIDAD_FEDERATIVA.DataBind(oEntidadFederativa.lista_CAT_ENTIDAD_FEDERATIVA, Declara_V2.MODELextended.CAT_ENTIDAD_FEDERATIVA.Properties.CID_ENTIDAD_FEDERATIVA, Declara_V2.MODELextended.CAT_ENTIDAD_FEDERATIVA.Properties.V_ENTIDAD_FEDERATIVA);
             try { cmbCID_ENTIDAD_FEDERATIVA.SelectedIndex = 0; } catch { }
             //txtV_LUGAR.Visible = (cmbNID_PAIS.SelectedValue() != 1);
             //if (!txtV_LUGAR.Visible)

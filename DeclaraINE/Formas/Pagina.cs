@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Web;
-using DeclaraINE.file;
+using DeclaraINAI.file;
 using AlanWebControls;
 
-namespace DeclaraINE.Formas
+namespace DeclaraINAI.Formas
 {
     public class Pagina : System.Web.UI.Page
     {

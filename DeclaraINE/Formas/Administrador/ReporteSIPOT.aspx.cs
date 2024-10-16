@@ -13,7 +13,7 @@ using System.Threading;
 using Spire.Xls;
 using System.Globalization;
 
-namespace DeclaraINE.Formas.Administrador
+namespace DeclaraINAI.Formas.Administrador
 {
     public partial class ReporteSIPOT : Pagina
     {
@@ -104,6 +104,10 @@ namespace DeclaraINE.Formas.Administrador
                                 item["PRIMERAPELLIDO"] = primerATemp;
                                 item["SEGUNDOAPELLIDO"] = segundoATemp;
                             }
+
+                            //Registra la búsqueda en bitácora
+                            BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                                , "Genera reporte para carga SIPOT", "Se genera el reporte para la carga de SIPOT del periodo del " + txtFInicio.Text + " al " + txtFFin.Text);
 
                             Workbook book = new Workbook();
                             Worksheet sheet = book.Worksheets[0];

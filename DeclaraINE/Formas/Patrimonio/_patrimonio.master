@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_patrimonio.master.cs" Inherits="DeclaraINE.Formas.Patrimonio._patrimonio" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_patrimonio.master.cs" Inherits="DeclaraINAI.Formas.Patrimonio._patrimonio" %>
 
 
 <!DOCTYPE html>

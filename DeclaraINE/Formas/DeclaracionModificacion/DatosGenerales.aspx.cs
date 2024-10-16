@@ -10,7 +10,8 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace DeclaraINE.Formas.DeclaracionModificacion
+
+namespace DeclaraINAI.Formas.DeclaracionModificacion
 {
     public partial class DatosGenerales : Pagina, IDeclaracionInicial
     {
@@ -196,7 +197,6 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             ((HtmlControl)Master.FindControl("liDatosGenerales")).Attributes.Add("class", "active");
             ((HtmlControl)Master.FindControl("menu1")).Attributes.Add("class", "tab-pane fade level1 active in");
             blld_USUARIO oUsuario = _oUsuario;
@@ -294,7 +294,24 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
 
                     txtV_CORREO_PERSONAL.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.V_CORREO;
                     //OEVM 20230612 Se agrega validación para considerar el correo institucional como el dato a reccuperar para los casos donde tienen correos personales como principales
-                    txtV_CORREO_INE.Text = _oUsuario.USUARIO_CORREOs.Where(p => p.L_CONFIRMADO == true && p.L_PRINCIPAL == true && p.V_CORREO.Contains("@inai.org.mx")).First().V_CORREO;
+
+                    //var correoPrincipal = _oUsuario.USUARIO_CORREOs
+                    //    .Where(p => p.L_CONFIRMADO == true && p.L_PRINCIPAL == true && p.V_CORREO.Contains("@inai.org.mx"))
+                    //    .FirstOrDefault();
+
+                    var correoPrincipal = _oUsuario.USUARIO_CORREOs
+                        .Where(p => p.L_CONFIRMADO == true  && p.V_CORREO.Contains("@inai.org.mx"))
+                        .FirstOrDefault();
+
+                    if (correoPrincipal != null)
+                    {
+                        txtV_CORREO_INE.Text = correoPrincipal.V_CORREO;
+                    }
+                    else
+                    {
+                        MsgBox.ShowDanger("No cuenta con una cuenta de correo electrónico del INAI registrada, por favor registre la información en pantalla");
+                    }
+
 
                     txtV_TEL_PARTICULAR.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.V_TEL_PARTICULAR;
                     txtV_TEL_CELULAR.Text = oDeclaracion.DECLARACION_DOM_PARTICULAR.V_TEL_CELULAR;
@@ -348,7 +365,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     if (valorSeleccionado != "210")
                     {
                         cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
-                                                .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) 
+                                                .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado)
                                                 || p.VID_PUESTO.Contains("CH-")
                                                 || p.VID_PUESTO.Contains("EV-"))
                                                 .OrderBy(x => x.VID_PUESTO)
@@ -358,10 +375,10 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                     else
                     {
                         cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
-                        .Where(p => p.VID_PUESTO.StartsWith("210") 
-                        || p.VID_PUESTO.StartsWith("211") 
-                        || p.VID_PUESTO.StartsWith("212") 
-                        || p.VID_PUESTO.StartsWith("214") 
+                        .Where(p => p.VID_PUESTO.StartsWith("210")
+                        || p.VID_PUESTO.StartsWith("211")
+                        || p.VID_PUESTO.StartsWith("212")
+                        || p.VID_PUESTO.StartsWith("214")
                         || p.VID_PUESTO.Contains("CH-")
                         || p.VID_PUESTO.Contains("EV-"))
                         .OrderBy(x => x.VID_PUESTO)
@@ -546,6 +563,13 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                                 oDeclaracion.DECLARACION_DOM_PARTICULAR.update();
 
                                 oDeclaracion.DECLARACION_DOM_LABORAL.V_CORREO_LABORAL = txtV_CORREO_INE.Text;
+                                //Cuando no exista el correo institucional del usuario se dará de alta en la tabla UsuarioCorreo
+                                int existeCorreoINAI = oUsuario.FindIndex_USUARIO_CORREOs(txtV_CORREO_INE.Text);
+                                if (existeCorreoINAI == -1)
+                                {                                    
+                                    oUsuario.Add_USUARIO_CORREOs(txtV_CORREO_INE.Text, false, true, true); 
+                                }
+
                                 oDeclaracion.DECLARACION_DOM_LABORAL.update();
                             }
 
@@ -1466,7 +1490,7 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 {
                     oPuesto.select();
                     cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
-                        .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) 
+                        .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado)
                         || p.VID_PUESTO.Contains("CH-")
                         || p.VID_PUESTO.Contains("EV-"))
                         .OrderBy(x => x.VID_PUESTO)
@@ -1495,10 +1519,10 @@ namespace DeclaraINE.Formas.DeclaracionModificacion
                 {
                     oPuesto.select();
                     cmbVID_CLAVEPUESTO.DataSource = oPuesto.lista_CAT_PUESTO
-                        .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado) 
-                        || p.VID_PUESTO.StartsWith("211") 
-                        || p.VID_PUESTO.StartsWith("212") 
-                        || p.VID_PUESTO.StartsWith("214") 
+                        .Where(p => p.VID_PUESTO.StartsWith(valorSeleccionado)
+                        || p.VID_PUESTO.StartsWith("211")
+                        || p.VID_PUESTO.StartsWith("212")
+                        || p.VID_PUESTO.StartsWith("214")
                         || p.VID_PUESTO.Contains("CH-")
                         || p.VID_PUESTO.Contains("EV-"))
                         .OrderBy(x => x.VID_PUESTO)

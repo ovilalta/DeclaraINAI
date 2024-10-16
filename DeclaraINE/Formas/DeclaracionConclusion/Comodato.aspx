@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionConclusion/_Conclusion.master" AutoEventWireup="true" CodeBehind="Comodato.aspx.cs" Inherits="DeclaraINE.Formas.DeclaracionConclusion.Comodato" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formas/DeclaracionConclusion/_Conclusion.master" AutoEventWireup="true" CodeBehind="Comodato.aspx.cs" Inherits="DeclaraINAI.Formas.DeclaracionConclusion.Comodato" %>
 <%@ Register TagPrefix="ascx" TagName="Item" Src="~/Formas/DeclaracionConclusion/Item.ascx" %>
 
 <%@ Register Assembly="AlanWebControls" Namespace="AlanWebControls" TagPrefix="asp" %>
