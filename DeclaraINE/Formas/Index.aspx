@@ -374,7 +374,7 @@
                                     <!--OEVM falta definición del OIC-->
                                     Correos electrónicos:
                                     <br />
-                                    alejandro.rodriguez@inai.org.mx
+                                    carla.cordero@inai.org.mx
                                     <br />
                                     oscar.vilalta@inai.org.mx
                                     <br />
