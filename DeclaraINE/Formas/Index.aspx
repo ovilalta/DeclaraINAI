@@ -115,7 +115,7 @@
                                                     </div>
                                                     <div class="col-2">
                                                         <ul id="navigation2">
-                                                            <asp:Menu ID="btnAdmin" runat="server"  StaticMenuStyle-CssClass="nav" StaticSelectedStyle-CssClass="active" DynamicMenuStyle-CssClass="dropdown-menu">
+                                                            <asp:Menu ID="btnAdmin" runat="server" StaticMenuStyle-CssClass="nav" StaticSelectedStyle-CssClass="active" DynamicMenuStyle-CssClass="dropdown-menu">
                                                                 <Items>
                                                                     <asp:MenuItem Text="Menú Administrador" Value="Menú Administrador" ToolTip="Opciones de administrador para el OIC">
                                                                         <asp:MenuItem Text="Declaraciones" Value="Declaraciones" ToolTip="Menú de Declaraciones">
@@ -130,6 +130,10 @@
                                                                             <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteDeclaracionesInformeTrim.aspx" Text="Reporte Declaraciones Informe Trimestral" ToolTip="Reporte Declaraciones Informe Trimestral" Value="Reporte Declaraciones Informe Trimestral"></asp:MenuItem>
                                                                             <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteSIPOT.aspx" Text="Reporte SIPOT" ToolTip="Reporte SIPOT" Value="Reporte SIPOT"></asp:MenuItem>
                                                                             <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteAcusesFiscales.aspx" Text="Reporte Total de Acuses Fiscales" ToolTip="Reporte Total de Acuses Fiscaeles" Value="Reporte Total de Acuses Fiscaeles"></asp:MenuItem>
+                                                                        </asp:MenuItem>
+                                                                        <asp:MenuItem Text="Menú Carga Excel Vencimientos" Value="Menú Carga Excel Vencimientos" >
+                                                                            <asp:MenuItem NavigateUrl="~/Formas/Administrador/CargarExcelVencimientos.aspx" Text="Cargar Excel Movimientos Quincenales" Value="Cargar Excel Movimientos Quincenales"></asp:MenuItem>
+                                                                            <asp:MenuItem NavigateUrl="~/Formas/Administrador/VisualizarVencimientosDeclaraciones.aspx" Text="Reporte Vencimientos"  Value="Reporte Vencimientos"></asp:MenuItem>
                                                                         </asp:MenuItem>
                                                                         <%--<asp:MenuItem NavigateUrl="~/Formas/EliminarConclusionErronea.aspx" Text="Eliminar Conclusión Erronea" ToolTip="Eliminar Conclusión" Value="Eliminar Conclusión"></asp:MenuItem>--%>
                                                                         <asp:MenuItem NavigateUrl="~/Formas/ActivacionesAdmin.aspx" Text="Activar Cuenta" ToolTip="Activar cuenta de usuario" Value="Activar Cuenta"></asp:MenuItem>
