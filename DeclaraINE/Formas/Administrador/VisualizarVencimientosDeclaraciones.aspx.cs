@@ -59,6 +59,10 @@ namespace DeclaraINAI.Formas.Administrador
                     gvExcelData.DataSource = dt;
                     gvExcelData.DataBind();
                 }
+
+                //Registra la búsqueda en bitácora
+                BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                    , "Consulta la relación de fechas de vencimiento para deudores de declaración patrimonial", "Se consulta la información de los deudores de declaración patrimonial");
             }
         }
 
@@ -80,7 +84,7 @@ namespace DeclaraINAI.Formas.Administrador
             // Volver a enlazar los datos después de actualizar la base de datos
             //CargarDatos();
             BindGridView();
-        }       
+        }
 
         private void UpdateActivo(int id, bool activo)
         {
@@ -100,7 +104,52 @@ namespace DeclaraINAI.Formas.Administrador
                     cmd.ExecuteNonQuery();
                     con.Close();
                 }
+
+                //Recuperamos el nombre del funcionario al cual se le cambia su estatus
+                string nombre = RecuperaNombre(id);
+                string status = activo ? "Cumplió" : "No ha cumplido";
+                //Registra la búsqueda en bitácora
+                BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                    , "Cambio de estatus cumplimiento declaración", "Se cambia el estatus de cumplimiento de la declaración de: " + nombre + " con estatus: " + status);
             }
+        }
+
+        private string RecuperaNombre(int id)
+        {
+            string nombre = "";
+            string query = "SELECT NombreCompleto from ReporteVencimientoDeclaraciones where Id = @Id";
+            MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+            connString = db.Database.Connection.ConnectionString;
+            using (SqlConnection con = new SqlConnection(connString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Agregar el parámetro a la consulta
+                    cmd.Parameters.AddWithValue("@Id", id);
+
+                    // Abrir la conexión
+                    con.Open();
+
+                    // Utilizar ExecuteScalar para obtener un valor
+                    object result = cmd.ExecuteScalar();
+
+                    // Verificar si el resultado no es nulo
+                    if (result != null)
+                    {
+                        // Convertir el resultado al tipo adecuado (ej. string, int, etc.)
+                        nombre = result.ToString();
+
+                        // Aquí puedes utilizar el valor recuperado
+                        Console.WriteLine($"Valor recuperado: {nombre}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No se encontraron resultados.");
+                    }
+                }
+            }
+
+            return nombre;
         }
 
         protected void gvExcelData_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -154,7 +203,7 @@ namespace DeclaraINAI.Formas.Administrador
             BindGridView();
         }
 
-        private void ActualizarRegistroEnBaseDeDatos(int id, string correoPersonal, string celularPersonal , string observaciones)
+        private void ActualizarRegistroEnBaseDeDatos(int id, string correoPersonal, string celularPersonal, string observaciones)
         {
             MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
             connString = db.Database.Connection.ConnectionString;
@@ -172,6 +221,17 @@ namespace DeclaraINAI.Formas.Administrador
                     cmd.ExecuteNonQuery();
                     con.Close();
                 }
+
+                //Recuperamos el nombre del funcionario al cual se le cambia su estatus
+                string nombre = RecuperaNombre(id);
+                string textoEditado = "";
+                if (correoPersonal != "") textoEditado += correoPersonal;
+                if (celularPersonal != "") textoEditado+= " " + celularPersonal;
+                if (observaciones != "") textoEditado += " " + observaciones;
+                
+                //Registra la búsqueda en bitácora
+                BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                    , "Se edita el registro de deudor de declaración", "Se edita el registro de : " + nombre + " agregándole : " + textoEditado );
             }
         }
 

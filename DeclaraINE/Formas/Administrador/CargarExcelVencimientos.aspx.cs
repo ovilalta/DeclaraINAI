@@ -66,6 +66,9 @@ namespace DeclaraINAI.Formas.Administrador
 
                             lblMessage.ForeColor = System.Drawing.Color.Green;
                             lblMessage.Text = "El archivo se procesó exitosamente.";
+                            //Registra la búsqueda en bitácora
+                            BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                                , "Carga Excel Vencimiento Declaraciones", "Se cargó el excel de movimientos quincenales para calcular las fechas de vencimiento de presentación de declaraciones" );
                             Response.Redirect("VisualizarVencimientosDeclaraciones.aspx");
                         }
                     }
