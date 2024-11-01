@@ -14,6 +14,7 @@ namespace DeclaraINAI.Formas.Administrador
 {
     public partial class CargarExcelVencimientos : Pagina
     {
+        string usuario = "";
         blld_USUARIO _oUsuario
         {
             get => (blld_USUARIO)Session["oUsuario"];
@@ -22,6 +23,7 @@ namespace DeclaraINAI.Formas.Administrador
         protected void Page_Load(object sender, EventArgs e)
         {
             blld_USUARIO oUsuario = _oUsuario;
+            usuario = _oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE;
             txtSheet1StartRow.Text = "9";
             txtSheet2StartRow.Text = "9";
             txtSheet3StartRow.Text = "10";
@@ -67,8 +69,8 @@ namespace DeclaraINAI.Formas.Administrador
                             lblMessage.ForeColor = System.Drawing.Color.Green;
                             lblMessage.Text = "El archivo se procesó exitosamente.";
                             //Registra la búsqueda en bitácora
-                            BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
-                                , "Carga Excel Vencimiento Declaraciones", "Se cargó el excel de movimientos quincenales para calcular las fechas de vencimiento de presentación de declaraciones" );
+                            BitacoraAdmin.RegistraBitacoraAdmin(usuario
+                                , "Carga Excel Vencimiento Declaraciones", "Se cargó el excel de movimientos quincenales para calcular las fechas de vencimiento de presentación de declaraciones");
                             Response.Redirect("VisualizarVencimientosDeclaraciones.aspx");
                         }
                     }
@@ -88,6 +90,10 @@ namespace DeclaraINAI.Formas.Administrador
             {
                 lblMessage.Text = "Por favor, seleccione un archivo para cargar.";
             }
+
+            
+
+
         }
 
         // Función que procesa una hoja de Excel desde la fila indicada
@@ -117,6 +123,10 @@ namespace DeclaraINAI.Formas.Administrador
             for (int row = startRow; row <= worksheet.Dimension.End.Row; row++)
             {
                 string column1 = worksheet.Cells[row, col1].Text; // Columna A
+                if (string.IsNullOrWhiteSpace(column1))
+                {
+                    break;
+                }
                 string column2 = worksheet.Cells[row, col2].Text; // Columna B
                 string column3 = worksheet.Cells[row, col3].Text; // Columna B
                 string column4 = "";
@@ -169,7 +179,7 @@ namespace DeclaraINAI.Formas.Administrador
             }
             else if (fecha.Length == 9)
             {
-                dia = fecha.Substring(0, 1);
+                dia = "0" + fecha.Substring(0, 1);
                 mesLetra = fecha.Substring(2, 3);
                 anio = "20" + fecha.Substring(7, 2);
             }
