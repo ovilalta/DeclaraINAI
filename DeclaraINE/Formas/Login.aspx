@@ -320,7 +320,7 @@
                             <br />
                             <br />
                             <br />
-                            <p style="color:dimgray;">V.2024-11-01-1000</p>
+                            <p style="color:dimgray;">V.2024-11-14-1800</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-md-6 col-lg-4 ">

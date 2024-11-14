@@ -132,11 +132,11 @@ namespace DeclaraINAI.Formas.Administrador
                 string column4 = "";
                 if (col4 == 7)
                 {
-                    if (column3 == "Alta")
+                    if (column3.ToUpper() == "ALTA")
                     {
                         column4 = worksheet.Cells[row, col4].Text; // Columna B
                     }
-                    else if (column3 == "Baja")
+                    else if (column3.ToUpper() == "BAJA")
                     {
                         column4 = worksheet.Cells[row, 8].Text;
                     }
