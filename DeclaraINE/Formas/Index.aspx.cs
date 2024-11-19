@@ -70,12 +70,12 @@ namespace DeclaraINAI.Formas
             fileBitacora.Close();
             if (excepBitacora == false)
             {
-                btnAdminBitacora.Visible = false;
+                MenuBitacora.Visible = false;
                 
             }
             else
             {
-                btnAdminBitacora.Visible = true;                
+                MenuBitacora.Visible = true;                
             }
             #endregion
 

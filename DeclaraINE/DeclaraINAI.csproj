@@ -440,6 +440,8 @@
     <Content Include="fonts\themify.svg" />
     <Content Include="Formas\ActivacionesAdmin.aspx" />
     <Content Include="Formas\AdministracionCuenta.aspx" />
+    <Content Include="Formas\Administrador\Administradores.aspx" />
+    <Content Include="Formas\Administrador\AdministradoresBitacora.aspx" />
     <Content Include="Formas\Administrador\AdministradoresBitacora.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -3165,6 +3167,20 @@
     </Compile>
     <Compile Include="Formas\AdministracionCuenta.aspx.designer.cs">
       <DependentUpon>AdministracionCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Administrador\Administradores.aspx.cs">
+      <DependentUpon>Administradores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\Administradores.aspx.designer.cs">
+      <DependentUpon>Administradores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Administrador\AdministradoresBitacora.aspx.cs">
+      <DependentUpon>AdministradoresBitacora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\AdministradoresBitacora.aspx.designer.cs">
+      <DependentUpon>AdministradoresBitacora.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formas\Administrador\BuscaRegistroUsuario.aspx.cs">
       <DependentUpon>BuscaRegistroUsuario.aspx</DependentUpon>

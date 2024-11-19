@@ -108,9 +108,20 @@
                                                 <div class="row">
                                                     <div class="col-2">
                                                         <ul id="navigationBitacora">
-                                                            <li>
+                                                            <asp:Menu ID="MenuBitacora" runat="server" StaticMenuStyle-CssClass="nav" StaticSelectedStyle-CssClass="active" DynamicMenuStyle-CssClass="dropdown-menu">
+                                                                <Items>
+                                                                    <asp:MenuItem Text="Menú Bitácora" Value="Menú Bitácora" ToolTip="Opciones de bitácora para el OIC">
+                                                                        
+                                                                            <asp:MenuItem NavigateUrl="~/Formas/Administrador/AdministradoresBitacora.aspx" Text="Administra Permisos Bitácora" ToolTip="Indica quienes ven la bitácora" Value="Admin Bitácora"></asp:MenuItem>
+                                                                            <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReporteBitacora.aspx" Text="Reporte Bitácora" ToolTip="Genera Reporte Bitácora" Value="Reporte Bitácora"></asp:MenuItem>
+                                                                                
+                                                                     </asp:MenuItem>
+                                                                     
+                                                                 </Items>
+                                                            </asp:Menu>
+                                                           <%-- <li>
                                                                 <asp:LinkButton ID="btnAdminBitacora" runat="server" OnClick="btnBitacora_Click" CssClass="active" Text="Reporte Bitácora"></asp:LinkButton>
-                                                            </li>
+                                                            </li>--%>
                                                         </ul>
                                                     </div>
                                                     <div class="col-2">
@@ -160,7 +171,9 @@
 
                                                                         <asp:MenuItem NavigateUrl="~/Formas/Administrador/ReseteoPassword.aspx" Text="Reseteo de Contraseña" ToolTip="Resetear contraseña del usuario" Value="Reseteo de contraseña"></asp:MenuItem>
                                                                         <asp:MenuItem NavigateUrl="~/Formas/Administrador/ConsultaCatalogoPuestos.aspx" Text="Consultar Catálogo Puestos" ToolTip="Consultar catálogo de puestos" Value="Catálogo de puestos"></asp:MenuItem>
+                                                                        <asp:MenuItem NavigateUrl="~/Formas/Administrador/ConsultaApartadosDeclaracion.aspx" Text="Consultar Apartados Declaración" ToolTip="Consultar apartados de una declaración" Value="Consulta apartados"></asp:MenuItem>
 
+                                                                        <asp:MenuItem NavigateUrl="~/Formas/Administrador/Administradores.aspx" Text="Consulta Administradores" ToolTip="Consultar a los administradores del sistema" Value="Listado de administradores"></asp:MenuItem>
                                                                     </asp:MenuItem>
                                                                 </Items>
                                                             </asp:Menu>
