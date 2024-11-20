@@ -452,6 +452,7 @@
     <Content Include="Formas\Administrador\AdministradoresCorreos.txt" />
     <Content Include="Formas\Administrador\AdministradoresReporte.txt" />
     <Content Include="Formas\Administrador\BuscaRegistroUsuario.aspx" />
+    <Content Include="Formas\Administrador\ConsultaApartadosDeclaracion.aspx" />
     <Content Include="Formas\Administrador\VisualizarVencimientosDeclaraciones.aspx" />
     <Content Include="Formas\Administrador\ConsultaCatalogoPuestos.aspx" />
     <Content Include="Formas\Administrador\CargarExcelVencimientos.aspx" />
@@ -3188,6 +3189,13 @@
     </Compile>
     <Compile Include="Formas\Administrador\BuscaRegistroUsuario.aspx.designer.cs">
       <DependentUpon>BuscaRegistroUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Administrador\ConsultaApartadosDeclaracion.aspx.cs">
+      <DependentUpon>ConsultaApartadosDeclaracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Administrador\ConsultaApartadosDeclaracion.aspx.designer.cs">
+      <DependentUpon>ConsultaApartadosDeclaracion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formas\Administrador\VisualizarVencimientosDeclaraciones.aspx.cs">
       <DependentUpon>VisualizarVencimientosDeclaraciones.aspx</DependentUpon>
