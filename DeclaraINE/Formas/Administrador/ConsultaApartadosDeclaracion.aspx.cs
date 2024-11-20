@@ -89,7 +89,7 @@ namespace DeclaraINAI.Formas.Administrador
                 {
                     // Manejar casos donde el campo esté vacío (opcional)
                     msgBox.ShowDanger("Por favor, ingrese un RFC válido de 13 caracteres.");
-                   // Response.Write("<script>alert('Por favor, ingrese un RFC válido de 13 caracteres.');</script>");
+                    // Response.Write("<script>alert('Por favor, ingrese un RFC válido de 13 caracteres.');</script>");
                 }
             }
             else
@@ -147,6 +147,9 @@ namespace DeclaraINAI.Formas.Administrador
                 {
                     registro.L_ESTADO = nuevoValorActivo; // Actualiza el valor booleano
                     db.SaveChanges(); // Guarda los cambios
+                    //Registra la búsqueda en bitácora
+                    BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                        , "Edición de Apartados de una Declaración", "Se editó la sección " + nid_Apartado + " de la declaración " + nid_declaracion + " de: " + vid_nombre + vid_fecha + vid_homo);
                     msgBox.ShowSuccess("Se editó de manera correcta!.");
                 }
             }
