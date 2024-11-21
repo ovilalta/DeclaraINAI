@@ -34,10 +34,6 @@ namespace DeclaraINAI.Formas.Administrador
         protected void Page_Load(object sender, EventArgs e)
         {
             blld_USUARIO oUsuario = _oUsuario;
-
-
-
-
         }
 
 
@@ -52,18 +48,38 @@ namespace DeclaraINAI.Formas.Administrador
             if (txtRfc.Text.Length == 13)
             {
 
-                var buildDir = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, System.AppDomain.CurrentDomain.RelativeSearchPath ?? "");
-                var filePath = buildDir + @"\ExcepcionesRFC.txt";
+                try
+                {
+                    MODELDeclara_V2.cnxDeclara bd = new MODELDeclara_V2.cnxDeclara();
+                    string context = bd.Database.Connection.ConnectionString;
 
+                    string sql = "SP_ExcepcionRegistroRFC";
 
-                StreamWriter file = File.AppendText(filePath);                
-                file.WriteLine(txtRfc.Text.ToUpper());
-                file.Close();
-                //Registra la búsqueda en bitácora
-                BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
+                    using (SqlConnection conn = new SqlConnection(context))
+                    {
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand(sql, conn))
+                        {
+
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@RFC", txtRfc.Text.ToUpper());
+
+                            cmd.ExecuteNonQuery();
+                        }
+                        conn.Close();
+
+                        //Registra la búsqueda en bitácora
+                        BitacoraAdmin.RegistraBitacoraAdmin(_oUsuario.VID_NOMBRE + _oUsuario.VID_FECHA + _oUsuario.VID_HOMOCLAVE
                     , "Excepción para registrar usuario con RFC fuera de regla de validación", "Se dan los permisos para permitir el registro de usuario con RFC: " + txtRfc.Text);
-                msgBox.ShowSuccess("Se agregó el RFC: " + txtRfc.Text.ToUpper() + " de manera correcta") ;
-                txtRfc.Text = "";
+                        msgBox.ShowSuccess("Se agregó el RFC: " + txtRfc.Text.ToUpper() + " de manera correcta");
+                        txtRfc.Text = "";
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    msgBox.ShowDanger("No está registrado el usuario con RFC: " + txtRfc.Text.ToUpper());
+                }             
             }
             else
             {

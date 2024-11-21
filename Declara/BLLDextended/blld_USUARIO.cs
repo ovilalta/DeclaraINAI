@@ -299,24 +299,54 @@ namespace Declara_V2.BLLD
 
             String V_RFC = String.Concat(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE);
 
-            //IF ingresado por OEVM buscando generar la excepción por el RFC que no reconoce el sistema como válido
-            //if (!V_RFC.Equals("CAGT780524LU7")){
 
-
-            string line;
+            //string line;
             bool excep = false;
-            var buildDir = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, System.AppDomain.CurrentDomain.RelativeSearchPath ?? "");
-            var filePath = buildDir + @"\ExcepcionesRFC.txt";
-            StreamReader file = new StreamReader(filePath);
-            while ((line = file.ReadLine()) != null)
+            MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+            string connString = db.Database.Connection.ConnectionString;
+            List<string> result = new List<string>();
+            try
             {
-                if (V_RFC.Equals(line))
+                using (SqlConnection connection = new SqlConnection(connString))
                 {
-                    excep = true;
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand("SP_ListaExcepcionRFC", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                // Agrega cada valor del campo 'Name' a la lista
+                                result.Add(reader.GetString(0)); // Usa el índice o el nombre del campo
+                            }
+                        }
+                    }
                 }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
             }
 
-            file.Close();
+            if (result.Contains(V_RFC, StringComparer.OrdinalIgnoreCase))
+            {
+                excep = true;
+            }
+            //var buildDir = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, System.AppDomain.CurrentDomain.RelativeSearchPath ?? "");
+            //var filePath = buildDir + @"\ExcepcionesRFC.txt";
+            //StreamReader file = new StreamReader(filePath);
+            //while ((line = file.ReadLine()) != null)
+            //{
+            //    if (V_RFC.Equals(line))
+            //    {
+            //        excep = true;
+            //    }
+            //}
+
+            //file.Close();
 
             if (excep == false)
             {

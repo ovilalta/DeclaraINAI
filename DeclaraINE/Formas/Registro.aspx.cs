@@ -154,7 +154,7 @@ namespace DeclaraINAI.Formas
                     else if (nContador >= 1)
                     {
                         ////btnCalcularHomo.Visible = true;
-                        msgBox.ShowDanger("Los datos capturados no coinciden con la validación automatica del R.F.C. <br /> Si continua teniendo problemas con el R.F.C. favor de comunicarse a las extensiones 3435, 2307 y 2461");
+                        msgBox.ShowDanger("Los datos capturados no coinciden con la validación automatica del R.F.C. <br /> Si continua teniendo problemas con el R.F.C. favor de comunicarse a las extensiones 3435, 2363 ");
                     }
                     nContador++;
                 }
