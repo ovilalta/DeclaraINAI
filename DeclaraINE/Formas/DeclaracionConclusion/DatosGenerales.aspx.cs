@@ -130,8 +130,8 @@ namespace DeclaraINAI.Formas.DeclaracionConclusion
             {
                 txtF_POSESION_C.StartDate = new DateTime(1900, 1, 1);
                 txtF_INGRESO_C.StartDate = new DateTime(1900, 1, 1);
-                txtF_POSESION_C.EndDate = DateTime.Today.AddDays(-1);
-                txtF_INGRESO_C.EndDate = DateTime.Today.AddDays(-1);
+                //txtF_POSESION_C.EndDate = DateTime.Today.AddDays(-1);
+                //txtF_INGRESO_C.EndDate = DateTime.Today.AddDays(-1);
             }
         }
 

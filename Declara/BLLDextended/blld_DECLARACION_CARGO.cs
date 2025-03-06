@@ -63,12 +63,13 @@ namespace Declara_V2.BLLD
             get => datos_DECLARACION_CARGO.F_POSESION;
             set
                 {
-                if (F_INICIO > value)
+                //Esta condicion la comenté para permitir las declaraciones de conclusion por la extincion del INAI
+                //if (F_INICIO > value)
  
-                    throw new CustomException("La fecha de toma de posesión del cargo actual no puede ser menor que la fecha de ingreso al instituto");
-                if (value > DateTime.Today)
+                //    throw new CustomException("La fecha de toma de posesión del cargo actual no puede ser menor que la fecha de ingreso al instituto");
+                //if (value > DateTime.Today)
 
-                    throw new CustomException("La fecha no puede ser mayor que la fecha actual");
+                //    throw new CustomException("La fecha no puede ser mayor que la fecha actual");
 
                 datos_DECLARACION_CARGO.F_POSESION = value;
             }
@@ -84,8 +85,9 @@ namespace Declara_V2.BLLD
             get => datos_DECLARACION_CARGO.F_INICIO;
             set
             {
-                if (value > DateTime.Today)
-                    throw new CustomException("La fecha de ingreso al instituto no puede ser mayor que la fecha actual");
+                //Esta condicion la comenté para permitir las declaraciones de conclusion por la extincion del INAI
+                //if (value > DateTime.Today)
+                //    throw new CustomException("La fecha de ingreso al instituto no puede ser mayor que la fecha actual");
                 datos_DECLARACION_CARGO.F_INICIO = value;
             }
         }
@@ -137,11 +139,12 @@ namespace Declara_V2.BLLD
             String E_OBSERVACIONES_MARCADO = null;
             String V_OBSERVACIONES_TESTADO = null;
 
-            if (F_INICIO > DateTime.Today)
-                throw new CustomException("La fecha de ingreso al instituto no puede ser mayor que la fecha actual");
+            //Comentada para permitir fechas en conclusion por la extincion del INAI
+            //if (F_INICIO > DateTime.Today)
+            //    throw new CustomException("La fecha de ingreso al instituto no puede ser mayor que la fecha actual");
 
-            if (F_INICIO > F_POSESION)
-                throw new CustomException("La fecha de toma de posesión del cargo actual no puede ser menor que la fecha de ingreso al instituto");
+            //if (F_INICIO > F_POSESION)
+            //    throw new CustomException("La fecha de toma de posesión del cargo actual no puede ser menor que la fecha de ingreso al instituto");
 
             datos_DECLARACION_CARGO = new dald_DECLARACION_CARGO(VID_NOMBRE, VID_FECHA, VID_HOMOCLAVE, NID_DECLARACION, NID_PUESTO, V_DENOMINACION, V_FUNCION_PRINCIPAL, F_POSESION, F_INICIO, VID_PRIMER_NIVEL, VID_SEGUNDO_NIVEL, E_OBSERVACIONES, E_OBSERVACIONES_MARCADO, V_OBSERVACIONES_TESTADO, NID_ESTADO_TESTADOInicial, ExistingPrimaryKeyException.ExistingPrimaryKeyConditions.UpdateExisiting);
         }
@@ -152,11 +155,12 @@ namespace Declara_V2.BLLD
 
         new public void update()
         {
-            if (F_INICIO > DateTime.Today)
-                throw new CustomException("La fecha de ingreso al instituto no puede ser mayor que la fecha actual");
+            //comentada para permitir fechas en conclusion por extincion
+            //if (F_INICIO > DateTime.Today)
+            //    throw new CustomException("La fecha de ingreso al instituto no puede ser mayor que la fecha actual");
 
-            if (F_INICIO > F_POSESION)
-                throw new CustomException("La fecha de toma de posesión del cargo actual no puede ser menor que la fecha de ingreso al instituto");
+            //if (F_INICIO > F_POSESION)
+            //    throw new CustomException("La fecha de toma de posesión del cargo actual no puede ser menor que la fecha de ingreso al instituto");
             base.update();
         }
 
