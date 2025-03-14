@@ -50,7 +50,7 @@
                 <asp:DropDownList ID="cmbNID_INSTITUCION" runat="server" AutoPostBack="True" requerido="btnGuardarAdeudo" OnSelectedIndexChanged="cmbNID_INSTITUCION_SelectedIndexChanged" CssClass="n2"> </asp:DropDownList>
                 <asp:TextBox ID="txtV_OTRO" runat="server" Visible="false" CssClass="n2" requerido="btnGuardarAdeudo"  MaxLength="150"></asp:TextBox>
             </td>
-        </tr>
+        </tr>   
             
         <tr>
             <th>

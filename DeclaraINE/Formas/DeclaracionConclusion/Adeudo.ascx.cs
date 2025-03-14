@@ -229,23 +229,16 @@ namespace DeclaraINAI.Formas.DeclaracionConclusion
                         cblTitulares.Items.FindByValue(ID.ToString()).Selected = true;
             }
         }
-        //public List<Int32> NID_TITULARs
-        //{
-        //    get
-        //    {
-        //        if (cblTitulares.SelectedValuesInteger() == null)
-        //            return new List<Int32>();
-        //        else
-        //            return cblTitulares.SelectedValuesInteger();
-        //    }
-        //    set
-        //    {
-        //        cblTitulares.ClearSelection();
-        //        if (value != null)
-        //            foreach (Int32 ID in value)
-        //                cblTitulares.Items.FindByValue(ID.ToString()).Selected = true;
-        //    }
-        //}
+
+        public Int32 NID_TITULAR
+        {
+            get => chbDependietesInm.SelectedValue();
+            set
+            {
+                chbDependietesInm.SelectedValue = value.ToString();
+                chbDependietesInm_SelectedIndexChanged(chbDependietesInm, null);
+            }
+        }
 
         public Int32 IndiceItemSeleccionado
         {

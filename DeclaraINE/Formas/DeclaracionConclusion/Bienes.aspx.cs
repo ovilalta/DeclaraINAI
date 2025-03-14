@@ -10,6 +10,9 @@ using Declara_V2.MODELextended;
 using Declara_V2.Exceptions;
 using AlanWebControls;
 using Declara_V2.BLL;
+using System.Data.SqlClient;
+using System.Data;
+//using MODELDeclara_V2;
 namespace DeclaraINAI.Formas.DeclaracionConclusion
 {
     public partial class Bienes : Pagina, IDeclaracionInicial
@@ -1325,6 +1328,35 @@ namespace DeclaraINAI.Formas.DeclaracionConclusion
                 //oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_INMUEBLE_COPROPIETARIO.update();
                 //Revisar para que se manda la lista de dependientes, si solo deber[ia actualizarse el dependiente seleccionado en el combo
                 //oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].update(chbDependietes.SelectedValuesInteger(), cmbTercero.SelectedValue, txtNombreTercero.Text, txtRFCTercero.Text);
+
+                //Editar titular del inmueble
+                MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+                string connString = db.Database.Connection.ConnectionString;
+                string sql = "SP_ActualizaTitularInmueble";
+
+                int valorDependienteInmueble = Convert.ToInt32(chbDependietesInm.SelectedValue);
+
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@vid_nombre", oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].VID_NOMBRE);
+                        cmd.Parameters.AddWithValue("@vid_fecha", oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].VID_FECHA);
+                        cmd.Parameters.AddWithValue("@vid_homo", oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].VID_HOMOCLAVE);
+                        cmd.Parameters.AddWithValue("@nid_declaracion", oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].NID_DECLARACION);
+                        cmd.Parameters.AddWithValue("@nid_inmueble", oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].NID_INMUEBLE);
+                        cmd.Parameters.AddWithValue("@dependiente", valorDependienteInmueble);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                }
+
+                //Termina update titular inmueble
+
                 EliminaF_baja(oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].NID_PATRIMONIO.ToString());
                 if (txtF_BAJA_INM.Text.Length > 8)
                     oDeclaracion.MODIFICACION.Add_MODIFICACION_BAJAs(oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].NID_PATRIMONIO, 1, txtF_BAJA_INM.Date(Pagina.esMX));
@@ -1338,6 +1370,7 @@ namespace DeclaraINAI.Formas.DeclaracionConclusion
                 }
                 else throw ex;
             }
+            oDeclaracion.ALTA.Reload_ALTA_INMUEBLEs();
             _oDeclaracion = oDeclaracion;
         }
 
@@ -1788,9 +1821,44 @@ namespace DeclaraINAI.Formas.DeclaracionConclusion
                 oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].E_OBSERVACIONES = txtObservacionesVehiculos.Text;
                 oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].update(chbDependietesVehiculo.SelectedValuesInteger(), cmbTerceroVehiculo.SelectedValue, txtNombreTerceroVehiculo.Text, txtRFCTerceroVehiculo.Text);
 
+                //Para actualizar al due;o del vehiculo
+
+                
+
+                MODELDeclara_V2.cnxDeclara db = new MODELDeclara_V2.cnxDeclara();
+                string connString = db.Database.Connection.ConnectionString;
+                string sql = "SP_ActualizaTitularVehiculo";
+
+                int valorDependienteVehiculo = Convert.ToInt32(chbDependietesVeh.SelectedValue);
+
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@vid_nombre", oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].VID_NOMBRE);
+                        cmd.Parameters.AddWithValue("@vid_fecha", oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].VID_FECHA);
+                        cmd.Parameters.AddWithValue("@vid_homo", oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].VID_HOMOCLAVE);
+                        cmd.Parameters.AddWithValue("@nid_declaracion", oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].NID_DECLARACION);
+                        cmd.Parameters.AddWithValue("@nid_vehiculo", oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].NID_VEHICULO);
+                        cmd.Parameters.AddWithValue("@dependiente", valorDependienteVehiculo);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                }
+
+                //fin actualizar due;o vehiculo               
+
+
                 EliminaF_baja(oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].NID_PATRIMONIO.ToString());
                 if (txtF_BAJA_VEHIC.Text.Length > 8)
                     oDeclaracion.MODIFICACION.Add_MODIFICACION_BAJAs(oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].NID_PATRIMONIO, 1, txtF_BAJA_VEHIC.Date(Pagina.esMX));
+
+                _oDeclaracion = oDeclaracion;
+
                 mppVehículos.Hide();
             }
             catch (Exception ex)
@@ -1801,6 +1869,8 @@ namespace DeclaraINAI.Formas.DeclaracionConclusion
                 }
                 else throw ex;
             }
+
+            oDeclaracion.ALTA.Reload_ALTA_VEHICULOs();
             _oDeclaracion = oDeclaracion;
         }
 
@@ -2269,7 +2339,13 @@ namespace DeclaraINAI.Formas.DeclaracionConclusion
             btnGuardarAdeudoVehiculo.Visible = true;
             lEditaAdeudo = true;
 
-
+            //Agregados OEVM 20250313
+            Adeudo.NID_TIPO_ADEUDO = oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].NID_TIPO_ADEUDO;
+            Adeudo.E_RFC = oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_RFC;
+            Adeudo.CID_TIPO_PERSONA_OTORGANTE = oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].CID_TIPO_PERSONA_OTORGANTE;
+            Adeudo.E_OBSERVACIONES = oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_OBSERVACIONES;
+            //Adeudo.NID_TITULAR = _oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].ALTA_ADEUDO_TITULARs[0].NID_DEPENDIENTE;
+            // Fin agregados OEVM 20250313
             Adeudo.NID_PAIS = oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].NID_PAIS;
             Adeudo.CID_ENTIDAD_FEDERATIVA = oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].CID_ENTIDAD_FEDERATIVA;
             Adeudo.V_LUGAR = oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].V_LUGAR;
@@ -2280,6 +2356,7 @@ namespace DeclaraINAI.Formas.DeclaracionConclusion
             Adeudo.M_SALDO = oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].M_SALDO;
             Adeudo.E_CUENTA = oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_CUENTA;
             Adeudo.NID_TITULARs = oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].ALTA_ADEUDO_TITULARs.Select(p => p.NID_DEPENDIENTE).ToList();
+            Adeudo.NID_TITULAR = oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].ALTA_ADEUDO_TITULARs[0].NID_DEPENDIENTE;
             checaAdeudoVehiculo();
             mppVehículos.Hide();
         }
@@ -2348,13 +2425,13 @@ namespace DeclaraINAI.Formas.DeclaracionConclusion
                         oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].M_ORIGINAL = Adeudo.M_ORIGINAL.Value;
                         oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].M_SALDO = Adeudo.M_SALDO.Value;
                         oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_CUENTA = Adeudo.E_CUENTA;
-                        oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].V_TIPO_MONEDA = Adeudo.V_TIPO_MONEDA;
-                        oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].CID_TIPO_PERSONA_OTORGANTE = Adeudo.CID_TIPO_PERSONA_OTORGANTE;
-                        oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_RFC = Adeudo.E_RFC;
-                        oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_OBSERVACIONES = Adeudo.E_OBSERVACIONES;
-                        oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].NID_TERCERO = Adeudo.NID_TERCERO;
-                        oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_NOMBRE_TERCERO = Adeudo.E_NOMBRE_TERCERO;
-                        oDeclaracion.ALTA.ALTA_INMUEBLEs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_RFC_TERCERO = Adeudo.E_RFC_TERCERO;
+                        oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].V_TIPO_MONEDA = Adeudo.V_TIPO_MONEDA;
+                        oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].CID_TIPO_PERSONA_OTORGANTE = Adeudo.CID_TIPO_PERSONA_OTORGANTE;
+                        oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_RFC = Adeudo.E_RFC;
+                        oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_OBSERVACIONES = Adeudo.E_OBSERVACIONES;
+                        oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].NID_TERCERO = Adeudo.NID_TERCERO;
+                        oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_NOMBRE_TERCERO = Adeudo.E_NOMBRE_TERCERO;
+                        oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].E_RFC_TERCERO = Adeudo.E_RFC_TERCERO;
                         oDeclaracion.ALTA.ALTA_VEHICULOs[Indice].ALTA_ADEUDOs[IndiceAdeudo].update(Adeudo.NID_TITULARs);
 
                         ltrAdeudoVehiculo.Text = String.Concat("Saldo:"
